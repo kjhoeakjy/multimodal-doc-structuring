@@ -8,3 +8,5 @@ node_modules/
 poc/v3/data/
 .venv/
 poc/tmp/
+poc/v4/.cache/
+poc/v4/data/
