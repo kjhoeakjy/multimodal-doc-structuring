@@ -6,3 +6,5 @@ node_modules/
 *.pptx~
 .DS_Store
 poc/v3/data/
+.venv/
+poc/tmp/
