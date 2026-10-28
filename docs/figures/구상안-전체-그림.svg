@@ -139,8 +139,11 @@
 <text x="736" y="562" font-size="12" font-weight="400" fill="#111111" text-anchor="start">윤활</text>
 <text x="808" y="562" font-size="12" font-weight="400" fill="#111111" text-anchor="start">표 1 각주 *</text>
 <line x1="496" y1="568" x2="958" y2="568" stroke="#B5B5B5" stroke-width="1"/>
-<text x="496" y="596" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">스캔본 추가 분석: 그림의 체결부 수 8과 표의 행 수 6 불일치, 번호 1과 7 미판독</text>
-<text x="496" y="614" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">표 영역과 해당 원에 한해 고해상도 재처리 또는 VLM 재해석</text>
+<text x="60" y="600" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">스캔본 추가 분석: 체결부 수 8과 행 수 6 불일치, 번호 1과 7 미판독</text>
+<text x="60" y="618" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">표 영역과 해당 원에 한해 고해상도 재처리 또는 VLM 재해석</text>
+<text x="496" y="600" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">연결 원칙: 표는 헤더, 셀, 각주의 문서 구조 기준으로 연결</text>
+<text x="496" y="618" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">그림은 체결부 번호와 부품 상자의 포함 관계로 연결, 근접은 근거 아님</text>
+<text x="496" y="636" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">조건별 값 각각 보존. 식별자 정규화 뒤 대조. S1000D 적용성 개념 적용</text>
 <line x1="970" y1="520" x2="988" y2="520" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <text x="1000" y="454" font-size="13.5" font-weight="600" fill="#111111" text-anchor="start">질의 시 전달</text>
 <text x="1000" y="482" font-size="12.5" font-weight="500" fill="#111111" text-anchor="start">질문: HV-202를 고정하는 체결부의 윤활 조건 토크 값</text>
@@ -155,20 +158,20 @@
 <text x="1110" y="554" font-size="12" font-weight="400" fill="#111111" text-anchor="start">기준 부재 전달, 필수 근거 없으면 보류</text>
 <line x1="1000" y1="561" x2="1540" y2="561" stroke="#B5B5B5" stroke-width="1"/>
 <text x="1000" y="596" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">고정 길이 분할 입력은 소속 관계가 텍스트에 없어 답변 불가</text>
-<line x1="60" y1="640" x2="1540" y2="640" stroke="#B5B5B5" stroke-width="1"/>
-<text x="60" y="668" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">검증</text>
-<text x="60" y="694" font-size="13" font-weight="600" fill="#111111" text-anchor="start">비교군</text>
-<text x="130" y="694" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효율: 전체 페이지 OCR, 레이아웃 파서 기본 처리, 소형 VLM 전체 페이지 변환, 제안(기본 추출 뒤 문제 영역 한정 재처리)</text>
-<text x="130" y="716" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효과: 고정 길이 분할, 요소 단위 분할(마크다운 표와 각주), 페이지 전체 입력, 페이지 이미지 VLM 직접 입력, 제안</text>
-<text x="60" y="750" font-size="13" font-weight="600" fill="#111111" text-anchor="start">지표</text>
-<text x="130" y="750" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효율: 페이지당 처리 시간, 최대 메모리, 추가 분석 영역 수, 미해결 연결 수</text>
-<text x="130" y="772" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효과: 질의 유형별 정답률(값, 조건 포함, 그림 연결, 조건 미지정), 질의당 입력 토큰</text>
-<line x1="1010" y1="654" x2="1010" y2="790" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1030" y="668" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">한계</text>
-<text x="1030" y="694" font-size="13" font-weight="400" fill="#111111" text-anchor="start">처음부터 누락된 객체와 잘못 인식된 관계는 관계 점검으로 발견되지 않음</text>
-<text x="1030" y="716" font-size="13" font-weight="400" fill="#111111" text-anchor="start">대응: 원본과의 표본 대조, 중요 값의 별도 확인, 미확정 관계는 보류</text>
-<text x="1030" y="738" font-size="13" font-weight="400" fill="#111111" text-anchor="start">OCR 재처리는 비용 절감이 없음. 절감은 페이지당 비용이 큰 VLM 처리에서 성립</text>
-<text x="1030" y="760" font-size="13" font-weight="400" fill="#111111" text-anchor="start">실측은 합성 문서 기준. 실제 문서는 다단 배치와 여러 쪽에 걸친 표로 더 어려움</text>
-<line x1="60" y1="810" x2="1540" y2="810" stroke="#111111" stroke-width="1.2"/>
-<text x="60" y="836" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">사용 기술: CPU 문서 파서(텍스트 레이어, 벡터 객체, 표 구조), 기본 OCR, 도형 검출(선, 원, 윤곽선), 소형 시각언어모델(VLM) 영역 재해석, 조건 연결 항목 저장, 소형 로컬 LLM 질의응답</text>
+<line x1="60" y1="652" x2="1540" y2="652" stroke="#B5B5B5" stroke-width="1"/>
+<text x="60" y="680" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">검증</text>
+<text x="60" y="706" font-size="13" font-weight="600" fill="#111111" text-anchor="start">비교군</text>
+<text x="130" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효율: 전체 페이지 OCR, 레이아웃 파서 기본 처리, 소형 VLM 전체 페이지 변환, 제안(기본 추출 뒤 문제 영역 한정 재처리)</text>
+<text x="130" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효과: 고정 길이 분할, 요소 단위 분할(마크다운 표와 각주), 페이지 전체 입력, 페이지 이미지 VLM 직접 입력, 제안</text>
+<text x="60" y="762" font-size="13" font-weight="600" fill="#111111" text-anchor="start">지표</text>
+<text x="130" y="762" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효율: 페이지당 처리 시간, 최대 메모리, 추가 분석 영역 수, 미해결 연결 수</text>
+<text x="130" y="784" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효과: 질의 유형별 정답률(값, 조건 포함, 그림 연결, 조건 미지정), 질의당 입력 토큰</text>
+<line x1="1010" y1="666" x2="1010" y2="802" stroke="#B5B5B5" stroke-width="1"/>
+<text x="1030" y="680" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">한계</text>
+<text x="1030" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">처음부터 누락된 객체와 잘못 인식된 관계는 관계 점검으로 발견되지 않음</text>
+<text x="1030" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">대응: 원본과의 표본 대조, 중요 값의 별도 확인, 미확정 관계는 보류</text>
+<text x="1030" y="750" font-size="13" font-weight="400" fill="#111111" text-anchor="start">OCR 재처리는 비용 절감이 없음. 절감은 페이지당 비용이 큰 VLM 처리에서 성립</text>
+<text x="1030" y="772" font-size="13" font-weight="400" fill="#111111" text-anchor="start">실측은 합성 문서 기준. 실제 문서는 다단 배치와 여러 쪽에 걸친 표로 더 어려움</text>
+<line x1="60" y1="822" x2="1540" y2="822" stroke="#111111" stroke-width="1.2"/>
+<text x="60" y="848" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">사용 기술: CPU 문서 파서(텍스트 레이어, 벡터 객체, 표 구조), 기본 OCR, 도형 검출(선, 원, 윤곽선), 소형 시각언어모델(VLM) 영역 재해석, 조건 연결 항목 저장, 소형 로컬 LLM 질의응답</text>
 </svg>
