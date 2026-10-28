@@ -1,13 +1,13 @@
+# 생성 데이터, 렌더 이미지, 캐시는 커밋하지 않음
 data/
 render/
+poc/*/data/
+poc/*/.cache/
+poc/*/render/
+poc/tmp/
 __pycache__/
 *.pyc
+.venv/
 node_modules/
 *.pptx~
 .DS_Store
-poc/v3/data/
-.venv/
-poc/tmp/
-poc/v4/.cache/
-poc/v4/data/
-poc/v5/data/
