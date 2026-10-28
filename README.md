@@ -7,7 +7,7 @@
 [v11 표와 이미지에 분산된 정보의 적용 범위를 보존하는 전처리 및 구조화 방안](docs/concept/v11-적용-범위-상속-참조-완결성.md)
 
 - 과제: 조건부 답변(ConditionalQA, ACL 2022)과 표와 본문의 결합(TAT-QA, ACL 2021)을 그림과 스캔이 포함된 기술문서로 확장
-- 핵심: 값이 놓인 문서 구조에서 적용 범위를 상속해 저장하고 문서 내부 참조의 완결성으로 추출 오류를 찾아 해당 영역에 한해 재추출하며, 질문 조건과 적용 범위가 일치하는 값을 로컬 LLM에 전달함
+- 핵심: 값이 놓인 문서 구조에서 적용 범위를 상속해 저장하고 문서 내부 참조의 완결성으로 추출 오류를 찾아 해당 영역에 한해 재추출하고 질문 조건과 적용 범위가 일치하는 값을 로컬 LLM에 전달함
 - 기반: 주요 학회 게재 방법(DocLayNet, TableFormer, Donut, TableRAG, Chain-of-Table, HippoRAG, Self-RAG, AWQ 등). 근거 목록은 [주요 학회 논문 근거](docs/research/학회-논문-근거.md)
 - 검증: 공개 원본(FAA AC 43.13-1B, NIST 시험 도면)과 합성 문서. [PoC v6](poc/v6/README.md)
 - 전체 그림: [docs/figures](docs/figures/README.md)
