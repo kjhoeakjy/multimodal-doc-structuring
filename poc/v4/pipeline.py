@@ -1,8 +1,8 @@
 """PoC v4: 체결 토크 사례.
 
 실험군
-  A 고정 길이 분할: 텍스트(pdftotext 또는 전체 페이지 OCR) → 300토큰 청크 → BM25 상위 3개 입력
-  C 제안: 1차 추출(디지털 파서 또는 기본 OCR+도형 검출) → 연결 확인 → 연결 누락 영역 재처리(고해상도 영역 OCR) → 구조화 → 질문에 필요한 관계만 입력
+  A 고정 길이 분할: 텍스트(pdftotext 또는 전체 페이지 OCR), 300토큰 청크, BM25 상위 3개 입력
+  C 제안: 1차 추출(디지털 파서 또는 기본 OCR과 도형 검출), 연결 확인, 연결 누락 영역 재처리(고해상도 영역 OCR), 구조화, 질문에 필요한 관계 입력
 지표: 근거 완전성(입력에 정답 도출에 필요한 정보가 모두 있는 비율), 규칙 판독 정답률, 질의당 입력 토큰, 문서당 처리 시간(CPU), 재처리 영역 수
 컨테이너에는 VLM·LLM이 없으므로 재처리는 고해상도 영역 OCR로 대신하고 답변 판독은 규칙으로 함. VLM 재처리와 LLM 판독은 노트북에서 교체 실행.
 """
@@ -283,7 +283,7 @@ def judge_a(q, ctx, doc):
     """고정 길이 분할 입력의 근거 완전성: 필요한 사실이 모두 문맥에 있는가(관대한 기준)."""
     item, part, cond = parse_q(q)
     f = next(x for x in docs[doc]["items"] if x["item"] == (item or q["item"]))
-    t = re.sub(r"\s+", " ", ctx)
+    t = re.sub(r"\s+", " ", re.sub(r"[|*]", " ", ctx))
     row_ok = re.search(rf"\b{f['item']}\s+{f['size']}\s+{f['dry']}\b", t) is not None
     fn_ok = re.search(rf"{f['size']}\s+{f['lub']}\s*N", t) is not None
     link_ok = False  # 체결부와 부품의 소속 관계는 텍스트에 없음(그림 정보)
@@ -293,7 +293,7 @@ def judge_a(q, ctx, doc):
 
 
 def flatten(ext, recs):
-    """실험군 B: 제안과 같은 1차 추출·재처리 결과를 평문으로 펼침(관계 연결 없음). 구조화 효과만 분리해 비교."""
+    """실험군 B: 제안과 같은 1차 추출·재처리 결과를 평문으로 펼침(관계 연결 없음). 구조화 효과를 분리해 비교."""
     lines = []
     if ext["unit"] == "pt":
         lines += [l["text"] for l in lines_of_pt(ext["words"])]
@@ -303,14 +303,42 @@ def flatten(ext, recs):
     lines += [" ".join(str(c) for c in r) for r in tab]
     fig = [w["text"] for w in ext["words"] if w.get("line", ("",))[0] == "fig"]
     lines += fig
-    # 체결부 번호는 그림 텍스트로만 존재(소속 관계 없음)
+    # 체결부 번호는 그림 텍스트로 존재(소속 관계 없음)
     lines += [r["target"].replace("item ", "callout ") for r in recs if r["attr"] == "attached to"]
     return "\n".join(lines)
 
 
+def element_units(ext, recs):
+    """실험군 D: 레이아웃 파서 결과를 요소 단위로 분할(문단, 그림 캡션과 라벨, 표와 각주). 표는 마크다운.
+    추출 품질은 제안과 같게 두고 분할 방식의 차이를 비교함."""
+    ls = lines_of_pt(ext["words"]) if ext["unit"] == "pt" else ext["lines"]
+    txt = [l["text"] for l in ls]
+    fi = next((i for i, t in enumerate(txt) if re.match(r"^FIGURE\s*\d", t.upper())), None)
+    ti = next((i for i, t in enumerate(txt) if re.match(r"^TABLE\s*\d", t.upper())), None)
+    ni = next((i for i, t in enumerate(txt) if t.upper().startswith("NOTES")), None)
+    units = []
+    if fi is not None: units.append("\n".join(txt[:fi]))
+    fig = [w["text"] for w in ext["words"] if w.get("line", ("",))[0] == "fig"] if ext["unit"] == "px" else \
+          [w["text"] for w in ext["words"] if re.match(r"^[A-Z]{2}-\d{3}$", w["text"])]
+    units.append((txt[fi] if fi is not None else "FIGURE 1") + "\n" + " ".join(fig))
+    items = sorted({r["target"] for r in recs if r["attr"] == "size"}, key=lambda x: int(x.split()[1]))
+    lub = {}
+    md = ["| ITEM | SIZE | TORQUE (N·m) |", "|---|---|---|"]
+    for it in items:
+        size = next(r["value"] for r in recs if r["target"] == it and r["attr"] == "size")
+        dry = next((r["value"] for r in recs if r["target"] == it and r["attr"] == "torque" and r["cond"] == "dry"), "")
+        l = next((r["value"] for r in recs if r["target"] == it and r["attr"] == "torque" and r["cond"] == "lubricated"), None)
+        if l: lub[size] = l
+        md.append(f"| {it.split()[1]} | {size} | {dry.replace(' N·m', '')}{'*' if l else ''} |")
+    fn = "* Dry thread. Lubricated: " + ", ".join(f"{k} {v}" for k, v in lub.items()) if lub else ""
+    units.append((txt[ti] if ti is not None else "TABLE 1") + "\n" + "\n".join(md) + ("\n" + fn if fn else ""))
+    if ni is not None: units.append("\n".join(txt[ni:]))
+    return units
+
+
 def main():
     out = {"docs": {}, "queries": []}
-    recs_by_doc = {}; ctx_by_doc = {}; ctxB_by_doc = {}
+    recs_by_doc = {}; ctx_by_doc = {}; ctxB_by_doc = {}; ctxD_by_doc = {}
     for d in truth["docs"]:
         st = {"reprocess_regions": 0, "reprocess_sec": 0.0}
         t = time.time(); txt = plain_text(d); st["A_sec"] = time.time() - t
@@ -320,6 +348,7 @@ def main():
         st["missing_after"] = missing; st["n_records"] = len(recs); st["scanned"] = d["scanned"]
         recs_by_doc[d["doc"]] = recs; out["docs"][d["doc"]] = st
         ctxB_by_doc[d["doc"]] = chunks(flatten(ext, recs))
+        ctxD_by_doc[d["doc"]] = element_units(ext, recs)
     for q in queries:
         d = q["doc"]
         ch = ctx_by_doc[d]; bm = BM25Okapi([c.lower().split() for c in ch])
@@ -327,21 +356,28 @@ def main():
         ctxA = "\n---\n".join(top)
         chB = ctxB_by_doc[d]; bmB = BM25Okapi([c.lower().split() for c in chB])
         ctxB = "\n---\n".join(bmB.get_top_n(q["question"].lower().split(), chB, n=3))
+        chD = ctxD_by_doc[d]; bmD = BM25Okapi([c.lower().split() for c in chD])
+        ctxD = "\n---\n".join(bmD.get_top_n(q["question"].lower().split(), chD, n=2))
+        ctxE = "\n".join(chD)   # 쪽 전체 입력(검색 없음)
         inpC, sel = compose_input(q, recs_by_doc[d])
         out["queries"].append({"type": q["type"], "doc": d, "scanned": docs[d]["scanned"],
                                "A_tokens": ntok(ctxA), "A_ok": judge_a(q, ctxA, d),
                                "B_tokens": ntok(ctxB), "B_ok": judge_a(q, ctxB, d),
+                               "D_tokens": ntok(ctxD), "D_ok": judge_a(q, ctxD, d),
+                               "E_tokens": ntok(ctxE), "E_ok": judge_a(q, ctxE, d),
                                "C_tokens": ntok(inpC), "C_ok": judge_c(q, sel), "C_input": inpC})
     json.dump(out, open(f"{DATA}/results.json", "w"), indent=1, ensure_ascii=False)
     # 요약
     import statistics as S
-    print("| 질의 유형 | 건수 | A 근거 완전성 | B 근거 완전성 | C 규칙 정답률 | A 토큰 | B 토큰 | C 토큰 |"); print("|---|---|---|---|---|---|---|---|")
+    G = ["A", "B", "D", "E", "C"]
+    print("| 질의 유형 | 건수 | " + " | ".join(f"{g} 정답" for g in G) + " | " + " | ".join(f"{g} 토큰" for g in G) + " |"); print("|---|---|" + "---|" * (2 * len(G)))
     for ty in ["value", "condition", "figure", "unspecified"]:
         qs = [x for x in out["queries"] if x["type"] == ty]
-        print(f"| {ty} | {len(qs)} | {sum(x['A_ok'] for x in qs)/len(qs):.0%} | {sum(x['B_ok'] for x in qs)/len(qs):.0%} | {sum(x['C_ok'] for x in qs)/len(qs):.0%} | {S.median(x['A_tokens'] for x in qs):.0f} | {S.median(x['B_tokens'] for x in qs):.0f} | {S.median(x['C_tokens'] for x in qs):.0f} |")
+        print(f"| {ty} | {len(qs)} | " + " | ".join(f"{sum(x[g + '_ok'] for x in qs)/len(qs):.0%}" for g in G) + " | " + " | ".join(f"{S.median(x[g + '_tokens'] for x in qs):.0f}" for g in G) + " |")
     for sc in [False, True]:
         qs = [x for x in out["queries"] if x["scanned"] == sc]
-        print(f"{'스캔본' if sc else '디지털'}: A {sum(x['A_ok'] for x in qs)/len(qs):.0%}, B {sum(x['B_ok'] for x in qs)/len(qs):.0%}, C {sum(x['C_ok'] for x in qs)/len(qs):.0%}, n={len(qs)}")
+        print(f"{'스캔본' if sc else '디지털'}: " + ", ".join(f"{g} {sum(x[g + '_ok'] for x in qs)/len(qs):.0%}" for g in G) + f", n={len(qs)}")
+    print("전체 토큰 평균: " + ", ".join(f"{g} {S.mean(x[g + '_tokens'] for x in out['queries']):.0f}" for g in G))
     ds = out["docs"]
     for sc in [False, True]:
         dd = [v for v in ds.values() if v["scanned"] == sc]
