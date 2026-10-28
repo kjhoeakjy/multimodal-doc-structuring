@@ -14,7 +14,7 @@
 | 경로 | 내용 |
 |---|---|
 | `docs/concept/` | 구상안(현행 v4 수정안, 이전 v1~v3·v4 초안) |
-| `docs/research/` | 인용 출처 검증 |
+| `docs/research/` | 인용 출처 검증, 논문 정독 노트(두 축 기준) |
 | `poc/archive/` | 이전 구상안 PoC(v1 실행 결과 포함, v2 미완성 초안) |
 | `deck/archive/` | 이전 1장 초안 |
 
@@ -31,3 +31,4 @@
 | 일자 | 내용 |
 |---|---|
 | 2026-10-28 | v1 개정·적용 조건 검증안 및 PoC, v2~v3 정보 단위안, v4 초안, v4 수정안(확정) |
+| 2026-10-28 | 논문 48편 정독 노트, 출처 검증 정정(LLMStructBench·ExtractBench·BLUEPRINT·MMTabReal) |
