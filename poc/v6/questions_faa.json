@@ -1,0 +1,22 @@
+[
+ {"type": "값 조회", "q": "What is the recommended installation torque for a 1/4-28 bolt with an MS20365 nut?", "expect": [50, 70], "forbid": [30, 40]},
+ {"type": "값 조회", "q": "What is the recommended installation torque for a 1/4-20 bolt with an MS20365 nut?", "expect": [40, 50], "forbid": [70]},
+ {"type": "값 조회", "q": "What is the recommended installation torque for a 3/8-24 bolt with an MS20364 nut?", "expect": [95, 110], "forbid": [160, 190]},
+ {"type": "값 조회", "q": "What is the maximum allowable tightening torque for a 3/8-24 bolt with an AN310 nut?", "expect": [390], "forbid": [240, 160]},
+ {"type": "값 조회", "q": "What is the maximum allowable tightening torque for a 5/16-18 bolt with an AN320 nut?", "expect": [100], "forbid": [160]},
+ {"type": "값 조회", "q": "What is the recommended installation torque for a 10-32 bolt with an AN310 nut?", "expect": [20, 25], "forbid": [12, 15]},
+ {"type": "값 조회", "q": "What is the recommended installation torque for a 10-24 bolt with an AN320 nut?", "expect": [12, 15], "forbid": [20, 25]},
+ {"type": "값 조회", "q": "What is the maximum allowable tightening torque for a 1/2-20 bolt with an MS20365 nut?", "expect": [1100], "forbid": [660]},
+ {"type": "값 조회", "q": "What is the recommended installation torque for a 7/16-14 bolt with an MS20365 nut?", "expect": [235, 255], "forbid": [450, 500]},
+ {"type": "값 조회", "q": "What is the recommended installation torque for a 9/16-18 bolt with an AN320 nut?", "expect": [480, 600], "forbid": [800, 1000]},
+ {"type": "값 조회", "q": "What is the maximum allowable tightening torque for a 3/4-10 bolt with an MS20364 nut?", "expect": [1500], "forbid": [2500]},
+ {"type": "값 조회", "q": "What is the recommended installation torque for a 5/8-11 bolt with an AN310 nut?", "expect": [700, 900], "forbid": [1100, 1300]},
+ {"type": "값 조회", "q": "What is the maximum allowable tightening torque for a 1-1/4-12 bolt with an AN310 nut?", "expect": [25000], "forbid": [15000]},
+ {"type": "값 조회", "q": "What is the maximum allowable tightening torque for an 8-32 bolt with an AN310 nut?", "expect": [20], "forbid": [12]},
+ {"type": "조건 미지정", "q": "What is the recommended installation torque for a 5/16-24 bolt?", "expect": [100, 140, 60, 85], "forbid": []},
+ {"type": "조건 미지정", "q": "What is the recommended installation torque for a 1/2-13 bolt?", "expect": [400, 480, 240, 290], "forbid": []},
+ {"type": "각주 조건", "q": "Is the recommended installation torque for a 1-14 bolt with an MS20364 nut a measured or an estimated value, and what is it?", "expect": [2200, 3300], "forbid": [], "keyword": "estimat"},
+ {"type": "각주 조건", "q": "Is the recommended installation torque for a 1-1/8-12 bolt with an AN320 nut a measured or an estimated value, and what is it?", "expect": [3000, 4200], "forbid": [], "keyword": "estimat"},
+ {"type": "적용 범위 밖 조건", "q": "What is the recommended installation torque for a 1/4-28 bolt with an MS20365 nut on lubricated threads?", "expect": [], "forbid": [], "abstain": true},
+ {"type": "적용 범위 밖 조건", "q": "What is the recommended installation torque for a 3/8-24 bolt with an MS20364 nut on threads coated with anti-seize compound?", "expect": [], "forbid": [], "abstain": true}
+]

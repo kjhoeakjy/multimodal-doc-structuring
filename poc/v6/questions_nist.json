@@ -1,0 +1,16 @@
+[
+ {"doc": "ftc-06", "type": "기호 포함 주기", "q": "In drawing FTC-06, what geometric tolerance applies to all untoleranced surfaces?", "kw": ["profile", ".05"]},
+ {"doc": "ftc-06", "type": "일반 주기", "q": "In drawing FTC-06, what are the units?", "kw": ["inch"]},
+ {"doc": "ftc-07", "type": "기호 포함 주기", "q": "In drawing FTC-07, what geometric tolerance applies to all untoleranced surfaces?", "kw": ["profile", ".06"]},
+ {"doc": "ftc-08", "type": "기호 포함 주기", "q": "In drawing FTC-08, what geometric tolerance applies to all untoleranced surfaces?", "kw": ["profile", ".06"]},
+ {"doc": "ftc-08", "type": "적용 조건 주기", "q": "In drawing FTC-08, under what part condition do dimensioning and tolerancing apply?", "kw": ["restrain"]},
+ {"doc": "ftc-08", "type": "일반 주기", "q": "In drawing FTC-08, what are the units?", "kw": ["inch"]},
+ {"doc": "ftc-09", "type": "적용 조건 주기", "q": "In drawing FTC-09, what units apply to dimension values shown in square brackets?", "kw": ["millimet"]},
+ {"doc": "ftc-09", "type": "일반 주기", "q": "In drawing FTC-09, what is the material?", "kw": ["304", "a240"]},
+ {"doc": "ftc-10", "type": "기호 포함 주기", "q": "In drawing FTC-10, what geometric tolerance applies to all untoleranced surfaces?", "kw": ["profile", "1.5"]},
+ {"doc": "ftc-10", "type": "적용 조건 주기", "q": "In drawing FTC-10, what does ASME Y14.41-2003 apply to?", "kw": ["movable datum target"]},
+ {"doc": "ftc-11", "type": "적용 조건 주기", "q": "In drawing FTC-11, in what state do directly-toleranced dimensions and tolerances apply?", "kw": ["free state"]},
+ {"doc": "ftc-11", "type": "일반 주기", "q": "In drawing FTC-11, what are the units?", "kw": ["millimet"]},
+ {"doc": "ftc-11", "type": "기록 없는 항목", "q": "In drawing FTC-11, what geometric tolerance applies to all untoleranced surfaces?", "kw": [], "abstain": true},
+ {"doc": "ftc-09", "type": "기록 없는 항목", "q": "In drawing FTC-09, what geometric tolerance applies to all untoleranced surfaces?", "kw": [], "abstain": true}
+]
