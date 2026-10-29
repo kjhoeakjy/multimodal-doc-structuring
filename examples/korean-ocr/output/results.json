@@ -1,0 +1,79 @@
+{
+ "clean200": {
+  "cer": 0.0897,
+  "chars": 468,
+  "num_tokens": 22,
+  "num_tokens_hit": 19,
+  "time_s": 41.5,
+  "boxes": 37,
+  "conf": 0.707,
+  "threads": 4,
+  "mode": "default"
+ },
+ "scan200": {
+  "cer": 0.1004,
+  "chars": 468,
+  "num_tokens": 22,
+  "num_tokens_hit": 17,
+  "time_s": 25.5,
+  "boxes": 39,
+  "conf": 0.735,
+  "threads": 4,
+  "mode": "default"
+ },
+ "scan150": {
+  "cer": 0.1154,
+  "chars": 468,
+  "num_tokens": 22,
+  "num_tokens_hit": 14,
+  "time_s": 11.5,
+  "boxes": 38,
+  "conf": 0.7,
+  "threads": 4,
+  "mode": "default"
+ },
+ "scan100": {
+  "cer": 0.265,
+  "chars": 468,
+  "num_tokens": 22,
+  "num_tokens_hit": 5,
+  "time_s": 7.1,
+  "boxes": 37,
+  "conf": 0.574,
+  "threads": 4,
+  "mode": "default"
+ },
+ "scan200_det_half": {
+  "cer": 0.0983,
+  "chars": 468,
+  "num_tokens": 22,
+  "num_tokens_hit": 17,
+  "time_s": 6.4,
+  "boxes": 38,
+  "conf": 0.717,
+  "threads": 4,
+  "mode": "half"
+ },
+ "scan200_threads1": {
+  "cer": 0.1004,
+  "chars": 468,
+  "num_tokens": 22,
+  "num_tokens_hit": 17,
+  "time_s": 53.2,
+  "boxes": 39,
+  "conf": 0.735,
+  "threads": 1,
+  "mode": "default"
+ },
+ "scan200_batch32": {
+  "cer": 0.1004,
+  "chars": 468,
+  "num_tokens": 22,
+  "num_tokens_hit": 17,
+  "time_s": 21.0,
+  "boxes": 39,
+  "conf": 0.735,
+  "threads": 4,
+  "mode": "default"
+ }
+}

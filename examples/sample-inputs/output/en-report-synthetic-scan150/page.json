@@ -1,0 +1,432 @@
+{
+ "tables": [
+  {
+   "box": [
+    114,
+    340,
+    1120,
+    514
+   ],
+   "n_rows": 4,
+   "n_cols": 5,
+   "rows": [
+    [
+     "Actuator",
+     "Part number",
+     "Leakage cclmin",
+     "Action",
+     ""
+    ],
+    [
+     "UH MLG",
+     "11443200-5",
+     "3.2",
+     "Replace",
+     ""
+    ],
+    [
+     "RIH MLG",
+     "11443200-5",
+     "1.9",
+     "Monitor",
+     ""
+    ],
+    [
+     "NLG steering",
+     "114A3410-2",
+     "1.1",
+     "None",
+     ""
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "box": [
+    120,
+    645,
+    588,
+    647
+   ],
+   "area_mm2": 19.1,
+   "label": 1,
+   "table": null
+  },
+  {
+   "box": [
+    173,
+    689,
+    686,
+    827
+   ],
+   "area_mm2": 68.8,
+   "label": 3,
+   "table": null
+  }
+ ],
+ "figure_rows": [],
+ "summary": {
+  "tables": 1,
+  "cells": 20,
+  "figures": 2,
+  "figures_in_cells": 0,
+  "rows_with_figure": 0,
+  "mean_conf": 0.82
+ },
+ "texts": [
+  {
+   "text": "Hydraulic System Inspection Summary",
+   "conf": 0.99,
+   "box": [
+    110,
+    109,
+    697,
+    166
+   ]
+  },
+  {
+   "text": "This summary records the third quarter inspection of the main and nose landing gear hydraulic",
+   "conf": 0.84,
+   "box": [
+    111,
+    187,
+    1034,
+    223
+   ]
+  },
+  {
+   "text": "actuators. Internal",
+   "conf": 0.94,
+   "box": [
+    113,
+    222,
+    296,
+    248
+   ]
+  },
+  {
+   "text": "Ileakage was measured three times per actuator at 3000 psi with fluid at 40 C",
+   "conf": 0.67,
+   "box": [
+    288,
+    217,
+    1046,
+    255
+   ]
+  },
+  {
+   "text": "Results are listed in Table 1 and plotted in Figure 1.",
+   "conf": 0.77,
+   "box": [
+    113,
+    254,
+    620,
+    285
+   ]
+  },
+  {
+   "text": "Actuator",
+   "conf": 1.0,
+   "box": [
+    122,
+    353,
+    211,
+    379
+   ]
+  },
+  {
+   "text": "Part number",
+   "conf": 1.0,
+   "box": [
+    434,
+    353,
+    558,
+    379
+   ]
+  },
+  {
+   "text": "Leakage cclmin",
+   "conf": 0.96,
+   "box": [
+    661,
+    351,
+    817,
+    384
+   ]
+  },
+  {
+   "text": "Action",
+   "conf": 1.0,
+   "box": [
+    893,
+    353,
+    961,
+    379
+   ]
+  },
+  {
+   "text": "UH MLG",
+   "conf": 0.42,
+   "box": [
+    121,
+    394,
+    207,
+    420
+   ]
+  },
+  {
+   "text": "11443200-5",
+   "conf": 0.69,
+   "box": [
+    434,
+    395,
+    550,
+    421
+   ]
+  },
+  {
+   "text": "3.2",
+   "conf": 0.84,
+   "box": [
+    662,
+    395,
+    698,
+    421
+   ]
+  },
+  {
+   "text": "Replace",
+   "conf": 0.47,
+   "box": [
+    891,
+    395,
+    973,
+    426
+   ]
+  },
+  {
+   "text": "RIH MLG",
+   "conf": 0.68,
+   "box": [
+    120,
+    435,
+    211,
+    462
+   ]
+  },
+  {
+   "text": "11443200-5",
+   "conf": 0.75,
+   "box": [
+    434,
+    436,
+    549,
+    462
+   ]
+  },
+  {
+   "text": "1.9",
+   "conf": 1.0,
+   "box": [
+    664,
+    436,
+    698,
+    462
+   ]
+  },
+  {
+   "text": "Monitor",
+   "conf": 0.99,
+   "box": [
+    891,
+    436,
+    965,
+    462
+   ]
+  },
+  {
+   "text": "NLG steering",
+   "conf": 1.0,
+   "box": [
+    120,
+    476,
+    246,
+    507
+   ]
+  },
+  {
+   "text": "114A3410-2",
+   "conf": 0.71,
+   "box": [
+    435,
+    477,
+    549,
+    503
+   ]
+  },
+  {
+   "text": "1.1",
+   "conf": 0.65,
+   "box": [
+    664,
+    479,
+    697,
+    503
+   ]
+  },
+  {
+   "text": "None",
+   "conf": 1.0,
+   "box": [
+    891,
+    479,
+    946,
+    503
+   ]
+  },
+  {
+   "text": "Table 1. Leakage by actuator (mean of three measurements)",
+   "conf": 0.84,
+   "box": [
+    113,
+    525,
+    598,
+    554
+   ]
+  },
+  {
+   "text": "limit 4 0_cclmin",
+   "conf": 0.39,
+   "box": [
+    590,
+    625,
+    704,
+    650
+   ]
+  },
+  {
+   "text": "01",
+   "conf": 1.0,
+   "box": [
+    163,
+    909,
+    188,
+    929
+   ]
+  },
+  {
+   "text": "02",
+   "conf": 1.0,
+   "box": [
+    288,
+    909,
+    316,
+    929
+   ]
+  },
+  {
+   "text": "03",
+   "conf": 0.98,
+   "box": [
+    414,
+    910,
+    439,
+    927
+   ]
+  },
+  {
+   "text": "04",
+   "conf": 1.0,
+   "box": [
+    539,
+    910,
+    564,
+    927
+   ]
+  },
+  {
+   "text": "03",
+   "conf": 1.0,
+   "box": [
+    663,
+    909,
+    690,
+    929
+   ]
+  },
+  {
+   "text": "1. UHMLG actuator leakage trend over five inspections",
+   "conf": 0.66,
+   "box": [
+    168,
+    952,
+    613,
+    980
+   ]
+  },
+  {
+   "text": "Conclusion: The left main landing gear actuator (11443200-5) has reached 80 percent of the allowable",
+   "conf": 0.62,
+   "box": [
+    112,
+    1001,
+    1112,
+    1034
+   ]
+  },
+  {
+   "text": "leakage and is scheduled for replacement before the next inspection interval. A functional test and",
+   "conf": 0.74,
+   "box": [
+    108,
+    1030,
+    1069,
+    1068
+   ]
+  },
+  {
+   "text": "leakage re-measurement follow the replacement:",
+   "conf": 0.74,
+   "box": [
+    108,
+    1062,
+    595,
+    1100
+   ]
+  },
+  {
+   "text": "Synthetic document; 2026-10-29",
+   "conf": 0.66,
+   "box": [
+    113,
+    1648,
+    362,
+    1676
+   ]
+  },
+  {
+   "text": "Figure",
+   "conf": 1.0,
+   "box": [
+    110,
+    950,
+    173,
+    983
+   ]
+  }
+ ],
+ "times": {
+  "ocr": 0.0,
+  "structure": 0.0,
+  "total": 0.0
+ },
+ "image": {
+  "path": "input_gray.png",
+  "px": [
+   1240,
+   1755
+  ],
+  "dpi": 150
+ }
+}

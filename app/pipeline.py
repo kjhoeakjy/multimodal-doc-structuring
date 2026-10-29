@@ -1,0 +1,542 @@
+"""문서 이미지 한 장을 받아 입력 판별, 요소 추출, 관계 그래프, 직렬화, 색인까지 수행하는 처리 묶음.
+
+examples/public-documents의 추출 코드를 그대로 호출함. 자원(코어·메모리)에 따라 스레드 수, 인식 배치,
+입력 크기를 정하고 처리 중 메모리를 감시함. 사용자가 고르는 설정은 없음.
+"""
+import os, sys, json, time, re, math, threading, collections
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+PID = os.path.join(ROOT, 'examples', 'public-documents', 'pid')
+PAGES = os.path.join(ROOT, 'examples', 'public-documents', 'pages')
+for p in (PID, PAGES):
+    if p not in sys.path:
+        sys.path.insert(0, p)
+
+import numpy as np, cv2
+import extract_graph as eg
+import raster_graph as rg
+import real_docs as rd
+import serialize as sz
+
+try:
+    import psutil
+except ImportError:
+    psutil = None
+
+PART_NO = re.compile(r'^[A-Z]{1,4}\d{2,}[A-Z0-9/.-]*$')      # 부품 번호 형식(AN3-5A, NAS6204-10, MS20365-428)
+WORD = re.compile(r'[A-Za-z가-힣0-9][A-Za-z가-힣0-9.\-/]*')
+HANGUL = re.compile(r'[가-힣]')
+PAPER_SHORT_MM = [('A4', 210), ('A3', 297), ('A2', 420), ('A1', 594), ('A0', 841)]
+TEXT_BOX_MM = 4.5          # 문자 상자 높이 가정(본문 10~11 pt, 도면 2.5~3.5 mm 글자의 상자 높이 중앙값)
+
+
+# ---------------- 자원 ----------------
+class Resources:
+    """코어·메모리를 읽어 처리 설정을 정함. 부하가 있으면 느린 쪽을 고름."""
+    def __init__(self):
+        self.cores = os.cpu_count() or 1
+
+    def snapshot(self):
+        s = dict(cores=self.cores, total_gb=None, avail_gb=None, cpu_busy=None)
+        if psutil:
+            vm = psutil.virtual_memory()
+            s.update(total_gb=round(vm.total / 2**30, 1), avail_gb=round(vm.available / 2**30, 1),
+                     cpu_busy=round(psutil.cpu_percent(interval=0.3), 0))
+        elif os.path.exists('/proc/meminfo'):
+            m = dict(l.split(':')[0:2] for l in open('/proc/meminfo') if ':' in l)
+            s.update(total_gb=round(int(m['MemTotal'].split()[0]) / 2**20, 1),
+                     avail_gb=round(int(m['MemAvailable'].split()[0]) / 2**20, 1))
+        return s
+
+    def plan(self):
+        s = self.snapshot(); why = []
+        threads = max(1, self.cores // 2)
+        why.append(f"코어 {self.cores}개 중 {threads}개 사용(절반)")
+        if s['cpu_busy'] is not None and s['cpu_busy'] > 50:
+            threads = max(1, threads // 2); why.append(f"다른 작업 CPU {s['cpu_busy']:.0f}% → 스레드 {threads}")
+        avail = s['avail_gb'] if s['avail_gb'] is not None else 4.0
+        # 실측: 12 MP 도면 한 장 처리의 최대 상주 메모리 4.8 GB(문자 인식 모델 2종 포함)
+        if avail < 3:
+            batch, max_mp = 1, 2.0
+        elif avail < 5:
+            batch, max_mp = 2, 4.0
+        elif avail < 8:
+            batch, max_mp = 4, 8.0
+        else:
+            batch, max_mp = 8, 12.0
+        why.append(f"가용 메모리 {avail} GB → 인식 배치 {batch}, 입력 상한 {max_mp:g} MP")
+        why.append("문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업")
+        return dict(threads=threads, batch=batch, max_mp=max_mp, det_scale=1.0, snapshot=s, why=why)
+
+
+class MemWatch:
+    """처리 중 메모리 감시. 가용 메모리가 바닥나면 경고 표시."""
+    def __init__(self, floor_gb=0.5):
+        self.floor = floor_gb; self.peak_rss = 0.0; self.min_avail = None; self.abort = False; self._stop = False
+        self.t = threading.Thread(target=self.run, daemon=True)
+
+    def run(self):
+        if not psutil:
+            return
+        proc = psutil.Process()
+        while not self._stop:
+            rss = proc.memory_info().rss / 2**30; av = psutil.virtual_memory().available / 2**30
+            self.peak_rss = max(self.peak_rss, rss)
+            self.min_avail = av if self.min_avail is None else min(self.min_avail, av)
+            if av < self.floor:
+                self.abort = True
+            time.sleep(0.5)
+
+    def start(self): self.t.start(); return self
+    def stop(self): self._stop = True
+
+
+# ---------------- OCR ----------------
+_READERS = {}
+_LOCK = threading.Lock()
+
+def get_reader(langs):
+    key = tuple(langs)
+    with _LOCK:
+        if key not in _READERS:
+            import easyocr
+            _READERS[key] = easyocr.Reader(list(langs), gpu=False, verbose=False)
+        return _READERS[key]
+
+
+class TunedReader:
+    """배치 크기를 적용하고 언어를 자동으로 고르는 문자 인식기.
+
+    탐지는 한 번(원본 해상도), 인식은 영어 모델로 먼저 수행함. 큰 문자 상자 표본을 한글 모델로 읽어
+    한글이 나오면 전체를 한글 모델로 다시 읽고, 상자별로 한글이 든 결과는 한글 모델, 나머지는 영어 모델을 씀
+    (도면 실측: 한글 모델만 쓰면 영문 도면의 복원율 0.44→0.33으로 떨어짐).
+    """
+    def __init__(self, batch=8):
+        self.batch = batch
+        self.r_en = get_reader(['en']); self.r_ko = get_reader(['ko', 'en'])
+        self.lang_used = 'en'
+
+    def readtext(self, img, **kw):
+        kw.pop('batch_size', None)
+        det_kw = {k: v for k, v in kw.items() if k in ('min_size', 'text_threshold', 'low_text', 'link_threshold', 'mag_ratio')}
+        hl, fl = self.r_en.detect(img, **det_kw); hl, fl = hl[0], fl[0]
+        res_en = self.r_en.recognize(img, horizontal_list=hl, free_list=fl, batch_size=self.batch, paragraph=False)
+        sample = sorted(hl, key=lambda b: -(b[1] - b[0]) * (b[3] - b[2]))[:12]
+        if sample:
+            probe = self.r_ko.recognize(img, horizontal_list=sample, free_list=[], batch_size=self.batch, paragraph=False)
+            if any(HANGUL.search(t) and c >= 0.4 for _, t, c in probe):
+                res_ko = self.r_ko.recognize(img, horizontal_list=hl, free_list=fl, batch_size=self.batch, paragraph=False)
+                if len(res_ko) == len(res_en):
+                    res_en = [ko if HANGUL.search(ko[1]) else en for en, ko in zip(res_en, res_ko)]
+                    self.lang_used = 'ko+en'
+        return res_en
+
+
+def run_ocr(gray, reader, prefix):
+    """문자 인식 한 번. 도면 경로(원시 결과)와 쪽 경로(상자 목록) 두 형식으로 저장."""
+    res = reader.readtext(gray, paragraph=False, min_size=4, text_threshold=0.6, low_text=0.3, mag_ratio=1.5)
+    raw = [[[[float(v) for v in p] for p in q], s, float(c)] for q, s, c in res]
+    json.dump(raw, open(prefix + '_ocr.json', 'w'))
+    texts = []
+    for q, s, c in res:
+        s = s.strip()
+        if not s or c < 0.2:
+            continue
+        xs = [p[0] for p in q]; ys = [p[1] for p in q]
+        texts.append(dict(text=s, conf=round(float(c), 2), box=[int(min(xs)), int(min(ys)), int(max(xs)), int(max(ys))]))
+    return raw, texts
+
+
+# ---------------- 입력 판별 ----------------
+def image_dpi(path):
+    """파일 메타데이터의 해상도. 없거나 기본값(72·96)이거나 비현실적이면 None."""
+    try:
+        from PIL import Image
+        d = Image.open(path).info.get('dpi')
+        v = float(d[0]) if d else 0
+        if 100 <= v <= 1200 and round(v) not in (96,):
+            return int(round(v))
+    except Exception:
+        pass
+    return None
+
+
+def is_photo(gray):
+    blur = cv2.GaussianBlur(gray, (5, 5), 0)
+    mid = float(((blur > 60) & (blur < 200)).mean())
+    _, ink = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    ink_ratio = float((ink > 0).mean())
+    return (mid > 0.45 or ink_ratio > 0.35), dict(midtone=round(mid, 3), ink=round(ink_ratio, 3))
+
+
+def estimate_dpi(W, H, texts, meta_dpi):
+    """해상도 추정: 메타데이터 → 문자 상자 높이와 표준 용지 크기 대조 → 용지 가정."""
+    if meta_dpi:
+        return meta_dpi, '파일 메타데이터'
+    short = min(W, H)
+    hs = sorted(t['box'][3] - t['box'][1] for t in texts if t['conf'] >= 0.4)
+    if len(hs) >= 10:
+        dpi_text = hs[len(hs) // 2] / (TEXT_BOX_MM / 25.4)
+        for name, mm in PAPER_SHORT_MM:                       # 작은 용지부터, 문자 추정과 35% 안에서 맞는 용지
+            d = short * 25.4 / mm
+            if abs(math.log(dpi_text / d)) <= 0.35:
+                return int(round(d)), f'문자 높이 {TEXT_BOX_MM} mm 가정과 {name} 용지 일치'
+        return int(round(dpi_text)), f'문자 높이 {TEXT_BOX_MM} mm 가정'
+    best = min(PAPER_SHORT_MM, key=lambda p: abs(math.log((short * 25.4 / p[1]) / 150)))
+    return int(round(short * 25.4 / best[1])), f'문자 적음, {best[0]} 용지 150 dpi 근방 가정'
+
+
+def classify(gray, texts, dpi):
+    """잉크 구성(문자·축 평행 긴 선·그 밖)으로 쪽·도식·도해를 가름."""
+    H, W = gray.shape; k = 25.4 / dpi
+    _, ink = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU); tot = max(1, int((ink > 0).sum()))
+    tm = np.zeros_like(ink)
+    for t in texts:
+        b = t['box']; cv2.rectangle(tm, (b[0] - 2, b[1] - 2), (b[2] + 2, b[3] + 2), 255, -1)
+    hm = rd.axis_mask(ink, k, 15.0, 'h'); vm = rd.axis_mask(ink, k, 8.0, 'v'); am = cv2.bitwise_or(hm, vm)
+    text_ink = ((ink > 0) & (tm > 0)).sum() / tot
+    axis = ((ink > 0) & (am > 0) & (tm == 0)).sum() / tot
+    free = max(0.0, 1 - text_ink - axis)
+    hl, _ = rg.axis_lines(ink, dpi, eg.LONG, 'h'); vl, _ = rg.axis_lines(ink, dpi, eg.LONG, 'v')
+    fb = rg.inner_frame(hl + vl, W * k, H * k); inner = fb.buffer(-1.0)
+    long_in = sum(1 for l in hl + vl if l['geom'].within(inner))
+    # 큰 원(반지름 8 mm 이상): 기계 도면의 특징. 허프 변환 투표 문턱을 높여 선 교차·둥근 모서리는 세지 않음
+    # (실측: 플랜지 도면 4개, P&ID 0개, 등각 도면 0개, 표·보고서 0개)
+    small = cv2.GaussianBlur(cv2.resize(gray, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA), (3, 3), 0)
+    rmin = max(4, int(8.0 / k * 0.5))
+    circles = cv2.HoughCircles(small, cv2.HOUGH_GRADIENT, dp=1, minDist=rmin, param1=150, param2=150, minRadius=rmin, maxRadius=int(min(small.shape) / 2))
+    n_circ = 0 if circles is None else int(circles.shape[1])
+    f = dict(text_ink=round(float(text_ink), 2), axis_ink=round(float(axis), 2), free_ink=round(float(free), 2), long_lines=int(long_in), big_circles=n_circ, texts=len(texts))
+    if text_ink >= 0.6 or (text_ink >= 0.4 and free <= 0.25):
+        f['reason'] = f'문자 잉크 {text_ink:.0%}, 그 밖 잉크 {free:.0%}'; return 'page', f
+    if axis >= 0.45 and (long_in >= 80 or (long_in >= 40 and n_circ == 0)):
+        f['reason'] = f'축 평행 긴 선 {long_in}개, 선 잉크 {axis:.0%}'; return 'drawing', f
+    f['reason'] = f'문자 잉크 {text_ink:.0%}, 큰 원 {n_circ}개, 긴 선 {long_in}개'; return 'illustration', f
+
+
+# ---------------- 임베딩 ----------------
+_EMBED = {}
+
+def embed_images(crops):
+    """경량 이미지 임베딩(공개 가중치 분류망의 마지막 특징). 모델이 없으면 사유를 돌려줌."""
+    if 'model' not in _EMBED:
+        try:
+            import torch, torchvision
+            m = torchvision.models.resnet18(weights=torchvision.models.ResNet18_Weights.DEFAULT)
+            m.fc = torch.nn.Identity(); m.eval()
+            _EMBED['model'] = m; _EMBED['torch'] = torch
+        except Exception as e:  # 가중치 내려받기 불가(폐쇄망) 등
+            msg = str(e).split('\n')[0]
+            _EMBED['model'] = None
+            _EMBED['err'] = '가중치 내려받기 실패(외부망 차단). 가중치 파일을 torch 캐시 폴더에 두면 동작' if any(w in msg for w in ('urlopen', '403', 'Connection', 'resolve', 'timed out')) else msg[:160]
+    if _EMBED['model'] is None:
+        return None, _EMBED.get('err', '모델 없음')
+    torch = _EMBED['torch']; m = _EMBED['model']
+    mean = np.array([0.485, 0.456, 0.406], np.float32); std = np.array([0.229, 0.224, 0.225], np.float32)
+    vecs = []
+    with torch.no_grad():
+        for c in crops:
+            im = cv2.resize(cv2.cvtColor(c, cv2.COLOR_GRAY2RGB) if c.ndim == 2 else c, (224, 224)).astype(np.float32) / 255
+            x = torch.from_numpy(((im - mean) / std).transpose(2, 0, 1)).unsqueeze(0)
+            v = m(x)[0].numpy(); v = v / (np.linalg.norm(v) + 1e-9); vecs.append(v)
+    return vecs, None
+
+
+# ---------------- 부분 그래프 질의 ----------------
+def subgraph(g, tag, depth=3):
+    nodes = {n['id']: n for n in g['nodes']}
+    sz.NOTES.clear()
+    def lift(nid):
+        n = nodes.get(nid); return n['attached_to'] if n and n.get('attached_to') else nid
+    def label(nid):
+        return f"{nid}[{nodes[nid]['role']} {sz.name_of(nodes[nid])}]" if nid in nodes else nid
+    def where(nid):
+        if nid in nodes:
+            return 'bbox=(' + ','.join(f"{v:.1f}" for v in nodes[nid]['bbox']) + ')'
+        j = next((j for j in g['junctions'] if j['id'] == nid), None)
+        return f"pt=({j['pt'][0]:.1f},{j['pt'][1]:.1f})" if j else ''
+    start = next((n['id'] for n in g['nodes'] if sz.name_of(n) == tag or tag in n['texts']), None)
+    if not start:
+        return dict(found=False, lines=[f"'{tag}' 이름의 요소 없음"], nodes=[], runs=[])
+    start = lift(start)
+    adj = collections.defaultdict(list)
+    for r in g['runs']:
+        a, b = lift(r['a']), lift(r['b'])
+        if a != b:
+            adj[a].append((b, r)); adj[b].append((a, r))
+    seen, frontier, sub, used = {start}, [start], [], set()
+    for _ in range(depth):
+        nxt = []
+        for v in frontier:
+            for w, r in adj[v]:
+                if r['id'] in used:
+                    continue
+                used.add(r['id']); sub.append((v, w, r))
+                if w not in seen:
+                    seen.add(w); nxt.append(w)
+        frontier = nxt
+    lines = [f"# 질의 부분 그래프: {tag} 기준 {depth}단계, 간선 {len(sub)}"]
+    for v, w, r in sub:
+        txt = f"({'|'.join(r['texts'])})" if r['texts'] else ''
+        lines.append(f"{label(v)} --{r['id']}{txt} {r['kind']}--> {label(w)} 근거={where(v)} {where(w)}")
+    return dict(found=True, start=start, lines=lines, nodes=sorted(seen), runs=sorted(used))
+
+
+# ---------------- 색인 ----------------
+def build_index(serial_lines, nodes, texts_flat, tables):
+    toks = collections.Counter(t.lower() for l in serial_lines for t in WORD.findall(l))
+    exact = []
+    for n in nodes:
+        for t in n.get('texts', []):
+            if eg.TAG_EQUIP.match(t) or eg.TAG_LINE.match(t + ' ') or PART_NO.match(t):
+                exact.append(dict(key=t, target=n['id'], bbox=n['bbox']))
+    for t in texts_flat:
+        s = t['text']
+        if PART_NO.match(s) or eg.TAG_EQUIP.match(s):
+            if not any(e['key'] == s for e in exact):
+                exact.append(dict(key=s, target='text', bbox=t.get('bbox') or t.get('box')))
+    rows = []
+    for ti, tb in enumerate(tables):
+        for ri, r in enumerate(tb['rows']):
+            rows.append(dict(table=f"t{ti}", row=ri, text=' | '.join(c for c in r)))
+    return dict(bm25=dict(tokens=sum(toks.values()), vocab=len(toks), top=toks.most_common(40)), exact=exact, rows=rows)
+
+
+# ---------------- 본문 묶기 ----------------
+def paragraphs(texts, exclude_boxes, k):
+    """표 밖 OCR 문자를 줄과 문단으로 묶음(좌표 px)."""
+    items = []
+    for t in texts:
+        b = t['box']; cx, cy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
+        if any(x0 <= cx <= x1 and y0 <= cy <= y1 for x0, y0, x1, y1 in exclude_boxes):
+            continue
+        items.append(t)
+    items.sort(key=lambda t: (t['box'][1], t['box'][0]))
+    lines = []
+    for t in items:
+        h = max(1, t['box'][3] - t['box'][1])
+        if lines and abs(lines[-1]['y'] - (t['box'][1] + t['box'][3]) / 2) < 0.6 * h:
+            lines[-1]['items'].append(t); lines[-1]['y'] = (lines[-1]['y'] + (t['box'][1] + t['box'][3]) / 2) / 2
+        else:
+            lines.append(dict(y=(t['box'][1] + t['box'][3]) / 2, h=h, items=[t]))
+    paras = []
+    for l in lines:
+        l['items'].sort(key=lambda t: t['box'][0])
+        s = ' '.join(t['text'] for t in l['items'])
+        b = [min(t['box'][0] for t in l['items']), min(t['box'][1] for t in l['items']), max(t['box'][2] for t in l['items']), max(t['box'][3] for t in l['items'])]
+        if paras and l['y'] - paras[-1]['last_y'] < 1.8 * l['h']:
+            paras[-1]['text'] += ' ' + s; paras[-1]['last_y'] = l['y']
+            pb = paras[-1]['box']; paras[-1]['box'] = [min(pb[0], b[0]), min(pb[1], b[1]), max(pb[2], b[2]), max(pb[3], b[3])]
+        else:
+            paras.append(dict(text=s, box=b, last_y=l['y']))
+    for p in paras:
+        p.pop('last_y'); p['bbox_mm'] = [round(v * k, 1) for v in p['box']]
+    return paras
+
+
+# ---------------- 주 처리 ----------------
+class Job:
+    def __init__(self, job_dir, name, data, opts, resources, progress):
+        self.dir, self.name, self.data, self.opts, self.res, self.progress = job_dir, name, data, opts, resources, progress
+        self.times = collections.OrderedDict()
+
+    def step(self, name):
+        self.progress(name)
+        return time.time()
+
+    def done(self, name, t0):
+        self.times[name] = round(time.time() - t0, 1)
+
+    def run(self):
+        import torch
+        plan = self.res.plan()
+        torch.set_num_threads(plan['threads'])
+        watch = MemWatch().start()
+        out = dict(name=self.name, plan=plan, steps=[])
+        try:
+            ext = os.path.splitext(self.name)[1].lower()
+            src = os.path.join(self.dir, 'input' + ext)
+            open(src, 'wb').write(self.data)
+            self.prepare(src, ext, plan, out)
+            if out['kind'] == 'vector':
+                self.vector(out)
+            elif out['kind'] == 'drawing':
+                self.drawing(out)
+            elif out['kind'] == 'page':
+                self.page(out)
+            elif out['kind'] == 'illustration':
+                self.illustration(out)
+            else:
+                self.photo(out)
+            if watch.abort:
+                out['warning'] = '가용 메모리가 0.5 GB 아래로 내려감'
+        finally:
+            watch.stop()
+        for key in ('png', 'svg'):
+            if out.get(key):
+                out[key] = os.path.basename(out[key])
+        out['times'] = self.times
+        out['memory'] = dict(peak_rss_gb=round(watch.peak_rss, 2), min_avail_gb=(round(watch.min_avail, 2) if watch.min_avail is not None else None))
+        out['resources_after'] = self.res.snapshot()
+        json.dump(out, open(os.path.join(self.dir, 'result.json'), 'w'), ensure_ascii=False, indent=1, default=str)
+        return out
+
+    # ---- 입력: 형식, 사진 여부, 기울기 보정, 문자 인식, 해상도, 종류 ----
+    def prepare(self, src, ext, plan, out):
+        t0 = self.step('입력 판별')
+        if ext == '.svg':
+            out.update(kind='vector', svg=src, detect=dict(reason='벡터 SVG'), dpi=None); self.done('입력 판별', t0); return
+        dpi_hint = None
+        if ext == '.pdf':
+            import pymupdf
+            doc = pymupdf.open(src); page = doc[int(self.opts.get('page', 0))]
+            if len(page.get_drawings()) > 20 or len(page.get_text().strip()) > 50:
+                svg = os.path.join(self.dir, 'input.svg'); open(svg, 'w', encoding='utf-8').write(page.get_svg_image(text_as_path=False))
+                out.update(kind='vector', svg=svg, detect=dict(reason=f'PDF 벡터(경로 {len(page.get_drawings())}개, 문자 있음)'), dpi=None); self.done('입력 판별', t0); return
+            pix = page.get_pixmap(dpi=200); src = os.path.join(self.dir, 'input_raster.png'); pix.save(src); dpi_hint = 200
+        gray = cv2.imread(src, cv2.IMREAD_GRAYSCALE)
+        if gray is None:
+            raise ValueError('이미지를 읽지 못함')
+        meta_dpi = dpi_hint or image_dpi(src)
+        H, W = gray.shape; mp = W * H / 1e6; resized = False
+        if mp > plan['max_mp']:
+            s = math.sqrt(plan['max_mp'] / mp); gray = cv2.resize(gray, None, fx=s, fy=s, interpolation=cv2.INTER_AREA)
+            meta_dpi = int(round(meta_dpi * s)) if meta_dpi else None; resized = True; H, W = gray.shape
+        photo, pf = is_photo(gray)
+        info = dict(px=[int(W), int(H)], resized=resized, **pf)
+        if photo:
+            png = os.path.join(self.dir, 'input_gray.png'); cv2.imwrite(png, gray)
+            dpi, src_ = (meta_dpi, '파일 메타데이터') if meta_dpi else (96, '사진, 해상도 미정(96 가정)')
+            info.update(reason='연속 계조 비율이 높음', dpi_source=src_)
+            out.update(kind='photo', png=png, dpi=dpi, detect=info, view=dict(url='input_gray.png', w=W, h=H, mm_per_px=25.4 / dpi))
+            self.done('입력 판별', t0); return
+        gray, skew = rg.deskew(gray)                 # 잡음 제거(중앙값 필터)는 도면 경로 안에서만 수행. 100 dpi 작은 글자가 뭉개짐
+        png = os.path.join(self.dir, 'input_gray.png'); cv2.imwrite(png, gray)
+        self.done('입력 판별', t0)
+        t0 = self.step('문자 인식')
+        reader = TunedReader(plan['batch'])
+        raw, texts = run_ocr(gray, reader, os.path.join(self.dir, 'doc'))
+        json.dump(texts, open(os.path.join(self.dir, 'page_ocr.json'), 'w'), ensure_ascii=False)   # 쪽 경로의 캐시 형식
+        self.done('문자 인식', t0)
+        t0 = self.step('해상도 · 종류 판별')
+        dpi, src_ = estimate_dpi(W, H, texts, meta_dpi)
+        kind, f = classify(gray, texts, dpi)
+        info.update(f, dpi_source=src_, ocr_lang=reader.lang_used, skew_deg=round(skew, 2))
+        out.update(kind=kind, png=png, dpi=dpi, detect=info, texts=texts, view=dict(url='input_gray.png', w=W, h=H, mm_per_px=25.4 / dpi))
+        self.done('해상도 · 종류 판별', t0)
+
+    # ---- 벡터 ----
+    def vector(self, out):
+        prefix = os.path.join(self.dir, 'graph')
+        t0 = self.step('요소 추출 · 관계 그래프')
+        g = eg.main(out['svg'], prefix); self.done('요소 추출 · 관계 그래프', t0)
+        import pymupdf
+        t0 = self.step('보기 그림')
+        doc = pymupdf.open(out['svg']); page = doc[0]; pix = page.get_pixmap(dpi=150); pix.save(os.path.join(self.dir, 'view.png'))
+        out['view'] = dict(url='view.png', w=pix.width, h=pix.height, mm_per_px=g['page'][0] / pix.width)
+        self.done('보기 그림', t0)
+        self.finish_graph(g, out, prefix, texts_px=[])
+
+    # ---- 래스터 도식 ----
+    def drawing(self, out):
+        prefix = os.path.join(self.dir, 'graph')
+        t0 = self.step('선 · 도형 · 기호 · 관계 그래프')
+        g = rg.main(out['png'], out['dpi'], prefix, ocr_json=os.path.join(self.dir, 'doc_ocr.json'))
+        self.times.update({k: v for k, v in g['times'].items() if k not in ('total', 'ocr')})
+        self.done('선 · 도형 · 기호 · 관계 그래프', t0)
+        out['view']['url'] = 'graph_input.png'
+        self.finish_graph(g, out, prefix, out['texts'])
+
+    def finish_graph(self, g, out, prefix, texts_px):
+        t0 = self.step('직렬화')
+        sz.main(prefix + '.json', prefix + '.txt')
+        serial = open(prefix + '.txt', encoding='utf-8').read().splitlines(); self.done('직렬화', t0)
+        t0 = self.step('색인')
+        idx = build_index(serial, g['nodes'], texts_px, g.get('tables', [])); self.done('색인', t0)
+        out.update(nodes=[dict(id=n['id'], role=n['role'], bbox=n['bbox'], texts=n['texts'], degree=n['degree'], attached_to=n.get('attached_to')) for n in g['nodes']],
+                   junctions=g['junctions'], runs=[dict(id=r['id'], a=r['a'], b=r['b'], coords=r['coords'], kind=r['kind'], texts=r['texts'], gap=r['gap']) for r in g['runs']],
+                   tables=[dict(bbox=t['bbox'], rows=t['rows']) for t in g.get('tables', [])], texts=texts_px, labels=[l for l in g.get('labels', []) if l.get('owner')],
+                   counts=dict(g['counts'], **collections.Counter(n['role'] for n in g['nodes'])), serial=serial, index=idx)
+        self.embed_page(out)
+
+    # ---- 표 · 본문 쪽 ----
+    def page(self, out):
+        prefix = os.path.join(self.dir, 'page'); dpi = out['dpi']; k = 25.4 / dpi
+        t0 = self.step('표 · 그림 영역')
+        res = rd.main(out['png'], dpi, 'table', prefix); res['image']['path'] = os.path.basename(res['image']['path'])
+        json.dump(res, open(prefix + '.json', 'w'), ensure_ascii=False, indent=1)
+        self.times['structure'] = res['times']['structure']; self.done('표 · 그림 영역', t0)
+        t0 = self.step('본문 묶기')
+        paras = paragraphs(res['texts'], [t['box'] for t in res['tables']], k); self.done('본문 묶기', t0)
+        t0 = self.step('직렬화')
+        serial = ["# 쪽 구조 (좌표 단위 mm, 원점 좌상단)", "## 표"]
+        tables = []
+        for ti, tb in enumerate(res['tables']):
+            bb = [round(v * k, 1) for v in tb['box']]
+            serial.append(f"t{ti} bbox=({','.join(map(str, bb))}) 행수={tb['n_rows']} 열수={tb['n_cols']}")
+            for ri, row in enumerate(tb['rows']):
+                serial.append(f"t{ti} 행{ri}: " + ' | '.join(row))
+            tables.append(dict(bbox=bb, box=tb['box'], rows=tb['rows']))
+        serial.append("## 표 안 그림 영역")
+        for f in res['figures']:
+            owner = f"t{f['table']} 행{f['row']}" if f.get('table') is not None and f.get('row') is not None else '없음'
+            serial.append(f"그림 bbox=({','.join(str(round(v * k, 1)) for v in f['box'])}) 소속={owner}")
+        serial.append("## 본문")
+        for i, p in enumerate(paras):
+            serial.append(f"p{i} bbox=({','.join(map(str, p['bbox_mm']))}) {p['text']}")
+        open(prefix + '.txt', 'w', encoding='utf-8').write('\n'.join(serial) + '\n'); self.done('직렬화', t0)
+        t0 = self.step('색인')
+        idx = build_index(serial, [], res['texts'], tables); self.done('색인', t0)
+        out.update(tables=tables, figures=res['figures'], paragraphs=paras, texts=res['texts'], nodes=[], runs=[], junctions=[],
+                   counts=dict(res['summary'], paragraphs=len(paras), texts=len(res['texts'])), serial=serial, index=idx)
+        self.embed_page(out, crops=[f['box'] for f in res['figures']])
+
+    # ---- 도해 · 기계 도면(주기와 지시선) ----
+    def illustration(self, out):
+        prefix = os.path.join(self.dir, 'page'); dpi = out['dpi']; k = 25.4 / dpi
+        t0 = self.step('주기 · 지시선 · 부품 영역')
+        res = rd.main(out['png'], dpi, 'drawing', prefix); res['image']['path'] = os.path.basename(res['image']['path'])
+        json.dump(res, open(prefix + '.json', 'w'), ensure_ascii=False, indent=1)
+        self.times['structure'] = res['times']['structure']; self.done('주기 · 지시선 · 부품 영역', t0)
+        t0 = self.step('직렬화')
+        mm = lambda b: ','.join(str(round(v * k, 1)) for v in b)
+        serial = ["# 도해 구조 (좌표 단위 mm, 원점 좌상단)", "## 부품 영역"]
+        serial.append(f"part bbox=({mm(res['part_box'])})" if res.get('part_box') else "없음")
+        serial.append("## 주기 (문자 묶음)")
+        for i, c in enumerate(res['callouts']):
+            serial.append(f"c{i} bbox=({mm(c['box'])}) {c.get('text') or ' '.join(c.get('texts', []))}")
+        serial.append("## 지시선 (주기 → 가리키는 위치)")
+        for l in res['leaders']:
+            serial.append(f"c{l['callout']} → ({round(l['end'][0] * k, 1)},{round(l['end'][1] * k, 1)}) 길이={l['length_mm']}mm 부품 위={'예' if l['end_on_part'] else '아니오'}")
+        open(prefix + '.txt', 'w', encoding='utf-8').write('\n'.join(serial) + '\n'); self.done('직렬화', t0)
+        t0 = self.step('색인')
+        idx = build_index(serial, [], res['texts'], []); self.done('색인', t0)
+        out.update(tables=[], callouts=res['callouts'], leaders=res['leaders'], part_box=res.get('part_box'), texts=res['texts'], nodes=[], runs=[], junctions=[],
+                   counts=dict(res['summary'], texts=len(res['texts'])), serial=serial, index=idx)
+        self.embed_page(out, crops=[res['part_box']] if res.get('part_box') else [])
+
+    # ---- 사진 ----
+    def photo(self, out):
+        gray = cv2.imread(out['png'], 0); k = 25.4 / out['dpi']
+        t0 = self.step('문자 인식')
+        reader = TunedReader(8)
+        raw, texts = run_ocr(gray, reader, os.path.join(self.dir, 'doc')); out['detect']['ocr_lang'] = reader.lang_used
+        self.done('문자 인식', t0)
+        serial = ["# 사진·렌더링 (구조 추출 없음, 이미지 검색 대상)", f"크기 {gray.shape[1]}×{gray.shape[0]} px", "## 사진 위 문자"]
+        serial += [f"{t['text']} bbox=({','.join(str(round(v * k, 1)) for v in t['box'])})" for t in texts]
+        idx = build_index(serial, [], texts, [])
+        out.update(tables=[], texts=texts, nodes=[], runs=[], junctions=[], counts=dict(texts=len(texts)), serial=serial, index=idx)
+        self.embed_page(out)
+
+    def embed_page(self, out, crops=()):
+        t0 = self.step('이미지 임베딩')
+        img = cv2.imread(os.path.join(self.dir, out['view']['url']), 0)
+        regions = [('page', [0, 0, img.shape[1], img.shape[0]])] + [(f'fig{i}', [int(v) for v in b]) for i, b in enumerate(crops)]
+        regions = [(rid, b) for rid, b in regions if b[3] > b[1] and b[2] > b[0]]
+        vecs, err = embed_images([img[b[1]:b[3], b[0]:b[2]] for _, b in regions])
+        if vecs is None:
+            out['embedding'] = dict(available=False, reason=err, regions=len(regions))
+        else:
+            out['embedding'] = dict(available=True, dims=int(len(vecs[0])), items=[dict(id=rid, bbox=b, head=[round(float(v), 4) for v in vec[:32]]) for (rid, b), vec in zip(regions, vecs)])
+        self.done('이미지 임베딩', t0)

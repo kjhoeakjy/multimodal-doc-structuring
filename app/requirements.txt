@@ -1,0 +1,8 @@
+numpy
+opencv-python-headless
+shapely
+svgelements
+pymupdf
+easyocr
+psutil
+torchvision

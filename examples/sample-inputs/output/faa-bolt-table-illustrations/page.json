@@ -1,0 +1,1587 @@
+{
+ "tables": [
+  {
+   "box": [
+    100,
+    117,
+    430,
+    390
+   ],
+   "n_rows": 4,
+   "n_cols": 3,
+   "rows": [
+    [
+     "Screw MS; AN; or NAS Number",
+     "Description",
+     ""
+    ],
+    [
+     "NAS6100-6103",
+     "Screw; hex head, tri-wing recess, full thr , titanium",
+     ""
+    ],
+    [
+     "NAS65O0-6506",
+     "Screw; 100\" oval hd , ~tri-wing recess, full thr , cres.",
+     ""
+    ],
+    [
+     "NAS6900-6904",
+     "Screw; panhead, tri-wing recess, full thr , cres",
+     ""
+    ]
+   ]
+  },
+  {
+   "box": [
+    443,
+    117,
+    774,
+    988
+   ],
+   "n_rows": 12,
+   "n_cols": 3,
+   "rows": [
+    [
+     "Bolt Numbec",
+     "Descrintion",
+     ""
+    ],
+    [
+     "AN148551-149350",
+     "Bolt, socket head_ 6-hole drilled, .190-.625",
+     ""
+    ],
+    [
+     "AN1O1001-101900",
+     "Bolt, hex, steel, head",
+     ""
+    ],
+    [
+     "AN101901-102800",
+     "Bolt, hex , drilled shank, steel",
+     ""
+    ],
+    [
+     "AN102801-103700",
+     "Bolt . Drilled hex Head, (one steel",
+     ""
+    ],
+    [
+     "AN103701-104600",
+     "Boll; drilled hex. Head, steel, (six holes)",
+     ""
+    ],
+    [
+     "AN104601-105500",
+     "Bolt, hex Head, corro- sion-resistant steel",
+     ""
+    ],
+    [
+     "AN105501-106400",
+     "Boll; hex Head, drilled shank; corrosion-resistant steel",
+     ""
+    ],
+    [
+     "AN106401-107300",
+     "Boll; hex , drilled head, (one holes), corrosion-resistant steel",
+     ""
+    ],
+    [
+     "AN107301-108200",
+     "Boll; hex , drilled head, (six holes) , corrosion-resistant steel",
+     ""
+    ],
+    [
+     "Ms9033-9039",
+     "Boll; machine 12pt. Head, 130,000 psi min: TS.",
+     ""
+    ],
+    [
+     "Ms9060-9086",
+     "Boll; machine 12p1 Double hex 130,000 psi min T.S. ext washer head, drilled",
+     ""
+    ]
+   ]
+  },
+  {
+   "box": [
+    101,
+    418,
+    431,
+    980
+   ],
+   "n_rows": 8,
+   "n_cols": 3,
+   "rows": [
+    [
+     "Bolt umber",
+     "Description",
+     ""
+    ],
+    [
+     "AN3-20",
+     "Bolt, machine",
+     ""
+    ],
+    [
+     "AN21-36",
+     "Boll, clevis",
+     ""
+    ],
+    [
+     "AN42-49",
+     "Boll; eye",
+     ""
+    ],
+    [
+     "AN73-81",
+     "Bollt, machine, drilled",
+     ""
+    ],
+    [
+     "AN173-186",
+     "Bolt, aircraft Close tolerance",
+     ""
+    ],
+    [
+     "AN774",
+     "BolL; flared tube",
+     ""
+    ],
+    [
+     "AN775",
+     "Boll; universal fitting",
+     ""
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "box": [
+    473,
+    157,
+    601,
+    193
+   ],
+   "area_mm2": 128.5,
+   "label": 1,
+   "table": [
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "box": [
+    158,
+    176,
+    252,
+    207
+   ],
+   "area_mm2": 94.3,
+   "label": 2,
+   "table": [
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "box": [
+    523,
+    232,
+    601,
+    268
+   ],
+   "area_mm2": 47.9,
+   "label": 3,
+   "table": [
+    1,
+    2,
+    0
+   ]
+  },
+  {
+   "box": [
+    144,
+    251,
+    250,
+    280
+   ],
+   "area_mm2": 109.5,
+   "label": 4,
+   "table": [
+    0,
+    2,
+    0
+   ]
+  },
+  {
+   "box": [
+    147,
+    335,
+    254,
+    365
+   ],
+   "area_mm2": 104.9,
+   "label": 9,
+   "table": [
+    0,
+    3,
+    0
+   ]
+  },
+  {
+   "box": [
+    526,
+    385,
+    601,
+    423
+   ],
+   "area_mm2": 46.9,
+   "label": 10,
+   "table": [
+    1,
+    4,
+    0
+   ]
+  },
+  {
+   "box": [
+    649,
+    389,
+    681,
+    401
+   ],
+   "area_mm2": 13.9,
+   "label": 11,
+   "table": [
+    1,
+    4,
+    1
+   ]
+  },
+  {
+   "box": [
+    150,
+    456,
+    258,
+    498
+   ],
+   "area_mm2": 83.0,
+   "label": 12,
+   "table": [
+    2,
+    1,
+    0
+   ]
+  },
+  {
+   "box": [
+    513,
+    462,
+    600,
+    503
+   ],
+   "area_mm2": 70.3,
+   "label": 13,
+   "table": [
+    1,
+    5,
+    0
+   ]
+  },
+  {
+   "box": [
+    224,
+    533,
+    257,
+    567
+   ],
+   "area_mm2": 38.0,
+   "label": 14,
+   "table": [
+    2,
+    2,
+    0
+   ]
+  },
+  {
+   "box": [
+    206,
+    534,
+    213,
+    568
+   ],
+   "area_mm2": 7.7,
+   "label": 15,
+   "table": [
+    2,
+    2,
+    0
+   ]
+  },
+  {
+   "box": [
+    519,
+    541,
+    600,
+    579
+   ],
+   "area_mm2": 51.8,
+   "label": 16,
+   "table": [
+    1,
+    6,
+    0
+   ]
+  },
+  {
+   "box": [
+    136,
+    546,
+    165,
+    554
+   ],
+   "area_mm2": 13.8,
+   "label": 17,
+   "table": [
+    2,
+    2,
+    0
+   ]
+  },
+  {
+   "box": [
+    135,
+    614,
+    255,
+    645
+   ],
+   "area_mm2": 91.5,
+   "label": 18,
+   "table": [
+    2,
+    3,
+    0
+   ]
+  },
+  {
+   "box": [
+    518,
+    617,
+    595,
+    654
+   ],
+   "area_mm2": 53.6,
+   "label": 19,
+   "table": [
+    1,
+    7,
+    0
+   ]
+  },
+  {
+   "box": [
+    153,
+    686,
+    254,
+    720
+   ],
+   "area_mm2": 74.3,
+   "label": 20,
+   "table": [
+    2,
+    4,
+    0
+   ]
+  },
+  {
+   "box": [
+    581,
+    698,
+    595,
+    730
+   ],
+   "area_mm2": 15.7,
+   "label": 22,
+   "table": [
+    1,
+    8,
+    0
+   ]
+  },
+  {
+   "box": [
+    514,
+    707,
+    549,
+    721
+   ],
+   "area_mm2": 9.4,
+   "label": 23,
+   "table": [
+    1,
+    8,
+    0
+   ]
+  },
+  {
+   "box": [
+    152,
+    764,
+    255,
+    799
+   ],
+   "area_mm2": 101.7,
+   "label": 25,
+   "table": [
+    2,
+    5,
+    0
+   ]
+  },
+  {
+   "box": [
+    583,
+    773,
+    596,
+    815
+   ],
+   "area_mm2": 12.9,
+   "label": 26,
+   "table": [
+    1,
+    9,
+    0
+   ]
+  },
+  {
+   "box": [
+    514,
+    788,
+    546,
+    802
+   ],
+   "area_mm2": 7.4,
+   "label": 27,
+   "table": [
+    1,
+    9,
+    0
+   ]
+  },
+  {
+   "box": [
+    147,
+    840,
+    224,
+    893
+   ],
+   "area_mm2": 85.2,
+   "label": 28,
+   "table": [
+    2,
+    6,
+    0
+   ]
+  },
+  {
+   "box": [
+    482,
+    850,
+    598,
+    880
+   ],
+   "area_mm2": 103.7,
+   "label": 29,
+   "table": [
+    1,
+    10,
+    0
+   ]
+  },
+  {
+   "box": [
+    151,
+    916,
+    219,
+    968
+   ],
+   "area_mm2": 51.3,
+   "label": 30,
+   "table": [
+    2,
+    7,
+    0
+   ]
+  },
+  {
+   "box": [
+    551,
+    928,
+    599,
+    959
+   ],
+   "area_mm2": 69.1,
+   "label": 31,
+   "table": [
+    1,
+    11,
+    0
+   ]
+  },
+  {
+   "box": [
+    476,
+    943,
+    500,
+    948
+   ],
+   "area_mm2": 7.1,
+   "label": 32,
+   "table": [
+    1,
+    11,
+    0
+   ]
+  }
+ ],
+ "figure_rows": [
+  {
+   "table": 0,
+   "row": 1,
+   "cells": [
+    "NAS6100-6103",
+    "Screw; hex head, tri-wing recess, full thr , titanium",
+    ""
+   ]
+  },
+  {
+   "table": 0,
+   "row": 2,
+   "cells": [
+    "NAS65O0-6506",
+    "Screw; 100\" oval hd , ~tri-wing recess, full thr , cres.",
+    ""
+   ]
+  },
+  {
+   "table": 0,
+   "row": 3,
+   "cells": [
+    "NAS6900-6904",
+    "Screw; panhead, tri-wing recess, full thr , cres",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 1,
+   "cells": [
+    "AN148551-149350",
+    "Bolt, socket head_ 6-hole drilled, .190-.625",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 2,
+   "cells": [
+    "AN1O1001-101900",
+    "Bolt, hex, steel, head",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 4,
+   "cells": [
+    "AN102801-103700",
+    "Bolt . Drilled hex Head, (one steel",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 5,
+   "cells": [
+    "AN103701-104600",
+    "Boll; drilled hex. Head, steel, (six holes)",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 6,
+   "cells": [
+    "AN104601-105500",
+    "Bolt, hex Head, corro- sion-resistant steel",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 7,
+   "cells": [
+    "AN105501-106400",
+    "Boll; hex Head, drilled shank; corrosion-resistant steel",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 8,
+   "cells": [
+    "AN106401-107300",
+    "Boll; hex , drilled head, (one holes), corrosion-resistant steel",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 9,
+   "cells": [
+    "AN107301-108200",
+    "Boll; hex , drilled head, (six holes) , corrosion-resistant steel",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 10,
+   "cells": [
+    "Ms9033-9039",
+    "Boll; machine 12pt. Head, 130,000 psi min: TS.",
+    ""
+   ]
+  },
+  {
+   "table": 1,
+   "row": 11,
+   "cells": [
+    "Ms9060-9086",
+    "Boll; machine 12p1 Double hex 130,000 psi min T.S. ext washer head, drilled",
+    ""
+   ]
+  },
+  {
+   "table": 2,
+   "row": 1,
+   "cells": [
+    "AN3-20",
+    "Bolt, machine",
+    ""
+   ]
+  },
+  {
+   "table": 2,
+   "row": 2,
+   "cells": [
+    "AN21-36",
+    "Boll, clevis",
+    ""
+   ]
+  },
+  {
+   "table": 2,
+   "row": 3,
+   "cells": [
+    "AN42-49",
+    "Boll; eye",
+    ""
+   ]
+  },
+  {
+   "table": 2,
+   "row": 4,
+   "cells": [
+    "AN73-81",
+    "Bollt, machine, drilled",
+    ""
+   ]
+  },
+  {
+   "table": 2,
+   "row": 5,
+   "cells": [
+    "AN173-186",
+    "Bolt, aircraft Close tolerance",
+    ""
+   ]
+  },
+  {
+   "table": 2,
+   "row": 6,
+   "cells": [
+    "AN774",
+    "BolL; flared tube",
+    ""
+   ]
+  },
+  {
+   "table": 2,
+   "row": 7,
+   "cells": [
+    "AN775",
+    "Boll; universal fitting",
+    ""
+   ]
+  }
+ ],
+ "summary": {
+  "tables": 3,
+  "cells": 72,
+  "figures": 26,
+  "figures_in_cells": 26,
+  "rows_with_figure": 20,
+  "mean_conf": 0.76
+ },
+ "texts": [
+  {
+   "text": "9/8/98",
+   "conf": 1.0,
+   "box": [
+    108,
+    69,
+    153,
+    89
+   ]
+  },
+  {
+   "text": "AC 43.13-1B",
+   "conf": 0.36,
+   "box": [
+    684,
+    69,
+    769,
+    89
+   ]
+  },
+  {
+   "text": "TABLE LL (CONTUED",
+   "conf": 0.21,
+   "box": [
+    108,
+    104,
+    279,
+    121
+   ]
+  },
+  {
+   "text": "LBLE 7-4(CONTINUED",
+   "conf": 0.29,
+   "box": [
+    451,
+    103,
+    623,
+    122
+   ]
+  },
+  {
+   "text": "Screw MS; AN; or",
+   "conf": 0.5,
+   "box": [
+    107,
+    121,
+    229,
+    142
+   ]
+  },
+  {
+   "text": "Description",
+   "conf": 1.0,
+   "box": [
+    269,
+    123,
+    351,
+    142
+   ]
+  },
+  {
+   "text": "Bolt Numbec",
+   "conf": 0.3,
+   "box": [
+    481,
+    123,
+    573,
+    139
+   ]
+  },
+  {
+   "text": "Descrintion",
+   "conf": 0.66,
+   "box": [
+    613,
+    121,
+    695,
+    141
+   ]
+  },
+  {
+   "text": "NAS Number",
+   "conf": 1.0,
+   "box": [
+    108,
+    137,
+    199,
+    157
+   ]
+  },
+  {
+   "text": "AN148551-149350",
+   "conf": 1.0,
+   "box": [
+    452,
+    137,
+    575,
+    155
+   ]
+  },
+  {
+   "text": "Bolt, socket head_",
+   "conf": 0.94,
+   "box": [
+    613,
+    137,
+    726,
+    154
+   ]
+  },
+  {
+   "text": "NAS6100-6103",
+   "conf": 0.97,
+   "box": [
+    107,
+    155,
+    210,
+    174
+   ]
+  },
+  {
+   "text": "Screw; hex head,",
+   "conf": 0.6,
+   "box": [
+    269,
+    154,
+    381,
+    173
+   ]
+  },
+  {
+   "text": "6-hole drilled, .190-.625",
+   "conf": 0.64,
+   "box": [
+    613,
+    153,
+    765,
+    171
+   ]
+  },
+  {
+   "text": "tri-wing recess, full thr ,",
+   "conf": 0.73,
+   "box": [
+    268,
+    171,
+    417,
+    190
+   ]
+  },
+  {
+   "text": "titanium",
+   "conf": 1.0,
+   "box": [
+    268,
+    187,
+    322,
+    203
+   ]
+  },
+  {
+   "text": "AN1O1001-101900",
+   "conf": 0.88,
+   "box": [
+    452,
+    213,
+    575,
+    233
+   ]
+  },
+  {
+   "text": "Bolt, hex, steel, head",
+   "conf": 0.73,
+   "box": [
+    613,
+    215,
+    747,
+    231
+   ]
+  },
+  {
+   "text": "NAS65O0-6506",
+   "conf": 0.68,
+   "box": [
+    108,
+    231,
+    210,
+    250
+   ]
+  },
+  {
+   "text": "Screw; 100\" oval hd ,",
+   "conf": 0.41,
+   "box": [
+    269,
+    231,
+    406,
+    250
+   ]
+  },
+  {
+   "text": "~tri-wing recess, full thr ,",
+   "conf": 0.29,
+   "box": [
+    266,
+    245,
+    420,
+    270
+   ]
+  },
+  {
+   "text": "cres.",
+   "conf": 0.89,
+   "box": [
+    269,
+    265,
+    305,
+    281
+   ]
+  },
+  {
+   "text": "AN101901-102800",
+   "conf": 0.91,
+   "box": [
+    452,
+    291,
+    575,
+    310
+   ]
+  },
+  {
+   "text": "Bolt, hex ,",
+   "conf": 0.73,
+   "box": [
+    613,
+    291,
+    680,
+    310
+   ]
+  },
+  {
+   "text": "NAS6900-6904",
+   "conf": 0.94,
+   "box": [
+    108,
+    308,
+    209,
+    326
+   ]
+  },
+  {
+   "text": "Screw; panhead,",
+   "conf": 0.73,
+   "box": [
+    269,
+    307,
+    376,
+    326
+   ]
+  },
+  {
+   "text": "drilled shank, steel",
+   "conf": 0.96,
+   "box": [
+    611,
+    305,
+    734,
+    326
+   ]
+  },
+  {
+   "text": "tri-wing recess, full thr ,",
+   "conf": 0.56,
+   "box": [
+    267,
+    323,
+    418,
+    343
+   ]
+  },
+  {
+   "text": "cres",
+   "conf": 1.0,
+   "box": [
+    269,
+    341,
+    301,
+    357
+   ]
+  },
+  {
+   "text": "AN102801-103700",
+   "conf": 0.87,
+   "box": [
+    452,
+    368,
+    575,
+    386
+   ]
+  },
+  {
+   "text": "Bolt . Drilled hex Head,",
+   "conf": 0.7,
+   "box": [
+    613,
+    367,
+    760,
+    386
+   ]
+  },
+  {
+   "text": "(one",
+   "conf": 0.99,
+   "box": [
+    612,
+    384,
+    646,
+    402
+   ]
+  },
+  {
+   "text": "steel",
+   "conf": 1.0,
+   "box": [
+    683,
+    384,
+    718,
+    401
+   ]
+  },
+  {
+   "text": "TABLE 7-42TABLE QF BOLTS",
+   "conf": 0.45,
+   "box": [
+    108,
+    403,
+    307,
+    422
+   ]
+  },
+  {
+   "text": "Bolt umber",
+   "conf": 0.68,
+   "box": [
+    140,
+    421,
+    230,
+    439
+   ]
+  },
+  {
+   "text": "Description",
+   "conf": 0.98,
+   "box": [
+    271,
+    423,
+    351,
+    439
+   ]
+  },
+  {
+   "text": "AN3-20",
+   "conf": 0.97,
+   "box": [
+    109,
+    437,
+    162,
+    454
+   ]
+  },
+  {
+   "text": "Bolt, machine",
+   "conf": 0.99,
+   "box": [
+    271,
+    437,
+    359,
+    454
+   ]
+  },
+  {
+   "text": "AN103701-104600",
+   "conf": 0.82,
+   "box": [
+    452,
+    445,
+    575,
+    463
+   ]
+  },
+  {
+   "text": "Boll; drilled hex. Head,",
+   "conf": 0.39,
+   "box": [
+    613,
+    445,
+    758,
+    463
+   ]
+  },
+  {
+   "text": "steel, (six holes)",
+   "conf": 0.87,
+   "box": [
+    612,
+    458,
+    722,
+    482
+   ]
+  },
+  {
+   "text": "AN21-36",
+   "conf": 0.99,
+   "box": [
+    109,
+    513,
+    170,
+    533
+   ]
+  },
+  {
+   "text": "Boll, clevis",
+   "conf": 0.91,
+   "box": [
+    271,
+    513,
+    342,
+    533
+   ]
+  },
+  {
+   "text": "AN104601-105500",
+   "conf": 0.97,
+   "box": [
+    452,
+    521,
+    575,
+    541
+   ]
+  },
+  {
+   "text": "Bolt, hex Head, corro-",
+   "conf": 0.77,
+   "box": [
+    613,
+    523,
+    758,
+    539
+   ]
+  },
+  {
+   "text": "sion-resistant steel",
+   "conf": 0.99,
+   "box": [
+    613,
+    537,
+    735,
+    554
+   ]
+  },
+  {
+   "text": "AN42-49",
+   "conf": 0.96,
+   "box": [
+    109,
+    591,
+    169,
+    609
+   ]
+  },
+  {
+   "text": "Boll; eye",
+   "conf": 0.67,
+   "box": [
+    270,
+    590,
+    329,
+    610
+   ]
+  },
+  {
+   "text": "AN105501-106400",
+   "conf": 0.79,
+   "box": [
+    452,
+    597,
+    575,
+    617
+   ]
+  },
+  {
+   "text": "Boll; hex Head,",
+   "conf": 0.54,
+   "box": [
+    613,
+    598,
+    717,
+    616
+   ]
+  },
+  {
+   "text": "drilled shank;",
+   "conf": 0.84,
+   "box": [
+    612,
+    613,
+    699,
+    631
+   ]
+  },
+  {
+   "text": "corrosion-resistant",
+   "conf": 0.95,
+   "box": [
+    613,
+    631,
+    734,
+    647
+   ]
+  },
+  {
+   "text": "steel",
+   "conf": 1.0,
+   "box": [
+    613,
+    647,
+    649,
+    663
+   ]
+  },
+  {
+   "text": "AN73-81",
+   "conf": 1.0,
+   "box": [
+    109,
+    668,
+    169,
+    686
+   ]
+  },
+  {
+   "text": "Bollt, machine, drilled",
+   "conf": 0.72,
+   "box": [
+    271,
+    667,
+    405,
+    686
+   ]
+  },
+  {
+   "text": "AN106401-107300",
+   "conf": 0.75,
+   "box": [
+    452,
+    675,
+    575,
+    694
+   ]
+  },
+  {
+   "text": "Boll; hex , drilled head,",
+   "conf": 0.4,
+   "box": [
+    613,
+    674,
+    760,
+    693
+   ]
+  },
+  {
+   "text": "(one holes),",
+   "conf": 0.75,
+   "box": [
+    613,
+    689,
+    692,
+    710
+   ]
+  },
+  {
+   "text": "corrosion-resistant",
+   "conf": 0.89,
+   "box": [
+    613,
+    707,
+    734,
+    723
+   ]
+  },
+  {
+   "text": "steel",
+   "conf": 1.0,
+   "box": [
+    613,
+    724,
+    649,
+    739
+   ]
+  },
+  {
+   "text": "AN173-186",
+   "conf": 0.77,
+   "box": [
+    109,
+    745,
+    186,
+    763
+   ]
+  },
+  {
+   "text": "Bolt, aircraft",
+   "conf": 0.99,
+   "box": [
+    271,
+    745,
+    350,
+    762
+   ]
+  },
+  {
+   "text": "AN107301-108200",
+   "conf": 0.9,
+   "box": [
+    452,
+    752,
+    575,
+    770
+   ]
+  },
+  {
+   "text": "Boll; hex , drilled head,",
+   "conf": 0.64,
+   "box": [
+    613,
+    751,
+    759,
+    770
+   ]
+  },
+  {
+   "text": "Close tolerance",
+   "conf": 0.94,
+   "box": [
+    269,
+    760,
+    371,
+    778
+   ]
+  },
+  {
+   "text": "(six holes) ,",
+   "conf": 0.71,
+   "box": [
+    612,
+    768,
+    686,
+    789
+   ]
+  },
+  {
+   "text": "corrosion-resistant",
+   "conf": 1.0,
+   "box": [
+    613,
+    784,
+    734,
+    801
+   ]
+  },
+  {
+   "text": "steel",
+   "conf": 1.0,
+   "box": [
+    613,
+    800,
+    649,
+    817
+   ]
+  },
+  {
+   "text": "AN774",
+   "conf": 0.99,
+   "box": [
+    109,
+    820,
+    157,
+    840
+   ]
+  },
+  {
+   "text": "BolL; flared tube",
+   "conf": 0.6,
+   "box": [
+    270,
+    821,
+    373,
+    841
+   ]
+  },
+  {
+   "text": "Ms9033-9039",
+   "conf": 0.96,
+   "box": [
+    451,
+    828,
+    545,
+    847
+   ]
+  },
+  {
+   "text": "Boll; machine 12pt.",
+   "conf": 0.51,
+   "box": [
+    612,
+    829,
+    735,
+    847
+   ]
+  },
+  {
+   "text": "Head, 130,000 psi min:",
+   "conf": 0.77,
+   "box": [
+    612,
+    844,
+    759,
+    863
+   ]
+  },
+  {
+   "text": "TS.",
+   "conf": 0.39,
+   "box": [
+    612,
+    860,
+    643,
+    879
+   ]
+  },
+  {
+   "text": "AN775",
+   "conf": 0.83,
+   "box": [
+    109,
+    899,
+    158,
+    917
+   ]
+  },
+  {
+   "text": "Boll; universal fitting",
+   "conf": 0.38,
+   "box": [
+    270,
+    898,
+    401,
+    919
+   ]
+  },
+  {
+   "text": "Ms9060-9086",
+   "conf": 0.36,
+   "box": [
+    451,
+    905,
+    545,
+    925
+   ]
+  },
+  {
+   "text": "Boll; machine 12p1",
+   "conf": 0.55,
+   "box": [
+    611,
+    905,
+    735,
+    925
+   ]
+  },
+  {
+   "text": "Double hex 130,000",
+   "conf": 0.86,
+   "box": [
+    612,
+    921,
+    747,
+    941
+   ]
+  },
+  {
+   "text": "psi min T.S. ext",
+   "conf": 0.56,
+   "box": [
+    612,
+    937,
+    720,
+    957
+   ]
+  },
+  {
+   "text": "washer head, drilled",
+   "conf": 0.76,
+   "box": [
+    612,
+    953,
+    742,
+    973
+   ]
+  },
+  {
+   "text": "Par 7-196",
+   "conf": 0.66,
+   "box": [
+    108,
+    1059,
+    174,
+    1075
+   ]
+  },
+  {
+   "text": "Page 7-57",
+   "conf": 0.81,
+   "box": [
+    697,
+    1057,
+    768,
+    1081
+   ]
+  }
+ ],
+ "times": {
+  "ocr": 0.0,
+  "structure": 0.0,
+  "total": 0.0
+ },
+ "image": {
+  "path": "input_gray.png",
+  "px": [
+   857,
+   1109
+  ],
+  "dpi": 104
+ }
+}

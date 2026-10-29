@@ -1,0 +1,17 @@
+# 쪽 구조 (좌표 단위 mm, 원점 좌상단)
+## 표
+t0 bbox=(19.3,57.6,189.7,87.0) 행수=4 열수=5
+t0 행0: Actuator | Part number | Leakage cclmin | Action | 
+t0 행1: UH MLG | 11443200-5 | 3.2 | Replace | 
+t0 행2: RIH MLG | 11443200-5 | 1.9 | Monitor | 
+t0 행3: NLG steering | 114A3410-2 | 1.1 | None | 
+## 표 안 그림 영역
+그림 bbox=(20.3,109.2,99.6,109.6) 소속=없음
+그림 bbox=(29.3,116.7,116.2,140.0) 소속=없음
+## 본문
+p0 bbox=(18.6,18.5,118.0,28.1) Hydraulic System Inspection Summary
+p1 bbox=(18.8,31.7,177.1,48.3) This summary records the third quarter inspection of the main and nose landing gear hydraulic actuators. Internal Ileakage was measured three times per actuator at 3000 psi with fluid at 40 C Results are listed in Table 1 and plotted in Figure 1.
+p2 bbox=(19.1,88.9,101.3,93.8) Table 1. Leakage by actuator (mean of three measurements)
+p3 bbox=(99.9,105.8,119.2,110.1) limit 4 0_cclmin
+p4 bbox=(18.3,153.9,188.3,186.3) 01 02 03 04 03 Figure 1. UHMLG actuator leakage trend over five inspections Conclusion: The left main landing gear actuator (11443200-5) has reached 80 percent of the allowable leakage and is scheduled for replacement before the next inspection interval. A functional test and leakage re-measurement follow the replacement:
+p5 bbox=(19.1,279.1,61.3,283.8) Synthetic document; 2026-10-29

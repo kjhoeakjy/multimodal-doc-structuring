@@ -1,0 +1,378 @@
+{
+ "name": "photo-of-text-page.png",
+ "plan": {
+  "threads": 2,
+  "batch": 8,
+  "max_mp": 12.0,
+  "det_scale": 1.0,
+  "snapshot": {
+   "cores": 4,
+   "total_gb": 15.7,
+   "avail_gb": 14.3,
+   "cpu_busy": 2.0
+  },
+  "why": [
+   "코어 4개 중 2개 사용(절반)",
+   "가용 메모리 14.3 GB → 인식 배치 8, 입력 상한 12 MP",
+   "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
+  ]
+ },
+ "steps": [],
+ "kind": "photo",
+ "png": "input_gray.png",
+ "dpi": 96,
+ "detect": {
+  "px": [
+   384,
+   191
+  ],
+  "resized": false,
+  "midtone": 0.618,
+  "ink": 0.362,
+  "reason": "연속 계조 비율이 높음",
+  "dpi_source": "사진, 해상도 미정(96 가정)",
+  "ocr_lang": "en"
+ },
+ "view": {
+  "url": "input_gray.png",
+  "w": 384,
+  "h": 191,
+  "mm_per_px": 0.26458333333333334
+ },
+ "tables": [],
+ "texts": [
+  {
+   "text": "Region-based segmentation",
+   "conf": 0.91,
+   "box": [
+    3,
+    7,
+    297,
+    40
+   ]
+  },
+  {
+   "text": "Let us first  determine   markers  of the coins ad the",
+   "conf": 0.25,
+   "box": [
+    0,
+    44,
+    380,
+    68
+   ]
+  },
+  {
+   "text": "background. These markers are pixels that we can label",
+   "conf": 0.81,
+   "box": [
+    1,
+    61,
+    379,
+    88
+   ]
+  },
+  {
+   "text": "unambiguously as either object or background. Here;",
+   "conf": 0.76,
+   "box": [
+    1,
+    79,
+    379,
+    106
+   ]
+  },
+  {
+   "text": "markers are found at the two extreme",
+   "conf": 0.95,
+   "box": [
+    27,
+    98,
+    298,
+    122
+   ]
+  },
+  {
+   "text": "of the",
+   "conf": 0.62,
+   "box": [
+    336,
+    99,
+    379,
+    117
+   ]
+  },
+  {
+   "text": "of grey values:",
+   "conf": 1.0,
+   "box": [
+    68,
+    116,
+    174,
+    140
+   ]
+  },
+  {
+   "text": "ackers",
+   "conf": 0.58,
+   "box": [
+    39,
+    168,
+    89,
+    185
+   ]
+  },
+  {
+   "text": "p.zeros_Like ( coins)",
+   "conf": 0.65,
+   "box": [
+    103,
+    173,
+    242,
+    190
+   ]
+  },
+  {
+   "text": "the",
+   "conf": 1.0,
+   "box": [
+    0,
+    94,
+    28,
+    115
+   ]
+  },
+  {
+   "text": "parts",
+   "conf": 1.0,
+   "box": [
+    295,
+    100,
+    338,
+    120
+   ]
+  },
+  {
+   "text": "'histogram",
+   "conf": 0.4,
+   "box": [
+    0,
+    110,
+    71,
+    138
+   ]
+  }
+ ],
+ "nodes": [],
+ "runs": [],
+ "junctions": [],
+ "counts": {
+  "texts": 12
+ },
+ "serial": [
+  "# 사진·렌더링 (구조 추출 없음, 이미지 검색 대상)",
+  "크기 384×191 px",
+  "## 사진 위 문자",
+  "Region-based segmentation bbox=(0.8,1.9,78.6,10.6)",
+  "Let us first  determine   markers  of the coins ad the bbox=(0.0,11.6,100.5,18.0)",
+  "background. These markers are pixels that we can label bbox=(0.3,16.1,100.3,23.3)",
+  "unambiguously as either object or background. Here; bbox=(0.3,20.9,100.3,28.0)",
+  "markers are found at the two extreme bbox=(7.1,25.9,78.8,32.3)",
+  "of the bbox=(88.9,26.2,100.3,31.0)",
+  "of grey values: bbox=(18.0,30.7,46.0,37.0)",
+  "ackers bbox=(10.3,44.5,23.5,48.9)",
+  "p.zeros_Like ( coins) bbox=(27.3,45.8,64.0,50.3)",
+  "the bbox=(0.0,24.9,7.4,30.4)",
+  "parts bbox=(78.1,26.5,89.4,31.8)",
+  "'histogram bbox=(0.0,29.1,18.8,36.5)"
+ ],
+ "index": {
+  "bm25": {
+   "tokens": 122,
+   "vocab": 93,
+   "top": [
+    [
+     "bbox",
+     12
+    ],
+    [
+     "the",
+     5
+    ],
+    [
+     "markers",
+     3
+    ],
+    [
+     "of",
+     3
+    ],
+    [
+     "0.0",
+     3
+    ],
+    [
+     "100.3",
+     3
+    ],
+    [
+     "사진",
+     2
+    ],
+    [
+     "coins",
+     2
+    ],
+    [
+     "18.0",
+     2
+    ],
+    [
+     "background.",
+     2
+    ],
+    [
+     "are",
+     2
+    ],
+    [
+     "0.3",
+     2
+    ],
+    [
+     "렌더링",
+     1
+    ],
+    [
+     "구조",
+     1
+    ],
+    [
+     "추출",
+     1
+    ],
+    [
+     "없음",
+     1
+    ],
+    [
+     "이미지",
+     1
+    ],
+    [
+     "검색",
+     1
+    ],
+    [
+     "대상",
+     1
+    ],
+    [
+     "크기",
+     1
+    ],
+    [
+     "384",
+     1
+    ],
+    [
+     "191",
+     1
+    ],
+    [
+     "px",
+     1
+    ],
+    [
+     "위",
+     1
+    ],
+    [
+     "문자",
+     1
+    ],
+    [
+     "region-based",
+     1
+    ],
+    [
+     "segmentation",
+     1
+    ],
+    [
+     "0.8",
+     1
+    ],
+    [
+     "1.9",
+     1
+    ],
+    [
+     "78.6",
+     1
+    ],
+    [
+     "10.6",
+     1
+    ],
+    [
+     "let",
+     1
+    ],
+    [
+     "us",
+     1
+    ],
+    [
+     "first",
+     1
+    ],
+    [
+     "determine",
+     1
+    ],
+    [
+     "ad",
+     1
+    ],
+    [
+     "11.6",
+     1
+    ],
+    [
+     "100.5",
+     1
+    ],
+    [
+     "these",
+     1
+    ],
+    [
+     "pixels",
+     1
+    ]
+   ]
+  },
+  "exact": [],
+  "rows": []
+ },
+ "embedding": {
+  "available": false,
+  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "regions": 1
+ },
+ "times": {
+  "입력 판별": 0.0,
+  "문자 인식": 2.5,
+  "이미지 임베딩": 0.0
+ },
+ "memory": {
+  "peak_rss_gb": 1.16,
+  "min_avail_gb": 14.16
+ },
+ "resources_after": {
+  "cores": 4,
+  "total_gb": 15.7,
+  "avail_gb": 14.2,
+  "cpu_busy": 0.0
+ }
+}

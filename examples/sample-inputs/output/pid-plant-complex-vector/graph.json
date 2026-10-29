@@ -1,0 +1,12387 @@
+{
+ "page": [
+  841.0,
+  594.0
+ ],
+ "nodes": [
+  {
+   "id": "n0",
+   "role": "equipment",
+   "bbox": [
+    102.5,
+    396.5,
+    127.5,
+    471.5
+   ],
+   "texts": [],
+   "primitives": 9,
+   "degree": 6,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n1",
+   "role": "equipment",
+   "bbox": [
+    185.15,
+    95.87,
+    220.15,
+    333.38
+   ],
+   "texts": [],
+   "primitives": 95,
+   "degree": 8,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n2",
+   "role": "equipment",
+   "bbox": [
+    237.5,
+    127.75,
+    312.5,
+    152.75
+   ],
+   "texts": [],
+   "primitives": 9,
+   "degree": 9,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n3",
+   "role": "equipment",
+   "bbox": [
+    237.5,
+    60.25,
+    312.5,
+    85.25
+   ],
+   "texts": [],
+   "primitives": 10,
+   "degree": 6,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n4",
+   "role": "equipment",
+   "bbox": [
+    346.75,
+    220.25,
+    421.75,
+    245.25
+   ],
+   "texts": [],
+   "primitives": 11,
+   "degree": 5,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n5",
+   "role": "symbol",
+   "bbox": [
+    425.77,
+    330.25,
+    465.77,
+    410.25
+   ],
+   "texts": [],
+   "primitives": 17,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n6",
+   "role": "equipment",
+   "bbox": [
+    513.27,
+    330.25,
+    553.27,
+    410.25
+   ],
+   "texts": [],
+   "primitives": 25,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n7",
+   "role": "symbol",
+   "bbox": [
+    360.05,
+    340.87,
+    385.05,
+    408.37
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n8",
+   "role": "symbol",
+   "bbox": [
+    353.12,
+    460.25,
+    361.87,
+    477.75
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n9",
+   "role": "equipment",
+   "bbox": [
+    282.5,
+    306.5,
+    313.35,
+    311.5
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n10",
+   "role": "equipment",
+   "bbox": [
+    282.5,
+    316.5,
+    313.35,
+    321.5
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n11",
+   "role": "equipment",
+   "bbox": [
+    215.0,
+    484.0,
+    220.0,
+    494.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n12",
+   "role": "symbol",
+   "bbox": [
+    297.5,
+    511.5,
+    342.5,
+    526.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n13",
+   "role": "symbol",
+   "bbox": [
+    297.5,
+    511.5,
+    312.5,
+    526.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n14",
+   "role": "equipment",
+   "bbox": [
+    245.0,
+    484.0,
+    250.0,
+    494.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n15",
+   "role": "equipment",
+   "bbox": [
+    218.75,
+    474.0,
+    228.75,
+    479.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n16",
+   "role": "equipment",
+   "bbox": [
+    236.25,
+    474.0,
+    246.25,
+    479.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n17",
+   "role": "symbol",
+   "bbox": [
+    202.5,
+    437.75,
+    207.5,
+    447.75
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n18",
+   "role": "symbol",
+   "bbox": [
+    215.0,
+    439.0,
+    220.0,
+    449.0
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n19",
+   "role": "symbol",
+   "bbox": [
+    257.5,
+    437.75,
+    262.5,
+    447.75
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n20",
+   "role": "equipment",
+   "bbox": [
+    215.0,
+    426.5,
+    220.0,
+    436.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n21",
+   "role": "equipment",
+   "bbox": [
+    230.0,
+    324.0,
+    235.0,
+    334.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n22",
+   "role": "symbol",
+   "bbox": [
+    244.0,
+    314.0,
+    246.0,
+    316.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n23",
+   "role": "symbol",
+   "bbox": [
+    255.0,
+    316.5,
+    265.0,
+    321.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n24",
+   "role": "equipment",
+   "bbox": [
+    245.0,
+    439.0,
+    250.0,
+    449.0
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n25",
+   "role": "equipment",
+   "bbox": [
+    245.0,
+    426.5,
+    250.0,
+    436.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n26",
+   "role": "equipment",
+   "bbox": [
+    240.0,
+    334.0,
+    250.0,
+    339.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n27",
+   "role": "symbol",
+   "bbox": [
+    203.06,
+    372.05,
+    213.66,
+    382.66
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n28",
+   "role": "equipment",
+   "bbox": [
+    132.5,
+    264.0,
+    142.5,
+    269.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n29",
+   "role": "symbol",
+   "bbox": [
+    136.5,
+    244.0,
+    138.5,
+    246.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n30",
+   "role": "symbol",
+   "bbox": [
+    150.0,
+    254.0,
+    155.0,
+    264.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n31",
+   "role": "symbol",
+   "bbox": [
+    167.5,
+    146.48,
+    175.02,
+    154.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n32",
+   "role": "symbol",
+   "bbox": [
+    143.62,
+    126.45,
+    144.63,
+    131.46
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n33",
+   "role": "symbol",
+   "bbox": [
+    334.0,
+    241.5,
+    336.0,
+    244.0
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n34",
+   "role": "equipment",
+   "bbox": [
+    342.5,
+    244.0,
+    352.5,
+    249.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n35",
+   "role": "equipment",
+   "bbox": [
+    320.0,
+    249.0,
+    325.0,
+    259.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n36",
+   "role": "equipment",
+   "bbox": [
+    330.0,
+    261.5,
+    340.0,
+    266.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n37",
+   "role": "symbol",
+   "bbox": [
+    710.0,
+    469.0,
+    755.0,
+    484.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n38",
+   "role": "symbol",
+   "bbox": [
+    710.0,
+    469.0,
+    725.0,
+    484.0
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n39",
+   "role": "equipment",
+   "bbox": [
+    601.25,
+    439.0,
+    611.25,
+    444.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n40",
+   "role": "equipment",
+   "bbox": [
+    627.5,
+    449.0,
+    632.5,
+    459.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n41",
+   "role": "equipment",
+   "bbox": [
+    597.5,
+    449.0,
+    602.5,
+    459.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n42",
+   "role": "equipment",
+   "bbox": [
+    618.75,
+    439.0,
+    628.75,
+    444.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n43",
+   "role": "symbol",
+   "bbox": [
+    447.48,
+    346.47,
+    454.99,
+    353.99
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n44",
+   "role": "symbol",
+   "bbox": [
+    423.6,
+    326.44,
+    424.6,
+    331.45
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n45",
+   "role": "symbol",
+   "bbox": [
+    705.0,
+    316.5,
+    750.0,
+    331.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n46",
+   "role": "symbol",
+   "bbox": [
+    705.0,
+    316.5,
+    720.0,
+    331.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n47",
+   "role": "symbol",
+   "bbox": [
+    542.5,
+    349.0,
+    552.5,
+    354.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n48",
+   "role": "symbol",
+   "bbox": [
+    400.0,
+    349.0,
+    410.0,
+    354.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n49",
+   "role": "symbol",
+   "bbox": [
+    499.98,
+    346.47,
+    507.49,
+    353.99
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n50",
+   "role": "symbol",
+   "bbox": [
+    425.0,
+    339.0,
+    430.0,
+    349.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n51",
+   "role": "equipment",
+   "bbox": [
+    560.0,
+    296.5,
+    570.0,
+    301.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n52",
+   "role": "symbol",
+   "bbox": [
+    705.0,
+    291.5,
+    750.0,
+    306.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n53",
+   "role": "symbol",
+   "bbox": [
+    705.0,
+    291.5,
+    720.0,
+    306.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n54",
+   "role": "equipment",
+   "bbox": [
+    585.0,
+    296.5,
+    595.0,
+    301.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n55",
+   "role": "symbol",
+   "bbox": [
+    576.5,
+    294.0,
+    578.5,
+    296.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n56",
+   "role": "equipment",
+   "bbox": [
+    572.5,
+    306.5,
+    582.5,
+    311.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n57",
+   "role": "symbol",
+   "bbox": [
+    576.5,
+    259.0,
+    578.5,
+    261.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n58",
+   "role": "symbol",
+   "bbox": [
+    560.0,
+    261.5,
+    570.0,
+    266.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n59",
+   "role": "symbol",
+   "bbox": [
+    522.5,
+    339.0,
+    527.5,
+    349.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n60",
+   "role": "symbol",
+   "bbox": [
+    581.25,
+    414.0,
+    591.25,
+    419.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n61",
+   "role": "equipment",
+   "bbox": [
+    627.5,
+    389.0,
+    632.5,
+    399.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n62",
+   "role": "symbol",
+   "bbox": [
+    705.0,
+    374.0,
+    750.0,
+    389.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n63",
+   "role": "symbol",
+   "bbox": [
+    705.0,
+    374.0,
+    720.0,
+    389.0
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n64",
+   "role": "symbol",
+   "bbox": [
+    597.5,
+    404.0,
+    602.5,
+    414.0
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n65",
+   "role": "equipment",
+   "bbox": [
+    597.5,
+    389.0,
+    602.5,
+    399.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n66",
+   "role": "equipment",
+   "bbox": [
+    640.0,
+    414.0,
+    650.0,
+    419.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n67",
+   "role": "equipment",
+   "bbox": [
+    627.5,
+    404.0,
+    632.5,
+    414.0
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n68",
+   "role": "equipment",
+   "bbox": [
+    332.5,
+    359.08,
+    342.5,
+    364.08
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n69",
+   "role": "equipment",
+   "bbox": [
+    355.0,
+    331.55,
+    362.51,
+    339.07
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n70",
+   "role": "symbol",
+   "bbox": [
+    331.12,
+    311.51,
+    332.12,
+    316.52
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n71",
+   "role": "symbol",
+   "bbox": [
+    362.5,
+    349.08,
+    367.5,
+    359.08
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n72",
+   "role": "symbol",
+   "bbox": [
+    259.0,
+    26.5,
+    261.0,
+    29.0
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n73",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    24.0,
+    515.0,
+    39.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n74",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    24.0,
+    485.0,
+    39.0
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n75",
+   "role": "equipment",
+   "bbox": [
+    350.0,
+    349.08,
+    355.0,
+    359.08
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n76",
+   "role": "symbol",
+   "bbox": [
+    695.0,
+    256.5,
+    740.0,
+    271.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n77",
+   "role": "symbol",
+   "bbox": [
+    695.0,
+    256.5,
+    710.0,
+    271.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n78",
+   "role": "equipment",
+   "bbox": [
+    572.5,
+    271.5,
+    582.5,
+    276.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n79",
+   "role": "symbol",
+   "bbox": [
+    585.0,
+    261.5,
+    595.0,
+    266.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n80",
+   "role": "symbol",
+   "bbox": [
+    194.18,
+    147.26,
+    203.51,
+    158.42
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n81",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    149.0,
+    515.0,
+    164.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n82",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    149.0,
+    485.0,
+    164.0
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n83",
+   "role": "equipment",
+   "bbox": [
+    398.75,
+    154.0,
+    408.75,
+    159.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n84",
+   "role": "symbol",
+   "bbox": [
+    302.5,
+    164.0,
+    307.5,
+    174.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n85",
+   "role": "symbol",
+   "bbox": [
+    339.98,
+    119.05,
+    347.49,
+    126.57
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n86",
+   "role": "symbol",
+   "bbox": [
+    316.1,
+    99.01,
+    317.1,
+    104.02
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n87",
+   "role": "symbol",
+   "bbox": [
+    322.5,
+    116.5,
+    327.5,
+    126.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n88",
+   "role": "equipment",
+   "bbox": [
+    398.75,
+    131.5,
+    408.75,
+    136.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n89",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    126.5,
+    515.0,
+    141.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n90",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    126.5,
+    485.0,
+    141.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n91",
+   "role": "equipment",
+   "bbox": [
+    260.0,
+    49.0,
+    270.0,
+    54.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n92",
+   "role": "equipment",
+   "bbox": [
+    247.5,
+    36.5,
+    252.5,
+    46.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n93",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    79.0,
+    515.0,
+    94.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n94",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    79.0,
+    485.0,
+    94.0
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n95",
+   "role": "equipment",
+   "bbox": [
+    400.0,
+    84.0,
+    410.0,
+    89.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n96",
+   "role": "equipment",
+   "bbox": [
+    400.0,
+    56.5,
+    410.0,
+    61.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n97",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    51.5,
+    515.0,
+    66.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n98",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    51.5,
+    485.0,
+    66.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n99",
+   "role": "equipment",
+   "bbox": [
+    327.52,
+    51.5,
+    337.52,
+    56.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n100",
+   "role": "equipment",
+   "bbox": [
+    302.51,
+    46.55,
+    310.03,
+    54.07
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n101",
+   "role": "equipment",
+   "bbox": [
+    302.5,
+    89.0,
+    307.5,
+    99.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n102",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    96.5,
+    515.0,
+    111.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n103",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    96.5,
+    485.0,
+    111.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n104",
+   "role": "symbol",
+   "bbox": [
+    292.5,
+    379.0,
+    302.5,
+    384.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n105",
+   "role": "symbol",
+   "bbox": [
+    305.0,
+    391.5,
+    310.0,
+    401.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n106",
+   "role": "symbol",
+   "bbox": [
+    277.48,
+    358.97,
+    284.99,
+    366.49
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n107",
+   "role": "symbol",
+   "bbox": [
+    253.6,
+    338.94,
+    254.6,
+    343.95
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n108",
+   "role": "equipment",
+   "bbox": [
+    325.0,
+    289.0,
+    335.0,
+    294.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n109",
+   "role": "equipment",
+   "bbox": [
+    382.5,
+    284.0,
+    397.5,
+    299.0
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 6,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n110",
+   "role": "symbol",
+   "bbox": [
+    292.5,
+    274.0,
+    297.5,
+    284.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n111",
+   "role": "symbol",
+   "bbox": [
+    700.0,
+    216.5,
+    745.0,
+    231.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n112",
+   "role": "symbol",
+   "bbox": [
+    700.0,
+    216.5,
+    715.0,
+    231.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n113",
+   "role": "equipment",
+   "bbox": [
+    410.0,
+    249.0,
+    420.0,
+    254.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n114",
+   "role": "symbol",
+   "bbox": [
+    397.5,
+    259.0,
+    402.5,
+    269.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n115",
+   "role": "symbol",
+   "bbox": [
+    370.0,
+    210.24,
+    377.51,
+    217.76
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n116",
+   "role": "symbol",
+   "bbox": [
+    346.12,
+    190.21,
+    347.12,
+    195.22
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n117",
+   "role": "equipment",
+   "bbox": [
+    402.5,
+    189.0,
+    412.5,
+    194.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n118",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    184.0,
+    515.0,
+    199.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n119",
+   "role": "symbol",
+   "bbox": [
+    470.0,
+    184.0,
+    485.0,
+    199.0
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n120",
+   "role": "symbol",
+   "bbox": [
+    367.5,
+    174.0,
+    372.5,
+    184.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n121",
+   "role": "equipment",
+   "bbox": [
+    65.0,
+    419.0,
+    75.0,
+    424.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n122",
+   "role": "equipment",
+   "bbox": [
+    57.5,
+    409.0,
+    62.5,
+    419.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n123",
+   "role": "symbol",
+   "bbox": [
+    66.5,
+    399.0,
+    68.5,
+    401.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n124",
+   "role": "equipment",
+   "bbox": [
+    75.0,
+    401.5,
+    85.0,
+    406.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n125",
+   "role": "equipment",
+   "bbox": [
+    77.5,
+    474.0,
+    82.5,
+    484.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n126",
+   "role": "symbol",
+   "bbox": [
+    77.5,
+    499.0,
+    82.5,
+    509.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n127",
+   "role": "symbol",
+   "bbox": [
+    85.0,
+    466.5,
+    95.0,
+    471.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n128",
+   "role": "equipment",
+   "bbox": [
+    22.39,
+    421.5,
+    37.5,
+    431.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n129",
+   "role": "symbol",
+   "bbox": [
+    194.89,
+    421.5,
+    210.0,
+    431.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n130",
+   "role": "equipment",
+   "bbox": [
+    249.89,
+    421.5,
+    265.0,
+    431.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n131",
+   "role": "equipment",
+   "bbox": [
+    204.89,
+    401.5,
+    220.0,
+    411.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n132",
+   "role": "equipment",
+   "bbox": [
+    206.28,
+    356.5,
+    221.39,
+    366.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n133",
+   "role": "symbol",
+   "bbox": [
+    52.5,
+    259.0,
+    97.5,
+    274.0
+   ],
+   "texts": [],
+   "primitives": 15,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n134",
+   "role": "symbol",
+   "bbox": [
+    72.5,
+    499.0,
+    87.5,
+    544.0
+   ],
+   "texts": [],
+   "primitives": 14,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n135",
+   "role": "symbol",
+   "bbox": [
+    107.5,
+    141.5,
+    152.5,
+    156.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n136",
+   "role": "symbol",
+   "bbox": [
+    107.5,
+    141.5,
+    122.5,
+    156.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n137",
+   "role": "equipment",
+   "bbox": [
+    270.0,
+    374.0,
+    315.0,
+    389.0
+   ],
+   "texts": [],
+   "primitives": 15,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n138",
+   "role": "symbol",
+   "bbox": [
+    52.5,
+    514.0,
+    67.5,
+    559.0
+   ],
+   "texts": [],
+   "primitives": 13,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n139",
+   "role": "symbol",
+   "bbox": [
+    127.39,
+    334.0,
+    142.5,
+    344.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n140",
+   "role": "equipment",
+   "bbox": [
+    119.89,
+    361.5,
+    135.0,
+    371.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n141",
+   "role": "equipment",
+   "bbox": [
+    89.89,
+    246.5,
+    105.0,
+    256.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n142",
+   "role": "equipment",
+   "bbox": [
+    72.39,
+    246.5,
+    87.5,
+    256.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n143",
+   "role": "equipment",
+   "bbox": [
+    152.39,
+    116.5,
+    167.5,
+    126.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n144",
+   "role": "symbol",
+   "bbox": [
+    197.39,
+    131.5,
+    212.5,
+    141.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n145",
+   "role": "symbol",
+   "bbox": [
+    187.39,
+    99.0,
+    202.5,
+    109.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n146",
+   "role": "symbol",
+   "bbox": [
+    209.89,
+    101.5,
+    225.0,
+    111.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n147",
+   "role": "symbol",
+   "bbox": [
+    247.39,
+    161.5,
+    262.5,
+    171.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n148",
+   "role": "symbol",
+   "bbox": [
+    309.89,
+    66.5,
+    325.0,
+    76.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n149",
+   "role": "symbol",
+   "bbox": [
+    344.89,
+    68.68,
+    360.0,
+    78.68
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n150",
+   "role": "equipment",
+   "bbox": [
+    299.89,
+    106.5,
+    315.0,
+    116.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n151",
+   "role": "equipment",
+   "bbox": [
+    372.39,
+    114.0,
+    387.5,
+    124.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n152",
+   "role": "equipment",
+   "bbox": [
+    299.89,
+    246.5,
+    315.0,
+    256.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n153",
+   "role": "equipment",
+   "bbox": [
+    382.39,
+    169.0,
+    397.5,
+    179.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n154",
+   "role": "symbol",
+   "bbox": [
+    437.39,
+    224.0,
+    452.5,
+    234.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n155",
+   "role": "symbol",
+   "bbox": [
+    554.89,
+    346.5,
+    570.0,
+    356.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n156",
+   "role": "symbol",
+   "bbox": [
+    377.39,
+    346.5,
+    392.5,
+    356.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n157",
+   "role": "equipment",
+   "bbox": [
+    384.89,
+    384.0,
+    400.0,
+    394.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n158",
+   "role": "symbol",
+   "bbox": [
+    384.89,
+    409.0,
+    400.0,
+    419.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n159",
+   "role": "equipment",
+   "bbox": [
+    547.39,
+    384.0,
+    562.5,
+    394.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n160",
+   "role": "symbol",
+   "bbox": [
+    547.39,
+    411.5,
+    562.5,
+    421.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n161",
+   "role": "symbol",
+   "bbox": [
+    564.89,
+    399.0,
+    580.0,
+    409.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n162",
+   "role": "symbol",
+   "bbox": [
+    647.39,
+    401.5,
+    662.5,
+    411.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n163",
+   "role": "symbol",
+   "bbox": [
+    309.89,
+    356.58,
+    325.0,
+    366.58
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n164",
+   "role": "equipment",
+   "bbox": [
+    639.89,
+    361.5,
+    655.0,
+    371.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n165",
+   "role": "symbol",
+   "bbox": [
+    319.89,
+    409.0,
+    335.0,
+    419.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n166",
+   "role": "symbol",
+   "bbox": [
+    319.89,
+    391.5,
+    335.0,
+    401.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n167",
+   "role": "equipment",
+   "bbox": [
+    334.89,
+    199.0,
+    350.0,
+    209.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n168",
+   "role": "equipment",
+   "bbox": [
+    522.39,
+    279.0,
+    537.5,
+    289.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n169",
+   "role": "symbol",
+   "bbox": [
+    257.39,
+    281.5,
+    272.5,
+    291.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n170",
+   "role": "equipment",
+   "bbox": [
+    304.89,
+    271.5,
+    320.0,
+    281.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n171",
+   "role": "equipment",
+   "bbox": [
+    332.39,
+    319.0,
+    347.5,
+    329.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n172",
+   "role": "symbol",
+   "bbox": [
+    124.89,
+    289.0,
+    140.0,
+    299.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n173",
+   "role": "symbol",
+   "bbox": [
+    202.39,
+    246.5,
+    217.5,
+    256.5
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n174",
+   "role": "symbol",
+   "bbox": [
+    220.15,
+    177.11,
+    223.58,
+    182.12
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 5,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n175",
+   "role": "symbol",
+   "bbox": [
+    218.6,
+    175.87,
+    222.65,
+    182.08
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 6,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n176",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    173.37,
+    222.65,
+    175.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n177",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    170.88,
+    222.65,
+    173.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n178",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    168.37,
+    222.65,
+    170.88
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n179",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    165.87,
+    222.65,
+    168.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n180",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    163.38,
+    222.65,
+    165.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n181",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    160.87,
+    222.65,
+    163.38
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n182",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    158.37,
+    222.65,
+    160.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n183",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    155.88,
+    222.65,
+    158.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n184",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    153.37,
+    222.65,
+    155.88
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n185",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    150.87,
+    222.65,
+    153.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n186",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    148.38,
+    222.65,
+    150.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n187",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    145.87,
+    222.65,
+    148.38
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n188",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    143.37,
+    222.65,
+    145.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n189",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    140.88,
+    222.65,
+    143.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n190",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    138.37,
+    222.65,
+    140.88
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n191",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    135.87,
+    222.65,
+    138.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n192",
+   "role": "mark",
+   "bbox": [
+    220.15,
+    133.38,
+    222.65,
+    135.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n193",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    178.38,
+    185.15,
+    180.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n194",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    175.87,
+    185.15,
+    178.38
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n195",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    173.37,
+    185.15,
+    175.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n196",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    170.88,
+    185.15,
+    173.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n197",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    168.37,
+    185.15,
+    170.88
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n198",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    165.87,
+    185.15,
+    168.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n199",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    163.38,
+    185.15,
+    165.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n200",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    160.87,
+    185.15,
+    163.38
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n201",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    158.37,
+    185.15,
+    160.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n202",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    155.88,
+    185.15,
+    158.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n203",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    153.37,
+    185.15,
+    155.88
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n204",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    150.87,
+    185.15,
+    153.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n205",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    148.38,
+    185.15,
+    150.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n206",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    145.87,
+    185.15,
+    148.38
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n207",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    143.37,
+    185.15,
+    145.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n208",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    140.88,
+    185.15,
+    143.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n209",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    138.37,
+    185.15,
+    140.88
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n210",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    135.87,
+    185.15,
+    138.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n211",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    133.38,
+    185.15,
+    135.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n212",
+   "role": "mark",
+   "bbox": [
+    182.65,
+    130.87,
+    185.15,
+    133.38
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n213",
+   "role": "symbol",
+   "bbox": [
+    210.0,
+    446.5,
+    225.0,
+    469.0
+   ],
+   "texts": [],
+   "primitives": 11,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n214",
+   "role": "symbol",
+   "bbox": [
+    185.08,
+    446.5,
+    194.92,
+    456.5
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n215",
+   "role": "symbol",
+   "bbox": [
+    187.5,
+    449.0,
+    192.5,
+    454.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n216",
+   "role": "symbol",
+   "bbox": [
+    240.0,
+    454.0,
+    255.0,
+    469.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n217",
+   "role": "symbol",
+   "bbox": [
+    592.5,
+    411.5,
+    607.5,
+    434.0
+   ],
+   "texts": [],
+   "primitives": 12,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n218",
+   "role": "symbol",
+   "bbox": [
+    567.58,
+    411.5,
+    577.42,
+    421.5
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n219",
+   "role": "symbol",
+   "bbox": [
+    570.0,
+    414.0,
+    575.0,
+    419.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n220",
+   "role": "symbol",
+   "bbox": [
+    622.5,
+    419.0,
+    637.5,
+    434.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n221",
+   "role": "mark",
+   "bbox": [
+    314.95,
+    309.44,
+    319.16,
+    318.65
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n222",
+   "role": "mark",
+   "bbox": [
+    312.1,
+    311.5,
+    312.15,
+    316.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n223",
+   "role": "mark",
+   "bbox": [
+    113.02,
+    479.12,
+    115.51,
+    480.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n224",
+   "role": "mark",
+   "bbox": [
+    110.52,
+    480.38,
+    115.58,
+    482.9
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n225",
+   "role": "mark",
+   "bbox": [
+    110.52,
+    482.9,
+    115.51,
+    485.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n226",
+   "role": "mark",
+   "bbox": [
+    110.61,
+    485.42,
+    115.62,
+    487.92
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n227",
+   "role": "mark",
+   "bbox": [
+    110.55,
+    487.89,
+    115.58,
+    490.4
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n228",
+   "role": "mark",
+   "bbox": [
+    110.61,
+    490.42,
+    115.38,
+    492.81
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n229",
+   "role": "mark",
+   "bbox": [
+    110.52,
+    492.98,
+    112.78,
+    494.12
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n230",
+   "role": "mark",
+   "bbox": [
+    208.63,
+    502.02,
+    209.88,
+    504.51
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n231",
+   "role": "mark",
+   "bbox": [
+    206.1,
+    499.52,
+    208.62,
+    504.58
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n232",
+   "role": "mark",
+   "bbox": [
+    203.63,
+    499.52,
+    206.1,
+    504.51
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n233",
+   "role": "mark",
+   "bbox": [
+    201.08,
+    499.61,
+    203.58,
+    504.62
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n234",
+   "role": "mark",
+   "bbox": [
+    198.6,
+    499.55,
+    201.11,
+    504.58
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n235",
+   "role": "mark",
+   "bbox": [
+    196.19,
+    499.61,
+    198.58,
+    504.38
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n236",
+   "role": "mark",
+   "bbox": [
+    194.88,
+    499.52,
+    196.02,
+    501.78
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n237",
+   "role": "symbol",
+   "bbox": [
+    227.5,
+    481.5,
+    237.5,
+    486.5
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n238",
+   "role": "mark",
+   "bbox": [
+    180.52,
+    422.87,
+    183.01,
+    424.12
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n239",
+   "role": "mark",
+   "bbox": [
+    178.02,
+    424.13,
+    183.08,
+    426.65
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n240",
+   "role": "mark",
+   "bbox": [
+    178.02,
+    426.65,
+    183.01,
+    429.12
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n241",
+   "role": "mark",
+   "bbox": [
+    178.11,
+    429.17,
+    183.12,
+    431.67
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n242",
+   "role": "mark",
+   "bbox": [
+    178.05,
+    431.64,
+    183.08,
+    434.15
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n243",
+   "role": "mark",
+   "bbox": [
+    178.11,
+    434.17,
+    182.88,
+    436.56
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n244",
+   "role": "mark",
+   "bbox": [
+    178.02,
+    436.73,
+    180.28,
+    437.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n245",
+   "role": "symbol",
+   "bbox": [
+    239.89,
+    296.5,
+    250.11,
+    311.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n246",
+   "role": "symbol",
+   "bbox": [
+    243.1,
+    303.95,
+    246.7,
+    309.3
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n247",
+   "role": "symbol",
+   "bbox": [
+    240.0,
+    316.5,
+    250.83,
+    321.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n248",
+   "role": "mark",
+   "bbox": [
+    230.52,
+    391.62,
+    233.01,
+    392.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n249",
+   "role": "mark",
+   "bbox": [
+    228.02,
+    392.88,
+    233.08,
+    395.4
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n250",
+   "role": "mark",
+   "bbox": [
+    228.02,
+    395.4,
+    233.01,
+    397.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n251",
+   "role": "mark",
+   "bbox": [
+    228.11,
+    397.92,
+    233.12,
+    400.42
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n252",
+   "role": "mark",
+   "bbox": [
+    228.05,
+    400.39,
+    233.08,
+    402.9
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n253",
+   "role": "mark",
+   "bbox": [
+    228.11,
+    402.92,
+    232.88,
+    405.31
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n254",
+   "role": "mark",
+   "bbox": [
+    228.02,
+    405.48,
+    230.28,
+    406.62
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n255",
+   "role": "mark",
+   "bbox": [
+    200.0,
+    384.05,
+    202.11,
+    386.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n256",
+   "role": "mark",
+   "bbox": [
+    211.9,
+    370.05,
+    214.21,
+    373.82
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n257",
+   "role": "symbol",
+   "bbox": [
+    118.63,
+    249.0,
+    128.33,
+    267.01
+   ],
+   "texts": [],
+   "primitives": 9,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n258",
+   "role": "mark",
+   "bbox": [
+    116.1,
+    262.02,
+    118.62,
+    267.08
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n259",
+   "role": "mark",
+   "bbox": [
+    113.63,
+    262.02,
+    116.1,
+    267.01
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n260",
+   "role": "mark",
+   "bbox": [
+    111.08,
+    262.11,
+    113.58,
+    267.12
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n261",
+   "role": "mark",
+   "bbox": [
+    108.6,
+    262.05,
+    111.11,
+    267.08
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n262",
+   "role": "mark",
+   "bbox": [
+    106.19,
+    262.11,
+    108.58,
+    266.88
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n263",
+   "role": "mark",
+   "bbox": [
+    104.88,
+    262.02,
+    106.02,
+    264.28
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n264",
+   "role": "symbol",
+   "bbox": [
+    132.39,
+    226.5,
+    142.61,
+    241.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n265",
+   "role": "symbol",
+   "bbox": [
+    135.6,
+    233.95,
+    139.2,
+    239.3
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n266",
+   "role": "symbol",
+   "bbox": [
+    132.5,
+    246.5,
+    142.5,
+    251.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n267",
+   "role": "mark",
+   "bbox": [
+    170.0,
+    158.17,
+    170.0,
+    160.26
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n268",
+   "role": "symbol",
+   "bbox": [
+    144.86,
+    126.54,
+    149.97,
+    132.81
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n269",
+   "role": "mark",
+   "bbox": [
+    126.67,
+    148.99,
+    165.0,
+    149.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n270",
+   "role": "mark",
+   "bbox": [
+    228.63,
+    179.52,
+    229.88,
+    182.01
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n271",
+   "role": "mark",
+   "bbox": [
+    226.1,
+    177.02,
+    228.62,
+    182.08
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n272",
+   "role": "mark",
+   "bbox": [
+    223.63,
+    177.02,
+    226.1,
+    182.01
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n273",
+   "role": "symbol",
+   "bbox": [
+    329.89,
+    224.0,
+    340.11,
+    239.0
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n274",
+   "role": "symbol",
+   "bbox": [
+    333.1,
+    231.45,
+    336.7,
+    236.8
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n275",
+   "role": "symbol",
+   "bbox": [
+    330.0,
+    244.0,
+    340.0,
+    249.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n276",
+   "role": "mark",
+   "bbox": [
+    306.87,
+    262.02,
+    308.12,
+    264.51
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n277",
+   "role": "mark",
+   "bbox": [
+    304.34,
+    259.52,
+    306.86,
+    264.58
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n278",
+   "role": "mark",
+   "bbox": [
+    301.87,
+    259.52,
+    304.34,
+    264.51
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n279",
+   "role": "mark",
+   "bbox": [
+    299.32,
+    259.61,
+    301.82,
+    264.62
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n280",
+   "role": "mark",
+   "bbox": [
+    296.84,
+    259.55,
+    299.35,
+    264.58
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n281",
+   "role": "mark",
+   "bbox": [
+    294.43,
+    259.61,
+    296.82,
+    264.38
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n282",
+   "role": "mark",
+   "bbox": [
+    293.12,
+    259.52,
+    294.26,
+    261.78
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n283",
+   "role": "mark",
+   "bbox": [
+    273.02,
+    199.12,
+    275.51,
+    200.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n284",
+   "role": "mark",
+   "bbox": [
+    270.52,
+    200.38,
+    275.58,
+    202.9
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n285",
+   "role": "mark",
+   "bbox": [
+    270.52,
+    202.9,
+    275.51,
+    205.37
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n286",
+   "role": "mark",
+   "bbox": [
+    270.61,
+    205.42,
+    275.62,
+    207.92
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n287",
+   "role": "mark",
+   "bbox": [
+    270.55,
+    207.89,
+    275.58,
+    210.4
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n288",
+   "role": "mark",
+   "bbox": [
+    270.61,
+    210.42,
+    275.38,
+    212.81
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n289",
+   "role": "mark",
+   "bbox": [
+    270.52,
+    212.98,
+    272.78,
+    214.12
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n290",
+   "role": "symbol",
+   "bbox": [
+    512.5,
+    339.0,
+    517.5,
+    349.0
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n291",
+   "role": "symbol",
+   "bbox": [
+    430.0,
+    444.0,
+    435.0,
+    454.0
+   ],
+   "texts": [],
+   "primitives": 8,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n292",
+   "role": "symbol",
+   "bbox": [
+    610.0,
+    446.5,
+    620.0,
+    451.5
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n293",
+   "role": "symbol",
+   "bbox": [
+    517.5,
+    444.0,
+    522.5,
+    454.0
+   ],
+   "texts": [],
+   "primitives": 8,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n294",
+   "role": "mark",
+   "bbox": [
+    455.0,
+    348.98,
+    485.83,
+    349.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n295",
+   "role": "symbol",
+   "bbox": [
+    424.83,
+    326.53,
+    429.94,
+    332.8
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n296",
+   "role": "mark",
+   "bbox": [
+    494.17,
+    348.98,
+    497.46,
+    348.99
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n297",
+   "role": "mark",
+   "bbox": [
+    502.48,
+    354.0,
+    502.5,
+    357.77
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n298",
+   "role": "symbol",
+   "bbox": [
+    476.1,
+    326.44,
+    482.44,
+    332.8
+   ],
+   "texts": [],
+   "primitives": 8,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n299",
+   "role": "symbol",
+   "bbox": [
+    417.5,
+    334.0,
+    422.5,
+    349.0
+   ],
+   "texts": [],
+   "primitives": 11,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n300",
+   "role": "symbol",
+   "bbox": [
+    572.39,
+    276.5,
+    582.61,
+    291.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n301",
+   "role": "symbol",
+   "bbox": [
+    575.6,
+    283.95,
+    579.2,
+    289.3
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n302",
+   "role": "symbol",
+   "bbox": [
+    572.5,
+    296.5,
+    585.0,
+    301.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n303",
+   "role": "symbol",
+   "bbox": [
+    572.39,
+    241.5,
+    582.61,
+    256.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n304",
+   "role": "symbol",
+   "bbox": [
+    575.6,
+    248.95,
+    579.2,
+    254.3
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n305",
+   "role": "symbol",
+   "bbox": [
+    570.0,
+    261.5,
+    582.5,
+    266.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n306",
+   "role": "symbol",
+   "bbox": [
+    355.0,
+    436.5,
+    360.0,
+    446.5
+   ],
+   "texts": [],
+   "primitives": 8,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n307",
+   "role": "symbol",
+   "bbox": [
+    332.35,
+    311.61,
+    337.46,
+    317.88
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n308",
+   "role": "symbol",
+   "bbox": [
+    254.89,
+    9.0,
+    265.11,
+    24.0
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n309",
+   "role": "symbol",
+   "bbox": [
+    258.1,
+    16.45,
+    261.7,
+    21.8
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n310",
+   "role": "symbol",
+   "bbox": [
+    255.0,
+    29.0,
+    270.0,
+    34.0
+   ],
+   "texts": [],
+   "primitives": 8,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n311",
+   "role": "symbol",
+   "bbox": [
+    270.0,
+    26.51,
+    284.98,
+    34.0
+   ],
+   "texts": [],
+   "primitives": 15,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n312",
+   "role": "mark",
+   "bbox": [
+    342.48,
+    126.58,
+    342.5,
+    134.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n313",
+   "role": "symbol",
+   "bbox": [
+    317.33,
+    99.11,
+    322.44,
+    105.38
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n314",
+   "role": "symbol",
+   "bbox": [
+    377.5,
+    131.5,
+    387.5,
+    136.5
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n315",
+   "role": "mark",
+   "bbox": [
+    305.02,
+    59.0,
+    320.0,
+    59.08
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n316",
+   "role": "symbol",
+   "bbox": [
+    254.83,
+    339.03,
+    259.94,
+    345.3
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n317",
+   "role": "symbol",
+   "bbox": [
+    310.0,
+    289.0,
+    320.0,
+    294.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n318",
+   "role": "symbol",
+   "bbox": [
+    347.35,
+    190.3,
+    352.46,
+    196.57
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n319",
+   "role": "symbol",
+   "bbox": [
+    387.5,
+    189.0,
+    397.5,
+    194.0
+   ],
+   "texts": [],
+   "primitives": 6,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n320",
+   "role": "symbol",
+   "bbox": [
+    62.39,
+    381.5,
+    72.61,
+    396.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n321",
+   "role": "symbol",
+   "bbox": [
+    65.6,
+    388.95,
+    69.2,
+    394.3
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n322",
+   "role": "symbol",
+   "bbox": [
+    62.5,
+    401.5,
+    75.0,
+    406.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n323",
+   "role": "symbol",
+   "bbox": [
+    82.76,
+    490.43,
+    91.16,
+    499.12
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n324",
+   "role": "symbol",
+   "bbox": [
+    215.85,
+    381.61,
+    219.15,
+    384.85
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n325",
+   "role": "mark",
+   "bbox": [
+    233.27,
+    376.73,
+    234.37,
+    380.59
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n326",
+   "role": "mark",
+   "bbox": [
+    223.7,
+    368.39,
+    224.57,
+    369.92
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n327",
+   "role": "nozzle",
+   "bbox": [
+    230.0,
+    476.5,
+    230.0,
+    477.33
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": "n15",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n328",
+   "role": "nozzle",
+   "bbox": [
+    235.0,
+    476.5,
+    235.0,
+    477.33
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": "n16",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n329",
+   "role": "symbol",
+   "bbox": [
+    599.17,
+    264.0,
+    600.0,
+    264.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n330",
+   "role": "symbol",
+   "bbox": [
+    260.0,
+    450.67,
+    260.0,
+    451.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n331",
+   "role": "symbol",
+   "bbox": [
+    205.0,
+    450.67,
+    205.0,
+    451.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n332",
+   "role": "symbol",
+   "bbox": [
+    100.6,
+    264.0,
+    100.6,
+    269.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n333",
+   "role": "symbol",
+   "bbox": [
+    152.5,
+    249.0,
+    152.5,
+    249.83
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n334",
+   "role": "symbol",
+   "bbox": [
+    230.0,
+    250.9,
+    235.0,
+    250.9
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n335",
+   "role": "symbol",
+   "bbox": [
+    309.4,
+    261.5,
+    309.4,
+    266.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 5,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n336",
+   "role": "symbol",
+   "bbox": [
+    310.6,
+    261.5,
+    310.6,
+    266.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n337",
+   "role": "symbol",
+   "bbox": [
+    322.5,
+    263.17,
+    322.5,
+    264.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n338",
+   "role": "nozzle",
+   "bbox": [
+    612.5,
+    441.5,
+    612.5,
+    442.33
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": "n39",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n339",
+   "role": "nozzle",
+   "bbox": [
+    617.5,
+    441.5,
+    617.5,
+    442.33
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": "n42",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n340",
+   "role": "symbol",
+   "bbox": [
+    414.17,
+    351.5,
+    415.0,
+    351.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n341",
+   "role": "symbol",
+   "bbox": [
+    412.5,
+    334.0,
+    412.5,
+    334.83
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n342",
+   "role": "symbol",
+   "bbox": [
+    218.1,
+    386.5,
+    218.1,
+    391.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n343",
+   "role": "symbol",
+   "bbox": [
+    57.5,
+    427.1,
+    62.5,
+    427.1
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n344",
+   "role": "symbol",
+   "bbox": [
+    57.5,
+    425.9,
+    62.5,
+    425.9
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  }
+ ],
+ "junctions": [
+  {
+   "id": "j0",
+   "pt": [
+    182.5,
+    159.0
+   ]
+  },
+  {
+   "id": "j1",
+   "pt": [
+    235.0,
+    409.0
+   ]
+  },
+  {
+   "id": "j2",
+   "pt": [
+    247.5,
+    451.5
+   ]
+  },
+  {
+   "id": "j3",
+   "pt": [
+    630.0,
+    416.5
+   ]
+  },
+  {
+   "id": "j4",
+   "pt": [
+    182.6,
+    130.87
+   ]
+  },
+  {
+   "id": "j5",
+   "pt": [
+    235.2,
+    403.75
+   ]
+  },
+  {
+   "id": "j6",
+   "pt": [
+    122.5,
+    266.5
+   ]
+  },
+  {
+   "id": "j7",
+   "pt": [
+    157.5,
+    266.5
+   ]
+  },
+  {
+   "id": "j8",
+   "pt": [
+    152.5,
+    266.5
+   ]
+  },
+  {
+   "id": "j9",
+   "pt": [
+    357.5,
+    219.0
+   ]
+  },
+  {
+   "id": "j10",
+   "pt": [
+    357.5,
+    204.0
+   ]
+  },
+  {
+   "id": "j11",
+   "pt": [
+    275.0,
+    166.5
+   ]
+  },
+  {
+   "id": "j12",
+   "pt": [
+    476.1,
+    331.4
+   ]
+  },
+  {
+   "id": "j13",
+   "pt": [
+    477.1,
+    331.4
+   ]
+  },
+  {
+   "id": "j14",
+   "pt": [
+    387.5,
+    299.0
+   ]
+  },
+  {
+   "id": "j15",
+   "pt": [
+    555.0,
+    299.0
+   ]
+  },
+  {
+   "id": "j16",
+   "pt": [
+    532.5,
+    299.0
+   ]
+  },
+  {
+   "id": "j17",
+   "pt": [
+    427.5,
+    299.0
+   ]
+  },
+  {
+   "id": "j18",
+   "pt": [
+    427.5,
+    294.0
+   ]
+  },
+  {
+   "id": "j19",
+   "pt": [
+    427.5,
+    291.5
+   ]
+  },
+  {
+   "id": "j20",
+   "pt": [
+    250.0,
+    51.5
+   ]
+  },
+  {
+   "id": "j21",
+   "pt": [
+    305.0,
+    86.5
+   ]
+  },
+  {
+   "id": "j22",
+   "pt": [
+    305.0,
+    156.5
+   ]
+  },
+  {
+   "id": "j23",
+   "pt": [
+    355.0,
+    86.5
+   ]
+  },
+  {
+   "id": "j24",
+   "pt": [
+    342.5,
+    54.0
+   ]
+  },
+  {
+   "id": "j25",
+   "pt": [
+    307.5,
+    371.5
+   ]
+  },
+  {
+   "id": "j26",
+   "pt": [
+    285.0,
+    299.0
+   ]
+  },
+  {
+   "id": "j27",
+   "pt": [
+    295.0,
+    291.5
+   ]
+  },
+  {
+   "id": "j28",
+   "pt": [
+    400.0,
+    251.5
+   ]
+  },
+  {
+   "id": "j29",
+   "pt": [
+    370.0,
+    191.5
+   ]
+  },
+  {
+   "id": "j30",
+   "pt": [
+    60.0,
+    421.5
+   ]
+  },
+  {
+   "id": "j31",
+   "pt": [
+    80.0,
+    469.0
+   ]
+  },
+  {
+   "id": "j32",
+   "pt": [
+    310.0,
+    126.5
+   ]
+  }
+ ],
+ "runs": [
+  {
+   "id": "r0",
+   "a": "n175",
+   "b": "n1",
+   "coords": [
+    [
+     222.7,
+     178.62
+    ],
+    [
+     222.7,
+     131.5
+    ],
+    [
+     220.15,
+     131.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r1",
+   "a": "n175",
+   "b": "n174",
+   "coords": [
+    [
+     222.7,
+     178.62
+    ],
+    [
+     222.7,
+     179.89
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r2",
+   "a": "n175",
+   "b": "n1",
+   "coords": [
+    [
+     220.45,
+     181.5
+    ],
+    [
+     212.5,
+     181.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.14,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r3",
+   "a": "n175",
+   "b": "n174",
+   "coords": [
+    [
+     220.45,
+     181.5
+    ],
+    [
+     221.85,
+     181.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r4",
+   "a": "n175",
+   "b": "n1",
+   "coords": [
+    [
+     220.45,
+     179.0
+    ],
+    [
+     212.5,
+     179.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.39,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r5",
+   "a": "n175",
+   "b": "n174",
+   "coords": [
+    [
+     220.45,
+     179.0
+    ],
+    [
+     221.85,
+     179.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r6",
+   "a": "n174",
+   "b": "n334",
+   "coords": [
+    [
+     221.85,
+     181.5
+    ],
+    [
+     227.5,
+     181.5
+    ],
+    [
+     232.92,
+     181.5
+    ],
+    [
+     239.64,
+     181.5
+    ],
+    [
+     239.6,
+     233.53
+    ],
+    [
+     232.5,
+     233.5
+    ],
+    [
+     232.5,
+     250.88
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.42,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r7",
+   "a": "n174",
+   "b": "open@(227.5, 179.0)",
+   "coords": [
+    [
+     221.85,
+     179.0
+    ],
+    [
+     227.5,
+     179.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r8",
+   "a": "j4",
+   "b": "j0",
+   "coords": [
+    [
+     182.6,
+     130.87
+    ],
+    [
+     182.6,
+     159.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r9",
+   "a": "j4",
+   "b": "open@(182.5, 123.1)",
+   "coords": [
+    [
+     182.5,
+     130.87
+    ],
+    [
+     182.5,
+     127.17
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 8.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r10",
+   "a": "j4",
+   "b": "j0",
+   "coords": [
+    [
+     182.5,
+     130.9
+    ],
+    [
+     182.5,
+     159.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r11",
+   "a": "j4",
+   "b": "n1",
+   "coords": [
+    [
+     182.65,
+     130.9
+    ],
+    [
+     185.15,
+     130.9
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r12",
+   "a": "j0",
+   "b": "n1",
+   "coords": [
+    [
+     182.6,
+     159.0
+    ],
+    [
+     182.6,
+     180.87
+    ],
+    [
+     185.15,
+     180.9
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r13",
+   "a": "n20",
+   "b": "open@(230.4, 424.0)",
+   "coords": [
+    [
+     217.5,
+     426.5
+    ],
+    [
+     217.5,
+     424.0
+    ],
+    [
+     228.33,
+     424.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r14",
+   "a": "n20",
+   "b": "n18",
+   "coords": [
+    [
+     217.5,
+     436.5
+    ],
+    [
+     217.5,
+     439.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r15",
+   "a": "n213",
+   "b": "n15",
+   "coords": [
+    [
+     217.5,
+     473.17
+    ],
+    [
+     217.5,
+     476.5
+    ],
+    [
+     220.0,
+     476.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r16",
+   "a": "n213",
+   "b": "n331",
+   "coords": [
+    [
+     217.5,
+     451.5
+    ],
+    [
+     205.0,
+     451.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r17",
+   "a": "n11",
+   "b": "open@(217.5, 476.9)",
+   "coords": [
+    [
+     217.5,
+     484.0
+    ],
+    [
+     217.5,
+     480.67
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r18",
+   "a": "n11",
+   "b": "n14",
+   "coords": [
+    [
+     217.5,
+     498.17
+    ],
+    [
+     217.5,
+     504.0
+    ],
+    [
+     247.5,
+     504.0
+    ],
+    [
+     247.5,
+     498.17
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r19",
+   "a": "j5",
+   "b": "j1",
+   "coords": [
+    [
+     235.2,
+     403.75
+    ],
+    [
+     235.2,
+     409.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r20",
+   "a": "j5",
+   "b": "open@(235.0, 394.0)",
+   "coords": [
+    [
+     235.0,
+     403.75
+    ],
+    [
+     235.0,
+     394.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r21",
+   "a": "j5",
+   "b": "j1",
+   "coords": [
+    [
+     235.0,
+     403.75
+    ],
+    [
+     235.0,
+     409.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r22",
+   "a": "n25",
+   "b": "open@(234.6, 424.0)",
+   "coords": [
+    [
+     247.5,
+     426.5
+    ],
+    [
+     247.5,
+     424.0
+    ],
+    [
+     236.67,
+     424.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r23",
+   "a": "n25",
+   "b": "n24",
+   "coords": [
+    [
+     247.5,
+     436.5
+    ],
+    [
+     247.5,
+     439.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r24",
+   "a": "n24",
+   "b": "j2",
+   "coords": [
+    [
+     247.5,
+     449.0
+    ],
+    [
+     247.5,
+     451.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r25",
+   "a": "j2",
+   "b": "n216",
+   "coords": [
+    [
+     247.5,
+     451.5
+    ],
+    [
+     247.5,
+     460.33
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r26",
+   "a": "j2",
+   "b": "n330",
+   "coords": [
+    [
+     247.5,
+     451.5
+    ],
+    [
+     260.0,
+     451.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r27",
+   "a": "n216",
+   "b": "n16",
+   "coords": [
+    [
+     247.5,
+     473.17
+    ],
+    [
+     247.5,
+     476.5
+    ],
+    [
+     245.0,
+     476.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r28",
+   "a": "n14",
+   "b": "open@(247.5, 476.9)",
+   "coords": [
+    [
+     247.5,
+     484.0
+    ],
+    [
+     247.5,
+     480.67
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r29",
+   "a": "open@(265.2, 403.8)",
+   "b": "n130",
+   "coords": [
+    [
+     265.2,
+     403.75
+    ],
+    [
+     265.2,
+     411.25
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 10.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r30",
+   "a": "n130",
+   "b": "n19",
+   "coords": [
+    [
+     260.0,
+     431.5
+    ],
+    [
+     260.0,
+     439.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r31",
+   "a": "n329",
+   "b": "n78",
+   "coords": [
+    [
+     600.0,
+     264.0
+    ],
+    [
+     600.0,
+     274.0
+    ],
+    [
+     586.67,
+     274.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r32",
+   "a": "n329",
+   "b": "n76",
+   "coords": [
+    [
+     604.17,
+     264.0
+    ],
+    [
+     695.0,
+     264.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r33",
+   "a": "n65",
+   "b": "open@(647.2, 381.5)",
+   "coords": [
+    [
+     600.0,
+     389.0
+    ],
+    [
+     600.0,
+     381.5
+    ],
+    [
+     624.33,
+     381.5
+    ],
+    [
+     630.0,
+     381.5
+    ],
+    [
+     644.33,
+     381.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r34",
+   "a": "n65",
+   "b": "n64",
+   "coords": [
+    [
+     600.0,
+     399.0
+    ],
+    [
+     600.0,
+     404.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r35",
+   "a": "n217",
+   "b": "n39",
+   "coords": [
+    [
+     600.0,
+     439.67
+    ],
+    [
+     600.0,
+     441.5
+    ],
+    [
+     602.5,
+     441.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r36",
+   "a": "n41",
+   "b": "open@(600.0, 443.4)",
+   "coords": [
+    [
+     600.0,
+     449.0
+    ],
+    [
+     600.0,
+     447.17
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r37",
+   "a": "n41",
+   "b": "n40",
+   "coords": [
+    [
+     600.0,
+     459.0
+    ],
+    [
+     600.0,
+     469.0
+    ],
+    [
+     630.0,
+     469.0
+    ],
+    [
+     630.0,
+     464.67
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r38",
+   "a": "open@(617.7, 368.8)",
+   "b": "open@(617.7, 376.3)",
+   "coords": [
+    [
+     617.7,
+     368.75
+    ],
+    [
+     617.7,
+     376.25
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r39",
+   "a": "n61",
+   "b": "open@(630.0, 384.3)",
+   "coords": [
+    [
+     630.0,
+     389.0
+    ],
+    [
+     630.0,
+     387.17
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r40",
+   "a": "n61",
+   "b": "n67",
+   "coords": [
+    [
+     630.0,
+     399.0
+    ],
+    [
+     630.0,
+     404.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r41",
+   "a": "n67",
+   "b": "j3",
+   "coords": [
+    [
+     630.0,
+     414.0
+    ],
+    [
+     630.0,
+     416.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r42",
+   "a": "j3",
+   "b": "n220",
+   "coords": [
+    [
+     630.0,
+     416.5
+    ],
+    [
+     630.0,
+     425.33
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r43",
+   "a": "j3",
+   "b": "n66",
+   "coords": [
+    [
+     630.0,
+     416.5
+    ],
+    [
+     637.08,
+     416.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.91,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r44",
+   "a": "n220",
+   "b": "n42",
+   "coords": [
+    [
+     630.0,
+     439.67
+    ],
+    [
+     630.0,
+     441.5
+    ],
+    [
+     627.5,
+     441.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r45",
+   "a": "n40",
+   "b": "open@(630.0, 443.4)",
+   "coords": [
+    [
+     630.0,
+     449.0
+    ],
+    [
+     630.0,
+     447.17
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r46",
+   "a": "n164",
+   "b": "open@(647.7, 376.3)",
+   "coords": [
+    [
+     647.7,
+     368.75
+    ],
+    [
+     647.7,
+     376.25
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 2.55,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r47",
+   "a": "n164",
+   "b": "n62",
+   "coords": [
+    [
+     650.0,
+     371.5
+    ],
+    [
+     650.0,
+     381.5
+    ],
+    [
+     699.33,
+     381.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r48",
+   "a": "n0",
+   "b": "open@(160.8, 389.0)",
+   "coords": [
+    [
+     115.0,
+     396.5
+    ],
+    [
+     115.0,
+     389.0
+    ],
+    [
+     160.83,
+     389.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r49",
+   "a": "n0",
+   "b": "open@(212.5, 504.0)",
+   "coords": [
+    [
+     115.0,
+     475.67
+    ],
+    [
+     115.0,
+     496.5
+    ],
+    [
+     115.0,
+     500.67
+    ],
+    [
+     115.0,
+     504.0
+    ],
+    [
+     187.08,
+     504.0
+    ],
+    [
+     192.5,
+     504.0
+    ],
+    [
+     207.5,
+     504.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.42,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r50",
+   "a": "n0",
+   "b": "open@(112.5, 496.5)",
+   "coords": [
+    [
+     112.5,
+     481.5
+    ],
+    [
+     112.5,
+     496.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 10.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r51",
+   "a": "n0",
+   "b": "open@(117.5, 496.5)",
+   "coords": [
+    [
+     117.5,
+     481.5
+    ],
+    [
+     117.5,
+     496.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 10.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r52",
+   "a": "n0",
+   "b": "n124",
+   "coords": [
+    [
+     102.5,
+     404.0
+    ],
+    [
+     95.0,
+     404.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 10.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r53",
+   "a": "n0",
+   "b": "j31",
+   "coords": [
+    [
+     102.7,
+     461.7
+    ],
+    [
+     80.0,
+     461.7
+    ],
+    [
+     80.0,
+     469.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r54",
+   "a": "open@(200.0, 389.0)",
+   "b": "n342",
+   "coords": [
+    [
+     200.0,
+     389.0
+    ],
+    [
+     212.71,
+     389.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.39,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r55",
+   "a": "n342",
+   "b": "open@(230.4, 389.0)",
+   "coords": [
+    [
+     218.12,
+     389.0
+    ],
+    [
+     228.33,
+     389.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r56",
+   "a": "n7",
+   "b": "n157",
+   "coords": [
+    [
+     385.0,
+     389.0
+    ],
+    [
+     392.99,
+     389.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r57",
+   "a": "n157",
+   "b": "open@(412.5, 389.0)",
+   "coords": [
+    [
+     392.99,
+     389.0
+    ],
+    [
+     412.5,
+     389.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r58",
+   "a": "n6",
+   "b": "n159",
+   "coords": [
+    [
+     547.5,
+     389.0
+    ],
+    [
+     555.49,
+     389.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r59",
+   "a": "n6",
+   "b": "n298",
+   "coords": [
+    [
+     515.0,
+     331.5
+    ],
+    [
+     478.79,
+     331.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r60",
+   "a": "n6",
+   "b": "open@(532.5, 420.7)",
+   "coords": [
+    [
+     532.5,
+     363.9
+    ],
+    [
+     532.5,
+     420.67
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r61",
+   "a": "n159",
+   "b": "open@(567.5, 389.0)",
+   "coords": [
+    [
+     555.49,
+     389.0
+    ],
+    [
+     567.5,
+     389.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r62",
+   "a": "open@(192.5, 501.5)",
+   "b": "open@(207.5, 501.5)",
+   "coords": [
+    [
+     192.5,
+     501.5
+    ],
+    [
+     207.5,
+     501.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r63",
+   "a": "open@(192.5, 506.5)",
+   "b": "open@(207.5, 506.5)",
+   "coords": [
+    [
+     192.5,
+     506.5
+    ],
+    [
+     207.5,
+     506.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r64",
+   "a": "n334",
+   "b": "n335",
+   "coords": [
+    [
+     232.5,
+     256.29
+    ],
+    [
+     232.5,
+     264.0
+    ],
+    [
+     285.81,
+     264.0
+    ],
+    [
+     290.74,
+     264.0
+    ],
+    [
+     309.38,
+     264.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.39,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r65",
+   "a": "n334",
+   "b": "n173",
+   "coords": [
+    [
+     230.0,
+     251.5
+    ],
+    [
+     210.49,
+     251.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r66",
+   "a": "n21",
+   "b": "n247",
+   "coords": [
+    [
+     232.5,
+     324.0
+    ],
+    [
+     232.5,
+     319.0
+    ],
+    [
+     235.83,
+     319.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r67",
+   "a": "n21",
+   "b": "n26",
+   "coords": [
+    [
+     232.5,
+     334.0
+    ],
+    [
+     232.5,
+     336.5
+    ],
+    [
+     235.83,
+     336.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r68",
+   "a": "n21",
+   "b": "open@(232.5, 424.0)",
+   "coords": [
+    [
+     232.5,
+     340.67
+    ],
+    [
+     232.5,
+     389.0
+    ],
+    [
+     232.5,
+     393.17
+    ],
+    [
+     232.5,
+     409.0
+    ],
+    [
+     232.5,
+     410.67
+    ],
+    [
+     232.5,
+     424.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 6.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r69",
+   "a": "n237",
+   "b": "n12",
+   "coords": [
+    [
+     232.5,
+     486.5
+    ],
+    [
+     232.5,
+     519.0
+    ],
+    [
+     293.33,
+     519.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r70",
+   "a": "open@(182.5, 396.5)",
+   "b": "open@(182.5, 499.8)",
+   "coords": [
+    [
+     182.5,
+     396.5
+    ],
+    [
+     182.5,
+     417.33
+    ],
+    [
+     182.5,
+     425.25
+    ],
+    [
+     182.5,
+     440.25
+    ],
+    [
+     182.5,
+     444.0
+    ],
+    [
+     182.5,
+     499.83
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.92,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r71",
+   "a": "open@(180.0, 425.2)",
+   "b": "open@(180.0, 440.2)",
+   "coords": [
+    [
+     180.0,
+     425.25
+    ],
+    [
+     180.0,
+     440.25
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r72",
+   "a": "open@(185.0, 425.2)",
+   "b": "n214",
+   "coords": [
+    [
+     185.0,
+     425.25
+    ],
+    [
+     185.0,
+     440.25
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 7.38,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r73",
+   "a": "n3",
+   "b": "j20",
+   "coords": [
+    [
+     245.0,
+     64.0
+    ],
+    [
+     245.0,
+     51.5
+    ],
+    [
+     250.0,
+     51.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r74",
+   "a": "n3",
+   "b": "n2",
+   "coords": [
+    [
+     250.0,
+     81.5
+    ],
+    [
+     250.0,
+     140.25
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r75",
+   "a": "n3",
+   "b": "n100",
+   "coords": [
+    [
+     300.0,
+     61.5
+    ],
+    [
+     300.0,
+     59.0
+    ],
+    [
+     305.02,
+     59.0
+    ],
+    [
+     305.0,
+     54.08
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r76",
+   "a": "n3",
+   "b": "n150",
+   "coords": [
+    [
+     300.0,
+     85.67
+    ],
+    [
+     300.0,
+     111.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r77",
+   "a": "n3",
+   "b": "j21",
+   "coords": [
+    [
+     305.0,
+     81.5
+    ],
+    [
+     305.0,
+     86.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r78",
+   "a": "n3",
+   "b": "n148",
+   "coords": [
+    [
+     300.0,
+     61.5
+    ],
+    [
+     320.0,
+     61.5
+    ],
+    [
+     320.0,
+     66.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r79",
+   "a": "n2",
+   "b": "n1",
+   "coords": [
+    [
+     245.0,
+     125.83
+    ],
+    [
+     245.0,
+     119.0
+    ],
+    [
+     220.0,
+     119.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.92,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r80",
+   "a": "n2",
+   "b": "open@(270.8, 156.5)",
+   "coords": [
+    [
+     250.0,
+     140.25
+    ],
+    [
+     250.0,
+     156.5
+    ],
+    [
+     270.83,
+     156.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r81",
+   "a": "n2",
+   "b": "j11",
+   "coords": [
+    [
+     275.0,
+     149.0
+    ],
+    [
+     275.0,
+     166.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r82",
+   "a": "n2",
+   "b": "n150",
+   "coords": [
+    [
+     300.0,
+     131.5
+    ],
+    [
+     300.0,
+     111.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r83",
+   "a": "n2",
+   "b": "j32",
+   "coords": [
+    [
+     305.0,
+     131.5
+    ],
+    [
+     305.0,
+     126.5
+    ],
+    [
+     310.0,
+     126.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r84",
+   "a": "n2",
+   "b": "j22",
+   "coords": [
+    [
+     305.0,
+     149.0
+    ],
+    [
+     305.0,
+     156.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r85",
+   "a": "n2",
+   "b": "open@(322.2, 134.0)",
+   "coords": [
+    [
+     312.5,
+     134.0
+    ],
+    [
+     319.33,
+     134.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r86",
+   "a": "n2",
+   "b": "j32",
+   "coords": [
+    [
+     312.5,
+     134.0
+    ],
+    [
+     312.5,
+     126.5
+    ],
+    [
+     310.0,
+     126.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r87",
+   "a": "n245",
+   "b": "n22",
+   "coords": [
+    [
+     245.0,
+     311.5
+    ],
+    [
+     245.0,
+     314.91
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r88",
+   "a": "n245",
+   "b": "n132",
+   "coords": [
+    [
+     245.0,
+     296.5
+    ],
+    [
+     215.0,
+     296.5
+    ],
+    [
+     215.0,
+     361.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r89",
+   "a": "n22",
+   "b": "n247",
+   "coords": [
+    [
+     245.0,
+     314.91
+    ],
+    [
+     245.0,
+     319.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r90",
+   "a": "open@(272.5, 201.5)",
+   "b": "open@(272.5, 216.5)",
+   "coords": [
+    [
+     272.5,
+     201.5
+    ],
+    [
+     272.5,
+     216.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r91",
+   "a": "open@(230.0, 394.0)",
+   "b": "open@(230.0, 409.0)",
+   "coords": [
+    [
+     230.0,
+     394.0
+    ],
+    [
+     230.0,
+     409.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r92",
+   "a": "n26",
+   "b": "open@(267.5, 323.2)",
+   "coords": [
+    [
+     250.0,
+     336.5
+    ],
+    [
+     267.5,
+     336.5
+    ],
+    [
+     267.5,
+     323.17
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r93",
+   "a": "n169",
+   "b": "j26",
+   "coords": [
+    [
+     267.5,
+     291.5
+    ],
+    [
+     267.5,
+     299.0
+    ],
+    [
+     285.0,
+     299.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r94",
+   "a": "n332",
+   "b": "j6",
+   "coords": [
+    [
+     100.63,
+     266.5
+    ],
+    [
+     122.5,
+     266.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r95",
+   "a": "n332",
+   "b": "n257",
+   "coords": [
+    [
+     102.5,
+     264.0
+    ],
+    [
+     117.5,
+     264.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.36,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r96",
+   "a": "n332",
+   "b": "open@(117.5, 269.0)",
+   "coords": [
+    [
+     102.5,
+     269.0
+    ],
+    [
+     117.5,
+     269.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.9,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r97",
+   "a": "j6",
+   "b": "n257",
+   "coords": [
+    [
+     122.5,
+     266.5
+    ],
+    [
+     122.67,
+     266.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r98",
+   "a": "j6",
+   "b": "n257",
+   "coords": [
+    [
+     122.5,
+     266.5
+    ],
+    [
+     122.5,
+     264.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r99",
+   "a": "n257",
+   "b": "n28",
+   "coords": [
+    [
+     122.67,
+     266.5
+    ],
+    [
+     126.83,
+     266.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r100",
+   "a": "n28",
+   "b": "j8",
+   "coords": [
+    [
+     142.5,
+     266.5
+    ],
+    [
+     152.5,
+     266.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r101",
+   "a": "j8",
+   "b": "j7",
+   "coords": [
+    [
+     152.5,
+     266.5
+    ],
+    [
+     157.5,
+     266.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r102",
+   "a": "j8",
+   "b": "n30",
+   "coords": [
+    [
+     152.5,
+     266.5
+    ],
+    [
+     152.5,
+     264.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r103",
+   "a": "j7",
+   "b": "open@(165.0, 266.5)",
+   "coords": [
+    [
+     157.5,
+     266.5
+    ],
+    [
+     165.0,
+     266.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r104",
+   "a": "j7",
+   "b": "n172",
+   "coords": [
+    [
+     157.5,
+     266.5
+    ],
+    [
+     157.5,
+     294.0
+    ],
+    [
+     142.5,
+     294.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 5.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r105",
+   "a": "open@(290.7, 266.5)",
+   "b": "n335",
+   "coords": [
+    [
+     290.74,
+     266.5
+    ],
+    [
+     305.74,
+     266.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 3.66,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r106",
+   "a": "n335",
+   "b": "open@(290.7, 261.5)",
+   "coords": [
+    [
+     305.74,
+     261.5
+    ],
+    [
+     290.74,
+     261.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 3.66,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r107",
+   "a": "n336",
+   "b": "n337",
+   "coords": [
+    [
+     310.62,
+     264.0
+    ],
+    [
+     316.83,
+     264.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r108",
+   "a": "n337",
+   "b": "n36",
+   "coords": [
+    [
+     322.5,
+     264.0
+    ],
+    [
+     324.33,
+     264.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r109",
+   "a": "n36",
+   "b": "n4",
+   "coords": [
+    [
+     340.0,
+     264.0
+    ],
+    [
+     357.5,
+     264.0
+    ],
+    [
+     357.5,
+     252.17
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 6.92,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r110",
+   "a": "n58",
+   "b": "open@(550.0, 271.9)",
+   "coords": [
+    [
+     560.0,
+     264.0
+    ],
+    [
+     550.0,
+     264.0
+    ],
+    [
+     550.0,
+     269.83
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 10.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r111",
+   "a": "n305",
+   "b": "n79",
+   "coords": [
+    [
+     582.5,
+     264.0
+    ],
+    [
+     585.0,
+     264.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r112",
+   "a": "n305",
+   "b": "n57",
+   "coords": [
+    [
+     577.5,
+     264.0
+    ],
+    [
+     577.5,
+     259.91
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r113",
+   "a": "n264",
+   "b": "n29",
+   "coords": [
+    [
+     137.5,
+     241.5
+    ],
+    [
+     137.5,
+     244.91
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r114",
+   "a": "n264",
+   "b": "n141",
+   "coords": [
+    [
+     137.5,
+     226.5
+    ],
+    [
+     100.0,
+     226.5
+    ],
+    [
+     100.0,
+     246.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r115",
+   "a": "n29",
+   "b": "n266",
+   "coords": [
+    [
+     137.5,
+     244.91
+    ],
+    [
+     137.5,
+     249.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r116",
+   "a": "n266",
+   "b": "n333",
+   "coords": [
+    [
+     142.5,
+     249.0
+    ],
+    [
+     152.5,
+     249.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r117",
+   "a": "n268",
+   "b": "n135",
+   "coords": [
+    [
+     147.5,
+     132.83
+    ],
+    [
+     147.5,
+     140.22
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.28,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r118",
+   "a": "n92",
+   "b": "n310",
+   "coords": [
+    [
+     250.0,
+     36.5
+    ],
+    [
+     250.0,
+     31.5
+    ],
+    [
+     255.0,
+     31.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r119",
+   "a": "n92",
+   "b": "j20",
+   "coords": [
+    [
+     250.0,
+     46.5
+    ],
+    [
+     250.0,
+     51.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r120",
+   "a": "j20",
+   "b": "n91",
+   "coords": [
+    [
+     250.0,
+     51.5
+    ],
+    [
+     260.0,
+     51.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r121",
+   "a": "j22",
+   "b": "n83",
+   "coords": [
+    [
+     305.0,
+     156.5
+    ],
+    [
+     398.75,
+     156.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r122",
+   "a": "j22",
+   "b": "n84",
+   "coords": [
+    [
+     305.0,
+     156.5
+    ],
+    [
+     305.0,
+     164.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r123",
+   "a": "n83",
+   "b": "n81",
+   "coords": [
+    [
+     408.75,
+     156.5
+    ],
+    [
+     470.0,
+     156.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r124",
+   "a": "n1",
+   "b": "open@(173.7, 121.5)",
+   "coords": [
+    [
+     191.83,
+     119.0
+    ],
+    [
+     182.5,
+     119.0
+    ],
+    [
+     182.5,
+     121.5
+    ],
+    [
+     175.0,
+     121.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r125",
+   "a": "n1",
+   "b": "open@(235.0, 252.1)",
+   "coords": [
+    [
+     230.0,
+     252.1
+    ],
+    [
+     235.0,
+     252.1
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 9.85,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r126",
+   "a": "open@(212.5, 184.0)",
+   "b": "open@(227.5, 184.0)",
+   "coords": [
+    [
+     212.5,
+     184.0
+    ],
+    [
+     227.5,
+     184.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r127",
+   "a": "n273",
+   "b": "n33",
+   "coords": [
+    [
+     335.0,
+     239.0
+    ],
+    [
+     335.0,
+     242.41
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r128",
+   "a": "n273",
+   "b": "n152",
+   "coords": [
+    [
+     335.0,
+     224.0
+    ],
+    [
+     310.0,
+     224.0
+    ],
+    [
+     310.0,
+     246.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r129",
+   "a": "n33",
+   "b": "n275",
+   "coords": [
+    [
+     335.0,
+     242.41
+    ],
+    [
+     335.0,
+     246.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r130",
+   "a": "n275",
+   "b": "n35",
+   "coords": [
+    [
+     325.83,
+     246.5
+    ],
+    [
+     322.5,
+     246.5
+    ],
+    [
+     322.5,
+     249.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r131",
+   "a": "n275",
+   "b": "n34",
+   "coords": [
+    [
+     340.0,
+     246.5
+    ],
+    [
+     342.5,
+     246.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r132",
+   "a": "n307",
+   "b": "n171",
+   "coords": [
+    [
+     335.0,
+     317.9
+    ],
+    [
+     335.0,
+     324.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r133",
+   "a": "n171",
+   "b": "n75",
+   "coords": [
+    [
+     342.5,
+     329.0
+    ],
+    [
+     342.5,
+     339.0
+    ],
+    [
+     352.5,
+     339.0
+    ],
+    [
+     352.5,
+     344.91
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.16,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r134",
+   "a": "j10",
+   "b": "j29",
+   "coords": [
+    [
+     357.5,
+     204.0
+    ],
+    [
+     357.5,
+     191.5
+    ],
+    [
+     370.0,
+     191.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r135",
+   "a": "j10",
+   "b": "j9",
+   "coords": [
+    [
+     357.5,
+     204.0
+    ],
+    [
+     357.5,
+     219.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r136",
+   "a": "j10",
+   "b": "n167",
+   "coords": [
+    [
+     357.5,
+     204.0
+    ],
+    [
+     352.5,
+     204.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 5.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r137",
+   "a": "j9",
+   "b": "n4",
+   "coords": [
+    [
+     357.5,
+     219.0
+    ],
+    [
+     357.5,
+     224.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r138",
+   "a": "j9",
+   "b": "n115",
+   "coords": [
+    [
+     357.5,
+     219.0
+    ],
+    [
+     372.5,
+     219.0
+    ],
+    [
+     372.5,
+     216.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.26,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r139",
+   "a": "n4",
+   "b": "open@(357.5, 249.3)",
+   "coords": [
+    [
+     357.5,
+     244.0
+    ],
+    [
+     357.5,
+     246.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r140",
+   "a": "n4",
+   "b": "open@(444.7, 216.5)",
+   "coords": [
+    [
+     411.2,
+     224.0
+    ],
+    [
+     411.2,
+     216.5
+    ],
+    [
+     441.83,
+     216.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r141",
+   "a": "n4",
+   "b": "j28",
+   "coords": [
+    [
+     400.0,
+     241.5
+    ],
+    [
+     400.0,
+     251.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r142",
+   "a": "n69",
+   "b": "open@(357.5, 361.5)",
+   "coords": [
+    [
+     357.5,
+     343.24
+    ],
+    [
+     357.5,
+     361.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.18,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r143",
+   "a": "n69",
+   "b": "n45",
+   "coords": [
+    [
+     362.52,
+     334.1
+    ],
+    [
+     370.0,
+     334.1
+    ],
+    [
+     370.0,
+     324.0
+    ],
+    [
+     485.83,
+     324.0
+    ],
+    [
+     490.0,
+     324.0
+    ],
+    [
+     700.83,
+     324.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r144",
+   "a": "open@(357.5, 429.0)",
+   "b": "n306",
+   "coords": [
+    [
+     357.5,
+     429.0
+    ],
+    [
+     357.5,
+     432.33
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r145",
+   "a": "n306",
+   "b": "n8",
+   "coords": [
+    [
+     357.5,
+     446.5
+    ],
+    [
+     357.5,
+     456.08
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r146",
+   "a": "j11",
+   "b": "open@(275.0, 258.3)",
+   "coords": [
+    [
+     275.0,
+     166.5
+    ],
+    [
+     275.0,
+     200.25
+    ],
+    [
+     275.0,
+     201.5
+    ],
+    [
+     275.0,
+     216.5
+    ],
+    [
+     275.0,
+     217.75
+    ],
+    [
+     275.0,
+     258.33
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r147",
+   "a": "j11",
+   "b": "n147",
+   "coords": [
+    [
+     275.0,
+     166.5
+    ],
+    [
+     265.0,
+     166.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 5.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r148",
+   "a": "open@(277.5, 201.5)",
+   "b": "open@(277.5, 216.5)",
+   "coords": [
+    [
+     277.5,
+     201.5
+    ],
+    [
+     277.5,
+     216.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r149",
+   "a": "n5",
+   "b": "j12",
+   "coords": [
+    [
+     443.5,
+     331.5
+    ],
+    [
+     476.1,
+     331.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r150",
+   "a": "j12",
+   "b": "j13",
+   "coords": [
+    [
+     476.1,
+     331.5
+    ],
+    [
+     477.1,
+     331.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r151",
+   "a": "j13",
+   "b": "n298",
+   "coords": [
+    [
+     477.1,
+     331.5
+    ],
+    [
+     478.79,
+     331.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r152",
+   "a": "n298",
+   "b": "n154",
+   "coords": [
+    [
+     477.5,
+     325.83
+    ],
+    [
+     477.5,
+     216.5
+    ],
+    [
+     447.5,
+     216.5
+    ],
+    [
+     447.5,
+     224.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0.73,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r153",
+   "a": "n298",
+   "b": "open@(479.9, 340.2)",
+   "coords": [
+    [
+     479.9,
+     332.82
+    ],
+    [
+     479.9,
+     340.21
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r154",
+   "a": "open@(520.0, 434.0)",
+   "b": "n293",
+   "coords": [
+    [
+     520.0,
+     434.0
+    ],
+    [
+     520.0,
+     438.33
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r155",
+   "a": "n293",
+   "b": "open@(597.2, 469.0)",
+   "coords": [
+    [
+     520.0,
+     454.0
+    ],
+    [
+     520.0,
+     469.0
+    ],
+    [
+     594.33,
+     469.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r156",
+   "a": "open@(432.5, 434.0)",
+   "b": "n291",
+   "coords": [
+    [
+     432.5,
+     434.0
+    ],
+    [
+     432.5,
+     438.33
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r157",
+   "a": "n291",
+   "b": "open@(517.2, 469.0)",
+   "coords": [
+    [
+     432.5,
+     454.0
+    ],
+    [
+     432.5,
+     469.0
+    ],
+    [
+     514.33,
+     469.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r158",
+   "a": "j31",
+   "b": "n127",
+   "coords": [
+    [
+     80.0,
+     469.0
+    ],
+    [
+     85.0,
+     469.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r159",
+   "a": "j31",
+   "b": "n125",
+   "coords": [
+    [
+     80.0,
+     469.0
+    ],
+    [
+     80.0,
+     474.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r160",
+   "a": "n292",
+   "b": "n37",
+   "coords": [
+    [
+     615.0,
+     451.5
+    ],
+    [
+     615.0,
+     476.5
+    ],
+    [
+     705.83,
+     476.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r161",
+   "a": "n15",
+   "b": "n327",
+   "coords": [
+    [
+     227.5,
+     476.5
+    ],
+    [
+     230.0,
+     476.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r162",
+   "a": "n328",
+   "b": "n16",
+   "coords": [
+    [
+     235.0,
+     476.5
+    ],
+    [
+     237.5,
+     476.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r163",
+   "a": "n120",
+   "b": "j29",
+   "coords": [
+    [
+     370.0,
+     184.0
+    ],
+    [
+     370.0,
+     191.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r164",
+   "a": "j29",
+   "b": "n319",
+   "coords": [
+    [
+     370.0,
+     191.5
+    ],
+    [
+     387.5,
+     191.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r165",
+   "a": "open@(490.0, 349.0)",
+   "b": "open@(490.0, 326.1)",
+   "coords": [
+    [
+     490.0,
+     349.0
+    ],
+    [
+     490.0,
+     328.17
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r166",
+   "a": "n340",
+   "b": "open@(415.0, 357.8)",
+   "coords": [
+    [
+     415.0,
+     351.5
+    ],
+    [
+     415.0,
+     357.77
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r167",
+   "a": "n341",
+   "b": "n299",
+   "coords": [
+    [
+     412.5,
+     334.0
+    ],
+    [
+     420.0,
+     334.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r168",
+   "a": "n299",
+   "b": "open@(420.0, 420.7)",
+   "coords": [
+    [
+     420.0,
+     353.17
+    ],
+    [
+     420.0,
+     420.67
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r169",
+   "a": "j26",
+   "b": "j27",
+   "coords": [
+    [
+     285.0,
+     299.0
+    ],
+    [
+     285.0,
+     291.5
+    ],
+    [
+     295.0,
+     291.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r170",
+   "a": "j26",
+   "b": "n9",
+   "coords": [
+    [
+     285.0,
+     299.0
+    ],
+    [
+     285.0,
+     306.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r171",
+   "a": "j14",
+   "b": "n109",
+   "coords": [
+    [
+     387.5,
+     299.0
+    ],
+    [
+     382.5,
+     299.0
+    ],
+    [
+     382.5,
+     291.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r172",
+   "a": "j14",
+   "b": "n109",
+   "coords": [
+    [
+     387.5,
+     299.0
+    ],
+    [
+     389.34,
+     299.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r173",
+   "a": "j14",
+   "b": "n71",
+   "coords": [
+    [
+     387.5,
+     299.0
+    ],
+    [
+     387.5,
+     339.0
+    ],
+    [
+     365.0,
+     339.0
+    ],
+    [
+     365.0,
+     349.08
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r174",
+   "a": "n109",
+   "b": "j17",
+   "coords": [
+    [
+     389.34,
+     299.0
+    ],
+    [
+     427.5,
+     299.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r175",
+   "a": "n109",
+   "b": "n108",
+   "coords": [
+    [
+     389.34,
+     291.5
+    ],
+    [
+     335.0,
+     291.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r176",
+   "a": "n109",
+   "b": "j19",
+   "coords": [
+    [
+     389.34,
+     291.5
+    ],
+    [
+     427.5,
+     291.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r177",
+   "a": "n109",
+   "b": "j19",
+   "coords": [
+    [
+     389.34,
+     284.0
+    ],
+    [
+     427.5,
+     284.0
+    ],
+    [
+     427.5,
+     291.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r178",
+   "a": "j17",
+   "b": "j18",
+   "coords": [
+    [
+     427.5,
+     299.0
+    ],
+    [
+     427.5,
+     294.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r179",
+   "a": "j17",
+   "b": "n295",
+   "coords": [
+    [
+     427.5,
+     299.0
+    ],
+    [
+     427.5,
+     329.68
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r180",
+   "a": "j16",
+   "b": "n59",
+   "coords": [
+    [
+     532.5,
+     299.0
+    ],
+    [
+     525.0,
+     299.0
+    ],
+    [
+     525.0,
+     339.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r181",
+   "a": "j16",
+   "b": "j15",
+   "coords": [
+    [
+     532.5,
+     299.0
+    ],
+    [
+     555.0,
+     299.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r182",
+   "a": "j16",
+   "b": "n168",
+   "coords": [
+    [
+     532.5,
+     299.0
+    ],
+    [
+     532.5,
+     289.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r183",
+   "a": "j15",
+   "b": "n51",
+   "coords": [
+    [
+     555.0,
+     299.0
+    ],
+    [
+     555.83,
+     299.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r184",
+   "a": "j15",
+   "b": "n56",
+   "coords": [
+    [
+     555.0,
+     299.0
+    ],
+    [
+     555.0,
+     309.0
+    ],
+    [
+     568.33,
+     309.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r185",
+   "a": "n51",
+   "b": "n302",
+   "coords": [
+    [
+     570.0,
+     299.0
+    ],
+    [
+     572.5,
+     299.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r186",
+   "a": "n302",
+   "b": "n55",
+   "coords": [
+    [
+     577.5,
+     299.0
+    ],
+    [
+     577.5,
+     294.91
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r187",
+   "a": "n54",
+   "b": "open@(597.9, 299.0)",
+   "coords": [
+    [
+     595.0,
+     299.0
+    ],
+    [
+     595.83,
+     299.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r188",
+   "a": "n54",
+   "b": "n52",
+   "coords": [
+    [
+     600.0,
+     299.0
+    ],
+    [
+     700.83,
+     299.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r189",
+   "a": "n139",
+   "b": "open@(165.0, 339.0)",
+   "coords": [
+    [
+     145.0,
+     339.0
+    ],
+    [
+     165.0,
+     339.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 5.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r190",
+   "a": "n303",
+   "b": "n57",
+   "coords": [
+    [
+     577.5,
+     256.5
+    ],
+    [
+     577.5,
+     259.91
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r191",
+   "a": "n303",
+   "b": "n168",
+   "coords": [
+    [
+     577.5,
+     241.5
+    ],
+    [
+     532.5,
+     241.5
+    ],
+    [
+     532.5,
+     279.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r192",
+   "a": "n300",
+   "b": "n55",
+   "coords": [
+    [
+     577.5,
+     291.5
+    ],
+    [
+     577.5,
+     294.91
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r193",
+   "a": "n300",
+   "b": "n168",
+   "coords": [
+    [
+     577.5,
+     276.5
+    ],
+    [
+     545.0,
+     276.5
+    ],
+    [
+     545.0,
+     284.0
+    ],
+    [
+     540.0,
+     284.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 5.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r194",
+   "a": "n9",
+   "b": "n23",
+   "coords": [
+    [
+     278.33,
+     309.0
+    ],
+    [
+     272.5,
+     309.0
+    ],
+    [
+     272.5,
+     319.0
+    ],
+    [
+     265.0,
+     319.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r195",
+   "a": "n56",
+   "b": "open@(600.0, 301.1)",
+   "coords": [
+    [
+     582.5,
+     309.0
+    ],
+    [
+     600.0,
+     309.0
+    ],
+    [
+     600.0,
+     303.17
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r196",
+   "a": "n78",
+   "b": "open@(552.1, 274.0)",
+   "coords": [
+    [
+     572.5,
+     274.0
+    ],
+    [
+     554.17,
+     274.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r197",
+   "a": "open@(550.0, 294.8)",
+   "b": "open@(550.0, 269.0)",
+   "coords": [
+    [
+     550.0,
+     294.83
+    ],
+    [
+     550.0,
+     274.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 10.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r198",
+   "a": "j19",
+   "b": "j18",
+   "coords": [
+    [
+     427.5,
+     291.5
+    ],
+    [
+     427.5,
+     294.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r199",
+   "a": "j18",
+   "b": "open@(525.0, 294.0)",
+   "coords": [
+    [
+     427.5,
+     294.0
+    ],
+    [
+     525.0,
+     294.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r200",
+   "a": "n295",
+   "b": "n50",
+   "coords": [
+    [
+     427.5,
+     329.68
+    ],
+    [
+     427.5,
+     339.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r201",
+   "a": "n320",
+   "b": "n128",
+   "coords": [
+    [
+     67.5,
+     381.5
+    ],
+    [
+     32.5,
+     381.5
+    ],
+    [
+     32.5,
+     421.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r202",
+   "a": "n320",
+   "b": "n123",
+   "coords": [
+    [
+     67.5,
+     396.5
+    ],
+    [
+     67.5,
+     399.91
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r203",
+   "a": "open@(540.0, 416.5)",
+   "b": "n160",
+   "coords": [
+    [
+     540.0,
+     416.5
+    ],
+    [
+     547.5,
+     416.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r204",
+   "a": "n60",
+   "b": "n161",
+   "coords": [
+    [
+     582.5,
+     416.5
+    ],
+    [
+     575.0,
+     416.5
+    ],
+    [
+     575.0,
+     409.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r205",
+   "a": "n66",
+   "b": "n162",
+   "coords": [
+    [
+     648.75,
+     416.5
+    ],
+    [
+     657.5,
+     416.5
+    ],
+    [
+     657.5,
+     411.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r206",
+   "a": "n151",
+   "b": "n314",
+   "coords": [
+    [
+     375.0,
+     119.0
+    ],
+    [
+     370.0,
+     119.0
+    ],
+    [
+     370.0,
+     131.5
+    ],
+    [
+     377.5,
+     131.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 2.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r207",
+   "a": "n151",
+   "b": "n314",
+   "coords": [
+    [
+     382.5,
+     124.0
+    ],
+    [
+     382.5,
+     134.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r208",
+   "a": "n308",
+   "b": "n72",
+   "coords": [
+    [
+     260.0,
+     24.0
+    ],
+    [
+     260.0,
+     27.41
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r209",
+   "a": "n308",
+   "b": "n143",
+   "coords": [
+    [
+     260.0,
+     9.0
+    ],
+    [
+     162.5,
+     9.0
+    ],
+    [
+     162.5,
+     116.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r210",
+   "a": "n72",
+   "b": "n310",
+   "coords": [
+    [
+     260.0,
+     27.41
+    ],
+    [
+     260.0,
+     31.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r211",
+   "a": "n311",
+   "b": "n73",
+   "coords": [
+    [
+     290.0,
+     31.5
+    ],
+    [
+     464.33,
+     31.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r212",
+   "a": "n311",
+   "b": "open@(282.5, 40.3)",
+   "coords": [
+    [
+     282.5,
+     32.9
+    ],
+    [
+     282.5,
+     40.29
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r213",
+   "a": "n91",
+   "b": "open@(290.0, 34.3)",
+   "coords": [
+    [
+     270.0,
+     51.5
+    ],
+    [
+     290.0,
+     51.5
+    ],
+    [
+     290.0,
+     37.17
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r214",
+   "a": "n150",
+   "b": "j32",
+   "coords": [
+    [
+     310.0,
+     116.5
+    ],
+    [
+     310.0,
+     126.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r215",
+   "a": "n100",
+   "b": "j24",
+   "coords": [
+    [
+     310.04,
+     49.1
+    ],
+    [
+     342.5,
+     49.1
+    ],
+    [
+     342.5,
+     54.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r216",
+   "a": "j21",
+   "b": "n101",
+   "coords": [
+    [
+     305.0,
+     86.5
+    ],
+    [
+     305.0,
+     89.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r217",
+   "a": "j21",
+   "b": "j23",
+   "coords": [
+    [
+     305.0,
+     86.5
+    ],
+    [
+     355.0,
+     86.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r218",
+   "a": "n101",
+   "b": "n86",
+   "coords": [
+    [
+     305.0,
+     99.0
+    ],
+    [
+     305.0,
+     104.0
+    ],
+    [
+     316.6,
+     104.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r219",
+   "a": "n313",
+   "b": "open@(319.9, 112.8)",
+   "coords": [
+    [
+     319.9,
+     105.4
+    ],
+    [
+     319.9,
+     112.79
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r220",
+   "a": "n313",
+   "b": "n86",
+   "coords": [
+    [
+     319.92,
+     104.0
+    ],
+    [
+     316.6,
+     104.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r221",
+   "a": "n313",
+   "b": "n102",
+   "coords": [
+    [
+     319.92,
+     104.0
+    ],
+    [
+     336.83,
+     104.0
+    ],
+    [
+     342.5,
+     104.0
+    ],
+    [
+     470.0,
+     104.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r222",
+   "a": "n314",
+   "b": "n87",
+   "coords": [
+    [
+     377.5,
+     134.0
+    ],
+    [
+     342.5,
+     134.0
+    ],
+    [
+     336.83,
+     134.0
+    ],
+    [
+     325.0,
+     134.0
+    ],
+    [
+     325.0,
+     132.17
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r223",
+   "a": "n314",
+   "b": "n88",
+   "coords": [
+    [
+     387.5,
+     134.0
+    ],
+    [
+     398.75,
+     134.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r224",
+   "a": "n88",
+   "b": "n89",
+   "coords": [
+    [
+     408.75,
+     134.0
+    ],
+    [
+     470.0,
+     134.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r225",
+   "a": "j23",
+   "b": "n95",
+   "coords": [
+    [
+     355.0,
+     86.5
+    ],
+    [
+     400.0,
+     86.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r226",
+   "a": "j23",
+   "b": "n149",
+   "coords": [
+    [
+     355.0,
+     86.5
+    ],
+    [
+     355.0,
+     78.68
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r227",
+   "a": "n95",
+   "b": "n93",
+   "coords": [
+    [
+     410.0,
+     86.5
+    ],
+    [
+     470.0,
+     86.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r228",
+   "a": "n96",
+   "b": "n99",
+   "coords": [
+    [
+     400.0,
+     59.0
+    ],
+    [
+     320.0,
+     59.0
+    ],
+    [
+     320.0,
+     54.0
+    ],
+    [
+     327.52,
+     54.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r229",
+   "a": "n96",
+   "b": "n97",
+   "coords": [
+    [
+     410.0,
+     59.0
+    ],
+    [
+     464.33,
+     59.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r230",
+   "a": "n99",
+   "b": "j24",
+   "coords": [
+    [
+     337.52,
+     54.0
+    ],
+    [
+     342.5,
+     54.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r231",
+   "a": "j24",
+   "b": "open@(342.5, 101.2)",
+   "coords": [
+    [
+     342.5,
+     54.0
+    ],
+    [
+     342.5,
+     98.33
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r232",
+   "a": "j25",
+   "b": "n10",
+   "coords": [
+    [
+     307.5,
+     371.5
+    ],
+    [
+     307.5,
+     334.0
+    ],
+    [
+     285.0,
+     334.0
+    ],
+    [
+     285.0,
+     327.17
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r233",
+   "a": "j25",
+   "b": "n137",
+   "coords": [
+    [
+     307.5,
+     371.5
+    ],
+    [
+     307.5,
+     381.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r234",
+   "a": "j25",
+   "b": "n106",
+   "coords": [
+    [
+     307.5,
+     371.5
+    ],
+    [
+     279.98,
+     371.5
+    ],
+    [
+     280.0,
+     366.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r235",
+   "a": "n137",
+   "b": "n105",
+   "coords": [
+    [
+     307.5,
+     381.5
+    ],
+    [
+     307.5,
+     391.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r236",
+   "a": "n316",
+   "b": "open@(257.4, 352.7)",
+   "coords": [
+    [
+     257.4,
+     345.32
+    ],
+    [
+     257.4,
+     352.71
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r237",
+   "a": "n10",
+   "b": "open@(340.4, 339.0)",
+   "coords": [
+    [
+     282.5,
+     319.0
+    ],
+    [
+     277.5,
+     319.0
+    ],
+    [
+     277.5,
+     339.0
+    ],
+    [
+     338.33,
+     339.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r238",
+   "a": "j27",
+   "b": "n317",
+   "coords": [
+    [
+     295.0,
+     291.5
+    ],
+    [
+     310.0,
+     291.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r239",
+   "a": "j27",
+   "b": "n110",
+   "coords": [
+    [
+     295.0,
+     291.5
+    ],
+    [
+     295.0,
+     284.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r240",
+   "a": "n317",
+   "b": "n108",
+   "coords": [
+    [
+     320.0,
+     291.5
+    ],
+    [
+     325.0,
+     291.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r241",
+   "a": "n317",
+   "b": "n170",
+   "coords": [
+    [
+     315.0,
+     291.5
+    ],
+    [
+     315.0,
+     281.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r242",
+   "a": "n317",
+   "b": "n170",
+   "coords": [
+    [
+     310.0,
+     289.0
+    ],
+    [
+     302.5,
+     289.0
+    ],
+    [
+     302.5,
+     276.5
+    ],
+    [
+     307.5,
+     276.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 2.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r243",
+   "a": "n111",
+   "b": "n113",
+   "coords": [
+    [
+     700.0,
+     224.0
+    ],
+    [
+     507.5,
+     224.0
+    ],
+    [
+     507.5,
+     251.5
+    ],
+    [
+     420.0,
+     251.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r244",
+   "a": "n142",
+   "b": "n141",
+   "coords": [
+    [
+     80.49,
+     251.5
+    ],
+    [
+     97.99,
+     251.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r245",
+   "a": "n142",
+   "b": "n133",
+   "coords": [
+    [
+     82.5,
+     256.5
+    ],
+    [
+     82.5,
+     266.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r246",
+   "a": "n141",
+   "b": "open@(110.0, 251.5)",
+   "coords": [
+    [
+     97.99,
+     251.5
+    ],
+    [
+     110.0,
+     251.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r247",
+   "a": "n141",
+   "b": "open@(99.4, 269.0)",
+   "coords": [
+    [
+     99.4,
+     264.0
+    ],
+    [
+     99.4,
+     269.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 7.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r248",
+   "a": "n152",
+   "b": "n35",
+   "coords": [
+    [
+     307.99,
+     251.5
+    ],
+    [
+     320.0,
+     251.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.12,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r249",
+   "a": "n152",
+   "b": "n170",
+   "coords": [
+    [
+     310.0,
+     256.5
+    ],
+    [
+     310.0,
+     261.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 10.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r250",
+   "a": "j28",
+   "b": "n113",
+   "coords": [
+    [
+     400.0,
+     251.5
+    ],
+    [
+     410.0,
+     251.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r251",
+   "a": "j28",
+   "b": "n114",
+   "coords": [
+    [
+     400.0,
+     251.5
+    ],
+    [
+     400.0,
+     259.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r252",
+   "a": "n318",
+   "b": "n167",
+   "coords": [
+    [
+     350.0,
+     196.59
+    ],
+    [
+     350.0,
+     203.98
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 4.95,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r253",
+   "a": "n319",
+   "b": "n117",
+   "coords": [
+    [
+     397.5,
+     191.5
+    ],
+    [
+     402.5,
+     191.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r254",
+   "a": "n319",
+   "b": "n153",
+   "coords": [
+    [
+     392.5,
+     191.5
+    ],
+    [
+     392.5,
+     179.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r255",
+   "a": "n319",
+   "b": "n153",
+   "coords": [
+    [
+     387.5,
+     189.0
+    ],
+    [
+     380.0,
+     189.0
+    ],
+    [
+     380.0,
+     174.0
+    ],
+    [
+     385.0,
+     174.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 2.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r256",
+   "a": "n117",
+   "b": "n118",
+   "coords": [
+    [
+     412.5,
+     191.5
+    ],
+    [
+     470.0,
+     191.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r257",
+   "a": "n122",
+   "b": "n322",
+   "coords": [
+    [
+     60.0,
+     409.0
+    ],
+    [
+     60.0,
+     404.0
+    ],
+    [
+     62.5,
+     404.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r258",
+   "a": "n122",
+   "b": "j30",
+   "coords": [
+    [
+     60.0,
+     419.0
+    ],
+    [
+     60.0,
+     421.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r259",
+   "a": "j30",
+   "b": "n344",
+   "coords": [
+    [
+     60.0,
+     421.5
+    ],
+    [
+     60.0,
+     425.88
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r260",
+   "a": "j30",
+   "b": "n121",
+   "coords": [
+    [
+     60.0,
+     421.5
+    ],
+    [
+     65.0,
+     421.5
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r261",
+   "a": "n343",
+   "b": "n138",
+   "coords": [
+    [
+     60.0,
+     427.13
+    ],
+    [
+     60.0,
+     539.53
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r262",
+   "a": "n123",
+   "b": "n322",
+   "coords": [
+    [
+     67.5,
+     399.91
+    ],
+    [
+     67.5,
+     404.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r263",
+   "a": "n121",
+   "b": "open@(95.0, 406.8)",
+   "coords": [
+    [
+     75.0,
+     421.5
+    ],
+    [
+     95.0,
+     421.5
+    ],
+    [
+     95.0,
+     409.67
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r264",
+   "a": "n124",
+   "b": "open@(92.2, 404.0)",
+   "coords": [
+    [
+     85.0,
+     404.0
+    ],
+    [
+     89.33,
+     404.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.67,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r265",
+   "a": "n125",
+   "b": "n126",
+   "coords": [
+    [
+     80.0,
+     484.0
+    ],
+    [
+     80.0,
+     486.5
+    ],
+    [
+     80.0,
+     496.5
+    ],
+    [
+     80.0,
+     499.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 10.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r266",
+   "a": "n128",
+   "b": "n140",
+   "coords": [
+    [
+     30.49,
+     426.5
+    ],
+    [
+     17.5,
+     426.5
+    ],
+    [
+     17.5,
+     366.5
+    ],
+    [
+     117.5,
+     366.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 2.39,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r267",
+   "a": "n128",
+   "b": "open@(57.5, 426.5)",
+   "coords": [
+    [
+     30.49,
+     426.5
+    ],
+    [
+     57.5,
+     426.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r268",
+   "a": "n140",
+   "b": "open@(165.0, 366.5)",
+   "coords": [
+    [
+     127.99,
+     366.5
+    ],
+    [
+     140.0,
+     366.5
+    ],
+    [
+     142.5,
+     366.5
+    ],
+    [
+     165.0,
+     366.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r269",
+   "a": "n129",
+   "b": "n17",
+   "coords": [
+    [
+     205.0,
+     431.5
+    ],
+    [
+     205.0,
+     439.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r270",
+   "a": "n131",
+   "b": "open@(192.5, 395.7)",
+   "coords": [
+    [
+     202.5,
+     406.5
+    ],
+    [
+     192.5,
+     406.5
+    ],
+    [
+     192.5,
+     395.7
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 2.39,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r271",
+   "a": "n131",
+   "b": "open@(225.0, 406.5)",
+   "coords": [
+    [
+     212.99,
+     406.5
+    ],
+    [
+     225.0,
+     406.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r272",
+   "a": "n131",
+   "b": "n132",
+   "coords": [
+    [
+     215.0,
+     401.5
+    ],
+    [
+     215.0,
+     361.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r273",
+   "a": "n131",
+   "b": "n324",
+   "coords": [
+    [
+     216.9,
+     391.5
+    ],
+    [
+     216.9,
+     386.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 10.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r274",
+   "a": "n143",
+   "b": "open@(177.5, 121.5)",
+   "coords": [
+    [
+     160.49,
+     121.5
+    ],
+    [
+     172.5,
+     121.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 2.5,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r275",
+   "a": "n165",
+   "b": "open@(345.0, 414.0)",
+   "coords": [
+    [
+     340.0,
+     414.0
+    ],
+    [
+     345.0,
+     414.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 7.07,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r276",
+   "a": "n158",
+   "b": "open@(412.5, 414.0)",
+   "coords": [
+    [
+     405.0,
+     414.0
+    ],
+    [
+     412.5,
+     414.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 7.07,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r277",
+   "a": "n34",
+   "b": "open@(355.4, 246.5)",
+   "coords": [
+    [
+     352.5,
+     246.5
+    ],
+    [
+     353.33,
+     246.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 4.17,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r278",
+   "a": "n39",
+   "b": "n338",
+   "coords": [
+    [
+     610.0,
+     441.5
+    ],
+    [
+     612.5,
+     441.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r279",
+   "a": "n339",
+   "b": "n42",
+   "coords": [
+    [
+     617.5,
+     441.5
+    ],
+    [
+     620.0,
+     441.5
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.25,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r280",
+   "a": "n156",
+   "b": "n48",
+   "coords": [
+    [
+     395.0,
+     351.5
+    ],
+    [
+     400.0,
+     351.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 5.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r281",
+   "a": "n47",
+   "b": "n155",
+   "coords": [
+    [
+     552.5,
+     351.5
+    ],
+    [
+     557.5,
+     351.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 2.59,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r282",
+   "a": "open@(347.5, 364.5)",
+   "b": "n68",
+   "coords": [
+    [
+     347.5,
+     364.51
+    ],
+    [
+     347.5,
+     361.58
+    ],
+    [
+     342.5,
+     361.6
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r283",
+   "a": "n163",
+   "b": "n68",
+   "coords": [
+    [
+     327.5,
+     361.6
+    ],
+    [
+     332.5,
+     361.6
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 5.57,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r284",
+   "a": "n75",
+   "b": "open@(352.5, 362.2)",
+   "coords": [
+    [
+     352.5,
+     359.08
+    ],
+    [
+     352.5,
+     362.2
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r285",
+   "a": "n166",
+   "b": "open@(345.0, 396.5)",
+   "coords": [
+    [
+     340.0,
+     396.5
+    ],
+    [
+     345.0,
+     396.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 7.07,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r286",
+   "a": "n335",
+   "b": "n336",
+   "coords": [
+    [
+     309.4,
+     264.0
+    ],
+    [
+     310.6,
+     264.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.2,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r287",
+   "a": "n336",
+   "b": "n335",
+   "coords": [
+    [
+     310.6,
+     264.0
+    ],
+    [
+     309.4,
+     264.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.2,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r288",
+   "a": "n343",
+   "b": "n344",
+   "coords": [
+    [
+     60.0,
+     427.1
+    ],
+    [
+     60.0,
+     425.9
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.2,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r289",
+   "a": "n344",
+   "b": "n343",
+   "coords": [
+    [
+     60.0,
+     425.9
+    ],
+    [
+     60.0,
+     427.1
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.2,
+   "arrows": [],
+   "texts": []
+  }
+ ],
+ "labels": [],
+ "tables": [],
+ "counts": {
+  "primitives": 1897,
+  "texts": 0,
+  "nodes": 345,
+  "runs": 290,
+  "junctions": 33,
+  "tables": 0
+ }
+}

@@ -1,0 +1,4336 @@
+{
+ "page": [
+  420.0,
+  297.0
+ ],
+ "nodes": [
+  {
+   "id": "n0",
+   "role": "symbol",
+   "bbox": [
+    159.0,
+    117.0,
+    161.0,
+    121.0
+   ],
+   "texts": [
+    "F.C."
+   ],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n1",
+   "role": "symbol",
+   "bbox": [
+    193.0,
+    135.0,
+    195.0,
+    139.0
+   ],
+   "texts": [
+    "66KL21-80"
+   ],
+   "primitives": 6,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n2",
+   "role": "symbol",
+   "bbox": [
+    201.0,
+    153.0,
+    205.0,
+    155.0
+   ],
+   "texts": [
+    "75SA21-80"
+   ],
+   "primitives": 5,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n3",
+   "role": "symbol",
+   "bbox": [
+    229.0,
+    153.0,
+    233.0,
+    155.0
+   ],
+   "texts": [
+    "73KH12-50"
+   ],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n4",
+   "role": "symbol",
+   "bbox": [
+    268.0,
+    89.0,
+    271.0,
+    96.0
+   ],
+   "texts": [],
+   "primitives": 17,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n5",
+   "role": "note",
+   "bbox": [
+    273.0,
+    90.9,
+    289.0,
+    101.0
+   ],
+   "texts": [
+    "SV 104.01",
+    "P = 6 barg",
+    "DN = 25/50"
+   ],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n4"
+  },
+  {
+   "id": "n6",
+   "role": "symbol",
+   "bbox": [
+    255.25,
+    92.36,
+    258.75,
+    93.24
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n7",
+   "role": "symbol",
+   "bbox": [
+    264.0,
+    158.0,
+    266.0,
+    162.0
+   ],
+   "texts": [
+    "73KH12-25"
+   ],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n8",
+   "role": "symbol",
+   "bbox": [
+    280.0,
+    146.0,
+    282.0,
+    150.0
+   ],
+   "texts": [
+    "73KH12-25"
+   ],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n9",
+   "role": "symbol",
+   "bbox": [
+    287.0,
+    153.0,
+    291.0,
+    155.0
+   ],
+   "texts": [
+    "73KH12-50"
+   ],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n10",
+   "role": "symbol",
+   "bbox": [
+    364.0,
+    146.0,
+    366.0,
+    150.0
+   ],
+   "texts": [
+    "73KH12-25"
+   ],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n11",
+   "role": "symbol",
+   "bbox": [
+    378.0,
+    150.5,
+    385.0,
+    157.5
+   ],
+   "texts": [],
+   "primitives": 7,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n12",
+   "role": "symbol",
+   "bbox": [
+    322.5,
+    96.0,
+    324.5,
+    100.0
+   ],
+   "texts": [
+    "PV4712.02"
+   ],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n13",
+   "role": "symbol",
+   "bbox": [
+    338.5,
+    112.0,
+    342.5,
+    114.0
+   ],
+   "texts": [
+    "TV4750.03"
+   ],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n14",
+   "role": "instrument",
+   "bbox": [
+    274.25,
+    128.25,
+    287.75,
+    135.75
+   ],
+   "texts": [
+    "PI",
+    "4712.01"
+   ],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n15",
+   "role": "instrument",
+   "bbox": [
+    358.25,
+    128.25,
+    371.75,
+    135.75
+   ],
+   "texts": [
+    "PICSA",
+    "4712.02"
+   ],
+   "primitives": 5,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n16",
+   "role": "instrument",
+   "bbox": [
+    130.25,
+    115.25,
+    143.75,
+    122.75
+   ],
+   "texts": [
+    "HS",
+    "4750.01"
+   ],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n17",
+   "role": "instrument",
+   "bbox": [
+    197.25,
+    57.25,
+    210.75,
+    64.75
+   ],
+   "texts": [
+    "TICSA",
+    "4750.03"
+   ],
+   "primitives": 5,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n18",
+   "role": "equipment",
+   "bbox": [
+    136.0,
+    130.75,
+    144.0,
+    156.25
+   ],
+   "texts": [
+    "H1007",
+    "N1",
+    "80",
+    "N2",
+    "80",
+    "N3",
+    "50",
+    "N4",
+    "50"
+   ],
+   "primitives": 9,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n19",
+   "role": "equipment",
+   "bbox": [
+    321.75,
+    126.5,
+    346.25,
+    133.5
+   ],
+   "texts": [
+    "H1008",
+    "N1",
+    "50",
+    "N2",
+    "50",
+    "N3",
+    "50",
+    "N4",
+    "50"
+   ],
+   "primitives": 10,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n20",
+   "role": "symbol",
+   "bbox": [
+    341.0,
+    127.38,
+    342.75,
+    132.62
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n21",
+   "role": "equipment",
+   "bbox": [
+    179.0,
+    73.5,
+    209.0,
+    124.5
+   ],
+   "texts": [
+    "T4750",
+    "N1",
+    "80",
+    "N2",
+    "80",
+    "N5",
+    "50",
+    "N6",
+    "50",
+    "N7",
+    "25",
+    "N3"
+   ],
+   "primitives": 5,
+   "degree": 8,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n22",
+   "role": "note",
+   "bbox": [
+    296.0,
+    263.0,
+    380.0,
+    288.0
+   ],
+   "texts": [
+    "APPROVED BY",
+    "A. P. Prover",
+    "2016-04-01",
+    "DRAWING NO",
+    "123/A93",
+    "CHECKED BY",
+    "C. Hecker",
+    "PROJECT",
+    "P3.1415",
+    "CREATED BY",
+    "A. Creator",
+    "2016-04-01",
+    "NAME",
+    "DATE",
+    "DEXPI example PID",
+    "PLANT SECTION",
+    "Utilities",
+    "Oil & Gas, Inc.",
+    "SITE",
+    "Dexpi City"
+   ],
+   "primitives": 56,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n23",
+   "role": "symbol",
+   "bbox": [
+    327.55,
+    95.97,
+    331.6,
+    100.03
+   ],
+   "texts": [
+    "F.C."
+   ],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n24",
+   "role": "symbol",
+   "bbox": [
+    151.9,
+    116.97,
+    155.95,
+    121.03
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n25",
+   "role": "symbol",
+   "bbox": [
+    338.48,
+    104.9,
+    342.52,
+    108.95
+   ],
+   "texts": [
+    "F.O."
+   ],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n26",
+   "role": "equipment",
+   "bbox": [
+    78.75,
+    148.75,
+    89.25,
+    159.25
+   ],
+   "texts": [
+    "P4711",
+    "N1",
+    "80",
+    "N2",
+    "80"
+   ],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n27",
+   "role": "equipment",
+   "bbox": [
+    245.75,
+    148.75,
+    256.25,
+    159.25
+   ],
+   "texts": [
+    "P4712",
+    "N1",
+    "50",
+    "N2",
+    "50"
+   ],
+   "primitives": 5,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n28",
+   "role": "symbol",
+   "bbox": [
+    31.0,
+    150.5,
+    38.0,
+    157.5
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n29",
+   "role": "nozzle",
+   "bbox": [
+    155.95,
+    118.5,
+    160.5,
+    119.5
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": "n0",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n30",
+   "role": "arrow",
+   "bbox": [
+    179.25,
+    63.89,
+    182.75,
+    65.64
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": [
+    0.0,
+    1.0
+   ],
+   "annotates": null
+  },
+  {
+   "id": "n31",
+   "role": "nozzle",
+   "bbox": [
+    200.5,
+    152.5,
+    201.5,
+    153.5
+   ],
+   "texts": [
+    "75SA21-80"
+   ],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": "n2",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n32",
+   "role": "symbol",
+   "bbox": [
+    215.0,
+    153.0,
+    219.0,
+    155.0
+   ],
+   "texts": [
+    "80/50"
+   ],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n33",
+   "role": "nozzle",
+   "bbox": [
+    230.0,
+    153.0,
+    232.0,
+    155.0
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": "n3",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n34",
+   "role": "nozzle",
+   "bbox": [
+    268.5,
+    93.5,
+    269.5,
+    94.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": "n4",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n35",
+   "role": "arrow",
+   "bbox": [
+    217.0,
+    92.25,
+    218.75,
+    95.75
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": [
+    -1.0,
+    0.0
+   ],
+   "annotates": null
+  },
+  {
+   "id": "n36",
+   "role": "nozzle",
+   "bbox": [
+    264.0,
+    159.0,
+    266.0,
+    161.0
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": "n7",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n37",
+   "role": "nozzle",
+   "bbox": [
+    280.0,
+    147.0,
+    282.0,
+    149.0
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": "n8",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n38",
+   "role": "nozzle",
+   "bbox": [
+    288.0,
+    153.0,
+    290.0,
+    155.0
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": "n9",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n39",
+   "role": "nozzle",
+   "bbox": [
+    364.0,
+    147.0,
+    366.0,
+    149.0
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": "n10",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n40",
+   "role": "arrow",
+   "bbox": [
+    373.25,
+    152.25,
+    375.0,
+    155.75
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": [
+    1.0,
+    0.0
+   ],
+   "annotates": null
+  },
+  {
+   "id": "n41",
+   "role": "nozzle",
+   "bbox": [
+    323.0,
+    97.5,
+    327.55,
+    98.5
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": "n12",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n42",
+   "role": "arrow",
+   "bbox": [
+    217.0,
+    81.25,
+    218.75,
+    84.75
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": [
+    -1.0,
+    0.0
+   ],
+   "annotates": null
+  },
+  {
+   "id": "n43",
+   "role": "mark",
+   "bbox": [
+    315.3,
+    83.0,
+    316.0,
+    83.7
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n44",
+   "role": "mark",
+   "bbox": [
+    313.9,
+    82.3,
+    315.3,
+    83.7
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n45",
+   "role": "mark",
+   "bbox": [
+    312.5,
+    82.3,
+    313.9,
+    83.7
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n46",
+   "role": "mark",
+   "bbox": [
+    311.1,
+    82.3,
+    312.5,
+    83.7
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n47",
+   "role": "mark",
+   "bbox": [
+    309.7,
+    82.3,
+    311.1,
+    83.7
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n48",
+   "role": "mark",
+   "bbox": [
+    308.3,
+    82.3,
+    309.7,
+    83.7
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n49",
+   "role": "mark",
+   "bbox": [
+    307.6,
+    82.3,
+    308.3,
+    83.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n50",
+   "role": "arrow",
+   "bbox": [
+    118.25,
+    161.0,
+    121.75,
+    162.75
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": [
+    0.0,
+    -1.0
+   ],
+   "annotates": null
+  },
+  {
+   "id": "n51",
+   "role": "arrow",
+   "bbox": [
+    151.25,
+    161.0,
+    154.75,
+    162.75
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": [
+    0.0,
+    1.0
+   ],
+   "annotates": null
+  },
+  {
+   "id": "n52",
+   "role": "arrow",
+   "bbox": [
+    342.75,
+    161.0,
+    346.25,
+    162.75
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": [
+    0.0,
+    -1.0
+   ],
+   "annotates": null
+  },
+  {
+   "id": "n53",
+   "role": "nozzle",
+   "bbox": [
+    340.0,
+    108.95,
+    341.0,
+    113.5
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": "n13",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n54",
+   "role": "arrow",
+   "bbox": [
+    351.25,
+    161.0,
+    354.75,
+    162.75
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 0,
+   "attached_to": null,
+   "direction": [
+    0.0,
+    1.0
+   ],
+   "annotates": null
+  },
+  {
+   "id": "n55",
+   "role": "symbol",
+   "bbox": [
+    280.0,
+    145.2,
+    282.0,
+    145.2
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n56",
+   "role": "symbol",
+   "bbox": [
+    364.0,
+    145.2,
+    366.0,
+    145.2
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n57",
+   "role": "mark",
+   "bbox": [
+    132.0,
+    132.0,
+    132.0,
+    134.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n58",
+   "role": "mark",
+   "bbox": [
+    132.0,
+    153.0,
+    132.0,
+    155.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n59",
+   "role": "mark",
+   "bbox": [
+    148.0,
+    132.0,
+    148.0,
+    134.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n60",
+   "role": "mark",
+   "bbox": [
+    148.0,
+    153.0,
+    148.0,
+    155.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n61",
+   "role": "mark",
+   "bbox": [
+    322.5,
+    137.5,
+    324.5,
+    137.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n62",
+   "role": "mark",
+   "bbox": [
+    343.5,
+    137.5,
+    345.5,
+    137.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n63",
+   "role": "mark",
+   "bbox": [
+    322.5,
+    122.5,
+    324.5,
+    122.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n64",
+   "role": "mark",
+   "bbox": [
+    327.0,
+    122.5,
+    329.0,
+    122.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n65",
+   "role": "mark",
+   "bbox": [
+    74.8,
+    153.0,
+    74.8,
+    155.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n66",
+   "role": "mark",
+   "bbox": [
+    93.2,
+    153.0,
+    93.2,
+    155.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n67",
+   "role": "mark",
+   "bbox": [
+    241.8,
+    153.0,
+    241.8,
+    155.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n68",
+   "role": "mark",
+   "bbox": [
+    260.2,
+    153.0,
+    260.2,
+    155.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n69",
+   "role": "mark",
+   "bbox": [
+    180.0,
+    72.6,
+    182.0,
+    72.6
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n70",
+   "role": "mark",
+   "bbox": [
+    193.0,
+    128.5,
+    195.0,
+    128.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n71",
+   "role": "nozzle",
+   "bbox": [
+    175.0,
+    110.0,
+    175.0,
+    112.0
+   ],
+   "texts": [
+    "N3",
+    "80"
+   ],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": "n21",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n72",
+   "role": "mark",
+   "bbox": [
+    213.0,
+    82.0,
+    213.0,
+    84.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n73",
+   "role": "mark",
+   "bbox": [
+    213.0,
+    93.0,
+    213.0,
+    95.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n74",
+   "role": "mark",
+   "bbox": [
+    203.0,
+    71.3,
+    205.0,
+    71.3
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  }
+ ],
+ "junctions": [
+  {
+   "id": "j0",
+   "pt": [
+    269.0,
+    154.0
+   ]
+  },
+  {
+   "id": "j1",
+   "pt": [
+    281.0,
+    154.0
+   ]
+  },
+  {
+   "id": "j2",
+   "pt": [
+    265.0,
+    154.0
+   ]
+  },
+  {
+   "id": "j3",
+   "pt": [
+    323.5,
+    154.0
+   ]
+  },
+  {
+   "id": "j4",
+   "pt": [
+    365.0,
+    154.0
+   ]
+  }
+ ],
+ "runs": [
+  {
+   "id": "r0",
+   "a": "n28",
+   "b": "n26",
+   "coords": [
+    [
+     38.0,
+     154.0
+    ],
+    [
+     78.75,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "MNb 47121 75HB13 80"
+   ]
+  },
+  {
+   "id": "r1",
+   "a": "n26",
+   "b": "n18",
+   "coords": [
+    [
+     89.25,
+     154.0
+    ],
+    [
+     136.0,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "MNb 47122 75HB13 80"
+   ]
+  },
+  {
+   "id": "r2",
+   "a": "n18",
+   "b": "open@(153.0, 202.0)",
+   "coords": [
+    [
+     144.0,
+     154.0
+    ],
+    [
+     153.0,
+     154.0
+    ],
+    [
+     153.0,
+     202.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n51"
+   ],
+   "texts": [
+    "WKb 47131 75HB13 50"
+   ]
+  },
+  {
+   "id": "r3",
+   "a": "n18",
+   "b": "open@(120.0, 202.0)",
+   "coords": [
+    [
+     136.0,
+     133.0
+    ],
+    [
+     120.0,
+     133.0
+    ],
+    [
+     120.0,
+     202.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n50"
+   ],
+   "texts": [
+    "WKa 47130 75HB13 50"
+   ]
+  },
+  {
+   "id": "r4",
+   "a": "n18",
+   "b": "n0",
+   "coords": [
+    [
+     144.0,
+     133.0
+    ],
+    [
+     160.0,
+     133.0
+    ],
+    [
+     160.0,
+     121.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r5",
+   "a": "n2",
+   "b": "n1",
+   "coords": [
+    [
+     201.0,
+     154.0
+    ],
+    [
+     194.0,
+     154.0
+    ],
+    [
+     194.0,
+     139.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "MNc 47124 75HB13 80"
+   ]
+  },
+  {
+   "id": "r6",
+   "a": "n2",
+   "b": "n32",
+   "coords": [
+    [
+     205.0,
+     154.0
+    ],
+    [
+     215.0,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r7",
+   "a": "n32",
+   "b": "n3",
+   "coords": [
+    [
+     219.0,
+     154.0
+    ],
+    [
+     229.0,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r8",
+   "a": "n3",
+   "b": "n27",
+   "coords": [
+    [
+     233.0,
+     154.0
+    ],
+    [
+     245.75,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r9",
+   "a": "n27",
+   "b": "j2",
+   "coords": [
+    [
+     256.25,
+     154.0
+    ],
+    [
+     265.0,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r10",
+   "a": "j2",
+   "b": "j0",
+   "coords": [
+    [
+     265.0,
+     154.0
+    ],
+    [
+     269.0,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r11",
+   "a": "j2",
+   "b": "n7",
+   "coords": [
+    [
+     265.0,
+     154.0
+    ],
+    [
+     265.0,
+     158.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r12",
+   "a": "j0",
+   "b": "j1",
+   "coords": [
+    [
+     269.0,
+     154.0
+    ],
+    [
+     281.0,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r13",
+   "a": "j0",
+   "b": "n4",
+   "coords": [
+    [
+     269.0,
+     154.0
+    ],
+    [
+     269.0,
+     96.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "MNc 47125 73HG12 25"
+   ]
+  },
+  {
+   "id": "r14",
+   "a": "j1",
+   "b": "n9",
+   "coords": [
+    [
+     281.0,
+     154.0
+    ],
+    [
+     287.0,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r15",
+   "a": "j1",
+   "b": "n8",
+   "coords": [
+    [
+     281.0,
+     154.0
+    ],
+    [
+     281.0,
+     150.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r16",
+   "a": "n9",
+   "b": "j3",
+   "coords": [
+    [
+     291.0,
+     154.0
+    ],
+    [
+     323.5,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n40"
+   ],
+   "texts": [
+    "MNc 47126 75HB13 50"
+   ]
+  },
+  {
+   "id": "r17",
+   "a": "j3",
+   "b": "j4",
+   "coords": [
+    [
+     323.5,
+     154.0
+    ],
+    [
+     365.0,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n40"
+   ],
+   "texts": []
+  },
+  {
+   "id": "r18",
+   "a": "j3",
+   "b": "n19",
+   "coords": [
+    [
+     323.5,
+     154.0
+    ],
+    [
+     323.5,
+     133.5
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r19",
+   "a": "j4",
+   "b": "n11",
+   "coords": [
+    [
+     365.0,
+     154.0
+    ],
+    [
+     378.0,
+     154.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n40"
+   ],
+   "texts": []
+  },
+  {
+   "id": "r20",
+   "a": "j4",
+   "b": "n10",
+   "coords": [
+    [
+     365.0,
+     154.0
+    ],
+    [
+     365.0,
+     150.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r21",
+   "a": "n0",
+   "b": "n21",
+   "coords": [
+    [
+     160.0,
+     117.0
+    ],
+    [
+     160.0,
+     61.0
+    ],
+    [
+     181.0,
+     61.0
+    ],
+    [
+     181.0,
+     76.64
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n30"
+   ],
+   "texts": [
+    "MNb 47123 75HB13 80"
+   ]
+  },
+  {
+   "id": "r22",
+   "a": "n17",
+   "b": "n25",
+   "coords": [
+    [
+     210.75,
+     61.0
+    ],
+    [
+     340.5,
+     61.0
+    ],
+    [
+     340.5,
+     104.9
+    ]
+   ],
+   "width": 0.2,
+   "dashed": true,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r23",
+   "a": "n17",
+   "b": "n21",
+   "coords": [
+    [
+     204.0,
+     64.75
+    ],
+    [
+     204.0,
+     75.32
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r24",
+   "a": "n21",
+   "b": "n1",
+   "coords": [
+    [
+     194.0,
+     124.5
+    ],
+    [
+     194.0,
+     135.0
+    ]
+   ],
+   "width": 0.5,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r25",
+   "a": "n21",
+   "b": "n34",
+   "coords": [
+    [
+     209.0,
+     94.0
+    ],
+    [
+     267.0,
+     94.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.5,
+   "arrows": [
+    "n35"
+   ],
+   "texts": [
+    "MNc 47125 75HB13 50"
+   ]
+  },
+  {
+   "id": "r26",
+   "a": "n21",
+   "b": "n12",
+   "coords": [
+    [
+     209.0,
+     83.0
+    ],
+    [
+     323.5,
+     83.0
+    ],
+    [
+     323.5,
+     96.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n42"
+   ],
+   "texts": [
+    "MNc 47127 75HB13 50 Q 80"
+   ]
+  },
+  {
+   "id": "r27",
+   "a": "n21",
+   "b": "n71",
+   "coords": [
+    [
+     179.0,
+     111.0
+    ],
+    [
+     175.0,
+     111.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r28",
+   "a": "n21",
+   "b": "open@(176.0, 99.2)",
+   "coords": [
+    [
+     179.0,
+     97.5
+    ],
+    [
+     176.0,
+     97.5
+    ],
+    [
+     176.0,
+     99.25
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "800"
+   ]
+  },
+  {
+   "id": "r29",
+   "a": "n21",
+   "b": "open@(176.0, 88.8)",
+   "coords": [
+    [
+     179.0,
+     90.5
+    ],
+    [
+     176.0,
+     90.5
+    ],
+    [
+     176.0,
+     88.75
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "N8"
+   ]
+  },
+  {
+   "id": "r30",
+   "a": "n12",
+   "b": "n19",
+   "coords": [
+    [
+     323.5,
+     100.0
+    ],
+    [
+     323.5,
+     126.5
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r31",
+   "a": "n19",
+   "b": "open@(344.5, 202.0)",
+   "coords": [
+    [
+     344.5,
+     133.5
+    ],
+    [
+     344.5,
+     202.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n52"
+   ],
+   "texts": [
+    "QSa 47140 75HB13 50 Q 80"
+   ]
+  },
+  {
+   "id": "r32",
+   "a": "n19",
+   "b": "n13",
+   "coords": [
+    [
+     328.0,
+     126.5
+    ],
+    [
+     328.0,
+     113.0
+    ],
+    [
+     338.5,
+     113.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r33",
+   "a": "open@(307.6, 83.7)",
+   "b": "open@(316.0, 83.7)",
+   "coords": [
+    [
+     307.6,
+     83.7
+    ],
+    [
+     316.0,
+     83.7
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "Q80"
+   ]
+  },
+  {
+   "id": "r34",
+   "a": "open@(307.6, 82.3)",
+   "b": "open@(316.0, 82.3)",
+   "coords": [
+    [
+     307.6,
+     82.3
+    ],
+    [
+     316.0,
+     82.3
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r35",
+   "a": "n13",
+   "b": "open@(353.0, 202.0)",
+   "coords": [
+    [
+     342.5,
+     113.0
+    ],
+    [
+     353.0,
+     113.0
+    ],
+    [
+     353.0,
+     202.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n54"
+   ],
+   "texts": [
+    "QSb 47141 75HB13 50 Q 80"
+   ]
+  },
+  {
+   "id": "r36",
+   "a": "n14",
+   "b": "n55",
+   "coords": [
+    [
+     281.0,
+     135.75
+    ],
+    [
+     281.0,
+     145.2
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r37",
+   "a": "n15",
+   "b": "n23",
+   "coords": [
+    [
+     365.0,
+     128.25
+    ],
+    [
+     365.0,
+     98.0
+    ],
+    [
+     331.6,
+     98.0
+    ]
+   ],
+   "width": 0.2,
+   "dashed": true,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r38",
+   "a": "n15",
+   "b": "n56",
+   "coords": [
+    [
+     365.0,
+     135.75
+    ],
+    [
+     365.0,
+     145.2
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r39",
+   "a": "n16",
+   "b": "n24",
+   "coords": [
+    [
+     143.75,
+     119.0
+    ],
+    [
+     151.9,
+     119.0
+    ]
+   ],
+   "width": 0.2,
+   "dashed": true,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r40",
+   "a": "open@(174.9, 88.8)",
+   "b": "open@(174.9, 99.2)",
+   "coords": [
+    [
+     174.9,
+     88.75
+    ],
+    [
+     174.9,
+     99.25
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r41",
+   "a": "n55",
+   "b": "n8",
+   "coords": [
+    [
+     281.0,
+     145.2
+    ],
+    [
+     281.0,
+     146.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0.8,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r42",
+   "a": "n56",
+   "b": "n10",
+   "coords": [
+    [
+     365.0,
+     145.2
+    ],
+    [
+     365.0,
+     146.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0.8,
+   "arrows": [],
+   "texts": []
+  }
+ ],
+ "labels": [
+  {
+   "text": "PV4712.02",
+   "x": 320.55,
+   "y": 98.0,
+   "angle": 90,
+   "bbox": [
+    317.55,
+    91.25,
+    321.15,
+    104.75
+   ],
+   "owner": [
+    "node",
+    12,
+    1.35
+   ]
+  },
+  {
+   "text": "F.C.",
+   "x": 328.05,
+   "y": 99.5,
+   "angle": 90,
+   "bbox": [
+    325.05,
+    96.5,
+    328.65,
+    102.5
+   ],
+   "owner": [
+    "node",
+    23,
+    0.0
+   ]
+  },
+  {
+   "text": "F.C.",
+   "x": 158.55,
+   "y": 121.0,
+   "angle": 90,
+   "bbox": [
+    155.55,
+    118.0,
+    159.15,
+    124.0
+   ],
+   "owner": [
+    "node",
+    0,
+    0.0
+   ]
+  },
+  {
+   "text": "TV4750.03",
+   "x": 340.5,
+   "y": 116.55,
+   "angle": 0,
+   "bbox": [
+    333.75,
+    113.55,
+    347.25,
+    117.15
+   ],
+   "owner": [
+    "node",
+    13,
+    0.0
+   ]
+  },
+  {
+   "text": "F.O.",
+   "x": 337.5,
+   "y": 110.55,
+   "angle": 0,
+   "bbox": [
+    334.5,
+    107.55,
+    340.5,
+    111.15
+   ],
+   "owner": [
+    "node",
+    25,
+    0.0
+   ]
+  },
+  {
+   "text": "MNb 47121 75HB13 80",
+   "x": 56.38,
+   "y": 152.05,
+   "angle": 0,
+   "bbox": [
+    42.12,
+    149.05,
+    70.62,
+    152.65
+   ],
+   "owner": [
+    "run",
+    0,
+    1.35
+   ]
+  },
+  {
+   "text": "MNb 47122 75HB13 80",
+   "x": 112.62,
+   "y": 152.05,
+   "angle": 0,
+   "bbox": [
+    98.38,
+    149.05,
+    126.88,
+    152.65
+   ],
+   "owner": [
+    "run",
+    1,
+    1.35
+   ]
+  },
+  {
+   "text": "MNb 47123 75HB13 80",
+   "x": 158.05,
+   "y": 90.82,
+   "angle": 90,
+   "bbox": [
+    155.05,
+    76.57,
+    158.65,
+    105.07
+   ],
+   "owner": [
+    "run",
+    21,
+    1.35
+   ]
+  },
+  {
+   "text": "MNc 47124 75HB13 80",
+   "x": 191.05,
+   "y": 148.25,
+   "angle": 90,
+   "bbox": [
+    188.05,
+    134.0,
+    191.65,
+    162.5
+   ],
+   "owner": [
+    "run",
+    5,
+    2.35
+   ]
+  },
+  {
+   "text": "66KL21-80",
+   "x": 199.05,
+   "y": 136.0,
+   "angle": 90,
+   "bbox": [
+    196.05,
+    129.25,
+    199.65,
+    142.75
+   ],
+   "owner": [
+    "node",
+    1,
+    1.05
+   ]
+  },
+  {
+   "text": "75SA21-80",
+   "x": 203.0,
+   "y": 151.05,
+   "angle": 0,
+   "bbox": [
+    196.25,
+    148.05,
+    209.75,
+    151.65
+   ],
+   "owner": [
+    "node",
+    31,
+    0.85
+   ]
+  },
+  {
+   "text": "80/50",
+   "x": 217.0,
+   "y": 151.05,
+   "angle": 0,
+   "bbox": [
+    213.25,
+    148.05,
+    220.75,
+    151.65
+   ],
+   "owner": [
+    "node",
+    32,
+    1.35
+   ]
+  },
+  {
+   "text": "73KH12-50",
+   "x": 231.0,
+   "y": 151.05,
+   "angle": 0,
+   "bbox": [
+    224.25,
+    148.05,
+    237.75,
+    151.65
+   ],
+   "owner": [
+    "node",
+    3,
+    1.35
+   ]
+  },
+  {
+   "text": "MNc 47125 73HG12 25",
+   "x": 273.35,
+   "y": 117.0,
+   "angle": 90,
+   "bbox": [
+    270.35,
+    102.75,
+    273.95,
+    131.25
+   ],
+   "owner": [
+    "run",
+    13,
+    1.35
+   ]
+  },
+  {
+   "text": "SV 104.01",
+   "x": 274.0,
+   "y": 94.0,
+   "angle": 0,
+   "bbox": [
+    274.0,
+    91.0,
+    287.5,
+    94.6
+   ],
+   "owner": [
+    "node",
+    5,
+    0.0
+   ]
+  },
+  {
+   "text": "P = 6 barg",
+   "x": 274.0,
+   "y": 97.0,
+   "angle": 0,
+   "bbox": [
+    274.0,
+    94.0,
+    289.0,
+    97.6
+   ],
+   "owner": [
+    "node",
+    5,
+    0.0
+   ]
+  },
+  {
+   "text": "DN = 25/50",
+   "x": 274.0,
+   "y": 100.0,
+   "angle": 0,
+   "bbox": [
+    274.0,
+    97.0,
+    289.0,
+    100.6
+   ],
+   "owner": [
+    "node",
+    5,
+    0.0
+   ]
+  },
+  {
+   "text": "MNc 47125 75HB13 50",
+   "x": 236.0,
+   "y": 92.55,
+   "angle": 0,
+   "bbox": [
+    221.75,
+    89.55,
+    250.25,
+    93.15
+   ],
+   "owner": [
+    "run",
+    25,
+    0.85
+   ]
+  },
+  {
+   "text": "MNc 47126 75HB13 50",
+   "x": 308.25,
+   "y": 152.05,
+   "angle": 0,
+   "bbox": [
+    294.0,
+    149.05,
+    322.5,
+    152.65
+   ],
+   "owner": [
+    "run",
+    16,
+    1.35
+   ]
+  },
+  {
+   "text": "73KH12-25",
+   "x": 268.0,
+   "y": 165.05,
+   "angle": 0,
+   "bbox": [
+    261.25,
+    162.05,
+    274.75,
+    165.65
+   ],
+   "owner": [
+    "node",
+    7,
+    0.05
+   ]
+  },
+  {
+   "text": "73KH12-25",
+   "x": 286.05,
+   "y": 144.0,
+   "angle": 90,
+   "bbox": [
+    283.05,
+    137.25,
+    286.65,
+    150.75
+   ],
+   "owner": [
+    "node",
+    8,
+    1.05
+   ]
+  },
+  {
+   "text": "73KH12-50",
+   "x": 289.0,
+   "y": 158.55,
+   "angle": 0,
+   "bbox": [
+    282.25,
+    155.55,
+    295.75,
+    159.15
+   ],
+   "owner": [
+    "node",
+    9,
+    0.55
+   ]
+  },
+  {
+   "text": "73KH12-25",
+   "x": 370.05,
+   "y": 145.0,
+   "angle": 90,
+   "bbox": [
+    367.05,
+    138.25,
+    370.65,
+    151.75
+   ],
+   "owner": [
+    "node",
+    10,
+    1.05
+   ]
+  },
+  {
+   "text": "MNc 47127 75HB13 50 Q 80",
+   "x": 239.25,
+   "y": 81.8,
+   "angle": 0,
+   "bbox": [
+    221.25,
+    78.8,
+    257.25,
+    82.4
+   ],
+   "owner": [
+    "run",
+    26,
+    0.6
+   ]
+  },
+  {
+   "text": "Q80",
+   "x": 311.8,
+   "y": 86.55,
+   "angle": 0,
+   "bbox": [
+    309.55,
+    83.55,
+    314.05,
+    87.15
+   ],
+   "owner": [
+    "run",
+    33,
+    0.0
+   ]
+  },
+  {
+   "text": "WKa 47130 75HB13 50",
+   "x": 118.55,
+   "y": 183.0,
+   "angle": 90,
+   "bbox": [
+    115.55,
+    168.75,
+    119.15,
+    197.25
+   ],
+   "owner": [
+    "run",
+    3,
+    0.85
+   ]
+  },
+  {
+   "text": "WKb 47131 75HB13 50",
+   "x": 151.55,
+   "y": 183.0,
+   "angle": 90,
+   "bbox": [
+    148.55,
+    168.75,
+    152.15,
+    197.25
+   ],
+   "owner": [
+    "run",
+    2,
+    0.85
+   ]
+  },
+  {
+   "text": "QSa 47140 75HB13 50 Q 80",
+   "x": 343.15,
+   "y": 183.5,
+   "angle": 90,
+   "bbox": [
+    340.15,
+    165.5,
+    343.75,
+    201.5
+   ],
+   "owner": [
+    "run",
+    31,
+    0.75
+   ]
+  },
+  {
+   "text": "QSb 47141 75HB13 50 Q 80",
+   "x": 351.75,
+   "y": 183.4,
+   "angle": 90,
+   "bbox": [
+    348.75,
+    165.4,
+    352.35,
+    201.4
+   ],
+   "owner": [
+    "run",
+    35,
+    0.65
+   ]
+  },
+  {
+   "text": "PI",
+   "x": 281.0,
+   "y": 130.8,
+   "angle": 0,
+   "bbox": [
+    279.5,
+    127.8,
+    282.5,
+    131.4
+   ],
+   "owner": [
+    "node",
+    14,
+    0.0
+   ]
+  },
+  {
+   "text": "4712.01",
+   "x": 281.0,
+   "y": 134.25,
+   "angle": 0,
+   "bbox": [
+    275.75,
+    131.25,
+    286.25,
+    134.85
+   ],
+   "owner": [
+    "node",
+    14,
+    0.0
+   ]
+  },
+  {
+   "text": "PICSA",
+   "x": 365.0,
+   "y": 130.8,
+   "angle": 0,
+   "bbox": [
+    361.25,
+    127.8,
+    368.75,
+    131.4
+   ],
+   "owner": [
+    "node",
+    15,
+    0.0
+   ]
+  },
+  {
+   "text": "4712.02",
+   "x": 365.0,
+   "y": 134.25,
+   "angle": 0,
+   "bbox": [
+    359.75,
+    131.25,
+    370.25,
+    134.85
+   ],
+   "owner": [
+    "node",
+    15,
+    0.0
+   ]
+  },
+  {
+   "text": "HS",
+   "x": 137.0,
+   "y": 117.8,
+   "angle": 0,
+   "bbox": [
+    135.5,
+    114.8,
+    138.5,
+    118.4
+   ],
+   "owner": [
+    "node",
+    16,
+    0.0
+   ]
+  },
+  {
+   "text": "4750.01",
+   "x": 137.0,
+   "y": 121.25,
+   "angle": 0,
+   "bbox": [
+    131.75,
+    118.25,
+    142.25,
+    121.85
+   ],
+   "owner": [
+    "node",
+    16,
+    0.0
+   ]
+  },
+  {
+   "text": "TICSA",
+   "x": 204.0,
+   "y": 59.8,
+   "angle": 0,
+   "bbox": [
+    200.25,
+    56.8,
+    207.75,
+    60.4
+   ],
+   "owner": [
+    "node",
+    17,
+    0.0
+   ]
+  },
+  {
+   "text": "4750.03",
+   "x": 204.0,
+   "y": 63.25,
+   "angle": 0,
+   "bbox": [
+    198.75,
+    60.25,
+    209.25,
+    63.85
+   ],
+   "owner": [
+    "node",
+    17,
+    0.0
+   ]
+  },
+  {
+   "text": "H1007",
+   "x": 140.0,
+   "y": 163.31,
+   "angle": 0,
+   "bbox": [
+    134.38,
+    158.81,
+    145.62,
+    164.21
+   ],
+   "owner": [
+    "node",
+    18,
+    2.56
+   ]
+  },
+  {
+   "text": "N1",
+   "x": 133.2,
+   "y": 151.69,
+   "angle": 0,
+   "bbox": [
+    131.7,
+    148.69,
+    134.7,
+    152.29
+   ],
+   "owner": [
+    "node",
+    18,
+    1.3
+   ]
+  },
+  {
+   "text": "80",
+   "x": 133.2,
+   "y": 157.39,
+   "angle": 0,
+   "bbox": [
+    131.7,
+    154.39,
+    134.7,
+    157.99
+   ],
+   "owner": [
+    "node",
+    18,
+    1.3
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 146.8,
+   "y": 130.69,
+   "angle": 0,
+   "bbox": [
+    145.3,
+    127.69,
+    148.3,
+    131.29
+   ],
+   "owner": [
+    "node",
+    18,
+    1.3
+   ]
+  },
+  {
+   "text": "80",
+   "x": 146.8,
+   "y": 136.39,
+   "angle": 0,
+   "bbox": [
+    145.3,
+    133.39,
+    148.3,
+    136.99
+   ],
+   "owner": [
+    "node",
+    18,
+    1.3
+   ]
+  },
+  {
+   "text": "N3",
+   "x": 133.2,
+   "y": 130.69,
+   "angle": 0,
+   "bbox": [
+    131.7,
+    127.69,
+    134.7,
+    131.29
+   ],
+   "owner": [
+    "node",
+    18,
+    1.3
+   ]
+  },
+  {
+   "text": "50",
+   "x": 133.2,
+   "y": 136.39,
+   "angle": 0,
+   "bbox": [
+    131.7,
+    133.39,
+    134.7,
+    136.99
+   ],
+   "owner": [
+    "node",
+    18,
+    1.3
+   ]
+  },
+  {
+   "text": "N4",
+   "x": 146.8,
+   "y": 151.69,
+   "angle": 0,
+   "bbox": [
+    145.3,
+    148.69,
+    148.3,
+    152.29
+   ],
+   "owner": [
+    "node",
+    18,
+    1.3
+   ]
+  },
+  {
+   "text": "50",
+   "x": 146.8,
+   "y": 157.39,
+   "angle": 0,
+   "bbox": [
+    145.3,
+    154.39,
+    148.3,
+    157.99
+   ],
+   "owner": [
+    "node",
+    18,
+    1.3
+   ]
+  },
+  {
+   "text": "H1008",
+   "x": 312.0,
+   "y": 130.81,
+   "angle": 0,
+   "bbox": [
+    306.38,
+    126.31,
+    317.62,
+    131.71
+   ],
+   "owner": [
+    "node",
+    19,
+    4.12
+   ]
+  },
+  {
+   "text": "N1",
+   "x": 327.5,
+   "y": 136.54,
+   "angle": 0,
+   "bbox": [
+    326.0,
+    133.54,
+    329.0,
+    137.14
+   ],
+   "owner": [
+    "node",
+    19,
+    0.04
+   ]
+  },
+  {
+   "text": "50",
+   "x": 327.5,
+   "y": 139.54,
+   "angle": 0,
+   "bbox": [
+    326.0,
+    136.54,
+    329.0,
+    140.14
+   ],
+   "owner": [
+    "node",
+    19,
+    3.04
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 319.5,
+   "y": 121.54,
+   "angle": 0,
+   "bbox": [
+    318.0,
+    118.54,
+    321.0,
+    122.14
+   ],
+   "owner": [
+    "node",
+    19,
+    4.42
+   ]
+  },
+  {
+   "text": "50",
+   "x": 319.5,
+   "y": 124.54,
+   "angle": 0,
+   "bbox": [
+    318.0,
+    121.54,
+    321.0,
+    125.14
+   ],
+   "owner": [
+    "node",
+    19,
+    1.55
+   ]
+  },
+  {
+   "text": "N3",
+   "x": 332.0,
+   "y": 121.54,
+   "angle": 0,
+   "bbox": [
+    330.5,
+    118.54,
+    333.5,
+    122.14
+   ],
+   "owner": [
+    "node",
+    19,
+    4.36
+   ]
+  },
+  {
+   "text": "50",
+   "x": 332.0,
+   "y": 124.54,
+   "angle": 0,
+   "bbox": [
+    330.5,
+    121.54,
+    333.5,
+    125.14
+   ],
+   "owner": [
+    "node",
+    19,
+    1.36
+   ]
+  },
+  {
+   "text": "N4",
+   "x": 340.5,
+   "y": 136.54,
+   "angle": 0,
+   "bbox": [
+    339.0,
+    133.54,
+    342.0,
+    137.14
+   ],
+   "owner": [
+    "node",
+    19,
+    0.04
+   ]
+  },
+  {
+   "text": "50",
+   "x": 340.5,
+   "y": 139.54,
+   "angle": 0,
+   "bbox": [
+    339.0,
+    136.54,
+    342.0,
+    140.14
+   ],
+   "owner": [
+    "node",
+    19,
+    3.04
+   ]
+  },
+  {
+   "text": "P4711",
+   "x": 84.0,
+   "y": 145.81,
+   "angle": 0,
+   "bbox": [
+    78.38,
+    141.31,
+    89.62,
+    146.71
+   ],
+   "owner": [
+    "node",
+    26,
+    2.04
+   ]
+  },
+  {
+   "text": "N1",
+   "x": 75.95,
+   "y": 151.69,
+   "angle": 0,
+   "bbox": [
+    74.45,
+    148.69,
+    77.45,
+    152.29
+   ],
+   "owner": [
+    "node",
+    26,
+    1.3
+   ]
+  },
+  {
+   "text": "80",
+   "x": 75.95,
+   "y": 157.39,
+   "angle": 0,
+   "bbox": [
+    74.45,
+    154.39,
+    77.45,
+    157.99
+   ],
+   "owner": [
+    "node",
+    26,
+    1.3
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 92.05,
+   "y": 151.69,
+   "angle": 0,
+   "bbox": [
+    90.55,
+    148.69,
+    93.55,
+    152.29
+   ],
+   "owner": [
+    "node",
+    26,
+    1.3
+   ]
+  },
+  {
+   "text": "80",
+   "x": 92.05,
+   "y": 157.39,
+   "angle": 0,
+   "bbox": [
+    90.55,
+    154.39,
+    93.55,
+    157.99
+   ],
+   "owner": [
+    "node",
+    26,
+    1.3
+   ]
+  },
+  {
+   "text": "P4712",
+   "x": 251.0,
+   "y": 145.81,
+   "angle": 0,
+   "bbox": [
+    245.38,
+    141.31,
+    256.62,
+    146.71
+   ],
+   "owner": [
+    "node",
+    27,
+    2.04
+   ]
+  },
+  {
+   "text": "N1",
+   "x": 242.95,
+   "y": 151.69,
+   "angle": 0,
+   "bbox": [
+    241.45,
+    148.69,
+    244.45,
+    152.29
+   ],
+   "owner": [
+    "node",
+    27,
+    1.3
+   ]
+  },
+  {
+   "text": "50",
+   "x": 242.95,
+   "y": 157.39,
+   "angle": 0,
+   "bbox": [
+    241.45,
+    154.39,
+    244.45,
+    157.99
+   ],
+   "owner": [
+    "node",
+    27,
+    1.3
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 259.05,
+   "y": 151.69,
+   "angle": 0,
+   "bbox": [
+    257.55,
+    148.69,
+    260.55,
+    152.29
+   ],
+   "owner": [
+    "node",
+    27,
+    1.3
+   ]
+  },
+  {
+   "text": "50",
+   "x": 259.05,
+   "y": 157.39,
+   "angle": 0,
+   "bbox": [
+    257.55,
+    154.39,
+    260.55,
+    157.99
+   ],
+   "owner": [
+    "node",
+    27,
+    1.3
+   ]
+  },
+  {
+   "text": "T4750",
+   "x": 194.0,
+   "y": 99.81,
+   "angle": 0,
+   "bbox": [
+    188.38,
+    95.31,
+    199.62,
+    100.71
+   ],
+   "owner": [
+    "node",
+    21,
+    0.0
+   ]
+  },
+  {
+   "text": "N1",
+   "x": 177.0,
+   "y": 71.68,
+   "angle": 0,
+   "bbox": [
+    175.5,
+    68.68,
+    178.5,
+    72.28
+   ],
+   "owner": [
+    "node",
+    21,
+    1.32
+   ]
+  },
+  {
+   "text": "80",
+   "x": 177.0,
+   "y": 74.68,
+   "angle": 0,
+   "bbox": [
+    175.5,
+    71.68,
+    178.5,
+    75.28
+   ],
+   "owner": [
+    "node",
+    21,
+    0.5
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 190.0,
+   "y": 127.54,
+   "angle": 0,
+   "bbox": [
+    188.5,
+    124.54,
+    191.5,
+    128.14
+   ],
+   "owner": [
+    "node",
+    21,
+    0.04
+   ]
+  },
+  {
+   "text": "80",
+   "x": 190.0,
+   "y": 130.54,
+   "angle": 0,
+   "bbox": [
+    188.5,
+    127.54,
+    191.5,
+    131.14
+   ],
+   "owner": [
+    "node",
+    21,
+    3.04
+   ]
+  },
+  {
+   "text": "N3",
+   "x": 176.2,
+   "y": 108.69,
+   "angle": 0,
+   "bbox": [
+    174.7,
+    105.69,
+    177.7,
+    109.29
+   ],
+   "owner": [
+    "node",
+    71,
+    0.71
+   ]
+  },
+  {
+   "text": "80",
+   "x": 176.2,
+   "y": 114.39,
+   "angle": 0,
+   "bbox": [
+    174.7,
+    111.39,
+    177.7,
+    114.99
+   ],
+   "owner": [
+    "node",
+    71,
+    0.0
+   ]
+  },
+  {
+   "text": "N5",
+   "x": 211.8,
+   "y": 91.69,
+   "angle": 0,
+   "bbox": [
+    210.3,
+    88.69,
+    213.3,
+    92.29
+   ],
+   "owner": [
+    "node",
+    21,
+    1.3
+   ]
+  },
+  {
+   "text": "50",
+   "x": 211.8,
+   "y": 97.39,
+   "angle": 0,
+   "bbox": [
+    210.3,
+    94.39,
+    213.3,
+    97.99
+   ],
+   "owner": [
+    "node",
+    21,
+    1.3
+   ]
+  },
+  {
+   "text": "N6",
+   "x": 211.8,
+   "y": 80.69,
+   "angle": 0,
+   "bbox": [
+    210.3,
+    77.69,
+    213.3,
+    81.29
+   ],
+   "owner": [
+    "node",
+    21,
+    1.3
+   ]
+  },
+  {
+   "text": "50",
+   "x": 211.8,
+   "y": 86.39,
+   "angle": 0,
+   "bbox": [
+    210.3,
+    83.39,
+    213.3,
+    86.99
+   ],
+   "owner": [
+    "node",
+    21,
+    1.3
+   ]
+  },
+  {
+   "text": "N7",
+   "x": 208.0,
+   "y": 70.36,
+   "angle": 0,
+   "bbox": [
+    206.5,
+    67.36,
+    209.5,
+    70.96
+   ],
+   "owner": [
+    "node",
+    21,
+    2.54
+   ]
+  },
+  {
+   "text": "25",
+   "x": 208.0,
+   "y": 73.36,
+   "angle": 0,
+   "bbox": [
+    206.5,
+    70.36,
+    209.5,
+    73.96
+   ],
+   "owner": [
+    "node",
+    21,
+    0.0
+   ]
+  },
+  {
+   "text": "N8",
+   "x": 171.0,
+   "y": 93.04,
+   "angle": 0,
+   "bbox": [
+    169.5,
+    90.04,
+    172.5,
+    93.64
+   ],
+   "owner": [
+    "run",
+    29,
+    3.5
+   ]
+  },
+  {
+   "text": "800",
+   "x": 171.0,
+   "y": 96.04,
+   "angle": 0,
+   "bbox": [
+    168.75,
+    93.04,
+    173.25,
+    96.64
+   ],
+   "owner": [
+    "run",
+    28,
+    2.88
+   ]
+  },
+  {
+   "text": "APPROVED BY",
+   "x": 297.2,
+   "y": 291.25,
+   "angle": 0,
+   "bbox": [
+    297.2,
+    288.75,
+    310.95,
+    291.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.75
+   ]
+  },
+  {
+   "text": "A. P. Prover",
+   "x": 315.2,
+   "y": 291.25,
+   "angle": 0,
+   "bbox": [
+    315.2,
+    288.75,
+    330.2,
+    291.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.75
+   ]
+  },
+  {
+   "text": "2016-04-01",
+   "x": 345.2,
+   "y": 291.25,
+   "angle": 0,
+   "bbox": [
+    345.2,
+    288.75,
+    357.7,
+    291.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.75
+   ]
+  },
+  {
+   "text": "DRAWING NO",
+   "x": 359.6,
+   "y": 291.25,
+   "angle": 0,
+   "bbox": [
+    359.6,
+    288.75,
+    372.1,
+    291.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.75
+   ]
+  },
+  {
+   "text": "123/A93",
+   "x": 381.2,
+   "y": 291.25,
+   "angle": 0,
+   "bbox": [
+    381.2,
+    288.75,
+    389.95,
+    291.75
+   ],
+   "owner": [
+    "node",
+    22,
+    1.42
+   ]
+  },
+  {
+   "text": "CHECKED BY",
+   "x": 297.2,
+   "y": 286.25,
+   "angle": 0,
+   "bbox": [
+    297.2,
+    283.75,
+    309.7,
+    286.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "C. Hecker",
+   "x": 315.2,
+   "y": 286.25,
+   "angle": 0,
+   "bbox": [
+    315.2,
+    283.75,
+    326.45,
+    286.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "PROJECT",
+   "x": 359.6,
+   "y": 286.25,
+   "angle": 0,
+   "bbox": [
+    359.6,
+    283.75,
+    368.35,
+    286.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "P3.1415",
+   "x": 381.2,
+   "y": 286.25,
+   "angle": 0,
+   "bbox": [
+    381.2,
+    283.75,
+    389.95,
+    286.75
+   ],
+   "owner": [
+    "node",
+    22,
+    1.2
+   ]
+  },
+  {
+   "text": "CREATED BY",
+   "x": 297.2,
+   "y": 281.25,
+   "angle": 0,
+   "bbox": [
+    297.2,
+    278.75,
+    309.7,
+    281.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "A. Creator",
+   "x": 315.2,
+   "y": 281.25,
+   "angle": 0,
+   "bbox": [
+    315.2,
+    278.75,
+    327.7,
+    281.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "2016-04-01",
+   "x": 345.2,
+   "y": 281.25,
+   "angle": 0,
+   "bbox": [
+    345.2,
+    278.75,
+    357.7,
+    281.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "NAME",
+   "x": 315.2,
+   "y": 276.25,
+   "angle": 0,
+   "bbox": [
+    315.2,
+    273.75,
+    320.2,
+    276.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "DATE",
+   "x": 345.2,
+   "y": 276.25,
+   "angle": 0,
+   "bbox": [
+    345.2,
+    273.75,
+    350.2,
+    276.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "DEXPI example PID",
+   "x": 359.6,
+   "y": 279.2,
+   "angle": 0,
+   "bbox": [
+    359.6,
+    275.2,
+    393.6,
+    280.0
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "PLANT SECTION",
+   "x": 359.6,
+   "y": 271.25,
+   "angle": 0,
+   "bbox": [
+    359.6,
+    268.75,
+    375.85,
+    271.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "Utilities",
+   "x": 381.2,
+   "y": 271.25,
+   "angle": 0,
+   "bbox": [
+    381.2,
+    268.75,
+    392.45,
+    271.75
+   ],
+   "owner": [
+    "node",
+    22,
+    1.2
+   ]
+  },
+  {
+   "text": "Oil & Gas, Inc.",
+   "x": 297.2,
+   "y": 269.2,
+   "angle": 0,
+   "bbox": [
+    297.2,
+    265.2,
+    327.2,
+    270.0
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "SITE",
+   "x": 359.6,
+   "y": 266.25,
+   "angle": 0,
+   "bbox": [
+    359.6,
+    263.75,
+    364.6,
+    266.75
+   ],
+   "owner": [
+    "node",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "Dexpi City",
+   "x": 381.2,
+   "y": 266.25,
+   "angle": 0,
+   "bbox": [
+    381.2,
+    263.75,
+    393.7,
+    266.75
+   ],
+   "owner": [
+    "node",
+    22,
+    1.2
+   ]
+  }
+ ],
+ "tables": [
+  {
+   "bbox": [
+    6.0,
+    236.5,
+    96.0,
+    262.5
+   ],
+   "rows": [
+    [
+     "Ident",
+     "H1007"
+    ],
+    [
+     "Design Press. min. Chamber 1 / 2",
+     "-1 barg",
+     "-1 barg"
+    ],
+    [
+     "Design Press. max. Chamber 1 / 2",
+     "60 barg",
+     "30 barg"
+    ],
+    [
+     "Design Temp. min. Chamber 1 / 2",
+     "-45 °C",
+     "-45 °C"
+    ],
+    [
+     "Design Temp. max. Chamber 1 / 2",
+     "100 °C",
+     "100 °C"
+    ],
+    [
+     "Design Duty / Design Heat Transfer Area",
+     "313 kW",
+     "46.8 m²"
+    ],
+    [
+     "DesignPlate Height / Plate Width",
+     "850 mm",
+     "1100 mm"
+    ],
+    [
+     "MaterialPlates",
+     "1.4306"
+    ]
+   ]
+  },
+  {
+   "bbox": [
+    98.0,
+    236.5,
+    188.0,
+    262.5
+   ],
+   "rows": [
+    [
+     "Ident",
+     "H1008"
+    ],
+    [
+     "Design Press. min. Chamber 1 / 2",
+     "-1 barg",
+     "-1 barg"
+    ],
+    [
+     "Design Press. max. Chamber 1 / 2",
+     "60 barg",
+     "30 barg"
+    ],
+    [
+     "Design Temp. min. Chamber 1 / 2",
+     "-45 °C",
+     "-45 °C"
+    ],
+    [
+     "Design Temp. max. Chamber 1 / 2",
+     "100 °C",
+     "100 °C"
+    ],
+    [
+     "Design Duty / Design Heat Transfer Area",
+     "313 kW",
+     "46.8 m²"
+    ],
+    [
+     "Nominal Diameter / Tube Length",
+     "DN 800",
+     "2200 mm"
+    ],
+    [
+     "MaterialTubes / Material Shell",
+     "1.4306",
+     "1.4308"
+    ]
+   ]
+  },
+  {
+   "bbox": [
+    6.0,
+    265.0,
+    96.0,
+    291.0
+   ],
+   "rows": [
+    [
+     "Ident",
+     "P4711"
+    ],
+    [
+     "Design Press. Casing min.",
+     "-0.5 barg"
+    ],
+    [
+     "Design Press. Casing max.",
+     "60 barg"
+    ],
+    [
+     "Design Temp. Casing min.",
+     "-45 °C"
+    ],
+    [
+     "Design Temp. Casing max.",
+     "80 °C"
+    ],
+    [
+     "Design Capacity / Design Press. Head",
+     "200 m³/h",
+     "10 m"
+    ],
+    [
+     "Design Speed / Design Power max. Diam. Wheel",
+     "600 1/min",
+     "60 kW"
+    ],
+    [
+     "Material Case Press. Side / Material Impeller",
+     "1.4306",
+     "1.4308"
+    ]
+   ]
+  },
+  {
+   "bbox": [
+    98.0,
+    265.0,
+    188.0,
+    291.0
+   ],
+   "rows": [
+    [
+     "Ident",
+     "P4712"
+    ],
+    [
+     "Design Press. Casing min.",
+     "-1 barg"
+    ],
+    [
+     "Design Press. Casing max.",
+     "60 barg"
+    ],
+    [
+     "Design Temp. Casing min.",
+     "-45 °C"
+    ],
+    [
+     "Design Temp. Casing max.",
+     "100 °C"
+    ],
+    [
+     "Design Capacity / Design Press. Head",
+     "420 m³/h",
+     "40 m"
+    ],
+    [
+     "Design Speed / Design Power max. Diam. Wheel",
+     "1400 1/min",
+     "84 kW"
+    ],
+    [
+     "Material Case Press. Side / Material Impeller",
+     "1.4306",
+     "1.4305"
+    ]
+   ]
+  },
+  {
+   "bbox": [
+    190.0,
+    265.0,
+    280.0,
+    291.0
+   ],
+   "rows": [
+    [
+     "Ident",
+     "T4750"
+    ],
+    [
+     "Design Press. min. Chamber 1 / 2",
+     "-0.1 barg",
+     "-0.1 barg"
+    ],
+    [
+     "Design Press. max. Chamber 1 / 2",
+     "0.1 barg",
+     "0.05 barg"
+    ],
+    [
+     "Design Temp. min. Chamber 1 / 2",
+     "-45 °C",
+     "-45 °C"
+    ],
+    [
+     "Design Temp. max. Chamber 1 / 2",
+     "100 °C",
+     "100 °C"
+    ],
+    [
+     "Nominal Diameter / Overall Height/Length",
+     "DN 20000",
+     "4 m"
+    ],
+    [
+     "Nominal Capacity",
+     "26 m³"
+    ],
+    [
+     "Material Chamber 1 / 2",
+     "1.4306",
+     "1.4305"
+    ]
+   ]
+  }
+ ],
+ "counts": {
+  "primitives": 341,
+  "texts": 100,
+  "nodes": 75,
+  "runs": 43,
+  "junctions": 5,
+  "tables": 5
+ }
+}

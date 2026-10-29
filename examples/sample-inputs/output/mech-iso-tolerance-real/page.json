@@ -1,0 +1,1398 @@
+{
+ "callouts": [
+  {
+   "box": [
+    96,
+    75,
+    680,
+    193
+   ],
+   "texts": [
+    "NIST PMI Test Models",
+    "NOTES (UNLESS OTHERWISE SPECIFIED):"
+   ]
+  },
+  {
+   "box": [
+    713,
+    75,
+    852,
+    139
+   ],
+   "texts": [
+    "2014"
+   ]
+  },
+  {
+   "box": [
+    1660,
+    151,
+    2063,
+    228
+   ],
+   "texts": [
+    "Feature and Specification Index",
+    "nist_ftc_07_asmel_rd_fsi pdf"
+   ]
+  },
+  {
+   "box": [
+    100,
+    218,
+    723,
+    280
+   ],
+   "texts": [
+    "1.",
+    "CAD MODEL",
+    "REV.",
+    "IS REQUIRED",
+    "TO COMPLETE PRODUCT DEFINITION."
+   ]
+  },
+  {
+   "box": [
+    1311,
+    233,
+    1347,
+    259
+   ],
+   "texts": [
+    "2"
+   ]
+  },
+  {
+   "box": [
+    979,
+    232,
+    1614,
+    555
+   ],
+   "texts": [
+    "003",
+    "~ooo",
+    "4251",
+    "0.250 `",
+    "X",
+    "+.02",
+    "6,620@",
+    "+003",
+    "730 =",
+    "1_001",
+    "6",
+    "4X 0.250 _",
+    "B",
+    "7500",
+    "D",
+    "'+.02",
+    "7.30 =",
+    "7.0236",
+    "0:",
+    "0:",
+    "F1.2"
+   ]
+  },
+  {
+   "box": [
+    101,
+    307,
+    868,
+    660
+   ],
+   "texts": [
+    "2. DIRECTLY-TOLERANCED DIMENSIONS AND",
+    "BASIC DIMENSIONS DEFINED ON THE",
+    "DRAWING TAKE PRECEDENCE OVER",
+    "DIMENSIONAL DATA DEFINED BY THE MODEL:",
+    "OBTAIN ALL OTHER DIMENSIONAL DATA FROM",
+    "THE MODEL. THE MODEL REPRESENTS BASIC",
+    "DIMENSIONAL DATA UNLESS OTHERWISE",
+    "003",
+    "~Ooo",
+    "SPECIFIED.",
+    "2X$ .250 `",
+    "X",
+    "730 +.02"
+   ]
+  },
+  {
+   "box": [
+    943,
+    484,
+    1055,
+    557
+   ],
+   "texts": [
+    "0",
+    "2",
+    "R"
+   ]
+  },
+  {
+   "box": [
+    101,
+    580,
+    581,
+    735
+   ],
+   "texts": [
+    "3. APPLICABLE STANDARDS:",
+    "ASME Y14.41-2003 APPLIES TO",
+    "DATASET.",
+    "ASME Y14.5M-1994 APPLIES TO",
+    "DIMENSIONING AND TOLERANCING."
+   ]
+  },
+  {
+   "box": [
+    1555,
+    492,
+    1905,
+    779
+   ],
+   "texts": [
+    "7 015/",
+    "SURFACES",
+    "F1.2",
+    "AND",
+    "2",
+    "003",
+    "A",
+    "F1.1",
+    "0.250 `",
+    "730 +.02",
+    "X"
+   ]
+  },
+  {
+   "box": [
+    102,
+    762,
+    560,
+    825
+   ],
+   "texts": [
+    "4",
+    ".06",
+    "A",
+    "B",
+    "C",
+    "APPLIES TO ALL",
+    "UNTOLERANCED SURFACES."
+   ]
+  },
+  {
+   "box": [
+    1929,
+    774,
+    1961,
+    799
+   ],
+   "texts": [
+    "2"
+   ]
+  },
+  {
+   "box": [
+    1806,
+    827,
+    1845,
+    865
+   ],
+   "texts": [
+    "12"
+   ]
+  },
+  {
+   "box": [
+    101,
+    852,
+    668,
+    1105
+   ],
+   "texts": [
+    "5. FEATURES IDENTIFIED AS STATISTICALLY",
+    "TOLERANCED (ST) SHALL BE PRODUCED",
+    "WITH STATISTICAL PROCESS CONTROLS",
+    "OR TO THE MORE RESTRICTIVE",
+    "ARITHMETIC LIMITS SPECIFIED",
+    "DETAILED",
+    "PROCESS PLAN NEEDED TO COMPLETELY",
+    "DEFINE STATISTICAL PARAMETERS AND",
+    "REQUIREMENTS."
+   ]
+  },
+  {
+   "box": [
+    101,
+    1132,
+    326,
+    1165
+   ],
+   "texts": [
+    "6. UNITS: INCHES"
+   ]
+  },
+  {
+   "box": [
+    902,
+    1108,
+    1056,
+    1227
+   ],
+   "texts": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "box": [
+    2092,
+    1349,
+    2133,
+    1637
+   ],
+   "texts": [
+    "2",
+    "1",
+    "5",
+    "2",
+    "9"
+   ]
+  },
+  {
+   "box": [
+    753,
+    1561,
+    1407,
+    1649
+   ],
+   "texts": [
+    "PMI Fully-Toleranced Test Case 7 -",
+    "View A",
+    "Includes Atomic Test Cases",
+    "84, 85",
+    "7"
+   ]
+  },
+  {
+   "box": [
+    1986,
+    1623,
+    2071,
+    1655
+   ],
+   "texts": [
+    "Rev D"
+   ]
+  }
+ ],
+ "leaders": [
+  {
+   "callout": 0,
+   "start": [
+    82,
+    144
+   ],
+   "end": [
+    2082,
+    144
+   ],
+   "length_mm": 246.6,
+   "end_on_part": false
+  },
+  {
+   "callout": 2,
+   "start": [
+    2082,
+    144
+   ],
+   "end": [
+    82,
+    144
+   ],
+   "length_mm": 246.6,
+   "end_on_part": false
+  },
+  {
+   "callout": 18,
+   "start": [
+    2082,
+    1664
+   ],
+   "end": [
+    81,
+    1664
+   ],
+   "length_mm": 246.7,
+   "end_on_part": false
+  },
+  {
+   "callout": 5,
+   "start": [
+    1200,
+    526
+   ],
+   "end": [
+    1869,
+    912
+   ],
+   "length_mm": 95.2,
+   "end_on_part": true
+  },
+  {
+   "callout": 12,
+   "start": [
+    1784,
+    874
+   ],
+   "end": [
+    1266,
+    575
+   ],
+   "length_mm": 73.7,
+   "end_on_part": true
+  },
+  {
+   "callout": 6,
+   "start": [
+    639,
+    632
+   ],
+   "end": [
+    779,
+    808
+   ],
+   "length_mm": 27.7,
+   "end_on_part": true
+  },
+  {
+   "callout": 7,
+   "start": [
+    977,
+    510
+   ],
+   "end": [
+    839,
+    590
+   ],
+   "length_mm": 19.7,
+   "end_on_part": false
+  },
+  {
+   "callout": 9,
+   "start": [
+    1622,
+    789
+   ],
+   "end": [
+    1268,
+    581
+   ],
+   "length_mm": 50.6,
+   "end_on_part": true
+  },
+  {
+   "callout": 4,
+   "start": [
+    1330,
+    224
+   ],
+   "end": [
+    1269,
+    258
+   ],
+   "length_mm": 8.6,
+   "end_on_part": false
+  }
+ ],
+ "part_box": [
+  639,
+  352,
+  1882,
+  1505
+ ],
+ "summary": {
+  "texts": 96,
+  "callouts": 19,
+  "callouts_with_leader": 9,
+  "leader_end_on_part": 4,
+  "segments": 289,
+  "mean_conf": 0.76
+ },
+ "texts": [
+  {
+   "text": "NIST PMI Test Models",
+   "conf": 0.74,
+   "box": [
+    103,
+    75,
+    680,
+    140
+   ]
+  },
+  {
+   "text": "2014",
+   "conf": 0.97,
+   "box": [
+    713,
+    75,
+    852,
+    139
+   ]
+  },
+  {
+   "text": "NOTES (UNLESS OTHERWISE SPECIFIED):",
+   "conf": 0.71,
+   "box": [
+    96,
+    155,
+    625,
+    193
+   ]
+  },
+  {
+   "text": "Feature and Specification Index",
+   "conf": 0.75,
+   "box": [
+    1660,
+    151,
+    2063,
+    192
+   ]
+  },
+  {
+   "text": "nist_ftc_07_asmel_rd_fsi pdf",
+   "conf": 0.64,
+   "box": [
+    1660,
+    186,
+    2022,
+    228
+   ]
+  },
+  {
+   "text": "1.",
+   "conf": 0.99,
+   "box": [
+    100,
+    222,
+    121,
+    246
+   ]
+  },
+  {
+   "text": "CAD MODEL",
+   "conf": 1.0,
+   "box": [
+    133,
+    218,
+    294,
+    249
+   ]
+  },
+  {
+   "text": "REV.",
+   "conf": 0.67,
+   "box": [
+    453,
+    219,
+    515,
+    249
+   ]
+  },
+  {
+   "text": "IS REQUIRED",
+   "conf": 1.0,
+   "box": [
+    551,
+    218,
+    723,
+    249
+   ]
+  },
+  {
+   "text": "2",
+   "conf": 0.5,
+   "box": [
+    1311,
+    233,
+    1347,
+    259
+   ]
+  },
+  {
+   "text": "TO COMPLETE PRODUCT DEFINITION.",
+   "conf": 0.72,
+   "box": [
+    137,
+    248,
+    612,
+    280
+   ]
+  },
+  {
+   "text": "X",
+   "conf": 0.79,
+   "box": [
+    1056,
+    275,
+    1080,
+    294
+   ]
+  },
+  {
+   "text": "2. DIRECTLY-TOLERANCED DIMENSIONS AND",
+   "conf": 0.9,
+   "box": [
+    101,
+    307,
+    674,
+    340
+   ]
+  },
+  {
+   "text": "BASIC DIMENSIONS DEFINED ON THE",
+   "conf": 0.77,
+   "box": [
+    133,
+    338,
+    603,
+    371
+   ]
+  },
+  {
+   "text": "6",
+   "conf": 0.67,
+   "box": [
+    1586,
+    326,
+    1614,
+    361
+   ]
+  },
+  {
+   "text": "B",
+   "conf": 0.41,
+   "box": [
+    1546,
+    350,
+    1572,
+    385
+   ]
+  },
+  {
+   "text": "DRAWING TAKE PRECEDENCE OVER",
+   "conf": 0.87,
+   "box": [
+    134,
+    368,
+    598,
+    405
+   ]
+  },
+  {
+   "text": "D",
+   "conf": 0.96,
+   "box": [
+    1507,
+    372,
+    1536,
+    407
+   ]
+  },
+  {
+   "text": "DIMENSIONAL DATA DEFINED BY THE MODEL:",
+   "conf": 0.93,
+   "box": [
+    135,
+    401,
+    704,
+    431
+   ]
+  },
+  {
+   "text": "OBTAIN ALL OTHER DIMENSIONAL DATA FROM",
+   "conf": 0.99,
+   "box": [
+    135,
+    431,
+    718,
+    462
+   ]
+  },
+  {
+   "text": "0:",
+   "conf": 0.59,
+   "box": [
+    1411,
+    421,
+    1450,
+    461
+   ]
+  },
+  {
+   "text": "THE MODEL. THE MODEL REPRESENTS BASIC",
+   "conf": 0.71,
+   "box": [
+    137,
+    460,
+    718,
+    493
+   ]
+  },
+  {
+   "text": "0:",
+   "conf": 0.37,
+   "box": [
+    1340,
+    467,
+    1370,
+    503
+   ]
+  },
+  {
+   "text": "DIMENSIONAL DATA UNLESS OTHERWISE",
+   "conf": 0.9,
+   "box": [
+    135,
+    489,
+    656,
+    522
+   ]
+  },
+  {
+   "text": "0",
+   "conf": 0.65,
+   "box": [
+    1022,
+    484,
+    1055,
+    509
+   ]
+  },
+  {
+   "text": "2",
+   "conf": 0.75,
+   "box": [
+    979,
+    506,
+    1016,
+    533
+   ]
+  },
+  {
+   "text": "SPECIFIED.",
+   "conf": 0.65,
+   "box": [
+    135,
+    522,
+    278,
+    553
+   ]
+  },
+  {
+   "text": "X",
+   "conf": 0.58,
+   "box": [
+    763,
+    530,
+    786,
+    547
+   ]
+  },
+  {
+   "text": "R",
+   "conf": 0.26,
+   "box": [
+    943,
+    529,
+    981,
+    557
+   ]
+  },
+  {
+   "text": "3. APPLICABLE STANDARDS:",
+   "conf": 0.7,
+   "box": [
+    101,
+    580,
+    467,
+    613
+   ]
+  },
+  {
+   "text": "2",
+   "conf": 1.0,
+   "box": [
+    1593,
+    594,
+    1619,
+    629
+   ]
+  },
+  {
+   "text": "ASME Y14.41-2003 APPLIES TO",
+   "conf": 0.96,
+   "box": [
+    135,
+    611,
+    521,
+    644
+   ]
+  },
+  {
+   "text": "DATASET.",
+   "conf": 1.0,
+   "box": [
+    135,
+    642,
+    264,
+    674
+   ]
+  },
+  {
+   "text": "A",
+   "conf": 1.0,
+   "box": [
+    1555,
+    640,
+    1579,
+    670
+   ]
+  },
+  {
+   "text": "X",
+   "conf": 0.61,
+   "box": [
+    1798,
+    664,
+    1824,
+    683
+   ]
+  },
+  {
+   "text": "ASME Y14.5M-1994 APPLIES TO",
+   "conf": 0.58,
+   "box": [
+    137,
+    671,
+    527,
+    704
+   ]
+  },
+  {
+   "text": "DIMENSIONING AND TOLERANCING.",
+   "conf": 0.93,
+   "box": [
+    133,
+    702,
+    581,
+    735
+   ]
+  },
+  {
+   "text": "4",
+   "conf": 1.0,
+   "box": [
+    102,
+    767,
+    121,
+    789
+   ]
+  },
+  {
+   "text": ".06",
+   "conf": 0.68,
+   "box": [
+    204,
+    762,
+    242,
+    792
+   ]
+  },
+  {
+   "text": "A",
+   "conf": 1.0,
+   "box": [
+    250,
+    764,
+    275,
+    790
+   ]
+  },
+  {
+   "text": "B",
+   "conf": 1.0,
+   "box": [
+    286,
+    763,
+    305,
+    789
+   ]
+  },
+  {
+   "text": "C",
+   "conf": 0.97,
+   "box": [
+    315,
+    762,
+    342,
+    792
+   ]
+  },
+  {
+   "text": "APPLIES TO ALL",
+   "conf": 1.0,
+   "box": [
+    353,
+    762,
+    560,
+    794
+   ]
+  },
+  {
+   "text": "2",
+   "conf": 0.83,
+   "box": [
+    1929,
+    774,
+    1961,
+    799
+   ]
+  },
+  {
+   "text": "UNTOLERANCED SURFACES.",
+   "conf": 0.75,
+   "box": [
+    137,
+    793,
+    498,
+    825
+   ]
+  },
+  {
+   "text": "12",
+   "conf": 0.43,
+   "box": [
+    1806,
+    827,
+    1845,
+    865
+   ]
+  },
+  {
+   "text": "5. FEATURES IDENTIFIED AS STATISTICALLY",
+   "conf": 0.91,
+   "box": [
+    101,
+    852,
+    660,
+    885
+   ]
+  },
+  {
+   "text": "TOLERANCED (ST) SHALL BE PRODUCED",
+   "conf": 0.74,
+   "box": [
+    135,
+    890,
+    649,
+    923
+   ]
+  },
+  {
+   "text": "WITH STATISTICAL PROCESS CONTROLS",
+   "conf": 0.83,
+   "box": [
+    136,
+    919,
+    652,
+    955
+   ]
+  },
+  {
+   "text": "OR TO THE MORE RESTRICTIVE",
+   "conf": 0.81,
+   "box": [
+    134,
+    950,
+    537,
+    986
+   ]
+  },
+  {
+   "text": "ARITHMETIC LIMITS SPECIFIED",
+   "conf": 0.88,
+   "box": [
+    136,
+    981,
+    528,
+    1017
+   ]
+  },
+  {
+   "text": "DETAILED",
+   "conf": 1.0,
+   "box": [
+    537,
+    982,
+    668,
+    1014
+   ]
+  },
+  {
+   "text": "PROCESS PLAN NEEDED TO COMPLETELY",
+   "conf": 0.98,
+   "box": [
+    133,
+    1012,
+    667,
+    1045
+   ]
+  },
+  {
+   "text": "DEFINE STATISTICAL PARAMETERS AND",
+   "conf": 0.86,
+   "box": [
+    135,
+    1044,
+    641,
+    1076
+   ]
+  },
+  {
+   "text": "REQUIREMENTS.",
+   "conf": 0.9,
+   "box": [
+    133,
+    1073,
+    349,
+    1105
+   ]
+  },
+  {
+   "text": "6. UNITS: INCHES",
+   "conf": 0.95,
+   "box": [
+    101,
+    1132,
+    326,
+    1165
+   ]
+  },
+  {
+   "text": "0",
+   "conf": 1.0,
+   "box": [
+    902,
+    1108,
+    1007,
+    1196
+   ]
+  },
+  {
+   "text": "0",
+   "conf": 1.0,
+   "box": [
+    995,
+    1162,
+    1056,
+    1227
+   ]
+  },
+  {
+   "text": "2",
+   "conf": 0.68,
+   "box": [
+    2093,
+    1349,
+    2132,
+    1400
+   ]
+  },
+  {
+   "text": "1",
+   "conf": 0.71,
+   "box": [
+    2096,
+    1391,
+    2128,
+    1484
+   ]
+  },
+  {
+   "text": "5",
+   "conf": 0.91,
+   "box": [
+    2092,
+    1490,
+    2129,
+    1530
+   ]
+  },
+  {
+   "text": "2",
+   "conf": 0.78,
+   "box": [
+    2092,
+    1533,
+    2129,
+    1579
+   ]
+  },
+  {
+   "text": "PMI Fully-Toleranced Test Case 7 -",
+   "conf": 0.89,
+   "box": [
+    753,
+    1561,
+    1281,
+    1615
+   ]
+  },
+  {
+   "text": "View A",
+   "conf": 1.0,
+   "box": [
+    1292,
+    1567,
+    1407,
+    1606
+   ]
+  },
+  {
+   "text": "9",
+   "conf": 0.76,
+   "box": [
+    2093,
+    1564,
+    2133,
+    1637
+   ]
+  },
+  {
+   "text": "Includes Atomic Test Cases",
+   "conf": 0.94,
+   "box": [
+    808,
+    1605,
+    1235,
+    1647
+   ]
+  },
+  {
+   "text": "7",
+   "conf": 0.22,
+   "box": [
+    1236,
+    1623,
+    1252,
+    1637
+   ]
+  },
+  {
+   "text": "84, 85",
+   "conf": 0.99,
+   "box": [
+    1251,
+    1607,
+    1357,
+    1649
+   ]
+  },
+  {
+   "text": "Rev D",
+   "conf": 1.0,
+   "box": [
+    1986,
+    1623,
+    2071,
+    1655
+   ]
+  },
+  {
+   "text": "003",
+   "conf": 0.91,
+   "box": [
+    1066,
+    232,
+    1143,
+    297
+   ]
+  },
+  {
+   "text": "~ooo",
+   "conf": 0.29,
+   "box": [
+    1073,
+    251,
+    1160,
+    322
+   ]
+  },
+  {
+   "text": "4251",
+   "conf": 0.5,
+   "box": [
+    1201,
+    261,
+    1280,
+    330
+   ]
+  },
+  {
+   "text": "+.02",
+   "conf": 0.68,
+   "box": [
+    1088,
+    279,
+    1170,
+    349
+   ]
+  },
+  {
+   "text": "0.250 `",
+   "conf": 0.55,
+   "box": [
+    979,
+    280,
+    1084,
+    360
+   ]
+  },
+  {
+   "text": "+003",
+   "conf": 1.0,
+   "box": [
+    1392,
+    289,
+    1489,
+    368
+   ]
+  },
+  {
+   "text": "6,620@",
+   "conf": 0.23,
+   "box": [
+    1096,
+    290,
+    1230,
+    391
+   ]
+  },
+  {
+   "text": "730 =",
+   "conf": 0.38,
+   "box": [
+    1022,
+    315,
+    1112,
+    382
+   ]
+  },
+  {
+   "text": "1_001",
+   "conf": 0.54,
+   "box": [
+    1390,
+    321,
+    1482,
+    396
+   ]
+  },
+  {
+   "text": "4X 0.250 _",
+   "conf": 0.61,
+   "box": [
+    1276,
+    342,
+    1417,
+    450
+   ]
+  },
+  {
+   "text": "7500",
+   "conf": 0.4,
+   "box": [
+    1433,
+    382,
+    1511,
+    449
+   ]
+  },
+  {
+   "text": "'+.02",
+   "conf": 0.56,
+   "box": [
+    1338,
+    385,
+    1424,
+    460
+   ]
+  },
+  {
+   "text": "7.30 =",
+   "conf": 0.38,
+   "box": [
+    1277,
+    419,
+    1368,
+    492
+   ]
+  },
+  {
+   "text": "7.0236",
+   "conf": 0.36,
+   "box": [
+    1344,
+    429,
+    1431,
+    501
+   ]
+  },
+  {
+   "text": "F1.2",
+   "conf": 1.0,
+   "box": [
+    1430,
+    484,
+    1517,
+    555
+   ]
+  },
+  {
+   "text": "003",
+   "conf": 0.98,
+   "box": [
+    773,
+    485,
+    850,
+    549
+   ]
+  },
+  {
+   "text": "7 015/",
+   "conf": 0.3,
+   "box": [
+    1592,
+    492,
+    1677,
+    563
+   ]
+  },
+  {
+   "text": "SURFACES",
+   "conf": 0.97,
+   "box": [
+    1602,
+    498,
+    1772,
+    623
+   ]
+  },
+  {
+   "text": "~Ooo",
+   "conf": 0.52,
+   "box": [
+    782,
+    503,
+    868,
+    574
+   ]
+  },
+  {
+   "text": "F1.2",
+   "conf": 0.98,
+   "box": [
+    1699,
+    531,
+    1785,
+    601
+   ]
+  },
+  {
+   "text": "2X$ .250 `",
+   "conf": 0.21,
+   "box": [
+    646,
+    530,
+    791,
+    637
+   ]
+  },
+  {
+   "text": "730 +.02",
+   "conf": 0.72,
+   "box": [
+    692,
+    555,
+    836,
+    660
+   ]
+  },
+  {
+   "text": "AND",
+   "conf": 1.0,
+   "box": [
+    1636,
+    561,
+    1726,
+    639
+   ]
+  },
+  {
+   "text": "003",
+   "conf": 0.97,
+   "box": [
+    1807,
+    620,
+    1885,
+    685
+   ]
+  },
+  {
+   "text": "F1.1",
+   "conf": 0.97,
+   "box": [
+    1655,
+    640,
+    1739,
+    709
+   ]
+  },
+  {
+   "text": "0.250 `",
+   "conf": 0.81,
+   "box": [
+    1722,
+    666,
+    1825,
+    749
+   ]
+  },
+  {
+   "text": "730 +.02",
+   "conf": 0.57,
+   "box": [
+    1756,
+    671,
+    1905,
+    779
+   ]
+  }
+ ],
+ "times": {
+  "ocr": 0.0,
+  "structure": 0.2,
+  "total": 0.3
+ },
+ "image": {
+  "path": "input_gray.png",
+  "px": [
+   2200,
+   1700
+  ],
+  "dpi": 206
+ }
+}

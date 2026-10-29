@@ -11,3 +11,4 @@ __pycache__/
 node_modules/
 *.pptx~
 .DS_Store
+app/jobs/

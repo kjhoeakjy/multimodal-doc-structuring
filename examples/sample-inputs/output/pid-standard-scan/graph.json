@@ -1,0 +1,7683 @@
+{
+ "page": [
+  420.116,
+  297.053
+ ],
+ "nodes": [
+  {
+   "id": "n0",
+   "role": "note",
+   "bbox": [
+    273.05,
+    90.932,
+    288.925,
+    100.965
+   ],
+   "texts": [
+    "ISV 104.01",
+    "P=6",
+    "DN =",
+    "'baio]"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n50"
+  },
+  {
+   "id": "n1",
+   "role": "equipment",
+   "bbox": [
+    78.867,
+    154.05100000000002,
+    88.646,
+    159.131
+   ],
+   "texts": [
+    "80"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n2",
+   "role": "equipment",
+   "bbox": [
+    136.017,
+    149.987,
+    143.891,
+    156.21
+   ],
+   "texts": [
+    "N4",
+    "80",
+    "5o",
+    "HIO07"
+   ],
+   "primitives": 0,
+   "degree": 11,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n3",
+   "role": "equipment",
+   "bbox": [
+    245.872,
+    148.844,
+    255.905,
+    159.131
+   ],
+   "texts": [
+    "NI"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n4",
+   "role": "equipment",
+   "bbox": [
+    78.867,
+    148.844,
+    88.646,
+    153.924
+   ],
+   "texts": [
+    "NI"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n5",
+   "role": "equipment",
+   "bbox": [
+    323.469,
+    133.604,
+    344.424,
+    153.797
+   ],
+   "texts": [
+    "NI",
+    "N4",
+    "50",
+    "50"
+   ],
+   "primitives": 0,
+   "degree": 6,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n6",
+   "role": "equipment",
+   "bbox": [
+    120.015,
+    132.969,
+    135.89000000000001,
+    153.924
+   ],
+   "texts": [
+    "50",
+    "NI"
+   ],
+   "primitives": 0,
+   "degree": 9,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n7",
+   "role": "equipment",
+   "bbox": [
+    136.017,
+    130.81,
+    143.891,
+    137.03300000000002
+   ],
+   "texts": [
+    "N3",
+    "N2",
+    "80"
+   ],
+   "primitives": 0,
+   "degree": 10,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n8",
+   "role": "equipment",
+   "bbox": [
+    325.374,
+    126.492,
+    346.202,
+    133.477
+   ],
+   "texts": [
+    "N2",
+    "N3",
+    "50"
+   ],
+   "primitives": 0,
+   "degree": 14,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n9",
+   "role": "instrument",
+   "bbox": [
+    130.302,
+    115.18900000000001,
+    143.637,
+    118.999
+   ],
+   "texts": [
+    "HS",
+    "7750.01"
+   ],
+   "primitives": 0,
+   "degree": 6,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n10",
+   "role": "equipment",
+   "bbox": [
+    179.07,
+    73.533,
+    208.915,
+    124.46000000000001
+   ],
+   "texts": [
+    "NI",
+    "80",
+    "N6",
+    "50",
+    "NS",
+    "T4750",
+    "6",
+    "N2",
+    "80",
+    "0",
+    "1",
+    "800"
+   ],
+   "primitives": 0,
+   "degree": 17,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n11",
+   "role": "note",
+   "bbox": [
+    358.521,
+    288.036,
+    379.984,
+    292.735
+   ],
+   "texts": [
+    "DRAWING NO",
+    "123/A93"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n19"
+  },
+  {
+   "id": "n12",
+   "role": "note",
+   "bbox": [
+    344.043,
+    288.036,
+    358.394,
+    292.735
+   ],
+   "texts": [
+    "2016-04-01"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n19"
+  },
+  {
+   "id": "n13",
+   "role": "note",
+   "bbox": [
+    314.071,
+    288.036,
+    343.916,
+    292.735
+   ],
+   "texts": [
+    "APPROVED BYA P Prover"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n14"
+  },
+  {
+   "id": "n14",
+   "role": "symbol",
+   "bbox": [
+    296.164,
+    288.036,
+    313.944,
+    292.735
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n15",
+   "role": "note",
+   "bbox": [
+    380.111,
+    283.083,
+    415.798,
+    287.909
+   ],
+   "texts": [
+    "P3IIS"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n19"
+  },
+  {
+   "id": "n16",
+   "role": "note",
+   "bbox": [
+    358.521,
+    283.083,
+    379.984,
+    287.909
+   ],
+   "texts": [
+    "PROJECT"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n19"
+  },
+  {
+   "id": "n17",
+   "role": "note",
+   "bbox": [
+    344.043,
+    283.083,
+    358.267,
+    287.909
+   ],
+   "texts": [
+    "2016-0401"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n19"
+  },
+  {
+   "id": "n18",
+   "role": "note",
+   "bbox": [
+    296.164,
+    283.083,
+    313.944,
+    287.909
+   ],
+   "texts": [
+    "CREATED BY",
+    "CHECKED BY| € Hecker"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n14"
+  },
+  {
+   "id": "n19",
+   "role": "symbol",
+   "bbox": [
+    358.521,
+    273.05,
+    415.798,
+    282.956
+   ],
+   "texts": [
+    "DEXPI",
+    "PID",
+    "example"
+   ],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n20",
+   "role": "equipment",
+   "bbox": [
+    344.043,
+    273.05,
+    358.394,
+    277.876
+   ],
+   "texts": [
+    "DATE"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n21",
+   "role": "equipment",
+   "bbox": [
+    314.071,
+    273.05,
+    343.916,
+    277.876
+   ],
+   "texts": [
+    "NAME",
+    "A Creator"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n22",
+   "role": "equipment",
+   "bbox": [
+    296.164,
+    273.05,
+    313.944,
+    278.003
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n23",
+   "role": "note",
+   "bbox": [
+    380.111,
+    268.097,
+    415.798,
+    272.923
+   ],
+   "texts": [
+    "Dexpi",
+    "Utilities",
+    "Cuy"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n25"
+  },
+  {
+   "id": "n24",
+   "role": "note",
+   "bbox": [
+    358.521,
+    268.097,
+    379.984,
+    272.923
+   ],
+   "texts": [
+    "PLANT SECTION"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n19"
+  },
+  {
+   "id": "n25",
+   "role": "symbol",
+   "bbox": [
+    380.111,
+    263.144,
+    415.798,
+    267.97
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n26",
+   "role": "note",
+   "bbox": [
+    358.521,
+    263.144,
+    379.984,
+    267.97
+   ],
+   "texts": [
+    "SITE"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n25"
+  },
+  {
+   "id": "n27",
+   "role": "note",
+   "bbox": [
+    296.164,
+    263.144,
+    358.394,
+    272.923
+   ],
+   "texts": [
+    "Oil & Gas, Inc:"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n20"
+  },
+  {
+   "id": "n28",
+   "role": "symbol",
+   "bbox": [
+    208.915,
+    57.658,
+    210.947,
+    60.706
+   ],
+   "texts": [
+    "7750.,03"
+   ],
+   "primitives": 0,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n29",
+   "role": "symbol",
+   "bbox": [
+    197.104,
+    57.912,
+    198.755,
+    60.706
+   ],
+   "texts": [
+    "TTICSA"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n30",
+   "role": "symbol",
+   "bbox": [
+    197.104,
+    61.214,
+    198.12,
+    63.5
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n31",
+   "role": "symbol",
+   "bbox": [
+    209.55,
+    61.214,
+    210.947,
+    63.881
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n32",
+   "role": "symbol",
+   "bbox": [
+    179.07,
+    63.754,
+    180.594,
+    65.659
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n33",
+   "role": "symbol",
+   "bbox": [
+    181.483,
+    63.754,
+    182.88,
+    65.532
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n34",
+   "role": "symbol",
+   "bbox": [
+    198.755,
+    64.135,
+    200.025,
+    64.643
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n35",
+   "role": "symbol",
+   "bbox": [
+    208.026,
+    64.135,
+    209.296,
+    64.643
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n36",
+   "role": "mark",
+   "bbox": [
+    202.946,
+    70.993,
+    203.708,
+    71.755
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n37",
+   "role": "mark",
+   "bbox": [
+    204.343,
+    71.12,
+    204.978,
+    71.628
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n38",
+   "role": "symbol",
+   "bbox": [
+    206.883,
+    71.374,
+    207.772,
+    72.644
+   ],
+   "texts": [
+    "N7"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n39",
+   "role": "symbol",
+   "bbox": [
+    208.28,
+    71.374,
+    209.296,
+    73.152
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n40",
+   "role": "mark",
+   "bbox": [
+    181.356,
+    72.263,
+    181.991,
+    72.898
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n41",
+   "role": "mark",
+   "bbox": [
+    179.959,
+    72.39,
+    180.594,
+    72.898
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n42",
+   "role": "mark",
+   "bbox": [
+    206.629,
+    73.025,
+    207.772,
+    73.533
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n43",
+   "role": "nozzle",
+   "bbox": [
+    183.261,
+    74.93,
+    184.531,
+    75.438
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": "n10",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n44",
+   "role": "nozzle",
+   "bbox": [
+    204.343,
+    75.184,
+    208.661,
+    77.343
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": "n10",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n45",
+   "role": "mark",
+   "bbox": [
+    179.324,
+    76.708,
+    180.467,
+    77.343
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n46",
+   "role": "symbol",
+   "bbox": [
+    217.043,
+    81.28,
+    218.69400000000002,
+    82.677
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n47",
+   "role": "mark",
+   "bbox": [
+    212.725,
+    81.915,
+    213.233,
+    82.677
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n48",
+   "role": "symbol",
+   "bbox": [
+    217.043,
+    83.312,
+    218.821,
+    84.709
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n49",
+   "role": "nozzle",
+   "bbox": [
+    175.768,
+    88.646,
+    178.689,
+    90.805
+   ],
+   "texts": [
+    "NS"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": "n10",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n50",
+   "role": "symbol",
+   "bbox": [
+    267.843,
+    89.027,
+    271.145,
+    96.266
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n51",
+   "role": "symbol",
+   "bbox": [
+    217.043,
+    92.202,
+    218.821,
+    93.726
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n52",
+   "role": "symbol",
+   "bbox": [
+    255.143,
+    92.202,
+    259.08,
+    93.47200000000001
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n53",
+   "role": "mark",
+   "bbox": [
+    212.598,
+    92.964,
+    213.36,
+    93.726
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n54",
+   "role": "mark",
+   "bbox": [
+    212.598,
+    94.234,
+    213.36,
+    94.996
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n55",
+   "role": "symbol",
+   "bbox": [
+    217.17000000000002,
+    94.361,
+    218.821,
+    95.758
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n56",
+   "role": "symbol",
+   "bbox": [
+    210.566,
+    95.377,
+    212.344,
+    97.282
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n57",
+   "role": "symbol",
+   "bbox": [
+    212.598,
+    95.504,
+    213.233,
+    97.282
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n58",
+   "role": "symbol",
+   "bbox": [
+    322.326,
+    95.631,
+    331.851,
+    100.33
+   ],
+   "texts": [
+    "1"
+   ],
+   "primitives": 0,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n59",
+   "role": "nozzle",
+   "bbox": [
+    175.768,
+    97.282,
+    178.689,
+    99.31400000000001
+   ],
+   "texts": [
+    "800"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": "n10",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n60",
+   "role": "symbol",
+   "bbox": [
+    155.956,
+    99.187,
+    157.988,
+    100.45700000000001
+   ],
+   "texts": [
+    "I"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n61",
+   "role": "symbol",
+   "bbox": [
+    326.009,
+    100.584,
+    328.041,
+    101.854
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n62",
+   "role": "mark",
+   "bbox": [
+    155.956,
+    100.83800000000001,
+    156.591,
+    101.21900000000001
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n63",
+   "role": "symbol",
+   "bbox": [
+    155.956,
+    100.83800000000001,
+    157.988,
+    102.616
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n64",
+   "role": "symbol",
+   "bbox": [
+    155.956,
+    102.997,
+    157.988,
+    105.283
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n65",
+   "role": "symbol",
+   "bbox": [
+    338.32800000000003,
+    104.775,
+    340.233,
+    107.569
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n66",
+   "role": "symbol",
+   "bbox": [
+    340.741,
+    104.775,
+    342.646,
+    109.22
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n67",
+   "role": "symbol",
+   "bbox": [
+    338.32800000000003,
+    111.379,
+    342.646,
+    113.411
+   ],
+   "texts": [
+    "ROJ",
+    "TV4750.03"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n68",
+   "role": "symbol",
+   "bbox": [
+    151.76500000000001,
+    116.71300000000001,
+    161.163,
+    121.158
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n69",
+   "role": "symbol",
+   "bbox": [
+    271.272,
+    117.348,
+    273.177,
+    118.491
+   ],
+   "texts": [
+    "1"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n70",
+   "role": "mark",
+   "bbox": [
+    271.272,
+    118.872,
+    272.415,
+    119.888
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n71",
+   "role": "mark",
+   "bbox": [
+    272.923,
+    118.872,
+    273.431,
+    120.015
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n72",
+   "role": "nozzle",
+   "bbox": [
+    130.048,
+    119.253,
+    131.191,
+    121.666
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": "n9",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n73",
+   "role": "nozzle",
+   "bbox": [
+    140.843,
+    119.253,
+    143.891,
+    122.682
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 3,
+   "attached_to": "n9",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n74",
+   "role": "mark",
+   "bbox": [
+    179.324,
+    120.65,
+    180.467,
+    121.285
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n75",
+   "role": "symbol",
+   "bbox": [
+    271.272,
+    120.65,
+    273.30400000000003,
+    121.158
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n76",
+   "role": "nozzle",
+   "bbox": [
+    206.248,
+    120.904,
+    208.153,
+    121.92
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": "n10",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n77",
+   "role": "nozzle",
+   "bbox": [
+    180.594,
+    121.285,
+    182.245,
+    122.174
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": "n10",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n78",
+   "role": "symbol",
+   "bbox": [
+    156.464,
+    122.047,
+    158.496,
+    123.31700000000001
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n79",
+   "role": "symbol",
+   "bbox": [
+    271.272,
+    121.92,
+    273.177,
+    123.063
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n80",
+   "role": "mark",
+   "bbox": [
+    131.826,
+    122.174,
+    132.715,
+    122.555
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n81",
+   "role": "mark",
+   "bbox": [
+    322.45300000000003,
+    122.174,
+    323.21500000000003,
+    122.936
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n82",
+   "role": "mark",
+   "bbox": [
+    323.85,
+    122.174,
+    324.485,
+    122.809
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n83",
+   "role": "mark",
+   "bbox": [
+    326.898,
+    122.174,
+    327.66,
+    122.936
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n84",
+   "role": "mark",
+   "bbox": [
+    328.295,
+    122.174,
+    329.057,
+    122.936
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n85",
+   "role": "nozzle",
+   "bbox": [
+    202.311,
+    122.936,
+    203.708,
+    123.444
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": "n10",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n86",
+   "role": "symbol",
+   "bbox": [
+    271.272,
+    123.31700000000001,
+    273.177,
+    124.333
+   ],
+   "texts": [
+    "4"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n87",
+   "role": "nozzle",
+   "bbox": [
+    341.122,
+    127.508,
+    342.519,
+    127.889
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": "n8",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n88",
+   "role": "mark",
+   "bbox": [
+    192.913,
+    128.27,
+    193.548,
+    128.778
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n89",
+   "role": "mark",
+   "bbox": [
+    194.437,
+    128.27,
+    195.072,
+    128.778
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n90",
+   "role": "instrument",
+   "bbox": [
+    274.193,
+    128.397,
+    276.86,
+    134.62
+   ],
+   "texts": [
+    "PI",
+    "4712.01"
+   ],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n91",
+   "role": "symbol",
+   "bbox": [
+    285.242,
+    128.397,
+    287.909,
+    135.12800000000001
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n92",
+   "role": "mark",
+   "bbox": [
+    340.741,
+    128.524,
+    341.249,
+    129.032
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n93",
+   "role": "symbol",
+   "bbox": [
+    369.697,
+    128.524,
+    371.856,
+    131.699
+   ],
+   "texts": [
+    "7T1202"
+   ],
+   "primitives": 0,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n94",
+   "role": "symbol",
+   "bbox": [
+    358.14,
+    128.905,
+    359.664,
+    131.699
+   ],
+   "texts": [
+    "PICSA"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n95",
+   "role": "symbol",
+   "bbox": [
+    322.072,
+    129.794,
+    324.866,
+    130.175
+   ],
+   "texts": [
+    "50",
+    "HIOO8"
+   ],
+   "primitives": 0,
+   "degree": 5,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n96",
+   "role": "mark",
+   "bbox": [
+    340.741,
+    129.794,
+    341.249,
+    130.302
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n97",
+   "role": "mark",
+   "bbox": [
+    340.741,
+    130.937,
+    341.249,
+    131.445
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n98",
+   "role": "mark",
+   "bbox": [
+    131.699,
+    131.953,
+    132.461,
+    132.715
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n99",
+   "role": "mark",
+   "bbox": [
+    147.701,
+    131.953,
+    148.209,
+    132.588
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n100",
+   "role": "nozzle",
+   "bbox": [
+    341.122,
+    132.207,
+    342.519,
+    132.461
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": "n8",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n101",
+   "role": "symbol",
+   "bbox": [
+    358.14,
+    132.207,
+    359.283,
+    134.747
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n102",
+   "role": "symbol",
+   "bbox": [
+    370.713,
+    132.207,
+    371.856,
+    134.747
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n103",
+   "role": "mark",
+   "bbox": [
+    322.45300000000003,
+    137.16,
+    323.21500000000003,
+    137.79500000000002
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n104",
+   "role": "mark",
+   "bbox": [
+    344.805,
+    137.16,
+    345.567,
+    137.79500000000002
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n105",
+   "role": "symbol",
+   "bbox": [
+    137.41400000000002,
+    137.41400000000002,
+    142.621,
+    143.129
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n106",
+   "role": "symbol",
+   "bbox": [
+    137.541,
+    143.764,
+    142.621,
+    149.606
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n107",
+   "role": "symbol",
+   "bbox": [
+    83.947,
+    148.59,
+    89.535,
+    153.67000000000002
+   ],
+   "texts": [
+    "P47I",
+    "N2"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n108",
+   "role": "equipment",
+   "bbox": [
+    250.952,
+    148.59,
+    256.413,
+    153.67000000000002
+   ],
+   "texts": [
+    "P4712",
+    "N2"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n109",
+   "role": "nozzle",
+   "bbox": [
+    79.375,
+    149.098,
+    81.661,
+    151.13
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": "n4",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n110",
+   "role": "nozzle",
+   "bbox": [
+    246.38,
+    149.352,
+    248.15800000000002,
+    151.13
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": "n3",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n111",
+   "role": "symbol",
+   "bbox": [
+    30.861,
+    150.368,
+    37.719,
+    157.607
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n112",
+   "role": "symbol",
+   "bbox": [
+    377.825,
+    150.368,
+    385.064,
+    157.607
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n113",
+   "role": "symbol",
+   "bbox": [
+    280.797,
+    151.13,
+    281.178,
+    153.543
+   ],
+   "texts": [
+    "8"
+   ],
+   "primitives": 0,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n114",
+   "role": "symbol",
+   "bbox": [
+    364.744,
+    151.13,
+    365.125,
+    153.543
+   ],
+   "texts": [
+    "8"
+   ],
+   "primitives": 0,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n115",
+   "role": "symbol",
+   "bbox": [
+    200.279,
+    152.273,
+    205.232,
+    155.194
+   ],
+   "texts": [
+    "1",
+    "1",
+    "75SA2/-80",
+    "{"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n116",
+   "role": "symbol",
+   "bbox": [
+    249.30100000000002,
+    152.273,
+    252.984,
+    155.702
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n117",
+   "role": "symbol",
+   "bbox": [
+    373.12600000000003,
+    152.14600000000002,
+    374.904,
+    153.543
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n118",
+   "role": "symbol",
+   "bbox": [
+    228.854,
+    152.781,
+    233.172,
+    155.194
+   ],
+   "texts": [
+    "73KH2-50"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n119",
+   "role": "symbol",
+   "bbox": [
+    286.766,
+    152.781,
+    291.211,
+    155.067
+   ],
+   "texts": [
+    "1",
+    "73KHI2-50"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n120",
+   "role": "mark",
+   "bbox": [
+    74.422,
+    152.90800000000002,
+    75.057,
+    153.543
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n121",
+   "role": "mark",
+   "bbox": [
+    92.964,
+    152.90800000000002,
+    93.47200000000001,
+    153.543
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n122",
+   "role": "mark",
+   "bbox": [
+    147.701,
+    152.90800000000002,
+    148.209,
+    153.67000000000002
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n123",
+   "role": "symbol",
+   "bbox": [
+    214.757,
+    152.90800000000002,
+    218.31300000000002,
+    153.797
+   ],
+   "texts": [
+    "8(/50"
+   ],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n124",
+   "role": "mark",
+   "bbox": [
+    241.427,
+    152.90800000000002,
+    242.062,
+    153.543
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n125",
+   "role": "mark",
+   "bbox": [
+    259.969,
+    153.035,
+    260.477,
+    153.543
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n126",
+   "role": "symbol",
+   "bbox": [
+    214.757,
+    154.305,
+    217.805,
+    155.194
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n127",
+   "role": "symbol",
+   "bbox": [
+    250.698,
+    154.305,
+    256.54,
+    159.512
+   ],
+   "texts": [
+    "50",
+    "73KHI2-25"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n128",
+   "role": "symbol",
+   "bbox": [
+    83.947,
+    154.43200000000002,
+    89.408,
+    159.385
+   ],
+   "texts": [
+    "80"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n129",
+   "role": "mark",
+   "bbox": [
+    241.427,
+    154.43200000000002,
+    242.062,
+    155.067
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n130",
+   "role": "symbol",
+   "bbox": [
+    264.795,
+    154.43200000000002,
+    265.176,
+    157.48
+   ],
+   "texts": [
+    "8"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n131",
+   "role": "symbol",
+   "bbox": [
+    373.12600000000003,
+    154.43200000000002,
+    374.904,
+    155.829
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n132",
+   "role": "symbol",
+   "bbox": [
+    241.681,
+    155.321,
+    244.475,
+    157.353
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n133",
+   "role": "nozzle",
+   "bbox": [
+    78.867,
+    155.829,
+    81.153,
+    158.623
+   ],
+   "texts": [
+    "80"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": "n1",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n134",
+   "role": "nozzle",
+   "bbox": [
+    246.126,
+    156.464,
+    248.793,
+    159.004
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": "n3",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n135",
+   "role": "symbol",
+   "bbox": [
+    151.257,
+    160.909,
+    152.654,
+    162.56
+   ],
+   "texts": [
+    "1"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n136",
+   "role": "symbol",
+   "bbox": [
+    351.15500000000003,
+    160.909,
+    352.67900000000003,
+    162.687
+   ],
+   "texts": [
+    "L"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n137",
+   "role": "symbol",
+   "bbox": [
+    353.314,
+    160.909,
+    354.838,
+    162.687
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n138",
+   "role": "symbol",
+   "bbox": [
+    118.237,
+    161.036,
+    119.761,
+    162.814
+   ],
+   "texts": [
+    "1",
+    "1"
+   ],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n139",
+   "role": "symbol",
+   "bbox": [
+    120.269,
+    161.036,
+    121.793,
+    162.814
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n140",
+   "role": "symbol",
+   "bbox": [
+    153.28900000000002,
+    161.036,
+    154.813,
+    162.687
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n141",
+   "role": "symbol",
+   "bbox": [
+    342.773,
+    161.163,
+    344.17,
+    162.814
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n142",
+   "role": "symbol",
+   "bbox": [
+    344.805,
+    161.036,
+    346.329,
+    162.814
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n143",
+   "role": "symbol",
+   "bbox": [
+    341.249,
+    166.116,
+    343.154,
+    169.037
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n144",
+   "role": "symbol",
+   "bbox": [
+    341.249,
+    169.92600000000002,
+    343.662,
+    171.958
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n145",
+   "role": "symbol",
+   "bbox": [
+    341.249,
+    172.847,
+    343.027,
+    173.355
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n146",
+   "role": "symbol",
+   "bbox": [
+    341.249,
+    173.736,
+    343.027,
+    174.244
+   ],
+   "texts": [
+    "H"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n147",
+   "role": "symbol",
+   "bbox": [
+    276.73,
+    135.8,
+    285.24,
+    135.8
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n148",
+   "role": "symbol",
+   "bbox": [
+    360.81,
+    135.8,
+    369.19,
+    135.8
+   ],
+   "texts": [
+    "1"
+   ],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  }
+ ],
+ "junctions": [
+  {
+   "id": "j0",
+   "pt": [
+    204.0,
+    64.52
+   ]
+  },
+  {
+   "id": "j1",
+   "pt": [
+    194.0,
+    124.33
+   ]
+  },
+  {
+   "id": "j2",
+   "pt": [
+    323.5,
+    126.75
+   ]
+  },
+  {
+   "id": "j3",
+   "pt": [
+    328.0,
+    126.75
+   ]
+  },
+  {
+   "id": "j4",
+   "pt": [
+    325.2,
+    126.24
+   ]
+  },
+  {
+   "id": "j5",
+   "pt": [
+    365.0,
+    128.4
+   ]
+  },
+  {
+   "id": "j6",
+   "pt": [
+    269.0,
+    154.3
+   ]
+  },
+  {
+   "id": "j7",
+   "pt": [
+    323.5,
+    154.3
+   ]
+  },
+  {
+   "id": "j8",
+   "pt": [
+    208.79,
+    83.0
+   ]
+  },
+  {
+   "id": "j9",
+   "pt": [
+    208.79,
+    94.0
+   ]
+  },
+  {
+   "id": "j10",
+   "pt": [
+    324.99,
+    128.2
+   ]
+  },
+  {
+   "id": "j11",
+   "pt": [
+    324.99,
+    129.4
+   ]
+  },
+  {
+   "id": "j12",
+   "pt": [
+    324.99,
+    130.6
+   ]
+  },
+  {
+   "id": "j13",
+   "pt": [
+    324.99,
+    131.8
+   ]
+  },
+  {
+   "id": "j14",
+   "pt": [
+    136.4,
+    133.0
+   ]
+  },
+  {
+   "id": "j15",
+   "pt": [
+    135.76,
+    137.1
+   ]
+  },
+  {
+   "id": "j16",
+   "pt": [
+    135.76,
+    143.4
+   ]
+  },
+  {
+   "id": "j17",
+   "pt": [
+    135.76,
+    149.9
+   ]
+  },
+  {
+   "id": "j18",
+   "pt": [
+    136.27,
+    154.0
+   ]
+  },
+  {
+   "id": "j19",
+   "pt": [
+    143.64,
+    133.0
+   ]
+  },
+  {
+   "id": "j20",
+   "pt": [
+    144.27,
+    137.1
+   ]
+  },
+  {
+   "id": "j21",
+   "pt": [
+    144.27,
+    143.4
+   ]
+  },
+  {
+   "id": "j22",
+   "pt": [
+    144.15,
+    149.9
+   ]
+  },
+  {
+   "id": "j23",
+   "pt": [
+    143.64,
+    154.0
+   ]
+  }
+ ],
+ "runs": [
+  {
+   "id": "r0",
+   "a": "open@(199.6, 57.3)",
+   "b": "n28",
+   "coords": [
+    [
+     199.64,
+     57.3
+    ],
+    [
+     208.28,
+     57.3
+    ]
+   ],
+   "width": 0.24,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0.73,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r1",
+   "a": "n28",
+   "b": "n29",
+   "coords": [
+    [
+     210.0,
+     61.0
+    ],
+    [
+     197.74,
+     61.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r2",
+   "a": "n28",
+   "b": "n31",
+   "coords": [
+    [
+     210.0,
+     61.0
+    ],
+    [
+     210.25,
+     61.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r3",
+   "a": "n30",
+   "b": "n29",
+   "coords": [
+    [
+     197.1,
+     61.0
+    ],
+    [
+     197.74,
+     61.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r4",
+   "a": "n31",
+   "b": "open@(340.6, 61.0)",
+   "coords": [
+    [
+     210.25,
+     61.0
+    ],
+    [
+     340.61,
+     61.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r5",
+   "a": "n34",
+   "b": "j0",
+   "coords": [
+    [
+     199.77,
+     64.8
+    ],
+    [
+     204.0,
+     64.8
+    ]
+   ],
+   "width": 0.24,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r6",
+   "a": "j0",
+   "b": "n35",
+   "coords": [
+    [
+     204.0,
+     64.8
+    ],
+    [
+     208.28,
+     64.8
+    ]
+   ],
+   "width": 0.24,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r7",
+   "a": "j0",
+   "b": "n44",
+   "coords": [
+    [
+     204.0,
+     64.52
+    ],
+    [
+     204.0,
+     76.18
+    ]
+   ],
+   "width": 0.36,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r8",
+   "a": "open@(307.6, 82.3)",
+   "b": "open@(315.8, 82.3)",
+   "coords": [
+    [
+     307.59,
+     82.3
+    ],
+    [
+     315.85,
+     82.3
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r9",
+   "a": "n10",
+   "b": "n46",
+   "coords": [
+    [
+     208.79,
+     83.0
+    ],
+    [
+     217.87,
+     83.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r10",
+   "a": "n10",
+   "b": "n51",
+   "coords": [
+    [
+     208.79,
+     94.0
+    ],
+    [
+     217.88,
+     94.0
+    ]
+   ],
+   "width": 0.29,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r11",
+   "a": "n10",
+   "b": "j1",
+   "coords": [
+    [
+     189.74,
+     124.5
+    ],
+    [
+     194.0,
+     124.5
+    ]
+   ],
+   "width": 0.22,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r12",
+   "a": "n10",
+   "b": "j1",
+   "coords": [
+    [
+     197.5,
+     124.5
+    ],
+    [
+     194.0,
+     124.5
+    ]
+   ],
+   "width": 0.22,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r13",
+   "a": "n10",
+   "b": "n32",
+   "coords": [
+    [
+     181.0,
+     76.96
+    ],
+    [
+     181.0,
+     64.57
+    ]
+   ],
+   "width": 0.58,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r14",
+   "a": "n10",
+   "b": "n44",
+   "coords": [
+    [
+     204.0,
+     98.04
+    ],
+    [
+     204.0,
+     76.18
+    ]
+   ],
+   "width": 0.36,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r15",
+   "a": "n10",
+   "b": "n49",
+   "coords": [
+    [
+     179.0,
+     77.34
+    ],
+    [
+     179.0,
+     90.08
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r16",
+   "a": "n10",
+   "b": "n59",
+   "coords": [
+    [
+     179.0,
+     98.04
+    ],
+    [
+     179.0,
+     97.83
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r17",
+   "a": "n10",
+   "b": "j8",
+   "coords": [
+    [
+     209.0,
+     77.47
+    ],
+    [
+     209.0,
+     83.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r18",
+   "a": "n10",
+   "b": "j9",
+   "coords": [
+    [
+     209.0,
+     98.04
+    ],
+    [
+     209.0,
+     94.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r19",
+   "a": "n10",
+   "b": "open@(194.0, 154.3)",
+   "coords": [
+    [
+     194.0,
+     124.33
+    ],
+    [
+     194.0,
+     135.13
+    ],
+    [
+     194.0,
+     138.81
+    ],
+    [
+     194.0,
+     154.31
+    ]
+   ],
+   "width": 0.63,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 3.68,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r20",
+   "a": "n46",
+   "b": "n48",
+   "coords": [
+    [
+     217.87,
+     83.0
+    ],
+    [
+     217.9,
+     83.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r21",
+   "a": "n48",
+   "b": "open@(323.7, 83.0)",
+   "coords": [
+    [
+     217.9,
+     83.0
+    ],
+    [
+     323.72,
+     83.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "MNc 47127 ZSHB3 50 Q 80"
+   ]
+  },
+  {
+   "id": "r22",
+   "a": "open@(307.7, 83.7)",
+   "b": "open@(316.0, 83.7)",
+   "coords": [
+    [
+     307.72,
+     83.7
+    ],
+    [
+     315.98,
+     83.7
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "Q80"
+   ]
+  },
+  {
+   "id": "r23",
+   "a": "n51",
+   "b": "n55",
+   "coords": [
+    [
+     217.88,
+     94.0
+    ],
+    [
+     217.95,
+     94.0
+    ]
+   ],
+   "width": 0.29,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r24",
+   "a": "n55",
+   "b": "n50",
+   "coords": [
+    [
+     217.95,
+     94.0
+    ],
+    [
+     266.95,
+     94.0
+    ]
+   ],
+   "width": 0.29,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.4,
+   "arrows": [],
+   "texts": [
+    "MNc 47125 7SHB13 50"
+   ]
+  },
+  {
+   "id": "r25",
+   "a": "n50",
+   "b": "j6",
+   "coords": [
+    [
+     269.0,
+     95.76
+    ],
+    [
+     269.0,
+     154.31
+    ]
+   ],
+   "width": 0.27,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r26",
+   "a": "n58",
+   "b": "open@(365.1, 98.0)",
+   "coords": [
+    [
+     331.34,
+     98.0
+    ],
+    [
+     365.12,
+     98.0
+    ]
+   ],
+   "width": 0.36,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r27",
+   "a": "n58",
+   "b": "open@(323.5, 82.8)",
+   "coords": [
+    [
+     323.5,
+     96.14
+    ],
+    [
+     323.5,
+     82.8
+    ]
+   ],
+   "width": 0.32,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r28",
+   "a": "n58",
+   "b": "j2",
+   "coords": [
+    [
+     323.5,
+     99.82
+    ],
+    [
+     323.5,
+     126.75
+    ]
+   ],
+   "width": 0.35,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r29",
+   "a": "n67",
+   "b": "open@(327.8, 113.0)",
+   "coords": [
+    [
+     338.71,
+     113.0
+    ],
+    [
+     327.79,
+     113.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r30",
+   "a": "n67",
+   "b": "open@(353.2, 113.0)",
+   "coords": [
+    [
+     342.26,
+     113.0
+    ],
+    [
+     353.19,
+     113.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r31",
+   "a": "n72",
+   "b": "n9",
+   "coords": [
+    [
+     130.05,
+     119.0
+    ],
+    [
+     136.91,
+     119.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r32",
+   "a": "n9",
+   "b": "n73",
+   "coords": [
+    [
+     136.91,
+     119.0
+    ],
+    [
+     142.63,
+     119.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r33",
+   "a": "n73",
+   "b": "n68",
+   "coords": [
+    [
+     142.63,
+     119.0
+    ],
+    [
+     152.15,
+     119.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r34",
+   "a": "n73",
+   "b": "open@(132.5, 122.7)",
+   "coords": [
+    [
+     141.22,
+     122.7
+    ],
+    [
+     132.46,
+     122.7
+    ]
+   ],
+   "width": 0.33,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r35",
+   "a": "n68",
+   "b": "open@(160.0, 60.7)",
+   "coords": [
+    [
+     160.0,
+     117.22
+    ],
+    [
+     160.0,
+     60.71
+    ]
+   ],
+   "width": 0.61,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r36",
+   "a": "n68",
+   "b": "open@(160.0, 133.3)",
+   "coords": [
+    [
+     160.0,
+     120.78
+    ],
+    [
+     160.0,
+     133.35
+    ]
+   ],
+   "width": 0.57,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r37",
+   "a": "j2",
+   "b": "open@(321.6, 126.5)",
+   "coords": [
+    [
+     323.5,
+     126.5
+    ],
+    [
+     321.56,
+     126.5
+    ]
+   ],
+   "width": 0.47,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r38",
+   "a": "j2",
+   "b": "j4",
+   "coords": [
+    [
+     323.5,
+     126.5
+    ],
+    [
+     325.2,
+     126.5
+    ]
+   ],
+   "width": 0.47,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r39",
+   "a": "j4",
+   "b": "j3",
+   "coords": [
+    [
+     325.2,
+     126.5
+    ],
+    [
+     328.0,
+     126.5
+    ]
+   ],
+   "width": 0.47,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r40",
+   "a": "j3",
+   "b": "n8",
+   "coords": [
+    [
+     328.0,
+     126.5
+    ],
+    [
+     336.01,
+     126.5
+    ]
+   ],
+   "width": 0.47,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r41",
+   "a": "n8",
+   "b": "n87",
+   "coords": [
+    [
+     336.01,
+     128.2
+    ],
+    [
+     341.25,
+     128.2
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r42",
+   "a": "n8",
+   "b": "n95",
+   "coords": [
+    [
+     341.25,
+     129.4
+    ],
+    [
+     324.99,
+     129.4
+    ]
+   ],
+   "width": 0.51,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.52,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r43",
+   "a": "n8",
+   "b": "j12",
+   "coords": [
+    [
+     341.25,
+     130.6
+    ],
+    [
+     324.99,
+     130.6
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.44,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r44",
+   "a": "n8",
+   "b": "n100",
+   "coords": [
+    [
+     336.01,
+     131.8
+    ],
+    [
+     341.25,
+     131.8
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r45",
+   "a": "n8",
+   "b": "open@(328.0, 112.8)",
+   "coords": [
+    [
+     328.0,
+     126.75
+    ],
+    [
+     328.0,
+     112.78
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r46",
+   "a": "n8",
+   "b": "j10",
+   "coords": [
+    [
+     325.2,
+     126.24
+    ],
+    [
+     325.2,
+     128.2
+    ]
+   ],
+   "width": 0.49,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r47",
+   "a": "n8",
+   "b": "n95",
+   "coords": [
+    [
+     325.2,
+     129.98
+    ],
+    [
+     325.2,
+     129.92
+    ]
+   ],
+   "width": 0.49,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r48",
+   "a": "n8",
+   "b": "j12",
+   "coords": [
+    [
+     325.2,
+     129.98
+    ],
+    [
+     325.2,
+     130.6
+    ]
+   ],
+   "width": 0.49,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r49",
+   "a": "n8",
+   "b": "open@(346.3, 126.2)",
+   "coords": [
+    [
+     346.3,
+     129.98
+    ],
+    [
+     346.3,
+     126.24
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r50",
+   "a": "n8",
+   "b": "open@(346.3, 133.7)",
+   "coords": [
+    [
+     346.3,
+     129.98
+    ],
+    [
+     346.3,
+     133.73
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r51",
+   "a": "n8",
+   "b": "n5",
+   "coords": [
+    [
+     344.5,
+     133.22
+    ],
+    [
+     344.5,
+     143.46
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r52",
+   "a": "n90",
+   "b": "n91",
+   "coords": [
+    [
+     276.61,
+     128.3
+    ],
+    [
+     285.37,
+     128.3
+    ]
+   ],
+   "width": 0.24,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r53",
+   "a": "open@(360.7, 128.3)",
+   "b": "j5",
+   "coords": [
+    [
+     360.68,
+     128.3
+    ],
+    [
+     365.0,
+     128.3
+    ]
+   ],
+   "width": 0.24,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r54",
+   "a": "j5",
+   "b": "n93",
+   "coords": [
+    [
+     365.0,
+     128.3
+    ],
+    [
+     369.32,
+     128.3
+    ]
+   ],
+   "width": 0.24,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r55",
+   "a": "j5",
+   "b": "open@(365.0, 97.8)",
+   "coords": [
+    [
+     365.0,
+     128.4
+    ],
+    [
+     365.0,
+     97.79
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r56",
+   "a": "n93",
+   "b": "n101",
+   "coords": [
+    [
+     370.91,
+     132.0
+    ],
+    [
+     358.14,
+     132.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r57",
+   "a": "n93",
+   "b": "n102",
+   "coords": [
+    [
+     370.91,
+     132.0
+    ],
+    [
+     371.86,
+     132.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r58",
+   "a": "n95",
+   "b": "open@(321.8, 126.4)",
+   "coords": [
+    [
+     321.8,
+     129.92
+    ],
+    [
+     321.8,
+     126.36
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r59",
+   "a": "n95",
+   "b": "open@(321.8, 133.7)",
+   "coords": [
+    [
+     321.8,
+     129.92
+    ],
+    [
+     321.8,
+     133.73
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r60",
+   "a": "n95",
+   "b": "j11",
+   "coords": [
+    [
+     325.2,
+     129.92
+    ],
+    [
+     325.2,
+     129.4
+    ]
+   ],
+   "width": 0.49,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r61",
+   "a": "j12",
+   "b": "j13",
+   "coords": [
+    [
+     325.2,
+     130.6
+    ],
+    [
+     325.2,
+     131.8
+    ]
+   ],
+   "width": 0.49,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r62",
+   "a": "n6",
+   "b": "n7",
+   "coords": [
+    [
+     127.96,
+     133.0
+    ],
+    [
+     136.4,
+     133.0
+    ]
+   ],
+   "width": 0.37,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r63",
+   "a": "n6",
+   "b": "n7",
+   "coords": [
+    [
+     135.76,
+     137.1
+    ],
+    [
+     139.91,
+     137.1
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r64",
+   "a": "n6",
+   "b": "n105",
+   "coords": [
+    [
+     135.76,
+     143.4
+    ],
+    [
+     139.94,
+     143.4
+    ]
+   ],
+   "width": 0.35,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r65",
+   "a": "n6",
+   "b": "n2",
+   "coords": [
+    [
+     135.76,
+     149.9
+    ],
+    [
+     139.9,
+     149.9
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r66",
+   "a": "n6",
+   "b": "n107",
+   "coords": [
+    [
+     127.96,
+     154.0
+    ],
+    [
+     86.99,
+     154.0
+    ]
+   ],
+   "width": 0.59,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "MNb 47122 7SHE13 80"
+   ]
+  },
+  {
+   "id": "r67",
+   "a": "n6",
+   "b": "n2",
+   "coords": [
+    [
+     127.96,
+     154.0
+    ],
+    [
+     136.27,
+     154.0
+    ]
+   ],
+   "width": 0.59,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r68",
+   "a": "n6",
+   "b": "j16",
+   "coords": [
+    [
+     136.0,
+     143.53
+    ],
+    [
+     136.0,
+     143.4
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r69",
+   "a": "n6",
+   "b": "j17",
+   "coords": [
+    [
+     136.0,
+     143.53
+    ],
+    [
+     136.0,
+     149.9
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r70",
+   "a": "n6",
+   "b": "n138",
+   "coords": [
+    [
+     120.0,
+     143.53
+    ],
+    [
+     120.0,
+     161.87
+    ]
+   ],
+   "width": 0.28,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r71",
+   "a": "n7",
+   "b": "open@(160.3, 133.0)",
+   "coords": [
+    [
+     143.64,
+     133.0
+    ],
+    [
+     160.27,
+     133.0
+    ]
+   ],
+   "width": 0.57,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r72",
+   "a": "n7",
+   "b": "n105",
+   "coords": [
+    [
+     139.91,
+     137.1
+    ],
+    [
+     139.94,
+     137.1
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r73",
+   "a": "n7",
+   "b": "j14",
+   "coords": [
+    [
+     136.0,
+     130.56
+    ],
+    [
+     136.0,
+     133.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r74",
+   "a": "n7",
+   "b": "j14",
+   "coords": [
+    [
+     136.0,
+     133.54
+    ],
+    [
+     136.0,
+     133.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r75",
+   "a": "n7",
+   "b": "j15",
+   "coords": [
+    [
+     136.0,
+     133.54
+    ],
+    [
+     136.0,
+     137.1
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r76",
+   "a": "n7",
+   "b": "j19",
+   "coords": [
+    [
+     144.0,
+     130.56
+    ],
+    [
+     144.0,
+     133.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r77",
+   "a": "n7",
+   "b": "j19",
+   "coords": [
+    [
+     144.0,
+     133.54
+    ],
+    [
+     144.0,
+     133.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r78",
+   "a": "n7",
+   "b": "j20",
+   "coords": [
+    [
+     144.0,
+     133.54
+    ],
+    [
+     144.0,
+     137.1
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r79",
+   "a": "n105",
+   "b": "j20",
+   "coords": [
+    [
+     139.94,
+     137.1
+    ],
+    [
+     144.27,
+     137.1
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r80",
+   "a": "n105",
+   "b": "n106",
+   "coords": [
+    [
+     139.94,
+     143.4
+    ],
+    [
+     139.96,
+     143.4
+    ]
+   ],
+   "width": 0.35,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r81",
+   "a": "j20",
+   "b": "j21",
+   "coords": [
+    [
+     144.0,
+     137.1
+    ],
+    [
+     144.0,
+     143.4
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r82",
+   "a": "n106",
+   "b": "j21",
+   "coords": [
+    [
+     139.96,
+     143.4
+    ],
+    [
+     144.27,
+     143.4
+    ]
+   ],
+   "width": 0.35,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r83",
+   "a": "n106",
+   "b": "n2",
+   "coords": [
+    [
+     139.96,
+     149.9
+    ],
+    [
+     139.9,
+     149.9
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r84",
+   "a": "n106",
+   "b": "j22",
+   "coords": [
+    [
+     139.96,
+     149.9
+    ],
+    [
+     144.15,
+     149.9
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r85",
+   "a": "j21",
+   "b": "j22",
+   "coords": [
+    [
+     144.0,
+     143.4
+    ],
+    [
+     144.0,
+     149.9
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r86",
+   "a": "n2",
+   "b": "open@(153.2, 154.0)",
+   "coords": [
+    [
+     143.64,
+     154.0
+    ],
+    [
+     153.16,
+     154.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r87",
+   "a": "n2",
+   "b": "open@(135.8, 156.3)",
+   "coords": [
+    [
+     139.9,
+     156.3
+    ],
+    [
+     135.76,
+     156.3
+    ]
+   ],
+   "width": 0.37,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r88",
+   "a": "n2",
+   "b": "open@(144.3, 156.3)",
+   "coords": [
+    [
+     139.9,
+     156.3
+    ],
+    [
+     144.27,
+     156.3
+    ]
+   ],
+   "width": 0.37,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r89",
+   "a": "n2",
+   "b": "j17",
+   "coords": [
+    [
+     136.0,
+     153.33
+    ],
+    [
+     136.0,
+     149.9
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r90",
+   "a": "n2",
+   "b": "j18",
+   "coords": [
+    [
+     136.0,
+     153.33
+    ],
+    [
+     136.0,
+     154.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r91",
+   "a": "n2",
+   "b": "j18",
+   "coords": [
+    [
+     136.0,
+     156.46
+    ],
+    [
+     136.0,
+     154.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r92",
+   "a": "n2",
+   "b": "j22",
+   "coords": [
+    [
+     144.0,
+     153.33
+    ],
+    [
+     144.0,
+     149.9
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r93",
+   "a": "n2",
+   "b": "j23",
+   "coords": [
+    [
+     144.0,
+     153.33
+    ],
+    [
+     144.0,
+     154.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r94",
+   "a": "n111",
+   "b": "n4",
+   "coords": [
+    [
+     37.47,
+     154.0
+    ],
+    [
+     83.41,
+     154.0
+    ]
+   ],
+   "width": 0.59,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "MNb 47121 ZSHB[3 80"
+   ]
+  },
+  {
+   "id": "r95",
+   "a": "n4",
+   "b": "n1",
+   "coords": [
+    [
+     83.41,
+     154.0
+    ],
+    [
+     83.43,
+     154.0
+    ]
+   ],
+   "width": 0.59,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r96",
+   "a": "n1",
+   "b": "n128",
+   "coords": [
+    [
+     83.43,
+     154.0
+    ],
+    [
+     86.93,
+     154.0
+    ]
+   ],
+   "width": 0.59,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r97",
+   "a": "n128",
+   "b": "n107",
+   "coords": [
+    [
+     86.93,
+     154.0
+    ],
+    [
+     86.99,
+     154.0
+    ]
+   ],
+   "width": 0.59,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r98",
+   "a": "n115",
+   "b": "open@(193.7, 154.0)",
+   "coords": [
+    [
+     201.3,
+     154.0
+    ],
+    [
+     193.68,
+     154.0
+    ]
+   ],
+   "width": 0.62,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r99",
+   "a": "n115",
+   "b": "n126",
+   "coords": [
+    [
+     204.85,
+     154.0
+    ],
+    [
+     215.14,
+     154.0
+    ]
+   ],
+   "width": 0.64,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r100",
+   "a": "n123",
+   "b": "n118",
+   "coords": [
+    [
+     217.3,
+     154.0
+    ],
+    [
+     229.24,
+     154.0
+    ]
+   ],
+   "width": 0.61,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r101",
+   "a": "n118",
+   "b": "n3",
+   "coords": [
+    [
+     232.79,
+     154.0
+    ],
+    [
+     246.0,
+     154.0
+    ]
+   ],
+   "width": 0.6,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r102",
+   "a": "n3",
+   "b": "n130",
+   "coords": [
+    [
+     255.78,
+     154.0
+    ],
+    [
+     264.92,
+     154.0
+    ]
+   ],
+   "width": 0.61,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r103",
+   "a": "n130",
+   "b": "j6",
+   "coords": [
+    [
+     264.92,
+     154.0
+    ],
+    [
+     269.0,
+     154.0
+    ]
+   ],
+   "width": 0.61,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r104",
+   "a": "j6",
+   "b": "n113",
+   "coords": [
+    [
+     269.0,
+     154.0
+    ],
+    [
+     280.92,
+     154.0
+    ]
+   ],
+   "width": 0.61,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r105",
+   "a": "n113",
+   "b": "n119",
+   "coords": [
+    [
+     280.92,
+     154.0
+    ],
+    [
+     287.15,
+     154.0
+    ]
+   ],
+   "width": 0.61,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r106",
+   "a": "n113",
+   "b": "n147",
+   "coords": [
+    [
+     281.0,
+     145.41
+    ],
+    [
+     281.0,
+     135.64
+    ]
+   ],
+   "width": 0.35,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.72,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r107",
+   "a": "n119",
+   "b": "j7",
+   "coords": [
+    [
+     290.83,
+     154.0
+    ],
+    [
+     323.5,
+     154.0
+    ]
+   ],
+   "width": 0.64,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "MNc 47126 7SHB[3 S0"
+   ]
+  },
+  {
+   "id": "r108",
+   "a": "j7",
+   "b": "n5",
+   "coords": [
+    [
+     323.5,
+     154.0
+    ],
+    [
+     333.97,
+     154.0
+    ]
+   ],
+   "width": 0.64,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r109",
+   "a": "j7",
+   "b": "n5",
+   "coords": [
+    [
+     323.5,
+     154.31
+    ],
+    [
+     323.5,
+     143.46
+    ]
+   ],
+   "width": 0.36,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r110",
+   "a": "n5",
+   "b": "n114",
+   "coords": [
+    [
+     333.97,
+     154.0
+    ],
+    [
+     364.92,
+     154.0
+    ]
+   ],
+   "width": 0.64,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r111",
+   "a": "n5",
+   "b": "j13",
+   "coords": [
+    [
+     325.2,
+     133.73
+    ],
+    [
+     325.2,
+     131.8
+    ]
+   ],
+   "width": 0.49,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r112",
+   "a": "n5",
+   "b": "n142",
+   "coords": [
+    [
+     344.5,
+     143.46
+    ],
+    [
+     344.5,
+     161.92
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r113",
+   "a": "n114",
+   "b": "n131",
+   "coords": [
+    [
+     364.92,
+     154.0
+    ],
+    [
+     373.89,
+     154.0
+    ]
+   ],
+   "width": 0.64,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r114",
+   "a": "n114",
+   "b": "n148",
+   "coords": [
+    [
+     365.0,
+     145.41
+    ],
+    [
+     365.0,
+     135.64
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 5.72,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r115",
+   "a": "n131",
+   "b": "n117",
+   "coords": [
+    [
+     373.89,
+     154.0
+    ],
+    [
+     373.89,
+     154.0
+    ]
+   ],
+   "width": 0.64,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r116",
+   "a": "n117",
+   "b": "n112",
+   "coords": [
+    [
+     373.89,
+     154.0
+    ],
+    [
+     378.21,
+     154.0
+    ]
+   ],
+   "width": 0.64,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r117",
+   "a": "open@(295.7, 278.0)",
+   "b": "n22",
+   "coords": [
+    [
+     295.66,
+     278.0
+    ],
+    [
+     304.96,
+     278.0
+    ]
+   ],
+   "width": 0.42,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r118",
+   "a": "n22",
+   "b": "n21",
+   "coords": [
+    [
+     304.96,
+     278.0
+    ],
+    [
+     328.92,
+     278.0
+    ]
+   ],
+   "width": 0.42,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r119",
+   "a": "n21",
+   "b": "n20",
+   "coords": [
+    [
+     328.92,
+     278.0
+    ],
+    [
+     351.17,
+     278.0
+    ]
+   ],
+   "width": 0.42,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r120",
+   "a": "n20",
+   "b": "n19",
+   "coords": [
+    [
+     351.17,
+     278.0
+    ],
+    [
+     358.65,
+     278.0
+    ]
+   ],
+   "width": 0.42,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r121",
+   "a": "n33",
+   "b": "open@(181.0, 60.7)",
+   "coords": [
+    [
+     181.0,
+     64.52
+    ],
+    [
+     181.0,
+     60.71
+    ]
+   ],
+   "width": 0.58,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r122",
+   "a": "n33",
+   "b": "n32",
+   "coords": [
+    [
+     181.0,
+     64.52
+    ],
+    [
+     181.0,
+     64.57
+    ]
+   ],
+   "width": 0.58,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r123",
+   "a": "n66",
+   "b": "open@(340.5, 60.8)",
+   "coords": [
+    [
+     340.5,
+     105.03
+    ],
+    [
+     340.5,
+     60.83
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r124",
+   "a": "n49",
+   "b": "n59",
+   "coords": [
+    [
+     179.0,
+     90.08
+    ],
+    [
+     179.0,
+     97.83
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r125",
+   "a": "j8",
+   "b": "j9",
+   "coords": [
+    [
+     209.0,
+     83.0
+    ],
+    [
+     209.0,
+     94.0
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r126",
+   "a": "open@(174.9, 88.8)",
+   "b": "open@(174.9, 99.3)",
+   "coords": [
+    [
+     174.9,
+     88.77
+    ],
+    [
+     174.9,
+     99.31
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r127",
+   "a": "n137",
+   "b": "open@(353.0, 112.8)",
+   "coords": [
+    [
+     353.0,
+     161.7
+    ],
+    [
+     353.0,
+     112.78
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r128",
+   "a": "n137",
+   "b": "n136",
+   "coords": [
+    [
+     353.0,
+     161.7
+    ],
+    [
+     353.0,
+     161.7
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r129",
+   "a": "n136",
+   "b": "open@(353.0, 201.9)",
+   "coords": [
+    [
+     353.0,
+     161.7
+    ],
+    [
+     353.0,
+     201.93
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r130",
+   "a": "j10",
+   "b": "j11",
+   "coords": [
+    [
+     325.2,
+     128.2
+    ],
+    [
+     325.2,
+     129.4
+    ]
+   ],
+   "width": 0.49,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r131",
+   "a": "j15",
+   "b": "j16",
+   "coords": [
+    [
+     136.0,
+     137.1
+    ],
+    [
+     136.0,
+     143.4
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r132",
+   "a": "j23",
+   "b": "open@(144.0, 156.5)",
+   "coords": [
+    [
+     144.0,
+     154.0
+    ],
+    [
+     144.0,
+     156.46
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r133",
+   "a": "n138",
+   "b": "n139",
+   "coords": [
+    [
+     120.0,
+     161.87
+    ],
+    [
+     120.0,
+     161.88
+    ]
+   ],
+   "width": 0.28,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r134",
+   "a": "n139",
+   "b": "open@(120.0, 201.9)",
+   "coords": [
+    [
+     120.0,
+     161.88
+    ],
+    [
+     120.0,
+     201.93
+    ]
+   ],
+   "width": 0.28,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r135",
+   "a": "n142",
+   "b": "n141",
+   "coords": [
+    [
+     344.5,
+     161.92
+    ],
+    [
+     344.5,
+     161.94
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r136",
+   "a": "n141",
+   "b": "open@(344.5, 201.9)",
+   "coords": [
+    [
+     344.5,
+     161.94
+    ],
+    [
+     344.5,
+     201.93
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r137",
+   "a": "n135",
+   "b": "open@(153.0, 153.8)",
+   "coords": [
+    [
+     153.0,
+     161.64
+    ],
+    [
+     153.0,
+     153.8
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r138",
+   "a": "n135",
+   "b": "n140",
+   "coords": [
+    [
+     153.0,
+     161.64
+    ],
+    [
+     153.0,
+     161.74
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r139",
+   "a": "n140",
+   "b": "open@(153.0, 201.9)",
+   "coords": [
+    [
+     153.0,
+     161.74
+    ],
+    [
+     153.0,
+     201.93
+    ]
+   ],
+   "width": 0.38,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r140",
+   "a": "n147",
+   "b": "n91",
+   "coords": [
+    [
+     280.99,
+     135.8
+    ],
+    [
+     286.26,
+     135.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.29,
+   "arrows": [],
+   "texts": []
+  }
+ ],
+ "labels": [
+  {
+   "text": "TTICSA",
+   "x": 198.88,
+   "y": 60.58,
+   "angle": 0,
+   "bbox": [
+    198.88,
+    56.77,
+    208.66,
+    61.34
+   ],
+   "owner": [
+    "node",
+    29,
+    0.13
+   ]
+  },
+  {
+   "text": "7750.,03",
+   "x": 198.25,
+   "y": 63.88,
+   "angle": 0,
+   "bbox": [
+    198.25,
+    60.07,
+    209.3,
+    64.64
+   ],
+   "owner": [
+    "node",
+    28,
+    0.0
+   ]
+  },
+  {
+   "text": "NI",
+   "x": 174.62,
+   "y": 72.39,
+   "angle": 0,
+   "bbox": [
+    174.62,
+    68.58,
+    179.07,
+    73.15
+   ],
+   "owner": [
+    "node",
+    10,
+    0.38
+   ]
+  },
+  {
+   "text": "N7",
+   "x": 205.49,
+   "y": 71.12,
+   "angle": 0,
+   "bbox": [
+    205.49,
+    67.56,
+    209.93,
+    71.83
+   ],
+   "owner": [
+    "node",
+    38,
+    0.0
+   ]
+  },
+  {
+   "text": "80",
+   "x": 175.01,
+   "y": 75.31,
+   "angle": 0,
+   "bbox": [
+    175.01,
+    71.5,
+    179.07,
+    76.07
+   ],
+   "owner": [
+    "node",
+    10,
+    0.0
+   ]
+  },
+  {
+   "text": "3",
+   "x": 155.19,
+   "y": 79.63,
+   "angle": 0,
+   "bbox": [
+    155.19,
+    75.44,
+    158.75,
+    80.47
+   ],
+   "owner": null
+  },
+  {
+   "text": "N6",
+   "x": 209.42,
+   "y": 81.28,
+   "angle": 0,
+   "bbox": [
+    209.42,
+    77.47,
+    214.25,
+    82.04
+   ],
+   "owner": [
+    "node",
+    10,
+    0.51
+   ]
+  },
+  {
+   "text": "MNc 47127 ZSHB3 50 Q 80",
+   "x": 220.6,
+   "y": 82.55,
+   "angle": 0,
+   "bbox": [
+    220.6,
+    78.74,
+    257.81,
+    83.31
+   ],
+   "owner": [
+    "run",
+    21,
+    0.0
+   ]
+  },
+  {
+   "text": "50",
+   "x": 209.42,
+   "y": 87.12,
+   "angle": 0,
+   "bbox": [
+    209.42,
+    83.44,
+    213.87,
+    87.86
+   ],
+   "owner": [
+    "node",
+    10,
+    0.51
+   ]
+  },
+  {
+   "text": "Q80",
+   "x": 308.48,
+   "y": 87.5,
+   "angle": 0,
+   "bbox": [
+    308.48,
+    83.69,
+    314.96,
+    88.27
+   ],
+   "owner": [
+    "run",
+    22,
+    0.0
+   ]
+  },
+  {
+   "text": "I",
+   "x": 154.94,
+   "y": 98.93,
+   "angle": 0,
+   "bbox": [
+    154.94,
+    79.12,
+    158.75,
+    102.9
+   ],
+   "owner": [
+    "node",
+    60,
+    0.0
+   ]
+  },
+  {
+   "text": "NS",
+   "x": 168.4,
+   "y": 93.73,
+   "angle": 0,
+   "bbox": [
+    168.4,
+    89.92,
+    173.48,
+    94.49
+   ],
+   "owner": [
+    "node",
+    49,
+    2.29
+   ]
+  },
+  {
+   "text": "NS",
+   "x": 209.42,
+   "y": 92.46,
+   "angle": 0,
+   "bbox": [
+    209.42,
+    88.65,
+    214.25,
+    93.22
+   ],
+   "owner": [
+    "node",
+    10,
+    0.51
+   ]
+  },
+  {
+   "text": "MNc 47125 7SHB13 50",
+   "x": 220.85,
+   "y": 93.34,
+   "angle": 0,
+   "bbox": [
+    220.85,
+    89.66,
+    251.33,
+    94.08
+   ],
+   "owner": [
+    "run",
+    24,
+    0.0
+   ]
+  },
+  {
+   "text": "ISV 104.01",
+   "x": 273.05,
+   "y": 94.74,
+   "angle": 0,
+   "bbox": [
+    273.05,
+    90.93,
+    287.02,
+    95.5
+   ],
+   "owner": [
+    "node",
+    0,
+    0.0
+   ]
+  },
+  {
+   "text": "800",
+   "x": 168.02,
+   "y": 96.65,
+   "angle": 0,
+   "bbox": [
+    168.02,
+    93.22,
+    173.86,
+    97.33
+   ],
+   "owner": [
+    "node",
+    59,
+    1.9
+   ]
+  },
+  {
+   "text": "P=6",
+   "x": 273.43,
+   "y": 97.66,
+   "angle": 0,
+   "bbox": [
+    273.43,
+    94.49,
+    280.8,
+    98.3
+   ],
+   "owner": [
+    "node",
+    0,
+    0.0
+   ]
+  },
+  {
+   "text": "T4750",
+   "x": 187.32,
+   "y": 101.09,
+   "angle": 0,
+   "bbox": [
+    187.32,
+    95.76,
+    200.91,
+    102.16
+   ],
+   "owner": [
+    "node",
+    10,
+    0.0
+   ]
+  },
+  {
+   "text": "DN =",
+   "x": 273.05,
+   "y": 100.58,
+   "angle": 0,
+   "bbox": [
+    273.05,
+    96.77,
+    281.18,
+    101.35
+   ],
+   "owner": [
+    "node",
+    0,
+    0.0
+   ]
+  },
+  {
+   "text": "'baio]",
+   "x": 279.53,
+   "y": 101.85,
+   "angle": 0,
+   "bbox": [
+    279.53,
+    93.73,
+    290.32,
+    103.48
+   ],
+   "owner": [
+    "node",
+    0,
+    0.0
+   ]
+  },
+  {
+   "text": "1",
+   "x": 317.37,
+   "y": 105.54,
+   "angle": 0,
+   "bbox": [
+    317.37,
+    90.55,
+    321.18,
+    108.53
+   ],
+   "owner": [
+    "node",
+    58,
+    1.14
+   ]
+  },
+  {
+   "text": "6",
+   "x": 173.48,
+   "y": 115.57,
+   "angle": 0,
+   "bbox": [
+    173.48,
+    105.54,
+    178.82,
+    117.58
+   ],
+   "owner": [
+    "node",
+    10,
+    0.25
+   ]
+  },
+  {
+   "text": "1",
+   "x": 270.51,
+   "y": 117.09,
+   "angle": 0,
+   "bbox": [
+    270.51,
+    101.47,
+    274.19,
+    120.22
+   ],
+   "owner": [
+    "node",
+    69,
+    0.0
+   ]
+  },
+  {
+   "text": "ROJ",
+   "x": 334.14,
+   "y": 111.12,
+   "angle": 0,
+   "bbox": [
+    334.14,
+    107.7,
+    340.49,
+    111.81
+   ],
+   "owner": [
+    "node",
+    67,
+    0.0
+   ]
+  },
+  {
+   "text": "HS",
+   "x": 134.24,
+   "y": 118.62,
+   "angle": 0,
+   "bbox": [
+    134.24,
+    114.94,
+    139.32,
+    119.35
+   ],
+   "owner": [
+    "node",
+    9,
+    0.0
+   ]
+  },
+  {
+   "text": "TV4750.03",
+   "x": 332.87,
+   "y": 117.35,
+   "angle": 0,
+   "bbox": [
+    332.87,
+    113.54,
+    347.73,
+    118.11
+   ],
+   "owner": [
+    "node",
+    67,
+    0.13
+   ]
+  },
+  {
+   "text": "7750.01",
+   "x": 131.32,
+   "y": 121.92,
+   "angle": 0,
+   "bbox": [
+    131.32,
+    118.11,
+    141.99,
+    122.68
+   ],
+   "owner": [
+    "node",
+    9,
+    0.0
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 316.74,
+   "y": 122.3,
+   "angle": 0,
+   "bbox": [
+    316.74,
+    118.49,
+    321.82,
+    123.06
+   ],
+   "owner": [
+    "node",
+    8,
+    4.94
+   ]
+  },
+  {
+   "text": "N3",
+   "x": 329.56,
+   "y": 122.3,
+   "angle": 0,
+   "bbox": [
+    329.56,
+    118.49,
+    334.26,
+    123.06
+   ],
+   "owner": [
+    "node",
+    8,
+    3.43
+   ]
+  },
+  {
+   "text": "50",
+   "x": 317.12,
+   "y": 125.22,
+   "angle": 0,
+   "bbox": [
+    317.12,
+    121.41,
+    321.56,
+    125.98
+   ],
+   "owner": [
+    "node",
+    95,
+    3.84
+   ]
+  },
+  {
+   "text": "50",
+   "x": 329.56,
+   "y": 125.22,
+   "angle": 0,
+   "bbox": [
+    329.56,
+    121.41,
+    334.01,
+    125.98
+   ],
+   "owner": [
+    "node",
+    8,
+    0.51
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 187.71,
+   "y": 128.14,
+   "angle": 0,
+   "bbox": [
+    187.71,
+    124.46,
+    192.15,
+    128.88
+   ],
+   "owner": [
+    "node",
+    10,
+    0.0
+   ]
+  },
+  {
+   "text": "N3",
+   "x": 130.68,
+   "y": 131.44,
+   "angle": 0,
+   "bbox": [
+    130.68,
+    127.63,
+    135.38,
+    132.21
+   ],
+   "owner": [
+    "node",
+    7,
+    0.63
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 144.15,
+   "y": 131.44,
+   "angle": 0,
+   "bbox": [
+    144.15,
+    127.63,
+    149.23,
+    132.21
+   ],
+   "owner": [
+    "node",
+    7,
+    0.25
+   ]
+  },
+  {
+   "text": "80",
+   "x": 187.71,
+   "y": 131.19,
+   "angle": 0,
+   "bbox": [
+    187.71,
+    127.64,
+    192.15,
+    131.9
+   ],
+   "owner": [
+    "node",
+    10,
+    3.17
+   ]
+  },
+  {
+   "text": "4",
+   "x": 270.51,
+   "y": 132.46,
+   "angle": 0,
+   "bbox": [
+    270.51,
+    124.46,
+    273.94,
+    134.06
+   ],
+   "owner": [
+    "node",
+    86,
+    0.13
+   ]
+  },
+  {
+   "text": "PI",
+   "x": 278.64,
+   "y": 131.44,
+   "angle": 0,
+   "bbox": [
+    278.64,
+    128.02,
+    283.08,
+    132.13
+   ],
+   "owner": [
+    "node",
+    90,
+    1.78
+   ]
+  },
+  {
+   "text": "HIOO8",
+   "x": 305.18,
+   "y": 131.95,
+   "angle": 0,
+   "bbox": [
+    305.18,
+    126.87,
+    319.02,
+    132.97
+   ],
+   "owner": [
+    "node",
+    95,
+    3.05
+   ]
+  },
+  {
+   "text": "PICSA",
+   "x": 359.79,
+   "y": 131.44,
+   "angle": 0,
+   "bbox": [
+    359.79,
+    127.63,
+    369.44,
+    132.21
+   ],
+   "owner": [
+    "node",
+    94,
+    0.13
+   ]
+  },
+  {
+   "text": "4712.01",
+   "x": 275.34,
+   "y": 135.13,
+   "angle": 0,
+   "bbox": [
+    275.34,
+    131.32,
+    286.0,
+    135.89
+   ],
+   "owner": [
+    "node",
+    90,
+    0.0
+   ]
+  },
+  {
+   "text": "7T1202",
+   "x": 359.41,
+   "y": 135.13,
+   "angle": 0,
+   "bbox": [
+    359.41,
+    131.32,
+    370.46,
+    135.89
+   ],
+   "owner": [
+    "node",
+    93,
+    0.0
+   ]
+  },
+  {
+   "text": "50",
+   "x": 130.94,
+   "y": 137.03,
+   "angle": 0,
+   "bbox": [
+    130.94,
+    133.6,
+    135.38,
+    137.72
+   ],
+   "owner": [
+    "node",
+    6,
+    0.0
+   ]
+  },
+  {
+   "text": "80",
+   "x": 144.4,
+   "y": 137.03,
+   "angle": 0,
+   "bbox": [
+    144.4,
+    133.22,
+    148.84,
+    137.8
+   ],
+   "owner": [
+    "node",
+    7,
+    0.51
+   ]
+  },
+  {
+   "text": "3",
+   "x": 188.09,
+   "y": 137.41,
+   "angle": 0,
+   "bbox": [
+    188.09,
+    132.97,
+    191.52,
+    138.3
+   ],
+   "owner": null
+  },
+  {
+   "text": "0",
+   "x": 192.02,
+   "y": 140.72,
+   "angle": 0,
+   "bbox": [
+    192.02,
+    133.99,
+    195.45,
+    142.06
+   ],
+   "owner": [
+    "node",
+    10,
+    9.53
+   ]
+  },
+  {
+   "text": "1",
+   "x": 195.96,
+   "y": 143.64,
+   "angle": 0,
+   "bbox": [
+    195.96,
+    128.02,
+    199.77,
+    146.76
+   ],
+   "owner": [
+    "node",
+    10,
+    3.56
+   ]
+  },
+  {
+   "text": "NI",
+   "x": 324.99,
+   "y": 137.41,
+   "angle": 0,
+   "bbox": [
+    324.99,
+    133.6,
+    329.44,
+    138.18
+   ],
+   "owner": [
+    "node",
+    5,
+    0.0
+   ]
+  },
+  {
+   "text": "N4",
+   "x": 338.07,
+   "y": 137.41,
+   "angle": 0,
+   "bbox": [
+    338.07,
+    133.6,
+    342.9,
+    138.18
+   ],
+   "owner": [
+    "node",
+    5,
+    0.0
+   ]
+  },
+  {
+   "text": "50",
+   "x": 325.25,
+   "y": 140.34,
+   "angle": 0,
+   "bbox": [
+    325.25,
+    136.53,
+    329.69,
+    141.1
+   ],
+   "owner": [
+    "node",
+    5,
+    0.0
+   ]
+  },
+  {
+   "text": "50",
+   "x": 338.07,
+   "y": 140.34,
+   "angle": 0,
+   "bbox": [
+    338.07,
+    136.53,
+    342.52,
+    141.1
+   ],
+   "owner": [
+    "node",
+    5,
+    0.0
+   ]
+  },
+  {
+   "text": "P47I",
+   "x": 77.34,
+   "y": 147.07,
+   "angle": 0,
+   "bbox": [
+    77.34,
+    141.99,
+    90.3,
+    148.08
+   ],
+   "owner": [
+    "node",
+    107,
+    0.51
+   ]
+  },
+  {
+   "text": "1",
+   "x": 188.09,
+   "y": 148.21,
+   "angle": 0,
+   "bbox": [
+    188.09,
+    136.53,
+    191.52,
+    150.55
+   ],
+   "owner": [
+    "node",
+    115,
+    8.93
+   ]
+  },
+  {
+   "text": "P4712",
+   "x": 244.35,
+   "y": 147.07,
+   "angle": 0,
+   "bbox": [
+    244.35,
+    141.73,
+    257.68,
+    148.13
+   ],
+   "owner": [
+    "node",
+    108,
+    0.46
+   ]
+  },
+  {
+   "text": "8",
+   "x": 279.02,
+   "y": 150.88,
+   "angle": 0,
+   "bbox": [
+    279.02,
+    144.78,
+    282.83,
+    152.1
+   ],
+   "owner": [
+    "node",
+    113,
+    0.0
+   ]
+  },
+  {
+   "text": "1",
+   "x": 282.96,
+   "y": 151.51,
+   "angle": 0,
+   "bbox": [
+    282.96,
+    136.27,
+    286.77,
+    154.56
+   ],
+   "owner": [
+    "node",
+    119,
+    0.0
+   ]
+  },
+  {
+   "text": "8",
+   "x": 362.97,
+   "y": 150.88,
+   "angle": 0,
+   "bbox": [
+    362.97,
+    145.03,
+    366.78,
+    152.04
+   ],
+   "owner": [
+    "node",
+    114,
+    0.0
+   ]
+  },
+  {
+   "text": "1",
+   "x": 367.28,
+   "y": 152.78,
+   "angle": 0,
+   "bbox": [
+    367.28,
+    137.16,
+    370.71,
+    155.91
+   ],
+   "owner": [
+    "node",
+    148,
+    1.36
+   ]
+  },
+  {
+   "text": "MNb 47121 ZSHB[3 80",
+   "x": 41.02,
+   "y": 152.78,
+   "angle": 0,
+   "bbox": [
+    41.02,
+    148.97,
+    71.75,
+    153.54
+   ],
+   "owner": [
+    "run",
+    94,
+    0.46
+   ]
+  },
+  {
+   "text": "NI",
+   "x": 73.15,
+   "y": 152.53,
+   "angle": 0,
+   "bbox": [
+    73.15,
+    148.72,
+    77.98,
+    153.29
+   ],
+   "owner": [
+    "node",
+    4,
+    0.89
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 89.28,
+   "y": 152.53,
+   "angle": 0,
+   "bbox": [
+    89.28,
+    148.72,
+    94.36,
+    153.29
+   ],
+   "owner": [
+    "node",
+    107,
+    0.0
+   ]
+  },
+  {
+   "text": "MNb 47122 7SHE13 80",
+   "x": 97.54,
+   "y": 152.78,
+   "angle": 0,
+   "bbox": [
+    97.54,
+    148.97,
+    127.89,
+    153.54
+   ],
+   "owner": [
+    "run",
+    66,
+    0.46
+   ]
+  },
+  {
+   "text": "NI",
+   "x": 130.68,
+   "y": 152.53,
+   "angle": 0,
+   "bbox": [
+    130.68,
+    148.72,
+    135.38,
+    153.29
+   ],
+   "owner": [
+    "node",
+    6,
+    0.0
+   ]
+  },
+  {
+   "text": "N4",
+   "x": 144.4,
+   "y": 152.15,
+   "angle": 0,
+   "bbox": [
+    144.4,
+    148.72,
+    149.22,
+    152.83
+   ],
+   "owner": [
+    "node",
+    2,
+    0.51
+   ]
+  },
+  {
+   "text": "1",
+   "x": 188.09,
+   "y": 156.46,
+   "angle": 0,
+   "bbox": [
+    188.09,
+    147.32,
+    191.52,
+    158.29
+   ],
+   "owner": [
+    "node",
+    115,
+    8.76
+   ]
+  },
+  {
+   "text": "75SA2/-80",
+   "x": 195.33,
+   "y": 151.77,
+   "angle": 0,
+   "bbox": [
+    195.33,
+    147.7,
+    210.57,
+    152.58
+   ],
+   "owner": [
+    "node",
+    115,
+    0.0
+   ]
+  },
+  {
+   "text": "8(/50",
+   "x": 212.72,
+   "y": 151.77,
+   "angle": 0,
+   "bbox": [
+    212.72,
+    148.08,
+    221.11,
+    152.5
+   ],
+   "owner": [
+    "node",
+    123,
+    0.41
+   ]
+  },
+  {
+   "text": "73KH2-50",
+   "x": 223.14,
+   "y": 151.77,
+   "angle": 0,
+   "bbox": [
+    223.14,
+    148.08,
+    238.76,
+    152.5
+   ],
+   "owner": [
+    "node",
+    118,
+    0.28
+   ]
+  },
+  {
+   "text": "NI",
+   "x": 240.28,
+   "y": 152.53,
+   "angle": 0,
+   "bbox": [
+    240.28,
+    148.72,
+    244.98,
+    153.29
+   ],
+   "owner": [
+    "node",
+    3,
+    0.89
+   ]
+  },
+  {
+   "text": "N2",
+   "x": 256.29,
+   "y": 152.53,
+   "angle": 0,
+   "bbox": [
+    256.29,
+    148.72,
+    261.49,
+    153.29
+   ],
+   "owner": [
+    "node",
+    108,
+    0.0
+   ]
+  },
+  {
+   "text": "MNc 47126 7SHB[3 S0",
+   "x": 293.12,
+   "y": 152.78,
+   "angle": 0,
+   "bbox": [
+    293.12,
+    148.97,
+    323.21,
+    153.54
+   ],
+   "owner": [
+    "run",
+    107,
+    0.46
+   ]
+  },
+  {
+   "text": "80",
+   "x": 73.91,
+   "y": 158.12,
+   "angle": 0,
+   "bbox": [
+    73.91,
+    154.56,
+    77.98,
+    158.83
+   ],
+   "owner": [
+    "node",
+    133,
+    0.89
+   ]
+  },
+  {
+   "text": "80",
+   "x": 89.66,
+   "y": 158.12,
+   "angle": 0,
+   "bbox": [
+    89.66,
+    154.31,
+    94.11,
+    158.88
+   ],
+   "owner": [
+    "node",
+    128,
+    0.25
+   ]
+  },
+  {
+   "text": "80",
+   "x": 130.94,
+   "y": 158.12,
+   "angle": 0,
+   "bbox": [
+    130.94,
+    154.56,
+    135.38,
+    158.83
+   ],
+   "owner": [
+    "node",
+    2,
+    0.63
+   ]
+  },
+  {
+   "text": "5o",
+   "x": 144.4,
+   "y": 158.12,
+   "angle": 0,
+   "bbox": [
+    144.4,
+    154.31,
+    148.84,
+    158.88
+   ],
+   "owner": [
+    "node",
+    2,
+    0.51
+   ]
+  },
+  {
+   "text": "50",
+   "x": 256.67,
+   "y": 158.12,
+   "angle": 0,
+   "bbox": [
+    256.67,
+    154.31,
+    261.11,
+    158.88
+   ],
+   "owner": [
+    "node",
+    127,
+    0.13
+   ]
+  },
+  {
+   "text": "73KHI2-50",
+   "x": 280.92,
+   "y": 159.38,
+   "angle": 0,
+   "bbox": [
+    280.92,
+    155.19,
+    296.93,
+    160.22
+   ],
+   "owner": [
+    "node",
+    119,
+    0.13
+   ]
+  },
+  {
+   "text": "HIO07",
+   "x": 133.1,
+   "y": 164.47,
+   "angle": 0,
+   "bbox": [
+    133.1,
+    159.38,
+    147.07,
+    165.48
+   ],
+   "owner": [
+    "node",
+    2,
+    3.17
+   ]
+  },
+  {
+   "text": "{",
+   "x": 188.47,
+   "y": 163.32,
+   "angle": 0,
+   "bbox": [
+    188.47,
+    155.96,
+    191.52,
+    164.8
+   ],
+   "owner": [
+    "node",
+    115,
+    8.8
+   ]
+  },
+  {
+   "text": "8",
+   "x": 262.89,
+   "y": 162.31,
+   "angle": 0,
+   "bbox": [
+    262.89,
+    157.61,
+    266.7,
+    163.25
+   ],
+   "owner": [
+    "node",
+    130,
+    0.13
+   ]
+  },
+  {
+   "text": "73KHI2-25",
+   "x": 259.97,
+   "y": 165.99,
+   "angle": 0,
+   "bbox": [
+    259.97,
+    162.18,
+    275.59,
+    166.75
+   ],
+   "owner": [
+    "node",
+    127,
+    4.34
+   ]
+  },
+  {
+   "text": "1",
+   "x": 115.57,
+   "y": 183.01,
+   "angle": 0,
+   "bbox": [
+    115.57,
+    167.39,
+    119.38,
+    186.13
+   ],
+   "owner": [
+    "node",
+    138,
+    4.57
+   ]
+  },
+  {
+   "text": "L",
+   "x": 348.87,
+   "y": 187.32,
+   "angle": 0,
+   "bbox": [
+    348.87,
+    165.1,
+    352.68,
+    191.77
+   ],
+   "owner": [
+    "node",
+    136,
+    2.41
+   ]
+  },
+  {
+   "text": "1",
+   "x": 115.57,
+   "y": 198.12,
+   "angle": 0,
+   "bbox": [
+    115.57,
+    182.12,
+    119.0,
+    201.32
+   ],
+   "owner": [
+    "node",
+    138,
+    19.3
+   ]
+  },
+  {
+   "text": "1",
+   "x": 148.72,
+   "y": 198.12,
+   "angle": 0,
+   "bbox": [
+    148.72,
+    167.39,
+    152.15,
+    204.27
+   ],
+   "owner": [
+    "node",
+    135,
+    4.83
+   ]
+  },
+  {
+   "text": "H",
+   "x": 338.45,
+   "y": 202.44,
+   "angle": 0,
+   "bbox": [
+    338.45,
+    174.5,
+    353.69,
+    208.03
+   ],
+   "owner": [
+    "node",
+    146,
+    0.25
+   ]
+  },
+  {
+   "text": "SITE",
+   "x": 358.77,
+   "y": 267.08,
+   "angle": 0,
+   "bbox": [
+    358.77,
+    263.53,
+    365.51,
+    267.79
+   ],
+   "owner": [
+    "node",
+    26,
+    0.0
+   ]
+  },
+  {
+   "text": "Dexpi",
+   "x": 380.24,
+   "y": 267.59,
+   "angle": 0,
+   "bbox": [
+    380.24,
+    263.4,
+    387.99,
+    268.43
+   ],
+   "owner": [
+    "node",
+    23,
+    0.0
+   ]
+  },
+  {
+   "text": "Oil & Gas, Inc:",
+   "x": 296.29,
+   "y": 270.51,
+   "angle": 0,
+   "bbox": [
+    296.29,
+    265.3,
+    322.33,
+    271.55
+   ],
+   "owner": [
+    "node",
+    27,
+    0.0
+   ]
+  },
+  {
+   "text": "PLANT SECTION",
+   "x": 358.77,
+   "y": 271.91,
+   "angle": 0,
+   "bbox": [
+    358.77,
+    268.48,
+    379.22,
+    272.59
+   ],
+   "owner": [
+    "node",
+    24,
+    0.0
+   ]
+  },
+  {
+   "text": "Utilities",
+   "x": 380.37,
+   "y": 271.91,
+   "angle": 0,
+   "bbox": [
+    380.37,
+    268.48,
+    389.76,
+    272.59
+   ],
+   "owner": [
+    "node",
+    23,
+    0.0
+   ]
+  },
+  {
+   "text": "NAME",
+   "x": 314.45,
+   "y": 276.86,
+   "angle": 0,
+   "bbox": [
+    314.45,
+    273.43,
+    323.21,
+    277.55
+   ],
+   "owner": [
+    "node",
+    21,
+    0.0
+   ]
+  },
+  {
+   "text": "DATE",
+   "x": 344.3,
+   "y": 276.86,
+   "angle": 0,
+   "bbox": [
+    344.3,
+    273.43,
+    352.43,
+    277.55
+   ],
+   "owner": [
+    "node",
+    20,
+    0.0
+   ]
+  },
+  {
+   "text": "DEXPI",
+   "x": 358.65,
+   "y": 280.29,
+   "angle": 0,
+   "bbox": [
+    358.65,
+    275.21,
+    372.24,
+    281.31
+   ],
+   "owner": [
+    "node",
+    19,
+    0.0
+   ]
+  },
+  {
+   "text": "PID",
+   "x": 386.21,
+   "y": 280.29,
+   "angle": 0,
+   "bbox": [
+    386.21,
+    275.21,
+    394.21,
+    281.31
+   ],
+   "owner": [
+    "node",
+    19,
+    0.0
+   ]
+  },
+  {
+   "text": "CREATED BY",
+   "x": 296.42,
+   "y": 282.07,
+   "angle": 0,
+   "bbox": [
+    296.42,
+    278.64,
+    313.31,
+    282.75
+   ],
+   "owner": [
+    "node",
+    18,
+    0.33
+   ]
+  },
+  {
+   "text": "A Creator",
+   "x": 315.09,
+   "y": 282.07,
+   "angle": 0,
+   "bbox": [
+    315.09,
+    279.02,
+    326.39,
+    282.68
+   ],
+   "owner": [
+    "node",
+    21,
+    1.14
+   ]
+  },
+  {
+   "text": "2016-0401",
+   "x": 344.3,
+   "y": 282.07,
+   "angle": 0,
+   "bbox": [
+    344.3,
+    278.64,
+    357.25,
+    282.75
+   ],
+   "owner": [
+    "node",
+    17,
+    0.33
+   ]
+  },
+  {
+   "text": "example",
+   "x": 371.48,
+   "y": 280.67,
+   "angle": 0,
+   "bbox": [
+    371.48,
+    275.59,
+    386.59,
+    281.69
+   ],
+   "owner": [
+    "node",
+    19,
+    0.0
+   ]
+  },
+  {
+   "text": "CHECKED BY| € Hecker",
+   "x": 296.42,
+   "y": 287.02,
+   "angle": 0,
+   "bbox": [
+    296.42,
+    283.59,
+    326.14,
+    287.71
+   ],
+   "owner": [
+    "node",
+    18,
+    0.0
+   ]
+  },
+  {
+   "text": "PROJECT",
+   "x": 358.77,
+   "y": 287.02,
+   "angle": 0,
+   "bbox": [
+    358.77,
+    283.59,
+    370.71,
+    287.71
+   ],
+   "owner": [
+    "node",
+    16,
+    0.0
+   ]
+  },
+  {
+   "text": "P3IIS",
+   "x": 380.37,
+   "y": 287.02,
+   "angle": 0,
+   "bbox": [
+    380.37,
+    283.59,
+    390.14,
+    287.71
+   ],
+   "owner": [
+    "node",
+    15,
+    0.0
+   ]
+  },
+  {
+   "text": "APPROVED BYA P Prover",
+   "x": 296.42,
+   "y": 291.97,
+   "angle": 0,
+   "bbox": [
+    296.42,
+    288.54,
+    328.42,
+    292.66
+   ],
+   "owner": [
+    "node",
+    13,
+    0.0
+   ]
+  },
+  {
+   "text": "2016-04-01",
+   "x": 344.3,
+   "y": 291.97,
+   "angle": 0,
+   "bbox": [
+    344.3,
+    288.54,
+    357.25,
+    292.66
+   ],
+   "owner": [
+    "node",
+    12,
+    0.0
+   ]
+  },
+  {
+   "text": "DRAWING NO",
+   "x": 358.77,
+   "y": 291.97,
+   "angle": 0,
+   "bbox": [
+    358.77,
+    288.54,
+    376.3,
+    292.66
+   ],
+   "owner": [
+    "node",
+    11,
+    0.0
+   ]
+  },
+  {
+   "text": "123/A93",
+   "x": 380.37,
+   "y": 291.97,
+   "angle": 0,
+   "bbox": [
+    380.37,
+    288.54,
+    390.4,
+    292.66
+   ],
+   "owner": [
+    "node",
+    11,
+    0.38
+   ]
+  },
+  {
+   "text": "Cuy",
+   "x": 386.62,
+   "y": 267.7,
+   "angle": 0,
+   "bbox": [
+    386.62,
+    263.16,
+    393.03,
+    268.6
+   ],
+   "owner": [
+    "node",
+    23,
+    0.0
+   ]
+  }
+ ],
+ "tables": [
+  {
+   "bbox": [
+    5.59,
+    236.09,
+    96.39,
+    262.89
+   ],
+   "rows": [
+    [
+     "Ident"
+    ],
+    [
+     "7oo7"
+    ],
+    [
+     "bg"
+    ],
+    [
+     "601",
+     "30"
+    ],
+    [
+     "bu"
+    ],
+    [
+     "Design Tempmin Chamber 4"
+    ],
+    [
+     "J0 C",
+     "I C"
+    ],
+    [
+     "DesigPlute Heigh Plle Widh"
+    ]
+   ]
+  },
+  {
+   "bbox": [
+    97.66,
+    236.09,
+    188.34,
+    262.89
+   ],
+   "rows": [
+    [
+     "@dent"
+    ],
+    [
+     "bus"
+    ],
+    [
+     "Design",
+     "maxChamber 4"
+    ],
+    [
+     "@bu"
+    ],
+    [
+     "35 €",
+     "35€"
+    ],
+    [
+     "4 €"
+    ],
+    [
+     "DNSQ"
+    ],
+    [
+     "Mateual Shell"
+    ],
+    [
+     "L06"
+    ]
+   ]
+  },
+  {
+   "bbox": [
+    5.59,
+    264.67,
+    96.39,
+    291.34
+   ],
+   "rows": [
+    [
+     "Ident"
+    ],
+    [
+     "45 e€"
+    ],
+    [
+     "Design Iewp_Casing min"
+    ],
+    [
+     "80C"
+    ],
+    [
+     "414308"
+    ],
+    [
+     "L306"
+    ]
+   ]
+  },
+  {
+   "bbox": [
+    97.66,
+    264.67,
+    188.34,
+    291.34
+   ],
+   "rows": [
+    [
+     "lIdent"
+    ],
+    [
+     "PL"
+    ],
+    [
+     "Jbg"
+    ],
+    [
+     "-45 '€"
+    ],
+    [
+     "Casing nAX"
+    ],
+    [
+     "Design"
+    ],
+    [
+     "Tep"
+    ],
+    [
+     "JOW"
+    ]
+   ]
+  },
+  {
+   "bbox": [
+    189.61,
+    264.67,
+    280.42,
+    291.34
+   ],
+   "rows": [
+    [
+     "ldent"
+    ],
+    [
+     "T4750"
+    ],
+    [
+     "~01"
+    ],
+    [
+     "Dssien"
+    ],
+    [
+     "J0€"
+    ],
+    [
+     "m"
+    ],
+    [
+     "26m'"
+    ]
+   ]
+  }
+ ],
+ "counts": {
+  "primitives": 219,
+  "texts": 106,
+  "nodes": 149,
+  "runs": 141,
+  "junctions": 24,
+  "tables": 5
+ },
+ "times": {
+  "ocr": 0.3,
+  "lines_symbols": 14.8,
+  "graph": 0.9,
+  "total": 15.9
+ },
+ "dpi": 200,
+ "skew_deg": 0.0
+}

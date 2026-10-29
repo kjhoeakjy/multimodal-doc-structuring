@@ -1,0 +1,141 @@
+{
+ "name": "photo-rocket-launch.jpg",
+ "plan": {
+  "threads": 2,
+  "batch": 8,
+  "max_mp": 12.0,
+  "det_scale": 1.0,
+  "snapshot": {
+   "cores": 4,
+   "total_gb": 15.7,
+   "avail_gb": 14.2,
+   "cpu_busy": 0.0
+  },
+  "why": [
+   "코어 4개 중 2개 사용(절반)",
+   "가용 메모리 14.2 GB → 인식 배치 8, 입력 상한 12 MP",
+   "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
+  ]
+ },
+ "steps": [],
+ "kind": "photo",
+ "png": "input_gray.png",
+ "dpi": 96,
+ "detect": {
+  "px": [
+   640,
+   427
+  ],
+  "resized": false,
+  "midtone": 0.402,
+  "ink": 0.754,
+  "reason": "연속 계조 비율이 높음",
+  "dpi_source": "사진, 해상도 미정(96 가정)",
+  "ocr_lang": "en"
+ },
+ "view": {
+  "url": "input_gray.png",
+  "w": 640,
+  "h": 427,
+  "mm_per_px": 0.26458333333333334
+ },
+ "tables": [],
+ "texts": [],
+ "nodes": [],
+ "runs": [],
+ "junctions": [],
+ "counts": {
+  "texts": 0
+ },
+ "serial": [
+  "# 사진·렌더링 (구조 추출 없음, 이미지 검색 대상)",
+  "크기 640×427 px",
+  "## 사진 위 문자"
+ ],
+ "index": {
+  "bm25": {
+   "tokens": 15,
+   "vocab": 14,
+   "top": [
+    [
+     "사진",
+     2
+    ],
+    [
+     "렌더링",
+     1
+    ],
+    [
+     "구조",
+     1
+    ],
+    [
+     "추출",
+     1
+    ],
+    [
+     "없음",
+     1
+    ],
+    [
+     "이미지",
+     1
+    ],
+    [
+     "검색",
+     1
+    ],
+    [
+     "대상",
+     1
+    ],
+    [
+     "크기",
+     1
+    ],
+    [
+     "640",
+     1
+    ],
+    [
+     "427",
+     1
+    ],
+    [
+     "px",
+     1
+    ],
+    [
+     "위",
+     1
+    ],
+    [
+     "문자",
+     1
+    ]
+   ]
+  },
+  "exact": [],
+  "rows": []
+ },
+ "embedding": {
+  "available": false,
+  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "regions": 1
+ },
+ "times": {
+  "입력 판별": 0.0,
+  "문자 인식": 4.3,
+  "이미지 임베딩": 0.0
+ },
+ "memory": {
+  "peak_rss_gb": 1.55,
+  "min_avail_gb": 13.86
+ },
+ "resources_after": {
+  "cores": 4,
+  "total_gb": 15.7,
+  "avail_gb": 14.2,
+  "cpu_busy": 1.0
+ }
+}

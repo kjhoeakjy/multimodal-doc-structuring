@@ -1,0 +1,1022 @@
+{
+ "name": "faa-torque-table.png",
+ "plan": {
+  "threads": 2,
+  "batch": 8,
+  "max_mp": 12.0,
+  "det_scale": 1.0,
+  "snapshot": {
+   "cores": 4,
+   "total_gb": 15.7,
+   "avail_gb": 14.4,
+   "cpu_busy": 4.0
+  },
+  "why": [
+   "코어 4개 중 2개 사용(절반)",
+   "가용 메모리 14.4 GB → 인식 배치 8, 입력 상한 12 MP",
+   "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
+  ]
+ },
+ "steps": [],
+ "kind": "page",
+ "png": "input_gray.png",
+ "dpi": 104,
+ "detect": {
+  "px": [
+   857,
+   1109
+  ],
+  "resized": false,
+  "midtone": 0.059,
+  "ink": 0.035,
+  "text_ink": 1.0,
+  "axis_ink": 0.0,
+  "free_ink": 0.0,
+  "long_lines": 0,
+  "big_circles": 0,
+  "texts": 72,
+  "reason": "문자 잉크 100%, 그 밖 잉크 0%",
+  "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
+  "ocr_lang": "en",
+  "skew_deg": 0.0
+ },
+ "texts": [
+  {
+   "text": "9/8/98",
+   "conf": 1.0,
+   "box": [
+    108,
+    71,
+    153,
+    89
+   ]
+  },
+  {
+   "text": "AC 43.13-1B",
+   "conf": 0.59,
+   "box": [
+    684,
+    69,
+    767,
+    89
+   ]
+  },
+  {
+   "text": "7-67.",
+   "conf": 0.99,
+   "box": [
+    108,
+    104,
+    149,
+    123
+   ]
+  },
+  {
+   "text": "CASTELLATED",
+   "conf": 1.0,
+   "box": [
+    160,
+    103,
+    291,
+    123
+   ]
+  },
+  {
+   "text": "SHEAR",
+   "conf": 1.0,
+   "box": [
+    308,
+    104,
+    373,
+    123
+   ]
+  },
+  {
+   "text": "NUT",
+   "conf": 1.0,
+   "box": [
+    389,
+    104,
+    431,
+    123
+   ]
+  },
+  {
+   "text": "7-71.",
+   "conf": 0.95,
+   "box": [
+    445,
+    104,
+    486,
+    123
+   ]
+  },
+  {
+   "text": "WINGNUTS (AN3SO).   The wingnut",
+   "conf": 0.64,
+   "box": [
+    498,
+    102,
+    771,
+    128
+   ]
+  },
+  {
+   "text": "(AN32O):",
+   "conf": 0.29,
+   "box": [
+    107,
+    121,
+    179,
+    145
+   ]
+  },
+  {
+   "text": "The   castellated   shear   nut is de-",
+   "conf": 0.52,
+   "box": [
+    192,
+    124,
+    430,
+    143
+   ]
+  },
+  {
+   "text": "is used where the desired torque is obtained by",
+   "conf": 0.79,
+   "box": [
+    444,
+    123,
+    771,
+    147
+   ]
+  },
+  {
+   "text": "signed   for",
+   "conf": 0.99,
+   "box": [
+    106,
+    143,
+    188,
+    167
+   ]
+  },
+  {
+   "text": "use   with   hardware   subjected",
+   "conf": 0.77,
+   "box": [
+    191,
+    143,
+    408,
+    167
+   ]
+  },
+  {
+   "text": "to",
+   "conf": 1.0,
+   "box": [
+    412,
+    147,
+    430,
+    162
+   ]
+  },
+  {
+   "text": "use of the fingers or handtools   Wingnuts are",
+   "conf": 0.79,
+   "box": [
+    444,
+    142,
+    768,
+    169
+   ]
+  },
+  {
+   "text": "shear stress only:",
+   "conf": 0.78,
+   "box": [
+    106,
+    163,
+    230,
+    187
+   ]
+  },
+  {
+   "text": "normally drilled to allow safetying with safety",
+   "conf": 0.87,
+   "box": [
+    444,
+    160,
+    772,
+    189
+   ]
+  },
+  {
+   "text": "wire.",
+   "conf": 0.96,
+   "box": [
+    445,
+    183,
+    483,
+    201
+   ]
+  },
+  {
+   "text": "7-68.",
+   "conf": 0.95,
+   "box": [
+    108,
+    204,
+    149,
+    223
+   ]
+  },
+  {
+   "text": "PLAIN NUT (AN3IS AND AN33S)",
+   "conf": 0.65,
+   "box": [
+    159,
+    201,
+    432,
+    226
+   ]
+  },
+  {
+   "text": "The plain nut is",
+   "conf": 0.87,
+   "box": [
+    107,
+    222,
+    223,
+    246
+   ]
+  },
+  {
+   "text": "of withstanding large",
+   "conf": 0.91,
+   "box": [
+    279,
+    218,
+    434,
+    248
+   ]
+  },
+  {
+   "text": "7-72.",
+   "conf": 0.79,
+   "box": [
+    445,
+    223,
+    486,
+    242
+   ]
+  },
+  {
+   "text": "SHEET   SPRING NUTS   (AN36S).",
+   "conf": 0.5,
+   "box": [
+    496,
+    220,
+    769,
+    244
+   ]
+  },
+  {
+   "text": "tension loads; however; it requires an auxiliary",
+   "conf": 0.97,
+   "box": [
+    106,
+    238,
+    433,
+    267
+   ]
+  },
+  {
+   "text": "Sheet spring nuts are commonly called",
+   "conf": 0.8,
+   "box": [
+    444,
+    240,
+    726,
+    267
+   ]
+  },
+  {
+   "text": "locking device; such as a checknut or safety",
+   "conf": 0.58,
+   "box": [
+    105,
+    258,
+    435,
+    288
+   ]
+  },
+  {
+   "text": "nuts.",
+   "conf": 0.99,
+   "box": [
+    445,
+    264,
+    482,
+    281
+   ]
+  },
+  {
+   "text": "They are used with standard and sheet",
+   "conf": 0.69,
+   "box": [
+    491,
+    262,
+    770,
+    286
+   ]
+  },
+  {
+   "text": "wire.",
+   "conf": 0.97,
+   "box": [
+    108,
+    283,
+    146,
+    301
+   ]
+  },
+  {
+   "text": "Use of this type on aircraft structures is",
+   "conf": 0.85,
+   "box": [
+    152,
+    282,
+    431,
+    306
+   ]
+  },
+  {
+   "text": "metal",
+   "conf": 0.7,
+   "box": [
+    445,
+    283,
+    487,
+    301
+   ]
+  },
+  {
+   "text": "self-tapping screws in nonstructural ap-",
+   "conf": 0.8,
+   "box": [
+    486,
+    279,
+    768,
+    307
+   ]
+  },
+  {
+   "text": "limited.",
+   "conf": 0.9,
+   "box": [
+    107,
+    301,
+    166,
+    321
+   ]
+  },
+  {
+   "text": "plications:",
+   "conf": 0.75,
+   "box": [
+    444,
+    300,
+    522,
+    326
+   ]
+  },
+  {
+   "text": "are used to support line and",
+   "conf": 0.77,
+   "box": [
+    567,
+    299,
+    768,
+    327
+   ]
+  },
+  {
+   "text": "conduit",
+   "conf": 1.0,
+   "box": [
+    445,
+    321,
+    502,
+    341
+   ]
+  },
+  {
+   "text": "access doors; etc.",
+   "conf": 0.76,
+   "box": [
+    561,
+    321,
+    687,
+    342
+   ]
+  },
+  {
+   "text": "Their use",
+   "conf": 0.94,
+   "box": [
+    697,
+    321,
+    769,
+    341
+   ]
+  },
+  {
+   "text": "7-69.",
+   "conf": 0.99,
+   "box": [
+    108,
+    341,
+    149,
+    361
+   ]
+  },
+  {
+   "text": "LIGHT HEX NUTS (AN340 AND",
+   "conf": 0.79,
+   "box": [
+    160,
+    341,
+    431,
+    362
+   ]
+  },
+  {
+   "text": "should be limited to applications where",
+   "conf": 0.82,
+   "box": [
+    444,
+    340,
+    732,
+    366
+   ]
+  },
+  {
+   "text": "AN345)",
+   "conf": 0.82,
+   "box": [
+    108,
+    360,
+    174,
+    384
+   ]
+  },
+  {
+   "text": "These nuts are used in nonstructural",
+   "conf": 0.99,
+   "box": [
+    179,
+    361,
+    430,
+    381
+   ]
+  },
+  {
+   "text": "wcre",
+   "conf": 0.48,
+   "box": [
+    445,
+    364,
+    483,
+    379
+   ]
+  },
+  {
+   "text": "originally used in  assembly of the air-",
+   "conf": 0.7,
+   "box": [
+    484,
+    360,
+    768,
+    386
+   ]
+  },
+  {
+   "text": "applications requiring light tension",
+   "conf": 0.81,
+   "box": [
+    107,
+    378,
+    359,
+    406
+   ]
+  },
+  {
+   "text": "Like the",
+   "conf": 0.97,
+   "box": [
+    367,
+    381,
+    431,
+    401
+   ]
+  },
+  {
+   "text": "craft.",
+   "conf": 0.9,
+   "box": [
+    445,
+    381,
+    485,
+    399
+   ]
+  },
+  {
+   "text": "AN315 and AN335,",
+   "conf": 0.89,
+   "box": [
+    108,
+    401,
+    251,
+    422
+   ]
+  },
+  {
+   "text": "require",
+   "conf": 1.0,
+   "box": [
+    281,
+    399,
+    338,
+    426
+   ]
+  },
+  {
+   "text": "a",
+   "conf": 0.98,
+   "box": [
+    338,
+    408,
+    346,
+    418
+   ]
+  },
+  {
+   "text": "locking de-",
+   "conf": 0.91,
+   "box": [
+    345,
+    397,
+    431,
+    426
+   ]
+  },
+  {
+   "text": "vice t0 secure them:",
+   "conf": 0.73,
+   "box": [
+    108,
+    423,
+    246,
+    441
+   ]
+  },
+  {
+   "text": "7-73.-7-84. RESERVED:",
+   "conf": 0.33,
+   "box": [
+    445,
+    421,
+    638,
+    442
+   ]
+  },
+  {
+   "text": "7-70.",
+   "conf": 0.96,
+   "box": [
+    108,
+    461,
+    149,
+    481
+   ]
+  },
+  {
+   "text": "CHECKNUT (AN3I6).  The checknut",
+   "conf": 0.7,
+   "box": [
+    159,
+    460,
+    434,
+    484
+   ]
+  },
+  {
+   "text": "is used as",
+   "conf": 0.84,
+   "box": [
+    107,
+    481,
+    187,
+    501
+   ]
+  },
+  {
+   "text": "a",
+   "conf": 0.91,
+   "box": [
+    193,
+    488,
+    202,
+    498
+   ]
+  },
+  {
+   "text": "device   for",
+   "conf": 0.69,
+   "box": [
+    268,
+    481,
+    347,
+    502
+   ]
+  },
+  {
+   "text": "nuts;",
+   "conf": 0.57,
+   "box": [
+    393,
+    484,
+    430,
+    501
+   ]
+  },
+  {
+   "text": "screws, threaded rod ends, and other devices.",
+   "conf": 0.78,
+   "box": [
+    107,
+    500,
+    415,
+    521
+   ]
+  },
+  {
+   "text": "Par 7-67",
+   "conf": 0.65,
+   "box": [
+    108,
+    1059,
+    166,
+    1075
+   ]
+  },
+  {
+   "text": "Page 7-13 (and 7-14)",
+   "conf": 0.66,
+   "box": [
+    629,
+    1057,
+    771,
+    1081
+   ]
+  },
+  {
+   "text": "capable",
+   "conf": 1.0,
+   "box": [
+    220,
+    220,
+    282,
+    246
+   ]
+  },
+  {
+   "text": "speed",
+   "conf": 1.0,
+   "box": [
+    721,
+    240,
+    770,
+    267
+   ]
+  },
+  {
+   "text": "They",
+   "conf": 1.0,
+   "box": [
+    523,
+    298,
+    570,
+    326
+   ]
+  },
+  {
+   "text": "clamps;",
+   "conf": 0.53,
+   "box": [
+    500,
+    319,
+    561,
+    345
+   ]
+  },
+  {
+   "text": "they",
+   "conf": 1.0,
+   "box": [
+    730,
+    339,
+    772,
+    366
+   ]
+  },
+  {
+   "text": "they `",
+   "conf": 0.2,
+   "box": [
+    246,
+    398,
+    286,
+    426
+   ]
+  },
+  {
+   "text": "locking",
+   "conf": 0.71,
+   "box": [
+    205,
+    477,
+    267,
+    506
+   ]
+  },
+  {
+   "text": "plain",
+   "conf": 1.0,
+   "box": [
+    347,
+    479,
+    391,
+    506
+   ]
+  }
+ ],
+ "view": {
+  "url": "input_gray.png",
+  "w": 857,
+  "h": 1109,
+  "mm_per_px": 0.24423076923076922
+ },
+ "tables": [],
+ "figures": [],
+ "paragraphs": [
+  {
+   "text": "9/8/98 AC 43.13-1B 7-67. CASTELLATED SHEAR NUT 7-71. WINGNUTS (AN3SO).   The wingnut (AN32O): The   castellated   shear   nut is de- is used where the desired torque is obtained by signed   for use   with   hardware   subjected to use of the fingers or handtools   Wingnuts are shear stress only: normally drilled to allow safetying with safety wire. 7-68. PLAIN NUT (AN3IS AND AN33S) The plain nut is capable of withstanding large 7-72. SHEET   SPRING NUTS   (AN36S). tension loads; however; it requires an auxiliary Sheet spring nuts are commonly called speed locking device; such as a checknut or safety nuts. They are used with standard and sheet wire. Use of this type on aircraft structures is metal self-tapping screws in nonstructural ap- limited. plications: They are used to support line and conduit clamps; access doors; etc. Their use 7-69. LIGHT HEX NUTS (AN340 AND should be limited to applications where they AN345) These nuts are used in nonstructural wcre originally used in  assembly of the air- applications requiring light tension Like the craft. AN315 and AN335, they ` require a locking de- vice t0 secure them: 7-73.-7-84. RESERVED: 7-70. CHECKNUT (AN3I6).  The checknut is used as a locking device   for plain nuts; screws, threaded rod ends, and other devices.",
+   "box": [
+    105,
+    69,
+    772,
+    521
+   ],
+   "bbox_mm": [
+    25.6,
+    16.9,
+    188.5,
+    127.2
+   ]
+  },
+  {
+   "text": "Par 7-67 Page 7-13 (and 7-14)",
+   "box": [
+    108,
+    1057,
+    771,
+    1081
+   ],
+   "bbox_mm": [
+    26.4,
+    258.2,
+    188.3,
+    264.0
+   ]
+  }
+ ],
+ "nodes": [],
+ "runs": [],
+ "junctions": [],
+ "counts": {
+  "tables": 0,
+  "cells": 0,
+  "figures": 0,
+  "figures_in_cells": 0,
+  "rows_with_figure": 0,
+  "mean_conf": 0.81,
+  "paragraphs": 2,
+  "texts": 72
+ },
+ "serial": [
+  "# 쪽 구조 (좌표 단위 mm, 원점 좌상단)",
+  "## 표",
+  "## 표 안 그림 영역",
+  "## 본문",
+  "p0 bbox=(25.6,16.9,188.5,127.2) 9/8/98 AC 43.13-1B 7-67. CASTELLATED SHEAR NUT 7-71. WINGNUTS (AN3SO).   The wingnut (AN32O): The   castellated   shear   nut is de- is used where the desired torque is obtained by signed   for use   with   hardware   subjected to use of the fingers or handtools   Wingnuts are shear stress only: normally drilled to allow safetying with safety wire. 7-68. PLAIN NUT (AN3IS AND AN33S) The plain nut is capable of withstanding large 7-72. SHEET   SPRING NUTS   (AN36S). tension loads; however; it requires an auxiliary Sheet spring nuts are commonly called speed locking device; such as a checknut or safety nuts. They are used with standard and sheet wire. Use of this type on aircraft structures is metal self-tapping screws in nonstructural ap- limited. plications: They are used to support line and conduit clamps; access doors; etc. Their use 7-69. LIGHT HEX NUTS (AN340 AND should be limited to applications where they AN345) These nuts are used in nonstructural wcre originally used in  assembly of the air- applications requiring light tension Like the craft. AN315 and AN335, they ` require a locking de- vice t0 secure them: 7-73.-7-84. RESERVED: 7-70. CHECKNUT (AN3I6).  The checknut is used as a locking device   for plain nuts; screws, threaded rod ends, and other devices.",
+  "p1 bbox=(26.4,258.2,188.3,264.0) Par 7-67 Page 7-13 (and 7-14)"
+ ],
+ "index": {
+  "bm25": {
+   "tokens": 235,
+   "vocab": 155,
+   "top": [
+    [
+     "the",
+     8
+    ],
+    [
+     "and",
+     7
+    ],
+    [
+     "is",
+     6
+    ],
+    [
+     "used",
+     6
+    ],
+    [
+     "are",
+     5
+    ],
+    [
+     "nuts",
+     5
+    ],
+    [
+     "nut",
+     4
+    ],
+    [
+     "use",
+     4
+    ],
+    [
+     "to",
+     4
+    ],
+    [
+     "of",
+     4
+    ],
+    [
+     "they",
+     4
+    ],
+    [
+     "shear",
+     3
+    ],
+    [
+     "with",
+     3
+    ],
+    [
+     "plain",
+     3
+    ],
+    [
+     "sheet",
+     3
+    ],
+    [
+     "locking",
+     3
+    ],
+    [
+     "a",
+     3
+    ],
+    [
+     "checknut",
+     3
+    ],
+    [
+     "in",
+     3
+    ],
+    [
+     "표",
+     2
+    ],
+    [
+     "bbox",
+     2
+    ],
+    [
+     "castellated",
+     2
+    ],
+    [
+     "wingnuts",
+     2
+    ],
+    [
+     "de-",
+     2
+    ],
+    [
+     "where",
+     2
+    ],
+    [
+     "for",
+     2
+    ],
+    [
+     "or",
+     2
+    ],
+    [
+     "safety",
+     2
+    ],
+    [
+     "wire.",
+     2
+    ],
+    [
+     "spring",
+     2
+    ],
+    [
+     "tension",
+     2
+    ],
+    [
+     "device",
+     2
+    ],
+    [
+     "as",
+     2
+    ],
+    [
+     "screws",
+     2
+    ],
+    [
+     "nonstructural",
+     2
+    ],
+    [
+     "light",
+     2
+    ],
+    [
+     "applications",
+     2
+    ],
+    [
+     "쪽",
+     1
+    ],
+    [
+     "구조",
+     1
+    ],
+    [
+     "좌표",
+     1
+    ]
+   ]
+  },
+  "exact": [],
+  "rows": []
+ },
+ "embedding": {
+  "available": false,
+  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "regions": 1
+ },
+ "times": {
+  "입력 판별": 0.0,
+  "문자 인식": 20.5,
+  "해상도 · 종류 판별": 0.0,
+  "structure": 0.0,
+  "표 · 그림 영역": 0.0,
+  "본문 묶기": 0.0,
+  "직렬화": 0.0,
+  "색인": 0.0,
+  "이미지 임베딩": 0.0
+ },
+ "memory": {
+  "peak_rss_gb": 2.54,
+  "min_avail_gb": 12.96
+ },
+ "resources_after": {
+  "cores": 4,
+  "total_gb": 15.7,
+  "avail_gb": 14.3,
+  "cpu_busy": 0.0
+ }
+}

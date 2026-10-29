@@ -1,0 +1,24 @@
+# 쪽 구조 (좌표 단위 mm, 원점 좌상단)
+## 표
+t0 bbox=(26.5,30.9,189.9,174.6) 행수=16 열수=6
+t0 행0:  |  |  |  |  | 
+t0 행1:  |  | CAUTION THE FOLLOWING TORQUE VALUES ARE DERIVED FROM OIL FREE CADMIUM PLATED THREADS: |  |  | 
+t0 행2:  |  |  |  |  | 
+t0 행3:  |  | TORQUE LIMITS RECOMMENDED FOR INSTAL- LATION (BOLTS LOADED PRIMARILY IN SHEAR) | MAXIMUM ALLOWABLE TORQUE LIMITS | TIGHTENING | 
+t0 행4:  |  |  |  |  | 
+t0 행5: Thread Size | Tension type nuts MS20365 and AN310 (40.000 psiin bolts) | Shear  type   nuts MS20364 and AN320 (24,000 psi in bolts) | Nuts MS20365 and AN31O (90,000 psi   in bolts) | Nuts MS20364 and AN320 (54,000 psi in bolts) | 
+t0 행6:  |  |  |  |  | 
+t0 행7:  |  | FINE THREAD SERIES |  |  | 
+t0 행8:  |  |  |  |  | 
+t0 행9: 8-36 10-32 1/4-28 5/16-24 3/8-24 7/16-20 1/2-20 9/16-18 5/8-18 3/4-16 7/8-14 1-14 1-1/8-12 1-1/4-12 | 12-15 20-25 50-70 100-140 160-190 450-500 480-690 800-1000 1100-1300 2300-2500 2500-3000 3700-5500 5000-7000 9000-11,000 | 7-9 12-15 30-40 60-85 95-110 270-300 290-410 480-600 600-780 1300-1500 1500-1800 2200-3300" 3000-4200" 5400-6600" | 20 40 100 225 390 840 1100 1600 2400 5000 7000 10,000 15,000 25,000 | 12 25 60 140 240 500 660 960 1400 3000 4200 6000 9000 15,000 | 
+t0 행10:  |  |  |  |  | 
+t0 행11:  |  | COARSE THREAD SERIES |  |  | 
+t0 행12:  |  |  |  |  | 
+t0 행13: 8-32 10-24 1/4-20 5/16-18 3/8-16 7/16-14 1/2-13 9/16-12 5/8-11 3/4-10 7/8-9 | 12-15 20-25 40-50 80-90 160-185 235-255 400-480 500-700 700-900 1150-1600 2200-3000 | 7-9 12-15 25-30 48-55 95-100 140-155 240-290 300-420 420-540 700-950 1300-1800 | 20 35 75 160 275 475 880 1100 1500 2500 4600 | 12 21 45 100 170 280 520 650 900 1500 2700 | 
+t0 행14:  | Estimated corresponding values. | The above torque values may be used for all cadmium-plated steel nuts of the fine Or coarse thread series which have approximately equal number of threads and equal face bearing areas. |  |  | 
+t0 행15:  |  |  |  |  | 
+## 표 안 그림 영역
+## 본문
+p0 bbox=(26.3,16.9,188.0,30.0) 9/8/98 AC 43.13-1B TABLE 7-1. Recommended torque values (inch-pounds).
+p1 bbox=(25.8,178.5,188.4,248.1) 7-44. CLOSE-TOLERANCE BOLTS: of bolt may require light tapping with a mallet Close-tolerance, hex head, machine bolts to set the bolt shank into the bolt hole. (ANI73 through ANI86). 100-degree counter- sunk head, close-tolerance, high-strength bolts NOTE: Elimination of friction in in- (NAS333 through NAS34O). hex head, close- terference fit applications may some- tolerance; short   thread,  titanium alloy bolts times be attained by placing the bolt (NAS653 through NAS6S8), 100-degree in 4 freezer prior to installation. countersunk flathead, close-tolerance titanium When this procedure is used, the bolt alloy bolts (NAS663 through NAS668). and should be allowed to warm up to am- drilled hex head close-tolerance titanium alloy bient temperature before torquing: bolts (NAS673 through NAS678), are used in applications   where two parts bolted together CAUTION: Caution must be exer- are subject to severe load reversals and vibra- cised in the use of close-tolerance bolts tion. Because of the interference fit, this type for   all   critical   applications;   such aS
+p2 bbox=(26.6,259.1,188.0,264.2) Par 7-43 Page 7-9

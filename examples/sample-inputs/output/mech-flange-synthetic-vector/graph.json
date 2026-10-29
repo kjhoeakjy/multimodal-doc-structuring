@@ -1,0 +1,2352 @@
+{
+ "page": [
+  1122.5202912,
+  793.7012159999999
+ ],
+ "nodes": [
+  {
+   "id": "n0",
+   "role": "equipment",
+   "bbox": [
+    113.39,
+    151.18,
+    566.93,
+    604.72
+   ],
+   "texts": [],
+   "primitives": 17,
+   "degree": 5,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n1",
+   "role": "symbol",
+   "bbox": [
+    234.33,
+    272.13,
+    445.98,
+    483.78
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n2",
+   "role": "equipment",
+   "bbox": [
+    166.3,
+    204.09,
+    514.02,
+    551.81
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n3",
+   "role": "symbol",
+   "bbox": [
+    483.78,
+    427.46,
+    517.8,
+    461.48
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n4",
+   "role": "symbol",
+   "bbox": [
+    389.67,
+    521.58,
+    423.69,
+    555.59
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n5",
+   "role": "symbol",
+   "bbox": [
+    256.63,
+    521.58,
+    290.65,
+    555.59
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n6",
+   "role": "symbol",
+   "bbox": [
+    162.52,
+    427.46,
+    196.54,
+    461.48
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n7",
+   "role": "symbol",
+   "bbox": [
+    162.52,
+    294.43,
+    196.54,
+    328.44
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n8",
+   "role": "symbol",
+   "bbox": [
+    256.63,
+    200.32,
+    290.65,
+    234.33
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n9",
+   "role": "symbol",
+   "bbox": [
+    389.67,
+    200.32,
+    423.69,
+    234.33
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n10",
+   "role": "symbol",
+   "bbox": [
+    483.78,
+    294.43,
+    517.8,
+    328.44
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n11",
+   "role": "mark",
+   "bbox": [
+    808.82,
+    249.45,
+    823.94,
+    264.57
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n12",
+   "role": "mark",
+   "bbox": [
+    808.82,
+    491.34,
+    823.94,
+    506.46
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n13",
+   "role": "arrow",
+   "bbox": [
+    755.91,
+    102.05,
+    808.82,
+    158.74
+   ],
+   "texts": [],
+   "primitives": 2,
+   "degree": 1,
+   "attached_to": null,
+   "direction": [
+    0.78,
+    -0.63
+   ],
+   "annotates": null
+  },
+  {
+   "id": "n14",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    120.94,
+    808.82,
+    173.86
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n15",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    136.06,
+    808.82,
+    188.98
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n16",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    151.18,
+    808.82,
+    204.09
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n17",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    166.3,
+    808.82,
+    219.21
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n18",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    181.42,
+    808.82,
+    234.33
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n19",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    196.54,
+    808.82,
+    249.45
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n20",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    211.65,
+    808.82,
+    264.57
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n21",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    226.77,
+    808.82,
+    279.69
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n22",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    241.89,
+    808.82,
+    294.8
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n23",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    257.01,
+    808.82,
+    309.92
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n24",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    272.13,
+    808.82,
+    325.04
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n25",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    287.24,
+    808.82,
+    340.16
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n26",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    302.36,
+    808.82,
+    355.28
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n27",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    317.48,
+    808.82,
+    370.39
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n28",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    332.6,
+    808.82,
+    385.51
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n29",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    347.72,
+    808.82,
+    400.63
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n30",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    362.83,
+    808.82,
+    415.75
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n31",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    377.95,
+    808.82,
+    430.87
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n32",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    393.07,
+    808.82,
+    445.98
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n33",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    408.19,
+    808.82,
+    461.1
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n34",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    423.31,
+    808.82,
+    476.22
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n35",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    438.43,
+    808.82,
+    491.34
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n36",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    453.54,
+    808.82,
+    506.46
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n37",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    468.66,
+    808.82,
+    521.58
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n38",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    483.78,
+    808.82,
+    536.69
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n39",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    498.9,
+    808.82,
+    551.81
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n40",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    514.02,
+    808.82,
+    566.93
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n41",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    529.13,
+    808.82,
+    582.05
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n42",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    544.25,
+    808.82,
+    597.17
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n43",
+   "role": "mark",
+   "bbox": [
+    113.39,
+    646.3,
+    120.94,
+    650.08
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n44",
+   "role": "mark",
+   "bbox": [
+    559.37,
+    646.3,
+    566.93,
+    650.08
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n45",
+   "role": "mark",
+   "bbox": [
+    234.33,
+    102.05,
+    241.89,
+    105.83
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n46",
+   "role": "mark",
+   "bbox": [
+    438.43,
+    102.05,
+    445.98,
+    105.83
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n47",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    102.05,
+    763.46,
+    105.83
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n48",
+   "role": "mark",
+   "bbox": [
+    918.43,
+    151.18,
+    922.21,
+    158.74
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n49",
+   "role": "mark",
+   "bbox": [
+    918.43,
+    597.17,
+    922.21,
+    604.72
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n50",
+   "role": "mark",
+   "bbox": [
+    755.91,
+    646.3,
+    763.46,
+    650.08
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n51",
+   "role": "mark",
+   "bbox": [
+    876.85,
+    646.3,
+    884.41,
+    650.08
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n52",
+   "role": "mark",
+   "bbox": [
+    512.13,
+    361.32,
+    583.94,
+    433.13
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n53",
+   "role": "mark",
+   "bbox": [
+    820.16,
+    245.67,
+    888.19,
+    260.79
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  }
+ ],
+ "junctions": [
+  {
+   "id": "j0",
+   "pt": [
+    1084.72,
+    635.0
+   ]
+  },
+  {
+   "id": "j1",
+   "pt": [
+    1084.72,
+    665.2
+   ]
+  },
+  {
+   "id": "j2",
+   "pt": [
+    1084.72,
+    695.4
+   ]
+  },
+  {
+   "id": "j3",
+   "pt": [
+    1084.72,
+    725.7
+   ]
+  },
+  {
+   "id": "j4",
+   "pt": [
+    820.2,
+    755.91
+   ]
+  },
+  {
+   "id": "j5",
+   "pt": [
+    952.4,
+    755.91
+   ]
+  },
+  {
+   "id": "j6",
+   "pt": [
+    884.41,
+    272.1
+   ]
+  },
+  {
+   "id": "j7",
+   "pt": [
+    884.41,
+    483.8
+   ]
+  },
+  {
+   "id": "j8",
+   "pt": [
+    113.39,
+    650.1
+   ]
+  },
+  {
+   "id": "j9",
+   "pt": [
+    566.93,
+    650.1
+   ]
+  },
+  {
+   "id": "j10",
+   "pt": [
+    234.33,
+    105.8
+   ]
+  },
+  {
+   "id": "j11",
+   "pt": [
+    445.98,
+    105.8
+   ]
+  },
+  {
+   "id": "j12",
+   "pt": [
+    820.2,
+    634.96
+   ]
+  },
+  {
+   "id": "j13",
+   "pt": [
+    952.4,
+    665.2
+   ]
+  }
+ ],
+ "runs": [
+  {
+   "id": "r0",
+   "a": "open@(37.8, 37.8)",
+   "b": "j0",
+   "coords": [
+    [
+     37.8,
+     37.8
+    ],
+    [
+     1084.72,
+     37.8
+    ],
+    [
+     1084.7,
+     635.0
+    ]
+   ],
+   "width": 2.65,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r1",
+   "a": "j0",
+   "b": "j1",
+   "coords": [
+    [
+     1084.7,
+     635.0
+    ],
+    [
+     1084.7,
+     665.2
+    ]
+   ],
+   "width": 2.65,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r2",
+   "a": "j0",
+   "b": "j12",
+   "coords": [
+    [
+     1084.72,
+     635.0
+    ],
+    [
+     820.2,
+     635.0
+    ]
+   ],
+   "width": 1.89,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r3",
+   "a": "j1",
+   "b": "j2",
+   "coords": [
+    [
+     1084.7,
+     665.2
+    ],
+    [
+     1084.7,
+     695.4
+    ]
+   ],
+   "width": 2.65,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r4",
+   "a": "j1",
+   "b": "j13",
+   "coords": [
+    [
+     1084.72,
+     665.2
+    ],
+    [
+     952.4,
+     665.2
+    ]
+   ],
+   "width": 1.13,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r5",
+   "a": "j2",
+   "b": "j3",
+   "coords": [
+    [
+     1084.7,
+     695.4
+    ],
+    [
+     1084.7,
+     725.7
+    ]
+   ],
+   "width": 2.65,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r6",
+   "a": "j2",
+   "b": "open@(669.0, 695.4)",
+   "coords": [
+    [
+     1084.72,
+     695.4
+    ],
+    [
+     668.98,
+     695.4
+    ]
+   ],
+   "width": 1.13,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r7",
+   "a": "j3",
+   "b": "j5",
+   "coords": [
+    [
+     1084.7,
+     725.7
+    ],
+    [
+     1084.7,
+     755.91
+    ],
+    [
+     952.4,
+     755.9
+    ]
+   ],
+   "width": 2.65,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r8",
+   "a": "j3",
+   "b": "open@(669.0, 725.7)",
+   "coords": [
+    [
+     1084.72,
+     725.7
+    ],
+    [
+     668.98,
+     725.7
+    ]
+   ],
+   "width": 1.13,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r9",
+   "a": "open@(37.8, 755.9)",
+   "b": "j4",
+   "coords": [
+    [
+     37.8,
+     755.9
+    ],
+    [
+     820.2,
+     755.9
+    ]
+   ],
+   "width": 2.65,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r10",
+   "a": "j4",
+   "b": "j5",
+   "coords": [
+    [
+     820.2,
+     755.9
+    ],
+    [
+     952.4,
+     755.9
+    ]
+   ],
+   "width": 2.65,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r11",
+   "a": "j4",
+   "b": "j12",
+   "coords": [
+    [
+     820.2,
+     755.91
+    ],
+    [
+     820.2,
+     634.96
+    ]
+   ],
+   "width": 1.13,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r12",
+   "a": "j5",
+   "b": "j13",
+   "coords": [
+    [
+     952.4,
+     755.91
+    ],
+    [
+     952.4,
+     665.2
+    ]
+   ],
+   "width": 1.13,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r13",
+   "a": "open@(90.7, 378.0)",
+   "b": "n0",
+   "coords": [
+    [
+     90.71,
+     378.0
+    ],
+    [
+     340.16,
+     378.0
+    ]
+   ],
+   "width": 0.68,
+   "dashed": true,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r14",
+   "a": "n0",
+   "b": "open@(340.2, 128.5)",
+   "coords": [
+    [
+     340.2,
+     377.95
+    ],
+    [
+     340.2,
+     128.5
+    ]
+   ],
+   "width": 0.68,
+   "dashed": true,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r15",
+   "a": "n0",
+   "b": "j10",
+   "coords": [
+    [
+     234.3,
+     143.62
+    ],
+    [
+     234.3,
+     105.8
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 31.2,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r16",
+   "a": "n0",
+   "b": "j11",
+   "coords": [
+    [
+     446.0,
+     143.62
+    ],
+    [
+     446.0,
+     105.8
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 31.2,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r17",
+   "a": "n0",
+   "b": "open@(652.0, 361.3)",
+   "coords": [
+    [
+     583.94,
+     361.3
+    ],
+    [
+     651.97,
+     361.3
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 18.39,
+   "arrows": [],
+   "texts": [
+    "8 x Ø9 THRU"
+   ]
+  },
+  {
+   "id": "r18",
+   "a": "n2",
+   "b": "open@(589.6, 378.0)",
+   "coords": [
+    [
+     340.16,
+     378.0
+    ],
+    [
+     589.61,
+     378.0
+    ]
+   ],
+   "width": 0.68,
+   "dashed": true,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "EQ SP ON Ø92 B.C."
+   ]
+  },
+  {
+   "id": "r19",
+   "a": "n2",
+   "b": "open@(340.2, 627.4)",
+   "coords": [
+    [
+     340.2,
+     377.95
+    ],
+    [
+     340.2,
+     627.4
+    ]
+   ],
+   "width": 0.68,
+   "dashed": true,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r20",
+   "a": "open@(755.9, 151.2)",
+   "b": "open@(808.8, 249.4)",
+   "coords": [
+    [
+     755.91,
+     151.2
+    ],
+    [
+     808.82,
+     151.2
+    ],
+    [
+     808.8,
+     249.45
+    ]
+   ],
+   "width": 1.89,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [
+    "n13"
+   ],
+   "texts": []
+  },
+  {
+   "id": "r21",
+   "a": "open@(808.8, 506.5)",
+   "b": "open@(755.9, 604.7)",
+   "coords": [
+    [
+     808.8,
+     506.46
+    ],
+    [
+     808.8,
+     604.72
+    ],
+    [
+     755.91,
+     604.7
+    ]
+   ],
+   "width": 1.89,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r22",
+   "a": "open@(823.9, 264.6)",
+   "b": "j6",
+   "coords": [
+    [
+     823.94,
+     264.6
+    ],
+    [
+     884.41,
+     264.6
+    ],
+    [
+     884.4,
+     272.1
+    ]
+   ],
+   "width": 1.89,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r23",
+   "a": "j6",
+   "b": "j7",
+   "coords": [
+    [
+     884.4,
+     272.1
+    ],
+    [
+     884.4,
+     483.8
+    ]
+   ],
+   "width": 1.89,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r24",
+   "a": "j6",
+   "b": "open@(755.9, 272.1)",
+   "coords": [
+    [
+     884.41,
+     272.1
+    ],
+    [
+     755.91,
+     272.1
+    ]
+   ],
+   "width": 1.89,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r25",
+   "a": "j7",
+   "b": "open@(823.9, 491.3)",
+   "coords": [
+    [
+     884.4,
+     483.8
+    ],
+    [
+     884.4,
+     491.34
+    ],
+    [
+     823.94,
+     491.3
+    ]
+   ],
+   "width": 1.89,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r26",
+   "a": "j7",
+   "b": "open@(755.9, 483.8)",
+   "coords": [
+    [
+     884.41,
+     483.8
+    ],
+    [
+     755.91,
+     483.8
+    ]
+   ],
+   "width": 1.89,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r27",
+   "a": "j8",
+   "b": "j9",
+   "coords": [
+    [
+     113.39,
+     650.1
+    ],
+    [
+     566.93,
+     650.1
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "Ø120"
+   ]
+  },
+  {
+   "id": "r28",
+   "a": "j8",
+   "b": "open@(113.4, 612.3)",
+   "coords": [
+    [
+     113.4,
+     650.1
+    ],
+    [
+     113.4,
+     612.28
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r29",
+   "a": "j8",
+   "b": "open@(113.4, 657.6)",
+   "coords": [
+    [
+     113.4,
+     650.1
+    ],
+    [
+     113.4,
+     657.64
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r30",
+   "a": "j9",
+   "b": "open@(566.9, 612.3)",
+   "coords": [
+    [
+     566.9,
+     650.1
+    ],
+    [
+     566.9,
+     612.28
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r31",
+   "a": "j9",
+   "b": "open@(566.9, 657.6)",
+   "coords": [
+    [
+     566.9,
+     650.1
+    ],
+    [
+     566.9,
+     657.64
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r32",
+   "a": "open@(755.9, 650.1)",
+   "b": "open@(884.4, 650.1)",
+   "coords": [
+    [
+     755.91,
+     650.1
+    ],
+    [
+     884.41,
+     650.1
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "34",
+    "FLANGE, MOUNTING"
+   ]
+  },
+  {
+   "id": "r33",
+   "a": "open@(120.9, 646.3)",
+   "b": "open@(120.9, 653.9)",
+   "coords": [
+    [
+     120.9,
+     646.3
+    ],
+    [
+     120.9,
+     653.86
+    ]
+   ],
+   "width": 3.78,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r34",
+   "a": "open@(559.4, 646.3)",
+   "b": "open@(559.4, 653.9)",
+   "coords": [
+    [
+     559.4,
+     646.3
+    ],
+    [
+     559.4,
+     653.86
+    ]
+   ],
+   "width": 3.78,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r35",
+   "a": "j10",
+   "b": "j11",
+   "coords": [
+    [
+     234.33,
+     105.8
+    ],
+    [
+     445.98,
+     105.8
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "Ø56 H7"
+   ]
+  },
+  {
+   "id": "r36",
+   "a": "j10",
+   "b": "open@(234.3, 98.3)",
+   "coords": [
+    [
+     234.3,
+     105.8
+    ],
+    [
+     234.3,
+     98.27
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r37",
+   "a": "j11",
+   "b": "open@(446.0, 98.3)",
+   "coords": [
+    [
+     446.0,
+     105.8
+    ],
+    [
+     446.0,
+     98.27
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r38",
+   "a": "open@(755.9, 105.8)",
+   "b": "n13",
+   "coords": [
+    [
+     755.91,
+     105.8
+    ],
+    [
+     808.82,
+     105.8
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [
+    "n13"
+   ],
+   "texts": [
+    "14"
+   ]
+  },
+  {
+   "id": "r39",
+   "a": "open@(241.9, 102.0)",
+   "b": "open@(241.9, 109.6)",
+   "coords": [
+    [
+     241.9,
+     102.05
+    ],
+    [
+     241.9,
+     109.61
+    ]
+   ],
+   "width": 3.78,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r40",
+   "a": "open@(438.4, 102.0)",
+   "b": "open@(438.4, 109.6)",
+   "coords": [
+    [
+     438.4,
+     102.05
+    ],
+    [
+     438.4,
+     109.61
+    ]
+   ],
+   "width": 3.78,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r41",
+   "a": "open@(763.5, 102.0)",
+   "b": "open@(763.5, 109.6)",
+   "coords": [
+    [
+     763.5,
+     102.05
+    ],
+    [
+     763.5,
+     109.61
+    ]
+   ],
+   "width": 3.78,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r42",
+   "a": "open@(763.5, 646.3)",
+   "b": "open@(763.5, 653.9)",
+   "coords": [
+    [
+     763.5,
+     646.3
+    ],
+    [
+     763.5,
+     653.86
+    ]
+   ],
+   "width": 3.78,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r43",
+   "a": "open@(922.2, 151.2)",
+   "b": "open@(922.2, 604.7)",
+   "coords": [
+    [
+     922.2,
+     151.18
+    ],
+    [
+     922.2,
+     604.72
+    ]
+   ],
+   "width": 0.68,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "120"
+   ]
+  },
+  {
+   "id": "r44",
+   "a": "open@(918.4, 158.7)",
+   "b": "open@(926.0, 158.7)",
+   "coords": [
+    [
+     918.43,
+     158.7
+    ],
+    [
+     925.98,
+     158.7
+    ]
+   ],
+   "width": 3.78,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r45",
+   "a": "open@(918.4, 597.2)",
+   "b": "open@(926.0, 597.2)",
+   "coords": [
+    [
+     918.43,
+     597.2
+    ],
+    [
+     925.98,
+     597.2
+    ]
+   ],
+   "width": 3.78,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r46",
+   "a": "open@(876.9, 646.3)",
+   "b": "open@(876.9, 653.9)",
+   "coords": [
+    [
+     876.9,
+     646.3
+    ],
+    [
+     876.9,
+     653.86
+    ]
+   ],
+   "width": 3.78,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r47",
+   "a": "open@(669.0, 635.0)",
+   "b": "j12",
+   "coords": [
+    [
+     668.98,
+     635.0
+    ],
+    [
+     820.2,
+     635.0
+    ]
+   ],
+   "width": 1.89,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r48",
+   "a": "open@(669.0, 665.2)",
+   "b": "j13",
+   "coords": [
+    [
+     668.98,
+     665.2
+    ],
+    [
+     952.4,
+     665.2
+    ]
+   ],
+   "width": 1.13,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  }
+ ],
+ "labels": [
+  {
+   "text": "Ø120",
+   "x": 340.16,
+   "y": 645.54,
+   "angle": 0,
+   "bbox": [
+    336.96,
+    642.34,
+    343.36,
+    646.18
+   ],
+   "owner": [
+    "run",
+    27,
+    3.92
+   ]
+  },
+  {
+   "text": "Ø56 H7",
+   "x": 340.16,
+   "y": 101.29,
+   "angle": 0,
+   "bbox": [
+    335.36,
+    98.09,
+    344.96,
+    101.93
+   ],
+   "owner": [
+    "run",
+    35,
+    3.87
+   ]
+  },
+  {
+   "text": "14",
+   "x": 782.36,
+   "y": 101.29,
+   "angle": 0,
+   "bbox": [
+    780.76,
+    98.09,
+    783.96,
+    101.93
+   ],
+   "owner": [
+    "run",
+    38,
+    3.87
+   ]
+  },
+  {
+   "text": "120",
+   "x": 922.21,
+   "y": 377.95,
+   "angle": 90,
+   "bbox": [
+    919.01,
+    375.55,
+    922.85,
+    380.35
+   ],
+   "owner": [
+    "run",
+    43,
+    0.0
+   ]
+  },
+  {
+   "text": "34",
+   "x": 820.16,
+   "y": 645.54,
+   "angle": 0,
+   "bbox": [
+    818.56,
+    642.34,
+    821.76,
+    646.18
+   ],
+   "owner": [
+    "run",
+    32,
+    3.92
+   ]
+  },
+  {
+   "text": "8 x Ø9 THRU",
+   "x": 587.72,
+   "y": 355.65,
+   "angle": 0,
+   "bbox": [
+    587.72,
+    352.45,
+    605.32,
+    356.29
+   ],
+   "owner": [
+    "run",
+    17,
+    5.01
+   ]
+  },
+  {
+   "text": "EQ SP ON Ø92 B.C.",
+   "x": 587.72,
+   "y": 372.66,
+   "angle": 0,
+   "bbox": [
+    587.72,
+    369.46,
+    614.92,
+    373.3
+   ],
+   "owner": [
+    "run",
+    18,
+    4.7
+   ]
+  },
+  {
+   "text": "R4 (2 PL)",
+   "x": 891.97,
+   "y": 241.89,
+   "angle": 0,
+   "bbox": [
+    891.97,
+    238.69,
+    906.37,
+    242.53
+   ],
+   "owner": null
+  },
+  {
+   "text": "TITLE",
+   "x": 676.54,
+   "y": 657.64,
+   "angle": 0,
+   "bbox": [
+    676.54,
+    654.64,
+    684.04,
+    658.24
+   ],
+   "owner": null
+  },
+  {
+   "text": "FLANGE, MOUNTING",
+   "x": 827.72,
+   "y": 657.64,
+   "angle": 0,
+   "bbox": [
+    827.72,
+    654.64,
+    851.72,
+    658.24
+   ],
+   "owner": [
+    "run",
+    32,
+    4.54
+   ]
+  },
+  {
+   "text": "PART NO",
+   "x": 676.54,
+   "y": 687.87,
+   "angle": 0,
+   "bbox": [
+    676.54,
+    684.87,
+    687.04,
+    688.47
+   ],
+   "owner": null
+  },
+  {
+   "text": "FL-2040-A",
+   "x": 827.72,
+   "y": 687.87,
+   "angle": 0,
+   "bbox": [
+    827.72,
+    684.87,
+    841.22,
+    688.47
+   ],
+   "owner": null
+  },
+  {
+   "text": "REV B",
+   "x": 960.0,
+   "y": 687.87,
+   "angle": 0,
+   "bbox": [
+    960.0,
+    684.87,
+    967.5,
+    688.47
+   ],
+   "owner": null
+  },
+  {
+   "text": "MATERIAL",
+   "x": 676.54,
+   "y": 718.11,
+   "angle": 0,
+   "bbox": [
+    676.54,
+    715.11,
+    688.54,
+    718.71
+   ],
+   "owner": null
+  },
+  {
+   "text": "AL 6061-T6",
+   "x": 827.72,
+   "y": 718.11,
+   "angle": 0,
+   "bbox": [
+    827.72,
+    715.11,
+    842.72,
+    718.71
+   ],
+   "owner": null
+  },
+  {
+   "text": "SCALE 1:1",
+   "x": 960.0,
+   "y": 718.11,
+   "angle": 0,
+   "bbox": [
+    960.0,
+    715.11,
+    973.5,
+    718.71
+   ],
+   "owner": null
+  },
+  {
+   "text": "FINISH",
+   "x": 676.54,
+   "y": 748.35,
+   "angle": 0,
+   "bbox": [
+    676.54,
+    745.35,
+    685.54,
+    748.95
+   ],
+   "owner": null
+  },
+  {
+   "text": "ANODIZE CL2",
+   "x": 827.72,
+   "y": 748.35,
+   "angle": 0,
+   "bbox": [
+    827.72,
+    745.35,
+    844.22,
+    748.95
+   ],
+   "owner": null
+  },
+  {
+   "text": "SHT 1/1",
+   "x": 960.0,
+   "y": 748.35,
+   "angle": 0,
+   "bbox": [
+    960.0,
+    745.35,
+    970.5,
+    748.95
+   ],
+   "owner": null
+  },
+  {
+   "text": "NOTES: 1. BREAK ALL SHARP EDGES 0.5 MAX  2. DIMENSIONS IN MM  3. TOLERANCE ±0.2 UNLESS NOTED",
+   "x": 52.91,
+   "y": 75.59,
+   "angle": 0,
+   "bbox": [
+    52.91,
+    71.59,
+    236.91,
+    76.39
+   ],
+   "owner": null
+  }
+ ],
+ "tables": [],
+ "counts": {
+  "primitives": 113,
+  "texts": 20,
+  "nodes": 54,
+  "runs": 49,
+  "junctions": 14,
+  "tables": 0
+ }
+}

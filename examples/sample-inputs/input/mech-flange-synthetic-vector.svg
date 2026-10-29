@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210" font-family="Arial" fill="none" stroke="#000">
+<rect width="297" height="210" fill="#fff" stroke="none"/>
+<rect x="10" y="10" width="277" height="190" stroke-width="0.7"/>
+<circle cx="90" cy="100" r="60" stroke-width="0.5"/>
+<circle cx="90" cy="100" r="28" stroke-width="0.5"/>
+<circle cx="90" cy="100" r="46" stroke-width="0.25" stroke-dasharray="4 1.5 0.5 1.5"/>
+<circle cx="132.50" cy="117.60" r="4.5" stroke-width="0.5"/>
+<path d="M126.50,117.60 L138.50,117.60 M132.50,111.60 L132.50,123.60" stroke-width="0.18"/>
+<circle cx="107.60" cy="142.50" r="4.5" stroke-width="0.5"/>
+<path d="M101.60,142.50 L113.60,142.50 M107.60,136.50 L107.60,148.50" stroke-width="0.18"/>
+<circle cx="72.40" cy="142.50" r="4.5" stroke-width="0.5"/>
+<path d="M66.40,142.50 L78.40,142.50 M72.40,136.50 L72.40,148.50" stroke-width="0.18"/>
+<circle cx="47.50" cy="117.60" r="4.5" stroke-width="0.5"/>
+<path d="M41.50,117.60 L53.50,117.60 M47.50,111.60 L47.50,123.60" stroke-width="0.18"/>
+<circle cx="47.50" cy="82.40" r="4.5" stroke-width="0.5"/>
+<path d="M41.50,82.40 L53.50,82.40 M47.50,76.40 L47.50,88.40" stroke-width="0.18"/>
+<circle cx="72.40" cy="57.50" r="4.5" stroke-width="0.5"/>
+<path d="M66.40,57.50 L78.40,57.50 M72.40,51.50 L72.40,63.50" stroke-width="0.18"/>
+<circle cx="107.60" cy="57.50" r="4.5" stroke-width="0.5"/>
+<path d="M101.60,57.50 L113.60,57.50 M107.60,51.50 L107.60,63.50" stroke-width="0.18"/>
+<circle cx="132.50" cy="82.40" r="4.5" stroke-width="0.5"/>
+<path d="M126.50,82.40 L138.50,82.40 M132.50,76.40 L132.50,88.40" stroke-width="0.18"/>
+<path d="M24,100 L156,100 M90,34 L90,166" stroke-width="0.18" stroke-dasharray="6 1.5 1 1.5"/>
+<path d="M200,40 L214,40 L214,66 Q214,70 218,70 L234,70 L234,130 L218,130 Q214,130 214,134 L214,160 L200,160 Z" stroke-width="0.5"/>
+<path d="M200,72 L234,72 M200,128 L234,128" stroke-width="0.5"/>
+<path d="M200,42 L214,28" stroke-width="0.15"/>
+<path d="M200,46 L214,32" stroke-width="0.15"/>
+<path d="M200,50 L214,36" stroke-width="0.15"/>
+<path d="M200,54 L214,40" stroke-width="0.15"/>
+<path d="M200,58 L214,44" stroke-width="0.15"/>
+<path d="M200,62 L214,48" stroke-width="0.15"/>
+<path d="M200,66 L214,52" stroke-width="0.15"/>
+<path d="M200,70 L214,56" stroke-width="0.15"/>
+<path d="M200,74 L214,60" stroke-width="0.15"/>
+<path d="M200,78 L214,64" stroke-width="0.15"/>
+<path d="M200,82 L214,68" stroke-width="0.15"/>
+<path d="M200,86 L214,72" stroke-width="0.15"/>
+<path d="M200,90 L214,76" stroke-width="0.15"/>
+<path d="M200,94 L214,80" stroke-width="0.15"/>
+<path d="M200,98 L214,84" stroke-width="0.15"/>
+<path d="M200,102 L214,88" stroke-width="0.15"/>
+<path d="M200,106 L214,92" stroke-width="0.15"/>
+<path d="M200,110 L214,96" stroke-width="0.15"/>
+<path d="M200,114 L214,100" stroke-width="0.15"/>
+<path d="M200,118 L214,104" stroke-width="0.15"/>
+<path d="M200,122 L214,108" stroke-width="0.15"/>
+<path d="M200,126 L214,112" stroke-width="0.15"/>
+<path d="M200,130 L214,116" stroke-width="0.15"/>
+<path d="M200,134 L214,120" stroke-width="0.15"/>
+<path d="M200,138 L214,124" stroke-width="0.15"/>
+<path d="M200,142 L214,128" stroke-width="0.15"/>
+<path d="M200,146 L214,132" stroke-width="0.15"/>
+<path d="M200,150 L214,136" stroke-width="0.15"/>
+<path d="M200,154 L214,140" stroke-width="0.15"/>
+<path d="M200,158 L214,144" stroke-width="0.15"/>
+<path d="M30,172 L150,172" stroke-width="0.18"/>
+<path d="M30,172 l2,-1 l0,2 z M150,172 l-2,-1 l0,2 z" fill="#000" stroke="none"/>
+<text x="90.0" y="170.8" font-size="3.2" fill="#000" stroke="none" text-anchor="middle">Ø120</text>
+<path d="M30,162 L30,174 M150,162 L150,174" stroke-width="0.18"/>
+<path d="M62,28 L118,28" stroke-width="0.18"/>
+<path d="M62,28 l2,-1 l0,2 z M118,28 l-2,-1 l0,2 z" fill="#000" stroke="none"/>
+<text x="90.0" y="26.8" font-size="3.2" fill="#000" stroke="none" text-anchor="middle">Ø56 H7</text>
+<path d="M62,38 L62,26 M118,38 L118,26" stroke-width="0.18"/>
+<path d="M200,28 L214,28" stroke-width="0.18"/>
+<path d="M200,28 l2,-1 l0,2 z M214,28 l-2,-1 l0,2 z" fill="#000" stroke="none"/>
+<text x="207.0" y="26.8" font-size="3.2" fill="#000" stroke="none" text-anchor="middle">14</text>
+<path d="M244,40 L244,160" stroke-width="0.18"/>
+<path d="M244,40 l-1,2 l2,0 z M244,160 l-1,-2 l2,0 z" fill="#000" stroke="none"/>
+<text x="244.0" y="100.0" font-size="3.2" fill="#000" stroke="none" text-anchor="middle" transform="rotate(-90 244.0 100.0)">120</text>
+<path d="M200,172 L234,172" stroke-width="0.18"/>
+<path d="M200,172 l2,-1 l0,2 z M234,172 l-2,-1 l0,2 z" fill="#000" stroke="none"/>
+<text x="217.0" y="170.8" font-size="3.2" fill="#000" stroke="none" text-anchor="middle">34</text>
+<path d="M135.50,114.60 L154.50,95.60 L172.50,95.60" stroke-width="0.18"/>
+<text x="155.50" y="94.10" font-size="3.2" fill="#000" stroke="none">8 x Ø9 THRU</text>
+<text x="155.50" y="98.60" font-size="3.2" fill="#000" stroke="none">EQ SP ON Ø92 B.C.</text>
+<text x="236" y="64" font-size="3.2" fill="#000" stroke="none">R4 (2 PL)</text>
+<path d="M235,65 L217,69" stroke-width="0.18"/>
+<rect x="177" y="168" width="110" height="32" stroke-width="0.5"/>
+<path d="M177,176 L287,176 M177,184 L287,184 M177,192 L287,192 M217,168 L217,200 M252,176 L252,200" stroke-width="0.3"/>
+<text x="179" y="174" font-size="3" fill="#000" stroke="none">TITLE</text><text x="219" y="174" font-size="3" fill="#000" stroke="none">FLANGE, MOUNTING</text><text x="254" y="174" font-size="3" fill="#000" stroke="none"></text>
+<text x="179" y="182" font-size="3" fill="#000" stroke="none">PART NO</text><text x="219" y="182" font-size="3" fill="#000" stroke="none">FL-2040-A</text><text x="254" y="182" font-size="3" fill="#000" stroke="none">REV B</text>
+<text x="179" y="190" font-size="3" fill="#000" stroke="none">MATERIAL</text><text x="219" y="190" font-size="3" fill="#000" stroke="none">AL 6061-T6</text><text x="254" y="190" font-size="3" fill="#000" stroke="none">SCALE 1:1</text>
+<text x="179" y="198" font-size="3" fill="#000" stroke="none">FINISH</text><text x="219" y="198" font-size="3" fill="#000" stroke="none">ANODIZE CL2</text><text x="254" y="198" font-size="3" fill="#000" stroke="none">SHT 1/1</text>
+<text x="14" y="20" font-size="4" font-weight="bold" fill="#000" stroke="none">NOTES: 1. BREAK ALL SHARP EDGES 0.5 MAX  2. DIMENSIONS IN MM  3. TOLERANCE ±0.2 UNLESS NOTED</text>
+</svg>

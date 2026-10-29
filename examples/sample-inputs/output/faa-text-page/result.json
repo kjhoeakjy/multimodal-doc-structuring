@@ -1,0 +1,2612 @@
+{
+ "name": "faa-text-page.jpg",
+ "plan": {
+  "threads": 2,
+  "batch": 8,
+  "max_mp": 12.0,
+  "det_scale": 1.0,
+  "snapshot": {
+   "cores": 4,
+   "total_gb": 15.7,
+   "avail_gb": 14.4,
+   "cpu_busy": 2.0
+  },
+  "why": [
+   "코어 4개 중 2개 사용(절반)",
+   "가용 메모리 14.4 GB → 인식 배치 8, 입력 상한 12 MP",
+   "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
+  ]
+ },
+ "steps": [],
+ "kind": "page",
+ "png": "input_gray.png",
+ "dpi": 111,
+ "detect": {
+  "px": [
+   918,
+   1188
+  ],
+  "resized": false,
+  "midtone": 0.145,
+  "ink": 0.087,
+  "text_ink": 0.67,
+  "axis_ink": 0.33,
+  "free_ink": 0.0,
+  "long_lines": 27,
+  "big_circles": 0,
+  "texts": 209,
+  "reason": "문자 잉크 67%, 그 밖 잉크 0%",
+  "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
+  "ocr_lang": "en",
+  "skew_deg": 0.0
+ },
+ "texts": [
+  {
+   "text": "9/8/98",
+   "conf": 1.0,
+   "box": [
+    116,
+    75,
+    163,
+    94
+   ]
+  },
+  {
+   "text": "AC 43.13-1B",
+   "conf": 0.69,
+   "box": [
+    732,
+    75,
+    823,
+    94
+   ]
+  },
+  {
+   "text": "TABLE 7-[. Recommended torque values (inch-pounds).",
+   "conf": 0.79,
+   "box": [
+    116,
+    110,
+    459,
+    131
+   ]
+  },
+  {
+   "text": "CAUTION",
+   "conf": 0.7,
+   "box": [
+    444,
+    147,
+    502,
+    162
+   ]
+  },
+  {
+   "text": "THE FOLLOWING TORQUE VALUES ARE DERIVED FROM OIL FREE CADMIUM PLATED THREADS:",
+   "conf": 0.79,
+   "box": [
+    193,
+    160,
+    753,
+    177
+   ]
+  },
+  {
+   "text": "TORQUE LIMITS RECOMMENDED FOR INSTAL-",
+   "conf": 0.71,
+   "box": [
+    257,
+    189,
+    545,
+    205
+   ]
+  },
+  {
+   "text": "MAXIMUM",
+   "conf": 1.0,
+   "box": [
+    557,
+    189,
+    619,
+    205
+   ]
+  },
+  {
+   "text": "ALLOWABLE",
+   "conf": 1.0,
+   "box": [
+    643,
+    189,
+    721,
+    204
+   ]
+  },
+  {
+   "text": "TIGHTENING",
+   "conf": 0.86,
+   "box": [
+    744,
+    189,
+    821,
+    205
+   ]
+  },
+  {
+   "text": "LAMONBOLISLOADED PRIMARILY IN SHEAR)",
+   "conf": 0.65,
+   "box": [
+    257,
+    204,
+    535,
+    221
+   ]
+  },
+  {
+   "text": "JORQUE LIMIS",
+   "conf": 0.66,
+   "box": [
+    556,
+    204,
+    654,
+    221
+   ]
+  },
+  {
+   "text": "Thread Size",
+   "conf": 0.99,
+   "box": [
+    125,
+    228,
+    193,
+    243
+   ]
+  },
+  {
+   "text": "Tension",
+   "conf": 1.0,
+   "box": [
+    239,
+    228,
+    286,
+    243
+   ]
+  },
+  {
+   "text": "type",
+   "conf": 0.99,
+   "box": [
+    304,
+    229,
+    331,
+    246
+   ]
+  },
+  {
+   "text": "nuts",
+   "conf": 1.0,
+   "box": [
+    351,
+    229,
+    378,
+    243
+   ]
+  },
+  {
+   "text": "Shear type nuts MS20364",
+   "conf": 0.84,
+   "box": [
+    390,
+    227,
+    543,
+    245
+   ]
+  },
+  {
+   "text": "Nuts",
+   "conf": 1.0,
+   "box": [
+    556,
+    228,
+    586,
+    245
+   ]
+  },
+  {
+   "text": "MS20365",
+   "conf": 0.93,
+   "box": [
+    596,
+    228,
+    651,
+    245
+   ]
+  },
+  {
+   "text": "and",
+   "conf": 1.0,
+   "box": [
+    660,
+    229,
+    685,
+    243
+   ]
+  },
+  {
+   "text": "Nuts",
+   "conf": 1.0,
+   "box": [
+    697,
+    228,
+    727,
+    245
+   ]
+  },
+  {
+   "text": "MS20364",
+   "conf": 0.99,
+   "box": [
+    735,
+    228,
+    789,
+    245
+   ]
+  },
+  {
+   "text": "and",
+   "conf": 1.0,
+   "box": [
+    796,
+    229,
+    821,
+    243
+   ]
+  },
+  {
+   "text": "MS20365",
+   "conf": 0.88,
+   "box": [
+    239,
+    241,
+    294,
+    258
+   ]
+  },
+  {
+   "text": "and",
+   "conf": 1.0,
+   "box": [
+    303,
+    243,
+    329,
+    258
+   ]
+  },
+  {
+   "text": "AN310",
+   "conf": 0.96,
+   "box": [
+    337,
+    241,
+    378,
+    258
+   ]
+  },
+  {
+   "text": "and AN320 (24,000 psi  in",
+   "conf": 0.54,
+   "box": [
+    391,
+    241,
+    545,
+    261
+   ]
+  },
+  {
+   "text": "AN31O (90,000  psi   in",
+   "conf": 0.34,
+   "box": [
+    557,
+    241,
+    685,
+    259
+   ]
+  },
+  {
+   "text": "AN320 (54,000 psi in",
+   "conf": 0.68,
+   "box": [
+    697,
+    241,
+    821,
+    259
+   ]
+  },
+  {
+   "text": "(40 OOOpsiin bols)",
+   "conf": 0.62,
+   "box": [
+    239,
+    256,
+    345,
+    273
+   ]
+  },
+  {
+   "text": "bolts)",
+   "conf": 0.93,
+   "box": [
+    391,
+    256,
+    425,
+    273
+   ]
+  },
+  {
+   "text": "bolts)",
+   "conf": 0.54,
+   "box": [
+    556,
+    256,
+    590,
+    273
+   ]
+  },
+  {
+   "text": "bolts)",
+   "conf": 0.69,
+   "box": [
+    697,
+    257,
+    730,
+    271
+   ]
+  },
+  {
+   "text": "FINE THREAD SERIES",
+   "conf": 0.76,
+   "box": [
+    408,
+    280,
+    538,
+    297
+   ]
+  },
+  {
+   "text": "8-36",
+   "conf": 1.0,
+   "box": [
+    124,
+    308,
+    154,
+    323
+   ]
+  },
+  {
+   "text": "12-15",
+   "conf": 0.66,
+   "box": [
+    292,
+    308,
+    326,
+    325
+   ]
+  },
+  {
+   "text": "7-9",
+   "conf": 0.33,
+   "box": [
+    456,
+    308,
+    478,
+    323
+   ]
+  },
+  {
+   "text": "20",
+   "conf": 1.0,
+   "box": [
+    612,
+    308,
+    630,
+    323
+   ]
+  },
+  {
+   "text": "12",
+   "conf": 1.0,
+   "box": [
+    751,
+    308,
+    769,
+    323
+   ]
+  },
+  {
+   "text": "10-32",
+   "conf": 0.99,
+   "box": [
+    125,
+    321,
+    159,
+    338
+   ]
+  },
+  {
+   "text": "20-25",
+   "conf": 0.93,
+   "box": [
+    291,
+    323,
+    326,
+    338
+   ]
+  },
+  {
+   "text": "12-15",
+   "conf": 1.0,
+   "box": [
+    451,
+    321,
+    485,
+    338
+   ]
+  },
+  {
+   "text": "40",
+   "conf": 1.0,
+   "box": [
+    612,
+    323,
+    630,
+    338
+   ]
+  },
+  {
+   "text": "25",
+   "conf": 1.0,
+   "box": [
+    749,
+    323,
+    769,
+    338
+   ]
+  },
+  {
+   "text": "1/4-28",
+   "conf": 0.98,
+   "box": [
+    125,
+    336,
+    163,
+    351
+   ]
+  },
+  {
+   "text": "50-70",
+   "conf": 1.0,
+   "box": [
+    291,
+    336,
+    326,
+    353
+   ]
+  },
+  {
+   "text": "30-40",
+   "conf": 0.91,
+   "box": [
+    451,
+    336,
+    485,
+    351
+   ]
+  },
+  {
+   "text": "100",
+   "conf": 1.0,
+   "box": [
+    609,
+    336,
+    634,
+    351
+   ]
+  },
+  {
+   "text": "60",
+   "conf": 1.0,
+   "box": [
+    749,
+    336,
+    769,
+    351
+   ]
+  },
+  {
+   "text": "5/16-24",
+   "conf": 1.0,
+   "box": [
+    124,
+    349,
+    169,
+    366
+   ]
+  },
+  {
+   "text": "100-140",
+   "conf": 0.99,
+   "box": [
+    285,
+    351,
+    333,
+    366
+   ]
+  },
+  {
+   "text": "60-85",
+   "conf": 0.88,
+   "box": [
+    449,
+    351,
+    485,
+    366
+   ]
+  },
+  {
+   "text": "225",
+   "conf": 1.0,
+   "box": [
+    608,
+    351,
+    633,
+    366
+   ]
+  },
+  {
+   "text": "140",
+   "conf": 1.0,
+   "box": [
+    747,
+    351,
+    771,
+    366
+   ]
+  },
+  {
+   "text": "3/8-24",
+   "conf": 0.78,
+   "box": [
+    124,
+    364,
+    163,
+    381
+   ]
+  },
+  {
+   "text": "160-190",
+   "conf": 0.89,
+   "box": [
+    285,
+    364,
+    333,
+    381
+   ]
+  },
+  {
+   "text": "95-110",
+   "conf": 0.97,
+   "box": [
+    447,
+    364,
+    489,
+    379
+   ]
+  },
+  {
+   "text": "390",
+   "conf": 1.0,
+   "box": [
+    608,
+    364,
+    633,
+    379
+   ]
+  },
+  {
+   "text": "240",
+   "conf": 0.87,
+   "box": [
+    747,
+    364,
+    771,
+    379
+   ]
+  },
+  {
+   "text": "7/16-20",
+   "conf": 1.0,
+   "box": [
+    124,
+    377,
+    170,
+    394
+   ]
+  },
+  {
+   "text": "450-500",
+   "conf": 0.92,
+   "box": [
+    284,
+    379,
+    333,
+    394
+   ]
+  },
+  {
+   "text": "270-300",
+   "conf": 0.98,
+   "box": [
+    443,
+    379,
+    491,
+    394
+   ]
+  },
+  {
+   "text": "840",
+   "conf": 1.0,
+   "box": [
+    608,
+    379,
+    634,
+    394
+   ]
+  },
+  {
+   "text": "500",
+   "conf": 0.99,
+   "box": [
+    747,
+    379,
+    771,
+    394
+   ]
+  },
+  {
+   "text": "1/2-20",
+   "conf": 0.98,
+   "box": [
+    125,
+    391,
+    163,
+    407
+   ]
+  },
+  {
+   "text": "480-690",
+   "conf": 0.99,
+   "box": [
+    284,
+    391,
+    333,
+    407
+   ]
+  },
+  {
+   "text": "290-410",
+   "conf": 0.66,
+   "box": [
+    443,
+    391,
+    491,
+    407
+   ]
+  },
+  {
+   "text": "1100",
+   "conf": 1.0,
+   "box": [
+    605,
+    391,
+    637,
+    407
+   ]
+  },
+  {
+   "text": "660",
+   "conf": 1.0,
+   "box": [
+    747,
+    391,
+    771,
+    407
+   ]
+  },
+  {
+   "text": "9/16-18",
+   "conf": 1.0,
+   "box": [
+    124,
+    405,
+    170,
+    421
+   ]
+  },
+  {
+   "text": "800-1000",
+   "conf": 0.93,
+   "box": [
+    281,
+    405,
+    335,
+    421
+   ]
+  },
+  {
+   "text": "480-600",
+   "conf": 1.0,
+   "box": [
+    444,
+    405,
+    491,
+    421
+   ]
+  },
+  {
+   "text": "1600",
+   "conf": 1.0,
+   "box": [
+    605,
+    405,
+    637,
+    421
+   ]
+  },
+  {
+   "text": "960",
+   "conf": 1.0,
+   "box": [
+    747,
+    405,
+    771,
+    421
+   ]
+  },
+  {
+   "text": "5/8-18",
+   "conf": 1.0,
+   "box": [
+    125,
+    419,
+    163,
+    435
+   ]
+  },
+  {
+   "text": "1100-1300",
+   "conf": 0.97,
+   "box": [
+    279,
+    419,
+    339,
+    435
+   ]
+  },
+  {
+   "text": "600-780",
+   "conf": 1.0,
+   "box": [
+    444,
+    419,
+    491,
+    435
+   ]
+  },
+  {
+   "text": "2400",
+   "conf": 1.0,
+   "box": [
+    605,
+    419,
+    637,
+    435
+   ]
+  },
+  {
+   "text": "1400",
+   "conf": 1.0,
+   "box": [
+    744,
+    419,
+    775,
+    435
+   ]
+  },
+  {
+   "text": "3/4-16",
+   "conf": 0.99,
+   "box": [
+    124,
+    433,
+    163,
+    449
+   ]
+  },
+  {
+   "text": "2300-2500",
+   "conf": 1.0,
+   "box": [
+    277,
+    433,
+    339,
+    449
+   ]
+  },
+  {
+   "text": "1300-1500",
+   "conf": 0.99,
+   "box": [
+    437,
+    433,
+    498,
+    449
+   ]
+  },
+  {
+   "text": "5o00",
+   "conf": 0.32,
+   "box": [
+    605,
+    433,
+    637,
+    449
+   ]
+  },
+  {
+   "text": "3000",
+   "conf": 0.99,
+   "box": [
+    744,
+    433,
+    775,
+    449
+   ]
+  },
+  {
+   "text": "7/8-14",
+   "conf": 0.62,
+   "box": [
+    124,
+    447,
+    163,
+    463
+   ]
+  },
+  {
+   "text": "2500-3000",
+   "conf": 0.83,
+   "box": [
+    277,
+    446,
+    339,
+    463
+   ]
+  },
+  {
+   "text": "1500-1800",
+   "conf": 1.0,
+   "box": [
+    437,
+    447,
+    498,
+    463
+   ]
+  },
+  {
+   "text": "7000",
+   "conf": 0.98,
+   "box": [
+    605,
+    447,
+    637,
+    463
+   ]
+  },
+  {
+   "text": "4200",
+   "conf": 1.0,
+   "box": [
+    744,
+    447,
+    775,
+    463
+   ]
+  },
+  {
+   "text": "1-14",
+   "conf": 0.99,
+   "box": [
+    125,
+    461,
+    154,
+    477
+   ]
+  },
+  {
+   "text": "3700-5500",
+   "conf": 0.99,
+   "box": [
+    277,
+    460,
+    339,
+    477
+   ]
+  },
+  {
+   "text": "2200-3300*",
+   "conf": 0.93,
+   "box": [
+    435,
+    461,
+    499,
+    477
+   ]
+  },
+  {
+   "text": "10,000",
+   "conf": 0.97,
+   "box": [
+    601,
+    461,
+    641,
+    477
+   ]
+  },
+  {
+   "text": "6000",
+   "conf": 0.97,
+   "box": [
+    744,
+    461,
+    775,
+    477
+   ]
+  },
+  {
+   "text": "1-1/8-12",
+   "conf": 1.0,
+   "box": [
+    125,
+    475,
+    173,
+    491
+   ]
+  },
+  {
+   "text": "5000-7000",
+   "conf": 0.99,
+   "box": [
+    277,
+    474,
+    339,
+    491
+   ]
+  },
+  {
+   "text": "3000-4200*",
+   "conf": 0.92,
+   "box": [
+    435,
+    475,
+    499,
+    491
+   ]
+  },
+  {
+   "text": "15,000",
+   "conf": 0.99,
+   "box": [
+    601,
+    475,
+    642,
+    491
+   ]
+  },
+  {
+   "text": "9000",
+   "conf": 0.98,
+   "box": [
+    744,
+    475,
+    775,
+    491
+   ]
+  },
+  {
+   "text": "1-1/4-12",
+   "conf": 0.99,
+   "box": [
+    125,
+    489,
+    173,
+    505
+   ]
+  },
+  {
+   "text": "9000-11,000",
+   "conf": 0.98,
+   "box": [
+    273,
+    489,
+    343,
+    505
+   ]
+  },
+  {
+   "text": "5400-6600*",
+   "conf": 0.61,
+   "box": [
+    435,
+    489,
+    499,
+    505
+   ]
+  },
+  {
+   "text": "25,000",
+   "conf": 0.94,
+   "box": [
+    600,
+    489,
+    641,
+    505
+   ]
+  },
+  {
+   "text": "15,000",
+   "conf": 1.0,
+   "box": [
+    739,
+    489,
+    779,
+    505
+   ]
+  },
+  {
+   "text": "COARSE THREAD SERIES",
+   "conf": 1.0,
+   "box": [
+    396,
+    517,
+    549,
+    533
+   ]
+  },
+  {
+   "text": "8-32",
+   "conf": 0.65,
+   "box": [
+    124,
+    545,
+    154,
+    561
+   ]
+  },
+  {
+   "text": "1215",
+   "conf": 1.0,
+   "box": [
+    291,
+    545,
+    326,
+    561
+   ]
+  },
+  {
+   "text": "7-9",
+   "conf": 0.86,
+   "box": [
+    456,
+    545,
+    479,
+    561
+   ]
+  },
+  {
+   "text": "20",
+   "conf": 0.67,
+   "box": [
+    612,
+    545,
+    630,
+    561
+   ]
+  },
+  {
+   "text": "12",
+   "conf": 1.0,
+   "box": [
+    751,
+    545,
+    769,
+    561
+   ]
+  },
+  {
+   "text": "10-24",
+   "conf": 0.91,
+   "box": [
+    125,
+    559,
+    159,
+    575
+   ]
+  },
+  {
+   "text": "20-25",
+   "conf": 0.94,
+   "box": [
+    291,
+    560,
+    326,
+    575
+   ]
+  },
+  {
+   "text": "12-15",
+   "conf": 0.86,
+   "box": [
+    451,
+    559,
+    485,
+    575
+   ]
+  },
+  {
+   "text": "35",
+   "conf": 1.0,
+   "box": [
+    612,
+    560,
+    630,
+    574
+   ]
+  },
+  {
+   "text": "21",
+   "conf": 1.0,
+   "box": [
+    749,
+    559,
+    767,
+    575
+   ]
+  },
+  {
+   "text": "1/4-20",
+   "conf": 0.99,
+   "box": [
+    125,
+    573,
+    163,
+    589
+   ]
+  },
+  {
+   "text": "40-50",
+   "conf": 0.87,
+   "box": [
+    291,
+    573,
+    326,
+    589
+   ]
+  },
+  {
+   "text": "25-30",
+   "conf": 0.95,
+   "box": [
+    449,
+    573,
+    485,
+    589
+   ]
+  },
+  {
+   "text": "75",
+   "conf": 1.0,
+   "box": [
+    612,
+    573,
+    630,
+    589
+   ]
+  },
+  {
+   "text": "45",
+   "conf": 1.0,
+   "box": [
+    749,
+    573,
+    769,
+    589
+   ]
+  },
+  {
+   "text": "5/16-18",
+   "conf": 1.0,
+   "box": [
+    124,
+    587,
+    170,
+    603
+   ]
+  },
+  {
+   "text": "80-90",
+   "conf": 0.99,
+   "box": [
+    291,
+    587,
+    326,
+    603
+   ]
+  },
+  {
+   "text": "48-55",
+   "conf": 1.0,
+   "box": [
+    449,
+    587,
+    485,
+    603
+   ]
+  },
+  {
+   "text": "160",
+   "conf": 1.0,
+   "box": [
+    609,
+    587,
+    634,
+    603
+   ]
+  },
+  {
+   "text": "100",
+   "conf": 1.0,
+   "box": [
+    747,
+    587,
+    771,
+    603
+   ]
+  },
+  {
+   "text": "3/8-16",
+   "conf": 0.91,
+   "box": [
+    124,
+    601,
+    163,
+    617
+   ]
+  },
+  {
+   "text": "160-185",
+   "conf": 1.0,
+   "box": [
+    285,
+    601,
+    333,
+    617
+   ]
+  },
+  {
+   "text": "95-100",
+   "conf": 0.78,
+   "box": [
+    447,
+    601,
+    489,
+    617
+   ]
+  },
+  {
+   "text": "275",
+   "conf": 1.0,
+   "box": [
+    608,
+    601,
+    633,
+    617
+   ]
+  },
+  {
+   "text": "170",
+   "conf": 1.0,
+   "box": [
+    747,
+    601,
+    771,
+    617
+   ]
+  },
+  {
+   "text": "7/16-14",
+   "conf": 0.98,
+   "box": [
+    124,
+    615,
+    169,
+    631
+   ]
+  },
+  {
+   "text": "235-255",
+   "conf": 0.79,
+   "box": [
+    284,
+    615,
+    333,
+    631
+   ]
+  },
+  {
+   "text": "140-155",
+   "conf": 1.0,
+   "box": [
+    444,
+    615,
+    491,
+    631
+   ]
+  },
+  {
+   "text": "475",
+   "conf": 1.0,
+   "box": [
+    608,
+    615,
+    633,
+    631
+   ]
+  },
+  {
+   "text": "280",
+   "conf": 0.95,
+   "box": [
+    747,
+    616,
+    771,
+    631
+   ]
+  },
+  {
+   "text": "1/2-13",
+   "conf": 0.83,
+   "box": [
+    125,
+    629,
+    163,
+    645
+   ]
+  },
+  {
+   "text": "400-480",
+   "conf": 0.63,
+   "box": [
+    285,
+    629,
+    333,
+    645
+   ]
+  },
+  {
+   "text": "240-290",
+   "conf": 1.0,
+   "box": [
+    444,
+    629,
+    491,
+    645
+   ]
+  },
+  {
+   "text": "880",
+   "conf": 1.0,
+   "box": [
+    608,
+    629,
+    634,
+    645
+   ]
+  },
+  {
+   "text": "520",
+   "conf": 1.0,
+   "box": [
+    747,
+    629,
+    771,
+    645
+   ]
+  },
+  {
+   "text": "9/16-12",
+   "conf": 0.99,
+   "box": [
+    124,
+    643,
+    170,
+    659
+   ]
+  },
+  {
+   "text": "500-700",
+   "conf": 0.62,
+   "box": [
+    285,
+    643,
+    333,
+    659
+   ]
+  },
+  {
+   "text": "300-420",
+   "conf": 0.98,
+   "box": [
+    444,
+    643,
+    491,
+    659
+   ]
+  },
+  {
+   "text": "1100",
+   "conf": 1.0,
+   "box": [
+    607,
+    643,
+    637,
+    659
+   ]
+  },
+  {
+   "text": "650",
+   "conf": 1.0,
+   "box": [
+    747,
+    644,
+    771,
+    659
+   ]
+  },
+  {
+   "text": "5/8-11",
+   "conf": 0.68,
+   "box": [
+    125,
+    656,
+    162,
+    673
+   ]
+  },
+  {
+   "text": "700-900",
+   "conf": 0.71,
+   "box": [
+    284,
+    656,
+    333,
+    671
+   ]
+  },
+  {
+   "text": "420-540",
+   "conf": 0.95,
+   "box": [
+    443,
+    656,
+    491,
+    673
+   ]
+  },
+  {
+   "text": "1500",
+   "conf": 1.0,
+   "box": [
+    605,
+    656,
+    637,
+    673
+   ]
+  },
+  {
+   "text": "900",
+   "conf": 0.99,
+   "box": [
+    747,
+    656,
+    771,
+    671
+   ]
+  },
+  {
+   "text": "3/4-10",
+   "conf": 0.95,
+   "box": [
+    124,
+    669,
+    163,
+    686
+   ]
+  },
+  {
+   "text": "1150-1600",
+   "conf": 1.0,
+   "box": [
+    279,
+    669,
+    339,
+    686
+   ]
+  },
+  {
+   "text": "700-950",
+   "conf": 0.91,
+   "box": [
+    444,
+    671,
+    491,
+    686
+   ]
+  },
+  {
+   "text": "2500",
+   "conf": 1.0,
+   "box": [
+    605,
+    671,
+    637,
+    686
+   ]
+  },
+  {
+   "text": "1500",
+   "conf": 1.0,
+   "box": [
+    744,
+    671,
+    775,
+    686
+   ]
+  },
+  {
+   "text": "7/8-9",
+   "conf": 0.98,
+   "box": [
+    124,
+    684,
+    157,
+    701
+   ]
+  },
+  {
+   "text": "2200-3000",
+   "conf": 0.78,
+   "box": [
+    277,
+    684,
+    339,
+    700
+   ]
+  },
+  {
+   "text": "1300-1800",
+   "conf": 1.0,
+   "box": [
+    437,
+    684,
+    498,
+    701
+   ]
+  },
+  {
+   "text": "4600",
+   "conf": 1.0,
+   "box": [
+    605,
+    684,
+    637,
+    699
+   ]
+  },
+  {
+   "text": "2700",
+   "conf": 1.0,
+   "box": [
+    743,
+    684,
+    775,
+    701
+   ]
+  },
+  {
+   "text": "The above torque values may be used for all cadmium-plated steel nuts of Ihe fine Or coarse thread series which",
+   "conf": 0.64,
+   "box": [
+    215,
+    711,
+    821,
+    731
+   ]
+  },
+  {
+   "text": "have approximately equal number of threads and equal face bearing areas.",
+   "conf": 0.79,
+   "box": [
+    216,
+    724,
+    607,
+    745
+   ]
+  },
+  {
+   "text": "Estimated corresponding values.",
+   "conf": 0.72,
+   "box": [
+    228,
+    738,
+    401,
+    758
+   ]
+  },
+  {
+   "text": "7-44.",
+   "conf": 0.98,
+   "box": [
+    116,
+    787,
+    159,
+    806
+   ]
+  },
+  {
+   "text": "CLOSE-TOLERANCE BOLTS",
+   "conf": 0.81,
+   "box": [
+    171,
+    785,
+    427,
+    806
+   ]
+  },
+  {
+   "text": "of bolt may require light tapping with a mallet",
+   "conf": 0.95,
+   "box": [
+    476,
+    783,
+    826,
+    810
+   ]
+  },
+  {
+   "text": "Close-tolerance;",
+   "conf": 0.92,
+   "box": [
+    116,
+    806,
+    238,
+    827
+   ]
+  },
+  {
+   "text": "hex",
+   "conf": 1.0,
+   "box": [
+    249,
+    807,
+    281,
+    827
+   ]
+  },
+  {
+   "text": "head",
+   "conf": 1.0,
+   "box": [
+    291,
+    807,
+    331,
+    827
+   ]
+  },
+  {
+   "text": "machine",
+   "conf": 1.0,
+   "box": [
+    344,
+    807,
+    411,
+    827
+   ]
+  },
+  {
+   "text": "bolts",
+   "conf": 1.0,
+   "box": [
+    421,
+    807,
+    462,
+    827
+   ]
+  },
+  {
+   "text": "to set the bolt shank into the bolt hole:",
+   "conf": 0.86,
+   "box": [
+    477,
+    807,
+    759,
+    827
+   ]
+  },
+  {
+   "text": "(ANI73 through ANI86). 1O0-degree counter -",
+   "conf": 0.45,
+   "box": [
+    115,
+    824,
+    462,
+    854
+   ]
+  },
+  {
+   "text": "sunk head, close-tolerance, high-strength bolts",
+   "conf": 0.67,
+   "box": [
+    115,
+    847,
+    463,
+    874
+   ]
+  },
+  {
+   "text": "NOTE:   Elimination of friction in in-",
+   "conf": 0.78,
+   "box": [
+    498,
+    849,
+    802,
+    870
+   ]
+  },
+  {
+   "text": "(NAS333 through NAS340), hex head, close-",
+   "conf": 0.66,
+   "box": [
+    114,
+    868,
+    462,
+    895
+   ]
+  },
+  {
+   "text": "terference fit applications may some-",
+   "conf": 0.61,
+   "box": [
+    498,
+    867,
+    802,
+    896
+   ]
+  },
+  {
+   "text": "tolerance;   short   thread,  titanium  alloy bolts",
+   "conf": 0.52,
+   "box": [
+    114,
+    889,
+    463,
+    917
+   ]
+  },
+  {
+   "text": "times be attained by placing the bolt",
+   "conf": 0.6,
+   "box": [
+    498,
+    890,
+    804,
+    918
+   ]
+  },
+  {
+   "text": "(NAS653",
+   "conf": 0.93,
+   "box": [
+    116,
+    913,
+    190,
+    934
+   ]
+  },
+  {
+   "text": "through",
+   "conf": 1.0,
+   "box": [
+    204,
+    912,
+    268,
+    938
+   ]
+  },
+  {
+   "text": "NAS6S8),",
+   "conf": 0.88,
+   "box": [
+    280,
+    912,
+    362,
+    936
+   ]
+  },
+  {
+   "text": "100-degree",
+   "conf": 0.87,
+   "box": [
+    374,
+    909,
+    464,
+    940
+   ]
+  },
+  {
+   "text": "in",
+   "conf": 1.0,
+   "box": [
+    499,
+    913,
+    519,
+    934
+   ]
+  },
+  {
+   "text": "4",
+   "conf": 0.52,
+   "box": [
+    528,
+    917,
+    542,
+    933
+   ]
+  },
+  {
+   "text": "freezer",
+   "conf": 1.0,
+   "box": [
+    550,
+    912,
+    613,
+    936
+   ]
+  },
+  {
+   "text": "to",
+   "conf": 1.0,
+   "box": [
+    676,
+    915,
+    695,
+    933
+   ]
+  },
+  {
+   "text": "installation.",
+   "conf": 0.77,
+   "box": [
+    705,
+    913,
+    802,
+    934
+   ]
+  },
+  {
+   "text": "countersunk flathead, close-tolerance titanium",
+   "conf": 0.88,
+   "box": [
+    115,
+    932,
+    463,
+    956
+   ]
+  },
+  {
+   "text": "When this procedure is used, the bolt",
+   "conf": 0.66,
+   "box": [
+    499,
+    932,
+    804,
+    958
+   ]
+  },
+  {
+   "text": "bolts (NAS663 through NAS668), and",
+   "conf": 0.81,
+   "box": [
+    159,
+    953,
+    463,
+    980
+   ]
+  },
+  {
+   "text": "should be allowed to warm up to am-",
+   "conf": 0.88,
+   "box": [
+    498,
+    955,
+    802,
+    980
+   ]
+  },
+  {
+   "text": "drilled hex head close-tolerance titanium",
+   "conf": 0.69,
+   "box": [
+    115,
+    975,
+    422,
+    999
+   ]
+  },
+  {
+   "text": "bient temperature before torquing:",
+   "conf": 0.71,
+   "box": [
+    499,
+    976,
+    775,
+    1002
+   ]
+  },
+  {
+   "text": "bolts (NAS673 through NAS678), are used in",
+   "conf": 0.67,
+   "box": [
+    115,
+    996,
+    462,
+    1023
+   ]
+  },
+  {
+   "text": "applications   where two parts bolted together",
+   "conf": 0.66,
+   "box": [
+    115,
+    1018,
+    464,
+    1044
+   ]
+  },
+  {
+   "text": "CAUTION:",
+   "conf": 1.0,
+   "box": [
+    500,
+    1018,
+    595,
+    1039
+   ]
+  },
+  {
+   "text": "Caution",
+   "conf": 1.0,
+   "box": [
+    609,
+    1019,
+    677,
+    1039
+   ]
+  },
+  {
+   "text": "must be exer-",
+   "conf": 0.79,
+   "box": [
+    683,
+    1020,
+    801,
+    1039
+   ]
+  },
+  {
+   "text": "are",
+   "conf": 1.0,
+   "box": [
+    116,
+    1044,
+    143,
+    1059
+   ]
+  },
+  {
+   "text": "subject to severe load reversals and vibra-",
+   "conf": 0.85,
+   "box": [
+    143,
+    1039,
+    462,
+    1063
+   ]
+  },
+  {
+   "text": "cised in the use of close-tolerance bolts",
+   "conf": 0.7,
+   "box": [
+    499,
+    1041,
+    802,
+    1062
+   ]
+  },
+  {
+   "text": "tion.  Because of the interference fit, this type",
+   "conf": 0.71,
+   "box": [
+    115,
+    1060,
+    463,
+    1086
+   ]
+  },
+  {
+   "text": "for  all critical  applications,  such",
+   "conf": 0.34,
+   "box": [
+    498,
+    1059,
+    776,
+    1088
+   ]
+  },
+  {
+   "text": "4S",
+   "conf": 0.49,
+   "box": [
+    780,
+    1065,
+    801,
+    1081
+   ]
+  },
+  {
+   "text": "Par 7-43",
+   "conf": 0.89,
+   "box": [
+    116,
+    1135,
+    179,
+    1153
+   ]
+  },
+  {
+   "text": "Page 7-9",
+   "conf": 0.78,
+   "box": [
+    755,
+    1133,
+    826,
+    1157
+   ]
+  },
+  {
+   "text": "prior",
+   "conf": 1.0,
+   "box": [
+    618,
+    909,
+    669,
+    938
+   ]
+  },
+  {
+   "text": "alloy",
+   "conf": 1.0,
+   "box": [
+    113,
+    950,
+    160,
+    980
+   ]
+  },
+  {
+   "text": "alloy",
+   "conf": 1.0,
+   "box": [
+    418,
+    974,
+    463,
+    1002
+   ]
+  }
+ ],
+ "view": {
+  "url": "input_gray.png",
+  "w": 918,
+  "h": 1188,
+  "mm_per_px": 0.22882882882882882
+ },
+ "tables": [
+  {
+   "bbox": [
+    26.3,
+    30.9,
+    190.6,
+    175.1
+   ],
+   "box": [
+    115,
+    135,
+    833,
+    765
+   ],
+   "rows": [
+    [
+     "",
+     "",
+     "CAUTION THE FOLLOWING TORQUE VALUES ARE DERIVED FROM OIL FREE CADMIUM PLATED THREADS:",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "TORQUE LIMITS RECOMMENDED FOR INSTAL- LAMONBOLISLOADED PRIMARILY IN SHEAR)",
+     "MAXIMUM ALLOWABLE JORQUE LIMIS",
+     "TIGHTENING",
+     ""
+    ],
+    [
+     "Thread Size",
+     "Tension type nuts MS20365 and AN310 (40 OOOpsiin bols)",
+     "Shear type nuts MS20364 and AN320 (24,000 psi  in bolts)",
+     "Nuts MS20365 and AN31O (90,000  psi   in bolts)",
+     "Nuts MS20364 and AN320 (54,000 psi in bolts)",
+     ""
+    ],
+    [
+     "",
+     "",
+     "FINE THREAD SERIES",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "8-36 10-32 1/4-28 5/16-24 3/8-24 7/16-20 1/2-20 9/16-18 5/8-18 3/4-16 7/8-14 1-14 1-1/8-12 1-1/4-12",
+     "12-15 20-25 50-70 100-140 160-190 450-500 480-690 800-1000 1100-1300 2300-2500 2500-3000 3700-5500 5000-7000 9000-11,000",
+     "7-9 12-15 30-40 60-85 95-110 270-300 290-410 480-600 600-780 1300-1500 1500-1800 2200-3300* 3000-4200* 5400-6600*",
+     "20 40 100 225 390 840 1100 1600 2400 5o00 7000 10,000 15,000 25,000",
+     "12 25 60 140 240 500 660 960 1400 3000 4200 6000 9000 15,000",
+     ""
+    ],
+    [
+     "",
+     "",
+     "COARSE THREAD SERIES",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "8-32 10-24 1/4-20 5/16-18 3/8-16 7/16-14 1/2-13 9/16-12 5/8-11 3/4-10 7/8-9",
+     "1215 20-25 40-50 80-90 160-185 235-255 400-480 500-700 700-900 1150-1600 2200-3000",
+     "7-9 12-15 25-30 48-55 95-100 140-155 240-290 300-420 420-540 700-950 1300-1800",
+     "20 35 75 160 275 475 880 1100 1500 2500 4600",
+     "12 21 45 100 170 280 520 650 900 1500 2700",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "Estimated corresponding values.",
+     "The above torque values may be used for all cadmium-plated steel nuts of Ihe fine Or coarse thread series which have approximately equal number of threads and equal face bearing areas.",
+     "",
+     "",
+     ""
+    ]
+   ]
+  }
+ ],
+ "figures": [],
+ "paragraphs": [
+  {
+   "text": "9/8/98 AC 43.13-1B TABLE 7-[. Recommended torque values (inch-pounds).",
+   "box": [
+    116,
+    75,
+    823,
+    131
+   ],
+   "bbox_mm": [
+    26.5,
+    17.2,
+    188.3,
+    30.0
+   ]
+  },
+  {
+   "text": "7-44. CLOSE-TOLERANCE BOLTS of bolt may require light tapping with a mallet Close-tolerance; hex head machine bolts to set the bolt shank into the bolt hole: (ANI73 through ANI86). 1O0-degree counter - sunk head, close-tolerance, high-strength bolts NOTE:   Elimination of friction in in- (NAS333 through NAS340), hex head, close- terference fit applications may some- tolerance;   short   thread,  titanium  alloy bolts times be attained by placing the bolt (NAS653 through NAS6S8), 100-degree in 4 freezer prior to installation. countersunk flathead, close-tolerance titanium When this procedure is used, the bolt alloy bolts (NAS663 through NAS668), and should be allowed to warm up to am- drilled hex head close-tolerance titanium alloy bient temperature before torquing: bolts (NAS673 through NAS678), are used in applications   where two parts bolted together CAUTION: Caution must be exer- are subject to severe load reversals and vibra- cised in the use of close-tolerance bolts tion.  Because of the interference fit, this type for  all critical  applications,  such 4S",
+   "box": [
+    113,
+    783,
+    826,
+    1088
+   ],
+   "bbox_mm": [
+    25.9,
+    179.2,
+    189.0,
+    249.0
+   ]
+  },
+  {
+   "text": "Par 7-43 Page 7-9",
+   "box": [
+    116,
+    1133,
+    826,
+    1157
+   ],
+   "bbox_mm": [
+    26.5,
+    259.3,
+    189.0,
+    264.8
+   ]
+  }
+ ],
+ "nodes": [],
+ "runs": [],
+ "junctions": [],
+ "counts": {
+  "tables": 1,
+  "cells": 66,
+  "figures": 0,
+  "figures_in_cells": 0,
+  "rows_with_figure": 0,
+  "mean_conf": 0.89,
+  "paragraphs": 3,
+  "texts": 209
+ },
+ "serial": [
+  "# 쪽 구조 (좌표 단위 mm, 원점 좌상단)",
+  "## 표",
+  "t0 bbox=(26.3,30.9,190.6,175.1) 행수=11 열수=6",
+  "t0 행0:  |  | CAUTION THE FOLLOWING TORQUE VALUES ARE DERIVED FROM OIL FREE CADMIUM PLATED THREADS: |  |  | ",
+  "t0 행1:  |  | TORQUE LIMITS RECOMMENDED FOR INSTAL- LAMONBOLISLOADED PRIMARILY IN SHEAR) | MAXIMUM ALLOWABLE JORQUE LIMIS | TIGHTENING | ",
+  "t0 행2: Thread Size | Tension type nuts MS20365 and AN310 (40 OOOpsiin bols) | Shear type nuts MS20364 and AN320 (24,000 psi  in bolts) | Nuts MS20365 and AN31O (90,000  psi   in bolts) | Nuts MS20364 and AN320 (54,000 psi in bolts) | ",
+  "t0 행3:  |  | FINE THREAD SERIES |  |  | ",
+  "t0 행4:  |  |  |  |  | ",
+  "t0 행5: 8-36 10-32 1/4-28 5/16-24 3/8-24 7/16-20 1/2-20 9/16-18 5/8-18 3/4-16 7/8-14 1-14 1-1/8-12 1-1/4-12 | 12-15 20-25 50-70 100-140 160-190 450-500 480-690 800-1000 1100-1300 2300-2500 2500-3000 3700-5500 5000-7000 9000-11,000 | 7-9 12-15 30-40 60-85 95-110 270-300 290-410 480-600 600-780 1300-1500 1500-1800 2200-3300* 3000-4200* 5400-6600* | 20 40 100 225 390 840 1100 1600 2400 5o00 7000 10,000 15,000 25,000 | 12 25 60 140 240 500 660 960 1400 3000 4200 6000 9000 15,000 | ",
+  "t0 행6:  |  | COARSE THREAD SERIES |  |  | ",
+  "t0 행7:  |  |  |  |  | ",
+  "t0 행8: 8-32 10-24 1/4-20 5/16-18 3/8-16 7/16-14 1/2-13 9/16-12 5/8-11 3/4-10 7/8-9 | 1215 20-25 40-50 80-90 160-185 235-255 400-480 500-700 700-900 1150-1600 2200-3000 | 7-9 12-15 25-30 48-55 95-100 140-155 240-290 300-420 420-540 700-950 1300-1800 | 20 35 75 160 275 475 880 1100 1500 2500 4600 | 12 21 45 100 170 280 520 650 900 1500 2700 | ",
+  "t0 행9:  |  |  |  |  | ",
+  "t0 행10:  | Estimated corresponding values. | The above torque values may be used for all cadmium-plated steel nuts of Ihe fine Or coarse thread series which have approximately equal number of threads and equal face bearing areas. |  |  | ",
+  "## 표 안 그림 영역",
+  "## 본문",
+  "p0 bbox=(26.5,17.2,188.3,30.0) 9/8/98 AC 43.13-1B TABLE 7-[. Recommended torque values (inch-pounds).",
+  "p1 bbox=(25.9,179.2,189.0,249.0) 7-44. CLOSE-TOLERANCE BOLTS of bolt may require light tapping with a mallet Close-tolerance; hex head machine bolts to set the bolt shank into the bolt hole: (ANI73 through ANI86). 1O0-degree counter - sunk head, close-tolerance, high-strength bolts NOTE:   Elimination of friction in in- (NAS333 through NAS340), hex head, close- terference fit applications may some- tolerance;   short   thread,  titanium  alloy bolts times be attained by placing the bolt (NAS653 through NAS6S8), 100-degree in 4 freezer prior to installation. countersunk flathead, close-tolerance titanium When this procedure is used, the bolt alloy bolts (NAS663 through NAS668), and should be allowed to warm up to am- drilled hex head close-tolerance titanium alloy bient temperature before torquing: bolts (NAS673 through NAS678), are used in applications   where two parts bolted together CAUTION: Caution must be exer- are subject to severe load reversals and vibra- cised in the use of close-tolerance bolts tion.  Because of the interference fit, this type for  all critical  applications,  such 4S",
+  "p2 bbox=(26.5,259.3,189.0,264.8) Par 7-43 Page 7-9"
+ ],
+ "index": {
+  "bm25": {
+   "tokens": 471,
+   "vocab": 328,
+   "top": [
+    [
+     "t0",
+     12
+    ],
+    [
+     "bolts",
+     10
+    ],
+    [
+     "the",
+     8
+    ],
+    [
+     "in",
+     8
+    ],
+    [
+     "000",
+     8
+    ],
+    [
+     "and",
+     7
+    ],
+    [
+     "of",
+     6
+    ],
+    [
+     "close-tolerance",
+     6
+    ],
+    [
+     "thread",
+     5
+    ],
+    [
+     "nuts",
+     5
+    ],
+    [
+     "bolt",
+     5
+    ],
+    [
+     "to",
+     5
+    ],
+    [
+     "through",
+     5
+    ],
+    [
+     "bbox",
+     4
+    ],
+    [
+     "torque",
+     4
+    ],
+    [
+     "be",
+     4
+    ],
+    [
+     "head",
+     4
+    ],
+    [
+     "caution",
+     3
+    ],
+    [
+     "values",
+     3
+    ],
+    [
+     "are",
+     3
+    ],
+    [
+     "for",
+     3
+    ],
+    [
+     "type",
+     3
+    ],
+    [
+     "psi",
+     3
+    ],
+    [
+     "series",
+     3
+    ],
+    [
+     "12-15",
+     3
+    ],
+    [
+     "7-9",
+     3
+    ],
+    [
+     "may",
+     3
+    ],
+    [
+     "used",
+     3
+    ],
+    [
+     "hex",
+     3
+    ],
+    [
+     "applications",
+     3
+    ],
+    [
+     "titanium",
+     3
+    ],
+    [
+     "alloy",
+     3
+    ],
+    [
+     "표",
+     2
+    ],
+    [
+     "threads",
+     2
+    ],
+    [
+     "recommended",
+     2
+    ],
+    [
+     "shear",
+     2
+    ],
+    [
+     "ms20365",
+     2
+    ],
+    [
+     "40",
+     2
+    ],
+    [
+     "ms20364",
+     2
+    ],
+    [
+     "an320",
+     2
+    ]
+   ]
+  },
+  "exact": [
+   {
+    "key": "MS20365",
+    "target": "text",
+    "bbox": [
+     596,
+     228,
+     651,
+     245
+    ]
+   },
+   {
+    "key": "MS20364",
+    "target": "text",
+    "bbox": [
+     735,
+     228,
+     789,
+     245
+    ]
+   },
+   {
+    "key": "AN310",
+    "target": "text",
+    "bbox": [
+     337,
+     241,
+     378,
+     258
+    ]
+   }
+  ],
+  "rows": [
+   {
+    "table": "t0",
+    "row": 0,
+    "text": " |  | CAUTION THE FOLLOWING TORQUE VALUES ARE DERIVED FROM OIL FREE CADMIUM PLATED THREADS: |  |  | "
+   },
+   {
+    "table": "t0",
+    "row": 1,
+    "text": " |  | TORQUE LIMITS RECOMMENDED FOR INSTAL- LAMONBOLISLOADED PRIMARILY IN SHEAR) | MAXIMUM ALLOWABLE JORQUE LIMIS | TIGHTENING | "
+   },
+   {
+    "table": "t0",
+    "row": 2,
+    "text": "Thread Size | Tension type nuts MS20365 and AN310 (40 OOOpsiin bols) | Shear type nuts MS20364 and AN320 (24,000 psi  in bolts) | Nuts MS20365 and AN31O (90,000  psi   in bolts) | Nuts MS20364 and AN320 (54,000 psi in bolts) | "
+   },
+   {
+    "table": "t0",
+    "row": 3,
+    "text": " |  | FINE THREAD SERIES |  |  | "
+   },
+   {
+    "table": "t0",
+    "row": 4,
+    "text": " |  |  |  |  | "
+   },
+   {
+    "table": "t0",
+    "row": 5,
+    "text": "8-36 10-32 1/4-28 5/16-24 3/8-24 7/16-20 1/2-20 9/16-18 5/8-18 3/4-16 7/8-14 1-14 1-1/8-12 1-1/4-12 | 12-15 20-25 50-70 100-140 160-190 450-500 480-690 800-1000 1100-1300 2300-2500 2500-3000 3700-5500 5000-7000 9000-11,000 | 7-9 12-15 30-40 60-85 95-110 270-300 290-410 480-600 600-780 1300-1500 1500-1800 2200-3300* 3000-4200* 5400-6600* | 20 40 100 225 390 840 1100 1600 2400 5o00 7000 10,000 15,000 25,000 | 12 25 60 140 240 500 660 960 1400 3000 4200 6000 9000 15,000 | "
+   },
+   {
+    "table": "t0",
+    "row": 6,
+    "text": " |  | COARSE THREAD SERIES |  |  | "
+   },
+   {
+    "table": "t0",
+    "row": 7,
+    "text": " |  |  |  |  | "
+   },
+   {
+    "table": "t0",
+    "row": 8,
+    "text": "8-32 10-24 1/4-20 5/16-18 3/8-16 7/16-14 1/2-13 9/16-12 5/8-11 3/4-10 7/8-9 | 1215 20-25 40-50 80-90 160-185 235-255 400-480 500-700 700-900 1150-1600 2200-3000 | 7-9 12-15 25-30 48-55 95-100 140-155 240-290 300-420 420-540 700-950 1300-1800 | 20 35 75 160 275 475 880 1100 1500 2500 4600 | 12 21 45 100 170 280 520 650 900 1500 2700 | "
+   },
+   {
+    "table": "t0",
+    "row": 9,
+    "text": " |  |  |  |  | "
+   },
+   {
+    "table": "t0",
+    "row": 10,
+    "text": " | Estimated corresponding values. | The above torque values may be used for all cadmium-plated steel nuts of Ihe fine Or coarse thread series which have approximately equal number of threads and equal face bearing areas. |  |  | "
+   }
+  ]
+ },
+ "embedding": {
+  "available": false,
+  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "regions": 1
+ },
+ "times": {
+  "입력 판별": 0.0,
+  "문자 인식": 31.2,
+  "해상도 · 종류 판별": 0.0,
+  "structure": 0.0,
+  "표 · 그림 영역": 0.1,
+  "본문 묶기": 0.0,
+  "직렬화": 0.0,
+  "색인": 0.0,
+  "이미지 임베딩": 0.0
+ },
+ "memory": {
+  "peak_rss_gb": 2.89,
+  "min_avail_gb": 12.55
+ },
+ "resources_after": {
+  "cores": 4,
+  "total_gb": 15.7,
+  "avail_gb": 14.3,
+  "cpu_busy": 0.0
+ }
+}
