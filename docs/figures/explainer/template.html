@@ -1,0 +1,340 @@
+<title>도면 한 장의 구조화 과정</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 배치: 왼쪽은 도면 무대(카메라 이동), 오른쪽은 단계 설명과 그래프·색인 시각. 좁은 화면은 세로 적층 */
+:root{
+  --bg:#F5F6F8; --panel:#FFFFFF; --fg:#15181D; --mute:#5F6670; --line:#D9DCE2; --soft:#EEF0F4;
+  --acc:#1F4FD8; --acc-soft:#E6ECFB;
+  --eq:#C8322E; --sym:#1F4FD8; --ins:#7A2BD1; --pipe:#1E8E57; --sig:#2F80ED; --tbl:#8A9099; --jct:#E0A400; --ink:#15181D; --ink-dim:#B8BDC6;
+  --sans:"Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --mono:"IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F1115; --panel:#171A20; --fg:#E7E9EE; --mute:#9AA1AC; --line:#2A2F39; --soft:#1F242D;
+  --acc:#6D8DF2; --acc-soft:#1B2540; --eq:#F0665F; --sym:#6D8DF2; --ins:#B07CF5; --pipe:#43C98A; --sig:#5DA6FF; --tbl:#7C838E; --jct:#F2C94C; --ink:#E7E9EE; --ink-dim:#3A404B; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0F1115; --panel:#171A20; --fg:#E7E9EE; --mute:#9AA1AC; --line:#2A2F39; --soft:#1F242D;
+  --acc:#6D8DF2; --acc-soft:#1B2540; --eq:#F0665F; --sym:#6D8DF2; --ins:#B07CF5; --pipe:#43C98A; --sig:#5DA6FF; --tbl:#7C838E; --jct:#F2C94C; --ink:#E7E9EE; --ink-dim:#3A404B; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:14px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 32px}
+.wrap{max-width:1480px;margin:0 auto}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;padding:26px 0 14px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.06em;color:var(--mute);font-weight:500}
+h1{font-size:clamp(20px,2.4vw,28px);margin:4px 0 0;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+.controls{display:flex;align-items:center;gap:8px}
+button{font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--acc)}
+button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+button.primary{background:var(--acc);border-color:var(--acc);color:#fff;min-width:88px}
+.rail{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin:14px 0 16px}
+.chip{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:8px 10px;cursor:pointer;min-width:0;text-align:left}
+.chip small{display:block;font-size:11px;color:var(--mute);font-variant-numeric:tabular-nums}
+.chip span{display:block;font-size:12.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--acc)}
+.chip.active{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}
+.chip.done small{color:var(--acc)}
+main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:18px;align-items:start}
+@media (max-width:980px){main{grid-template-columns:1fr}.rail{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;min-width:0}
+.stage .top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12px;color:var(--mute)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+#view{display:block;width:100%;height:auto;aspect-ratio:420/297;background:#fff}
+:root[data-theme="dark"] #view{background:#FFFFFF}
+.caption{padding:10px 14px;font-size:12.5px;color:var(--mute);border-top:1px solid var(--line);min-height:40px;font-variant-numeric:tabular-nums}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 20px;min-width:0;display:flex;flex-direction:column;gap:14px;min-height:560px}
+.stepno{font-family:var(--mono);font-size:12px;color:var(--acc);letter-spacing:.04em}
+h2{margin:2px 0 0;font-size:20px;font-weight:700;letter-spacing:-.01em}
+.desc p{margin:0 0 8px}
+.desc .rule{font-family:var(--mono);font-size:12px;background:var(--soft);border-radius:4px;padding:2px 6px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:8px}
+.kpi{border-top:2px solid var(--line);padding-top:6px}
+.kpi b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi span{font-size:12px;color:var(--mute)}
+.kpi.acc{border-top-color:var(--acc)}
+.visual{position:relative;flex:1;min-height:430px;border:1px solid var(--line);border-radius:6px;background:var(--bg);overflow:hidden}
+.visual > section{position:absolute;inset:0;padding:14px;opacity:0;transition:opacity .5s var(--ease);pointer-events:none;overflow:auto}
+.visual > section.show{opacity:1;pointer-events:auto}
+.visual h3{margin:0 0 8px;font-size:12px;letter-spacing:.06em;color:var(--mute);font-weight:500}
+pre{margin:0;font-family:var(--mono);font-size:11.5px;line-height:1.5;white-space:pre-wrap;word-break:break-all;color:var(--fg)}
+pre .ln{display:block;opacity:0;transform:translateY(4px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+pre .ln.in{opacity:1;transform:none}
+pre .hl{background:var(--acc-soft);color:var(--acc);border-radius:3px;padding:0 3px}
+#gsvg{width:100%;height:100%;display:block}
+#gsvg text{font-family:var(--mono);font-size:10.5px;fill:var(--fg)}
+#gsvg .e{stroke:var(--pipe);stroke-width:1.6;fill:none;opacity:.9}
+#gsvg .e.signal{stroke:var(--sig);stroke-dasharray:3 2}
+#gsvg .n{stroke:none}
+.lanes{display:grid;grid-template-columns:1fr;gap:8px}
+.lane{display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:start;border:1px solid var(--line);border-radius:6px;padding:9px 10px;background:var(--panel);opacity:0;transform:translateY(6px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.lane.in{opacity:1;transform:none}
+.lane .src{font-size:12px;font-weight:500}
+.lane .src small{display:block;color:var(--mute);font-weight:400;font-size:11px;margin-top:2px}
+.lane .dst{min-width:0}
+.lane .how{font-size:12px;color:var(--mute);margin-bottom:5px}
+.tokens{display:flex;flex-wrap:wrap;gap:4px}
+.tok{font-family:var(--mono);font-size:11px;padding:1px 6px;border-radius:3px;background:var(--soft);border:1px solid var(--line);opacity:0;transform:translateX(-6px);animation:tin .45s var(--ease) forwards;animation-delay:var(--d,0s)}
+.tok.key{background:var(--acc-soft);border-color:transparent;color:var(--acc)}
+@keyframes tin{to{opacity:1;transform:none}}
+.vec{display:flex;align-items:flex-end;gap:2px;height:34px}
+.vec i{display:block;width:5px;background:var(--acc);height:2px;transform-origin:bottom;animation:grow .6s var(--ease) forwards;animation-delay:var(--d,0s);transform:scaleY(.05);opacity:.9}
+@keyframes grow{to{transform:scaleY(1)}}
+.kv{font-family:var(--mono);font-size:11px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px}
+.kv span{color:var(--mute)}
+.qa .q{font-size:15px;font-weight:700;margin:0 0 10px}
+.qa .box{border:1px solid var(--line);border-radius:6px;padding:9px 11px;background:var(--panel);margin-bottom:8px;opacity:0;transform:translateY(6px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.qa .box.in{opacity:1;transform:none}
+.qa .box h4{margin:0 0 5px;font-size:11.5px;letter-spacing:.05em;color:var(--mute);font-weight:500}
+.ref{display:inline-block;font-family:var(--mono);font-size:11px;padding:1px 6px;border-radius:3px;background:var(--acc-soft);color:var(--acc);margin:1px 2px;cursor:pointer;border:1px solid transparent}
+.ref:hover{border-color:var(--acc)}
+.foot{margin-top:18px;font-size:12px;color:var(--mute);display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+
+/* 도면 요소 */
+#drawing .p{transition:stroke .6s var(--ease),fill .6s var(--ease),opacity .6s var(--ease);transition-delay:var(--d,0s)}
+#drawing .p-line,#drawing .p-curve,#drawing .p-arc{stroke:var(--ink)}
+#drawing .p-text{fill:var(--ink)}
+#view.typed .p-line{stroke:#2B6CB0}
+#view.typed .p-curve{stroke:#C05621}
+#view.typed .p-arc{stroke:#6B46C1}
+#view.typed .p-text{fill:#2F855A}
+#view.dim .p-line,#view.dim .p-curve,#view.dim .p-arc{stroke:#B8BDC6}
+#view.dim .p-text{fill:#9AA0A8}
+#view.faint .p{opacity:.35}
+.layer{opacity:0;transition:opacity .5s var(--ease)}
+.layer.on{opacity:1}
+.nd{fill:none;stroke-width:.5;opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.6);transition:opacity .45s var(--ease),transform .45s var(--ease);transition-delay:var(--d,0s)}
+.on .nd{opacity:1;transform:none}
+.nd.equipment{stroke:var(--eq)} .nd.symbol{stroke:var(--sym)} .nd.instrument{stroke:var(--ins)} .nd.nozzle{stroke:var(--sym)} .nd.note{stroke:var(--ins);stroke-dasharray:1 .6}
+.rn{fill:none;stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s var(--ease);transition-delay:var(--d,0s)}
+.on .rn{stroke-dashoffset:0}
+.rn.pipe{stroke:var(--pipe)} .rn.signal{stroke:var(--sig)} .rn.gapped{stroke-dasharray:.08 .06;stroke-dashoffset:0;opacity:0;transition:opacity .6s;} .on .rn.gapped{opacity:1}
+.jc{fill:var(--jct);stroke:#fff;stroke-width:.3;opacity:0;transition:opacity .4s var(--ease);transition-delay:var(--d,0s)}
+.on .jc{opacity:1}
+.lb{stroke:var(--mute);stroke-width:.25;opacity:0;transition:opacity .5s var(--ease);transition-delay:var(--d,0s)}
+.on .lb{opacity:.9}
+.lbx{fill:none;stroke:var(--mute);stroke-width:.2;opacity:0;transition:opacity .5s var(--ease);transition-delay:var(--d,0s)}
+.on .lbx{opacity:.8}
+.tag rect{fill:var(--fg);opacity:.92} .tag text{fill:var(--bg);font-size:2.4px;font-family:var(--mono)}
+.tag{opacity:0;transition:opacity .4s var(--ease);transition-delay:var(--d,0s)} .on .tag{opacity:1}
+.hi{fill:none;stroke:var(--acc);stroke-width:1.1;opacity:0;transition:opacity .4s var(--ease)} .on .hi{opacity:1}
+.hi.path{stroke-width:1.6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s var(--ease),opacity .3s;transition-delay:var(--d,0s)} .on .hi.path{stroke-dashoffset:0}
+.glow{fill:var(--acc);opacity:0;transition:opacity .5s} .on .glow{opacity:.12}
+.frm{fill:none;stroke:var(--tbl);stroke-width:.4;stroke-dasharray:1.5 1;opacity:0;transition:opacity .5s var(--ease);transition-delay:var(--d,0s)} .on .frm{opacity:1}
+.tbl-fill{fill:var(--tbl);opacity:0;transition:opacity .6s var(--ease);transition-delay:var(--d,0s)} .on .tbl-fill{opacity:.12}
+.tbl-tag text{font-size:2.6px;fill:var(--tbl);font-family:var(--mono)} .tbl-tag{opacity:0;transition:opacity .5s;transition-delay:var(--d,0s)} .on .tbl-tag{opacity:1}
+.scan{fill:var(--acc);opacity:0} .on .scan{animation:scan 1.8s var(--ease) forwards}
+@keyframes scan{0%{opacity:0}30%{opacity:.08}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){*{transition-duration:0s!important;animation-duration:0s!important;transition-delay:0s!important;animation-delay:0s!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">공개 참조 P&amp;ID C01V04 · 벡터 원본 · 문자 인식 모델 없이 기하 규칙으로 처리한 실제 결과</div>
+    <h1>도면 한 장이 관계 그래프와 색인이 되기까지</h1>
+  </div>
+  <div class="controls">
+    <button id="prev" aria-label="이전 단계">◀ 이전</button>
+    <button id="play" class="primary" aria-label="재생 또는 일시정지">일시정지</button>
+    <button id="next" aria-label="다음 단계">다음 ▶</button>
+  </div>
+</header>
+<div class="rail" id="rail"></div>
+<main>
+  <div class="stage">
+    <div class="top"><span id="cam">전체 420 × 297 mm</span>
+      <div class="legend"><span><i style="background:var(--eq)"></i>장비</span><span><i style="background:var(--sym)"></i>기호</span><span><i style="background:var(--ins)"></i>계기</span><span><i style="background:var(--pipe)"></i>배관</span><span><i style="background:var(--sig)"></i>신호선</span><span><i style="background:var(--jct)"></i>분기점</span><span><i style="background:var(--tbl)"></i>표·틀</span></div></div>
+    <svg id="view" viewBox="0 0 420 297" xmlns="http://www.w3.org/2000/svg" aria-label="도면과 추출 결과">
+      <g id="drawing" fill="none" stroke-width=".25">
+<!--__DRAWING__-->
+      </g>
+      <g id="L-frame" class="layer"></g>
+      <g id="L-nodes" class="layer"></g>
+      <g id="L-runs" class="layer"></g>
+      <g id="L-labels" class="layer"></g>
+      <g id="L-roles" class="layer"></g>
+      <g id="L-embed" class="layer"></g>
+      <g id="L-query" class="layer"></g>
+    </svg>
+    <div class="caption" id="caption"></div>
+  </div>
+  <aside class="panel">
+    <div><div class="stepno" id="stepno"></div><h2 id="title"></h2></div>
+    <div class="desc" id="desc"></div>
+    <div class="kpis" id="kpis"></div>
+    <div class="visual" id="visual">
+      <section id="V-input"><h3>입력 판별</h3><div id="vin"></div></section>
+      <section id="V-graph"><h3>관계 그래프 (노드 <span id="gn"></span> · 간선 <span id="ge"></span>)</h3><svg id="gsvg" viewBox="0 0 600 400"></svg></section>
+      <section id="V-serial"><h3>직렬화 텍스트 (graph.txt 앞부분)</h3><pre id="serial"></pre></section>
+      <section id="V-embed"><h3>특징별 색인 경로</h3><div class="lanes" id="lanes"></div></section>
+      <section id="V-query" class="qa"><div id="qa"></div></section>
+    </div>
+  </aside>
+</main>
+<div class="foot"><span>자료: DEXPI 공개 예제 C01V04-VER.EX01, 추출 결과 examples/dexpi-reference-pid/output. 수치는 실측.</span><span>← → 키로 이동, 공백으로 재생·정지</span></div>
+</div>
+
+<script>
+/*__DATA__*/
+const $ = s => document.querySelector(s);
+const svgNS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){ const e = document.createElementNS(svgNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+const view = $('#view');
+const byId = {}; D.nodes.forEach(n => byId[n.id] = n); D.junctions.forEach(j => byId[j.id] = j);
+const center = b => [(b[0]+b[2])/2, (b[1]+b[3])/2];
+const roleCount = {}; D.nodes.forEach(n => roleCount[n.role] = (roleCount[n.role]||0)+1);
+const pipes = D.runs.filter(r => r.kind === 'pipe').length, sigs = D.runs.filter(r => r.kind === 'signal').length, gaps = D.runs.filter(r => r.gap).length;
+
+// ---- 원본 요소에 x 위치 기반 지연(왼쪽에서 오른쪽으로 쓸어가는 효과) ----
+document.querySelectorAll('#drawing .p').forEach(p => { const x = +p.dataset.x || 0; p.style.setProperty('--d', (x / 420 * 1.4).toFixed(2) + 's'); });
+
+// ---- 겹층 구성 ----
+const Lf = $('#L-frame');
+el('rect', {x:4, y:4, width:412, height:289, class:'frm'}, Lf);
+D.tables.forEach((t, i) => { const b = t.bbox; el('rect', {x:b[0], y:b[1], width:b[2]-b[0], height:b[3]-b[1], class:'tbl-fill', style:`--d:${.2+i*.15}s`}, Lf);
+  el('rect', {x:b[0], y:b[1], width:b[2]-b[0], height:b[3]-b[1], class:'frm', style:`--d:${.2+i*.15}s`}, Lf);
+  const g = el('g', {class:'tbl-tag', style:`--d:${.5+i*.15}s`}, Lf); const tx = el('text', {x:b[0]+1, y:b[1]-1.2}, g); tx.textContent = `표 ${t.rows}행 · ${t.first[1]||t.first[0]}`; });
+const Ln = $('#L-nodes');
+const nodeOrder = D.nodes.filter(n => n.role !== 'mark' && n.role !== 'arrow').sort((a,b) => a.bbox[0]-b.bbox[0]);
+nodeOrder.forEach((n, i) => { const b = n.bbox; el('rect', {x:b[0]-.6, y:b[1]-.6, width:b[2]-b[0]+1.2, height:b[3]-b[1]+1.2, rx:.4, class:'nd '+n.role, style:`--d:${(i*0.05).toFixed(2)}s`, 'data-id':n.id}, Ln); });
+const Lr = $('#L-runs');
+D.runs.forEach((r, i) => { const pts = r.coords.map(c => c.join(',')).join(' ');
+  el('polyline', {points:pts, class:'rn '+r.kind+(r.gap?' gapped':''), pathLength:1, style:`--d:${(i*0.06).toFixed(2)}s`, 'data-id':r.id}, Lr); });
+D.junctions.forEach((j, i) => el('circle', {cx:j.pt[0], cy:j.pt[1], r:1.1, class:'jc', style:`--d:${(2.4+i*.1).toFixed(2)}s`}, Lr));
+const Ll = $('#L-labels');
+D.labels.forEach((l, i) => { const o = l.owner; if (!o) return; const c = center(l.bbox); let t;
+  if (o[0] === 'node') { const n = D.nodes[o[1]]; if (!n) return; t = center(n.bbox); } else if (o[0] === 'run') { const r = D.runs[o[1]]; if (!r) return; const m = r.coords[Math.floor(r.coords.length/2)-0]; const p0 = r.coords[0], p1 = r.coords[r.coords.length-1]; t = [(p0[0]+p1[0])/2, (p0[1]+p1[1])/2]; } else return;
+  const d = (i*0.03).toFixed(2)+'s';
+  el('rect', {x:l.bbox[0], y:l.bbox[1], width:l.bbox[2]-l.bbox[0], height:l.bbox[3]-l.bbox[1], class:'lbx', style:`--d:${d}`}, Ll);
+  el('line', {x1:c[0], y1:c[1], x2:t[0], y2:t[1], class:'lb', style:`--d:${d}`}, Ll); });
+const Lo = $('#L-roles');
+const roleName = {equipment:'장비 · 태그 형식', instrument:'계기 · 기능 문자+루프', symbol:'기호', nozzle:'접속구', note:'주석'};
+D.nodes.filter(n => ['equipment','instrument','note'].includes(n.role) || (n.role==='symbol' && n.texts.length && n.bbox[0]>190 && n.bbox[0]<300)).forEach((n, i) => {
+  const b = n.bbox; const label = `${n.texts[0]||''} ${roleName[n.role]}`.trim(); const w = label.length*1.45+2;
+  const g = el('g', {class:'tag', style:`--d:${(i*0.12).toFixed(2)}s`}, Lo);
+  el('rect', {x:b[0], y:b[1]-4.6, width:w, height:3.6, rx:.5}, g); const t = el('text', {x:b[0]+1, y:b[1]-2}, g); t.textContent = label; });
+const Le = $('#L-embed');
+[[0,0,420,297,'쪽 전체'], [240,145,24,18,'그림 영역'], [174,70,40,58,'그림 영역']].forEach((r, i) => { el('rect', {x:r[0], y:r[1], width:r[2], height:r[3], class:'scan', style:`animation-delay:${i*.6}s`}, Le); el('rect', {x:r[0], y:r[1], width:r[2], height:r[3], class:'hi', style:`--d:${i*.6}s`}, Le); });
+const Lq = $('#L-query');
+const subIds = ['n25','n3','n29','n2','n7','n4'];
+subIds.forEach((id, i) => { const n = byId[id]; if (!n) return; const b = n.bbox; el('rect', {x:b[0]-1, y:b[1]-1, width:b[2]-b[0]+2, height:b[3]-b[1]+2, rx:.6, class:'hi', style:`--d:${(.3+i*.25).toFixed(2)}s`, 'data-ref':id}, Lq); });
+['r8','r9','r7','r10','r11','r6','r12','r13'].forEach((id, i) => { const r = D.runs.find(x => x.id === id); if (!r) return; el('polyline', {points:r.coords.map(c=>c.join(',')).join(' '), class:'hi path', pathLength:1, style:`--d:${(.4+i*.3).toFixed(2)}s`}, Lq); });
+el('rect', {x:244, y:147, width:14, height:14, rx:7, class:'glow'}, Lq);
+
+// ---- 카메라 ----
+let cam = [0,0,420,297], camTarget = cam.slice(), camFrom = cam.slice(), camT0 = 0, camDur = 900;
+function setCam(t, label){ camFrom = cam.slice(); camTarget = t.slice(); camT0 = performance.now(); $('#cam').textContent = label; }
+function tickCam(now){ const k = Math.min(1, (now - camT0) / camDur); const e = 1 - Math.pow(1 - k, 3);
+  cam = camFrom.map((v, i) => v + (camTarget[i] - v) * e); view.setAttribute('viewBox', cam.map(v => v.toFixed(2)).join(' ')); requestAnimationFrame(tickCam); }
+requestAnimationFrame(tickCam);
+const CAM = { full:[[0,0,420,297],'전체 420 × 297 mm'], mid:[[22,34,376,266],'본문 영역'], zoom:[[176,72,158,112],'P4712 주변 158 × 112 mm'], tank:[[150,45,180,127],'T4750 주변'] };
+
+// ---- 그래프 시각 ----
+const gs = $('#gsvg'); const gpos = {}; const gn = {};
+const sx = x => (x - 20) / 380 * 560 + 20, sy = y => (y - 50) / 135 * 240 + 80;
+D.graph.nodes.forEach(n => { gpos[n.id] = [sx(n.start[0]), sy(n.start[1])]; });
+const gEdges = D.graph.edges.map(e => ({...e, el: el('line', {class:'e '+e.kind}, gs)}));
+D.graph.nodes.forEach(n => { const g = el('g', {}, gs); const col = {equipment:'var(--eq)', instrument:'var(--ins)', symbol:'var(--sym)', nozzle:'var(--sym)', note:'var(--ins)', junction:'var(--jct)'}[n.role];
+  const r = {equipment:9, instrument:7, junction:3}[n.role] || 4.5; el('circle', {r, fill:col, class:'n'}, g);
+  if (['equipment','instrument'].includes(n.role) || n.name.match(/^[0-9A-Z]{2}[A-Z0-9]+-\d+$/)) { const t = el('text', {x:r+3, y:3}, g); t.textContent = n.name; } gn[n.id] = g; });
+$('#gn').textContent = D.graph.nodes.length; $('#ge').textContent = D.graph.edges.length;
+function drawGraph(){ for (const id in gn) gn[id].setAttribute('transform', `translate(${gpos[id][0].toFixed(1)} ${gpos[id][1].toFixed(1)})`);
+  gEdges.forEach(e => { const a = gpos[e.a], b = gpos[e.b]; if (!a||!b) return; e.el.setAttribute('x1', a[0]); e.el.setAttribute('y1', a[1]); e.el.setAttribute('x2', b[0]); e.el.setAttribute('y2', b[1]); }); }
+drawGraph();
+let gAnim = null;
+function graphTo(key){ const from = {}; for (const id in gpos) from[id] = gpos[id].slice(); const to = {}; D.graph.nodes.forEach(n => to[n.id] = key === 'end' ? n.end : [sx(n.start[0]), sy(n.start[1])]);
+  const t0 = performance.now(); cancelAnimationFrame(gAnim); const dur = reduced ? 0 : 1600;
+  const step = now => { const k = dur ? Math.min(1, (now - t0) / dur) : 1; const e = 1 - Math.pow(1 - k, 3); for (const id in gpos) gpos[id] = [from[id][0] + (to[id][0]-from[id][0])*e, from[id][1] + (to[id][1]-from[id][1])*e]; drawGraph(); if (k < 1) gAnim = requestAnimationFrame(step); }; gAnim = requestAnimationFrame(step); }
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ---- 직렬화 ----
+const serialEl = $('#serial');
+D.serial.slice(0, 28).forEach((l, i) => { const s = document.createElement('span'); s.className = 'ln'; s.style.transitionDelay = (i*0.12)+'s'; s.textContent = l; serialEl.appendChild(s); });
+
+// ---- 색인 경로 ----
+const lanes = $('#lanes');
+function lane(src, sub, how, inner, i){ const d = document.createElement('div'); d.className = 'lane'; d.style.transitionDelay = (i*0.35)+'s'; d.innerHTML = `<div class="src">${src}<small>${sub}</small></div><div class="dst"><div class="how">${how}</div>${inner}</div>`; lanes.appendChild(d); }
+const toks = ['n25','equipment','P4712','N1','N2','r9','pipe','j2','73KH12-25','MNc','47125','73HG12','SV','104.01','signal','TICSA','4750.03','TV4750.03'];
+lane('관계와 라벨', '노드 목록 · 구간 목록 텍스트', '그래프 직렬화 → 토큰 → BM25 희소 색인(용어 → 노드·구간 목록). 모델 없음',
+  `<div class="tokens">${toks.map((t,i)=>`<span class="tok${/^[A-Z]{1,2}\d|^\d{2}[A-Z]{2}\d|^[A-Z]{2,5}$/.test(t)?' key':''}" style="--d:${(0.6+i*0.08).toFixed(2)}s">${t}</span>`).join('')}</div>`, 0);
+lane('태그와 선 번호', '장비 태그 ^[A-Z]\\d{4}$ · 선 번호 형식', '완전 일치 색인(키 → 노드·구간). 부분 일치를 허용하지 않음',
+  `<div class="kv"><span>P4712</span><b>n25 equipment bbox=(245.8,148.8,256.2,159.2)</b><span>73KH12-25</span><b>n7 symbol bbox=(264.0,158.0,266.0,162.0)</b><span>MNc 47125 73HG12 25</span><b>r13 pipe j0→n4</b><span>TICSA 4750.03</span><b>n17 instrument</b></div>`, 1);
+lane('표', '격자와 문자 6개 이상인 영역 5개', '행 단위 문장으로 펼쳐 텍스트 색인. 표 이름(Ident)을 행마다 붙임',
+  `<div class="kv">${D.table_rows.slice(1,4).map(r=>`<span>H1007</span><b>${r.join(' | ')}</b>`).join('')}</div>`, 2);
+lane('쪽과 그림 영역', '화소 배열. 사진·렌더링도 같은 경로', '경량 이미지 임베딩 모델 → 밀집 벡터 → 코사인 유사도 검색. 관계 질의에는 쓰지 않음',
+  `<div class="vec">${Array.from({length:40},(_,i)=>`<i style="height:${(6+Math.abs(Math.sin(i*1.7)*22+Math.cos(i*.9)*6)).toFixed(0)}px;--d:${(1.2+i*0.03).toFixed(2)}s"></i>`).join('')}</div><div class="how" style="margin-top:4px">유일하게 신경망을 쓰는 지점. 검색 후보를 좁히는 용도</div>`, 3);
+lane('좌표', '모든 노드·간선·라벨의 mm 좌표', '구조화 저장소에 함께 보관. 답변의 근거 표시와 원본 확인에 사용', `<div class="kv"><span>n25</span><b>(245.8, 148.8, 256.2, 159.2)</b><span>j2</span><b>(265.0, 154.0)</b><span>r13</span><b>(269,154)→(269,96)</b></div>`, 4);
+
+// ---- 질의 ----
+$('#qa').innerHTML = `<p class="q">"P4712 펌프의 토출 측은 어디로 연결되는가"</p>
+<div class="box" style="transition-delay:.2s"><h4>1 완전 일치</h4><div class="kv"><span>P4712</span><b>n25 equipment, 노즐 N1(흡입) N2(토출)</b></div></div>
+<div class="box" style="transition-delay:1s"><h4>2 부분 그래프 (n25에서 3단계, 배관 간선만)</h4><pre>${D.subgraph.slice(1).map((l,i)=>`<span class="ln in" style="transition-delay:${(1.2+i*.15).toFixed(2)}s">${l.replace(/(n25|j2|j0|n3|n7|n4|n29|n2)(\[|\b)/g,'<span class="hl">$1</span>$2')}</span>`).join('')}</pre></div>
+<div class="box" style="transition-delay:2.8s"><h4>3 기존 텍스트 LLM 입력</h4><div style="font-size:12.5px">위 텍스트와 질문. 이미지는 넣지 않음. 토큰 약 300</div></div>
+<div class="box" style="transition-delay:3.6s"><h4>4 답변과 근거</h4><div style="font-size:13px">토출 측 N2는 분기점 <span class="ref" data-ref="j2">j2</span>에서 세 갈래로 나뉨. 아래로 밸브 <span class="ref" data-ref="n7">73KH12-25</span>, 위로 안전밸브 <span class="ref" data-ref="n4">SV 104.01</span>로 가는 선 MNc 47125 73HG12 25, 오른쪽으로 밸브 73KH12-50을 지나 열교환기 H1008 방향.</div><div class="how" style="margin-top:6px">근거 좌표를 누르면 도면에서 위치를 봄. OCR 결과만으로는 세 이름이 같은 쪽에 있다는 사실까지 전달됨</div></div>`;
+document.querySelectorAll('.ref').forEach(r => r.addEventListener('click', () => { const id = r.dataset.ref; const n = byId[id]; if (!n) return; const c = n.bbox ? center(n.bbox) : n.pt; setCam([c[0]-30, c[1]-21, 60, 42], `근거 ${id} 주변`); }));
+
+// ---- 단계 정의 ----
+const K = (b, s, acc) => `<div class="kpi${acc?' acc':''}"><b>${b}</b><span>${s}</span></div>`;
+const STEPS = [
+ {name:'원본', title:'원본 입력: 벡터 그림', cam:'full', dur:7000,
+  desc:`<p>DEXPI 공개 참조 P&amp;ID 한 장. 벡터 PDF와 같은 벡터 그림이며 <span class="rule">선 · 곡선 · 타원 · 문자</span>의 좌표, 선 굵기, 점선 여부만 읽음. 색, 식별자, 그룹 이름, 기호 정의 이름은 읽지 않음.</p><p>입력 판별: 경로 요소가 있으면 벡터 경로, 없으면(스캔) 래스터 경로. 이 예시는 벡터 경로임.</p>`,
+  kpis:[K(D.counts.line,'직선'),K(D.counts.curve,'곡선'),K(D.counts.arc,'타원'),K(D.counts.text,'문자')], visual:'V-input', caption:'원본 그대로. 420 × 297 mm(A3) 좌표계'},
+ {name:'요소 분해', title:'1 시각 요소 추출', cam:'full', dur:8000, view:'typed',
+  desc:`<p>경로를 직선과 곡선으로 분해하고 변환 행렬을 적용해 쪽 좌표(mm)로 통일함. 직선은 축 평행 여부와 길이, 곡선과 타원은 중심과 반지름, 문자는 내용·기준점·방향·크기를 속성으로 가짐.</p><p>래스터 입력이면 이 단계가 바뀜: 기울기 보정과 잡음 제거 → 문자 인식(CPU 모델) 후 문자 지움 → 형태학 열림으로 축 평행 선과 굵기 → 구멍 윤곽으로 닫힌 도형 → 남은 잉크 덩어리를 기호로. 나머지 단계는 동일함.</p>`,
+  kpis:[K('파랑','직선'),K('주황','곡선'),K('보라','타원'),K('초록','문자')], visual:'V-input', caption:'왼쪽에서 오른쪽으로 요소 유형을 표시함. 모델 미사용'},
+ {name:'틀·표', title:'2 틀과 표 분리', cam:'full', dur:7000, view:'dim', layers:['L-frame'],
+  desc:`<p>쪽 면적의 80% 이상을 덮는 닫힌 사각형은 <span class="rule">틀</span>. 서로 맞닿은 선이 사각형 경계를 90% 이상 덮고 안에 문자가 6개 이상이면 <span class="rule">표</span> 또는 표제란. 표는 행·칸 단위로 따로 저장하고 그림 처리에서 제외함.</p>`,
+  kpis:[K(D.tables.length,'표',true),K('8','행/표'),K('1','표제란'),K('329','남은 요소'),K('100','남은 문자')], visual:'V-input', caption:'회색 영역은 표. 장비 사양표 5개와 표제란'},
+ {name:'도형·기호', title:'3 닫힌 도형과 기호 묶음', cam:'mid', dur:8000, view:'dim', layers:['L-frame','L-nodes'],
+  desc:`<p>끝점이 서로 맞물린 선과 곡선의 묶음, 둘레 12 mm 이상의 타원은 <span class="rule">닫힌 도형</span>(탱크, 열교환기, 펌프, 계기 원). 사선·곡선·작은 타원을 접점 <span class="rule">0.6 mm</span> 기준으로 묶은 것은 <span class="rule">기호</span>(밸브, 리듀서, 연결기). 기호에 닿은 짧은 축 평행 직선은 기호의 일부로 흡수함.</p>`,
+  kpis:[K(roleCount.equipment||0,'장비',true),K(roleCount.instrument||0,'계기'),K(roleCount.symbol||0,'기호'),K(roleCount.nozzle||0,'접속구'),K(roleCount.note||0,'주석')], visual:'V-input', caption:'빨강 장비, 파랑 기호, 보라 계기. 상자는 요소의 외접 사각형(mm)'},
+ {name:'연결', title:'4 선 정리와 연결 판정', cam:'zoom', dur:10000, view:'dim', layers:['L-frame','L-nodes','L-runs'],
+  desc:`<p>축 평행 직선을 같은 축에서 병합하고 선 위에 놓인 기호에서 절단함. 선 끝이 요소에 <span class="rule">0.6 mm</span> 안에서 닿으면 <span class="rule">접속 확정</span>. 선 방향으로 <span class="rule">5 mm</span> 안에 요소가 있으면 <span class="rule">간격 후보</span>로만 기록함. 다른 선의 끝이 닿는 곳은 분기점.</p><p>점선이거나 가장 굵은 선 부류의 절반보다 가는 선은 신호선. 연결은 선·접점 분석으로만 확정하고 요소가 가깝다는 이유로 연결하지 않음.</p>`,
+  kpis:[K(pipes,'배관 구간',true),K(sigs,'신호선'),K(D.junctions.length,'분기점'),K(D.runs.length-gaps,'확정 연결'),K(gaps,'간격 후보')], visual:'V-input', caption:'초록 배관, 파랑 신호선, 노랑 분기점. 점선은 간격 후보'},
+ {name:'라벨', title:'5 문자 연결', cam:'zoom', dur:8000, view:'dim', layers:['L-frame','L-nodes','L-runs','L-labels'],
+  desc:`<p>요소 상자 안이나 <span class="rule">4 mm</span> 안의 문자는 그 요소의 라벨. 선 번호 형식(MNc 47125 73HG12 25)이고 선과 평행하면 선의 라벨. 문자 100개가 모두 요소 85개 또는 선 15개에 붙음.</p><p>정답 대조: 라벨 소속 62개 중 60개 일치. 누락 2개는 탱크 접속구 N8의 "N8", "800".</p>`,
+  kpis:[K('100','문자',true),K('85','요소 라벨'),K('15','선 라벨'),K('60/62','소속 일치')], visual:'V-input', caption:'회색 선은 문자와 소속 요소의 연결'},
+ {name:'역할', title:'6 역할 추정', cam:'tank', dur:8000, view:'dim', layers:['L-frame','L-nodes','L-runs','L-roles'],
+  desc:`<p>라벨 문자열의 형식으로 역할을 정함. 장비 태그 형식 <span class="rule">영문 1자 + 숫자 4자리</span>(P4712, T4750)이면 장비. 계기 기능 문자(PI, TICSA)와 루프 번호(4712.01)가 함께 있으면 계기. 나머지 묶음은 기호. 기호의 종류(밸브 형식) 분류는 후속 단계의 소형 분류기 몫이며 여기서는 하지 않음.</p>`,
+  kpis:[K('5','장비',true),K('4','계기'),K('19','기호'),K('0','모델')], visual:'V-input', caption:'검정 꼬리표는 추정 역할과 근거 형식'},
+ {name:'그래프', title:'7 관계 그래프', cam:'full', dur:10000, view:'dim', layers:['L-nodes','L-runs'], graph:'end',
+  desc:`<p>노드는 장비·계기·기호·접속구·주석과 분기점, 간선은 배관·신호선 구간. 모든 노드와 간선이 원본 좌표를 가짐. 오른쪽 그림은 같은 그래프를 좌표에서 풀어 놓은 모습이며 연결 관계는 동일함.</p><p>정답 대조: XML의 배관 연결에서 만든 인접 쌍 27개를 모두 복원. 정답 밖의 쌍 7개는 계측 신호선 연결 6개와 밸브·구동부 연결 1개.</p>`,
+  kpis:[K(D.graph.nodes.length,'노드',true),K(D.graph.edges.length,'간선'),K('27/27','정답 쌍 복원'),K('0.7초','처리 시간')], visual:'V-graph', caption:'도면 위의 노드·간선과 오른쪽 그래프는 같은 객체'},
+ {name:'색인', title:'8 직렬화와 특징별 색인', cam:'full', dur:14000, view:'faint', layers:['L-embed'], serial:true, lanesOn:true,
+  desc:`<p>그래프를 노드 목록과 구간 목록의 텍스트로 직렬화함. 요소의 특징에 따라 색인 경로가 갈림. 관계와 라벨은 그래프 텍스트의 희소 색인, 태그는 완전 일치, 표는 행 문장, 쪽과 그림 영역은 경량 이미지 임베딩의 밀집 벡터. 관계는 벡터로 뭉개지 않고 텍스트 그래프로 남기는 것이 핵심임.</p>`,
+  kpis:[K('4','색인 경로',true),K('1','신경망 모델'),K('1회','등록 시 처리'),K('mm','근거 좌표')], visual:'V-embed', caption:'파랑 테두리는 이미지 임베딩 대상 영역(쪽 전체와 그림 영역)'},
+ {name:'질의', title:'9 질의 시 처리', cam:'zoom', dur:14000, view:'dim', layers:['L-nodes','L-runs','L-query'], qaOn:true,
+  desc:`<p>질문의 태그를 완전 일치로 찾아 시작 노드를 정하고, 배관 간선을 따라 3단계 부분 그래프를 뽑아 텍스트로 기존 텍스트 LLM에 전달함. 이미지는 전달하지 않음. 답변의 각 항목은 노드·간선의 좌표를 근거로 가지며 원본 위에 표시함.</p>`,
+  kpis:[K('1','완전 일치 조회',true),K('3','탐색 단계'),K('8','전달 간선'),K('약 300','입력 토큰')], visual:'V-query', caption:'파랑 강조는 LLM에 전달된 부분 그래프'},
+];
+
+// ---- 진행 제어 ----
+const rail = $('#rail');
+STEPS.forEach((s, i) => { const b = document.createElement('button'); b.className = 'chip'; b.innerHTML = `<small>${String(i).padStart(2,'0')}</small><span>${s.name}</span><i class="bar"></i>`; b.addEventListener('click', () => go(i, true)); rail.appendChild(b); });
+let cur = -1, playing = true, t0 = 0, raf = 0;
+function go(i, manual){ if (i < 0 || i >= STEPS.length) return; cur = i; const s = STEPS[i]; t0 = performance.now();
+  view.className.baseVal = s.view || ''; setCam(CAM[s.cam][0], CAM[s.cam][1]);
+  document.querySelectorAll('.layer').forEach(l => l.classList.toggle('on', (s.layers||[]).includes(l.id)));
+  $('#stepno').textContent = `STEP ${String(i).padStart(2,'0')} / ${String(STEPS.length-1).padStart(2,'0')}`; $('#title').textContent = s.title; $('#desc').innerHTML = s.desc; $('#kpis').innerHTML = s.kpis.join(''); $('#caption').textContent = s.caption;
+  document.querySelectorAll('.visual > section').forEach(v => v.classList.toggle('show', v.id === s.visual));
+  document.querySelectorAll('.chip').forEach((c, j) => { c.classList.toggle('active', j === i); c.classList.toggle('done', j < i); c.querySelector('.bar').style.width = j < i ? '100%' : '0'; });
+  if (s.graph) { graphTo('start'); setTimeout(() => graphTo('end'), 900); }
+  serialEl.querySelectorAll('.ln').forEach(l => l.classList.toggle('in', !!s.serial));
+  if (s.serial) { $('#V-serial').classList.add('show'); setTimeout(() => { if (cur === i) { $('#V-serial').classList.remove('show'); $('#V-embed').classList.add('show'); } }, 5000); }
+  lanes.querySelectorAll('.lane').forEach(l => l.classList.toggle('in', !!s.lanesOn));
+  if (s.lanesOn) { lanes.querySelectorAll('.lane').forEach(l => { l.style.transitionDelay = (5.2 + +l.style.transitionDelay.replace('s','') * 0 + Array.from(lanes.children).indexOf(l) * .35) + 's'; }); }
+  $('#qa').querySelectorAll('.box').forEach(b => b.classList.toggle('in', !!s.qaOn));
+  $('#vin').innerHTML = i === 0 ? `<div class="kv"><span>형식</span><b>SVG (벡터)</b><span>경로 요소</span><b>있음 → 벡터 경로</b><span>쪽 크기</span><b>420 × 297 mm</b><span>좌표 단위</span><b>mm, 소수 둘째 자리</b><span>읽는 속성</span><b>좌표, 선 굵기, 점선, 문자 내용·방향·크기</b><span>읽지 않는 속성</span><b>색, 식별자, 그룹 이름, 기호 정의 이름</b></div>` : $('#vin').innerHTML;
+  if (i >= 1) $('#vin').innerHTML = `<div class="kv"><span>단계 결과</span><b>${s.caption}</b><span>모델 사용</span><b>${i===8?'이미지 임베딩 1종':'없음'}</b><span>벡터 경로</span><b>${['원본 요소 읽기','경로 분해·변환 행렬','틀·표 규칙','닫힌 도형·접점 묶음','선 병합·절단·접속','거리와 형식 규칙','문자열 형식 규칙','그래프 구성','직렬화·색인','부분 그래프 추출'][i]}</b><span>래스터 경로</span><b>${['화소 배열','보정·OCR·형태학 선·구멍 윤곽','같음','같음(윤곽은 구멍 탐지)','같음(굵기 오차 큼)','같음(OCR 오류 영향)','같음','같음','같음','같음'][i]}</b></div>`;
+  if (manual) { playing = true; $('#play').textContent = '일시정지'; }
+}
+function loop(now){ if (playing && cur >= 0) { const s = STEPS[cur]; const k = Math.min(1, (now - t0) / s.dur); const c = rail.children[cur]; if (c) c.querySelector('.bar').style.width = (k*100).toFixed(1)+'%'; if (k >= 1) go((cur + 1) % STEPS.length); } raf = requestAnimationFrame(loop); }
+$('#play').addEventListener('click', () => { playing = !playing; $('#play').textContent = playing ? '일시정지' : '재생'; if (playing) t0 = performance.now(); });
+$('#prev').addEventListener('click', () => go(Math.max(0, cur - 1), true));
+$('#next').addEventListener('click', () => go(Math.min(STEPS.length - 1, cur + 1), true));
+addEventListener('keydown', e => { if (e.key === 'ArrowRight') go(Math.min(STEPS.length-1, cur+1), true); else if (e.key === 'ArrowLeft') go(Math.max(0, cur-1), true); else if (e.key === ' ') { e.preventDefault(); $('#play').click(); } });
+go(0); requestAnimationFrame(loop);
+</script>

@@ -1,0 +1,903 @@
+<title>도면 한 장의 구조화 과정</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 배치: 왼쪽은 도면 무대(카메라 이동), 오른쪽은 단계 설명과 그래프·색인 시각. 좁은 화면은 세로 적층 */
+:root{
+  --bg:#F5F6F8; --panel:#FFFFFF; --fg:#15181D; --mute:#5F6670; --line:#D9DCE2; --soft:#EEF0F4;
+  --acc:#1F4FD8; --acc-soft:#E6ECFB;
+  --eq:#C8322E; --sym:#1F4FD8; --ins:#7A2BD1; --pipe:#1E8E57; --sig:#2F80ED; --tbl:#8A9099; --jct:#E0A400; --ink:#15181D; --ink-dim:#B8BDC6;
+  --sans:"Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --mono:"IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F1115; --panel:#171A20; --fg:#E7E9EE; --mute:#9AA1AC; --line:#2A2F39; --soft:#1F242D;
+  --acc:#6D8DF2; --acc-soft:#1B2540; --eq:#F0665F; --sym:#6D8DF2; --ins:#B07CF5; --pipe:#43C98A; --sig:#5DA6FF; --tbl:#7C838E; --jct:#F2C94C; --ink:#E7E9EE; --ink-dim:#3A404B; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0F1115; --panel:#171A20; --fg:#E7E9EE; --mute:#9AA1AC; --line:#2A2F39; --soft:#1F242D;
+  --acc:#6D8DF2; --acc-soft:#1B2540; --eq:#F0665F; --sym:#6D8DF2; --ins:#B07CF5; --pipe:#43C98A; --sig:#5DA6FF; --tbl:#7C838E; --jct:#F2C94C; --ink:#E7E9EE; --ink-dim:#3A404B; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:14px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 32px}
+.wrap{max-width:1480px;margin:0 auto}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;padding:26px 0 14px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.06em;color:var(--mute);font-weight:500}
+h1{font-size:clamp(20px,2.4vw,28px);margin:4px 0 0;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+.controls{display:flex;align-items:center;gap:8px}
+button{font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--acc)}
+button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+button.primary{background:var(--acc);border-color:var(--acc);color:#fff;min-width:88px}
+.rail{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin:14px 0 16px}
+.chip{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:8px 10px;cursor:pointer;min-width:0;text-align:left}
+.chip small{display:block;font-size:11px;color:var(--mute);font-variant-numeric:tabular-nums}
+.chip span{display:block;font-size:12.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--acc)}
+.chip.active{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}
+.chip.done small{color:var(--acc)}
+main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:18px;align-items:start}
+@media (max-width:980px){main{grid-template-columns:1fr}.rail{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;min-width:0}
+.stage .top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12px;color:var(--mute)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+#view{display:block;width:100%;height:auto;aspect-ratio:420/297;background:#fff}
+:root[data-theme="dark"] #view{background:#FFFFFF}
+.caption{padding:10px 14px;font-size:12.5px;color:var(--mute);border-top:1px solid var(--line);min-height:40px;font-variant-numeric:tabular-nums}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 20px;min-width:0;display:flex;flex-direction:column;gap:14px;min-height:560px}
+.stepno{font-family:var(--mono);font-size:12px;color:var(--acc);letter-spacing:.04em}
+h2{margin:2px 0 0;font-size:20px;font-weight:700;letter-spacing:-.01em}
+.desc p{margin:0 0 8px}
+.desc .rule{font-family:var(--mono);font-size:12px;background:var(--soft);border-radius:4px;padding:2px 6px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:8px}
+.kpi{border-top:2px solid var(--line);padding-top:6px}
+.kpi b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi span{font-size:12px;color:var(--mute)}
+.kpi.acc{border-top-color:var(--acc)}
+.visual{position:relative;flex:1;min-height:430px;border:1px solid var(--line);border-radius:6px;background:var(--bg);overflow:hidden}
+.visual > section{position:absolute;inset:0;padding:14px;opacity:0;transition:opacity .5s var(--ease);pointer-events:none;overflow:auto}
+.visual > section.show{opacity:1;pointer-events:auto}
+.visual h3{margin:0 0 8px;font-size:12px;letter-spacing:.06em;color:var(--mute);font-weight:500}
+pre{margin:0;font-family:var(--mono);font-size:11.5px;line-height:1.5;white-space:pre-wrap;word-break:break-all;color:var(--fg)}
+pre .ln{display:block;opacity:0;transform:translateY(4px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+pre .ln.in{opacity:1;transform:none}
+pre .hl{background:var(--acc-soft);color:var(--acc);border-radius:3px;padding:0 3px}
+#gsvg{width:100%;height:100%;display:block}
+#gsvg text{font-family:var(--mono);font-size:10.5px;fill:var(--fg)}
+#gsvg .e{stroke:var(--pipe);stroke-width:1.6;fill:none;opacity:.9}
+#gsvg .e.signal{stroke:var(--sig);stroke-dasharray:3 2}
+#gsvg .n{stroke:none}
+.lanes{display:grid;grid-template-columns:1fr;gap:8px}
+.lane{display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:start;border:1px solid var(--line);border-radius:6px;padding:9px 10px;background:var(--panel);opacity:0;transform:translateY(6px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.lane.in{opacity:1;transform:none}
+.lane .src{font-size:12px;font-weight:500}
+.lane .src small{display:block;color:var(--mute);font-weight:400;font-size:11px;margin-top:2px}
+.lane .dst{min-width:0}
+.lane .how{font-size:12px;color:var(--mute);margin-bottom:5px}
+.tokens{display:flex;flex-wrap:wrap;gap:4px}
+.tok{font-family:var(--mono);font-size:11px;padding:1px 6px;border-radius:3px;background:var(--soft);border:1px solid var(--line);opacity:0;transform:translateX(-6px);animation:tin .45s var(--ease) forwards;animation-delay:var(--d,0s)}
+.tok.key{background:var(--acc-soft);border-color:transparent;color:var(--acc)}
+@keyframes tin{to{opacity:1;transform:none}}
+.vec{display:flex;align-items:flex-end;gap:2px;height:34px}
+.vec i{display:block;width:5px;background:var(--acc);height:2px;transform-origin:bottom;animation:grow .6s var(--ease) forwards;animation-delay:var(--d,0s);transform:scaleY(.05);opacity:.9}
+@keyframes grow{to{transform:scaleY(1)}}
+.kv{font-family:var(--mono);font-size:11px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px}
+.kv span{color:var(--mute)}
+.qa .q{font-size:15px;font-weight:700;margin:0 0 10px}
+.qa .box{border:1px solid var(--line);border-radius:6px;padding:9px 11px;background:var(--panel);margin-bottom:8px;opacity:0;transform:translateY(6px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.qa .box.in{opacity:1;transform:none}
+.qa .box h4{margin:0 0 5px;font-size:11.5px;letter-spacing:.05em;color:var(--mute);font-weight:500}
+.ref{display:inline-block;font-family:var(--mono);font-size:11px;padding:1px 6px;border-radius:3px;background:var(--acc-soft);color:var(--acc);margin:1px 2px;cursor:pointer;border:1px solid transparent}
+.ref:hover{border-color:var(--acc)}
+.foot{margin-top:18px;font-size:12px;color:var(--mute);display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+
+/* 도면 요소 */
+#drawing .p{transition:stroke .6s var(--ease),fill .6s var(--ease),opacity .6s var(--ease);transition-delay:var(--d,0s)}
+#drawing .p-line,#drawing .p-curve,#drawing .p-arc{stroke:var(--ink)}
+#drawing .p-text{fill:var(--ink)}
+#view.typed .p-line{stroke:#2B6CB0}
+#view.typed .p-curve{stroke:#C05621}
+#view.typed .p-arc{stroke:#6B46C1}
+#view.typed .p-text{fill:#2F855A}
+#view.dim .p-line,#view.dim .p-curve,#view.dim .p-arc{stroke:#B8BDC6}
+#view.dim .p-text{fill:#9AA0A8}
+#view.faint .p{opacity:.35}
+.layer{opacity:0;transition:opacity .5s var(--ease)}
+.layer.on{opacity:1}
+.nd{fill:none;stroke-width:.5;opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.6);transition:opacity .45s var(--ease),transform .45s var(--ease);transition-delay:var(--d,0s)}
+.on .nd{opacity:1;transform:none}
+.nd.equipment{stroke:var(--eq)} .nd.symbol{stroke:var(--sym)} .nd.instrument{stroke:var(--ins)} .nd.nozzle{stroke:var(--sym)} .nd.note{stroke:var(--ins);stroke-dasharray:1 .6}
+.rn{fill:none;stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s var(--ease);transition-delay:var(--d,0s)}
+.on .rn{stroke-dashoffset:0}
+.rn.pipe{stroke:var(--pipe)} .rn.signal{stroke:var(--sig)} .rn.gapped{stroke-dasharray:.08 .06;stroke-dashoffset:0;opacity:0;transition:opacity .6s;} .on .rn.gapped{opacity:1}
+.jc{fill:var(--jct);stroke:#fff;stroke-width:.3;opacity:0;transition:opacity .4s var(--ease);transition-delay:var(--d,0s)}
+.on .jc{opacity:1}
+.lb{stroke:var(--mute);stroke-width:.25;opacity:0;transition:opacity .5s var(--ease);transition-delay:var(--d,0s)}
+.on .lb{opacity:.9}
+.lbx{fill:none;stroke:var(--mute);stroke-width:.2;opacity:0;transition:opacity .5s var(--ease);transition-delay:var(--d,0s)}
+.on .lbx{opacity:.8}
+.tag rect{fill:var(--fg);opacity:.92} .tag text{fill:var(--bg);font-size:2.4px;font-family:var(--mono)}
+.tag{opacity:0;transition:opacity .4s var(--ease);transition-delay:var(--d,0s)} .on .tag{opacity:1}
+.hi{fill:none;stroke:var(--acc);stroke-width:1.1;opacity:0;transition:opacity .4s var(--ease)} .on .hi{opacity:1}
+.hi.path{stroke-width:1.6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s var(--ease),opacity .3s;transition-delay:var(--d,0s)} .on .hi.path{stroke-dashoffset:0}
+.glow{fill:var(--acc);opacity:0;transition:opacity .5s} .on .glow{opacity:.12}
+.frm{fill:none;stroke:var(--tbl);stroke-width:.4;stroke-dasharray:1.5 1;opacity:0;transition:opacity .5s var(--ease);transition-delay:var(--d,0s)} .on .frm{opacity:1}
+.tbl-fill{fill:var(--tbl);opacity:0;transition:opacity .6s var(--ease);transition-delay:var(--d,0s)} .on .tbl-fill{opacity:.12}
+.tbl-tag text{font-size:2.6px;fill:var(--tbl);font-family:var(--mono)} .tbl-tag{opacity:0;transition:opacity .5s;transition-delay:var(--d,0s)} .on .tbl-tag{opacity:1}
+.scan{fill:var(--acc);opacity:0} .on .scan{animation:scan 1.8s var(--ease) forwards}
+@keyframes scan{0%{opacity:0}30%{opacity:.08}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){*{transition-duration:0s!important;animation-duration:0s!important;transition-delay:0s!important;animation-delay:0s!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">공개 참조 P&amp;ID C01V04 · 벡터 원본 · 문자 인식 모델 없이 기하 규칙으로 처리한 실제 결과</div>
+    <h1>도면 한 장이 관계 그래프와 색인이 되기까지</h1>
+  </div>
+  <div class="controls">
+    <button id="prev" aria-label="이전 단계">◀ 이전</button>
+    <button id="play" class="primary" aria-label="재생 또는 일시정지">일시정지</button>
+    <button id="next" aria-label="다음 단계">다음 ▶</button>
+  </div>
+</header>
+<div class="rail" id="rail"></div>
+<main>
+  <div class="stage">
+    <div class="top"><span id="cam">전체 420 × 297 mm</span>
+      <div class="legend"><span><i style="background:var(--eq)"></i>장비</span><span><i style="background:var(--sym)"></i>기호</span><span><i style="background:var(--ins)"></i>계기</span><span><i style="background:var(--pipe)"></i>배관</span><span><i style="background:var(--sig)"></i>신호선</span><span><i style="background:var(--jct)"></i>분기점</span><span><i style="background:var(--tbl)"></i>표·틀</span></div></div>
+    <svg id="view" viewBox="0 0 420 297" xmlns="http://www.w3.org/2000/svg" aria-label="도면과 추출 결과">
+      <g id="drawing" fill="none" stroke-width=".25">
+<text class="p p-text" data-x="320" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(319.5 98) rotate(-90)">PV4712.02</text>
+<ellipse class="p p-arc" data-x="330" cx="329.575" cy="98" rx="2.025" ry="2.025" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="328" d="M 327.55 98 L 323.5 98" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="327" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(327 99.5) rotate(-90)">F.C.</text>
+<ellipse class="p p-arc" data-x="154" cx="153.925" cy="119" rx="2.025" ry="2.025" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="156" d="M 155.95 119 L 160 119" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="158" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(157.5 121) rotate(-90)">F.C.</text>
+<text class="p p-text" data-x="340" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(340.5 115.5) rotate(0)">TV4750.03</text>
+<ellipse class="p p-arc" data-x="340" cx="340.5" cy="106.925" rx="2.025" ry="2.025" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="340" d="M 340.5 108.95 L 340.5 113" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="338" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(337.5 109.5) rotate(0)">F.O.</text>
+<text class="p p-text" data-x="56" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(56.375 151) rotate(0)">MNb 47121 75HB13 80</text>
+<path class="p p-line" data-x="38" d="M 38 154 L 74.75 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="31" d="M 31 155.75 L 31 152.25 L 34.5 152.25 L 34.5 150.5 L 38 154 L 34.5 157.5 L 34.5 155.75 L 31 155.75" fill="none" stroke="black" stroke-width="0.2"/>
+<text class="p p-text" data-x="113" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(112.625 151) rotate(0)">MNb 47122 75HB13 80</text>
+<path class="p p-line" data-x="93" d="M 93.25 154 L 132 154" fill="none" stroke="black" stroke-width="0.5"/>
+<text class="p p-text" data-x="157" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(157 90.8205) rotate(-90)">MNb 47123 75HB13 80</text>
+<path class="p p-line" data-x="148" d="M 148 133 L 160 133 L 160 121" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="160" d="M 160 117 L 160 61 L 181 61 L 181 72.641" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="159" d="M 159 121 L 161 117 L 159 117 L 161 121 L 159 121" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="160" cx="160" cy="119" rx="0.5" ry="0.5" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="183" d="M 182.75 63.891 L 181 65.641 L 179.25 63.891" fill="none" stroke="black" stroke-width="0.5"/>
+<text class="p p-text" data-x="190" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(190 148.25) rotate(-90)">MNc 47124 75HB13 80</text>
+<path class="p p-line" data-x="194" d="M 194 128.5 L 194 135" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="194" d="M 194 139 L 194 154 L 201 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="193" d="M 193 139 L 195 135 L 195 139 L 193 139 L 193 135 L 195 135" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="194" cx="194" cy="137" rx="0.5" ry="0.5" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="198" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(198 136) rotate(-90)">66KL21-80</text>
+<path class="p p-line" data-x="201" d="M 201 153 L 201 155 L 205 155 L 205 153 L 201 153 L 205 155" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="201" cx="201" cy="153" rx="0.5" ry="0.5" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="203" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(203 150) rotate(0)">75SA21-80</text>
+<path class="p p-line" data-x="205" d="M 205 154 L 215 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="215" d="M 215 153 L 219 154 L 215 155 L 215 153" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="217" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(217 150) rotate(0)">80/50</text>
+<path class="p p-line" data-x="219" d="M 219 154 L 229 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="233" d="M 233 154 L 241.75 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="229" d="M 229 153 L 233 155 L 233 153 L 229 155 L 229 153" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="231" cx="231" cy="154" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="231" cx="231" cy="154" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="231" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(231 150) rotate(0)">73KH12-50</text>
+<text class="p p-text" data-x="272" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(272.3 116.9995) rotate(-90)">MNc 47125 73HG12 25</text>
+<path class="p p-line" data-x="269" d="M 269 153.999 L 269 96" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="269" d="M 269 94 L 271 93 L 271 95 L 269 94 L 270 96 L 268 96 L 269 94" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="270" d="M 270.41 93 L 270.41 95 L 270.51 95 L 270.51 93 L 270.41 93" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="269" d="M 269 94 L 269 93 L 268 92.5 L 270 91.6667 L 268 90.8333 L 270 90 L 269 89.5 L 269 89" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="269" cx="269" cy="94" rx="0.5" ry="0.5" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="274" x="0" y="0" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(274 94) rotate(0)">SV 104.01</text>
+<text class="p p-text" data-x="274" x="0" y="0" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(274 97) rotate(0)">P = 6 barg</text>
+<text class="p p-text" data-x="274" x="0" y="0" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(274 100) rotate(0)">DN = 25/50</text>
+<path class="p p-line" data-x="273" d="M 273 90.9 L 289 90.9 L 289 101 L 273 101 L 273 90.9" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="267" d="M 267 94 L 213 94" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="236" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(236 91.5) rotate(0)">MNc 47125 75HB13 50</text>
+<path class="p p-line" data-x="219" d="M 218.75 95.75 L 217 94 L 218.75 92.25" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="255" d="M 255.25 93.2375 L 255.25 92.3625 L 258.75 93.2375 L 255.25 93.2375" fill="none" stroke="black" stroke-width="0.2"/>
+<text class="p p-text" data-x="308" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(308.251 151) rotate(0)">MNc 47126 75HB13 50</text>
+<path class="p p-line" data-x="260" d="M 260.25 154 L 264.999 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="265" d="M 265 154.001 L 265 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="265" d="M 265.001 154 L 264.999 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="265" d="M 265 154.001 L 265 158" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="264" d="M 264 162 L 266 158 L 264 158 L 266 162 L 264 162" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="265" cx="265" cy="160" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="265" cx="265" cy="160" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="268" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(268 164) rotate(0)">73KH12-25</text>
+<path class="p p-line" data-x="265" d="M 265.001 154 L 268.999 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="269" d="M 269 153.999 L 269 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="269" d="M 268.999 154 L 269.001 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="269" d="M 269.001 154 L 280.999 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="281" d="M 281 153.999 L 281 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="281" d="M 280.999 154 L 281.001 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="281" d="M 281 153.999 L 281 150" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="280" d="M 280 150 L 282 146 L 280 146 L 282 150 L 280 150" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="281" cx="281" cy="148" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="281" cx="281" cy="148" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="285" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(285 144) rotate(-90)">73KH12-25</text>
+<path class="p p-line" data-x="280" d="M 280 145.2 L 282 145.2" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="281" d="M 281.001 154 L 287 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="291" d="M 291 154 L 323.499 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="287" d="M 287 153 L 291 155 L 291 153 L 287 155 L 287 153" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="289" cx="289" cy="154" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="289" cx="289" cy="154" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="289" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(289 157.5) rotate(0)">73KH12-50</text>
+<path class="p p-line" data-x="324" d="M 323.5 153.999 L 323.5 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="323" d="M 323.499 154 L 323.501 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="324" d="M 323.5 153.999 L 323.5 137.5" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="324" d="M 323.501 154 L 364.999 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="365" d="M 365 153.999 L 365 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="365" d="M 364.999 154 L 365.001 154" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="365" d="M 365 153.999 L 365 150" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="364" d="M 364 150 L 366 146 L 364 146 L 366 150 L 364 150" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="365" cx="365" cy="148" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="365" cx="365" cy="148" rx="1" ry="1" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="369" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(369 145) rotate(-90)">73KH12-25</text>
+<path class="p p-line" data-x="364" d="M 364 145.2 L 366 145.2" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="365" d="M 365.001 154 L 378 154" fill="none" stroke="black" stroke-width="0.5"/>
+<path class="p p-line" data-x="378" d="M 378 155.75 L 378 152.25 L 381.5 152.25 L 381.5 150.5 L 385 154 L 381.5 157.5 L 381.5 155.75 L 378 155.75" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="373" d="M 373.25 152.25 L 375 154 L 373.25 155.75" fill="none" stroke="black" stroke-width="0.5"/>
+<text class="p p-text" data-x="239" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(239.25 80.75) rotate(0)">MNc 47127 75HB13 50 Q 80</text>
+<path class="p p-line" data-x="324" d="M 323.5 122.5 L 323.5 100" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="324" d="M 323.5 96 L 323.5 83 L 213 83" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="312" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(311.8 85.5) rotate(0)">Q80</text>
+<path class="p p-line" data-x="322" d="M 322.5 100 L 324.5 96 L 322.5 96 L 324.5 100 L 322.5 100" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="324" cx="323.5" cy="98" rx="0.5" ry="0.5" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="219" d="M 218.75 84.75 L 217 83 L 218.75 81.25" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="316" d="M 316 83.7 L 307.6 83.7" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="316" d="M 316 82.3 L 307.6 82.3" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="316" d="M 316 83 L 315.3 83.7" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="315" d="M 315.3 82.3 L 313.9 83.7" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="314" d="M 313.9 82.3 L 312.5 83.7" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="312" d="M 312.5 82.3 L 311.1 83.7" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="311" d="M 311.1 82.3 L 309.7 83.7" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="310" d="M 309.7 82.3 L 308.3 83.7" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="308" d="M 308.3 82.3 L 307.6 83" fill="none" stroke="black" stroke-width="0.2"/>
+<text class="p p-text" data-x="118" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(117.5 183) rotate(-90)">WKa 47130 75HB13 50</text>
+<path class="p p-line" data-x="120" d="M 120 202 L 120 133 L 132 133" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="118" d="M 118.25 162.75 L 120 161 L 121.75 162.75" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="150" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(150.5 183) rotate(-90)">WKb 47131 75HB13 50</text>
+<path class="p p-line" data-x="148" d="M 148 154 L 153 154 L 153 202" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="155" d="M 154.75 161 L 153 162.75 L 151.25 161" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="342" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(342.1 183.5) rotate(-90)">QSa 47140 75HB13 50 Q 80</text>
+<path class="p p-line" data-x="344" d="M 344.5 202 L 344.5 137.5" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="343" d="M 342.75 162.75 L 344.5 161 L 346.25 162.75" fill="none" stroke="black" stroke-width="0.25"/>
+<text class="p p-text" data-x="351" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(350.7 183.4) rotate(-90)">QSb 47141 75HB13 50 Q 80</text>
+<path class="p p-line" data-x="328" d="M 328 122.5 L 328 113 L 338.5 113" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="342" d="M 342.5 113 L 353 113 L 353 202" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="338" d="M 338.5 112 L 342.5 114 L 342.5 112 L 338.5 114 L 338.5 112" fill="none" stroke="black" stroke-width="0.25"/>
+<ellipse class="p p-arc" data-x="340" cx="340.5" cy="113" rx="0.5" ry="0.5" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="355" d="M 354.75 161 L 353 162.75 L 351.25 161" fill="none" stroke="black" stroke-width="0.25"/>
+<path class="p p-line" data-x="278" d="M 278 128.25 L 284 128.25" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-curve" data-x="0" d="M 0 3.75 A 3.75 3.75 0 0 1 0 -3.75" transform="matrix(1 0 0 -1 278 132)" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="278" d="M 278 135.75 L 284 135.75" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-curve" data-x="0" d="M 0 -3.75 A 3.75 3.75 0 0 1 0 3.75" transform="matrix(1 0 0 -1 284 132)" fill="none" stroke="black" stroke-width="0.2"/>
+<text class="p p-text" data-x="281" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(281 129.75) rotate(0)">PI</text>
+<text class="p p-text" data-x="281" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(281 133.2) rotate(0)">4712.01</text>
+<path class="p p-line" data-x="281" d="M 281 145.2 L 281 135.75" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="362" d="M 362 128.25 L 368 128.25" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-curve" data-x="0" d="M 0 3.75 A 3.75 3.75 0 0 1 0 -3.75" transform="matrix(1 0 0 -1 362 132)" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="362" d="M 362 135.75 L 368 135.75" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-curve" data-x="0" d="M 0 -3.75 A 3.75 3.75 0 0 1 0 3.75" transform="matrix(1 0 0 -1 368 132)" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="358" d="M 358.25 132 L 371.75 132" fill="none" stroke="black" stroke-width="0.2"/>
+<text class="p p-text" data-x="365" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(365 129.75) rotate(0)">PICSA</text>
+<text class="p p-text" data-x="365" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(365 133.2) rotate(0)">4712.02</text>
+<path class="p p-line" data-x="365" d="M 365 145.2 L 365 135.75" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="365" d="M 365 128.25 L 365 98 L 331.6 98" fill="none" stroke="black" stroke-width="0.2" stroke-dasharray="2 1"/>
+<path class="p p-line" data-x="134" d="M 134 115.25 L 140 115.25" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-curve" data-x="0" d="M 0 3.75 A 3.75 3.75 0 0 1 0 -3.75" transform="matrix(1 0 0 -1 134 119)" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="134" d="M 134 122.75 L 140 122.75" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-curve" data-x="0" d="M 0 -3.75 A 3.75 3.75 0 0 1 0 3.75" transform="matrix(1 0 0 -1 140 119)" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="130" d="M 130.25 119 L 143.75 119" fill="none" stroke="black" stroke-width="0.2"/>
+<text class="p p-text" data-x="137" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(137 116.75) rotate(0)">HS</text>
+<text class="p p-text" data-x="137" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(137 120.2) rotate(0)">4750.01</text>
+<path class="p p-line" data-x="144" d="M 143.75 119 L 151.9 119" fill="none" stroke="black" stroke-width="0.2" stroke-dasharray="2 1"/>
+<path class="p p-line" data-x="201" d="M 201 57.25 L 207 57.25" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-curve" data-x="0" d="M 0 3.75 A 3.75 3.75 0 0 1 0 -3.75" transform="matrix(1 0 0 -1 201 61)" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="201" d="M 201 64.75 L 207 64.75" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-curve" data-x="0" d="M 0 -3.75 A 3.75 3.75 0 0 1 0 3.75" transform="matrix(1 0 0 -1 207 61)" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="197" d="M 197.25 61 L 210.75 61" fill="none" stroke="black" stroke-width="0.2"/>
+<text class="p p-text" data-x="204" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(204 58.75) rotate(0)">TICSA</text>
+<text class="p p-text" data-x="204" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(204 62.2) rotate(0)">4750.03</text>
+<path class="p p-line" data-x="204" d="M 204 71.3238 L 204 64.75" fill="none" stroke="black" stroke-width="0.2"/>
+<path class="p p-line" data-x="211" d="M 210.75 61 L 340.5 61 L 340.5 104.9" fill="none" stroke="black" stroke-width="0.2" stroke-dasharray="2 1"/>
+<path class="p p-line" data-x="136" d="M 136 156.25 L 136 130.75 L 144 130.75 L 144 156.25 L 136 156.25" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="136" d="M 136 154.125 L 144 132.875" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="144" d="M 144 154.125 L 136 132.875" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="136" d="M 136 149.875 L 144 149.875" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="136" d="M 136 143.5 L 144 143.5" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="136" d="M 136 137.125 L 144 137.125" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="140" x="0" y="1.575" font-size="4.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(140 161.735) rotate(0)">H1007</text>
+<path class="p p-line" data-x="6" d="M 6 236.5 L 96 236.5" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="6" d="M 6 262.5 L 6 236.5" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="96" d="M 96 262.5 L 96 236.5" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="66" d="M 66 262.5 L 66 236.5" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="6" d="M 6 239.75 L 96 239.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 238.95) rotate(0)">Ident</text>
+<text class="p p-text" data-x="81" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(81 238.95) rotate(0)">H1007</text>
+<path class="p p-line" data-x="6" d="M 6 243 L 96 243" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 242.2) rotate(0)">Design Press. min. Chamber 1 / 2</text>
+<text class="p p-text" data-x="74" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(73.5 242.2) rotate(0)">-1 barg</text>
+<text class="p p-text" data-x="88" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(88.5 242.2) rotate(0)">-1 barg</text>
+<path class="p p-line" data-x="6" d="M 6 246.25 L 96 246.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 245.45) rotate(0)">Design Press. max. Chamber 1 / 2</text>
+<text class="p p-text" data-x="74" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(73.5 245.45) rotate(0)">60 barg</text>
+<text class="p p-text" data-x="88" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(88.5 245.45) rotate(0)">30 barg</text>
+<path class="p p-line" data-x="6" d="M 6 249.5 L 96 249.5" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 248.7) rotate(0)">Design Temp. min. Chamber 1 / 2</text>
+<text class="p p-text" data-x="74" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(73.5 248.7) rotate(0)">-45 °C</text>
+<text class="p p-text" data-x="88" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(88.5 248.7) rotate(0)">-45 °C</text>
+<path class="p p-line" data-x="6" d="M 6 252.75 L 96 252.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 251.95) rotate(0)">Design Temp. max. Chamber 1 / 2</text>
+<text class="p p-text" data-x="74" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(73.5 251.95) rotate(0)">100 °C</text>
+<text class="p p-text" data-x="88" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(88.5 251.95) rotate(0)">100 °C</text>
+<path class="p p-line" data-x="6" d="M 6 256 L 96 256" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 255.2) rotate(0)">Design Duty / Design Heat Transfer Area</text>
+<text class="p p-text" data-x="74" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(73.5 255.2) rotate(0)">313 kW</text>
+<text class="p p-text" data-x="88" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(88.5 255.2) rotate(0)">46.8 m²</text>
+<path class="p p-line" data-x="6" d="M 6 259.25 L 96 259.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 258.45) rotate(0)">DesignPlate Height / Plate Width</text>
+<text class="p p-text" data-x="74" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(73.5 258.45) rotate(0)">850 mm</text>
+<text class="p p-text" data-x="88" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(88.5 258.45) rotate(0)">1100 mm</text>
+<path class="p p-line" data-x="6" d="M 6 262.5 L 96 262.5" fill="none" stroke="black" stroke-width="0.6"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 261.7) rotate(0)">MaterialPlates</text>
+<text class="p p-text" data-x="81" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(81 261.7) rotate(0)">1.4306</text>
+<path class="p p-line" data-x="81" d="M 81 239.75 L 81 259.25" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="132" d="M 132 155 L 132 153" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="132" d="M 132 154 L 136 154" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="133" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(133.2 150.64) rotate(0)">N1</text>
+<text class="p p-text" data-x="133" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(133.2 156.34) rotate(0)">80</text>
+<path class="p p-line" data-x="148" d="M 148 132 L 148 134" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="148" d="M 148 133 L 144 133" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="147" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(146.8 129.64) rotate(0)">N2</text>
+<text class="p p-text" data-x="147" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(146.8 135.34) rotate(0)">80</text>
+<path class="p p-line" data-x="132" d="M 132 134 L 132 132" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="132" d="M 132 133 L 136 133" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="133" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(133.2 129.64) rotate(0)">N3</text>
+<text class="p p-text" data-x="133" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(133.2 135.34) rotate(0)">50</text>
+<path class="p p-line" data-x="148" d="M 148 153 L 148 155" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="148" d="M 148 154 L 144 154" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="147" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(146.8 150.64) rotate(0)">N4</text>
+<text class="p p-text" data-x="147" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(146.8 156.34) rotate(0)">50</text>
+<path class="p p-line" data-x="322" d="M 321.75 126.5 L 346.25 126.5 L 346.25 133.5 L 321.75 133.5 L 321.75 126.5" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="325" d="M 325.25 126.5 L 325.25 133.5" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="322" d="M 321.75 130 L 325.25 130" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="325" d="M 325.25 128.25 L 341 128.25" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="325" d="M 325.25 129.4167 L 341 129.4167" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="325" d="M 325.25 130.5833 L 341 130.5833" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="325" d="M 325.25 131.75 L 341 131.75" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="341" d="M 341 127.375 L 342.75 127.375 L 342.75 132.625 L 341 132.625 L 341 127.375" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="312" x="0" y="1.575" font-size="4.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(312 129.235) rotate(0)">H1008</text>
+<path class="p p-line" data-x="98" d="M 98 236.5 L 188 236.5" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="98" d="M 98 262.5 L 98 236.5" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="188" d="M 188 262.5 L 188 236.5" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="158" d="M 158 262.5 L 158 236.5" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="98" d="M 98 239.75 L 188 239.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 238.95) rotate(0)">Ident</text>
+<text class="p p-text" data-x="173" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(173 238.95) rotate(0)">H1008</text>
+<path class="p p-line" data-x="98" d="M 98 243 L 188 243" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 242.2) rotate(0)">Design Press. min. Chamber 1 / 2</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 242.2) rotate(0)">-1 barg</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 242.2) rotate(0)">-1 barg</text>
+<path class="p p-line" data-x="98" d="M 98 246.25 L 188 246.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 245.45) rotate(0)">Design Press. max. Chamber 1 / 2</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 245.45) rotate(0)">60 barg</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 245.45) rotate(0)">30 barg</text>
+<path class="p p-line" data-x="98" d="M 98 249.5 L 188 249.5" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 248.7) rotate(0)">Design Temp. min. Chamber 1 / 2</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 248.7) rotate(0)">-45 °C</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 248.7) rotate(0)">-45 °C</text>
+<path class="p p-line" data-x="98" d="M 98 252.75 L 188 252.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 251.95) rotate(0)">Design Temp. max. Chamber 1 / 2</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 251.95) rotate(0)">100 °C</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 251.95) rotate(0)">100 °C</text>
+<path class="p p-line" data-x="98" d="M 98 256 L 188 256" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 255.2) rotate(0)">Design Duty / Design Heat Transfer Area</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 255.2) rotate(0)">313 kW</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 255.2) rotate(0)">46.8 m²</text>
+<path class="p p-line" data-x="98" d="M 98 259.25 L 188 259.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 258.45) rotate(0)">Nominal Diameter / Tube Length</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 258.45) rotate(0)">DN 800</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 258.45) rotate(0)">2200 mm</text>
+<path class="p p-line" data-x="98" d="M 98 262.5 L 188 262.5" fill="none" stroke="black" stroke-width="0.6"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 261.7) rotate(0)">MaterialTubes / Material Shell</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 261.7) rotate(0)">1.4306</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 261.7) rotate(0)">1.4308</text>
+<path class="p p-line" data-x="173" d="M 173 239.75 L 173 262.5" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="324" d="M 324.5 137.5 L 322.5 137.5" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="324" d="M 323.5 137.5 L 323.5 133.5" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="328" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(327.5 135.49) rotate(0)">N1</text>
+<text class="p p-text" data-x="328" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(327.5 138.49) rotate(0)">50</text>
+<path class="p p-line" data-x="322" d="M 322.5 122.5 L 324.5 122.5" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="324" d="M 323.5 122.5 L 323.5 126.5" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="320" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(319.5 120.49) rotate(0)">N2</text>
+<text class="p p-text" data-x="320" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(319.5 123.49) rotate(0)">50</text>
+<path class="p p-line" data-x="327" d="M 327 122.5 L 329 122.5" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="328" d="M 328 122.5 L 328 126.5" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="332" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(332 120.49) rotate(0)">N3</text>
+<text class="p p-text" data-x="332" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(332 123.49) rotate(0)">50</text>
+<path class="p p-line" data-x="346" d="M 345.5 137.5 L 343.5 137.5" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="344" d="M 344.5 137.5 L 344.5 133.5" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="340" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(340.5 135.49) rotate(0)">N4</text>
+<text class="p p-text" data-x="340" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(340.5 138.49) rotate(0)">50</text>
+<ellipse class="p p-arc" data-x="84" cx="84" cy="154" rx="5.25" ry="5.25" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="79" d="M 78.75 154 L 89.25 154" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="84" d="M 84 159.25 L 89.25 154 L 84 148.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="84" x="0" y="1.575" font-size="4.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(84 144.235) rotate(0)">P4711</text>
+<path class="p p-line" data-x="6" d="M 6 265 L 96 265" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="6" d="M 6 291 L 6 265" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="96" d="M 96 291 L 96 265" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="66" d="M 66 291 L 66 265" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="6" d="M 6 268.25 L 96 268.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 267.45) rotate(0)">Ident</text>
+<text class="p p-text" data-x="81" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(81 267.45) rotate(0)">P4711</text>
+<path class="p p-line" data-x="6" d="M 6 271.5 L 96 271.5" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 270.7) rotate(0)">Design Press. Casing min.</text>
+<text class="p p-text" data-x="81" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(81 270.7) rotate(0)">-0.5 barg</text>
+<path class="p p-line" data-x="6" d="M 6 274.75 L 96 274.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 273.95) rotate(0)">Design Press. Casing max.</text>
+<text class="p p-text" data-x="81" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(81 273.95) rotate(0)">60 barg</text>
+<path class="p p-line" data-x="6" d="M 6 278 L 96 278" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 277.2) rotate(0)">Design Temp. Casing min.</text>
+<text class="p p-text" data-x="81" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(81 277.2) rotate(0)">-45 °C</text>
+<path class="p p-line" data-x="6" d="M 6 281.25 L 96 281.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 280.45) rotate(0)">Design Temp. Casing max.</text>
+<text class="p p-text" data-x="81" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(81 280.45) rotate(0)">80 °C</text>
+<path class="p p-line" data-x="6" d="M 6 284.5 L 96 284.5" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 283.7) rotate(0)">Design Capacity / Design Press. Head</text>
+<text class="p p-text" data-x="74" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(73.5 283.7) rotate(0)">200 m³/h</text>
+<text class="p p-text" data-x="88" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(88.5 283.7) rotate(0)">10 m</text>
+<path class="p p-line" data-x="6" d="M 6 287.75 L 96 287.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 286.95) rotate(0)">Design Speed / Design Power max. Diam. Wheel</text>
+<text class="p p-text" data-x="74" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(73.5 286.95) rotate(0)">600 1/min</text>
+<text class="p p-text" data-x="88" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(88.5 286.95) rotate(0)">60 kW</text>
+<path class="p p-line" data-x="6" d="M 6 291 L 96 291" fill="none" stroke="black" stroke-width="0.6"/>
+<text class="p p-text" data-x="7" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(6.8 290.2) rotate(0)">Material Case Press. Side / Material Impeller</text>
+<text class="p p-text" data-x="74" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(73.5 290.2) rotate(0)">1.4306</text>
+<text class="p p-text" data-x="88" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(88.5 290.2) rotate(0)">1.4308</text>
+<path class="p p-line" data-x="81" d="M 81 281.25 L 81 291" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="75" d="M 74.75 155 L 74.75 153" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="75" d="M 74.75 154 L 78.75 154" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="76" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(75.95 150.64) rotate(0)">N1</text>
+<text class="p p-text" data-x="76" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(75.95 156.34) rotate(0)">80</text>
+<path class="p p-line" data-x="93" d="M 93.25 153 L 93.25 155" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="93" d="M 93.25 154 L 89.25 154" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="92" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(92.05 150.64) rotate(0)">N2</text>
+<text class="p p-text" data-x="92" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(92.05 156.34) rotate(0)">80</text>
+<ellipse class="p p-arc" data-x="251" cx="251" cy="154" rx="5.25" ry="5.25" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="251" d="M 251 148.75 L 256.25 154" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="251" d="M 251 159.25 L 256.25 154" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="249" d="M 249.25 154 L 252.75 154" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="253" d="M 252.75 152.25 L 252.75 155.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="251" x="0" y="1.575" font-size="4.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(251 144.235) rotate(0)">P4712</text>
+<path class="p p-line" data-x="98" d="M 98 265 L 188 265" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="98" d="M 98 291 L 98 265" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="188" d="M 188 291 L 188 265" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="158" d="M 158 291 L 158 265" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="98" d="M 98 268.25 L 188 268.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 267.45) rotate(0)">Ident</text>
+<text class="p p-text" data-x="173" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(173 267.45) rotate(0)">P4712</text>
+<path class="p p-line" data-x="98" d="M 98 271.5 L 188 271.5" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 270.7) rotate(0)">Design Press. Casing min.</text>
+<text class="p p-text" data-x="173" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(173 270.7) rotate(0)">-1 barg</text>
+<path class="p p-line" data-x="98" d="M 98 274.75 L 188 274.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 273.95) rotate(0)">Design Press. Casing max.</text>
+<text class="p p-text" data-x="173" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(173 273.95) rotate(0)">60 barg</text>
+<path class="p p-line" data-x="98" d="M 98 278 L 188 278" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 277.2) rotate(0)">Design Temp. Casing min.</text>
+<text class="p p-text" data-x="173" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(173 277.2) rotate(0)">-45 °C</text>
+<path class="p p-line" data-x="98" d="M 98 281.25 L 188 281.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 280.45) rotate(0)">Design Temp. Casing max.</text>
+<text class="p p-text" data-x="173" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(173 280.45) rotate(0)">100 °C</text>
+<path class="p p-line" data-x="98" d="M 98 284.5 L 188 284.5" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 283.7) rotate(0)">Design Capacity / Design Press. Head</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 283.7) rotate(0)">420 m³/h</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 283.7) rotate(0)">40 m</text>
+<path class="p p-line" data-x="98" d="M 98 287.75 L 188 287.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 286.95) rotate(0)">Design Speed / Design Power max. Diam. Wheel</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 286.95) rotate(0)">1400 1/min</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 286.95) rotate(0)">84 kW</text>
+<path class="p p-line" data-x="98" d="M 98 291 L 188 291" fill="none" stroke="black" stroke-width="0.6"/>
+<text class="p p-text" data-x="99" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(98.8 290.2) rotate(0)">Material Case Press. Side / Material Impeller</text>
+<text class="p p-text" data-x="166" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(165.5 290.2) rotate(0)">1.4306</text>
+<text class="p p-text" data-x="180" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(180.5 290.2) rotate(0)">1.4305</text>
+<path class="p p-line" data-x="173" d="M 173 281.25 L 173 291" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="242" d="M 241.75 155 L 241.75 153" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="242" d="M 241.75 154 L 245.75 154" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="243" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(242.95 150.64) rotate(0)">N1</text>
+<text class="p p-text" data-x="243" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(242.95 156.34) rotate(0)">50</text>
+<path class="p p-line" data-x="260" d="M 260.25 153 L 260.25 155" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="260" d="M 260.25 154 L 256.25 154" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="259" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(259.05 150.64) rotate(0)">N2</text>
+<text class="p p-text" data-x="259" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(259.05 156.34) rotate(0)">50</text>
+<path class="p p-line" data-x="209" d="M 209 120.25 L 209 77.75" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-curve" data-x="10" d="M 10 18.75 A 21.25 21.25 0 0 1 -10 18.75" transform="matrix(1.5 0 0 -1.7 194 109.625)" fill="none" stroke="black" stroke-width="0.1879"/>
+<path class="p p-line" data-x="179" d="M 179 77.75 L 179 120.25" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-curve" data-x="-10" d="M -10 -18.75 A 21.25 21.25 0 0 1 10 -18.75" transform="matrix(1.5 0 0 -1.7 194 88.375)" fill="none" stroke="black" stroke-width="0.1879"/>
+<path class="p p-line" data-x="204" d="M 204 75.3238 L 204 117.3238" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="194" x="0" y="1.575" font-size="4.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(194 98.235) rotate(0)">T4750</text>
+<path class="p p-line" data-x="190" d="M 190 265 L 280 265" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="190" d="M 190 291 L 190 265" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="280" d="M 280 291 L 280 265" fill="none" stroke="black" stroke-width="0.6"/>
+<path class="p p-line" data-x="250" d="M 250 291 L 250 265" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="190" d="M 190 268.25 L 280 268.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="191" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(190.8 267.45) rotate(0)">Ident</text>
+<text class="p p-text" data-x="265" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(265 267.45) rotate(0)">T4750</text>
+<path class="p p-line" data-x="190" d="M 190 271.5 L 280 271.5" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="191" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(190.8 270.7) rotate(0)">Design Press. min. Chamber 1 / 2</text>
+<text class="p p-text" data-x="258" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(257.5 270.7) rotate(0)">-0.1 barg</text>
+<text class="p p-text" data-x="272" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(272.5 270.7) rotate(0)">-0.1 barg</text>
+<path class="p p-line" data-x="190" d="M 190 274.75 L 280 274.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="191" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(190.8 273.95) rotate(0)">Design Press. max. Chamber 1 / 2</text>
+<text class="p p-text" data-x="258" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(257.5 273.95) rotate(0)">0.1 barg</text>
+<text class="p p-text" data-x="272" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(272.5 273.95) rotate(0)">0.05 barg</text>
+<path class="p p-line" data-x="190" d="M 190 278 L 280 278" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="191" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(190.8 277.2) rotate(0)">Design Temp. min. Chamber 1 / 2</text>
+<text class="p p-text" data-x="258" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(257.5 277.2) rotate(0)">-45 °C</text>
+<text class="p p-text" data-x="272" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(272.5 277.2) rotate(0)">-45 °C</text>
+<path class="p p-line" data-x="190" d="M 190 281.25 L 280 281.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="191" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(190.8 280.45) rotate(0)">Design Temp. max. Chamber 1 / 2</text>
+<text class="p p-text" data-x="258" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(257.5 280.45) rotate(0)">100 °C</text>
+<text class="p p-text" data-x="272" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(272.5 280.45) rotate(0)">100 °C</text>
+<path class="p p-line" data-x="190" d="M 190 284.5 L 280 284.5" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="191" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(190.8 283.7) rotate(0)">Nominal Diameter / Overall Height/Length</text>
+<text class="p p-text" data-x="258" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(257.5 283.7) rotate(0)">DN 20000</text>
+<text class="p p-text" data-x="272" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(272.5 283.7) rotate(0)">4 m</text>
+<path class="p p-line" data-x="190" d="M 190 287.75 L 280 287.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="191" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(190.8 286.95) rotate(0)">Nominal Capacity</text>
+<text class="p p-text" data-x="265" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(265 286.95) rotate(0)">26 m³</text>
+<path class="p p-line" data-x="265" d="M 265 268.25 L 265 284.5" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="190" d="M 190 291 L 280 291" fill="none" stroke="black" stroke-width="0.6"/>
+<text class="p p-text" data-x="191" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(190.8 290.2) rotate(0)">Material Chamber 1 / 2</text>
+<text class="p p-text" data-x="258" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(257.5 290.2) rotate(0)">1.4306</text>
+<text class="p p-text" data-x="272" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(272.5 290.2) rotate(0)">1.4305</text>
+<path class="p p-line" data-x="265" d="M 265 287.75 L 265 291" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="180" d="M 180 72.641 L 182 72.641" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="181" d="M 181 72.641 L 181 76.641" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="177" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(177 70.631) rotate(0)">N1</text>
+<text class="p p-text" data-x="177" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(177 73.631) rotate(0)">80</text>
+<path class="p p-line" data-x="195" d="M 195 128.5 L 193 128.5" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="194" d="M 194 128.5 L 194 124.5" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="190" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(190 126.49) rotate(0)">N2</text>
+<text class="p p-text" data-x="190" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(190 129.49) rotate(0)">80</text>
+<path class="p p-line" data-x="175" d="M 175 112 L 175 110" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="175" d="M 175 111 L 179 111" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="176" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(176.2 107.64) rotate(0)">N3</text>
+<text class="p p-text" data-x="176" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(176.2 113.34) rotate(0)">80</text>
+<path class="p p-line" data-x="213" d="M 213 93 L 213 95" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="213" d="M 213 94 L 209 94" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="212" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(211.8 90.64) rotate(0)">N5</text>
+<text class="p p-text" data-x="212" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(211.8 96.34) rotate(0)">50</text>
+<path class="p p-line" data-x="213" d="M 213 82 L 213 84" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="213" d="M 213 83 L 209 83" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="212" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(211.8 79.64) rotate(0)">N6</text>
+<text class="p p-text" data-x="212" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(211.8 85.34) rotate(0)">50</text>
+<path class="p p-line" data-x="203" d="M 203 71.3238 L 205 71.3238" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="204" d="M 204 71.3238 L 204 75.3238" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="208" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(208 69.3138) rotate(0)">N7</text>
+<text class="p p-text" data-x="208" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(208 72.3138) rotate(0)">25</text>
+<path class="p p-line" data-x="179" d="M 179 97.5 L 176 97.5 L 176 99.25" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="179" d="M 179 90.5 L 176 90.5 L 176 88.75" fill="none" stroke="black" stroke-width="0.4"/>
+<path class="p p-line" data-x="175" d="M 174.95 99.25 L 174.95 88.75" fill="none" stroke="black" stroke-width="0.4"/>
+<text class="p p-text" data-x="171" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(171 91.99) rotate(0)">N8</text>
+<text class="p p-text" data-x="171" x="0" y="1.05" font-size="3" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(171 94.99) rotate(0)">800</text>
+<path class="p p-line" data-x="1" d="M 1 296 L 419 296 L 419 1 L 1 1 L 1 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="4" d="M 4 293 L 416 293 L 416 4 L 4 4 L 4 293" fill="none" stroke="black" stroke-width="0.6"/>
+<text class="p p-text" data-x="21" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(21.1667 1.9405) rotate(0)">1</text>
+<text class="p p-text" data-x="21" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(21.1667 294.0905) rotate(0)">1</text>
+<path class="p p-line" data-x="38" d="M 38.3333 293 L 38.3333 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="38" d="M 38.3333 4 L 38.3333 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="56" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(55.5 1.9405) rotate(0)">2</text>
+<text class="p p-text" data-x="56" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(55.5 294.0905) rotate(0)">2</text>
+<path class="p p-line" data-x="73" d="M 72.6667 293 L 72.6667 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="73" d="M 72.6667 4 L 72.6667 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="90" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(89.8333 1.9405) rotate(0)">3</text>
+<text class="p p-text" data-x="90" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(89.8333 294.0905) rotate(0)">3</text>
+<path class="p p-line" data-x="107" d="M 107 293 L 107 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="107" d="M 107 4 L 107 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="124" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(124.1667 1.9405) rotate(0)">4</text>
+<text class="p p-text" data-x="124" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(124.1667 294.0905) rotate(0)">4</text>
+<path class="p p-line" data-x="141" d="M 141.3333 293 L 141.3333 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="141" d="M 141.3333 4 L 141.3333 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="158" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(158.5 1.9405) rotate(0)">5</text>
+<text class="p p-text" data-x="158" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(158.5 294.0905) rotate(0)">5</text>
+<path class="p p-line" data-x="176" d="M 175.6667 293 L 175.6667 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="176" d="M 175.6667 4 L 175.6667 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="193" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(192.8333 1.9405) rotate(0)">6</text>
+<text class="p p-text" data-x="193" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(192.8333 294.0905) rotate(0)">6</text>
+<path class="p p-line" data-x="210" d="M 210 293 L 210 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="210" d="M 210 4 L 210 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="227" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(227.1667 1.9405) rotate(0)">7</text>
+<text class="p p-text" data-x="227" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(227.1667 294.0905) rotate(0)">7</text>
+<path class="p p-line" data-x="244" d="M 244.3333 293 L 244.3333 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="244" d="M 244.3333 4 L 244.3333 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="262" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(261.5 1.9405) rotate(0)">8</text>
+<text class="p p-text" data-x="262" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(261.5 294.0905) rotate(0)">8</text>
+<path class="p p-line" data-x="279" d="M 278.6667 293 L 278.6667 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="279" d="M 278.6667 4 L 278.6667 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="296" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(295.8333 1.9405) rotate(0)">9</text>
+<text class="p p-text" data-x="296" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(295.8333 294.0905) rotate(0)">9</text>
+<path class="p p-line" data-x="313" d="M 313 293 L 313 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="313" d="M 313 4 L 313 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="330" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(330.1667 1.9405) rotate(0)">10</text>
+<text class="p p-text" data-x="330" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(330.1667 294.0905) rotate(0)">10</text>
+<path class="p p-line" data-x="347" d="M 347.3333 293 L 347.3333 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="347" d="M 347.3333 4 L 347.3333 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="364" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(364.5 1.9405) rotate(0)">11</text>
+<text class="p p-text" data-x="364" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(364.5 294.0905) rotate(0)">11</text>
+<path class="p p-line" data-x="382" d="M 381.6667 293 L 381.6667 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="382" d="M 381.6667 4 L 381.6667 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="399" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(398.8333 1.9405) rotate(0)">12</text>
+<text class="p p-text" data-x="399" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(398.8333 294.0905) rotate(0)">12</text>
+<path class="p p-line" data-x="208" d="M 208.5 296 L 210 293 L 211.5 296" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="208" d="M 208.5 1 L 210 4 L 211.5 1" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="2" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(2.425 274.453) rotate(0)">H</text>
+<text class="p p-text" data-x="418" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(417.575 274.453) rotate(0)">H</text>
+<path class="p p-line" data-x="1" d="M 1 256.875 L 4 256.875" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="416" d="M 416 256.875 L 419 256.875" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="2" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(2.425 238.328) rotate(0)">G</text>
+<text class="p p-text" data-x="418" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(417.575 238.328) rotate(0)">G</text>
+<path class="p p-line" data-x="1" d="M 1 220.75 L 4 220.75" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="416" d="M 416 220.75 L 419 220.75" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="2" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(2.425 202.203) rotate(0)">F</text>
+<text class="p p-text" data-x="418" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(417.575 202.203) rotate(0)">F</text>
+<path class="p p-line" data-x="1" d="M 1 184.625 L 4 184.625" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="416" d="M 416 184.625 L 419 184.625" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="2" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(2.425 166.078) rotate(0)">E</text>
+<text class="p p-text" data-x="418" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(417.575 166.078) rotate(0)">E</text>
+<path class="p p-line" data-x="1" d="M 1 148.5 L 4 148.5" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="416" d="M 416 148.5 L 419 148.5" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="2" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(2.425 129.953) rotate(0)">D</text>
+<text class="p p-text" data-x="418" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(417.575 129.953) rotate(0)">D</text>
+<path class="p p-line" data-x="1" d="M 1 112.375 L 4 112.375" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="416" d="M 416 112.375 L 419 112.375" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="2" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(2.425 93.828) rotate(0)">C</text>
+<text class="p p-text" data-x="418" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(417.575 93.828) rotate(0)">C</text>
+<path class="p p-line" data-x="1" d="M 1 76.25 L 4 76.25" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="416" d="M 416 76.25 L 419 76.25" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="2" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(2.425 57.703) rotate(0)">B</text>
+<text class="p p-text" data-x="418" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(417.575 57.703) rotate(0)">B</text>
+<path class="p p-line" data-x="1" d="M 1 40.125 L 4 40.125" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="416" d="M 416 40.125 L 419 40.125" fill="none" stroke="black" stroke-width="0.3"/>
+<text class="p p-text" data-x="2" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(2.425 21.578) rotate(0)">A</text>
+<text class="p p-text" data-x="418" x="0" y="0.9975" font-size="2.85" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="middle" transform="translate(417.575 21.578) rotate(0)">A</text>
+<path class="p p-line" data-x="1" d="M 1 150 L 4 148.5 L 1 147" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="419" d="M 419 150 L 416 148.5 L 419 147" fill="none" stroke="black" stroke-width="0.3"/>
+<path class="p p-line" data-x="296" d="M 296 293 L 296 263 L 416 263 L 416 293 L 296 293" fill="none" stroke="black" stroke-width="0.58"/>
+<path class="p p-line" data-x="296" d="M 296 293 L 296 288 L 314 288 L 314 293 L 296 293" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="297" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(297.2 291.25) rotate(0)">APPROVED BY</text>
+<path class="p p-line" data-x="314" d="M 314 293 L 314 288 L 344 288 L 344 293 L 314 293" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="315" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(315.2 291.25) rotate(0)">A. P. Prover</text>
+<path class="p p-line" data-x="344" d="M 344 293 L 344 288 L 358.4 288 L 358.4 293 L 344 293" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="345" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(345.2 291.25) rotate(0)">2016-04-01</text>
+<path class="p p-line" data-x="358" d="M 358.4 293 L 358.4 288 L 380 288 L 380 293 L 358.4 293" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="360" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(359.6 291.25) rotate(0)">DRAWING NO</text>
+<path class="p p-line" data-x="380" d="M 380 293 L 380 288 L 416 288 L 416 293 L 380 293" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="381" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(381.2 291.25) rotate(0)">123/A93</text>
+<path class="p p-line" data-x="296" d="M 296 288 L 296 283 L 314 283 L 314 288 L 296 288" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="297" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(297.2 286.25) rotate(0)">CHECKED BY</text>
+<path class="p p-line" data-x="314" d="M 314 288 L 314 283 L 344 283 L 344 288 L 314 288" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="315" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(315.2 286.25) rotate(0)">C. Hecker</text>
+<path class="p p-line" data-x="344" d="M 344 288 L 344 283 L 358.4 283 L 358.4 288 L 344 288" fill="none" stroke="black" stroke-width="0.28"/>
+<path class="p p-line" data-x="358" d="M 358.4 288 L 358.4 283 L 380 283 L 380 288 L 358.4 288" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="360" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(359.6 286.25) rotate(0)">PROJECT</text>
+<path class="p p-line" data-x="380" d="M 380 288 L 380 283 L 416 283 L 416 288 L 380 288" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="381" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(381.2 286.25) rotate(0)">P3.1415</text>
+<path class="p p-line" data-x="296" d="M 296 283 L 296 278 L 314 278 L 314 283 L 296 283" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="297" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(297.2 281.25) rotate(0)">CREATED BY</text>
+<path class="p p-line" data-x="314" d="M 314 283 L 314 278 L 344 278 L 344 283 L 314 283" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="315" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(315.2 281.25) rotate(0)">A. Creator</text>
+<path class="p p-line" data-x="344" d="M 344 283 L 344 278 L 358.4 278 L 358.4 283 L 344 283" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="345" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(345.2 281.25) rotate(0)">2016-04-01</text>
+<path class="p p-line" data-x="314" d="M 314 278 L 314 273 L 344 273 L 344 278 L 314 278" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="315" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(315.2 276.25) rotate(0)">NAME</text>
+<path class="p p-line" data-x="344" d="M 344 278 L 344 273 L 358.4 273 L 358.4 278 L 344 278" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="345" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(345.2 276.25) rotate(0)">DATE</text>
+<path class="p p-line" data-x="358" d="M 358.4 283 L 358.4 273 L 416 273 L 416 283 L 358.4 283" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="360" x="0" y="0" font-size="4" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(359.6 279.2) rotate(0)">DEXPI example PID</text>
+<path class="p p-line" data-x="358" d="M 358.4 273 L 358.4 268 L 380 268 L 380 273 L 358.4 273" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="360" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(359.6 271.25) rotate(0)">PLANT SECTION</text>
+<path class="p p-line" data-x="380" d="M 380 273 L 380 268 L 416 268 L 416 273 L 380 273" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="381" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(381.2 271.25) rotate(0)">Utilities</text>
+<path class="p p-line" data-x="296" d="M 296 273 L 296 263 L 358.4 263 L 358.4 273 L 296 273" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="297" x="0" y="0" font-size="4" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(297.2 269.2) rotate(0)">Oil &amp; Gas, Inc.</text>
+<path class="p p-line" data-x="358" d="M 358.4 268 L 358.4 263 L 380 263 L 380 268 L 358.4 268" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="360" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(359.6 266.25) rotate(0)">SITE</text>
+<path class="p p-line" data-x="380" d="M 380 268 L 380 263 L 416 263 L 416 268 L 380 268" fill="none" stroke="black" stroke-width="0.28"/>
+<text class="p p-text" data-x="381" x="0" y="0" font-size="2.5" font-family="IBM Plex Sans, Noto Sans KR, sans-serif" text-anchor="start" transform="translate(381.2 266.25) rotate(0)">Dexpi City</text>
+      </g>
+      <g id="L-frame" class="layer"></g>
+      <g id="L-nodes" class="layer"></g>
+      <g id="L-runs" class="layer"></g>
+      <g id="L-labels" class="layer"></g>
+      <g id="L-roles" class="layer"></g>
+      <g id="L-embed" class="layer"></g>
+      <g id="L-query" class="layer"></g>
+    </svg>
+    <div class="caption" id="caption"></div>
+  </div>
+  <aside class="panel">
+    <div><div class="stepno" id="stepno"></div><h2 id="title"></h2></div>
+    <div class="desc" id="desc"></div>
+    <div class="kpis" id="kpis"></div>
+    <div class="visual" id="visual">
+      <section id="V-input"><h3>입력 판별</h3><div id="vin"></div></section>
+      <section id="V-graph"><h3>관계 그래프 (노드 <span id="gn"></span> · 간선 <span id="ge"></span>)</h3><svg id="gsvg" viewBox="0 0 600 400"></svg></section>
+      <section id="V-serial"><h3>직렬화 텍스트 (graph.txt 앞부분)</h3><pre id="serial"></pre></section>
+      <section id="V-embed"><h3>특징별 색인 경로</h3><div class="lanes" id="lanes"></div></section>
+      <section id="V-query" class="qa"><div id="qa"></div></section>
+    </div>
+  </aside>
+</main>
+<div class="foot"><span>자료: DEXPI 공개 예제 C01V04-VER.EX01, 추출 결과 examples/dexpi-reference-pid/output. 수치는 실측.</span><span>← → 키로 이동, 공백으로 재생·정지</span></div>
+</div>
+
+<script>
+const D = {"counts": {"line": 288, "curve": 10, "arc": 21, "text": 245}, "nodes": [{"id": "n0", "role": "symbol", "bbox": [159.0, 117.0, 161.0, 121.0], "texts": ["F.C."], "degree": 3}, {"id": "n1", "role": "symbol", "bbox": [193.0, 135.0, 195.0, 139.0], "texts": ["66KL21-80"], "degree": 2}, {"id": "n2", "role": "symbol", "bbox": [201.0, 153.0, 205.0, 155.0], "texts": ["75SA21-80"], "degree": 2}, {"id": "n3", "role": "symbol", "bbox": [229.0, 153.0, 233.0, 155.0], "texts": ["73KH12-50"], "degree": 2}, {"id": "n4", "role": "symbol", "bbox": [267.0, 89.0, 270.0, 96.0], "texts": [], "degree": 2}, {"id": "n5", "role": "note", "bbox": [273.0, 90.9, 289.0, 101.0], "texts": ["SV 104.01", "P = 6 barg", "DN = 25/50"], "degree": 0}, {"id": "n6", "role": "symbol", "bbox": [255.25, 92.36, 258.75, 93.24], "texts": [], "degree": 0}, {"id": "n7", "role": "symbol", "bbox": [264.0, 158.0, 266.0, 162.0], "texts": ["73KH12-25"], "degree": 1}, {"id": "n8", "role": "symbol", "bbox": [280.0, 146.0, 282.0, 150.0], "texts": ["73KH12-25"], "degree": 2}, {"id": "n9", "role": "symbol", "bbox": [287.0, 153.0, 291.0, 155.0], "texts": ["73KH12-50"], "degree": 2}, {"id": "n10", "role": "symbol", "bbox": [364.0, 146.0, 366.0, 150.0], "texts": ["73KH12-25"], "degree": 2}, {"id": "n11", "role": "symbol", "bbox": [378.0, 150.5, 385.0, 157.5], "texts": [], "degree": 1}, {"id": "n12", "role": "symbol", "bbox": [322.5, 96.0, 324.5, 100.0], "texts": ["PV4712.02", "F.C."], "degree": 3}, {"id": "n13", "role": "symbol", "bbox": [338.5, 112.0, 342.5, 114.0], "texts": ["TV4750.03", "F.O."], "degree": 3}, {"id": "n14", "role": "instrument", "bbox": [274.25, 128.25, 287.75, 135.75], "texts": ["PI", "4712.01"], "degree": 1}, {"id": "n15", "role": "instrument", "bbox": [358.25, 128.25, 371.75, 135.75], "texts": ["PICSA", "4712.02"], "degree": 2}, {"id": "n16", "role": "instrument", "bbox": [130.25, 115.25, 143.75, 122.75], "texts": ["HS", "4750.01"], "degree": 1}, {"id": "n17", "role": "instrument", "bbox": [197.25, 57.25, 210.75, 64.75], "texts": ["TICSA", "4750.03"], "degree": 2}, {"id": "n18", "role": "equipment", "bbox": [136.0, 130.75, 144.0, 156.25], "texts": ["H1007", "N1", "80"], "degree": 4}, {"id": "n19", "role": "equipment", "bbox": [321.75, 126.5, 346.25, 133.5], "texts": ["H1008", "N1", "50"], "degree": 4}, {"id": "n20", "role": "symbol", "bbox": [341.0, 127.38, 342.75, 132.62], "texts": [], "degree": 0}, {"id": "n21", "role": "equipment", "bbox": [179.0, 73.5, 209.0, 124.5], "texts": ["T4750", "N1", "80"], "degree": 8}, {"id": "n22", "role": "note", "bbox": [296.0, 263.0, 380.0, 288.0], "texts": ["APPROVED BY", "A. P. Prover", "2016-04-01"], "degree": 0}, {"id": "n23", "role": "symbol", "bbox": [327.55, 95.97, 331.6, 100.03], "texts": [], "degree": 2}, {"id": "n24", "role": "equipment", "bbox": [78.75, 148.75, 89.25, 159.25], "texts": ["P4711", "N1", "80"], "degree": 2}, {"id": "n25", "role": "equipment", "bbox": [245.75, 148.75, 256.25, 159.25], "texts": ["P4712", "N1", "50"], "degree": 2}, {"id": "n26", "role": "symbol", "bbox": [31.0, 150.5, 38.0, 157.5], "texts": [], "degree": 1}, {"id": "n27", "role": "arrow", "bbox": [179.25, 63.89, 182.75, 65.64], "texts": [], "degree": 0}, {"id": "n28", "role": "nozzle", "bbox": [200.5, 152.5, 201.5, 153.5], "texts": ["75SA21-80"], "degree": 0}, {"id": "n29", "role": "symbol", "bbox": [215.0, 153.0, 219.0, 155.0], "texts": ["80/50"], "degree": 2}, {"id": "n30", "role": "arrow", "bbox": [217.0, 92.25, 218.75, 95.75], "texts": [], "degree": 0}, {"id": "n31", "role": "arrow", "bbox": [373.25, 152.25, 375.0, 155.75], "texts": [], "degree": 0}, {"id": "n32", "role": "arrow", "bbox": [217.0, 81.25, 218.75, 84.75], "texts": [], "degree": 0}, {"id": "n33", "role": "mark", "bbox": [315.3, 83.0, 316.0, 83.7], "texts": [], "degree": 0}, {"id": "n34", "role": "mark", "bbox": [313.9, 82.3, 315.3, 83.7], "texts": [], "degree": 0}, {"id": "n35", "role": "mark", "bbox": [312.5, 82.3, 313.9, 83.7], "texts": [], "degree": 0}, {"id": "n36", "role": "mark", "bbox": [311.1, 82.3, 312.5, 83.7], "texts": [], "degree": 0}, {"id": "n37", "role": "mark", "bbox": [309.7, 82.3, 311.1, 83.7], "texts": [], "degree": 0}, {"id": "n38", "role": "mark", "bbox": [308.3, 82.3, 309.7, 83.7], "texts": [], "degree": 0}, {"id": "n39", "role": "mark", "bbox": [307.6, 82.3, 308.3, 83.0], "texts": [], "degree": 0}, {"id": "n40", "role": "arrow", "bbox": [118.25, 161.0, 121.75, 162.75], "texts": [], "degree": 0}, {"id": "n41", "role": "arrow", "bbox": [151.25, 161.0, 154.75, 162.75], "texts": [], "degree": 0}, {"id": "n42", "role": "arrow", "bbox": [342.75, 161.0, 346.25, 162.75], "texts": [], "degree": 0}, {"id": "n43", "role": "arrow", "bbox": [351.25, 161.0, 354.75, 162.75], "texts": [], "degree": 0}, {"id": "n44", "role": "symbol", "bbox": [280.0, 145.2, 282.0, 145.2], "texts": [], "degree": 2}, {"id": "n45", "role": "symbol", "bbox": [364.0, 145.2, 366.0, 145.2], "texts": [], "degree": 2}, {"id": "n46", "role": "mark", "bbox": [132.0, 132.0, 132.0, 134.0], "texts": [], "degree": 0}, {"id": "n47", "role": "mark", "bbox": [132.0, 153.0, 132.0, 155.0], "texts": [], "degree": 0}, {"id": "n48", "role": "mark", "bbox": [148.0, 132.0, 148.0, 134.0], "texts": [], "degree": 0}, {"id": "n49", "role": "mark", "bbox": [148.0, 153.0, 148.0, 155.0], "texts": [], "degree": 0}, {"id": "n50", "role": "mark", "bbox": [322.5, 137.5, 324.5, 137.5], "texts": [], "degree": 0}, {"id": "n51", "role": "mark", "bbox": [343.5, 137.5, 345.5, 137.5], "texts": [], "degree": 0}, {"id": "n52", "role": "mark", "bbox": [322.5, 122.5, 324.5, 122.5], "texts": [], "degree": 0}, {"id": "n53", "role": "mark", "bbox": [327.0, 122.5, 329.0, 122.5], "texts": [], "degree": 0}, {"id": "n54", "role": "mark", "bbox": [74.8, 153.0, 74.8, 155.0], "texts": [], "degree": 0}, {"id": "n55", "role": "mark", "bbox": [93.2, 153.0, 93.2, 155.0], "texts": [], "degree": 0}, {"id": "n56", "role": "mark", "bbox": [241.8, 153.0, 241.8, 155.0], "texts": [], "degree": 0}, {"id": "n57", "role": "mark", "bbox": [260.2, 153.0, 260.2, 155.0], "texts": [], "degree": 0}, {"id": "n58", "role": "mark", "bbox": [180.0, 72.6, 182.0, 72.6], "texts": [], "degree": 0}, {"id": "n59", "role": "mark", "bbox": [193.0, 128.5, 195.0, 128.5], "texts": [], "degree": 0}, {"id": "n60", "role": "nozzle", "bbox": [175.0, 110.0, 175.0, 112.0], "texts": ["N3", "80"], "degree": 1}, {"id": "n61", "role": "mark", "bbox": [213.0, 82.0, 213.0, 84.0], "texts": [], "degree": 0}, {"id": "n62", "role": "mark", "bbox": [213.0, 93.0, 213.0, 95.0], "texts": [], "degree": 0}, {"id": "n63", "role": "mark", "bbox": [203.0, 71.3, 205.0, 71.3], "texts": [], "degree": 0}], "runs": [{"id": "r0", "a": "n26", "b": "n24", "coords": [[38.0, 154.0], [78.75, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["MNb 47121 75HB13 80"]}, {"id": "r1", "a": "n24", "b": "n18", "coords": [[89.25, 154.0], [136.0, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["MNb 47122 75HB13 80"]}, {"id": "r2", "a": "n18", "b": "open@(153.0, 202.0)", "coords": [[144.0, 154.0], [153.0, 154.0], [153.0, 202.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["WKb 47131 75HB13 50"]}, {"id": "r3", "a": "n18", "b": "open@(120.0, 202.0)", "coords": [[136.0, 133.0], [120.0, 133.0], [120.0, 202.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["WKa 47130 75HB13 50"]}, {"id": "r4", "a": "n18", "b": "n0", "coords": [[144.0, 133.0], [160.0, 133.0], [160.0, 121.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r5", "a": "n2", "b": "n1", "coords": [[201.0, 154.0], [194.0, 154.0], [194.0, 139.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["MNc 47124 75HB13 80"]}, {"id": "r6", "a": "n2", "b": "n29", "coords": [[205.0, 154.0], [215.0, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r7", "a": "n29", "b": "n3", "coords": [[219.0, 154.0], [229.0, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r8", "a": "n3", "b": "n25", "coords": [[233.0, 154.0], [245.75, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r9", "a": "n25", "b": "j2", "coords": [[256.25, 154.0], [265.0, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r10", "a": "j2", "b": "j0", "coords": [[265.0, 154.0], [269.0, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r11", "a": "j2", "b": "n7", "coords": [[265.0, 154.0], [265.0, 158.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r12", "a": "j0", "b": "j1", "coords": [[269.0, 154.0], [281.0, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r13", "a": "j0", "b": "n4", "coords": [[269.0, 154.0], [269.0, 96.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["MNc 47125 73HG12 25"]}, {"id": "r14", "a": "j1", "b": "n9", "coords": [[281.0, 154.0], [287.0, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r15", "a": "j1", "b": "n8", "coords": [[281.0, 154.0], [281.0, 150.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r16", "a": "n9", "b": "j3", "coords": [[291.0, 154.0], [323.5, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["MNc 47126 75HB13 50"]}, {"id": "r17", "a": "j3", "b": "j4", "coords": [[323.5, 154.0], [365.0, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r18", "a": "j3", "b": "n19", "coords": [[323.5, 154.0], [323.5, 133.5]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r19", "a": "j4", "b": "n11", "coords": [[365.0, 154.0], [378.0, 154.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r20", "a": "j4", "b": "n10", "coords": [[365.0, 154.0], [365.0, 150.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r21", "a": "n0", "b": "n21", "coords": [[160.0, 117.0], [160.0, 61.0], [181.0, 61.0], [181.0, 76.64]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["MNb 47123 75HB13 80"]}, {"id": "r22", "a": "n0", "b": "n16", "coords": [[160.0, 119.0], [155.95, 119.0], [151.9, 119.0], [143.75, 119.0]], "kind": "signal", "dashed": true, "gap": 4.05, "texts": []}, {"id": "r23", "a": "n17", "b": "n13", "coords": [[210.75, 61.0], [340.5, 61.0], [340.5, 104.9], [340.5, 108.95], [340.5, 113.0]], "kind": "signal", "dashed": true, "gap": 4.05, "texts": []}, {"id": "r24", "a": "n17", "b": "n21", "coords": [[204.0, 64.75], [204.0, 75.32]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r25", "a": "n21", "b": "n1", "coords": [[194.0, 124.5], [194.0, 135.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r26", "a": "n21", "b": "n4", "coords": [[209.0, 94.0], [267.0, 94.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["MNc 47125 75HB13 50"]}, {"id": "r27", "a": "n21", "b": "n12", "coords": [[209.0, 83.0], [323.5, 83.0], [323.5, 96.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["MNc 47127 75HB13 50 Q 80"]}, {"id": "r28", "a": "n21", "b": "n60", "coords": [[179.0, 111.0], [175.0, 111.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r29", "a": "n21", "b": "open@(176.0, 99.2)", "coords": [[179.0, 97.5], [176.0, 97.5], [176.0, 99.25]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["800"]}, {"id": "r30", "a": "n21", "b": "open@(176.0, 88.8)", "coords": [[179.0, 90.5], [176.0, 90.5], [176.0, 88.75]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["N8"]}, {"id": "r31", "a": "n12", "b": "n19", "coords": [[323.5, 100.0], [323.5, 126.5]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r32", "a": "n12", "b": "n23", "coords": [[323.5, 98.0], [327.55, 98.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r33", "a": "n19", "b": "open@(344.5, 202.0)", "coords": [[344.5, 133.5], [344.5, 202.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["QSa 47140 75HB13 50 Q 80"]}, {"id": "r34", "a": "n19", "b": "n13", "coords": [[328.0, 126.5], [328.0, 113.0], [338.5, 113.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r35", "a": "open@(307.6, 83.7)", "b": "open@(316.0, 83.7)", "coords": [[307.6, 83.7], [316.0, 83.7]], "kind": "signal", "dashed": false, "gap": 0, "texts": ["Q80"]}, {"id": "r36", "a": "open@(307.6, 82.3)", "b": "open@(316.0, 82.3)", "coords": [[307.6, 82.3], [316.0, 82.3]], "kind": "signal", "dashed": false, "gap": 0, "texts": []}, {"id": "r37", "a": "n13", "b": "open@(353.0, 202.0)", "coords": [[342.5, 113.0], [353.0, 113.0], [353.0, 202.0]], "kind": "pipe", "dashed": false, "gap": 0, "texts": ["QSb 47141 75HB13 50 Q 80"]}, {"id": "r38", "a": "n14", "b": "n44", "coords": [[281.0, 135.75], [281.0, 145.2]], "kind": "signal", "dashed": false, "gap": 0, "texts": []}, {"id": "r39", "a": "n15", "b": "n23", "coords": [[365.0, 128.25], [365.0, 98.0], [331.6, 98.0]], "kind": "signal", "dashed": true, "gap": 0, "texts": []}, {"id": "r40", "a": "n15", "b": "n45", "coords": [[365.0, 135.75], [365.0, 145.2]], "kind": "signal", "dashed": false, "gap": 0, "texts": []}, {"id": "r41", "a": "open@(174.9, 88.8)", "b": "open@(174.9, 99.2)", "coords": [[174.9, 88.75], [174.9, 99.25]], "kind": "pipe", "dashed": false, "gap": 0, "texts": []}, {"id": "r42", "a": "n44", "b": "n8", "coords": [[281.0, 145.2], [281.0, 146.0]], "kind": "pipe", "dashed": false, "gap": 0.8, "texts": []}, {"id": "r43", "a": "n45", "b": "n10", "coords": [[365.0, 145.2], [365.0, 146.0]], "kind": "pipe", "dashed": false, "gap": 0.8, "texts": []}], "junctions": [{"id": "j0", "pt": [269.0, 154.0]}, {"id": "j1", "pt": [281.0, 154.0]}, {"id": "j2", "pt": [265.0, 154.0]}, {"id": "j3", "pt": [323.5, 154.0]}, {"id": "j4", "pt": [365.0, 154.0]}], "labels": [{"text": "PV4712.02", "bbox": [316.5, 92.75, 320.1, 106.25], "owner": ["node", 12, 2.4]}, {"text": "F.C.", "bbox": [324.0, 98.0, 327.6, 104.0], "owner": ["node", 12, 0.0]}, {"text": "F.C.", "bbox": [154.5, 119.5, 158.1, 125.5], "owner": ["node", 0, 0.9]}, {"text": "TV4750.03", "bbox": [333.75, 114.0, 347.25, 117.6], "owner": ["node", 13, 0.0]}, {"text": "F.O.", "bbox": [334.5, 108.0, 340.5, 111.6], "owner": ["node", 13, 0.4]}, {"text": "MNb 47121 75HB13 80", "bbox": [42.12, 149.5, 70.62, 153.1], "owner": ["run", 0, 0.9]}, {"text": "MNb 47122 75HB13 80", "bbox": [98.38, 149.5, 126.88, 153.1], "owner": ["run", 1, 0.9]}, {"text": "MNb 47123 75HB13 80", "bbox": [154.0, 78.07, 157.6, 106.57], "owner": ["run", 21, 2.4]}, {"text": "MNc 47124 75HB13 80", "bbox": [187.0, 135.5, 190.6, 164.0], "owner": ["run", 5, 3.4]}, {"text": "66KL21-80", "bbox": [195.0, 130.75, 198.6, 144.25], "owner": ["node", 1, 0.0]}, {"text": "75SA21-80", "bbox": [196.25, 148.5, 209.75, 152.1], "owner": ["node", 28, 0.4]}, {"text": "80/50", "bbox": [213.25, 148.5, 220.75, 152.1], "owner": ["node", 29, 0.9]}, {"text": "73KH12-50", "bbox": [224.25, 148.5, 237.75, 152.1], "owner": ["node", 3, 0.9]}, {"text": "MNc 47125 73HG12 25", "bbox": [269.3, 104.25, 272.9, 132.75], "owner": ["run", 13, 0.3]}, {"text": "SV 104.01", "bbox": [274.0, 91.0, 287.5, 94.6], "owner": ["node", 5, 0.0]}, {"text": "P = 6 barg", "bbox": [274.0, 94.0, 289.0, 97.6], "owner": ["node", 5, 0.0]}, {"text": "DN = 25/50", "bbox": [274.0, 97.0, 289.0, 100.6], "owner": ["node", 5, 0.0]}, {"text": "MNc 47125 75HB13 50", "bbox": [221.75, 90.0, 250.25, 93.6], "owner": ["run", 26, 0.4]}, {"text": "MNc 47126 75HB13 50", "bbox": [294.0, 149.5, 322.5, 153.1], "owner": ["run", 16, 0.9]}, {"text": "73KH12-25", "bbox": [261.25, 162.5, 274.75, 166.1], "owner": ["node", 7, 0.5]}, {"text": "73KH12-25", "bbox": [282.0, 138.75, 285.6, 152.25], "owner": ["node", 8, 0.0]}, {"text": "73KH12-50", "bbox": [282.25, 156.0, 295.75, 159.6], "owner": ["node", 9, 1.0]}, {"text": "73KH12-25", "bbox": [366.0, 139.75, 369.6, 153.25], "owner": ["node", 10, 0.0]}, {"text": "MNc 47127 75HB13 50 Q 80", "bbox": [221.25, 79.25, 257.25, 82.85], "owner": ["run", 27, 0.15]}, {"text": "Q80", "bbox": [309.55, 84.0, 314.05, 87.6], "owner": ["run", 35, 0.3]}, {"text": "WKa 47130 75HB13 50", "bbox": [114.5, 170.25, 118.1, 198.75], "owner": ["run", 3, 1.9]}, {"text": "WKb 47131 75HB13 50", "bbox": [147.5, 170.25, 151.1, 198.75], "owner": ["run", 2, 1.9]}, {"text": "QSa 47140 75HB13 50 Q 80", "bbox": [339.1, 167.0, 342.7, 203.0], "owner": ["run", 33, 1.8]}, {"text": "QSb 47141 75HB13 50 Q 80", "bbox": [347.7, 166.9, 351.3, 202.9], "owner": ["run", 37, 1.7]}, {"text": "PI", "bbox": [279.5, 128.25, 282.5, 131.85], "owner": ["node", 14, 0.0]}, {"text": "4712.01", "bbox": [275.75, 131.7, 286.25, 135.3], "owner": ["node", 14, 0.0]}, {"text": "PICSA", "bbox": [361.25, 128.25, 368.75, 131.85], "owner": ["node", 15, 0.0]}, {"text": "4712.02", "bbox": [359.75, 131.7, 370.25, 135.3], "owner": ["node", 15, 0.0]}, {"text": "HS", "bbox": [135.5, 115.25, 138.5, 118.85], "owner": ["node", 16, 0.0]}, {"text": "4750.01", "bbox": [131.75, 118.7, 142.25, 122.3], "owner": ["node", 16, 0.0]}, {"text": "TICSA", "bbox": [200.25, 57.25, 207.75, 60.85], "owner": ["node", 17, 0.0]}, {"text": "4750.03", "bbox": [198.75, 60.7, 209.25, 64.3], "owner": ["node", 17, 0.0]}, {"text": "H1007", "bbox": [134.38, 159.49, 145.62, 164.89], "owner": ["node", 18, 3.24]}, {"text": "N1", "bbox": [131.7, 149.14, 134.7, 152.74], "owner": ["node", 18, 1.3]}, {"text": "80", "bbox": [131.7, 154.84, 134.7, 158.44], "owner": ["node", 18, 1.3]}, {"text": "N2", "bbox": [145.3, 128.14, 148.3, 131.74], "owner": ["node", 18, 1.3]}, {"text": "80", "bbox": [145.3, 133.84, 148.3, 137.44], "owner": ["node", 18, 1.3]}, {"text": "N3", "bbox": [131.7, 128.14, 134.7, 131.74], "owner": ["node", 18, 1.3]}, {"text": "50", "bbox": [131.7, 133.84, 134.7, 137.44], "owner": ["node", 18, 1.3]}, {"text": "N4", "bbox": [145.3, 149.14, 148.3, 152.74], "owner": ["node", 18, 1.3]}, {"text": "50", "bbox": [145.3, 154.84, 148.3, 158.44], "owner": ["node", 18, 1.3]}, {"text": "H1008", "bbox": [306.38, 126.99, 317.62, 132.39], "owner": ["node", 19, 4.12]}, {"text": "N1", "bbox": [326.0, 133.99, 329.0, 137.59], "owner": ["node", 19, 0.49]}, {"text": "50", "bbox": [326.0, 136.99, 329.0, 140.59], "owner": ["node", 19, 3.49]}, {"text": "N2", "bbox": [318.0, 118.99, 321.0, 122.59], "owner": ["node", 19, 3.98]}, {"text": "50", "bbox": [318.0, 121.99, 321.0, 125.59], "owner": ["node", 19, 1.18]}, {"text": "N3", "bbox": [330.5, 118.99, 333.5, 122.59], "owner": ["node", 19, 3.91]}, {"text": "50", "bbox": [330.5, 121.99, 333.5, 125.59], "owner": ["node", 19, 0.91]}, {"text": "N4", "bbox": [339.0, 133.99, 342.0, 137.59], "owner": ["node", 19, 0.49]}, {"text": "50", "bbox": [339.0, 136.99, 342.0, 140.59], "owner": ["node", 19, 3.49]}, {"text": "P4711", "bbox": [78.38, 141.99, 89.62, 147.39], "owner": ["node", 24, 1.36]}, {"text": "N1", "bbox": [74.45, 149.14, 77.45, 152.74], "owner": ["node", 24, 1.3]}, {"text": "80", "bbox": [74.45, 154.84, 77.45, 158.44], "owner": ["node", 24, 1.3]}, {"text": "N2", "bbox": [90.55, 149.14, 93.55, 152.74], "owner": ["node", 24, 1.3]}, {"text": "80", "bbox": [90.55, 154.84, 93.55, 158.44], "owner": ["node", 24, 1.3]}, {"text": "P4712", "bbox": [245.38, 141.99, 256.62, 147.39], "owner": ["node", 25, 1.36]}, {"text": "N1", "bbox": [241.45, 149.14, 244.45, 152.74], "owner": ["node", 25, 1.3]}, {"text": "50", "bbox": [241.45, 154.84, 244.45, 158.44], "owner": ["node", 25, 1.3]}, {"text": "N2", "bbox": [257.55, 149.14, 260.55, 152.74], "owner": ["node", 25, 1.3]}, {"text": "50", "bbox": [257.55, 154.84, 260.55, 158.44], "owner": ["node", 25, 1.3]}, {"text": "T4750", "bbox": [188.38, 95.98, 199.62, 101.39], "owner": ["node", 21, 0.0]}, {"text": "N1", "bbox": [175.5, 69.13, 178.5, 72.73], "owner": ["node", 21, 0.92]}, {"text": "80", "bbox": [175.5, 72.13, 178.5, 75.73], "owner": ["node", 21, 0.5]}, {"text": "N2", "bbox": [188.5, 124.99, 191.5, 128.59], "owner": ["node", 21, 0.49]}, {"text": "80", "bbox": [188.5, 127.99, 191.5, 131.59], "owner": ["node", 21, 3.49]}, {"text": "N3", "bbox": [174.7, 106.14, 177.7, 109.74], "owner": ["node", 60, 0.26]}, {"text": "80", "bbox": [174.7, 111.84, 177.7, 115.44], "owner": ["node", 60, 0.0]}, {"text": "N5", "bbox": [210.3, 89.14, 213.3, 92.74], "owner": ["node", 21, 1.3]}, {"text": "50", "bbox": [210.3, 94.84, 213.3, 98.44], "owner": ["node", 21, 1.3]}, {"text": "N6", "bbox": [210.3, 78.14, 213.3, 81.74], "owner": ["node", 21, 1.3]}, {"text": "50", "bbox": [210.3, 83.84, 213.3, 87.44], "owner": ["node", 21, 1.3]}, {"text": "N7", "bbox": [206.5, 67.81, 209.5, 71.41], "owner": ["node", 21, 2.09]}, {"text": "25", "bbox": [206.5, 70.81, 209.5, 74.41], "owner": ["node", 21, 0.0]}, {"text": "N8", "bbox": [169.5, 90.49, 172.5, 94.09], "owner": ["run", 30, 3.5]}, {"text": "800", "bbox": [168.75, 93.49, 173.25, 97.09], "owner": ["run", 29, 2.78]}, {"text": "APPROVED BY", "bbox": [297.2, 288.75, 310.95, 291.75], "owner": ["node", 22, 0.75]}, {"text": "A. P. Prover", "bbox": [315.2, 288.75, 330.2, 291.75], "owner": ["node", 22, 0.75]}, {"text": "2016-04-01", "bbox": [345.2, 288.75, 357.7, 291.75], "owner": ["node", 22, 0.75]}, {"text": "DRAWING NO", "bbox": [359.6, 288.75, 372.1, 291.75], "owner": ["node", 22, 0.75]}, {"text": "123/A93", "bbox": [381.2, 288.75, 389.95, 291.75], "owner": ["node", 22, 1.42]}, {"text": "CHECKED BY", "bbox": [297.2, 283.75, 309.7, 286.75], "owner": ["node", 22, 0.0]}, {"text": "C. Hecker", "bbox": [315.2, 283.75, 326.45, 286.75], "owner": ["node", 22, 0.0]}, {"text": "PROJECT", "bbox": [359.6, 283.75, 368.35, 286.75], "owner": ["node", 22, 0.0]}, {"text": "P3.1415", "bbox": [381.2, 283.75, 389.95, 286.75], "owner": ["node", 22, 1.2]}, {"text": "CREATED BY", "bbox": [297.2, 278.75, 309.7, 281.75], "owner": ["node", 22, 0.0]}, {"text": "A. Creator", "bbox": [315.2, 278.75, 327.7, 281.75], "owner": ["node", 22, 0.0]}, {"text": "2016-04-01", "bbox": [345.2, 278.75, 357.7, 281.75], "owner": ["node", 22, 0.0]}, {"text": "NAME", "bbox": [315.2, 273.75, 320.2, 276.75], "owner": ["node", 22, 0.0]}, {"text": "DATE", "bbox": [345.2, 273.75, 350.2, 276.75], "owner": ["node", 22, 0.0]}, {"text": "DEXPI example PID", "bbox": [359.6, 275.2, 393.6, 280.0], "owner": ["node", 22, 0.0]}, {"text": "PLANT SECTION", "bbox": [359.6, 268.75, 375.85, 271.75], "owner": ["node", 22, 0.0]}, {"text": "Utilities", "bbox": [381.2, 268.75, 392.45, 271.75], "owner": ["node", 22, 1.2]}, {"text": "Oil & Gas, Inc.", "bbox": [297.2, 265.2, 327.2, 270.0], "owner": ["node", 22, 0.0]}, {"text": "SITE", "bbox": [359.6, 263.75, 364.6, 266.75], "owner": ["node", 22, 0.0]}, {"text": "Dexpi City", "bbox": [381.2, 263.75, 393.7, 266.75], "owner": ["node", 22, 1.2]}], "tables": [{"bbox": [6.0, 236.5, 96.0, 262.5], "rows": 8, "first": ["Ident", "H1007"]}, {"bbox": [98.0, 236.5, 188.0, 262.5], "rows": 8, "first": ["Ident", "H1008"]}, {"bbox": [6.0, 265.0, 96.0, 291.0], "rows": 8, "first": ["Ident", "P4711"]}, {"bbox": [98.0, 265.0, 188.0, 291.0], "rows": 8, "first": ["Ident", "P4712"]}, {"bbox": [190.0, 265.0, 280.0, 291.0], "rows": 8, "first": ["Ident", "T4750"]}], "graph": {"nodes": [{"id": "n0", "role": "symbol", "name": "F.C.", "start": [160.0, 119.0], "end": [158.7, 109.8]}, {"id": "n1", "role": "symbol", "name": "66KL21-80", "start": [194.0, 137.0], "end": [153.9, 183.5]}, {"id": "n2", "role": "symbol", "name": "75SA21-80", "start": [203.0, 154.0], "end": [99.3, 213.7]}, {"id": "n3", "role": "symbol", "name": "73KH12-50", "start": [231.0, 154.0], "end": [82.0, 279.1]}, {"id": "n4", "role": "symbol", "name": "symbol", "start": [268.5, 92.5], "end": [242.0, 210.8]}, {"id": "n7", "role": "symbol", "name": "73KH12-25", "start": [265.0, 160.0], "end": [186.4, 322.7]}, {"id": "n8", "role": "symbol", "name": "73KH12-25", "start": [281.0, 148.0], "end": [387.2, 318.4]}, {"id": "n9", "role": "symbol", "name": "73KH12-50", "start": [289.0, 154.0], "end": [408.0, 243.5]}, {"id": "n10", "role": "symbol", "name": "73KH12-25", "start": [365.0, 148.0], "end": [548.5, 152.1]}, {"id": "n11", "role": "symbol", "name": "symbol", "start": [381.5, 154.0], "end": [580.0, 189.9]}, {"id": "n12", "role": "symbol", "name": "PV4712.02", "start": [323.5, 98.0], "end": [326.6, 145.7]}, {"id": "n13", "role": "symbol", "name": "TV4750.03", "start": [340.5, 113.0], "end": [332.9, 165.3]}, {"id": "n14", "role": "instrument", "name": "PI", "start": [281.0, 132.0], "end": [438.3, 380.0]}, {"id": "n15", "role": "instrument", "name": "PICSA", "start": [365.0, 132.0], "end": [468.8, 114.2]}, {"id": "n16", "role": "instrument", "name": "HS", "start": [137.0, 119.0], "end": [141.7, 85.0]}, {"id": "n17", "role": "instrument", "name": "TICSA", "start": [204.0, 61.0], "end": [278.1, 157.2]}, {"id": "n18", "role": "equipment", "name": "H1007", "start": [140.0, 143.5], "end": [100.6, 72.9]}, {"id": "n19", "role": "equipment", "name": "H1008", "start": [334.0, 130.0], "end": [382.4, 173.0]}, {"id": "n21", "role": "equipment", "name": "T4750", "start": [194.0, 99.0], "end": [224.5, 157.5]}, {"id": "n23", "role": "symbol", "name": "symbol", "start": [329.57500000000005, 98.0], "end": [399.4, 123.4]}, {"id": "n24", "role": "equipment", "name": "P4711", "start": [84.0, 154.0], "end": [54.3, 42.8]}, {"id": "n25", "role": "equipment", "name": "P4712", "start": [251.0, 154.0], "end": [132.2, 294.8]}, {"id": "n26", "role": "symbol", "name": "symbol", "start": [34.5, 154.0], "end": [20.0, 20.0]}, {"id": "n29", "role": "symbol", "name": "80/50", "start": [217.0, 154.0], "end": [70.9, 246.8]}, {"id": "n44", "role": "symbol", "name": "symbol", "start": [281.0, 145.2], "end": [416.3, 352.9]}, {"id": "n45", "role": "symbol", "name": "symbol", "start": [365.0, 145.2], "end": [526.8, 123.7]}, {"id": "n60", "role": "nozzle", "name": "N3", "start": [175.0, 111.0], "end": [196.2, 138.4]}, {"id": "j0", "role": "junction", "name": "j0", "start": [269.0, 154.0], "end": [265.0, 261.8]}, {"id": "j1", "role": "junction", "name": "j1", "start": [281.0, 154.0], "end": [352.7, 277.2]}, {"id": "j2", "role": "junction", "name": "j2", "start": [265.0, 154.0], "end": [199.8, 292.7]}, {"id": "j3", "role": "junction", "name": "j3", "start": [323.5, 154.0], "end": [446.4, 201.6]}, {"id": "j4", "role": "junction", "name": "j4", "start": [365.0, 154.0], "end": [524.4, 184.5]}], "edges": [{"id": "r0", "a": "n26", "b": "n24", "kind": "pipe", "label": "MNb 47121 75HB13 80"}, {"id": "r1", "a": "n24", "b": "n18", "kind": "pipe", "label": "MNb 47122 75HB13 80"}, {"id": "r4", "a": "n18", "b": "n0", "kind": "pipe", "label": ""}, {"id": "r5", "a": "n2", "b": "n1", "kind": "pipe", "label": "MNc 47124 75HB13 80"}, {"id": "r6", "a": "n2", "b": "n29", "kind": "pipe", "label": ""}, {"id": "r7", "a": "n29", "b": "n3", "kind": "pipe", "label": ""}, {"id": "r8", "a": "n3", "b": "n25", "kind": "pipe", "label": ""}, {"id": "r9", "a": "n25", "b": "j2", "kind": "pipe", "label": ""}, {"id": "r10", "a": "j2", "b": "j0", "kind": "pipe", "label": ""}, {"id": "r11", "a": "j2", "b": "n7", "kind": "pipe", "label": ""}, {"id": "r12", "a": "j0", "b": "j1", "kind": "pipe", "label": ""}, {"id": "r13", "a": "j0", "b": "n4", "kind": "pipe", "label": "MNc 47125 73HG12 25"}, {"id": "r14", "a": "j1", "b": "n9", "kind": "pipe", "label": ""}, {"id": "r15", "a": "j1", "b": "n8", "kind": "pipe", "label": ""}, {"id": "r16", "a": "n9", "b": "j3", "kind": "pipe", "label": "MNc 47126 75HB13 50"}, {"id": "r17", "a": "j3", "b": "j4", "kind": "pipe", "label": ""}, {"id": "r18", "a": "j3", "b": "n19", "kind": "pipe", "label": ""}, {"id": "r19", "a": "j4", "b": "n11", "kind": "pipe", "label": ""}, {"id": "r20", "a": "j4", "b": "n10", "kind": "pipe", "label": ""}, {"id": "r21", "a": "n0", "b": "n21", "kind": "pipe", "label": "MNb 47123 75HB13 80"}, {"id": "r22", "a": "n0", "b": "n16", "kind": "signal", "label": ""}, {"id": "r23", "a": "n17", "b": "n13", "kind": "signal", "label": ""}, {"id": "r24", "a": "n17", "b": "n21", "kind": "pipe", "label": ""}, {"id": "r25", "a": "n21", "b": "n1", "kind": "pipe", "label": ""}, {"id": "r26", "a": "n21", "b": "n4", "kind": "pipe", "label": "MNc 47125 75HB13 50"}, {"id": "r27", "a": "n21", "b": "n12", "kind": "pipe", "label": "MNc 47127 75HB13 50 Q 80"}, {"id": "r28", "a": "n21", "b": "n60", "kind": "pipe", "label": ""}, {"id": "r31", "a": "n12", "b": "n19", "kind": "pipe", "label": ""}, {"id": "r32", "a": "n12", "b": "n23", "kind": "pipe", "label": ""}, {"id": "r34", "a": "n19", "b": "n13", "kind": "pipe", "label": ""}, {"id": "r38", "a": "n14", "b": "n44", "kind": "signal", "label": ""}, {"id": "r39", "a": "n15", "b": "n23", "kind": "signal", "label": ""}, {"id": "r40", "a": "n15", "b": "n45", "kind": "signal", "label": ""}, {"id": "r42", "a": "n44", "b": "n8", "kind": "pipe", "label": ""}, {"id": "r43", "a": "n45", "b": "n10", "kind": "pipe", "label": ""}]}, "serial": ["# 그림 관계 그래프 (좌표 단위 mm, 원점 좌상단)", "## 요소", "n0 종류=symbol 이름=F.C. 라벨=F.C. bbox=(159.0,117.0,161.0,121.0)", "n1 종류=symbol 이름=66KL21-80 라벨=66KL21-80 bbox=(193.0,135.0,195.0,139.0)", "n2 종류=symbol 이름=75SA21-80 라벨=75SA21-80 bbox=(201.0,153.0,205.0,155.0)", "n3 종류=symbol 이름=73KH12-50 라벨=73KH12-50 bbox=(229.0,153.0,233.0,155.0)", "n4 종류=symbol 이름=SV 104.01 라벨=- bbox=(267.0,89.0,270.0,96.0)", "n5 종류=note 이름=SV 104.01 라벨=SV 104.01|P = 6 barg|DN = 25/50 bbox=(273.0,90.9,289.0,101.0) 설명대상=n4", "n6 종류=symbol 이름=n6 라벨=- bbox=(255.2,92.4,258.8,93.2)", "n7 종류=symbol 이름=73KH12-25 라벨=73KH12-25 bbox=(264.0,158.0,266.0,162.0)", "n8 종류=symbol 이름=73KH12-25 라벨=73KH12-25 bbox=(280.0,146.0,282.0,150.0)", "n9 종류=symbol 이름=73KH12-50 라벨=73KH12-50 bbox=(287.0,153.0,291.0,155.0)", "n10 종류=symbol 이름=73KH12-25 라벨=73KH12-25 bbox=(364.0,146.0,366.0,150.0)", "n11 종류=symbol 이름=n11 라벨=- bbox=(378.0,150.5,385.0,157.5)", "n12 종류=symbol 이름=PV4712.02 라벨=PV4712.02|F.C. bbox=(322.5,96.0,324.5,100.0)", "n13 종류=symbol 이름=TV4750.03 라벨=TV4750.03|F.O. bbox=(338.5,112.0,342.5,114.0)", "n14 종류=instrument 이름=PI 4712.01 라벨=PI|4712.01 bbox=(274.2,128.2,287.8,135.8)", "n15 종류=instrument 이름=PICSA 4712.02 라벨=PICSA|4712.02 bbox=(358.2,128.2,371.8,135.8)", "n16 종류=instrument 이름=HS 4750.01 라벨=HS|4750.01 bbox=(130.2,115.2,143.8,122.8)", "n17 종류=instrument 이름=TICSA 4750.03 라벨=TICSA|4750.03 bbox=(197.2,57.2,210.8,64.8)", "n18 종류=equipment 이름=H1007 라벨=H1007|N1|80|N2|80|N3|50|N4|50 bbox=(136.0,130.8,144.0,156.2)", "n19 종류=equipment 이름=H1008 라벨=H1008|N1|50|N2|50|N3|50|N4|50 bbox=(321.8,126.5,346.2,133.5)", "n20 종류=symbol 이름=n20 라벨=- bbox=(341.0,127.4,342.8,132.6)", "n21 종류=equipment 이름=T4750 라벨=T4750|N1|80|N2|80|N5|50|N6|50|N7|25|N3 bbox=(179.0,73.5,209.0,124.5)", "n22 종류=note 이름=APPROVED BY 라벨=APPROVED BY|A. P. Prover|2016-04-01|DRAWING NO|123/A93|CHECKED BY|C. Hecker|PROJECT|P3.1415|CREATED BY|A. Creator|2016-04-01|NAME|DATE|DEXPI example PID|PLANT SECTION|Utilities|Oil & Gas, Inc.|SITE|Dexpi City bbox=(296.0,263.0,380.0,288.0)", "n23 종류=symbol 이름=n23 라벨=- bbox=(327.6,96.0,331.6,100.0)", "n24 종류=equipment 이름=P4711 라벨=P4711|N1|80|N2|80 bbox=(78.8,148.8,89.2,159.2)", "n25 종류=equipment 이름=P4712 라벨=P4712|N1|50|N2|50 bbox=(245.8,148.8,256.2,159.2)", "n26 종류=symbol 이름=n26 라벨=- bbox=(31.0,150.5,38.0,157.5)", "n29 종류=symbol 이름=80/50 라벨=80/50 bbox=(215.0,153.0,219.0,155.0)", "n44 종류=symbol 이름=n44 라벨=- bbox=(280.0,145.2,282.0,145.2)", "n45 종류=symbol 이름=n45 라벨=- bbox=(364.0,145.2,366.0,145.2)", "## 분기점", "j0 pt=(269.0,154.0)", "j1 pt=(281.0,154.0)", "j2 pt=(265.0,154.0)", "j3 pt=(323.5,154.0)", "j4 pt=(365.0,154.0)", "## 연결 (선과 접점으로 확인한 관계)", "r0 종류=pipe A=n26[symbol n26] B=n24[equipment P4711] 라벨=MNb 47121 75HB13 80 경로=(38.0,154.0)→(78.8,154.0)"], "subgraph": ["# 질의 부분 그래프: P4712 기준 3단계", "n25[equipment P4712] --r8--> n3[symbol 73KH12-50] 근거=bbox=(245.8,148.8,256.2,159.2) bbox=(229.0,153.0,233.0,155.0)", "n25[equipment P4712] --r9--> j2 근거=bbox=(245.8,148.8,256.2,159.2) pt=(265.0,154.0)", "n3[symbol 73KH12-50] --r7--> n29[symbol 80/50] 근거=bbox=(229.0,153.0,233.0,155.0) bbox=(215.0,153.0,219.0,155.0)", "j2 --r10--> j0 근거=pt=(265.0,154.0) pt=(269.0,154.0)", "j2 --r11--> n7[symbol 73KH12-25] 근거=pt=(265.0,154.0) bbox=(264.0,158.0,266.0,162.0)", "n29[symbol 80/50] --r6--> n2[symbol 75SA21-80] 근거=bbox=(215.0,153.0,219.0,155.0) bbox=(201.0,153.0,205.0,155.0)", "j0 --r12--> j1 근거=pt=(269.0,154.0) pt=(281.0,154.0)", "j0 --r13(MNc 47125 73HG12 25)--> n4[symbol SV 104.01] 근거=pt=(269.0,154.0) bbox=(267.0,89.0,270.0,96.0)"], "table_rows": [["Ident", "H1007"], ["Design Press. min. Chamber 1 / 2", "-1 barg", "-1 barg"], ["Design Press. max. Chamber 1 / 2", "60 barg", "30 barg"], ["Design Temp. min. Chamber 1 / 2", "-45 °C", "-45 °C"]]};
+const $ = s => document.querySelector(s);
+const svgNS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){ const e = document.createElementNS(svgNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+const view = $('#view');
+const byId = {}; D.nodes.forEach(n => byId[n.id] = n); D.junctions.forEach(j => byId[j.id] = j);
+const center = b => [(b[0]+b[2])/2, (b[1]+b[3])/2];
+const roleCount = {}; D.nodes.forEach(n => roleCount[n.role] = (roleCount[n.role]||0)+1);
+const pipes = D.runs.filter(r => r.kind === 'pipe').length, sigs = D.runs.filter(r => r.kind === 'signal').length, gaps = D.runs.filter(r => r.gap).length;
+
+// ---- 원본 요소에 x 위치 기반 지연(왼쪽에서 오른쪽으로 쓸어가는 효과) ----
+document.querySelectorAll('#drawing .p').forEach(p => { const x = +p.dataset.x || 0; p.style.setProperty('--d', (x / 420 * 1.4).toFixed(2) + 's'); });
+
+// ---- 겹층 구성 ----
+const Lf = $('#L-frame');
+el('rect', {x:4, y:4, width:412, height:289, class:'frm'}, Lf);
+D.tables.forEach((t, i) => { const b = t.bbox; el('rect', {x:b[0], y:b[1], width:b[2]-b[0], height:b[3]-b[1], class:'tbl-fill', style:`--d:${.2+i*.15}s`}, Lf);
+  el('rect', {x:b[0], y:b[1], width:b[2]-b[0], height:b[3]-b[1], class:'frm', style:`--d:${.2+i*.15}s`}, Lf);
+  const g = el('g', {class:'tbl-tag', style:`--d:${.5+i*.15}s`}, Lf); const tx = el('text', {x:b[0]+1, y:b[1]-1.2}, g); tx.textContent = `표 ${t.rows}행 · ${t.first[1]||t.first[0]}`; });
+const Ln = $('#L-nodes');
+const nodeOrder = D.nodes.filter(n => n.role !== 'mark' && n.role !== 'arrow').sort((a,b) => a.bbox[0]-b.bbox[0]);
+nodeOrder.forEach((n, i) => { const b = n.bbox; el('rect', {x:b[0]-.6, y:b[1]-.6, width:b[2]-b[0]+1.2, height:b[3]-b[1]+1.2, rx:.4, class:'nd '+n.role, style:`--d:${(i*0.05).toFixed(2)}s`, 'data-id':n.id}, Ln); });
+const Lr = $('#L-runs');
+D.runs.forEach((r, i) => { const pts = r.coords.map(c => c.join(',')).join(' ');
+  el('polyline', {points:pts, class:'rn '+r.kind+(r.gap?' gapped':''), pathLength:1, style:`--d:${(i*0.06).toFixed(2)}s`, 'data-id':r.id}, Lr); });
+D.junctions.forEach((j, i) => el('circle', {cx:j.pt[0], cy:j.pt[1], r:1.1, class:'jc', style:`--d:${(2.4+i*.1).toFixed(2)}s`}, Lr));
+const Ll = $('#L-labels');
+D.labels.forEach((l, i) => { const o = l.owner; if (!o) return; const c = center(l.bbox); let t;
+  if (o[0] === 'node') { const n = D.nodes[o[1]]; if (!n) return; t = center(n.bbox); } else if (o[0] === 'run') { const r = D.runs[o[1]]; if (!r) return; const m = r.coords[Math.floor(r.coords.length/2)-0]; const p0 = r.coords[0], p1 = r.coords[r.coords.length-1]; t = [(p0[0]+p1[0])/2, (p0[1]+p1[1])/2]; } else return;
+  const d = (i*0.03).toFixed(2)+'s';
+  el('rect', {x:l.bbox[0], y:l.bbox[1], width:l.bbox[2]-l.bbox[0], height:l.bbox[3]-l.bbox[1], class:'lbx', style:`--d:${d}`}, Ll);
+  el('line', {x1:c[0], y1:c[1], x2:t[0], y2:t[1], class:'lb', style:`--d:${d}`}, Ll); });
+const Lo = $('#L-roles');
+const roleName = {equipment:'장비 · 태그 형식', instrument:'계기 · 기능 문자+루프', symbol:'기호', nozzle:'접속구', note:'주석'};
+D.nodes.filter(n => ['equipment','instrument','note'].includes(n.role) || (n.role==='symbol' && n.texts.length && n.bbox[0]>190 && n.bbox[0]<300)).forEach((n, i) => {
+  const b = n.bbox; const label = `${n.texts[0]||''} ${roleName[n.role]}`.trim(); const w = label.length*1.45+2;
+  const g = el('g', {class:'tag', style:`--d:${(i*0.12).toFixed(2)}s`}, Lo);
+  el('rect', {x:b[0], y:b[1]-4.6, width:w, height:3.6, rx:.5}, g); const t = el('text', {x:b[0]+1, y:b[1]-2}, g); t.textContent = label; });
+const Le = $('#L-embed');
+[[0,0,420,297,'쪽 전체'], [240,145,24,18,'그림 영역'], [174,70,40,58,'그림 영역']].forEach((r, i) => { el('rect', {x:r[0], y:r[1], width:r[2], height:r[3], class:'scan', style:`animation-delay:${i*.6}s`}, Le); el('rect', {x:r[0], y:r[1], width:r[2], height:r[3], class:'hi', style:`--d:${i*.6}s`}, Le); });
+const Lq = $('#L-query');
+const subIds = ['n25','n3','n29','n2','n7','n4'];
+subIds.forEach((id, i) => { const n = byId[id]; if (!n) return; const b = n.bbox; el('rect', {x:b[0]-1, y:b[1]-1, width:b[2]-b[0]+2, height:b[3]-b[1]+2, rx:.6, class:'hi', style:`--d:${(.3+i*.25).toFixed(2)}s`, 'data-ref':id}, Lq); });
+['r8','r9','r7','r10','r11','r6','r12','r13'].forEach((id, i) => { const r = D.runs.find(x => x.id === id); if (!r) return; el('polyline', {points:r.coords.map(c=>c.join(',')).join(' '), class:'hi path', pathLength:1, style:`--d:${(.4+i*.3).toFixed(2)}s`}, Lq); });
+el('rect', {x:244, y:147, width:14, height:14, rx:7, class:'glow'}, Lq);
+
+// ---- 카메라 ----
+let cam = [0,0,420,297], camTarget = cam.slice(), camFrom = cam.slice(), camT0 = 0, camDur = 900;
+function setCam(t, label){ camFrom = cam.slice(); camTarget = t.slice(); camT0 = performance.now(); $('#cam').textContent = label; }
+function tickCam(now){ const k = Math.min(1, (now - camT0) / camDur); const e = 1 - Math.pow(1 - k, 3);
+  cam = camFrom.map((v, i) => v + (camTarget[i] - v) * e); view.setAttribute('viewBox', cam.map(v => v.toFixed(2)).join(' ')); requestAnimationFrame(tickCam); }
+requestAnimationFrame(tickCam);
+const CAM = { full:[[0,0,420,297],'전체 420 × 297 mm'], mid:[[22,34,376,266],'본문 영역'], zoom:[[176,72,158,112],'P4712 주변 158 × 112 mm'], tank:[[150,45,180,127],'T4750 주변'] };
+
+// ---- 그래프 시각 ----
+const gs = $('#gsvg'); const gpos = {}; const gn = {};
+const sx = x => (x - 20) / 380 * 560 + 20, sy = y => (y - 50) / 135 * 240 + 80;
+D.graph.nodes.forEach(n => { gpos[n.id] = [sx(n.start[0]), sy(n.start[1])]; });
+const gEdges = D.graph.edges.map(e => ({...e, el: el('line', {class:'e '+e.kind}, gs)}));
+D.graph.nodes.forEach(n => { const g = el('g', {}, gs); const col = {equipment:'var(--eq)', instrument:'var(--ins)', symbol:'var(--sym)', nozzle:'var(--sym)', note:'var(--ins)', junction:'var(--jct)'}[n.role];
+  const r = {equipment:9, instrument:7, junction:3}[n.role] || 4.5; el('circle', {r, fill:col, class:'n'}, g);
+  if (['equipment','instrument'].includes(n.role) || n.name.match(/^[0-9A-Z]{2}[A-Z0-9]+-\d+$/)) { const t = el('text', {x:r+3, y:3}, g); t.textContent = n.name; } gn[n.id] = g; });
+$('#gn').textContent = D.graph.nodes.length; $('#ge').textContent = D.graph.edges.length;
+function drawGraph(){ for (const id in gn) gn[id].setAttribute('transform', `translate(${gpos[id][0].toFixed(1)} ${gpos[id][1].toFixed(1)})`);
+  gEdges.forEach(e => { const a = gpos[e.a], b = gpos[e.b]; if (!a||!b) return; e.el.setAttribute('x1', a[0]); e.el.setAttribute('y1', a[1]); e.el.setAttribute('x2', b[0]); e.el.setAttribute('y2', b[1]); }); }
+drawGraph();
+let gAnim = null;
+function graphTo(key){ const from = {}; for (const id in gpos) from[id] = gpos[id].slice(); const to = {}; D.graph.nodes.forEach(n => to[n.id] = key === 'end' ? n.end : [sx(n.start[0]), sy(n.start[1])]);
+  const t0 = performance.now(); cancelAnimationFrame(gAnim); const dur = reduced ? 0 : 1600;
+  const step = now => { const k = dur ? Math.min(1, (now - t0) / dur) : 1; const e = 1 - Math.pow(1 - k, 3); for (const id in gpos) gpos[id] = [from[id][0] + (to[id][0]-from[id][0])*e, from[id][1] + (to[id][1]-from[id][1])*e]; drawGraph(); if (k < 1) gAnim = requestAnimationFrame(step); }; gAnim = requestAnimationFrame(step); }
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ---- 직렬화 ----
+const serialEl = $('#serial');
+D.serial.slice(0, 28).forEach((l, i) => { const s = document.createElement('span'); s.className = 'ln'; s.style.transitionDelay = (i*0.12)+'s'; s.textContent = l; serialEl.appendChild(s); });
+
+// ---- 색인 경로 ----
+const lanes = $('#lanes');
+function lane(src, sub, how, inner, i){ const d = document.createElement('div'); d.className = 'lane'; d.style.transitionDelay = (i*0.35)+'s'; d.innerHTML = `<div class="src">${src}<small>${sub}</small></div><div class="dst"><div class="how">${how}</div>${inner}</div>`; lanes.appendChild(d); }
+const toks = ['n25','equipment','P4712','N1','N2','r9','pipe','j2','73KH12-25','MNc','47125','73HG12','SV','104.01','signal','TICSA','4750.03','TV4750.03'];
+lane('관계와 라벨', '노드 목록 · 구간 목록 텍스트', '그래프 직렬화 → 토큰 → BM25 희소 색인(용어 → 노드·구간 목록). 모델 없음',
+  `<div class="tokens">${toks.map((t,i)=>`<span class="tok${/^[A-Z]{1,2}\d|^\d{2}[A-Z]{2}\d|^[A-Z]{2,5}$/.test(t)?' key':''}" style="--d:${(0.6+i*0.08).toFixed(2)}s">${t}</span>`).join('')}</div>`, 0);
+lane('태그와 선 번호', '장비 태그 ^[A-Z]\\d{4}$ · 선 번호 형식', '완전 일치 색인(키 → 노드·구간). 부분 일치를 허용하지 않음',
+  `<div class="kv"><span>P4712</span><b>n25 equipment bbox=(245.8,148.8,256.2,159.2)</b><span>73KH12-25</span><b>n7 symbol bbox=(264.0,158.0,266.0,162.0)</b><span>MNc 47125 73HG12 25</span><b>r13 pipe j0→n4</b><span>TICSA 4750.03</span><b>n17 instrument</b></div>`, 1);
+lane('표', '격자와 문자 6개 이상인 영역 5개', '행 단위 문장으로 펼쳐 텍스트 색인. 표 이름(Ident)을 행마다 붙임',
+  `<div class="kv">${D.table_rows.slice(1,4).map(r=>`<span>H1007</span><b>${r.join(' | ')}</b>`).join('')}</div>`, 2);
+lane('쪽과 그림 영역', '화소 배열. 사진·렌더링도 같은 경로', '경량 이미지 임베딩 모델 → 밀집 벡터 → 코사인 유사도 검색. 관계 질의에는 쓰지 않음',
+  `<div class="vec">${Array.from({length:40},(_,i)=>`<i style="height:${(6+Math.abs(Math.sin(i*1.7)*22+Math.cos(i*.9)*6)).toFixed(0)}px;--d:${(1.2+i*0.03).toFixed(2)}s"></i>`).join('')}</div><div class="how" style="margin-top:4px">유일하게 신경망을 쓰는 지점. 검색 후보를 좁히는 용도</div>`, 3);
+lane('좌표', '모든 노드·간선·라벨의 mm 좌표', '구조화 저장소에 함께 보관. 답변의 근거 표시와 원본 확인에 사용', `<div class="kv"><span>n25</span><b>(245.8, 148.8, 256.2, 159.2)</b><span>j2</span><b>(265.0, 154.0)</b><span>r13</span><b>(269,154)→(269,96)</b></div>`, 4);
+
+// ---- 질의 ----
+$('#qa').innerHTML = `<p class="q">"P4712 펌프의 토출 측은 어디로 연결되는가"</p>
+<div class="box" style="transition-delay:.2s"><h4>1 완전 일치</h4><div class="kv"><span>P4712</span><b>n25 equipment, 노즐 N1(흡입) N2(토출)</b></div></div>
+<div class="box" style="transition-delay:1s"><h4>2 부분 그래프 (n25에서 3단계, 배관 간선만)</h4><pre>${D.subgraph.slice(1).map((l,i)=>`<span class="ln in" style="transition-delay:${(1.2+i*.15).toFixed(2)}s">${l.replace(/(n25|j2|j0|n3|n7|n4|n29|n2)(\[|\b)/g,'<span class="hl">$1</span>$2')}</span>`).join('')}</pre></div>
+<div class="box" style="transition-delay:2.8s"><h4>3 기존 텍스트 LLM 입력</h4><div style="font-size:12.5px">위 텍스트와 질문. 이미지는 넣지 않음. 토큰 약 300</div></div>
+<div class="box" style="transition-delay:3.6s"><h4>4 답변과 근거</h4><div style="font-size:13px">토출 측 N2는 분기점 <span class="ref" data-ref="j2">j2</span>에서 세 갈래로 나뉨. 아래로 밸브 <span class="ref" data-ref="n7">73KH12-25</span>, 위로 안전밸브 <span class="ref" data-ref="n4">SV 104.01</span>로 가는 선 MNc 47125 73HG12 25, 오른쪽으로 밸브 73KH12-50을 지나 열교환기 H1008 방향.</div><div class="how" style="margin-top:6px">근거 좌표를 누르면 도면에서 위치를 봄. OCR 결과만으로는 세 이름이 같은 쪽에 있다는 사실까지 전달됨</div></div>`;
+document.querySelectorAll('.ref').forEach(r => r.addEventListener('click', () => { const id = r.dataset.ref; const n = byId[id]; if (!n) return; const c = n.bbox ? center(n.bbox) : n.pt; setCam([c[0]-30, c[1]-21, 60, 42], `근거 ${id} 주변`); }));
+
+// ---- 단계 정의 ----
+const K = (b, s, acc) => `<div class="kpi${acc?' acc':''}"><b>${b}</b><span>${s}</span></div>`;
+const STEPS = [
+ {name:'원본', title:'원본 입력: 벡터 그림', cam:'full', dur:7000,
+  desc:`<p>DEXPI 공개 참조 P&amp;ID 한 장. 벡터 PDF와 같은 벡터 그림이며 <span class="rule">선 · 곡선 · 타원 · 문자</span>의 좌표, 선 굵기, 점선 여부만 읽음. 색, 식별자, 그룹 이름, 기호 정의 이름은 읽지 않음.</p><p>입력 판별: 경로 요소가 있으면 벡터 경로, 없으면(스캔) 래스터 경로. 이 예시는 벡터 경로임.</p>`,
+  kpis:[K(D.counts.line,'직선'),K(D.counts.curve,'곡선'),K(D.counts.arc,'타원'),K(D.counts.text,'문자')], visual:'V-input', caption:'원본 그대로. 420 × 297 mm(A3) 좌표계'},
+ {name:'요소 분해', title:'1 시각 요소 추출', cam:'full', dur:8000, view:'typed',
+  desc:`<p>경로를 직선과 곡선으로 분해하고 변환 행렬을 적용해 쪽 좌표(mm)로 통일함. 직선은 축 평행 여부와 길이, 곡선과 타원은 중심과 반지름, 문자는 내용·기준점·방향·크기를 속성으로 가짐.</p><p>래스터 입력이면 이 단계가 바뀜: 기울기 보정과 잡음 제거 → 문자 인식(CPU 모델) 후 문자 지움 → 형태학 열림으로 축 평행 선과 굵기 → 구멍 윤곽으로 닫힌 도형 → 남은 잉크 덩어리를 기호로. 나머지 단계는 동일함.</p>`,
+  kpis:[K('파랑','직선'),K('주황','곡선'),K('보라','타원'),K('초록','문자')], visual:'V-input', caption:'왼쪽에서 오른쪽으로 요소 유형을 표시함. 모델 미사용'},
+ {name:'틀·표', title:'2 틀과 표 분리', cam:'full', dur:7000, view:'dim', layers:['L-frame'],
+  desc:`<p>쪽 면적의 80% 이상을 덮는 닫힌 사각형은 <span class="rule">틀</span>. 서로 맞닿은 선이 사각형 경계를 90% 이상 덮고 안에 문자가 6개 이상이면 <span class="rule">표</span> 또는 표제란. 표는 행·칸 단위로 따로 저장하고 그림 처리에서 제외함.</p>`,
+  kpis:[K(D.tables.length,'표',true),K('8','행/표'),K('1','표제란'),K('329','남은 요소'),K('100','남은 문자')], visual:'V-input', caption:'회색 영역은 표. 장비 사양표 5개와 표제란'},
+ {name:'도형·기호', title:'3 닫힌 도형과 기호 묶음', cam:'mid', dur:8000, view:'dim', layers:['L-frame','L-nodes'],
+  desc:`<p>끝점이 서로 맞물린 선과 곡선의 묶음, 둘레 12 mm 이상의 타원은 <span class="rule">닫힌 도형</span>(탱크, 열교환기, 펌프, 계기 원). 사선·곡선·작은 타원을 접점 <span class="rule">0.6 mm</span> 기준으로 묶은 것은 <span class="rule">기호</span>(밸브, 리듀서, 연결기). 기호에 닿은 짧은 축 평행 직선은 기호의 일부로 흡수함.</p>`,
+  kpis:[K(roleCount.equipment||0,'장비',true),K(roleCount.instrument||0,'계기'),K(roleCount.symbol||0,'기호'),K(roleCount.nozzle||0,'접속구'),K(roleCount.note||0,'주석')], visual:'V-input', caption:'빨강 장비, 파랑 기호, 보라 계기. 상자는 요소의 외접 사각형(mm)'},
+ {name:'연결', title:'4 선 정리와 연결 판정', cam:'zoom', dur:10000, view:'dim', layers:['L-frame','L-nodes','L-runs'],
+  desc:`<p>축 평행 직선을 같은 축에서 병합하고 선 위에 놓인 기호에서 절단함. 선 끝이 요소에 <span class="rule">0.6 mm</span> 안에서 닿으면 <span class="rule">접속 확정</span>. 선 방향으로 <span class="rule">5 mm</span> 안에 요소가 있으면 <span class="rule">간격 후보</span>로만 기록함. 다른 선의 끝이 닿는 곳은 분기점.</p><p>점선이거나 가장 굵은 선 부류의 절반보다 가는 선은 신호선. 연결은 선·접점 분석으로만 확정하고 요소가 가깝다는 이유로 연결하지 않음.</p>`,
+  kpis:[K(pipes,'배관 구간',true),K(sigs,'신호선'),K(D.junctions.length,'분기점'),K(D.runs.length-gaps,'확정 연결'),K(gaps,'간격 후보')], visual:'V-input', caption:'초록 배관, 파랑 신호선, 노랑 분기점. 점선은 간격 후보'},
+ {name:'라벨', title:'5 문자 연결', cam:'zoom', dur:8000, view:'dim', layers:['L-frame','L-nodes','L-runs','L-labels'],
+  desc:`<p>요소 상자 안이나 <span class="rule">4 mm</span> 안의 문자는 그 요소의 라벨. 선 번호 형식(MNc 47125 73HG12 25)이고 선과 평행하면 선의 라벨. 문자 100개가 모두 요소 85개 또는 선 15개에 붙음.</p><p>정답 대조: 라벨 소속 62개 중 60개 일치. 누락 2개는 탱크 접속구 N8의 "N8", "800".</p>`,
+  kpis:[K('100','문자',true),K('85','요소 라벨'),K('15','선 라벨'),K('60/62','소속 일치')], visual:'V-input', caption:'회색 선은 문자와 소속 요소의 연결'},
+ {name:'역할', title:'6 역할 추정', cam:'tank', dur:8000, view:'dim', layers:['L-frame','L-nodes','L-runs','L-roles'],
+  desc:`<p>라벨 문자열의 형식으로 역할을 정함. 장비 태그 형식 <span class="rule">영문 1자 + 숫자 4자리</span>(P4712, T4750)이면 장비. 계기 기능 문자(PI, TICSA)와 루프 번호(4712.01)가 함께 있으면 계기. 나머지 묶음은 기호. 기호의 종류(밸브 형식) 분류는 후속 단계의 소형 분류기 몫이며 여기서는 하지 않음.</p>`,
+  kpis:[K('5','장비',true),K('4','계기'),K('19','기호'),K('0','모델')], visual:'V-input', caption:'검정 꼬리표는 추정 역할과 근거 형식'},
+ {name:'그래프', title:'7 관계 그래프', cam:'full', dur:10000, view:'dim', layers:['L-nodes','L-runs'], graph:'end',
+  desc:`<p>노드는 장비·계기·기호·접속구·주석과 분기점, 간선은 배관·신호선 구간. 모든 노드와 간선이 원본 좌표를 가짐. 오른쪽 그림은 같은 그래프를 좌표에서 풀어 놓은 모습이며 연결 관계는 동일함.</p><p>정답 대조: XML의 배관 연결에서 만든 인접 쌍 27개를 모두 복원. 정답 밖의 쌍 7개는 계측 신호선 연결 6개와 밸브·구동부 연결 1개.</p>`,
+  kpis:[K(D.graph.nodes.length,'노드',true),K(D.graph.edges.length,'간선'),K('27/27','정답 쌍 복원'),K('0.7초','처리 시간')], visual:'V-graph', caption:'도면 위의 노드·간선과 오른쪽 그래프는 같은 객체'},
+ {name:'색인', title:'8 직렬화와 특징별 색인', cam:'full', dur:14000, view:'faint', layers:['L-embed'], serial:true, lanesOn:true,
+  desc:`<p>그래프를 노드 목록과 구간 목록의 텍스트로 직렬화함. 요소의 특징에 따라 색인 경로가 갈림. 관계와 라벨은 그래프 텍스트의 희소 색인, 태그는 완전 일치, 표는 행 문장, 쪽과 그림 영역은 경량 이미지 임베딩의 밀집 벡터. 관계는 벡터로 뭉개지 않고 텍스트 그래프로 남기는 것이 핵심임.</p>`,
+  kpis:[K('4','색인 경로',true),K('1','신경망 모델'),K('1회','등록 시 처리'),K('mm','근거 좌표')], visual:'V-embed', caption:'파랑 테두리는 이미지 임베딩 대상 영역(쪽 전체와 그림 영역)'},
+ {name:'질의', title:'9 질의 시 처리', cam:'zoom', dur:14000, view:'dim', layers:['L-nodes','L-runs','L-query'], qaOn:true,
+  desc:`<p>질문의 태그를 완전 일치로 찾아 시작 노드를 정하고, 배관 간선을 따라 3단계 부분 그래프를 뽑아 텍스트로 기존 텍스트 LLM에 전달함. 이미지는 전달하지 않음. 답변의 각 항목은 노드·간선의 좌표를 근거로 가지며 원본 위에 표시함.</p>`,
+  kpis:[K('1','완전 일치 조회',true),K('3','탐색 단계'),K('8','전달 간선'),K('약 300','입력 토큰')], visual:'V-query', caption:'파랑 강조는 LLM에 전달된 부분 그래프'},
+];
+
+// ---- 진행 제어 ----
+const rail = $('#rail');
+STEPS.forEach((s, i) => { const b = document.createElement('button'); b.className = 'chip'; b.innerHTML = `<small>${String(i).padStart(2,'0')}</small><span>${s.name}</span><i class="bar"></i>`; b.addEventListener('click', () => go(i, true)); rail.appendChild(b); });
+let cur = -1, playing = true, t0 = 0, raf = 0;
+function go(i, manual){ if (i < 0 || i >= STEPS.length) return; cur = i; const s = STEPS[i]; t0 = performance.now();
+  view.className.baseVal = s.view || ''; setCam(CAM[s.cam][0], CAM[s.cam][1]);
+  document.querySelectorAll('.layer').forEach(l => l.classList.toggle('on', (s.layers||[]).includes(l.id)));
+  $('#stepno').textContent = `STEP ${String(i).padStart(2,'0')} / ${String(STEPS.length-1).padStart(2,'0')}`; $('#title').textContent = s.title; $('#desc').innerHTML = s.desc; $('#kpis').innerHTML = s.kpis.join(''); $('#caption').textContent = s.caption;
+  document.querySelectorAll('.visual > section').forEach(v => v.classList.toggle('show', v.id === s.visual));
+  document.querySelectorAll('.chip').forEach((c, j) => { c.classList.toggle('active', j === i); c.classList.toggle('done', j < i); c.querySelector('.bar').style.width = j < i ? '100%' : '0'; });
+  if (s.graph) { graphTo('start'); setTimeout(() => graphTo('end'), 900); }
+  serialEl.querySelectorAll('.ln').forEach(l => l.classList.toggle('in', !!s.serial));
+  if (s.serial) { $('#V-serial').classList.add('show'); setTimeout(() => { if (cur === i) { $('#V-serial').classList.remove('show'); $('#V-embed').classList.add('show'); } }, 5000); }
+  lanes.querySelectorAll('.lane').forEach(l => l.classList.toggle('in', !!s.lanesOn));
+  if (s.lanesOn) { lanes.querySelectorAll('.lane').forEach(l => { l.style.transitionDelay = (5.2 + +l.style.transitionDelay.replace('s','') * 0 + Array.from(lanes.children).indexOf(l) * .35) + 's'; }); }
+  $('#qa').querySelectorAll('.box').forEach(b => b.classList.toggle('in', !!s.qaOn));
+  $('#vin').innerHTML = i === 0 ? `<div class="kv"><span>형식</span><b>SVG (벡터)</b><span>경로 요소</span><b>있음 → 벡터 경로</b><span>쪽 크기</span><b>420 × 297 mm</b><span>좌표 단위</span><b>mm, 소수 둘째 자리</b><span>읽는 속성</span><b>좌표, 선 굵기, 점선, 문자 내용·방향·크기</b><span>읽지 않는 속성</span><b>색, 식별자, 그룹 이름, 기호 정의 이름</b></div>` : $('#vin').innerHTML;
+  if (i >= 1) $('#vin').innerHTML = `<div class="kv"><span>단계 결과</span><b>${s.caption}</b><span>모델 사용</span><b>${i===8?'이미지 임베딩 1종':'없음'}</b><span>벡터 경로</span><b>${['원본 요소 읽기','경로 분해·변환 행렬','틀·표 규칙','닫힌 도형·접점 묶음','선 병합·절단·접속','거리와 형식 규칙','문자열 형식 규칙','그래프 구성','직렬화·색인','부분 그래프 추출'][i]}</b><span>래스터 경로</span><b>${['화소 배열','보정·OCR·형태학 선·구멍 윤곽','같음','같음(윤곽은 구멍 탐지)','같음(굵기 오차 큼)','같음(OCR 오류 영향)','같음','같음','같음','같음'][i]}</b></div>`;
+  if (manual) { playing = true; $('#play').textContent = '일시정지'; }
+}
+function loop(now){ if (playing && cur >= 0) { const s = STEPS[cur]; const k = Math.min(1, (now - t0) / s.dur); const c = rail.children[cur]; if (c) c.querySelector('.bar').style.width = (k*100).toFixed(1)+'%'; if (k >= 1) go((cur + 1) % STEPS.length); } raf = requestAnimationFrame(loop); }
+$('#play').addEventListener('click', () => { playing = !playing; $('#play').textContent = playing ? '일시정지' : '재생'; if (playing) t0 = performance.now(); });
+$('#prev').addEventListener('click', () => go(Math.max(0, cur - 1), true));
+$('#next').addEventListener('click', () => go(Math.min(STEPS.length - 1, cur + 1), true));
+addEventListener('keydown', e => { if (e.key === 'ArrowRight') go(Math.min(STEPS.length-1, cur+1), true); else if (e.key === 'ArrowLeft') go(Math.max(0, cur-1), true); else if (e.key === ' ') { e.preventDefault(); $('#play').click(); } });
+go(0); requestAnimationFrame(loop);
+</script>

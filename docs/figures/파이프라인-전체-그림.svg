@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="Pretendard, 'Noto Sans KR', sans-serif">
+<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="1000" fill="#FFFFFF"/>
+<text x="60" y="56" font-size="26" font-weight="600" fill="#111111" text-anchor="start" letter-spacing="-0.5">기술 그림의 관계 그래프 기반 구조화 및 LLM 연계: 처리 흐름</text>
+<text x="60" y="84" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="start">전제: 폐쇄망, CPU 또는 제한된 GPU, 생성형 VLM 미사용, 기존 텍스트 LLM. 모델은 문자 인식과 임베딩 두 곳에만 쓰고 관계 복원은 기하 규칙으로 수행</text>
+<line x1="60" y1="102" x2="1540" y2="102" stroke="#111111" stroke-width="1.2"/>
+<text x="60" y="130" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">처리 흐름</text>
+<rect x="60" y="146" width="272" height="268" stroke="#B5B5B5" fill="#F4F4F4" stroke-width="1"/>
+<text x="74" y="176" font-size="17" font-weight="600" fill="#111111" text-anchor="start">입력</text>
+<line x1="74" y1="188" x2="318" y2="188" stroke="#B5B5B5" stroke-width="1"/>
+<text x="74" y="210" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">벡터 원본</text>
+<text x="74" y="230" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">PDF 경로·문자, CAD(DXF·SVG),</text>
+<text x="74" y="250" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">P&amp;ID 교환 형식(Proteus XML)</text>
+<text x="74" y="270" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">래스터</text>
+<text x="74" y="290" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">스캔 PNG·JPEG·TIFF, 100~300 dpi</text>
+<text x="74" y="310" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">전처리</text>
+<text x="74" y="330" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">쪽 안의 그림·표·본문 영역 분할</text>
+<text x="74" y="350" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">기울기 보정(긴 선 각도 중앙값)</text>
+<text x="74" y="370" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">잡음 제거(중앙값 필터)</text>
+<line x1="74" y1="380" x2="318" y2="380" stroke="#B5B5B5" stroke-width="1"/>
+<text x="74" y="400" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">벡터 원본이 있으면 이미지로 바꾸지 않음</text>
+<line x1="335" y1="280.0" x2="359" y2="280.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
+<rect x="362" y="146" width="272" height="268" stroke="#111111" fill="none" stroke-width="1"/>
+<text x="376" y="176" font-size="22" font-weight="700" fill="#111111" text-anchor="start">1</text>
+<text x="402" y="176" font-size="17" font-weight="600" fill="#111111" text-anchor="start">시각 요소 추출</text>
+<line x1="376" y1="188" x2="620" y2="188" stroke="#B5B5B5" stroke-width="1"/>
+<text x="376" y="210" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">벡터 경로</text>
+<text x="376" y="230" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">경로를 직선·곡선·타원·문자로 분해</text>
+<text x="376" y="250" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">변환 행렬 적용, 선 굵기·점선 보존</text>
+<text x="376" y="270" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">색·식별자·그룹 이름은 사용 안 함</text>
+<text x="376" y="290" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">래스터 경로</text>
+<text x="376" y="310" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">OCR(CPU 문자 인식 모델) 후 문자 지움</text>
+<text x="376" y="330" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">형태학 열림으로 축 평행 선과 굵기</text>
+<text x="376" y="350" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">구멍 윤곽으로 닫힌 도형</text>
+<text x="376" y="370" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">잔여 잉크 덩어리를 기호·표식으로</text>
+<line x1="376" y1="380" x2="620" y2="380" stroke="#B5B5B5" stroke-width="1"/>
+<text x="376" y="400" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">모델 사용 지점 1: 문자 인식</text>
+<line x1="637" y1="280.0" x2="661" y2="280.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
+<rect x="664" y="146" width="272" height="268" stroke="#111111" fill="none" stroke-width="1"/>
+<text x="678" y="176" font-size="22" font-weight="700" fill="#1F4FD8" text-anchor="start">2</text>
+<text x="704" y="176" font-size="17" font-weight="600" fill="#111111" text-anchor="start">관계 그래프 생성</text>
+<line x1="678" y1="188" x2="922" y2="188" stroke="#B5B5B5" stroke-width="1"/>
+<text x="678" y="210" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">노드</text>
+<text x="678" y="230" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">닫힌 도형(장비), 기호 묶음, 계기,</text>
+<text x="678" y="250" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">문자, 접속구, 화살표, 표</text>
+<text x="678" y="270" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">간선</text>
+<text x="678" y="290" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">접속: 선 끝이 0.6 mm 안에서 닿음</text>
+<text x="678" y="310" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">간격 후보: 선 방향 5 mm 또는 굵기 10배</text>
+<text x="678" y="330" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">분기점, 포함, 지시(화살표 꼭짓점),</text>
+<text x="678" y="350" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">라벨(4 mm 안 문자, 선 번호 형식)</text>
+<text x="678" y="370" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">선 종류: 점선·상대 굵기로 배관·신호선</text>
+<line x1="678" y1="380" x2="922" y2="380" stroke="#B5B5B5" stroke-width="1"/>
+<text x="678" y="400" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">연결은 선·접점 분석으로만 확정. 근접은 후보</text>
+<line x1="939" y1="280.0" x2="963" y2="280.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
+<rect x="966" y="146" width="272" height="268" stroke="#111111" fill="none" stroke-width="1"/>
+<text x="980" y="176" font-size="22" font-weight="700" fill="#111111" text-anchor="start">3</text>
+<text x="1006" y="176" font-size="17" font-weight="600" fill="#111111" text-anchor="start">근거 연결과 검색</text>
+<line x1="980" y1="188" x2="1224" y2="188" stroke="#B5B5B5" stroke-width="1"/>
+<text x="980" y="210" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">근거</text>
+<text x="980" y="230" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">모든 노드·간선에 원본 좌표(mm) 보존</text>
+<text x="980" y="250" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">표는 행·칸 단위, 그림 영역은 행과 묶음</text>
+<text x="980" y="270" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">직렬화</text>
+<text x="980" y="290" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">노드 목록·구간 목록의 텍스트</text>
+<text x="980" y="310" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">색인</text>
+<text x="980" y="330" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">그래프 텍스트 BM25, 태그·도면 번호</text>
+<text x="980" y="350" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">완전 일치, 쪽·그림 이미지 임베딩</text>
+<text x="980" y="370" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">질문의 시작 노드에서 k단계 부분 그래프</text>
+<line x1="980" y1="380" x2="1224" y2="380" stroke="#B5B5B5" stroke-width="1"/>
+<text x="980" y="400" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">모델 사용 지점 2: 경량 이미지 임베딩</text>
+<line x1="1241" y1="280.0" x2="1265" y2="280.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
+<rect x="1268" y="146" width="272" height="268" stroke="#111111" fill="none" stroke-width="1"/>
+<text x="1282" y="176" font-size="22" font-weight="700" fill="#111111" text-anchor="start">4</text>
+<text x="1308" y="176" font-size="17" font-weight="600" fill="#111111" text-anchor="start">기존 텍스트 LLM</text>
+<line x1="1282" y1="188" x2="1526" y2="188" stroke="#B5B5B5" stroke-width="1"/>
+<text x="1282" y="210" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">입력</text>
+<text x="1282" y="230" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">부분 그래프 텍스트, 확정 해석,</text>
+<text x="1282" y="250" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">미해석 목록. 이미지는 넣지 않음</text>
+<text x="1282" y="270" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">출력</text>
+<text x="1282" y="290" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">답변과 근거 노드·구간의 좌표</text>
+<text x="1282" y="310" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">원본 그림 위에 근거 영역 표시</text>
+<text x="1282" y="330" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">근거</text>
+<text x="1282" y="350" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">관계가 명시된 표현에서 텍스트 LLM의</text>
+<text x="1282" y="370" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">그림 질의 정확도 상승(VGBench 2024)</text>
+<line x1="1282" y1="380" x2="1526" y2="380" stroke="#B5B5B5" stroke-width="1"/>
+<text x="1282" y="400" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">전처리는 등록 시 1회, 질의 시 부분 그래프만</text>
+<text x="60" y="446" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">직렬화 예(공개 참조 P&amp;ID, 질문 &quot;P4712 펌프의 토출 측 연결&quot;)</text>
+<rect x="60" y="458" width="610" height="150" stroke="#B5B5B5" fill="#F4F4F4" stroke-width="1"/>
+<text x="74" y="482" font-size="10.5" font-weight="400" fill="#111111" text-anchor="start" font-family="JetBrains Mono, DejaVu Sans Mono, monospace">n25 종류=equipment 이름=P4712 라벨=P4712|N1|50|N2|50 bbox=(245.8,148.8,256.2,159.2)</text>
+<text x="74" y="501" font-size="10.5" font-weight="400" fill="#111111" text-anchor="start" font-family="JetBrains Mono, DejaVu Sans Mono, monospace">r9  종류=pipe A=n25[equipment P4712] B=j2 경로=(256.2,154.0)→(265.0,154.0)</text>
+<text x="74" y="520" font-size="10.5" font-weight="400" fill="#111111" text-anchor="start" font-family="JetBrains Mono, DejaVu Sans Mono, monospace">j2  --r11--&gt; n7[symbol 73KH12-25]  근거 pt=(265.0,154.0) bbox=(264.0,158.0,266.0,162.0)</text>
+<text x="74" y="539" font-size="10.5" font-weight="400" fill="#111111" text-anchor="start" font-family="JetBrains Mono, DejaVu Sans Mono, monospace">j0  --r13(MNc 47125 73HG12 25)--&gt; n4[symbol SV 104.01]  근거 bbox=(267.0,89.0,270.0,96.0)</text>
+<text x="74" y="558" font-size="10.5" font-weight="400" fill="#111111" text-anchor="start" font-family="JetBrains Mono, DejaVu Sans Mono, monospace">r23 종류=signal A=n17[instrument TICSA] B=n13[symbol TV4750.03] 간격=4.05mm(후보)</text>
+<text x="74" y="577" font-size="10.5" font-weight="400" fill="#111111" text-anchor="start" font-family="JetBrains Mono, DejaVu Sans Mono, monospace"></text>
+<text x="74" y="596" font-size="10.5" font-weight="400" fill="#111111" text-anchor="start" font-family="JetBrains Mono, DejaVu Sans Mono, monospace">OCR 결과는 P4712, 73KH12-25, SV 104.01이 같은 그림에 있다는 사실까지 전달됨</text>
+<text x="700" y="446" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">판정 규칙(A3 도면 축척 기준, 다른 축척은 비례 조정)</text>
+<text x="700" y="480" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">선 후보</text>
+<text x="790" y="480" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">축 평행 직선 6 mm 이상. 같은 축에서 병합, 기호에서 절단</text>
+<text x="700" y="499" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">접속</text>
+<text x="790" y="499" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">끝점 거리 0.6 mm. 다른 선 끝이 닿는 곳은 분기점</text>
+<text x="700" y="518" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">간격 후보</text>
+<text x="790" y="518" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">선 방향 5 mm 또는 지배적 선 굵기의 10배 안의 요소</text>
+<text x="700" y="537" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">틀·표</text>
+<text x="790" y="537" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">쪽 80% 이상 덮는 사각형은 틀. 격자가 경계 90% 덮고 문자 6개 이상이면 표</text>
+<text x="700" y="556" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">빈 칸 제외</text>
+<text x="790" y="556" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">직선으로 둘러싸이고 3 mm 넘는 내부 선이 없는 구멍은 장비가 아님</text>
+<text x="700" y="575" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">신호선</text>
+<text x="790" y="575" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">점선이거나 굵은 선 부류의 절반(래스터 0.35) 미만 굵기</text>
+<text x="700" y="594" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">라벨</text>
+<text x="790" y="594" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">요소 상자 안 또는 4 mm 안 문자. 선 번호 형식은 평행한 선의 라벨</text>
+<line x1="700" y1="607" x2="1200" y2="607" stroke="#B5B5B5" stroke-width="1"/>
+<text x="700" y="625" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">역할 추정: 장비 태그 형식(영문 1자+숫자 4자리), 계기 기능 문자와 루프 번호. 기호 종류 분류는 후속(소형 분류기)</text>
+<text x="1230" y="446" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">모델과 연산</text>
+<text x="1230" y="480" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">문자 인식</text>
+<text x="1318" y="480" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">공개 OCR 모델 1종, CPU</text>
+<text x="1460" y="480" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">A3 200 dpi 40초/쪽</text>
+<text x="1230" y="499" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">선·기호·표</text>
+<text x="1318" y="499" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">영상 처리 규칙, CPU</text>
+<text x="1460" y="499" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">7~19초/쪽</text>
+<text x="1230" y="518" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">그래프</text>
+<text x="1318" y="518" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">기하 규칙, CPU</text>
+<text x="1460" y="518" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">1~13초/쪽</text>
+<text x="1230" y="537" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">벡터 경로</text>
+<text x="1318" y="537" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">모델 없음, CPU</text>
+<text x="1460" y="537" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">0.7~10.6초/장</text>
+<text x="1230" y="556" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">이미지 임베딩</text>
+<text x="1318" y="556" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">경량 멀티모달 임베딩</text>
+<text x="1460" y="556" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">등록 시 1회</text>
+<text x="1230" y="575" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">질의응답</text>
+<text x="1318" y="575" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">기존 텍스트 LLM</text>
+<text x="1460" y="575" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">부분 그래프 텍스트만</text>
+<line x1="1230" y1="588" x2="1540" y2="588" stroke="#B5B5B5" stroke-width="1"/>
+<text x="1230" y="606" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">GPU는 임베딩과 LLM에 한정. 생성형 VLM 없음</text>
+<text x="60" y="650" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">실측 결과(공개 자료, 2026-10-29)</text>
+<text x="60" y="676" font-size="12" font-weight="600" fill="#6B6B6B" text-anchor="start">자료</text>
+<text x="250" y="676" font-size="12" font-weight="600" fill="#6B6B6B" text-anchor="start">조건</text>
+<text x="400" y="676" font-size="12" font-weight="600" fill="#6B6B6B" text-anchor="start">정답 쌍 복원</text>
+<text x="560" y="676" font-size="12" font-weight="600" fill="#6B6B6B" text-anchor="start">라벨 소속</text>
+<text x="700" y="676" font-size="12" font-weight="600" fill="#6B6B6B" text-anchor="start">비고</text>
+<line x1="60" y1="684" x2="1000" y2="684" stroke="#B5B5B5" stroke-width="1"/>
+<text x="60" y="704" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">DEXPI 참조 P&amp;ID C01</text>
+<text x="250" y="704" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">벡터</text>
+<text x="400" y="704" font-size="12.5" font-weight="600" fill="#1F4FD8" text-anchor="start">27/27</text>
+<text x="560" y="704" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">60/62</text>
+<text x="700" y="704" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">표준 기호 도면. 오류 쌍 0</text>
+<text x="60" y="725" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">같은 도면</text>
+<text x="250" y="725" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">래스터 200 dpi</text>
+<text x="400" y="725" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">14/26</text>
+<text x="560" y="725" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">15/40</text>
+<text x="700" y="725" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">선 굵기 1픽셀 오차, 문자 자리 끊김</text>
+<text x="60" y="746" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">같은 도면</text>
+<text x="250" y="746" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">스캔 열화</text>
+<text x="400" y="746" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">10/23</text>
+<text x="560" y="746" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">7/25</text>
+<text x="700" y="746" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">0.4도 회전·잡음·JPEG. 보정 후</text>
+<text x="60" y="767" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">DEXPI C02·C03</text>
+<text x="250" y="767" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">벡터</text>
+<text x="400" y="767" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">3/6, 4/9</text>
+<text x="560" y="767" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">35/61, 4/4</text>
+<text x="700" y="767" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">컬럼 몸체 변이 배관으로 분류</text>
+<text x="60" y="788" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">증류 플랜트(157쌍)</text>
+<text x="250" y="788" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">벡터</text>
+<text x="400" y="788" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">84/157</text>
+<text x="560" y="788" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">문자 없음</text>
+<text x="700" y="788" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">작성 도구가 배관 끝을 5 mm 띄움</text>
+<text x="60" y="809" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">FAA 볼트 표 21행</text>
+<text x="250" y="809" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">래스터 100 dpi</text>
+<text x="400" y="809" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">삽화·행 묶음 20/21</text>
+<text x="560" y="809" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">부품 번호 17/21</text>
+<text x="700" y="809" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">O/0, 1/O 혼동</text>
+<text x="60" y="830" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">NIST 치수 도면</text>
+<text x="250" y="830" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">래스터 200 dpi</text>
+<text x="400" y="830" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">지시선 1/10</text>
+<text x="560" y="830" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">-</text>
+<text x="700" y="830" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">회전 주기, 윤곽선과 혼동</text>
+<line x1="60" y1="839" x2="1000" y2="839" stroke="#B5B5B5" stroke-width="1"/>
+<text x="1040" y="650" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">설계 원칙과 한계</text>
+<text x="1040" y="676" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">원칙</text>
+<text x="1040" y="696" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">벡터 원본 우선. 래스터는 검토 인력을 둔 보조 경로</text>
+<text x="1040" y="716" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">관계는 선·접점 분석으로 확정하고 근접은 후보로만 기록</text>
+<text x="1040" y="736" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">임계값은 도면의 선 굵기·축척에 상대적으로 정함</text>
+<text x="1040" y="756" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">답변마다 근거 좌표를 붙여 원본에서 확인 가능하게 함</text>
+<text x="1040" y="776" font-size="12.5" font-weight="600" fill="#6B6B6B" text-anchor="start">한계</text>
+<text x="1040" y="796" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">기호 종류 분류 없음. 큰 장비가 주변 부품을 흡수</text>
+<text x="1040" y="816" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">래스터에서 0.2 mm와 0.25 mm 선 구분 불가</text>
+<text x="1040" y="836" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">등각 투상도의 회전 문자와 지시선은 벡터 경로 필요</text>
+<text x="1040" y="856" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">정답 있는 자료는 P&amp;ID 5장. 정비 문서는 표본 육안 대조</text>
+<line x1="60" y1="968" x2="1540" y2="968" stroke="#B5B5B5" stroke-width="1"/>
+<text x="60" y="988" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">공개 자료: DEXPI 참조 P&amp;ID와 Proteus XML, FAA AC 43.13-1B, NIST PMI 시험 모형. 실측은 CPU 4코어 컨테이너 단독 실행 기준</text>
+<text x="1540" y="988" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="end">docs/figures/make_pipeline_fig.py</text>
+</svg>
