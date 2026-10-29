@@ -11,7 +11,7 @@
 - 표현 수준: 텍스트 층, OCR, 구조화 텍스트, 소형 문서 VLM 전사, 이미지 조각
 - 구조화: 값마다 레이아웃 경로를 붙인 문장(Dense X Retrieval, EMNLP 2024의 확장). 변환기는 DocLayNet(KDD 2022), TableFormer(CVPR 2022), DePlot, Donut
 - 검증: 공개 원본(FAA AC 43.13-1B, NIST 시험 도면)과 합성 문서. [PoC 목록](poc/README.md)
-- 전체 그림: [docs/figures](docs/figures/README.md) (v11 기준, 갱신 예정)
+- 전체 그림: [docs/figures](docs/figures/README.md)
 
 ## 읽는 순서
 

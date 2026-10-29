@@ -1,177 +1,162 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="Pretendard, 'Noto Sans KR', sans-serif">
 <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 z" fill="#111111"/></marker></defs>
 <rect width="1600" height="900" fill="#FFFFFF"/>
-<text x="60" y="58" font-size="26" font-weight="600" fill="#111111" text-anchor="start" letter-spacing="-0.5">표와 이미지에 분산된 정보의 적용 범위를 보존하는 전처리 및 구조화</text>
+<text x="60" y="58" font-size="26" font-weight="600" fill="#111111" text-anchor="start" letter-spacing="-0.5">재구성 검증으로 표현 수준을 정하는 기술문서 전처리 및 구조화</text>
 <text x="60" y="86" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="start">설계 전제: 폐쇄망 운용, 제한된 연산 자원, 독립 실행 가능한 공개 모델</text>
-<text x="1540" y="86" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="end">과제 정의: ConditionalQA(ACL 2022), TAT-QA(ACL 2021)의 확장. 구성 요소: DocLayNet(KDD 2022), TableFormer(CVPR 2022), Self-RAG(ICLR 2024)</text>
+<text x="1540" y="86" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="end">변환기: DocLayNet(KDD 2022), TableFormer(CVPR 2022), DePlot, Donut. 저장 단위: Dense X Retrieval(EMNLP 2024). 비교: ColPali, VisRAG(ICLR 2025)</text>
 <line x1="60" y1="104" x2="1540" y2="104" stroke="#111111" stroke-width="1.2"/>
 <text x="60" y="134" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">처리 흐름</text>
 <rect x="60" y="150" width="228" height="190" stroke="#B5B5B5" fill="#F3F3F3" stroke-width="1"/>
 <text x="74" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">입력</text>
 <line x1="74" y1="192" x2="274" y2="192" stroke="#B5B5B5" stroke-width="1"/>
 <text x="74" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">PDF, 스캔 기술문서</text>
-<text x="74" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">표, 그림, 각주, 주의문, 일반 주기</text>
+<text x="74" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">표, 그림, 도면, 각주, 주기</text>
 <line x1="74" y1="304" x2="274" y2="304" stroke="#B5B5B5" stroke-width="1"/>
-<text x="74" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">텍스트 레이어 유무 확인</text>
+<text x="74" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">레이아웃 모델로 영역 분할</text>
 <line x1="290" y1="245.0" x2="308" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <rect x="310" y="150" width="228" height="190" stroke="#111111" fill="none" stroke-width="1"/>
 <text x="324" y="180" font-size="22" font-weight="700" fill="#111111" text-anchor="start">1</text>
-<text x="350" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">전체 기본 추출</text>
+<text x="350" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">최저 수준 변환</text>
 <line x1="324" y1="192" x2="524" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="324" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">모든 페이지 대상</text>
-<text x="324" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">디지털: CPU 파서로 텍스트, 셀, 좌표</text>
-<text x="324" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">도면: 벡터 객체와 좌표</text>
-<text x="324" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">스캔: 기본 OCR, 도형과 선과 원 검출</text>
+<text x="324" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">영역마다 가능한 가장 싼 표현</text>
+<text x="324" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">디지털: 텍스트 층, 벡터 객체</text>
+<text x="324" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">스캔: 기본 OCR, 선과 도형 검출</text>
+<text x="324" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">표: 격자와 셀, 차트: 표 변환</text>
 <line x1="324" y1="304" x2="524" y2="304" stroke="#B5B5B5" stroke-width="1"/>
-<text x="324" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">저비용 처리, GPU 불필요</text>
+<text x="324" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">CPU, 쪽당 0.2초(디지털)</text>
 <line x1="540" y1="245.0" x2="558" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <rect x="560" y="150" width="228" height="190" stroke="#111111" fill="none" stroke-width="1"/>
-<text x="574" y="180" font-size="22" font-weight="700" fill="#111111" text-anchor="start">2</text>
-<text x="600" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">상속과 완결성 점검</text>
+<text x="574" y="180" font-size="22" font-weight="700" fill="#1F4FD8" text-anchor="start">2</text>
+<text x="600" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">재구성 검증</text>
 <line x1="574" y1="192" x2="774" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="574" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">적용 범위 상속: 주의문, 머리글,</text>
-<text x="574" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">계열 행, 셀, 각주 순으로 조건 결합</text>
-<text x="574" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">참조 완결성 점검: 각주 기호, 열 수,</text>
-<text x="574" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">공차 기호 문법, 식별자, 단위</text>
+<text x="574" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">변환 결과로 영역을 다시 그려</text>
+<text x="574" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">원본과 비교</text>
+<text x="574" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">미설명 잉크: 누락</text>
+<text x="574" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">글자 불일치: 오판독, 구조 손실</text>
 <line x1="574" y1="304" x2="774" y2="304" stroke="#B5B5B5" stroke-width="1"/>
-<text x="574" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">위반 영역 목록 산출</text>
+<text x="574" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">오류 유형 목록 없음. CPU 이미지 연산</text>
 <line x1="790" y1="245.0" x2="808" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <rect x="810" y="150" width="228" height="190" stroke="#111111" fill="none" stroke-width="1"/>
 <text x="824" y="180" font-size="22" font-weight="700" fill="#1F4FD8" text-anchor="start">3</text>
-<text x="850" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">선택적 재추출</text>
+<text x="850" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">예산 내 수준 상승</text>
 <line x1="824" y1="192" x2="1024" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="824" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">위반 영역에 한정, 횟수 제한</text>
-<text x="824" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">고해상도 재처리 뒤</text>
-<text x="824" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">소형 시각언어모델(VLM) 재추출</text>
-<text x="824" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">1차 추출과 대조해 환각 기각</text>
+<text x="824" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">검증 실패 영역을 오차 순으로</text>
+<text x="824" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">문서당 예산 안에서 한 수준씩</text>
+<text x="824" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">소형 문서 VLM 전사는 실패 영역에 한정</text>
+<text x="824" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">다시 그릴 수 없는 영역은 이미지 조각</text>
 <line x1="824" y1="304" x2="1024" y2="304" stroke="#B5B5B5" stroke-width="1"/>
-<text x="824" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">재추출 영역 수, 미해결 참조 수 측정</text>
+<text x="824" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">GPU는 실패 영역에 한해 사용</text>
 <line x1="1040" y1="245.0" x2="1058" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <rect x="1060" y="150" width="228" height="190" stroke="#111111" fill="none" stroke-width="1"/>
 <text x="1074" y="180" font-size="22" font-weight="700" fill="#111111" text-anchor="start">4</text>
-<text x="1100" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">저장</text>
+<text x="1100" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">경로 직렬화 저장</text>
 <line x1="1074" y1="192" x2="1274" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1074" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">대상, 속성, 값, 적용 범위, 출처</text>
-<text x="1074" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">범위가 다른 값은 각각 보존</text>
-<text x="1074" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">미확정 참조는 원본과 함께 보류</text>
+<text x="1074" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">값마다 레이아웃 경로를 붙인 문장</text>
+<text x="1074" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">문서, 절, 표, 머리글, 행, 셀, 각주</text>
+<text x="1074" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">도면: 표제란, 일반 주기, 개별 표기</text>
 <text x="1074" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">문서 등록 시 1회 처리 후 재사용</text>
 <line x1="1074" y1="304" x2="1274" y2="304" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1074" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">이후 질의에서 재처리 없음</text>
+<text x="1074" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">조건 상속은 경로의 특수한 경우</text>
 <line x1="1290" y1="245.0" x2="1308" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <rect x="1310" y="150" width="228" height="190" stroke="#111111" fill="none" stroke-width="1"/>
 <text x="1324" y="180" font-size="22" font-weight="700" fill="#111111" text-anchor="start">5</text>
-<text x="1350" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">범위 일치 전달</text>
+<text x="1350" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">질의 시 전달</text>
 <line x1="1324" y1="192" x2="1524" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1324" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">질문 조건과 적용 범위가 일치하는 항목</text>
-<text x="1324" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">조건 미지정: 범위별 값 병기</text>
+<text x="1324" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">질문 조건과 경로가 일치하는 문장</text>
+<text x="1324" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">조건 미지정: 경로별 값 병기</text>
 <text x="1324" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">기록 없는 조건: 범위를 밝히고 보류</text>
-<text x="1324" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">수치는 저장값 그대로 로컬 LLM에 입력</text>
+<text x="1324" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">이미지 조각은 필요한 질문에 한해 입력</text>
 <line x1="1324" y1="304" x2="1524" y2="304" stroke="#B5B5B5" stroke-width="1"/>
 <text x="1324" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">질의당 입력 토큰 최소화</text>
 <line x1="924.0" y1="340" x2="924.0" y2="358" stroke="#1F4FD8" stroke-width="1.2"/>
 <line x1="674.0" y1="358" x2="924.0" y2="358" stroke="#1F4FD8" stroke-width="1.2"/>
 <line x1="674.0" y1="358" x2="674.0" y2="343" stroke="#1F4FD8" stroke-width="1.2" marker-end="url(#ah)"/>
-<text x="799.0" y="373" font-size="12" font-weight="500" fill="#1F4FD8" text-anchor="middle">재점검</text>
-<text x="60" y="412" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">사례: 합성 정비 문서</text>
+<text x="799.0" y="373" font-size="12" font-weight="500" fill="#1F4FD8" text-anchor="middle">재검증</text>
+<text x="60" y="412" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">표현 수준</text>
 <line x1="60" y1="420" x2="1540" y2="420" stroke="#B5B5B5" stroke-width="1"/>
-<text x="60" y="454" font-size="13.5" font-weight="600" fill="#111111" text-anchor="start">그림 1 조립도</text>
-<rect x="60" y="464" width="170" height="96" stroke="#B5B5B5" fill="none" stroke-width="1"/>
-<rect x="72" y="476" width="70" height="44" stroke="#111111" fill="none" stroke-width="1"/>
-<text x="78" y="490" font-size="10.5" font-weight="500" fill="#111111" text-anchor="start">HV-200</text>
-<rect x="150" y="476" width="68" height="72" stroke="#111111" fill="none" stroke-width="1"/>
-<text x="156" y="490" font-size="10.5" font-weight="600" fill="#111111" text-anchor="start">HV-202</text>
-<circle cx="100" cy="508" r="8" stroke="#1F4FD8" fill="none" stroke-width="1.6"/>
-<text x="100" y="512" font-size="10" font-weight="600" fill="#1F4FD8" text-anchor="middle">1</text>
-<circle cx="126" cy="508" r="8" stroke="#111111" fill="none" stroke-width="1"/>
-<text x="126" y="512" font-size="10" font-weight="600" fill="#111111" text-anchor="middle">2</text>
-<circle cx="184" cy="526" r="8" stroke="#111111" fill="none" stroke-width="1"/>
-<text x="184" y="530" font-size="10" font-weight="600" fill="#111111" text-anchor="middle">3</text>
-<circle cx="184" cy="506" r="8" stroke="#1F4FD8" fill="none" stroke-width="1.6"/>
-<text x="184" y="510" font-size="10" font-weight="600" fill="#1F4FD8" text-anchor="middle">7</text>
-<text x="60" y="578" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">체결부 3은 HV-202 상자 안에 위치</text>
-<text x="260" y="454" font-size="13.5" font-weight="600" fill="#111111" text-anchor="start">표 1 체결부 토크</text>
-<text x="260" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">항목</text>
-<text x="318" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">규격</text>
-<text x="376" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">토크(N·m)</text>
-<line x1="260" y1="488" x2="430" y2="488" stroke="#111111" stroke-width="1"/>
-<text x="260" y="502" font-size="12" font-weight="400" fill="#111111" text-anchor="start">1</text>
-<text x="318" y="502" font-size="12" font-weight="400" fill="#111111" text-anchor="start">M6</text>
-<text x="376" y="502" font-size="12" font-weight="400" fill="#111111" text-anchor="start">10 *</text>
-<line x1="260" y1="508" x2="430" y2="508" stroke="#B5B5B5" stroke-width="1"/>
-<text x="260" y="522" font-size="12" font-weight="400" fill="#111111" text-anchor="start">2</text>
-<text x="318" y="522" font-size="12" font-weight="400" fill="#111111" text-anchor="start">M10</text>
-<text x="376" y="522" font-size="12" font-weight="400" fill="#111111" text-anchor="start">48 *</text>
-<line x1="260" y1="528" x2="430" y2="528" stroke="#B5B5B5" stroke-width="1"/>
-<text x="260" y="542" font-size="12" font-weight="400" fill="#111111" text-anchor="start">3</text>
-<text x="318" y="542" font-size="12" font-weight="400" fill="#111111" text-anchor="start">M8</text>
-<text x="376" y="542" font-size="12" font-weight="400" fill="#111111" text-anchor="start">25 *</text>
-<line x1="260" y1="548" x2="430" y2="548" stroke="#B5B5B5" stroke-width="1"/>
-<text x="260" y="578" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">각주  * 건식 기준. 윤활 시 M8 20 N·m</text>
-<line x1="450" y1="520" x2="486" y2="520" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
-<text x="496" y="454" font-size="13.5" font-weight="600" fill="#111111" text-anchor="start">구조화 항목</text>
-<text x="496" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">대상</text>
-<text x="566" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">속성 또는 관계</text>
-<text x="666" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">값</text>
-<text x="736" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">적용 범위</text>
-<text x="808" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">출처</text>
-<line x1="496" y1="488" x2="958" y2="488" stroke="#111111" stroke-width="1"/>
-<text x="496" y="502" font-size="12" font-weight="400" fill="#111111" text-anchor="start">체결부 3</text>
-<text x="566" y="502" font-size="12" font-weight="400" fill="#111111" text-anchor="start">소속 부품</text>
-<text x="666" y="502" font-size="12" font-weight="400" fill="#111111" text-anchor="start">HV-202</text>
-<text x="736" y="502" font-size="12" font-weight="400" fill="#111111" text-anchor="start">없음</text>
-<text x="808" y="502" font-size="12" font-weight="400" fill="#111111" text-anchor="start">그림 1 체결부 3 원, HV-202 상자</text>
-<line x1="496" y1="508" x2="958" y2="508" stroke="#B5B5B5" stroke-width="1"/>
-<text x="496" y="522" font-size="12" font-weight="400" fill="#111111" text-anchor="start">체결부 3</text>
-<text x="566" y="522" font-size="12" font-weight="400" fill="#111111" text-anchor="start">규격</text>
-<text x="666" y="522" font-size="12" font-weight="400" fill="#111111" text-anchor="start">M8</text>
-<text x="736" y="522" font-size="12" font-weight="400" fill="#111111" text-anchor="start">없음</text>
-<text x="808" y="522" font-size="12" font-weight="400" fill="#111111" text-anchor="start">표 1 3행</text>
-<line x1="496" y1="528" x2="958" y2="528" stroke="#B5B5B5" stroke-width="1"/>
-<text x="496" y="542" font-size="12" font-weight="400" fill="#111111" text-anchor="start">체결부 3</text>
-<text x="566" y="542" font-size="12" font-weight="400" fill="#111111" text-anchor="start">토크</text>
-<text x="666" y="542" font-size="12" font-weight="400" fill="#111111" text-anchor="start">25 N·m</text>
-<text x="736" y="542" font-size="12" font-weight="400" fill="#111111" text-anchor="start">건식</text>
-<text x="808" y="542" font-size="12" font-weight="400" fill="#111111" text-anchor="start">표 1 3행</text>
-<line x1="496" y1="548" x2="958" y2="548" stroke="#B5B5B5" stroke-width="1"/>
-<text x="496" y="562" font-size="12" font-weight="400" fill="#111111" text-anchor="start">체결부 3</text>
-<text x="566" y="562" font-size="12" font-weight="400" fill="#111111" text-anchor="start">토크</text>
-<text x="666" y="562" font-size="12" font-weight="400" fill="#111111" text-anchor="start">20 N·m</text>
-<text x="736" y="562" font-size="12" font-weight="400" fill="#111111" text-anchor="start">윤활</text>
-<text x="808" y="562" font-size="12" font-weight="400" fill="#111111" text-anchor="start">표 1 각주 *</text>
-<line x1="496" y1="568" x2="958" y2="568" stroke="#B5B5B5" stroke-width="1"/>
-<text x="60" y="600" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">스캔본 재추출: 체결부 수 8과 행 수 6 불일치, 번호 1과 7 미판독</text>
-<text x="60" y="618" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">표 영역과 해당 원에 한해 고해상도 재처리 또는 VLM 재추출</text>
-<text x="496" y="600" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">상속 원칙: 바깥에서 안쪽 순으로 조건을 결합하고 안쪽 표기가 바깥 표기를 덮어씀</text>
-<text x="496" y="618" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">그림은 체결부 번호와 부품 상자의 포함 관계로 연결, 근접은 근거 아님</text>
-<text x="496" y="636" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">실제 문서(FAA AC 43.13-1B 표 7-1): 값 하나의 범위가 나사 계열, 너트 종류, 하중 조건, 도금 조건, 추정값 표시의 다섯 겹</text>
-<line x1="970" y1="520" x2="988" y2="520" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
-<text x="1000" y="454" font-size="13.5" font-weight="600" fill="#111111" text-anchor="start">질의 시 전달</text>
-<text x="1000" y="482" font-size="12.5" font-weight="500" fill="#111111" text-anchor="start">질문: HV-202를 고정하는 체결부의 윤활 조건 토크 값</text>
-<line x1="1000" y1="490" x2="1540" y2="490" stroke="#111111" stroke-width="1"/>
-<text x="1000" y="510" font-size="12" font-weight="600" fill="#111111" text-anchor="start">윤활</text>
-<text x="1110" y="510" font-size="12" font-weight="400" fill="#111111" text-anchor="start">20 N·m, 윤활, 출처 표 1 각주 *</text>
-<line x1="1000" y1="517" x2="1540" y2="517" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1000" y="532" font-size="12" font-weight="600" fill="#111111" text-anchor="start">조건 미지정</text>
-<text x="1110" y="532" font-size="12" font-weight="400" fill="#111111" text-anchor="start">건식 25 N·m와 윤활 20 N·m 병기</text>
-<line x1="1000" y1="539" x2="1540" y2="539" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1000" y="554" font-size="12" font-weight="600" fill="#111111" text-anchor="start">기록 없는 조건</text>
-<text x="1110" y="554" font-size="12" font-weight="400" fill="#111111" text-anchor="start">두 범위를 밝히고 보류</text>
-<line x1="1000" y1="561" x2="1540" y2="561" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1000" y="596" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">텍스트 분할 입력은 소속 관계가 텍스트에 없어 답변 불가</text>
+<text x="60" y="444" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">수준</text>
+<text x="104" y="444" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">표현</text>
+<text x="254" y="444" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">변환 수단</text>
+<text x="490" y="444" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">비용</text>
+<text x="640" y="444" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">적용 영역</text>
+<line x1="60" y1="451" x2="820" y2="451" stroke="#111111" stroke-width="1"/>
+<text x="60" y="465" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">0</text>
+<text x="104" y="465" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">텍스트 층 직접 읽기</text>
+<text x="254" y="465" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">PDF 파서(글자, 좌표, 벡터 도형)</text>
+<text x="490" y="465" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">CPU, 쪽당 0.2초</text>
+<text x="640" y="465" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">디지털 PDF</text>
+<line x1="60" y1="472" x2="820" y2="472" stroke="#B5B5B5" stroke-width="1"/>
+<text x="60" y="486" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">1</text>
+<text x="104" y="486" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">OCR 텍스트</text>
+<text x="254" y="486" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">기본 OCR, 선과 도형 검출</text>
+<text x="490" y="486" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">CPU, 쪽당 수 초</text>
+<text x="640" y="486" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">스캔 이미지</text>
+<line x1="60" y1="493" x2="820" y2="493" stroke="#B5B5B5" stroke-width="1"/>
+<text x="60" y="507" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">2</text>
+<text x="104" y="507" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">구조화 텍스트</text>
+<text x="254" y="507" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">레이아웃 모델, 표 구조 모델, 차트 변환</text>
+<text x="490" y="507" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">CPU 또는 소형 GPU</text>
+<text x="640" y="507" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">표, 차트, 목록</text>
+<line x1="60" y1="514" x2="820" y2="514" stroke="#B5B5B5" stroke-width="1"/>
+<text x="60" y="528" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">3</text>
+<text x="104" y="528" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">소형 문서 VLM 전사</text>
+<text x="254" y="528" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">영역 한정 전사</text>
+<text x="490" y="528" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">GPU, 영역당 수십 초</text>
+<text x="640" y="528" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">수준 2까지 실패한 영역</text>
+<line x1="60" y1="535" x2="820" y2="535" stroke="#B5B5B5" stroke-width="1"/>
+<text x="60" y="549" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">4</text>
+<text x="104" y="549" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">이미지 조각</text>
+<text x="254" y="549" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">저해상도 조각을 질의 시 VLM 입력</text>
+<text x="490" y="549" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">질의마다 시각 토큰</text>
+<text x="640" y="549" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">다시 그릴 수 없는 영역(사진)</text>
+<line x1="60" y1="556" x2="820" y2="556" stroke="#B5B5B5" stroke-width="1"/>
+<text x="60" y="582" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">아래 수준일수록 싸고 위일수록 비쌈. 검증을 통과한 가장 싼 표현을 채택함</text>
+<text x="860" y="412" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">사례</text>
+<text x="860" y="444" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">영역</text>
+<text x="1030" y="444" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">1차 결과</text>
+<text x="1200" y="444" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">재구성 검증</text>
+<text x="1370" y="444" font-size="12.5" font-weight="600" fill="#111111" text-anchor="start">조치</text>
+<line x1="860" y1="451" x2="1540" y2="451" stroke="#111111" stroke-width="1"/>
+<text x="860" y="465" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">토크 표 디지털(FAA 7-1)</text>
+<text x="1030" y="465" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">값 100개, 머리글, 각주</text>
+<text x="1200" y="465" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">통과</text>
+<text x="1370" y="465" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">수준 0 채택, 경로 직렬화</text>
+<line x1="860" y1="472" x2="1540" y2="472" stroke="#B5B5B5" stroke-width="1"/>
+<text x="860" y="486" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">같은 표 스캔본</text>
+<text x="1030" y="486" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">각주 줄 누락</text>
+<text x="1200" y="486" font-size="12.5" font-weight="400" fill="#1F4FD8" text-anchor="start">표 하단 미설명 잉크</text>
+<text x="1370" y="486" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">그 줄에 한해 수준 3(22초)</text>
+<line x1="860" y1="493" x2="1540" y2="493" stroke="#B5B5B5" stroke-width="1"/>
+<text x="860" y="507" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">도면 일반 주기(NIST)</text>
+<text x="1030" y="507" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">공차 기호 텍스트 없음</text>
+<text x="1200" y="507" font-size="12.5" font-weight="400" fill="#1F4FD8" text-anchor="start">기호 위치 미설명 잉크</text>
+<text x="1370" y="507" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">벡터 객체 해석으로 복구</text>
+<line x1="860" y1="514" x2="1540" y2="514" stroke="#B5B5B5" stroke-width="1"/>
+<text x="860" y="528" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">조립도 체결부 번호</text>
+<text x="1030" y="528" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">번호 1과 7 미판독</text>
+<text x="1200" y="528" font-size="12.5" font-weight="400" fill="#1F4FD8" text-anchor="start">글자 불일치</text>
+<text x="1370" y="528" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">그 원에 한해 수준 상승</text>
+<line x1="860" y1="535" x2="1540" y2="535" stroke="#B5B5B5" stroke-width="1"/>
+<text x="860" y="549" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">결함 사진</text>
+<text x="1030" y="549" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">텍스트 없음</text>
+<text x="1200" y="549" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">다시 그릴 수 없음</text>
+<text x="1370" y="549" font-size="12.5" font-weight="400" fill="#111111" text-anchor="start">수준 4, 질문 시 조각 입력</text>
+<line x1="860" y1="556" x2="1540" y2="556" stroke="#B5B5B5" stroke-width="1"/>
+<text x="860" y="582" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">경로 직렬화 예: 표 7-1, 무유 카드뮴 도금 기준, 설치 권장값, 인장형 너트, 세목 계열, 1/4-28, 50~70 in-lb</text>
 <line x1="60" y1="652" x2="1540" y2="652" stroke="#B5B5B5" stroke-width="1"/>
 <text x="60" y="680" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">검증</text>
 <text x="60" y="706" font-size="13" font-weight="600" fill="#111111" text-anchor="start">비교군</text>
-<text x="130" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">전처리: 고정 길이 분할, Docling 기본 파이프라인, 소형 문서 VLM 페이지 전체 변환, 제안(기본 추출 뒤 위반 영역 한정 재추출)</text>
-<text x="130" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">구조화와 전달: 전처리 결과의 검색 입력, 페이지 전체 입력, 페이지 이미지 직접 입력(ColPali, VisRAG), 제안</text>
-<text x="60" y="762" font-size="13" font-weight="600" fill="#111111" text-anchor="start">지표</text>
-<text x="130" y="762" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효율: 문서당 처리 시간, 시각 모델 호출 수, 재추출 선별의 정밀도와 재현율, 미해결 참조 수. 실측 1쪽 전처리 제안 0.2초, Docling 19초, 문서 VLM 120초</text>
-<text x="130" y="784" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효과: 질의 유형별 정답률(값, 조건 포함, 그림 연결, 조건 미지정), 조건 혼동 오답률, 적절한 보류 비율, 질의당 입력 토큰</text>
+<text x="130" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">표현 선택: 전부 최저 수준(검증 없음), 전부 최고 수준(전체 VLM 전사), 페이지 이미지 직접 입력(ColPali, VisRAG), 제안</text>
+<text x="130" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">질의응답: 텍스트 분할 검색, Docling 검색, 페이지 전체 입력, 제안. 지표: 정답률, 조건 혼동 오답률, 보류 비율, 입력 토큰</text>
+<text x="60" y="762" font-size="13" font-weight="600" fill="#111111" text-anchor="start">실측</text>
+<text x="130" y="762" font-size="13" font-weight="400" fill="#111111" text-anchor="start">재구성 검증(합성 스캔 10건): 누락 131건 중 97% 탐지(의심 영역 문서당 4.4개), 오판독 166건 중 84%, 전체 오류 90% 표시</text>
+<text x="130" y="784" font-size="13" font-weight="400" fill="#111111" text-anchor="start">전처리 1쪽: 수준 0 0.2초, Docling 19초, 문서 VLM 전체 120초. 질의응답(로컬 LLM 3B): 토크 표 20/20, 도면 13/14, 비교군 2~9</text>
 <line x1="1010" y1="666" x2="1010" y2="802" stroke="#B5B5B5" stroke-width="1"/>
 <text x="1030" y="680" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">한계</text>
-<text x="1030" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">추출 단계에서 빠진 객체는 참조 완결성 점검으로 찾지 못함</text>
-<text x="1030" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">대응: 원본과의 표본 대조, 중요 값의 별도 확인, 미확정 참조는 보류</text>
-<text x="1030" y="750" font-size="13" font-weight="400" fill="#111111" text-anchor="start">소형 VLM이 문서에 없는 문장을 생성한 사례 확인. 1차 추출과의 대조로 기각</text>
+<text x="1030" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">원본과 같은 모양으로 틀리게 읽힌 글자(기호를 글자로)는 두 신호 모두 약함</text>
+<text x="1030" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">대응: 질문 시점의 근거 부재 신호, 표본 감사로 오류율 추정</text>
+<text x="1030" y="750" font-size="13" font-weight="400" fill="#111111" text-anchor="start">사진과 도면의 기하 내용은 다시 그릴 수 없어 이미지 조각으로 남김</text>
 <text x="1030" y="772" font-size="13" font-weight="400" fill="#111111" text-anchor="start">실측은 합성 문서와 공개 문서 2종(FAA 토크 표, NIST 도면) 기준</text>
 <line x1="60" y1="822" x2="1540" y2="822" stroke="#111111" stroke-width="1.2"/>
-<text x="60" y="848" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">사용 기술: 레이아웃 모델(DocLayNet 계열), 표 구조 모델(TableFormer 계열), 텍스트 층과 벡터 객체 파서, 기본 OCR, 소형 시각언어모델(VLM) 영역 재추출, 적용 범위 포함 항목 저장, 소형 로컬 LLM 질의응답</text>
+<text x="60" y="848" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">사용 기술: 레이아웃 모델(DocLayNet 계열), 표 구조 모델(TableFormer 계열), 텍스트 층과 벡터 객체 파서, 기본 OCR, 재구성 비교(이진화, 연결 성분, 글자 대조), 소형 문서 시각언어모델(VLM), 경로 직렬화 저장, 소형 로컬 LLM</text>
 </svg>
