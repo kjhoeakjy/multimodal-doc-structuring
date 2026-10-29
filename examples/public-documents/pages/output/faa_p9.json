@@ -1,0 +1,26 @@
+{
+ "tables": [],
+ "figures": [],
+ "figure_rows": [],
+ "summary": {
+  "tables": 0,
+  "cells": 0,
+  "figures": 0,
+  "figures_in_cells": 0,
+  "rows_with_figure": 0,
+  "mean_conf": 0.81
+ },
+ "times": {
+  "ocr": 32.6,
+  "structure": 0.0,
+  "total": 32.6
+ },
+ "image": {
+  "path": "real/faa_p9.png",
+  "px": [
+   857,
+   1109
+  ],
+  "dpi": 100
+ }
+}

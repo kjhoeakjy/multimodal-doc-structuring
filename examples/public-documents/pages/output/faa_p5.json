@@ -1,0 +1,127 @@
+{
+ "tables": [
+  {
+   "box": [
+    115,
+    135,
+    832,
+    765
+   ],
+   "n_rows": 11,
+   "n_cols": 6,
+   "rows": [
+    [
+     "",
+     "",
+     "CAUTION THE FOLLOWING TORQUE VALUES ARE DERIVED FROM OIL FREE CADMIUM PLATED THREADS:",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "TORQUE LIMITS RECOMMENDED FOR INSTAL- LAMONBOLISLOADED PRIMARILY IN SHEAR)",
+     "MAXIMUM ALLOWABLE JORQUE LIMIS",
+     "TIGHTENING",
+     ""
+    ],
+    [
+     "Thread Size",
+     "Tension type nuts MS20365 and AN310 (40 OOOpsiin bols)",
+     "Shear type nuts MS20364 and AN320 (24,000 psi  in bolts)",
+     "Nuts MS20365 and AN31O (90,000  psi   in bolts)",
+     "Nuts MS20364 and AN320 (54,000 psi in bolts)",
+     ""
+    ],
+    [
+     "",
+     "",
+     "FINE THREAD SERIES",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "8-36 10-32 1/4-28 5/16-24 3/8-24 7/16-20 1/2-20 9/16-18 5/8-18 3/4-16 7/8-14 1-14 1-1/8-12 1-1/4-12",
+     "12-15 20-25 50-70 100-140 160-190 450-500 480-690 800-1000 1100-1300 2300-2500 2500-3000 3700-5500 5000-7000 9000-11,000",
+     "7-9 12-15 30-40 60-85 95-110 270-300 290-410 480-600 600-780 1300-1500 1500-1800 2200-3300* 3000-4200* 5400-6600*",
+     "20 40 100 225 390 840 1100 1600 2400 5o00 7000 10,000 15,000 25,000",
+     "12 25 60 140 240 500 660 960 1400 3000 4200 6000 9000 15,000",
+     ""
+    ],
+    [
+     "",
+     "",
+     "COARSE THREAD SERIES",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "8-32 10-24 1/4-20 5/16-18 3/8-16 7/16-14 1/2-13 9/16-12 5/8-11 3/4-10 7/8-9",
+     "1215 20-25 40-50 80-90 160-185 235-255 400-480 500-700 700-900 1150-1600 2200-3000",
+     "7-9 12-15 25-30 48-55 95-100 140-155 240-290 300-420 420-540 700-950 1300-1800",
+     "20 35 75 160 275 475 880 1100 1500 2500 4600",
+     "12 21 45 100 170 280 520 650 900 1500 2700",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "Estimated corresponding values.",
+     "The above torque values may be used for all cadmium-plated steel nuts of Ihe fine Or coarse thread series which have approximately equal number of threads and equal face bearing areas.",
+     "",
+     "",
+     ""
+    ]
+   ]
+  }
+ ],
+ "figures": [],
+ "figure_rows": [],
+ "summary": {
+  "tables": 1,
+  "cells": 66,
+  "figures": 0,
+  "figures_in_cells": 0,
+  "rows_with_figure": 0,
+  "mean_conf": 0.89
+ },
+ "times": {
+  "ocr": 64.2,
+  "structure": 0.0,
+  "total": 64.2
+ },
+ "image": {
+  "path": "real/faa_p5.jpg",
+  "px": [
+   918,
+   1188
+  ],
+  "dpi": 100
+ }
+}

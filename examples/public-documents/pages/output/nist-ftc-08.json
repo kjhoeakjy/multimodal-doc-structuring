@@ -1,0 +1,467 @@
+{
+ "callouts": [
+  {
+   "box": [
+    120,
+    56,
+    697,
+    120
+   ],
+   "texts": [
+    "NIST PMI Test Models"
+   ]
+  },
+  {
+   "box": [
+    730,
+    56,
+    869,
+    120
+   ],
+   "texts": [
+    "2014"
+   ]
+  },
+  {
+   "box": [
+    113,
+    136,
+    638,
+    174
+   ],
+   "texts": [
+    "NOTES (UNLESS OTHERWISE SPECIFIED):"
+   ]
+  },
+  {
+   "box": [
+    1677,
+    132,
+    2080,
+    207
+   ],
+   "texts": [
+    "Feature and Specification Index",
+    "nist_ftc_08_asmel_rc_fsi-pdf"
+   ]
+  },
+  {
+   "box": [
+    118,
+    197,
+    739,
+    261
+   ],
+   "texts": [
+    "1.",
+    "CAD MODEL",
+    "REV.",
+    "IS REQUIRED",
+    "TO COMPLETE PRODUCT DEFINITION:"
+   ]
+  },
+  {
+   "box": [
+    1579,
+    279,
+    1647,
+    323
+   ],
+   "texts": [
+    "0",
+    "2"
+   ]
+  },
+  {
+   "box": [
+    118,
+    288,
+    759,
+    503
+   ],
+   "texts": [
+    "2. DIRECTLY-TOLERANCED DIMENSIONS AND",
+    "BASIC DIMENSIONS DEFINED ON THE DRAWING",
+    "TAKE PRECEDENCE OVER DIMENSIONAL DATA",
+    "DEFINED BY THE MODEL:  OBTAIN ALL OTHER",
+    "DIMENSIONAL DATA FROM THE MODEL. THE",
+    "MODEL REPRESENTS BASIC DIMENSIONAL DATA",
+    "UNLESS OTHERWISE SPECIFIED."
+   ]
+  },
+  {
+   "box": [
+    1320,
+    289,
+    1526,
+    430
+   ],
+   "texts": [
+    "005",
+    "3001",
+    "2k.0.238",
+    "X",
+    "3023 ("
+   ]
+  },
+  {
+   "box": [
+    1648,
+    452,
+    1718,
+    513
+   ],
+   "texts": [
+    "(03@"
+   ]
+  },
+  {
+   "box": [
+    119,
+    532,
+    736,
+    655
+   ],
+   "texts": [
+    "3_",
+    "APPLICABLE STANDARDS:",
+    "ASME Y14.41-2003 APPLIES TO DATASET.",
+    "ASME Y14.SM-1994 APPLIES TO DIMENSIONING",
+    "AND TOLERANCING."
+   ]
+  },
+  {
+   "box": [
+    1873,
+    592,
+    2016,
+    685
+   ],
+   "texts": [
+    "D",
+    "6",
+    "02",
+    "Ale",
+    "'06"
+   ]
+  },
+  {
+   "box": [
+    119,
+    680,
+    576,
+    744
+   ],
+   "texts": [
+    "4_",
+    ".06",
+    "A",
+    "B|c",
+    "APPLIES TO ALL",
+    "UNTOLERANCED SURFACES."
+   ]
+  },
+  {
+   "box": [
+    118,
+    773,
+    603,
+    1296
+   ],
+   "texts": [
+    "5. DIMENSIONING AND TOLERANCING",
+    "APPLY WITH PART RESTRAINED AS",
+    "FOLLOWS, EXCEPT AS INDICATED.",
+    "PLACE DATUM FEATURE A AGAINST",
+    "DATUM FEATURE SIMULATOR A",
+    "ENGAGE DATUM FEATURES B",
+    "AND C WITH DATUM FEATURE",
+    "SIMULATORS B AND C",
+    "RESPECTIVELY.",
+    "APPLY LOAD TO PART TO",
+    "RESTRAIN DATUM FEATURE",
+    "A AGAINST ITS SIMULATOR",
+    "DETAILED INSPECTION PLAN",
+    "NEEDED TO COMPLETELY",
+    "DEFINE RESTRAINT."
+   ]
+  },
+  {
+   "box": [
+    606,
+    934,
+    792,
+    1053
+   ],
+   "texts": [
+    ".005",
+    "3001",
+    "0238`",
+    "X",
+    "2",
+    "<"
+   ]
+  },
+  {
+   "box": [
+    1121,
+    1268,
+    1293,
+    1387
+   ],
+   "texts": [
+    "005",
+    "3001",
+    "0228`",
+    "X",
+    "&"
+   ]
+  },
+  {
+   "box": [
+    118,
+    1324,
+    344,
+    1356
+   ],
+   "texts": [
+    "6. UNITS: INCHES"
+   ]
+  },
+  {
+   "box": [
+    1500,
+    1397,
+    1537,
+    1434
+   ],
+   "texts": [
+    "1"
+   ]
+  },
+  {
+   "box": [
+    2109,
+    1331,
+    2151,
+    1616
+   ],
+   "texts": [
+    "1",
+    "8",
+    "2"
+   ]
+  },
+  {
+   "box": [
+    773,
+    1547,
+    1424,
+    1628
+   ],
+   "texts": [
+    "PMI Fully-Toleranced Test Case 8 -",
+    "View A",
+    "7",
+    "Includes Atomic Test Cases",
+    "66, 90"
+   ]
+  },
+  {
+   "box": [
+    2003,
+    1605,
+    2088,
+    1636
+   ],
+   "texts": [
+    "Rev €"
+   ]
+  }
+ ],
+ "leaders": [
+  {
+   "callout": 0,
+   "start": [
+    99,
+    125
+   ],
+   "end": [
+    2099,
+    125
+   ],
+   "length_mm": 254.0,
+   "end_on_part": false
+  },
+  {
+   "callout": 2,
+   "start": [
+    99,
+    125
+   ],
+   "end": [
+    2099,
+    125
+   ],
+   "length_mm": 254.0,
+   "end_on_part": false
+  },
+  {
+   "callout": 3,
+   "start": [
+    2099,
+    125
+   ],
+   "end": [
+    99,
+    125
+   ],
+   "length_mm": 254.0,
+   "end_on_part": false
+  },
+  {
+   "callout": 19,
+   "start": [
+    2098,
+    1645
+   ],
+   "end": [
+    99,
+    1645
+   ],
+   "length_mm": 253.9,
+   "end_on_part": false
+  },
+  {
+   "callout": 13,
+   "start": [
+    645,
+    1055
+   ],
+   "end": [
+    564,
+    1101
+   ],
+   "length_mm": 11.8,
+   "end_on_part": false
+  },
+  {
+   "callout": 12,
+   "start": [
+    574,
+    1132
+   ],
+   "end": [
+    671,
+    1079
+   ],
+   "length_mm": 14.0,
+   "end_on_part": false
+  },
+  {
+   "callout": 8,
+   "start": [
+    1660,
+    515
+   ],
+   "end": [
+    1603,
+    549
+   ],
+   "length_mm": 8.4,
+   "end_on_part": true
+  },
+  {
+   "callout": 5,
+   "start": [
+    1604,
+    325
+   ],
+   "end": [
+    1505,
+    382
+   ],
+   "length_mm": 14.5,
+   "end_on_part": false
+  },
+  {
+   "callout": 7,
+   "start": [
+    1505,
+    382
+   ],
+   "end": [
+    1604,
+    325
+   ],
+   "length_mm": 14.5,
+   "end_on_part": false
+  },
+  {
+   "callout": 14,
+   "start": [
+    1292,
+    1279
+   ],
+   "end": [
+    1500,
+    1226
+   ],
+   "length_mm": 27.3,
+   "end_on_part": true
+  },
+  {
+   "callout": 9,
+   "start": [
+    363,
+    678
+   ],
+   "end": [
+    363,
+    711
+   ],
+   "length_mm": 4.2,
+   "end_on_part": false
+  },
+  {
+   "callout": 10,
+   "start": [
+    1898,
+    687
+   ],
+   "end": [
+    1832,
+    725
+   ],
+   "length_mm": 9.7,
+   "end_on_part": true
+  }
+ ],
+ "part_box": [
+  705,
+  419,
+  2083,
+  1396
+ ],
+ "summary": {
+  "texts": 78,
+  "callouts": 20,
+  "callouts_with_leader": 12,
+  "leader_end_on_part": 3,
+  "segments": 258,
+  "mean_conf": 0.75
+ },
+ "times": {
+  "ocr": 31.1,
+  "structure": 0.1,
+  "total": 31.2
+ },
+ "image": {
+  "path": "real/nist-ftc-08.jpg",
+  "px": [
+   2200,
+   1700
+  ],
+  "dpi": 200
+ }
+}

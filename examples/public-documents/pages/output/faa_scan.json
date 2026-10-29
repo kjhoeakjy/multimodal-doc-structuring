@@ -1,0 +1,120 @@
+{
+ "tables": [
+  {
+   "box": [
+    209,
+    247,
+    1541,
+    1420
+   ],
+   "n_rows": 8,
+   "n_cols": 3,
+   "rows": [
+    [
+     "",
+     "CAUTION THE FOLLOWING TORQUE VALUES ARE DERIVED FROM OIL FREE CADMIUM PLATED THREADS.",
+     ""
+    ],
+    [
+     "",
+     "TORQUE LIMITS RECOMMENDED FOR INSTAL - MAXIMUM ALLOWABLE TIGHTENING LATION (BOLTS LOADED PRIMARILY IN SHEAR) TORQUE LIMITS",
+     ""
+    ],
+    [
+     "",
+     "Thread Size Tension type nuts Shear  type nuts MS20364 Nuts MS20365 and Nuts MS20364 and MS20365 and AN310 and AN320 (24,000 psiin AN31O (90,000 psi   in AN320 (54,000 psi in bolts) bolts) bolts)",
+     ""
+    ],
+    [
+     "",
+     "FINE THREAD SERIES",
+     ""
+    ],
+    [
+     "",
+     "8-36 12-15 7-9 20 12 10-32 20-25 12-15 40 25 1/4-28 50-70 30-40 100 60 5/16-24 100-140 60-85 225 140 3/8-24 160-190 95-110 390 240 7/16-20 450-500 270-300 840 500 1/2-20 480-690 290-410 1100 660 9/16-18 800-1000 480-600 1600 960 5/8-18 1100-1300 600-780 2400 1400 3/4-16 2300-2500 1300-1500 5000 3000 7/8-14 2500-3000 1500-1800 7000 4200 1-14 3700-5500 2200-3300\" 10,000 6000 1-1/8-12 5000-7000 3000-4200\" 15,000 9000 1-1/4-12 9000-11,000 5400-6600* 25,000 15,000",
+     ""
+    ],
+    [
+     "",
+     "COARSE THREAD SERIES",
+     ""
+    ],
+    [
+     "",
+     "8-32 12-15 7-9 20 12 10-24 20-25 12-15 35 21 1/4-20 40-50 25-30 75 45 5/16-18 80-90 48-55 160 100 3/8-16 160-185 95-100 275 170 7/16-14 235-255 140-155 475 280 1/2-13 400-480 240-290 880 520 9/16-12 500-700 300-420 1100 650 5/8-11 700-900 420-540 1500 900 3/4-10 1150-1600 700-950 2500 1500 7/8-9 2200-3000 1300-1800 4600 2700",
+     ""
+    ],
+    [
+     "",
+     "The above torque values may be used for all cadmium-plated steel nuts of the fine or coarse thread series which have approximately equal number of threads and equal face bearing areas Estimated corresponding values",
+     ""
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "box": [
+    580,
+    482,
+    632,
+    501
+   ],
+   "area_mm2": 11.2,
+   "label": 3,
+   "table": [
+    0,
+    2,
+    1
+   ]
+  },
+  {
+   "box": [
+    445,
+    484,
+    517,
+    502
+   ],
+   "area_mm2": 16.9,
+   "label": 4,
+   "table": [
+    0,
+    2,
+    1
+   ]
+  }
+ ],
+ "figure_rows": [
+  {
+   "table": 0,
+   "row": 2,
+   "cells": [
+    "",
+    "Thread Size Tension type nuts Shear  type nuts MS20364 Nuts MS20365 and Nuts MS20364 and MS20365 and AN310 and AN320 (24,000 psiin AN31O (90,000 psi   in AN320 (54,000 psi in bolts) bolts) bolts)",
+    ""
+   ]
+  }
+ ],
+ "summary": {
+  "tables": 1,
+  "cells": 24,
+  "figures": 2,
+  "figures_in_cells": 2,
+  "rows_with_figure": 1,
+  "mean_conf": 0.9
+ },
+ "times": {
+  "ocr": 252.6,
+  "structure": 0.1,
+  "total": 252.6
+ },
+ "image": {
+  "path": "real/faa_scan.jpg",
+  "px": [
+   1700,
+   2200
+  ],
+  "dpi": 200
+ }
+}

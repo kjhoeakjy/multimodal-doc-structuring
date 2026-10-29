@@ -1,0 +1,186 @@
+{
+ "tables": [
+  {
+   "box": [
+    87,
+    142,
+    409,
+    564
+   ],
+   "n_rows": 22,
+   "n_cols": 3,
+   "rows": [
+    [
+     "",
+     "FINE THREAD SERIES",
+     ""
+    ],
+    [
+     "THREAD SIZE",
+     "MINIMUM PREVAILING IORQUE",
+     ""
+    ],
+    [
+     "716_20",
+     "8inch-pounds",
+     ""
+    ],
+    [
+     "12 - 20",
+     "Iinch-pounds",
+     ""
+    ],
+    [
+     "916 -18",
+     "R3lnch-pounds",
+     ""
+    ],
+    [
+     "5/8-18",
+     "18inch-pounds",
+     ""
+    ],
+    [
+     "374 - 16",
+     "27inch-pounds",
+     ""
+    ],
+    [
+     "78.14",
+     "4Qinch-pounds",
+     ""
+    ],
+    [
+     "",
+     "S5 inch-pounds",
+     ""
+    ],
+    [
+     "1-48 - 12",
+     "Z3inch-pounds _",
+     ""
+    ],
+    [
+     "1-1/4 - 12",
+     "94 inch-pounds",
+     ""
+    ],
+    [
+     "",
+     "COARSE THREAD SERIES",
+     ""
+    ],
+    [
+     "THREAD SIZE",
+     "MINIMUM PREVAILING IORQUE",
+     ""
+    ],
+    [
+     "7/16 - 14",
+     "8 inch-pounds",
+     ""
+    ],
+    [
+     "12-13",
+     "Iinch-pounds",
+     ""
+    ],
+    [
+     "916.12",
+     "IAinch-pounds",
+     ""
+    ],
+    [
+     "11",
+     "2Qinch-pounds",
+     ""
+    ],
+    [
+     "3i4 - 10",
+     "27inch-pounds",
+     ""
+    ],
+    [
+     "78-9",
+     "4Qinch-pounds",
+     ""
+    ],
+    [
+     "1.8",
+     "S1inch-pounds",
+     ""
+    ],
+    [
+     "1-1/8 - 8",
+     "68 inch-pounds",
+     ""
+    ],
+    [
+     "1-1/4 - 8",
+     "88inch-pounds",
+     ""
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "box": [
+    99,
+    462,
+    125,
+    472
+   ],
+   "area_mm2": 11.7,
+   "label": 3,
+   "table": [
+    0,
+    16,
+    0
+   ]
+  },
+  {
+   "box": [
+    126,
+    767,
+    144,
+    781
+   ],
+   "area_mm2": 12.5,
+   "label": 5,
+   "table": null
+  }
+ ],
+ "figure_rows": [
+  {
+   "table": 0,
+   "row": 16,
+   "cells": [
+    "11",
+    "2Qinch-pounds",
+    ""
+   ]
+  }
+ ],
+ "summary": {
+  "tables": 1,
+  "cells": 66,
+  "figures": 2,
+  "figures_in_cells": 1,
+  "rows_with_figure": 1,
+  "mean_conf": 0.77
+ },
+ "times": {
+  "ocr": 24.1,
+  "structure": 0.0,
+  "total": 24.1
+ },
+ "image": {
+  "path": "real/faa_p8.jpg",
+  "px": [
+   857,
+   1109
+  ],
+  "dpi": 100
+ }
+}

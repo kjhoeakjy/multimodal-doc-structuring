@@ -1,0 +1,6 @@
+svgelements
+shapely
+pymupdf
+numpy
+opencv-python-headless
+easyocr

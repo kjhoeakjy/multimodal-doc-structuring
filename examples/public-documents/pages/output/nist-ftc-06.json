@@ -1,0 +1,556 @@
+{
+ "callouts": [
+  {
+   "box": [
+    120,
+    56,
+    697,
+    120
+   ],
+   "texts": [
+    "NIST PMI Test Models"
+   ]
+  },
+  {
+   "box": [
+    730,
+    56,
+    869,
+    120
+   ],
+   "texts": [
+    "2014"
+   ]
+  },
+  {
+   "box": [
+    113,
+    136,
+    638,
+    174
+   ],
+   "texts": [
+    "NOTES (UNLESS OTHERWISE SPECIFIED):"
+   ]
+  },
+  {
+   "box": [
+    1677,
+    132,
+    2080,
+    207
+   ],
+   "texts": [
+    "Feature and Specification Index",
+    "nist_ftc_06_asmel_rd_fsi-pdf"
+   ]
+  },
+  {
+   "box": [
+    118,
+    197,
+    739,
+    261
+   ],
+   "texts": [
+    "1.",
+    "CAD MODEL",
+    "REV.",
+    "IS REQUIRED",
+    "TO COMPLETE PRODUCT DEFINITION:"
+   ]
+  },
+  {
+   "box": [
+    117,
+    287,
+    771,
+    503
+   ],
+   "texts": [
+    "2. DIRECTLY-TOLERANCED DIMENSIONS AND BASIC",
+    "DIMENSIONS DEFINED ON THE DRAWING TAKE",
+    "PRECEDENCE OVER DIMENSIONAL DATA",
+    "DEFINED BY THE MODEL:  OBTAIN ALL OTHER",
+    "DIMENSIONAL DATA FROM THE MODEL. THE",
+    "MODEL REPRESENTS BASIC DIMENSIONAL DATA",
+    "UNLESS OTHERWISE SPECIFIED."
+   ]
+  },
+  {
+   "box": [
+    1387,
+    271,
+    1748,
+    546
+   ],
+   "texts": [
+    "1 +.02",
+    "2X CR.5O =",
+    "-24X R.125 +.020",
+    "1+008",
+    "'S01250",
+    "6",
+    "B",
+    "Ts0.025[",
+    "D",
+    "2X"
+   ]
+  },
+  {
+   "box": [
+    119,
+    532,
+    736,
+    655
+   ],
+   "texts": [
+    "3_",
+    "APPLICABLE STANDARDS:",
+    "ASME Y14.41-2003 APPLIES TO DATASET.",
+    "ASME Y14.SM-1994 APPLIES TO DIMENSIONING",
+    "AND TOLERANCING."
+   ]
+  },
+  {
+   "box": [
+    1283,
+    496,
+    1334,
+    555
+   ],
+   "texts": [
+    "0"
+   ]
+  },
+  {
+   "box": [
+    1786,
+    513,
+    1849,
+    567
+   ],
+   "texts": [
+    "(c"
+   ]
+  },
+  {
+   "box": [
+    1723,
+    608,
+    1756,
+    643
+   ],
+   "texts": [
+    "01"
+   ]
+  },
+  {
+   "box": [
+    119,
+    675,
+    577,
+    744
+   ],
+   "texts": [
+    "4_",
+    ".05",
+    "A",
+    "B[c]APPLIES TO ALL",
+    "UNTOLERANCED SURFACES."
+   ]
+  },
+  {
+   "box": [
+    908,
+    741,
+    985,
+    792
+   ],
+   "texts": [
+    "X 41"
+   ]
+  },
+  {
+   "box": [
+    118,
+    773,
+    344,
+    806
+   ],
+   "texts": [
+    "5. UNITS: INCHES"
+   ]
+  },
+  {
+   "box": [
+    288,
+    801,
+    731,
+    1269
+   ],
+   "texts": [
+    "' +.008",
+    "2X 0.562",
+    "TcTAL",
+    "Te",
+    "7.56 +.02",
+    "+.020",
+    "(B",
+    "Tc[AL",
+    "'0.812 =",
+    "2.0256",
+    "2XLJ=",
+    "4X0 415 +.0o8",
+    "50 +.02",
+    "0",
+    "2",
+    "4",
+    "$ozsc"
+   ]
+  },
+  {
+   "box": [
+    1762,
+    850,
+    1981,
+    1084
+   ],
+   "texts": [
+    "7.31 =",
+    "1*.01",
+    "INDIVIDUALLY",
+    "F",
+    ",02",
+    "AX"
+   ]
+  },
+  {
+   "box": [
+    1378,
+    1142,
+    1589,
+    1286
+   ],
+   "texts": [
+    "INDIVIDUALLY",
+    "Iax"
+   ]
+  },
+  {
+   "box": [
+    911,
+    1313,
+    951,
+    1357
+   ],
+   "texts": [
+    "01"
+   ]
+  },
+  {
+   "box": [
+    1050,
+    1310,
+    1274,
+    1419
+   ],
+   "texts": [
+    "A",
+    "4X0.281 _",
+    "Te",
+    "2.015["
+   ]
+  },
+  {
+   "box": [
+    2111,
+    1332,
+    2151,
+    1616
+   ],
+   "texts": [
+    "1",
+    "8",
+    "2"
+   ]
+  },
+  {
+   "box": [
+    713,
+    1541,
+    1486,
+    1630
+   ],
+   "texts": [
+    "PMI Fully-Toleranced Test Case 6 -",
+    "View A",
+    "7",
+    "Includes Atomic Test Cases",
+    "52, 53, 72, 87 , 88,",
+    "89",
+    "5",
+    "1"
+   ]
+  },
+  {
+   "box": [
+    2003,
+    1605,
+    2088,
+    1636
+   ],
+   "texts": [
+    "Rev D"
+   ]
+  },
+  {
+   "box": [
+    865,
+    431,
+    997,
+    529
+   ],
+   "texts": [
+    "(SRSOO)"
+   ]
+  }
+ ],
+ "leaders": [
+  {
+   "callout": 21,
+   "start": [
+    2099,
+    1645
+   ],
+   "end": [
+    99,
+    1645
+   ],
+   "length_mm": 254.0,
+   "end_on_part": false
+  },
+  {
+   "callout": 0,
+   "start": [
+    100,
+    125
+   ],
+   "end": [
+    2099,
+    125
+   ],
+   "length_mm": 253.9,
+   "end_on_part": false
+  },
+  {
+   "callout": 2,
+   "start": [
+    100,
+    125
+   ],
+   "end": [
+    2099,
+    125
+   ],
+   "length_mm": 253.9,
+   "end_on_part": false
+  },
+  {
+   "callout": 3,
+   "start": [
+    2099,
+    125
+   ],
+   "end": [
+    100,
+    125
+   ],
+   "length_mm": 253.9,
+   "end_on_part": false
+  },
+  {
+   "callout": 14,
+   "start": [
+    650,
+    1011
+   ],
+   "end": [
+    1153,
+    1301
+   ],
+   "length_mm": 73.7,
+   "end_on_part": true
+  },
+  {
+   "callout": 16,
+   "start": [
+    1431,
+    1140
+   ],
+   "end": [
+    1801,
+    927
+   ],
+   "length_mm": 54.2,
+   "end_on_part": true
+  },
+  {
+   "callout": 18,
+   "start": [
+    1153,
+    1301
+   ],
+   "end": [
+    650,
+    1011
+   ],
+   "length_mm": 73.7,
+   "end_on_part": true
+  },
+  {
+   "callout": 15,
+   "start": [
+    1801,
+    927
+   ],
+   "end": [
+    1431,
+    1140
+   ],
+   "length_mm": 54.2,
+   "end_on_part": true
+  },
+  {
+   "callout": 12,
+   "start": [
+    1008,
+    789
+   ],
+   "end": [
+    1166,
+    880
+   ],
+   "length_mm": 23.2,
+   "end_on_part": true
+  },
+  {
+   "callout": 6,
+   "start": [
+    1408,
+    467
+   ],
+   "end": [
+    1346,
+    619
+   ],
+   "length_mm": 20.8,
+   "end_on_part": true
+  },
+  {
+   "callout": 10,
+   "start": [
+    1702,
+    588
+   ],
+   "end": [
+    1782,
+    542
+   ],
+   "length_mm": 11.7,
+   "end_on_part": true
+  },
+  {
+   "callout": 9,
+   "start": [
+    1784,
+    541
+   ],
+   "end": [
+    1665,
+    610
+   ],
+   "length_mm": 17.5,
+   "end_on_part": true
+  },
+  {
+   "callout": 17,
+   "start": [
+    922,
+    1359
+   ],
+   "end": [
+    859,
+    1395
+   ],
+   "length_mm": 9.2,
+   "end_on_part": false
+  },
+  {
+   "callout": 8,
+   "start": [
+    1262,
+    495
+   ],
+   "end": [
+    1360,
+    440
+   ],
+   "length_mm": 14.3,
+   "end_on_part": true
+  },
+  {
+   "callout": 22,
+   "start": [
+    999,
+    529
+   ],
+   "end": [
+    1020,
+    620
+   ],
+   "length_mm": 11.9,
+   "end_on_part": true
+  },
+  {
+   "callout": 7,
+   "start": [
+    300,
+    674
+   ],
+   "end": [
+    300,
+    708
+   ],
+   "length_mm": 4.3,
+   "end_on_part": false
+  }
+ ],
+ "part_box": [
+  633,
+  389,
+  1803,
+  1343
+ ],
+ "summary": {
+  "texts": 85,
+  "callouts": 23,
+  "callouts_with_leader": 16,
+  "leader_end_on_part": 10,
+  "segments": 358,
+  "mean_conf": 0.69
+ },
+ "times": {
+  "ocr": 32.8,
+  "structure": 0.1,
+  "total": 33.0
+ },
+ "image": {
+  "path": "real/nist-ftc-06.jpg",
+  "px": [
+   2200,
+   1700
+  ],
+  "dpi": 200
+ }
+}
