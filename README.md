@@ -21,7 +21,7 @@
 
 ## 그림
 
-- [파이프라인 전체 그림](docs/figures/파이프라인-전체-그림.png): 처리 흐름 4단계, 판정 규칙, 모델과 연산, 실측 결과, 한계를 한 장에 정리. 생성 `docs/figures/make_pipeline_fig.py`
+- [파이프라인 전체 그림](docs/figures/파이프라인-전체-그림.png): 입력 도면에서 요소 추출, 관계 그래프, 근거 연결·색인, 텍스트 LLM 답변까지의 흐름을 실제 도면 조각과 그래프 그림으로 표시. 생성 `docs/figures/make_overview_fig.py`. 글 중심 이전 판은 `docs/figures/archive/`
 - [도면 한 장의 구조화 과정(HTML, 모션)](docs/figures/explainer/도면-구조화-과정.html): 공개 P&ID C01의 실제 추출 데이터로 원본 → 요소 분해 → 틀·표 → 도형·기호 → 연결 → 라벨 → 역할 → 그래프 → 특징별 색인 → 질의의 10단계를 보임. 생성 `docs/figures/explainer/build_explainer.py`
 
 ## 구성

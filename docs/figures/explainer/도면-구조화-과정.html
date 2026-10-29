@@ -48,13 +48,14 @@ main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:18p
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 20px;min-width:0;display:flex;flex-direction:column;gap:14px;min-height:560px}
 .stepno{font-family:var(--mono);font-size:12px;color:var(--acc);letter-spacing:.04em}
 h2{margin:2px 0 0;font-size:20px;font-weight:700;letter-spacing:-.01em}
-.desc p{margin:0 0 8px}
+.desc p{margin:0;font-size:13px;color:var(--mute)}
 .desc .rule{font-family:var(--mono);font-size:12px;background:var(--soft);border-radius:4px;padding:2px 6px}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:8px}
 .kpi{border-top:2px solid var(--line);padding-top:6px}
 .kpi b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
 .kpi span{font-size:12px;color:var(--mute)}
 .kpi.acc{border-top-color:var(--acc)}
+.visual:not(:has(section.show)){display:none}
 .visual{position:relative;flex:1;min-height:430px;border:1px solid var(--line);border-radius:6px;background:var(--bg);overflow:hidden}
 .visual > section{position:absolute;inset:0;padding:14px;opacity:0;transition:opacity .5s var(--ease);pointer-events:none;overflow:auto}
 .visual > section.show{opacity:1;pointer-events:auto}
@@ -133,8 +134,8 @@ pre .hl{background:var(--acc-soft);color:var(--acc);border-radius:3px;padding:0 
 <div class="wrap">
 <header>
   <div>
-    <div class="eyebrow">공개 참조 P&amp;ID C01V04 · 벡터 원본 · 문자 인식 모델 없이 기하 규칙으로 처리한 실제 결과</div>
-    <h1>도면 한 장이 관계 그래프와 색인이 되기까지</h1>
+    <div class="eyebrow">DEXPI 참조 P&amp;ID C01V04 · 벡터 원본 · 실측</div>
+    <h1>도면 한 장의 관계 그래프 구조화</h1>
   </div>
   <div class="controls">
     <button id="prev" aria-label="이전 단계">◀ 이전</button>
@@ -729,15 +730,14 @@ pre .hl{background:var(--acc-soft);color:var(--acc);border-radius:3px;padding:0 
     <div class="desc" id="desc"></div>
     <div class="kpis" id="kpis"></div>
     <div class="visual" id="visual">
-      <section id="V-input"><h3>입력 판별</h3><div id="vin"></div></section>
-      <section id="V-graph"><h3>관계 그래프 (노드 <span id="gn"></span> · 간선 <span id="ge"></span>)</h3><svg id="gsvg" viewBox="0 0 600 400"></svg></section>
-      <section id="V-serial"><h3>직렬화 텍스트 (graph.txt 앞부분)</h3><pre id="serial"></pre></section>
-      <section id="V-embed"><h3>특징별 색인 경로</h3><div class="lanes" id="lanes"></div></section>
+            <section id="V-graph"><h3>관계 그래프 (노드 <span id="gn"></span> · 간선 <span id="ge"></span>)</h3><svg id="gsvg" viewBox="0 0 600 400"></svg></section>
+      <section id="V-serial"><h3>직렬화</h3><pre id="serial"></pre></section>
+      <section id="V-embed"><h3>색인 경로</h3><div class="lanes" id="lanes"></div></section>
       <section id="V-query" class="qa"><div id="qa"></div></section>
     </div>
   </aside>
 </main>
-<div class="foot"><span>자료: DEXPI 공개 예제 C01V04-VER.EX01, 추출 결과 examples/dexpi-reference-pid/output. 수치는 실측.</span><span>← → 키로 이동, 공백으로 재생·정지</span></div>
+<div class="foot"><span>자료 DEXPI C01V04 · examples/dexpi-reference-pid/output · 실측</span><span>← → 이동 · 공백 재생·정지</span></div>
 </div>
 
 <script>
@@ -821,57 +821,57 @@ D.serial.slice(0, 28).forEach((l, i) => { const s = document.createElement('span
 const lanes = $('#lanes');
 function lane(src, sub, how, inner, i){ const d = document.createElement('div'); d.className = 'lane'; d.style.transitionDelay = (i*0.35)+'s'; d.innerHTML = `<div class="src">${src}<small>${sub}</small></div><div class="dst"><div class="how">${how}</div>${inner}</div>`; lanes.appendChild(d); }
 const toks = ['n25','equipment','P4712','N1','N2','r9','pipe','j2','73KH12-25','MNc','47125','73HG12','SV','104.01','signal','TICSA','4750.03','TV4750.03'];
-lane('관계와 라벨', '노드 목록 · 구간 목록 텍스트', '그래프 직렬화 → 토큰 → BM25 희소 색인(용어 → 노드·구간 목록). 모델 없음',
+lane('관계 · 라벨', '그래프 텍스트', 'BM25 희소 색인 · 모델 없음',
   `<div class="tokens">${toks.map((t,i)=>`<span class="tok${/^[A-Z]{1,2}\d|^\d{2}[A-Z]{2}\d|^[A-Z]{2,5}$/.test(t)?' key':''}" style="--d:${(0.6+i*0.08).toFixed(2)}s">${t}</span>`).join('')}</div>`, 0);
-lane('태그와 선 번호', '장비 태그 ^[A-Z]\\d{4}$ · 선 번호 형식', '완전 일치 색인(키 → 노드·구간). 부분 일치를 허용하지 않음',
+lane('태그 · 선 번호', '^[A-Z]\\d{4}$', '완전 일치',
   `<div class="kv"><span>P4712</span><b>n25 equipment bbox=(245.8,148.8,256.2,159.2)</b><span>73KH12-25</span><b>n7 symbol bbox=(264.0,158.0,266.0,162.0)</b><span>MNc 47125 73HG12 25</span><b>r13 pipe j0→n4</b><span>TICSA 4750.03</span><b>n17 instrument</b></div>`, 1);
-lane('표', '격자와 문자 6개 이상인 영역 5개', '행 단위 문장으로 펼쳐 텍스트 색인. 표 이름(Ident)을 행마다 붙임',
+lane('표', '5개', '행 단위 텍스트',
   `<div class="kv">${D.table_rows.slice(1,4).map(r=>`<span>H1007</span><b>${r.join(' | ')}</b>`).join('')}</div>`, 2);
-lane('쪽과 그림 영역', '화소 배열. 사진·렌더링도 같은 경로', '경량 이미지 임베딩 모델 → 밀집 벡터 → 코사인 유사도 검색. 관계 질의에는 쓰지 않음',
-  `<div class="vec">${Array.from({length:40},(_,i)=>`<i style="height:${(6+Math.abs(Math.sin(i*1.7)*22+Math.cos(i*.9)*6)).toFixed(0)}px;--d:${(1.2+i*0.03).toFixed(2)}s"></i>`).join('')}</div><div class="how" style="margin-top:4px">유일하게 신경망을 쓰는 지점. 검색 후보를 좁히는 용도</div>`, 3);
-lane('좌표', '모든 노드·간선·라벨의 mm 좌표', '구조화 저장소에 함께 보관. 답변의 근거 표시와 원본 확인에 사용', `<div class="kv"><span>n25</span><b>(245.8, 148.8, 256.2, 159.2)</b><span>j2</span><b>(265.0, 154.0)</b><span>r13</span><b>(269,154)→(269,96)</b></div>`, 4);
+lane('쪽 · 그림 영역', '화소 배열', '이미지 임베딩 · 밀집 벡터 · 유일한 신경망',
+  `<div class="vec">${Array.from({length:40},(_,i)=>`<i style="height:${(6+Math.abs(Math.sin(i*1.7)*22+Math.cos(i*.9)*6)).toFixed(0)}px;--d:${(1.2+i*0.03).toFixed(2)}s"></i>`).join('')}</div>`, 3);
+lane('좌표', 'mm', '근거 표시', `<div class="kv"><span>n25</span><b>(245.8, 148.8, 256.2, 159.2)</b><span>j2</span><b>(265.0, 154.0)</b><span>r13</span><b>(269,154)→(269,96)</b></div>`, 4);
 
 // ---- 질의 ----
 $('#qa').innerHTML = `<p class="q">"P4712 펌프의 토출 측은 어디로 연결되는가"</p>
 <div class="box" style="transition-delay:.2s"><h4>1 완전 일치</h4><div class="kv"><span>P4712</span><b>n25 equipment, 노즐 N1(흡입) N2(토출)</b></div></div>
-<div class="box" style="transition-delay:1s"><h4>2 부분 그래프 (n25에서 3단계, 배관 간선만)</h4><pre>${D.subgraph.slice(1).map((l,i)=>`<span class="ln in" style="transition-delay:${(1.2+i*.15).toFixed(2)}s">${l.replace(/(n25|j2|j0|n3|n7|n4|n29|n2)(\[|\b)/g,'<span class="hl">$1</span>$2')}</span>`).join('')}</pre></div>
-<div class="box" style="transition-delay:2.8s"><h4>3 기존 텍스트 LLM 입력</h4><div style="font-size:12.5px">위 텍스트와 질문. 이미지는 넣지 않음. 토큰 약 300</div></div>
-<div class="box" style="transition-delay:3.6s"><h4>4 답변과 근거</h4><div style="font-size:13px">토출 측 N2는 분기점 <span class="ref" data-ref="j2">j2</span>에서 세 갈래로 나뉨. 아래로 밸브 <span class="ref" data-ref="n7">73KH12-25</span>, 위로 안전밸브 <span class="ref" data-ref="n4">SV 104.01</span>로 가는 선 MNc 47125 73HG12 25, 오른쪽으로 밸브 73KH12-50을 지나 열교환기 H1008 방향.</div><div class="how" style="margin-top:6px">근거 좌표를 누르면 도면에서 위치를 봄. OCR 결과만으로는 세 이름이 같은 쪽에 있다는 사실까지 전달됨</div></div>`;
+<div class="box" style="transition-delay:1s"><h4>2 부분 그래프 · n25에서 3단계</h4><pre>${D.subgraph.slice(1).map((l,i)=>`<span class="ln in" style="transition-delay:${(1.2+i*.15).toFixed(2)}s">${l.replace(/(n25|j2|j0|n3|n7|n4|n29|n2)(\[|\b)/g,'<span class="hl">$1</span>$2')}</span>`).join('')}</pre></div>
+<div class="box" style="transition-delay:2.8s"><h4>3 텍스트 LLM 입력</h4><div style="font-size:12.5px">위 텍스트 + 질문 · 이미지 없음 · 약 300 토큰</div></div>
+<div class="box" style="transition-delay:3.6s"><h4>4 답변과 근거</h4><div style="font-size:13px">N2 → 분기점 <span class="ref" data-ref="j2">j2</span> → 밸브 <span class="ref" data-ref="n7">73KH12-25</span> / 안전밸브 <span class="ref" data-ref="n4">SV 104.01</span> / 73KH12-50 경유 H1008</div><div class="how" style="margin-top:6px">근거 클릭 시 도면 위치 표시</div></div>`;
 document.querySelectorAll('.ref').forEach(r => r.addEventListener('click', () => { const id = r.dataset.ref; const n = byId[id]; if (!n) return; const c = n.bbox ? center(n.bbox) : n.pt; setCam([c[0]-30, c[1]-21, 60, 42], `근거 ${id} 주변`); }));
 
 // ---- 단계 정의 ----
 const K = (b, s, acc) => `<div class="kpi${acc?' acc':''}"><b>${b}</b><span>${s}</span></div>`;
 const STEPS = [
  {name:'원본', title:'원본 입력: 벡터 그림', cam:'full', dur:7000,
-  desc:`<p>DEXPI 공개 참조 P&amp;ID 한 장. 벡터 PDF와 같은 벡터 그림이며 <span class="rule">선 · 곡선 · 타원 · 문자</span>의 좌표, 선 굵기, 점선 여부만 읽음. 색, 식별자, 그룹 이름, 기호 정의 이름은 읽지 않음.</p><p>입력 판별: 경로 요소가 있으면 벡터 경로, 없으면(스캔) 래스터 경로. 이 예시는 벡터 경로임.</p>`,
-  kpis:[K(D.counts.line,'직선'),K(D.counts.curve,'곡선'),K(D.counts.arc,'타원'),K(D.counts.text,'문자')], visual:'V-input', caption:'원본 그대로. 420 × 297 mm(A3) 좌표계'},
+  desc:`<p>선 · 곡선 · 타원 · 문자의 좌표와 굵기. 색 · 식별자 미사용</p>`,
+  kpis:[K(D.counts.line,'직선'),K(D.counts.curve,'곡선'),K(D.counts.arc,'타원'),K(D.counts.text,'문자')], visual:'V-input', caption:'A3 420 × 297 mm'},
  {name:'요소 분해', title:'1 시각 요소 추출', cam:'full', dur:8000, view:'typed',
-  desc:`<p>경로를 직선과 곡선으로 분해하고 변환 행렬을 적용해 쪽 좌표(mm)로 통일함. 직선은 축 평행 여부와 길이, 곡선과 타원은 중심과 반지름, 문자는 내용·기준점·방향·크기를 속성으로 가짐.</p><p>래스터 입력이면 이 단계가 바뀜: 기울기 보정과 잡음 제거 → 문자 인식(CPU 모델) 후 문자 지움 → 형태학 열림으로 축 평행 선과 굵기 → 구멍 윤곽으로 닫힌 도형 → 남은 잉크 덩어리를 기호로. 나머지 단계는 동일함.</p>`,
-  kpis:[K('파랑','직선'),K('주황','곡선'),K('보라','타원'),K('초록','문자')], visual:'V-input', caption:'왼쪽에서 오른쪽으로 요소 유형을 표시함. 모델 미사용'},
+  desc:`<p>쪽 좌표(mm) 통일 · 유형 분류 · 모델 없음</p>`,
+  kpis:[K('파랑','직선'),K('주황','곡선'),K('보라','타원'),K('초록','문자')], visual:'V-input', caption:'유형별 색'},
  {name:'틀·표', title:'2 틀과 표 분리', cam:'full', dur:7000, view:'dim', layers:['L-frame'],
-  desc:`<p>쪽 면적의 80% 이상을 덮는 닫힌 사각형은 <span class="rule">틀</span>. 서로 맞닿은 선이 사각형 경계를 90% 이상 덮고 안에 문자가 6개 이상이면 <span class="rule">표</span> 또는 표제란. 표는 행·칸 단위로 따로 저장하고 그림 처리에서 제외함.</p>`,
-  kpis:[K(D.tables.length,'표',true),K('8','행/표'),K('1','표제란'),K('329','남은 요소'),K('100','남은 문자')], visual:'V-input', caption:'회색 영역은 표. 장비 사양표 5개와 표제란'},
+  desc:`<p>틀 = 쪽 80% 이상 사각형 · 표 = 격자 90% + 문자 6개 이상</p>`,
+  kpis:[K(D.tables.length,'표',true),K('8','행/표'),K('1','표제란'),K('329','남은 요소'),K('100','남은 문자')], visual:'V-input', caption:'회색 = 표 5 · 표제란 1'},
  {name:'도형·기호', title:'3 닫힌 도형과 기호 묶음', cam:'mid', dur:8000, view:'dim', layers:['L-frame','L-nodes'],
-  desc:`<p>끝점이 서로 맞물린 선과 곡선의 묶음, 둘레 12 mm 이상의 타원은 <span class="rule">닫힌 도형</span>(탱크, 열교환기, 펌프, 계기 원). 사선·곡선·작은 타원을 접점 <span class="rule">0.6 mm</span> 기준으로 묶은 것은 <span class="rule">기호</span>(밸브, 리듀서, 연결기). 기호에 닿은 짧은 축 평행 직선은 기호의 일부로 흡수함.</p>`,
-  kpis:[K(roleCount.equipment||0,'장비',true),K(roleCount.instrument||0,'계기'),K(roleCount.symbol||0,'기호'),K(roleCount.nozzle||0,'접속구'),K(roleCount.note||0,'주석')], visual:'V-input', caption:'빨강 장비, 파랑 기호, 보라 계기. 상자는 요소의 외접 사각형(mm)'},
+  desc:`<p>닫힌 도형 = 맞물린 선 · 타원 12 mm 이상 / 기호 = 접점 0.6 mm 묶음</p>`,
+  kpis:[K(roleCount.equipment||0,'장비',true),K(roleCount.instrument||0,'계기'),K(roleCount.symbol||0,'기호'),K(roleCount.nozzle||0,'접속구'),K(roleCount.note||0,'주석')], visual:'V-input', caption:'상자 = 외접 사각형(mm)'},
  {name:'연결', title:'4 선 정리와 연결 판정', cam:'zoom', dur:10000, view:'dim', layers:['L-frame','L-nodes','L-runs'],
-  desc:`<p>축 평행 직선을 같은 축에서 병합하고 선 위에 놓인 기호에서 절단함. 선 끝이 요소에 <span class="rule">0.6 mm</span> 안에서 닿으면 <span class="rule">접속 확정</span>. 선 방향으로 <span class="rule">5 mm</span> 안에 요소가 있으면 <span class="rule">간격 후보</span>로만 기록함. 다른 선의 끝이 닿는 곳은 분기점.</p><p>점선이거나 가장 굵은 선 부류의 절반보다 가는 선은 신호선. 연결은 선·접점 분석으로만 확정하고 요소가 가깝다는 이유로 연결하지 않음.</p>`,
-  kpis:[K(pipes,'배관 구간',true),K(sigs,'신호선'),K(D.junctions.length,'분기점'),K(D.runs.length-gaps,'확정 연결'),K(gaps,'간격 후보')], visual:'V-input', caption:'초록 배관, 파랑 신호선, 노랑 분기점. 점선은 간격 후보'},
+  desc:`<p>접속 = 선 끝 0.6 mm 안 · 간격 후보 = 5 mm 안 · 가는 선 = 신호선</p>`,
+  kpis:[K(pipes,'배관 구간',true),K(sigs,'신호선'),K(D.junctions.length,'분기점'),K(D.runs.length-gaps,'확정 연결'),K(gaps,'간격 후보')], visual:'V-input', caption:'점선 = 간격 후보'},
  {name:'라벨', title:'5 문자 연결', cam:'zoom', dur:8000, view:'dim', layers:['L-frame','L-nodes','L-runs','L-labels'],
-  desc:`<p>요소 상자 안이나 <span class="rule">4 mm</span> 안의 문자는 그 요소의 라벨. 선 번호 형식(MNc 47125 73HG12 25)이고 선과 평행하면 선의 라벨. 문자 100개가 모두 요소 85개 또는 선 15개에 붙음.</p><p>정답 대조: 라벨 소속 62개 중 60개 일치. 누락 2개는 탱크 접속구 N8의 "N8", "800".</p>`,
-  kpis:[K('100','문자',true),K('85','요소 라벨'),K('15','선 라벨'),K('60/62','소속 일치')], visual:'V-input', caption:'회색 선은 문자와 소속 요소의 연결'},
+  desc:`<p>요소 안 또는 4 mm 안의 문자 · 선 번호 형식은 선에 소속</p>`,
+  kpis:[K('100','문자',true),K('85','요소 라벨'),K('15','선 라벨'),K('60/62','소속 일치')], visual:'V-input', caption:'회색 선 = 소속'},
  {name:'역할', title:'6 역할 추정', cam:'tank', dur:8000, view:'dim', layers:['L-frame','L-nodes','L-runs','L-roles'],
-  desc:`<p>라벨 문자열의 형식으로 역할을 정함. 장비 태그 형식 <span class="rule">영문 1자 + 숫자 4자리</span>(P4712, T4750)이면 장비. 계기 기능 문자(PI, TICSA)와 루프 번호(4712.01)가 함께 있으면 계기. 나머지 묶음은 기호. 기호의 종류(밸브 형식) 분류는 후속 단계의 소형 분류기 몫이며 여기서는 하지 않음.</p>`,
-  kpis:[K('5','장비',true),K('4','계기'),K('19','기호'),K('0','모델')], visual:'V-input', caption:'검정 꼬리표는 추정 역할과 근거 형식'},
+  desc:`<p>장비 = 영문 1자 + 숫자 4자리 · 계기 = 기능 문자 + 루프 번호</p>`,
+  kpis:[K('5','장비',true),K('4','계기'),K('19','기호'),K('0','모델')], visual:'V-input', caption:'꼬리표 = 역할 · 근거 형식'},
  {name:'그래프', title:'7 관계 그래프', cam:'full', dur:10000, view:'dim', layers:['L-nodes','L-runs'], graph:'end',
-  desc:`<p>노드는 장비·계기·기호·접속구·주석과 분기점, 간선은 배관·신호선 구간. 모든 노드와 간선이 원본 좌표를 가짐. 오른쪽 그림은 같은 그래프를 좌표에서 풀어 놓은 모습이며 연결 관계는 동일함.</p><p>정답 대조: XML의 배관 연결에서 만든 인접 쌍 27개를 모두 복원. 정답 밖의 쌍 7개는 계측 신호선 연결 6개와 밸브·구동부 연결 1개.</p>`,
-  kpis:[K(D.graph.nodes.length,'노드',true),K(D.graph.edges.length,'간선'),K('27/27','정답 쌍 복원'),K('0.7초','처리 시간')], visual:'V-graph', caption:'도면 위의 노드·간선과 오른쪽 그래프는 같은 객체'},
+  desc:`<p>노드 = 요소 · 분기점 / 간선 = 배관 · 신호선 / 모두 원본 좌표 보유</p>`,
+  kpis:[K(D.graph.nodes.length,'노드',true),K(D.graph.edges.length,'간선'),K('27/27','정답 쌍 복원'),K('0.7초','처리 시간')], visual:'V-graph', caption:'도면 위 표시와 오른쪽 그래프는 같은 객체'},
  {name:'색인', title:'8 직렬화와 특징별 색인', cam:'full', dur:14000, view:'faint', layers:['L-embed'], serial:true, lanesOn:true,
-  desc:`<p>그래프를 노드 목록과 구간 목록의 텍스트로 직렬화함. 요소의 특징에 따라 색인 경로가 갈림. 관계와 라벨은 그래프 텍스트의 희소 색인, 태그는 완전 일치, 표는 행 문장, 쪽과 그림 영역은 경량 이미지 임베딩의 밀집 벡터. 관계는 벡터로 뭉개지 않고 텍스트 그래프로 남기는 것이 핵심임.</p>`,
-  kpis:[K('4','색인 경로',true),K('1','신경망 모델'),K('1회','등록 시 처리'),K('mm','근거 좌표')], visual:'V-embed', caption:'파랑 테두리는 이미지 임베딩 대상 영역(쪽 전체와 그림 영역)'},
+  desc:`<p>관계 · 라벨 = 그래프 텍스트 / 태그 = 완전 일치 / 표 = 행 / 쪽 · 그림 = 밀집 벡터</p>`,
+  kpis:[K('4','색인 경로',true),K('1','신경망 모델'),K('1회','등록 시 처리'),K('mm','근거 좌표')], visual:'V-embed', caption:'파랑 = 이미지 임베딩 영역'},
  {name:'질의', title:'9 질의 시 처리', cam:'zoom', dur:14000, view:'dim', layers:['L-nodes','L-runs','L-query'], qaOn:true,
-  desc:`<p>질문의 태그를 완전 일치로 찾아 시작 노드를 정하고, 배관 간선을 따라 3단계 부분 그래프를 뽑아 텍스트로 기존 텍스트 LLM에 전달함. 이미지는 전달하지 않음. 답변의 각 항목은 노드·간선의 좌표를 근거로 가지며 원본 위에 표시함.</p>`,
-  kpis:[K('1','완전 일치 조회',true),K('3','탐색 단계'),K('8','전달 간선'),K('약 300','입력 토큰')], visual:'V-query', caption:'파랑 강조는 LLM에 전달된 부분 그래프'},
+  desc:`<p>완전 일치 조회 · 3단계 부분 그래프 · 텍스트 LLM 입력 · 좌표 근거</p>`,
+  kpis:[K('1','완전 일치 조회',true),K('3','탐색 단계'),K('8','전달 간선'),K('약 300','입력 토큰')], visual:'V-query', caption:'파랑 = 전달된 부분 그래프'},
 ];
 
 // ---- 진행 제어 ----
@@ -890,8 +890,6 @@ function go(i, manual){ if (i < 0 || i >= STEPS.length) return; cur = i; const s
   lanes.querySelectorAll('.lane').forEach(l => l.classList.toggle('in', !!s.lanesOn));
   if (s.lanesOn) { lanes.querySelectorAll('.lane').forEach(l => { l.style.transitionDelay = (5.2 + +l.style.transitionDelay.replace('s','') * 0 + Array.from(lanes.children).indexOf(l) * .35) + 's'; }); }
   $('#qa').querySelectorAll('.box').forEach(b => b.classList.toggle('in', !!s.qaOn));
-  $('#vin').innerHTML = i === 0 ? `<div class="kv"><span>형식</span><b>SVG (벡터)</b><span>경로 요소</span><b>있음 → 벡터 경로</b><span>쪽 크기</span><b>420 × 297 mm</b><span>좌표 단위</span><b>mm, 소수 둘째 자리</b><span>읽는 속성</span><b>좌표, 선 굵기, 점선, 문자 내용·방향·크기</b><span>읽지 않는 속성</span><b>색, 식별자, 그룹 이름, 기호 정의 이름</b></div>` : $('#vin').innerHTML;
-  if (i >= 1) $('#vin').innerHTML = `<div class="kv"><span>단계 결과</span><b>${s.caption}</b><span>모델 사용</span><b>${i===8?'이미지 임베딩 1종':'없음'}</b><span>벡터 경로</span><b>${['원본 요소 읽기','경로 분해·변환 행렬','틀·표 규칙','닫힌 도형·접점 묶음','선 병합·절단·접속','거리와 형식 규칙','문자열 형식 규칙','그래프 구성','직렬화·색인','부분 그래프 추출'][i]}</b><span>래스터 경로</span><b>${['화소 배열','보정·OCR·형태학 선·구멍 윤곽','같음','같음(윤곽은 구멍 탐지)','같음(굵기 오차 큼)','같음(OCR 오류 영향)','같음','같음','같음','같음'][i]}</b></div>`;
   if (manual) { playing = true; $('#play').textContent = '일시정지'; }
 }
 function loop(now){ if (playing && cur >= 0) { const s = STEPS[cur]; const k = Math.min(1, (now - t0) / s.dur); const c = rail.children[cur]; if (c) c.querySelector('.bar').style.width = (k*100).toFixed(1)+'%'; if (k >= 1) go((cur + 1) % STEPS.length); } raf = requestAnimationFrame(loop); }
