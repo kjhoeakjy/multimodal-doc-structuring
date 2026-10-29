@@ -56,8 +56,9 @@ def table_mode(gray, ink, texts, k):
     solid = cv2.dilate(cv2.bitwise_and(hm, vm), np.ones((5, 5), np.uint8))   # 두 방향 모두 긴 영역 = 채워진 면(그래프 막대 등), 선이 아님
     hm[solid > 0] = 0; vm[solid > 0] = 0
     grid = cv2.bitwise_or(hm, vm)
-    regions, lab = components(cv2.dilate(grid, np.ones((5, 5), np.uint8)), k, min_area_mm2=400)
-    tables = []
+    regions, lab = components(cv2.dilate(grid, np.ones((5, 5), np.uint8)), k, min_area_mm2=40)
+    regions = [r for r in regions if (r['box'][2] - r['box'][0]) * (r['box'][3] - r['box'][1]) * k * k >= 400]   # 외곽 상자 면적 기준(테두리만 있는 틀 포함)
+    tables, frames = [], []
     for r in regions:
         x0, y0, x1, y1 = r['box']
         sub_h = hm[y0:y1, x0:x1]; sub_v = vm[y0:y1, x0:x1]
@@ -73,9 +74,38 @@ def table_mode(gray, ink, texts, k):
             return es
         ys = edges(rows_prof, y0); xs = edges(cols_prof, x0)
         if len(ys) < 3:
-            continue
+            frames.append(r['box']); continue                 # 가로 괘선이 둘 미만이면 표가 아니라 틀(그림·차트 테두리)
         if not xs or xs[0] > x0 + 3: xs = [x0] + xs
         if xs[-1] < x1 - 3: xs = xs + [x1]
+        xs = [x for i, x in enumerate(xs) if i == 0 or (x - xs[i - 1]) * k >= 2.0]     # 2 mm 미만 열(테두리 이중선) 제거
+        # 괘선 사이가 문자 여러 줄이면 문자 줄 기준으로 행을 더 나눔(괘선 없는 자료 행)
+        inner = [t for t in texts if inside(center(t['box']), r['box'])]
+        def line_groups(ts):
+            ys_ = sorted(set(round(center(t['box'])[1]) for t in ts)); hs_ = [t['box'][3] - t['box'][1] for t in ts]
+            gs = []
+            for cy in ys_:
+                if gs and cy - gs[-1][-1] < 0.7 * np.median(hs_):
+                    gs[-1].append(cy)
+                else:
+                    gs.append([cy])
+            return gs
+        ys2 = [ys[0]]
+        for ri in range(len(ys) - 1):
+            band = [t for t in inner if ys[ri] <= center(t['box'])[1] < ys[ri + 1]]
+            hs = [t['box'][3] - t['box'][1] for t in band]
+            # 열마다 문자 줄 수를 세어, 두 열 이상이 같은 수의 줄(2줄 이상)을 가지면 자료 행이 괘선 없이 쌓인 것으로 보고 나눔
+            per_col = []
+            for ci in range(len(xs) - 1):
+                ct = [t for t in band if xs[ci] <= center(t['box'])[0] < xs[ci + 1]]
+                per_col.append(line_groups(ct) if ct else [])
+            counts = collections.Counter(len(g) for g in per_col if len(g) >= 2)
+            if counts and (ys[ri + 1] - ys[ri]) > 2.2 * np.median(hs):
+                n_lines, n_cols = counts.most_common(1)[0]
+                if n_cols >= 2 and n_lines >= 4:          # 줄 바꿈된 머리글(2~3줄)은 나누지 않음
+                    ref = max((g for g in per_col if len(g) == n_lines), key=lambda g: sum(len(x) for x in g))
+                    ys2 += [int((ref[i][-1] + ref[i + 1][0]) / 2) for i in range(len(ref) - 1)]
+            ys2.append(ys[ri + 1])
+        ys = ys2
         cells = []
         for ri in range(len(ys) - 1):
             row = []
@@ -84,12 +114,45 @@ def table_mode(gray, ink, texts, k):
                 ts = [t['text'] for t in texts if inside(center(t['box']), cb)]
                 row.append(dict(box=cb, text=' '.join(ts), figures=[]))
             cells.append(row)
-        tables.append(dict(box=[int(v) for v in r['box']], rows=cells, n_rows=len(ys) - 1, n_cols=len(xs) - 1))
-    # 그림 영역: 문자·격자 밖의 잉크 덩어리
+        # 높이 1 mm 미만이고 문자가 없는 행(스캔 이중선)은 제거
+        cells = [row for row in cells if (row[0]['box'][3] - row[0]['box'][1]) * k >= 1.0 or any(c['text'] for c in row)]
+        if len(cells) < 2 or len(xs) - 1 < 2:
+            frames.append(r['box']); continue              # 열이 하나뿐이면 표가 아니라 틀
+        tables.append(dict(box=[int(v) for v in r['box']], rows=cells, n_rows=len(cells), n_cols=len(xs) - 1))
+    # 그림 영역: 문자·격자 밖의 잉크 덩어리. 가늘고 긴 조각(선)은 제외
     resid = erase(ink, texts, 2)
     resid[cv2.dilate(grid, np.ones((5, 5), np.uint8)) > 0] = 0
     resid = cv2.morphologyEx(resid, cv2.MORPH_CLOSE, np.ones((7, 7), np.uint8))
     figs, _ = components(resid, k, min_area_mm2=6.0, min_dim_mm=4.0)
+    figs = [f for f in figs if min(f['box'][2] - f['box'][0], f['box'][3] - f['box'][1]) * k >= 1.0]
+    figs = [f for f in figs if not ((f['box'][3] - f['box'][1]) * k < 5.0 and (f['box'][2] - f['box'][0]) > 8 * (f['box'][3] - f['box'][1]))]   # 높이 5 mm 미만의 긴 띠(문자 줄)는 제외
+    # 틀(차트 테두리 등) 안의 조각과 문자는 틀 하나의 그림으로 묶음
+    merged = []
+    for fb in frames:
+        if any(inside(center(fb), t['box']) for t in tables):
+            continue
+        inner_f = [f for f in figs if inside(center(f['box']), fb)]
+        inner_t = [t for t in texts if inside(center(t['box']), fb)]
+        figs = [f for f in figs if f not in inner_f]
+        merged.append(dict(box=[int(v) for v in fb], area_mm2=round((fb[2] - fb[0]) * (fb[3] - fb[1]) * k * k, 1), frame=True,
+                           texts=[t['text'] for t in sorted(inner_t, key=lambda t: (t['box'][1], t['box'][0]))]))
+    # 표 밖의 가까운 조각(6 mm 안)끼리 병합
+    outside = [f for f in figs if not any(inside(center(f['box']), t['box']) for t in tables)]
+    figs = [f for f in figs if f not in outside]
+    pad = int(6.0 / k)
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(outside)):
+            for j in range(i + 1, len(outside)):
+                a, b = outside[i]['box'], outside[j]['box']
+                if a[0] - pad <= b[2] and b[0] - pad <= a[2] and a[1] - pad <= b[3] and b[1] - pad <= a[3]:
+                    nb = [min(a[0], b[0]), min(a[1], b[1]), max(a[2], b[2]), max(a[3], b[3])]
+                    outside[i] = dict(box=nb, area_mm2=round(outside[i]['area_mm2'] + outside[j]['area_mm2'], 1)); del outside[j]; changed = True; break
+            if changed:
+                break
+    figs = figs + outside + merged
+    figs.sort(key=lambda f: (f['box'][1], f['box'][0]))
     linked = 0
     for f in figs:
         c = center(f['box']); f['table'] = None
@@ -106,7 +169,7 @@ def table_mode(gray, ink, texts, k):
                 rows_with_fig.append(dict(table=ti, row=ri, cells=[c['text'] for c in row]))
     return dict(tables=[dict(box=t['box'], n_rows=t['n_rows'], n_cols=t['n_cols'],
                              rows=[[c['text'] for c in r] for r in t['rows']], cell_boxes=[[c['box'] for c in r] for r in t['rows']]) for t in tables],
-                figures=figs, figure_rows=rows_with_fig,
+                figures=figs, figure_rows=rows_with_fig, frames=frames,
                 summary=dict(tables=len(tables), cells=sum(t['n_rows'] * t['n_cols'] for t in tables),
                              figures=len(figs), figures_in_cells=linked, rows_with_figure=len(rows_with_fig)))
 

@@ -135,13 +135,16 @@ class TunedReader:
 
 def run_ocr(gray, reader, prefix):
     """문자 인식 한 번. 도면 경로(원시 결과)와 쪽 경로(상자 목록) 두 형식으로 저장."""
-    res = reader.readtext(gray, paragraph=False, min_size=4, text_threshold=0.6, low_text=0.3, mag_ratio=1.5)
+    if os.path.exists(prefix + '_ocr.json'):      # 같은 입력을 다시 처리할 때 문자 인식 결과 재사용
+        res = json.load(open(prefix + '_ocr.json')); reader.lang_used = getattr(reader, 'lang_used', None) or '저장된 결과'
+    else:
+        res = reader.readtext(gray, paragraph=False, min_size=4, text_threshold=0.6, low_text=0.3, mag_ratio=1.5)
     raw = [[[[float(v) for v in p] for p in q], s, float(c)] for q, s, c in res]
     json.dump(raw, open(prefix + '_ocr.json', 'w'))
     texts = []
     for q, s, c in res:
         s = s.strip()
-        if not s or c < 0.2:
+        if not s or c < 0.05:
             continue
         xs = [p[0] for p in q]; ys = [p[1] for p in q]
         texts.append(dict(text=s, conf=round(float(c), 2), box=[int(min(xs)), int(min(ys)), int(max(xs)), int(max(ys))]))
@@ -313,7 +316,7 @@ def relation_graph(kind, k, tables=(), figures=(), paragraphs=(), callouts=(), l
                 run(tid, rid, 'contain', ctr(t['box']), ctr(rb))
         node_box = {n['id']: n['bbox'] for n in nodes}      # mm
         for fi, f in enumerate(figures):
-            fid = node(f"f{fi}", 'figure', f['box'], [])
+            fid = node(f"f{fi}", 'figure', f['box'], [' / '.join(f.get('texts', []))] if f.get('texts') else [])
             loc = f.get('table')                                 # [표, 행, 칸] 또는 None
             if isinstance(loc, (list, tuple)) and len(loc) >= 2 and (loc[0], loc[1]) in row_ids:
                 rid = row_ids[(loc[0], loc[1])]; rb = node_box[rid]
@@ -398,35 +401,96 @@ def build_index(serial_lines, nodes, texts_flat, tables):
 
 
 # ---------------- 본문 묶기 ----------------
+HEADING = re.compile(r'^(\d+(\.\d+)*\.?|\d+-\d+\.|[가-힣]\.|\(?[a-zA-Z]\)|[A-Z]{3,}:)\s+\S')
+
+def text_lines(items, k):
+    """문자 상자를 같은 줄로 묶음. 세로 중심 차이가 높이의 0.6배 안이면 같은 줄."""
+    items = sorted(items, key=lambda t: (t['box'][1], t['box'][0]))
+    lines = []
+    for t in items:
+        h = max(1, t['box'][3] - t['box'][1]); cy = (t['box'][1] + t['box'][3]) / 2
+        if lines and abs(lines[-1]['y'] - cy) < 0.6 * min(h, lines[-1]['h']):
+            lines[-1]['items'].append(t); lines[-1]['y'] = (lines[-1]['y'] + cy) / 2
+        else:
+            lines.append(dict(y=cy, h=h, items=[t]))
+    for l in lines:
+        l['items'].sort(key=lambda t: t['box'][0])
+        l['text'] = ' '.join(t['text'] for t in l['items'])
+        l['box'] = [min(t['box'][0] for t in l['items']), min(t['box'][1] for t in l['items']), max(t['box'][2] for t in l['items']), max(t['box'][3] for t in l['items'])]
+        l['h'] = float(np.median([t['box'][3] - t['box'][1] for t in l['items']]))
+    return lines
+
+def find_gutters(items, k):
+    """단 사이 빈 세로 띠. 문자 폭 분포의 가운데 6할 안에서 1.2 mm 이상 비고 양쪽에 줄이 3개 이상이면 단 경계."""
+    if len(items) < 8:
+        return []
+    xs0 = sorted(t['box'][0] for t in items); xs1 = sorted(t['box'][2] for t in items)
+    L = xs0[len(xs0) // 20]; R = xs1[-1 - len(xs1) // 20]
+    if R - L < 40 / k:
+        return []
+    W = int(R) + 2; cov = np.zeros(W, int)
+    for t in items:
+        cov[max(0, t['box'][0]):min(W, t['box'][2])] += 1
+    lo, hi = int(L + 0.2 * (R - L)), int(R - 0.2 * (R - L))
+    lim = max(2, 0.12 * len(text_lines(items, k)))
+    gutters, x = [], lo
+    while x < hi:
+        if cov[x] <= lim:
+            x0 = x
+            while x < hi and cov[x] <= lim:
+                x += 1
+            if (x - x0) * k >= 1.2:
+                gx = (x0 + x) / 2
+                left = [t for t in items if t['box'][2] <= gx]; right = [t for t in items if t['box'][0] >= gx]
+                if len(text_lines(left, k)) >= 3 and len(text_lines(right, k)) >= 3:
+                    gutters.append(gx)
+        x += 1
+    return gutters
+
 def paragraphs(texts, exclude_boxes, k):
-    """표 밖 OCR 문자를 줄과 문단으로 묶음(좌표 px)."""
+    """표·그림 밖 OCR 문자를 단, 줄, 문단으로 묶음(좌표 px). 2단 이상이면 단별로 묶고 단을 가로지르는 줄은 따로 둠."""
     items = []
     for t in texts:
         b = t['box']; cx, cy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
         if any(x0 <= cx <= x1 and y0 <= cy <= y1 for x0, y0, x1, y1 in exclude_boxes):
             continue
         items.append(t)
-    items.sort(key=lambda t: (t['box'][1], t['box'][0]))
-    lines = []
+    gutters = find_gutters(items, k)
+    def col_of(b):
+        for gi, gx in enumerate(gutters):
+            if b[0] < gx - 3 / k and b[2] > gx + 3 / k:
+                return -1                      # 단을 가로지르는 줄(제목·머리글)
+        return sum(1 for gx in gutters if (b[0] + b[2]) / 2 > gx)
+    groups = collections.defaultdict(list)
     for t in items:
-        h = max(1, t['box'][3] - t['box'][1])
-        if lines and abs(lines[-1]['y'] - (t['box'][1] + t['box'][3]) / 2) < 0.6 * h:
-            lines[-1]['items'].append(t); lines[-1]['y'] = (lines[-1]['y'] + (t['box'][1] + t['box'][3]) / 2) / 2
-        else:
-            lines.append(dict(y=(t['box'][1] + t['box'][3]) / 2, h=h, items=[t]))
+        groups[col_of(t['box'])].append(t)
     paras = []
-    for l in lines:
-        l['items'].sort(key=lambda t: t['box'][0])
-        s = ' '.join(t['text'] for t in l['items'])
-        b = [min(t['box'][0] for t in l['items']), min(t['box'][1] for t in l['items']), max(t['box'][2] for t in l['items']), max(t['box'][3] for t in l['items'])]
-        if paras and l['y'] - paras[-1]['last_y'] < 1.8 * l['h']:
-            paras[-1]['text'] += ' ' + s; paras[-1]['last_y'] = l['y']
-            pb = paras[-1]['box']; paras[-1]['box'] = [min(pb[0], b[0]), min(pb[1], b[1]), max(pb[2], b[2]), max(pb[3], b[3])]
-        else:
-            paras.append(dict(text=s, box=b, last_y=l['y']))
+    for col, its in groups.items():
+        lines = text_lines(its, k)
+        cur = None
+        for l in lines:
+            s = l['text'].strip()
+            short = (l['box'][2] - l['box'][0]) < 0.55 * (max(t['box'][2] for t in its) - min(t['box'][0] for t in its))
+            alone = bool(CAPTION.match(s)) or (bool(HEADING.match(s)) and short)      # 설명문·짧은 제목 줄은 한 줄 문단
+            new_para = (cur is None or l['y'] - cur['last_y'] > 1.8 * l['h']
+                        or l['h'] > 1.6 * cur['h'] or cur['h'] > 1.6 * l['h']
+                        or alone or cur.get('alone') or HEADING.match(s))
+            if new_para:
+                cur = dict(text=s, box=list(l['box']), last_y=l['y'], h=l['h'], col=col, alone=alone); paras.append(cur)
+            else:
+                cur['text'] += ' ' + s; cur['last_y'] = l['y']; cur['h'] = (cur['h'] + l['h']) / 2
+                cur['box'] = [min(cur['box'][0], l['box'][0]), min(cur['box'][1], l['box'][1]), max(cur['box'][2], l['box'][2]), max(cur['box'][3], l['box'][3])]
+    # 읽는 순서: 단을 가로지르는 문단이 띠를 나누고, 띠 안에서는 왼쪽 단부터 위에서 아래로
+    spans = sorted([p for p in paras if p['col'] == -1], key=lambda p: p['box'][1])
+    def band(p):
+        n = sum(1 for sp in spans if sp['box'][3] <= p['box'][1] + 2 / k and sp is not p)
+        return n
+    paras.sort(key=lambda p: (band(p), p['col'] if p['col'] >= 0 else -1, p['box'][1]))
     for p in paras:
-        p.pop('last_y'); p['bbox_mm'] = [round(v * k, 1) for v in p['box']]
-    return paras
+        for key in ('last_y', 'h', 'alone'):
+            p.pop(key, None)
+        p['bbox_mm'] = [round(v * k, 1) for v in p['box']]
+    return paras, gutters
 
 
 # ---------------- 주 처리 ----------------
@@ -562,7 +626,7 @@ class Job:
         json.dump(res, open(prefix + '.json', 'w'), ensure_ascii=False, indent=1)
         self.times['structure'] = res['times']['structure']; self.done('표 · 그림 영역', t0)
         t0 = self.step('본문 묶기')
-        paras = paragraphs(res['texts'], [t['box'] for t in res['tables']], k); self.done('본문 묶기', t0)
+        paras, gutters = paragraphs(res['texts'], [t['box'] for t in res['tables']] + [f['box'] for f in res['figures'] if f.get('frame')], k); self.done('본문 묶기', t0)
         t0 = self.step('직렬화')
         serial = ["# 쪽 구조 (좌표 단위 mm, 원점 좌상단)", "## 표"]
         tables = []
@@ -572,11 +636,12 @@ class Job:
             for ri, row in enumerate(tb['rows']):
                 serial.append(f"t{ti} 행{ri}: " + ' | '.join(row))
             tables.append(dict(bbox=bb, box=tb['box'], rows=tb['rows'], cell_boxes=tb.get('cell_boxes')))
-        serial.append("## 표 안 그림 영역")
-        for f in res['figures']:
-            loc = f.get('table'); owner = f"t{loc[0]} 행{loc[1]}" if isinstance(loc, (list, tuple)) and len(loc) >= 2 else '없음'
-            serial.append(f"그림 bbox=({','.join(str(round(v * k, 1)) for v in f['box'])}) 소속={owner}")
-        serial.append("## 본문")
+        serial.append("## 그림 영역")
+        for fi, f in enumerate(res['figures']):
+            loc = f.get('table'); owner = f" 소속=t{loc[0]} 행{loc[1]}" if isinstance(loc, (list, tuple)) and len(loc) >= 2 else ''
+            inner = f" 안 문자={' / '.join(f['texts'])}" if f.get('texts') else ''
+            serial.append(f"f{fi} bbox=({','.join(str(round(v * k, 1)) for v in f['box'])}){owner}{inner}")
+        serial.append("## 본문" + (f" ({len(gutters) + 1}단)" if gutters else ''))
         for i, p in enumerate(paras):
             serial.append(f"p{i} bbox=({','.join(map(str, p['bbox_mm']))}) {p['text']}")
         g = relation_graph('page', k, tables=tables, figures=res['figures'], paragraphs=paras); serial += relation_lines(g)
