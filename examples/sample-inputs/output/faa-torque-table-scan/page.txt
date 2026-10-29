@@ -1,24 +1,126 @@
 # 쪽 구조 (좌표 단위 mm, 원점 좌상단)
 ## 표
-t0 bbox=(26.5,30.9,189.9,174.6) 행수=16 열수=6
-t0 행0:  |  |  |  |  | 
-t0 행1:  |  | CAUTION THE FOLLOWING TORQUE VALUES ARE DERIVED FROM OIL FREE CADMIUM PLATED THREADS: |  |  | 
-t0 행2:  |  |  |  |  | 
-t0 행3:  |  | TORQUE LIMITS RECOMMENDED FOR INSTAL- LATION (BOLTS LOADED PRIMARILY IN SHEAR) | MAXIMUM ALLOWABLE TORQUE LIMITS | TIGHTENING | 
-t0 행4:  |  |  |  |  | 
-t0 행5: Thread Size | Tension type nuts MS20365 and AN310 (40.000 psiin bolts) | Shear  type   nuts MS20364 and AN320 (24,000 psi in bolts) | Nuts MS20365 and AN31O (90,000 psi   in bolts) | Nuts MS20364 and AN320 (54,000 psi in bolts) | 
-t0 행6:  |  |  |  |  | 
-t0 행7:  |  | FINE THREAD SERIES |  |  | 
-t0 행8:  |  |  |  |  | 
-t0 행9: 8-36 10-32 1/4-28 5/16-24 3/8-24 7/16-20 1/2-20 9/16-18 5/8-18 3/4-16 7/8-14 1-14 1-1/8-12 1-1/4-12 | 12-15 20-25 50-70 100-140 160-190 450-500 480-690 800-1000 1100-1300 2300-2500 2500-3000 3700-5500 5000-7000 9000-11,000 | 7-9 12-15 30-40 60-85 95-110 270-300 290-410 480-600 600-780 1300-1500 1500-1800 2200-3300" 3000-4200" 5400-6600" | 20 40 100 225 390 840 1100 1600 2400 5000 7000 10,000 15,000 25,000 | 12 25 60 140 240 500 660 960 1400 3000 4200 6000 9000 15,000 | 
-t0 행10:  |  |  |  |  | 
-t0 행11:  |  | COARSE THREAD SERIES |  |  | 
-t0 행12:  |  |  |  |  | 
-t0 행13: 8-32 10-24 1/4-20 5/16-18 3/8-16 7/16-14 1/2-13 9/16-12 5/8-11 3/4-10 7/8-9 | 12-15 20-25 40-50 80-90 160-185 235-255 400-480 500-700 700-900 1150-1600 2200-3000 | 7-9 12-15 25-30 48-55 95-100 140-155 240-290 300-420 420-540 700-950 1300-1800 | 20 35 75 160 275 475 880 1100 1500 2500 4600 | 12 21 45 100 170 280 520 650 900 1500 2700 | 
-t0 행14:  | Estimated corresponding values. | The above torque values may be used for all cadmium-plated steel nuts of the fine Or coarse thread series which have approximately equal number of threads and equal face bearing areas. |  |  | 
-t0 행15:  |  |  |  |  | 
-## 표 안 그림 영역
-## 본문
-p0 bbox=(26.3,16.9,188.0,30.0) 9/8/98 AC 43.13-1B TABLE 7-1. Recommended torque values (inch-pounds).
-p1 bbox=(25.8,178.5,188.4,248.1) 7-44. CLOSE-TOLERANCE BOLTS: of bolt may require light tapping with a mallet Close-tolerance, hex head, machine bolts to set the bolt shank into the bolt hole. (ANI73 through ANI86). 100-degree counter- sunk head, close-tolerance, high-strength bolts NOTE: Elimination of friction in in- (NAS333 through NAS34O). hex head, close- terference fit applications may some- tolerance; short   thread,  titanium alloy bolts times be attained by placing the bolt (NAS653 through NAS6S8), 100-degree in 4 freezer prior to installation. countersunk flathead, close-tolerance titanium When this procedure is used, the bolt alloy bolts (NAS663 through NAS668). and should be allowed to warm up to am- drilled hex head close-tolerance titanium alloy bient temperature before torquing: bolts (NAS673 through NAS678), are used in applications   where two parts bolted together CAUTION: Caution must be exer- are subject to severe load reversals and vibra- cised in the use of close-tolerance bolts tion. Because of the interference fit, this type for   all   critical   applications;   such aS
-p2 bbox=(26.6,259.1,188.0,264.2) Par 7-43 Page 7-9
+t0 bbox=(26.5,31.1,189.6,174.5) 행수=31 열수=5
+t0 행0:  |  | CAUTION THE FOLLOWING TORQUE VALUES ARE DERIVED FROM OIL FREE CADMIUM PLATED THREADS: |  | 
+t0 행1:  |  | TORQUE LIMITS RECOMMENDED FOR INSTAL- LATION (BOLTS LOADED PRIMARILY IN SHEAR) | MAXIMUM ALLOWABLE TORQUE LIMITS | TIGHTENING
+t0 행2: Thread Size | Tension type nuts MS20365 and AN310 (40.000 psiin bolts) | Shear  type   nuts MS20364 and AN320 (24,000 psi in bolts) | Nuts MS20365 and AN31O (90,000 psi   in bolts) | Nuts MS20364 and AN320 (54,000 psi in bolts)
+t0 행3:  |  | FINE THREAD SERIES |  | 
+t0 행4: 8-36 | 12-15 | 7-9 | 20 | 12
+t0 행5: 10-32 | 20-25 | 12-15 | 40 | 25
+t0 행6: 1/4-28 | 50-70 | 30-40 | 100 | 60
+t0 행7: 5/16-24 | 100-140 | 60-85 | 225 | 140
+t0 행8: 3/8-24 | 160-190 | 95-110 | 390 | 240
+t0 행9: 7/16-20 | 450-500 | 270-300 | 840 | 500
+t0 행10: 1/2-20 | 480-690 | 290-410 | 1100 | 660
+t0 행11: 9/16-18 | 800-1000 | 480-600 | 1600 | 960
+t0 행12: 5/8-18 | 1100-1300 | 600-780 | 2400 | 1400
+t0 행13: 3/4-16 | 2300-2500 | 1300-1500 | 5000 | 3000
+t0 행14: 7/8-14 | 2500-3000 | 1500-1800 | 7000 | 4200
+t0 행15: 1-14 | 3700-5500 | 2200-3300" | 10,000 | 6000
+t0 행16: 1-1/8-12 | 5000-7000 | 3000-4200" | 15,000 | 9000
+t0 행17: 1-1/4-12 | 9000-11,000 | 5400-6600" | 25,000 | 15,000
+t0 행18:  |  | COARSE THREAD SERIES |  | 
+t0 행19: 8-32 | 12-15 | 7-9 | 20 | 12
+t0 행20: 10-24 | 20-25 | 12-15 | 35 | 21
+t0 행21: 1/4-20 | 40-50 | 25-30 | 75 | 45
+t0 행22: 5/16-18 | 80-90 | 48-55 | 160 | 100
+t0 행23: 3/8-16 | 160-185 | 95-100 | 275 | 170
+t0 행24: 7/16-14 | 235-255 | 140-155 | 475 | 280
+t0 행25: 1/2-13 | 400-480 | 240-290 | 880 | 520
+t0 행26: 9/16-12 | 500-700 | 300-420 | 1100 | 650
+t0 행27: 5/8-11 | 700-900 | 420-540 | 1500 | 900
+t0 행28: 3/4-10 | 1150-1600 | 700-950 | 2500 | 1500
+t0 행29: 7/8-9 | 2200-3000 | 1300-1800 | 4600 | 2700
+t0 행30:  | Estimated corresponding values. | The above torque values may be used for all cadmium-plated steel nuts of the fine Or coarse thread series which have approximately equal number of threads and equal face bearing areas. |  | 
+## 그림 영역
+## 본문 (2단)
+p0 bbox=(26.3,16.9,37.2,21.5) 9/8/98
+p1 bbox=(26.5,25.2,105.1,30.0) TABLE 7-1. Recommended torque values (inch-pounds).
+p2 bbox=(25.8,179.3,105.9,247.6) 7-44. CLOSE-TOLERANCE BOLTS: Close-tolerance, hex head, machine bolts (ANI73 through ANI86). 100-degree counter- sunk head, close-tolerance, high-strength bolts (NAS333 through NAS34O). hex head, close- tolerance; short   thread,  titanium alloy bolts (NAS653 through NAS6S8), 100-degree countersunk flathead, close-tolerance titanium alloy bolts (NAS663 through NAS668). and drilled hex head close-tolerance titanium alloy bolts (NAS673 through NAS678), are used in applications   where two parts bolted together are subject to severe load reversals and vibra- tion. Because of the interference fit, this type
+p3 bbox=(26.6,259.3,40.7,263.1) Par 7-43
+p4 bbox=(166.9,16.9,188.0,21.3) AC 43.13-1B
+p5 bbox=(108.9,178.5,188.4,188.7) of bolt may require light tapping with a mallet to set the bolt shank into the bolt hole.
+p6 bbox=(113.7,193.7,183.3,228.8) NOTE: Elimination of friction in in- terference fit applications may some- times be attained by placing the bolt in 4 freezer prior to installation. When this procedure is used, the bolt should be allowed to warm up to am- bient temperature before torquing:
+p7 bbox=(113.8,232.4,183.2,248.1) CAUTION: Caution must be exer- cised in the use of close-tolerance bolts for   all   critical   applications;   such aS
+p8 bbox=(172.7,259.1,188.0,264.2) Page 7-9
+## 관계 (노드 종류 · 이름 · 좌표, 간선 종류)
+t0 종류=표 이름= |  | CAUTION THE FOLLOWING TORQUE VALUE bbox=(26.5,31.1,189.6,174.5)
+t0r0 종류=행 이름=CAUTION THE FOLLOWING TORQUE VALUES ARE  bbox=(26.8,31.8,188.7,41.2)
+t0r1 종류=행 이름=TORQUE LIMITS RECOMMENDED FOR INSTAL- LA bbox=(26.8,41.7,188.7,50.1)
+t0r2 종류=행 이름=Thread Size | Tension type nuts MS20365  bbox=(26.8,50.6,188.7,61.9)
+t0r3 종류=행 이름=FINE THREAD SERIES bbox=(26.8,62.4,188.7,68.4)
+t0r4 종류=행 이름=8-36 | 12-15 | 7-9 | 20 | 12 bbox=(26.8,68.9,188.7,74.0)
+t0r5 종류=행 이름=10-32 | 20-25 | 12-15 | 40 | 25 bbox=(26.8,74.0,188.7,77.2)
+t0r6 종류=행 이름=1/4-28 | 50-70 | 30-40 | 100 | 60 bbox=(26.8,77.2,188.7,80.3)
+t0r7 종류=행 이름=5/16-24 | 100-140 | 60-85 | 225 | 140 bbox=(26.8,80.3,188.7,83.5)
+t0r8 종류=행 이름=3/8-24 | 160-190 | 95-110 | 390 | 240 bbox=(26.8,83.5,188.7,86.6)
+t0r9 종류=행 이름=7/16-20 | 450-500 | 270-300 | 840 | 500 bbox=(26.8,86.6,188.7,89.8)
+t0r10 종류=행 이름=1/2-20 | 480-690 | 290-410 | 1100 | 660 bbox=(26.8,89.8,188.7,93.0)
+t0r11 종류=행 이름=9/16-18 | 800-1000 | 480-600 | 1600 | 96 bbox=(26.8,93.0,188.7,96.1)
+t0r12 종류=행 이름=5/8-18 | 1100-1300 | 600-780 | 2400 | 14 bbox=(26.8,96.1,188.7,99.3)
+t0r13 종류=행 이름=3/4-16 | 2300-2500 | 1300-1500 | 5000 |  bbox=(26.8,99.3,188.7,102.3)
+t0r14 종류=행 이름=7/8-14 | 2500-3000 | 1500-1800 | 7000 |  bbox=(26.8,102.3,188.7,105.5)
+t0r15 종류=행 이름=1-14 | 3700-5500 | 2200-3300" | 10,000 | bbox=(26.8,105.5,188.7,108.8)
+t0r16 종류=행 이름=1-1/8-12 | 5000-7000 | 3000-4200" | 15,0 bbox=(26.8,108.8,188.7,112.0)
+t0r17 종류=행 이름=1-1/4-12 | 9000-11,000 | 5400-6600" | 25 bbox=(26.8,112.0,188.7,116.0)
+t0r18 종류=행 이름=COARSE THREAD SERIES bbox=(26.8,116.5,188.7,122.6)
+t0r19 종류=행 이름=8-32 | 12-15 | 7-9 | 20 | 12 bbox=(26.8,123.1,188.7,128.1)
+t0r20 종류=행 이름=10-24 | 20-25 | 12-15 | 35 | 21 bbox=(26.8,128.1,188.7,131.3)
+t0r21 종류=행 이름=1/4-20 | 40-50 | 25-30 | 75 | 45 bbox=(26.8,131.3,188.7,134.4)
+t0r22 종류=행 이름=5/16-18 | 80-90 | 48-55 | 160 | 100 bbox=(26.8,134.4,188.7,137.6)
+t0r23 종류=행 이름=3/8-16 | 160-185 | 95-100 | 275 | 170 bbox=(26.8,137.6,188.7,140.8)
+t0r24 종류=행 이름=7/16-14 | 235-255 | 140-155 | 475 | 280 bbox=(26.8,140.8,188.7,143.9)
+t0r25 종류=행 이름=1/2-13 | 400-480 | 240-290 | 880 | 520 bbox=(26.8,143.9,188.7,147.0)
+t0r26 종류=행 이름=9/16-12 | 500-700 | 300-420 | 1100 | 650 bbox=(26.8,147.0,188.7,150.2)
+t0r27 종류=행 이름=5/8-11 | 700-900 | 420-540 | 1500 | 900 bbox=(26.8,150.2,188.7,153.4)
+t0r28 종류=행 이름=3/4-10 | 1150-1600 | 700-950 | 2500 | 15 bbox=(26.8,153.4,188.7,156.6)
+t0r29 종류=행 이름=7/8-9 | 2200-3000 | 1300-1800 | 4600 | 2 bbox=(26.8,156.6,188.7,160.7)
+t0r30 종류=행 이름=Estimated corresponding values. | The ab bbox=(26.8,160.7,188.7,173.5)
+p0 종류=문단 이름=9/8/98 bbox=(26.3,16.9,37.2,21.5)
+p1 종류=문단 이름=TABLE 7-1. Recommended torque values (in bbox=(26.5,25.2,105.1,30.0)
+p2 종류=문단 이름=7-44. CLOSE-TOLERANCE BOLTS: Close-toler bbox=(25.8,179.3,105.9,247.6)
+p3 종류=문단 이름=Par 7-43 bbox=(26.6,259.3,40.7,263.1)
+p4 종류=문단 이름=AC 43.13-1B bbox=(166.9,16.9,188.0,21.3)
+p5 종류=문단 이름=of bolt may require light tapping with a bbox=(108.9,178.5,188.4,188.7)
+p6 종류=문단 이름=NOTE: Elimination of friction in in- ter bbox=(113.7,193.7,183.3,228.8)
+p7 종류=문단 이름=CAUTION: Caution must be exer- cised in  bbox=(113.8,232.4,183.2,248.1)
+p8 종류=문단 이름=Page 7-9 bbox=(172.7,259.1,188.0,264.2)
+r0 종류=포함 A=t0 B=t0r0
+r1 종류=포함 A=t0 B=t0r1
+r2 종류=포함 A=t0 B=t0r2
+r3 종류=포함 A=t0 B=t0r3
+r4 종류=포함 A=t0 B=t0r4
+r5 종류=포함 A=t0 B=t0r5
+r6 종류=포함 A=t0 B=t0r6
+r7 종류=포함 A=t0 B=t0r7
+r8 종류=포함 A=t0 B=t0r8
+r9 종류=포함 A=t0 B=t0r9
+r10 종류=포함 A=t0 B=t0r10
+r11 종류=포함 A=t0 B=t0r11
+r12 종류=포함 A=t0 B=t0r12
+r13 종류=포함 A=t0 B=t0r13
+r14 종류=포함 A=t0 B=t0r14
+r15 종류=포함 A=t0 B=t0r15
+r16 종류=포함 A=t0 B=t0r16
+r17 종류=포함 A=t0 B=t0r17
+r18 종류=포함 A=t0 B=t0r18
+r19 종류=포함 A=t0 B=t0r19
+r20 종류=포함 A=t0 B=t0r20
+r21 종류=포함 A=t0 B=t0r21
+r22 종류=포함 A=t0 B=t0r22
+r23 종류=포함 A=t0 B=t0r23
+r24 종류=포함 A=t0 B=t0r24
+r25 종류=포함 A=t0 B=t0r25
+r26 종류=포함 A=t0 B=t0r26
+r27 종류=포함 A=t0 B=t0r27
+r28 종류=포함 A=t0 B=t0r28
+r29 종류=포함 A=t0 B=t0r29
+r30 종류=포함 A=t0 B=t0r30
+r31 종류=순서 A=p0 B=p1
+r32 종류=순서 A=p1 B=p2
+r33 종류=순서 A=p2 B=p3
+r34 종류=순서 A=p3 B=p4
+r35 종류=순서 A=p4 B=p5
+r36 종류=순서 A=p5 B=p6
+r37 종류=순서 A=p6 B=p7
+r38 종류=순서 A=p7 B=p8

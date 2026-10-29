@@ -8,27 +8,23 @@
     390
    ],
    "n_rows": 4,
-   "n_cols": 3,
+   "n_cols": 2,
    "rows": [
     [
      "Screw MS; AN; or NAS Number",
-     "Description",
-     ""
+     "Description"
     ],
     [
      "NAS6100-6103",
-     "Screw; hex head, tri-wing recess, full thr , titanium",
-     ""
+     "Screw; hex head, tri-wing recess, full thr , titanium"
     ],
     [
      "NAS65O0-6506",
-     "Screw; 100\" oval hd , ~tri-wing recess, full thr , cres.",
-     ""
+     "Screw; 100\" oval hd , ~tri-wing recess, full thr , cres."
     ],
     [
      "NAS6900-6904",
-     "Screw; panhead, tri-wing recess, full thr , cres",
-     ""
+     "Screw; panhead, tri-wing recess, full thr , cres"
     ]
    ],
    "cell_boxes": [
@@ -44,12 +40,6 @@
       119,
       425,
       154
-     ],
-     [
-      425,
-      119,
-      430,
-      154
      ]
     ],
     [
@@ -64,12 +54,6 @@
       154,
       425,
       231
-     ],
-     [
-      425,
-      154,
-      430,
-      231
      ]
     ],
     [
@@ -83,12 +67,6 @@
       264,
       231,
       425,
-      308
-     ],
-     [
-      425,
-      231,
-      430,
       308
      ]
     ],
@@ -103,12 +81,6 @@
       264,
       308,
       425,
-      385
-     ],
-     [
-      425,
-      308,
-      430,
       385
      ]
     ]
@@ -122,67 +94,55 @@
     988
    ],
    "n_rows": 12,
-   "n_cols": 3,
+   "n_cols": 2,
    "rows": [
     [
      "Bolt Numbec",
-     "Descrintion",
-     ""
+     "Descrintion"
     ],
     [
      "AN148551-149350",
-     "Bolt, socket head_ 6-hole drilled, .190-.625",
-     ""
+     "Bolt, socket head_ 6-hole drilled, .190-.625"
     ],
     [
      "AN1O1001-101900",
-     "Bolt, hex, steel, head",
-     ""
+     "Bolt, hex, steel, head"
     ],
     [
      "AN101901-102800",
-     "Bolt, hex , drilled shank, steel",
-     ""
+     "Bolt, hex , drilled shank, steel"
     ],
     [
      "AN102801-103700",
-     "Bolt . Drilled hex Head, (one steel",
-     ""
+     "Bolt . Drilled hex Head, (one steel {hole);"
     ],
     [
      "AN103701-104600",
-     "Boll; drilled hex. Head, steel, (six holes)",
-     ""
+     "Boll; drilled hex. Head, steel, (six holes)"
     ],
     [
      "AN104601-105500",
-     "Bolt, hex Head, corro- sion-resistant steel",
-     ""
+     "Bolt, hex Head, corro- sion-resistant steel"
     ],
     [
      "AN105501-106400",
-     "Boll; hex Head, drilled shank; corrosion-resistant steel",
-     ""
+     "Boll; hex Head, drilled shank; corrosion-resistant steel"
     ],
     [
      "AN106401-107300",
-     "Boll; hex , drilled head, (one holes), corrosion-resistant steel",
-     ""
+     "Boll; hex , drilled head, (one holes), corrosion-resistant steel"
     ],
     [
      "AN107301-108200",
-     "Boll; hex , drilled head, (six holes) , corrosion-resistant steel",
-     ""
+     "Boll; hex , drilled head, (six holes) , corrosion-resistant steel"
     ],
     [
      "Ms9033-9039",
-     "Boll; machine 12pt. Head, 130,000 psi min: TS.",
-     ""
+     "Boll; machine 12pt. Head, 130,000 psi min: TS."
     ],
     [
      "Ms9060-9086",
-     "Boll; machine 12p1 Double hex 130,000 psi min T.S. ext washer head, drilled",
-     ""
+     "Boll; machine 12p1 Double hex 130,000 psi min T.S. ext washer head, drilled"
     ]
    ],
    "cell_boxes": [
@@ -198,12 +158,6 @@
       119,
       769,
       136
-     ],
-     [
-      769,
-      119,
-      774,
-      136
      ]
     ],
     [
@@ -218,12 +172,6 @@
       136,
       769,
       213
-     ],
-     [
-      769,
-      136,
-      774,
-      213
      ]
     ],
     [
@@ -237,12 +185,6 @@
       608,
       213,
       769,
-      290
-     ],
-     [
-      769,
-      213,
-      774,
       290
      ]
     ],
@@ -257,12 +199,6 @@
       608,
       290,
       769,
-      367
-     ],
-     [
-      769,
-      290,
-      774,
       367
      ]
     ],
@@ -277,12 +213,6 @@
       608,
       367,
       769,
-      444
-     ],
-     [
-      769,
-      367,
-      774,
       444
      ]
     ],
@@ -297,12 +227,6 @@
       608,
       444,
       769,
-      521
-     ],
-     [
-      769,
-      444,
-      774,
       521
      ]
     ],
@@ -317,12 +241,6 @@
       608,
       521,
       769,
-      598
-     ],
-     [
-      769,
-      521,
-      774,
       598
      ]
     ],
@@ -337,12 +255,6 @@
       608,
       598,
       769,
-      675
-     ],
-     [
-      769,
-      598,
-      774,
       675
      ]
     ],
@@ -357,12 +269,6 @@
       608,
       675,
       769,
-      752
-     ],
-     [
-      769,
-      675,
-      774,
       752
      ]
     ],
@@ -377,12 +283,6 @@
       608,
       752,
       769,
-      829
-     ],
-     [
-      769,
-      752,
-      774,
       829
      ]
     ],
@@ -397,12 +297,6 @@
       608,
       829,
       769,
-      906
-     ],
-     [
-      769,
-      829,
-      774,
       906
      ]
     ],
@@ -417,12 +311,6 @@
       608,
       906,
       769,
-      983
-     ],
-     [
-      769,
-      906,
-      774,
       983
      ]
     ]
@@ -436,47 +324,39 @@
     980
    ],
    "n_rows": 8,
-   "n_cols": 3,
+   "n_cols": 2,
    "rows": [
     [
      "Bolt umber",
-     "Description",
-     ""
+     "Description"
     ],
     [
      "AN3-20",
-     "Bolt, machine",
-     ""
+     "Bolt, machine"
     ],
     [
      "AN21-36",
-     "Boll, clevis",
-     ""
+     "Boll, clevis"
     ],
     [
      "AN42-49",
-     "Boll; eye",
-     ""
+     "Boll; eye"
     ],
     [
      "AN73-81",
-     "Bollt, machine, drilled",
-     ""
+     "Bollt, machine, drilled"
     ],
     [
      "AN173-186",
-     "Bolt, aircraft Close tolerance",
-     ""
+     "Bolt, aircraft Close tolerance"
     ],
     [
      "AN774",
-     "BolL; flared tube",
-     ""
+     "BolL; flared tube"
     ],
     [
      "AN775",
-     "Boll; universal fitting",
-     ""
+     "Boll; universal fitting"
     ]
    ],
    "cell_boxes": [
@@ -492,12 +372,6 @@
       420,
       426,
       437
-     ],
-     [
-      426,
-      420,
-      431,
-      437
      ]
     ],
     [
@@ -512,12 +386,6 @@
       437,
       426,
       514
-     ],
-     [
-      426,
-      437,
-      431,
-      514
      ]
     ],
     [
@@ -531,12 +399,6 @@
       265,
       514,
       426,
-      590
-     ],
-     [
-      426,
-      514,
-      431,
       590
      ]
     ],
@@ -551,12 +413,6 @@
       265,
       590,
       426,
-      667
-     ],
-     [
-      426,
-      590,
-      431,
       667
      ]
     ],
@@ -571,12 +427,6 @@
       265,
       667,
       426,
-      744
-     ],
-     [
-      426,
-      667,
-      431,
       744
      ]
     ],
@@ -591,12 +441,6 @@
       265,
       744,
       426,
-      821
-     ],
-     [
-      426,
-      744,
-      431,
       821
      ]
     ],
@@ -611,12 +455,6 @@
       265,
       821,
       426,
-      898
-     ],
-     [
-      426,
-      821,
-      431,
       898
      ]
     ],
@@ -631,12 +469,6 @@
       265,
       898,
       426,
-      975
-     ],
-     [
-      426,
-      898,
-      431,
       975
      ]
     ]
@@ -736,28 +568,13 @@
   },
   {
    "box": [
-    649,
-    389,
-    681,
-    401
-   ],
-   "area_mm2": 13.9,
-   "label": 39,
-   "table": [
-    1,
-    4,
-    1
-   ]
-  },
-  {
-   "box": [
     150,
     456,
     258,
     498
    ],
    "area_mm2": 83.0,
-   "label": 48,
+   "label": 47,
    "table": [
     2,
     1,
@@ -772,7 +589,7 @@
     503
    ],
    "area_mm2": 70.3,
-   "label": 49,
+   "label": 48,
    "table": [
     1,
     5,
@@ -787,7 +604,7 @@
     567
    ],
    "area_mm2": 38.0,
-   "label": 56,
+   "label": 55,
    "table": [
     2,
     2,
@@ -802,7 +619,7 @@
     568
    ],
    "area_mm2": 11.5,
-   "label": 57,
+   "label": 56,
    "table": [
     2,
     2,
@@ -817,7 +634,7 @@
     579
    ],
    "area_mm2": 51.8,
-   "label": 58,
+   "label": 57,
    "table": [
     1,
     6,
@@ -832,7 +649,7 @@
     554
    ],
    "area_mm2": 13.8,
-   "label": 59,
+   "label": 58,
    "table": [
     2,
     2,
@@ -847,7 +664,7 @@
     645
    ],
    "area_mm2": 91.5,
-   "label": 66,
+   "label": 65,
    "table": [
     2,
     3,
@@ -862,7 +679,7 @@
     654
    ],
    "area_mm2": 53.6,
-   "label": 67,
+   "label": 66,
    "table": [
     1,
     7,
@@ -877,7 +694,7 @@
     720
    ],
    "area_mm2": 74.3,
-   "label": 74,
+   "label": 73,
    "table": [
     2,
     4,
@@ -892,7 +709,7 @@
     730
    ],
    "area_mm2": 15.7,
-   "label": 76,
+   "label": 75,
    "table": [
     1,
     8,
@@ -907,7 +724,7 @@
     721
    ],
    "area_mm2": 9.4,
-   "label": 77,
+   "label": 76,
    "table": [
     1,
     8,
@@ -922,7 +739,7 @@
     799
    ],
    "area_mm2": 101.7,
-   "label": 85,
+   "label": 84,
    "table": [
     2,
     5,
@@ -937,7 +754,7 @@
     815
    ],
    "area_mm2": 18.4,
-   "label": 86,
+   "label": 85,
    "table": [
     1,
     9,
@@ -952,7 +769,7 @@
     802
    ],
    "area_mm2": 7.4,
-   "label": 88,
+   "label": 87,
    "table": [
     1,
     9,
@@ -967,7 +784,7 @@
     893
    ],
    "area_mm2": 85.2,
-   "label": 96,
+   "label": 95,
    "table": [
     2,
     6,
@@ -982,7 +799,7 @@
     880
    ],
    "area_mm2": 103.7,
-   "label": 97,
+   "label": 96,
    "table": [
     1,
     10,
@@ -997,7 +814,7 @@
     968
    ],
    "area_mm2": 51.3,
-   "label": 104,
+   "label": 103,
    "table": [
     2,
     7,
@@ -1012,7 +829,7 @@
     959
    ],
    "area_mm2": 69.1,
-   "label": 105,
+   "label": 104,
    "table": [
     1,
     11,
@@ -1027,7 +844,7 @@
     948
    ],
    "area_mm2": 7.1,
-   "label": 107,
+   "label": 106,
    "table": [
     1,
     11,
@@ -1041,8 +858,7 @@
    "row": 1,
    "cells": [
     "NAS6100-6103",
-    "Screw; hex head, tri-wing recess, full thr , titanium",
-    ""
+    "Screw; hex head, tri-wing recess, full thr , titanium"
    ]
   },
   {
@@ -1050,8 +866,7 @@
    "row": 2,
    "cells": [
     "NAS65O0-6506",
-    "Screw; 100\" oval hd , ~tri-wing recess, full thr , cres.",
-    ""
+    "Screw; 100\" oval hd , ~tri-wing recess, full thr , cres."
    ]
   },
   {
@@ -1059,8 +874,7 @@
    "row": 3,
    "cells": [
     "NAS6900-6904",
-    "Screw; panhead, tri-wing recess, full thr , cres",
-    ""
+    "Screw; panhead, tri-wing recess, full thr , cres"
    ]
   },
   {
@@ -1068,8 +882,7 @@
    "row": 1,
    "cells": [
     "AN148551-149350",
-    "Bolt, socket head_ 6-hole drilled, .190-.625",
-    ""
+    "Bolt, socket head_ 6-hole drilled, .190-.625"
    ]
   },
   {
@@ -1077,8 +890,7 @@
    "row": 2,
    "cells": [
     "AN1O1001-101900",
-    "Bolt, hex, steel, head",
-    ""
+    "Bolt, hex, steel, head"
    ]
   },
   {
@@ -1086,8 +898,7 @@
    "row": 4,
    "cells": [
     "AN102801-103700",
-    "Bolt . Drilled hex Head, (one steel",
-    ""
+    "Bolt . Drilled hex Head, (one steel {hole);"
    ]
   },
   {
@@ -1095,8 +906,7 @@
    "row": 5,
    "cells": [
     "AN103701-104600",
-    "Boll; drilled hex. Head, steel, (six holes)",
-    ""
+    "Boll; drilled hex. Head, steel, (six holes)"
    ]
   },
   {
@@ -1104,8 +914,7 @@
    "row": 6,
    "cells": [
     "AN104601-105500",
-    "Bolt, hex Head, corro- sion-resistant steel",
-    ""
+    "Bolt, hex Head, corro- sion-resistant steel"
    ]
   },
   {
@@ -1113,8 +922,7 @@
    "row": 7,
    "cells": [
     "AN105501-106400",
-    "Boll; hex Head, drilled shank; corrosion-resistant steel",
-    ""
+    "Boll; hex Head, drilled shank; corrosion-resistant steel"
    ]
   },
   {
@@ -1122,8 +930,7 @@
    "row": 8,
    "cells": [
     "AN106401-107300",
-    "Boll; hex , drilled head, (one holes), corrosion-resistant steel",
-    ""
+    "Boll; hex , drilled head, (one holes), corrosion-resistant steel"
    ]
   },
   {
@@ -1131,8 +938,7 @@
    "row": 9,
    "cells": [
     "AN107301-108200",
-    "Boll; hex , drilled head, (six holes) , corrosion-resistant steel",
-    ""
+    "Boll; hex , drilled head, (six holes) , corrosion-resistant steel"
    ]
   },
   {
@@ -1140,8 +946,7 @@
    "row": 10,
    "cells": [
     "Ms9033-9039",
-    "Boll; machine 12pt. Head, 130,000 psi min: TS.",
-    ""
+    "Boll; machine 12pt. Head, 130,000 psi min: TS."
    ]
   },
   {
@@ -1149,8 +954,7 @@
    "row": 11,
    "cells": [
     "Ms9060-9086",
-    "Boll; machine 12p1 Double hex 130,000 psi min T.S. ext washer head, drilled",
-    ""
+    "Boll; machine 12p1 Double hex 130,000 psi min T.S. ext washer head, drilled"
    ]
   },
   {
@@ -1158,8 +962,7 @@
    "row": 1,
    "cells": [
     "AN3-20",
-    "Bolt, machine",
-    ""
+    "Bolt, machine"
    ]
   },
   {
@@ -1167,8 +970,7 @@
    "row": 2,
    "cells": [
     "AN21-36",
-    "Boll, clevis",
-    ""
+    "Boll, clevis"
    ]
   },
   {
@@ -1176,8 +978,7 @@
    "row": 3,
    "cells": [
     "AN42-49",
-    "Boll; eye",
-    ""
+    "Boll; eye"
    ]
   },
   {
@@ -1185,8 +986,7 @@
    "row": 4,
    "cells": [
     "AN73-81",
-    "Bollt, machine, drilled",
-    ""
+    "Bollt, machine, drilled"
    ]
   },
   {
@@ -1194,8 +994,7 @@
    "row": 5,
    "cells": [
     "AN173-186",
-    "Bolt, aircraft Close tolerance",
-    ""
+    "Bolt, aircraft Close tolerance"
    ]
   },
   {
@@ -1203,8 +1002,7 @@
    "row": 6,
    "cells": [
     "AN774",
-    "BolL; flared tube",
-    ""
+    "BolL; flared tube"
    ]
   },
   {
@@ -1212,16 +1010,16 @@
    "row": 7,
    "cells": [
     "AN775",
-    "Boll; universal fitting",
-    ""
+    "Boll; universal fitting"
    ]
   }
  ],
+ "frames": [],
  "summary": {
   "tables": 3,
-  "cells": 72,
-  "figures": 26,
-  "figures_in_cells": 26,
+  "cells": 48,
+  "figures": 25,
+  "figures_in_cells": 25,
   "rows_with_figure": 20,
   "mean_conf": 0.76
  },
@@ -2054,6 +1852,16 @@
     1057,
     768,
     1081
+   ]
+  },
+  {
+   "text": "{hole);",
+   "conf": 0.17,
+   "box": [
+    642,
+    381,
+    686,
+    404
    ]
   }
  ],

@@ -9,7 +9,9 @@
    ],
    "texts": [
     "NOTES: 1. BREAK ALL SHARP EDGES 0.5 MAX 2. DIMENSIONS IN MM 3. TOLERANCE +0.2 UNLESS NOTED"
-   ]
+   ],
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -20,7 +22,9 @@
    ],
    "texts": [
     "0856 H7"
-   ]
+   ],
+   "kind": "dimension",
+   "part": 0
   },
   {
    "box": [
@@ -31,7 +35,9 @@
    ],
    "texts": [
     "14"
-   ]
+   ],
+   "kind": "dimension",
+   "part": 1
   },
   {
    "box": [
@@ -42,7 +48,9 @@
    ],
    "texts": [
     "R4 (2 PPL)"
-   ]
+   ],
+   "kind": "dimension",
+   "part": 1
   },
   {
    "box": [
@@ -54,7 +62,9 @@
    "texts": [
     "8 x 09 THRU",
     "EQ SP ON 092 B.C."
-   ]
+   ],
+   "kind": "dimension",
+   "part": 0
   },
   {
    "box": [
@@ -65,301 +75,207 @@
    ],
    "texts": [
     "0120"
-   ]
-  },
-  {
-   "box": [
-    1691,
-    1324,
-    1962,
-    1377
    ],
-   "texts": [
-    "34",
-    "FLANGE; MOUNTING"
-   ]
-  },
-  {
-   "box": [
-    1405,
-    1348,
-    1480,
-    1376
-   ],
-   "texts": [
-    "TITLE"
-   ]
-  },
-  {
-   "box": [
-    1405,
-    1412,
-    1515,
-    1440
-   ],
-   "texts": [
-    "PART NO"
-   ]
-  },
-  {
-   "box": [
-    1721,
-    1412,
-    1834,
-    1440
-   ],
-   "texts": [
-    "FL-204O-A"
-   ]
-  },
-  {
-   "box": [
-    1997,
-    1412,
-    2074,
-    1440
-   ],
-   "texts": [
-    "REV B"
-   ]
-  },
-  {
-   "box": [
-    1406,
-    1474,
-    1536,
-    1502
-   ],
-   "texts": [
-    "MATERIAL"
-   ]
-  },
-  {
-   "box": [
-    1723,
-    1474,
-    1847,
-    1502
-   ],
-   "texts": [
-    "AL 6061-T6"
-   ]
-  },
-  {
-   "box": [
-    1995,
-    1474,
-    2114,
-    1504
-   ],
-   "texts": [
-    "SCALE 1:1"
-   ]
-  },
-  {
-   "box": [
-    1405,
-    1536,
-    1491,
-    1566
-   ],
-   "texts": [
-    "FINISH"
-   ]
-  },
-  {
-   "box": [
-    1723,
-    1538,
-    1882,
-    1566
-   ],
-   "texts": [
-    "ANODIZE CL2"
-   ]
-  },
-  {
-   "box": [
-    1995,
-    1538,
-    2083,
-    1566
-   ],
-   "texts": [
-    "SHT 1/1"
-   ]
+   "kind": "dimension",
+   "part": 0
   }
  ],
  "leaders": [
   {
-   "callout": 8,
+   "callout": 1,
    "start": [
-    1392,
-    1448
+    681,
+    220
    ],
    "end": [
-    2262,
-    1448
+    795,
+    220
    ],
-   "length_mm": 110.5,
-   "end_on_part": true
-  },
-  {
-   "callout": 4,
-   "start": [
-    1227,
-    787
-   ],
-   "end": [
-    189,
-    787
-   ],
-   "length_mm": 131.8,
-   "end_on_part": false
-  },
-  {
-   "callout": 7,
-   "start": [
-    1392,
-    1385
-   ],
-   "end": [
-    2262,
-    1385
-   ],
-   "length_mm": 110.5,
-   "end_on_part": true
-  },
-  {
-   "callout": 11,
-   "start": [
-    1392,
-    1512
-   ],
-   "end": [
-    2256,
-    1512
-   ],
-   "length_mm": 109.7,
-   "end_on_part": true
+   "length_mm": 14.5,
+   "end_on_part": false,
+   "part": null
   },
   {
    "callout": 3,
    "start": [
-    1921,
-    515
+    1849,
+    512
    ],
    "end": [
-    1921,
-    1259
-   ],
-   "length_mm": 94.5,
-   "end_on_part": false
-  },
-  {
-   "callout": 6,
-   "start": [
-    1727,
-    1323
-   ],
-   "end": [
-    2256,
-    1323
-   ],
-   "length_mm": 67.2,
-   "end_on_part": true
-  },
-  {
-   "callout": 5,
-   "start": [
-    708,
-    1306
-   ],
-   "end": [
-    708,
-    268
-   ],
-   "length_mm": 131.8,
-   "end_on_part": false
-  },
-  {
-   "callout": 15,
-   "start": [
     1709,
-    1571
+    543
    ],
-   "end": [
-    1707,
-    1354
-   ],
-   "length_mm": 27.6,
-   "end_on_part": true
+   "length_mm": 18.2,
+   "end_on_part": true,
+   "part": 1
   },
   {
-   "callout": 14,
+   "callout": 4,
    "start": [
-    1392,
-    1571
+    1216,
+    752
    ],
    "end": [
-    1394,
-    1323
+    1067,
+    901
    ],
-   "length_mm": 31.5,
-   "end_on_part": true
+   "length_mm": 26.8,
+   "end_on_part": true,
+   "part": 0
+  }
+ ],
+ "parts": [
+  {
+   "box": [
+    189,
+    268,
+    1228,
+    1307
+   ],
+   "area_mm2": 601.5
   },
   {
-   "callout": 9,
-   "start": [
-    1708,
-    1425
+   "box": [
+    1573,
+    213,
+    1850,
+    1262
    ],
-   "end": [
-    1708,
-    1354
-   ],
-   "length_mm": 9.0,
-   "end_on_part": true
-  },
-  {
-   "callout": 16,
-   "start": [
-    1983,
-    1571
-   ],
-   "end": [
-    1983,
-    1387
-   ],
-   "length_mm": 23.4,
-   "end_on_part": true
-  },
-  {
-   "callout": 12,
-   "start": [
-    1707,
-    1493
-   ],
-   "end": [
-    1708,
-    1571
-   ],
-   "length_mm": 9.9,
-   "end_on_part": true
+   "area_mm2": 320.8
   }
  ],
  "part_box": [
-  76,
-  76,
-  2263,
-  1578
+  189,
+  268,
+  1228,
+  1307
+ ],
+ "tables": [
+  {
+   "box": [
+    1390,
+    1319,
+    2265,
+    1580
+   ],
+   "n_rows": 4,
+   "n_cols": 3,
+   "rows": [
+    [
+     "TITLE",
+     "34 FLANGE; MOUNTING",
+     ""
+    ],
+    [
+     "PART NO",
+     "FL-204O-A",
+     "REV B"
+    ],
+    [
+     "MATERIAL",
+     "AL 6061-T6",
+     "SCALE 1:1"
+    ],
+    [
+     "FINISH",
+     "ANODIZE CL2",
+     "SHT 1/1"
+    ]
+   ],
+   "cell_boxes": [
+    [
+     [
+      1392,
+      1321,
+      1707,
+      1385
+     ],
+     [
+      1707,
+      1321,
+      1983,
+      1385
+     ],
+     [
+      1983,
+      1321,
+      2257,
+      1385
+     ]
+    ],
+    [
+     [
+      1392,
+      1385,
+      1707,
+      1448
+     ],
+     [
+      1707,
+      1385,
+      1983,
+      1448
+     ],
+     [
+      1983,
+      1385,
+      2257,
+      1448
+     ]
+    ],
+    [
+     [
+      1392,
+      1448,
+      1707,
+      1511
+     ],
+     [
+      1707,
+      1448,
+      1983,
+      1511
+     ],
+     [
+      1983,
+      1448,
+      2257,
+      1511
+     ]
+    ],
+    [
+     [
+      1392,
+      1511,
+      1707,
+      1572
+     ],
+     [
+      1707,
+      1511,
+      1983,
+      1572
+     ],
+     [
+      1983,
+      1511,
+      2257,
+      1572
+     ]
+    ]
+   ]
+  }
  ],
  "summary": {
   "texts": 19,
-  "callouts": 17,
-  "callouts_with_leader": 12,
-  "leader_end_on_part": 9,
-  "segments": 453,
+  "callouts": 6,
+  "dimensions": 5,
+  "notes": 1,
+  "callouts_with_leader": 3,
+  "leader_end_on_part": 2,
+  "parts": 2,
+  "tables": 1,
+  "segments": 437,
   "mean_conf": 0.85
  },
  "texts": [
@@ -556,8 +472,8 @@
  ],
  "times": {
   "ocr": 0.0,
-  "structure": 0.2,
-  "total": 0.2
+  "structure": 0.3,
+  "total": 0.3
  },
  "image": {
   "path": "input_gray.png",

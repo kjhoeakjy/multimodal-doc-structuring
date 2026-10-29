@@ -16,9 +16,9 @@
 | `mech-flange-synthetic-200dpi.png` | 같은 도면 200 dpi 래스터 | 합성 |
 | `mech-iso-tolerance-real.jpg` | 치수·기하 공차 등각 도면, 곡선 다수 | NIST PMI 시험 모형 FTC 07(공개) |
 | `faa-bolt-table-illustrations.jpg` | 행마다 삽화가 든 볼트 표 | FAA AC 43.13-1B 7장(공개, 약 100 dpi) |
-| `faa-torque-table.png` | 토크 표, 행 구분선 없음 | FAA AC 43.13-1B(공개) |
+| `faa-torque-table.jpg` | 토크 표, 행 구분선 없음 | FAA AC 43.13-1B(공개) |
 | `faa-torque-table-scan.jpg` | 같은 표 200 dpi 스캔 | 합성 열화 |
-| `faa-text-page.jpg` | 본문 위주 쪽(절 번호·문단) | FAA AC 43.13-1B(공개) |
+| `faa-text-page.png` | 본문 위주 쪽(절 번호·문단, 2단) | FAA AC 43.13-1B(공개) |
 | `ko-table-text-scan200.jpg` | 한글 본문 3문단·표 6행, 200 dpi 스캔 열화 | 합성 |
 | `ko-report-synthetic.png` | 한글 보고서(제목·절·막대 그래프 그림·설명문·표) | 합성 |
 | `en-report-synthetic-vector.pdf` | 영문 보고서 PDF(벡터 문자·표·선 그래프) | 합성 |

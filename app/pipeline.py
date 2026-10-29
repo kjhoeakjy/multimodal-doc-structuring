@@ -292,7 +292,7 @@ def subgraph(g, tag, depth=3):
 # ---------------- 쪽 · 도해 · 사진의 관계 그래프 ----------------
 CAPTION = re.compile(r'^(그림|표|Figure|Fig\.?|Table)\s*(\d+)', re.I)
 
-def relation_graph(kind, k, tables=(), figures=(), paragraphs=(), callouts=(), leaders=(), part_box=None, texts=(), page_px=None):
+def relation_graph(kind, k, tables=(), figures=(), paragraphs=(), callouts=(), leaders=(), part_box=None, parts=(), texts=(), page_px=None):
     """도면이 아닌 입력을 같은 노드·간선 형식으로 만든다. 좌표는 mm. 간선 종류: 포함, 소속, 설명, 언급, 순서, 지시."""
     mm = lambda b: [round(v * k, 1) for v in b]
     ctr = lambda b: ((b[0] + b[2]) / 2, (b[1] + b[3]) / 2)
@@ -301,8 +301,8 @@ def relation_graph(kind, k, tables=(), figures=(), paragraphs=(), callouts=(), l
         nodes.append(dict(id=nid, role=role, bbox=mm(box_px), texts=[t for t in texts_ if t][:6], degree=0, attached_to=None)); return nid
     def run(a, b, kind_, ca, cb, texts_=(), gap=0):
         runs.append(dict(id=f"r{len(runs)}", a=a, b=b, coords=[[round(ca[0] * k, 2), round(ca[1] * k, 2)], [round(cb[0] * k, 2), round(cb[1] * k, 2)]], kind=kind_, texts=list(texts_), gap=gap))
-    if kind == 'page':
-        row_ids = {}
+    row_ids = {}
+    def add_tables():
         for ti, t in enumerate(tables):
             tid = node(f"t{ti}", 'table', t['box'], [' | '.join(t['rows'][0])] if t['rows'] else [])
             cbs = t.get('cell_boxes') or []
@@ -314,6 +314,8 @@ def relation_graph(kind, k, tables=(), figures=(), paragraphs=(), callouts=(), l
                 rid = node(f"t{ti}r{ri}", 'row', rb, [' | '.join(c for c in row if c)])
                 row_ids[(ti, ri)] = rid
                 run(tid, rid, 'contain', ctr(t['box']), ctr(rb))
+    if kind == 'page':
+        add_tables()
         node_box = {n['id']: n['bbox'] for n in nodes}      # mm
         for fi, f in enumerate(figures):
             fid = node(f"f{fi}", 'figure', f['box'], [' / '.join(f.get('texts', []))] if f.get('texts') else [])
@@ -343,16 +345,25 @@ def relation_graph(kind, k, tables=(), figures=(), paragraphs=(), callouts=(), l
                 run(prev, pid_, 'next', ctr(paragraphs[pi - 1]['box']), ctr(p_['box']))
             prev = pid_
     elif kind == 'illustration':
-        part = node('part', 'part', part_box, []) if part_box else None
+        parts = list(parts) or ([dict(box=part_box)] if part_box else [])
+        part_ids = [node(f"part{pi}", 'part', p_['box'], []) for pi, p_ in enumerate(parts)]
+        add_tables()
         for ci, c in enumerate(callouts):
-            node(f"c{ci}", 'callout', c['box'], [' '.join(c.get('texts', []))])
+            role = {'dimension': 'dimension', 'note': 'note', 'datum': 'datum'}.get(c.get('kind'), 'callout')
+            node(f"c{ci}", role, c['box'], [' '.join(c.get('texts', []))])
+        with_leader = set()
         for li, l in enumerate(leaders):
-            cid = f"c{l['callout']}"
-            if l['end_on_part'] and part:
-                run(cid, part, 'point', l['start'], l['end'], [])
+            cid = f"c{l['callout']}"; with_leader.add(l['callout'])
+            pi = l.get('part') if l.get('part') is not None else (0 if l['end_on_part'] and part_ids else None)
+            if pi is not None and pi < len(part_ids):
+                run(cid, part_ids[pi], 'point', l['start'], l['end'], [])
             else:
                 junctions.append(dict(id=f"j{len(junctions)}", pt=[round(l['end'][0] * k, 2), round(l['end'][1] * k, 2)]))
                 run(cid, junctions[-1]['id'], 'point', l['start'], l['end'], [], gap=1)
+        for ci, c in enumerate(callouts):      # 지시선 없는 치수는 가장 가까운 투상도에 붙임
+            pi = c.get('part')
+            if ci not in with_leader and pi is not None and pi < len(part_ids):
+                run(f"c{ci}", part_ids[pi], 'dimension', ctr(c['box']), ctr(parts[pi]['box']), [])
     elif kind == 'photo' and page_px:
         ph = node('photo', 'photo', [0, 0, page_px[0], page_px[1]], [])
         for ti, t in enumerate(texts):
@@ -366,8 +377,8 @@ def relation_graph(kind, k, tables=(), figures=(), paragraphs=(), callouts=(), l
         n['degree'] = deg[n['id']]
     return dict(nodes=nodes, runs=runs, junctions=junctions)
 
-KIND_KO = {'contain': '포함', 'belong': '소속', 'describe': '설명', 'mention': '언급', 'next': '순서', 'point': '지시'}
-ROLE_KO = {'table': '표', 'row': '행', 'figure': '그림', 'paragraph': '문단', 'callout': '주기', 'part': '부품', 'photo': '사진', 'text': '문자'}
+KIND_KO = {'contain': '포함', 'belong': '소속', 'describe': '설명', 'mention': '언급', 'next': '순서', 'point': '지시', 'dimension': '치수'}
+ROLE_KO = {'table': '표', 'row': '행', 'figure': '그림', 'paragraph': '문단', 'callout': '주기', 'dimension': '치수', 'note': '주석', 'datum': '기준 문자', 'part': '투상도', 'photo': '사진', 'text': '문자'}
 
 def relation_lines(g):
     nodes = {n['id']: n for n in g['nodes']}
@@ -544,14 +555,21 @@ class Job:
     def prepare(self, src, ext, plan, out):
         t0 = self.step('입력 판별')
         if ext == '.svg':
+            if self.vector_mechanical(src, out):
+                self.done('입력 판별', t0); return
             out.update(kind='vector', svg=src, detect=dict(reason='벡터 SVG'), dpi=None); self.done('입력 판별', t0); return
         dpi_hint = None
         if ext == '.pdf':
             import pymupdf
             doc = pymupdf.open(src); page = doc[int(self.opts.get('page', 0))]
-            if len(page.get_drawings()) > 20 or len(page.get_text().strip()) > 50:
+            words = page.get_text('words'); n_draw = len(page.get_drawings())
+            if len(words) >= 40 and n_draw <= len(words):
+                self.pdf_text_page(page, words, n_draw, out); self.done('입력 판별', t0); return
+            if n_draw > 20 or len(page.get_text().strip()) > 50:
                 svg = os.path.join(self.dir, 'input.svg'); open(svg, 'w', encoding='utf-8').write(page.get_svg_image(text_as_path=False))
-                out.update(kind='vector', svg=svg, detect=dict(reason=f'PDF 벡터(경로 {len(page.get_drawings())}개, 문자 있음)'), dpi=None); self.done('입력 판별', t0); return
+                if self.vector_mechanical(svg, out):
+                    self.done('입력 판별', t0); return
+                out.update(kind='vector', svg=svg, detect=dict(reason=f'PDF 벡터(경로 {n_draw}개, 문자 있음)'), dpi=None); self.done('입력 판별', t0); return
             pix = page.get_pixmap(dpi=200); src = os.path.join(self.dir, 'input_raster.png'); pix.save(src); dpi_hint = 200
         gray = cv2.imread(src, cv2.IMREAD_GRAYSCALE)
         if gray is None:
@@ -578,8 +596,9 @@ class Job:
         json.dump(texts, open(os.path.join(self.dir, 'page_ocr.json'), 'w'), ensure_ascii=False)   # 쪽 경로의 캐시 형식
         self.done('문자 인식', t0)
         t0 = self.step('해상도 · 종류 판별')
-        dpi, src_ = estimate_dpi(W, H, texts, meta_dpi)
-        kind, f = classify(gray, texts, dpi)
+        sure = [t for t in texts if t['conf'] >= 0.3]      # 종류·해상도 판별에는 신뢰도 높은 문자만 사용(낮은 것은 기호 조각일 수 있음)
+        dpi, src_ = estimate_dpi(W, H, sure, meta_dpi)
+        kind, f = classify(gray, sure, dpi)
         info.update(f, dpi_source=src_, ocr_lang=reader.lang_used, skew_deg=round(skew, 2))
         out.update(kind=kind, png=png, dpi=dpi, detect=info, texts=texts, view=dict(url='input_gray.png', w=W, h=H, mm_per_px=25.4 / dpi))
         self.done('해상도 · 종류 판별', t0)
@@ -608,6 +627,16 @@ class Job:
 
     def finish_graph(self, g, out, prefix, texts_px):
         t0 = self.step('직렬화')
+        # 연결도 문자도 없는 4 mm 미만 조각(래스터 잡음)은 그래프에서 제외
+        used = {r['a'] for r in g['runs']} | {r['b'] for r in g['runs']} | {n.get('attached_to') for n in g['nodes']} | {n.get('annotates') for n in g['nodes']}
+        def noise(n):
+            return (n['role'] in ('symbol', 'mark') and not n['texts'] and n['id'] not in used
+                    and max(n['bbox'][2] - n['bbox'][0], n['bbox'][3] - n['bbox'][1]) < 4.0)
+        dropped = [n['id'] for n in g['nodes'] if noise(n)]
+        if dropped:
+            g['nodes'] = [n for n in g['nodes'] if n['id'] not in dropped]
+            g['counts'] = dict(g.get('counts', {}), dropped_fragments=len(dropped))
+            json.dump(g, open(prefix + '.json', 'w'), ensure_ascii=False, indent=1, default=str)
         sz.main(prefix + '.json', prefix + '.txt')
         serial = open(prefix + '.txt', encoding='utf-8').read().splitlines(); self.done('직렬화', t0)
         t0 = self.step('색인')
@@ -617,6 +646,54 @@ class Job:
                    tables=[dict(bbox=t['bbox'], rows=t['rows']) for t in g.get('tables', [])], texts=texts_px, labels=[l for l in g.get('labels', []) if l.get('owner')],
                    counts=dict(g['counts'], **collections.Counter(n['role'] for n in g['nodes'])), serial=serial, index=idx)
         self.embed_page(out)
+
+    def vector_mechanical(self, svg, out):
+        """벡터 도면 중 기계 도면(장비·계기 태그 없음, 치수 문자 있음)은 200 dpi로 그려 도해 경로에 넘기고 문자는 벡터 좌표를 그대로 쓴다."""
+        try:
+            W, H, prims, vtexts = eg.load_primitives(svg)
+        except Exception:
+            return False
+        norm = lambda t: t[:1] + t[1:].replace('O', '0')
+        tags = [t for t in vtexts if eg.TAG_EQUIP.match(norm(t['text']))]
+        instr = [t for t in vtexts if eg.TAG_INSTR.match(t['text'])]
+        dims = [t for t in vtexts if rd.DIM.search(t['text']) and any(c.isdigit() for c in t['text'])]
+        if tags or len(instr) >= 2 or len(dims) < 2:
+            return False
+        import pymupdf
+        dpi = 200
+        pix = pymupdf.open(svg)[0].get_pixmap(dpi=dpi, colorspace='gray'); png = os.path.join(self.dir, 'input_gray.png'); pix.save(png)
+        sc = pix.width / W
+        texts, raw = [], []
+        for t in vtexts:
+            b = eg.text_bbox(t).bounds; bx = [int(b[0] * sc), int(b[1] * sc), int(b[2] * sc), int(b[3] * sc)]
+            texts.append(dict(text=t['text'], conf=1.0, box=bx)); raw.append([[[bx[0], bx[1]], [bx[2], bx[1]], [bx[2], bx[3]], [bx[0], bx[3]]], t['text'], 1.0])
+        json.dump(raw, open(os.path.join(self.dir, 'doc_ocr.json'), 'w')); json.dump(texts, open(os.path.join(self.dir, 'page_ocr.json'), 'w'), ensure_ascii=False)
+        self.times['문자 인식'] = 0.0
+        out.update(kind='illustration', png=png, dpi=dpi, texts=texts, view=dict(url='input_gray.png', w=pix.width, h=pix.height, mm_per_px=25.4 / dpi),
+                   detect=dict(px=[pix.width, pix.height], reason=f'벡터 기계 도면(치수 문자 {len(dims)}개, 장비 태그 없음, 200 dpi로 그림)', dpi_source='벡터 200 dpi 렌더', ocr_lang='벡터 문자(문자 인식 생략)'))
+        return True
+
+    def pdf_text_page(self, page, words, n_draw, out):
+        """글자 층이 있는 PDF 문서 쪽: 문자 인식 없이 글자 좌표를 줄 단위로 묶어 쪽 경로에 넘김."""
+        dpi = 200; sc = dpi / 72.0
+        pix = page.get_pixmap(dpi=dpi, colorspace='gray'); png = os.path.join(self.dir, 'input_gray.png'); pix.save(png)
+        gray = cv2.imread(png, 0); H, W = gray.shape
+        lines = collections.OrderedDict()
+        for x0, y0, x1, y1, w, b, l, _ in words:
+            lines.setdefault((b, l), []).append((x0, y0, x1, y1, w))
+        texts, raw = [], []
+        for ws in lines.values():
+            ws.sort(key=lambda t: t[0])
+            x0, y0 = min(t[0] for t in ws) * sc, min(t[1] for t in ws) * sc; x1, y1 = max(t[2] for t in ws) * sc, max(t[3] for t in ws) * sc
+            s = ' '.join(t[4] for t in ws).strip()
+            if not s:
+                continue
+            texts.append(dict(text=s, conf=1.0, box=[int(x0), int(y0), int(x1), int(y1)]))
+            raw.append([[[x0, y0], [x1, y0], [x1, y1], [x0, y1]], s, 1.0])
+        json.dump(raw, open(os.path.join(self.dir, 'doc_ocr.json'), 'w')); json.dump(texts, open(os.path.join(self.dir, 'page_ocr.json'), 'w'), ensure_ascii=False)
+        self.times['문자 인식'] = 0.0
+        out.update(kind='page', png=png, dpi=dpi, texts=texts, view=dict(url='input_gray.png', w=W, h=H, mm_per_px=25.4 / dpi),
+                   detect=dict(px=[int(W), int(H)], reason=f'PDF 글자 층(단어 {len(words)}개, 그림 경로 {n_draw}개)', dpi_source='PDF 200 dpi 렌더', ocr_lang='글자 층(문자 인식 생략)'))
 
     # ---- 표 · 본문 쪽 ----
     def page(self, out):
@@ -652,30 +729,41 @@ class Job:
                    counts=dict(res['summary'], paragraphs=len(paras), texts=len(res['texts']), nodes=len(g['nodes']), runs=len(g['runs'])), serial=serial, index=idx)
         self.embed_page(out, crops=[f['box'] for f in res['figures']])
 
-    # ---- 도해 · 기계 도면(주기와 지시선) ----
+    # ---- 도해 · 기계 도면(투상도 · 치수 · 주기 · 지시선 · 표제란) ----
     def illustration(self, out):
         prefix = os.path.join(self.dir, 'page'); dpi = out['dpi']; k = 25.4 / dpi
-        t0 = self.step('주기 · 지시선 · 부품 영역')
+        t0 = self.step('투상도 · 치수 · 지시선 · 표제란')
         res = rd.main(out['png'], dpi, 'drawing', prefix); res['image']['path'] = os.path.basename(res['image']['path'])
         json.dump(res, open(prefix + '.json', 'w'), ensure_ascii=False, indent=1)
-        self.times['structure'] = res['times']['structure']; self.done('주기 · 지시선 · 부품 영역', t0)
+        self.times['structure'] = res['times']['structure']; self.done('투상도 · 치수 · 지시선 · 표제란', t0)
         t0 = self.step('직렬화')
         mm = lambda b: ','.join(str(round(v * k, 1)) for v in b)
-        serial = ["# 도해 구조 (좌표 단위 mm, 원점 좌상단)", "## 부품 영역"]
-        serial.append(f"part bbox=({mm(res['part_box'])})" if res.get('part_box') else "없음")
-        serial.append("## 주기 (문자 묶음)")
+        parts = res.get('parts') or ([dict(box=res['part_box'])] if res.get('part_box') else [])
+        serial = ["# 도해 · 기계 도면 구조 (좌표 단위 mm, 원점 좌상단)", "## 투상도(부품) 영역"]
+        serial += [f"part{i} bbox=({mm(p['box'])})" for i, p in enumerate(parts)] or ["없음"]
+        tables = []
+        serial.append("## 표 (표제란 등)")
+        for ti, tb in enumerate(res.get('tables', [])):
+            bb = [round(v * k, 1) for v in tb['box']]
+            serial.append(f"t{ti} bbox=({','.join(map(str, bb))}) 행수={tb['n_rows']} 열수={tb['n_cols']}")
+            for ri, row in enumerate(tb['rows']):
+                serial.append(f"t{ti} 행{ri}: " + ' | '.join(row))
+            tables.append(dict(bbox=bb, box=tb['box'], rows=tb['rows'], cell_boxes=tb.get('cell_boxes')))
+        serial.append("## 치수 · 주기 (문자 묶음)")
         for i, c in enumerate(res['callouts']):
-            serial.append(f"c{i} bbox=({mm(c['box'])}) {c.get('text') or ' '.join(c.get('texts', []))}")
+            own = f" 소속=part{c['part']}" if c.get('part') is not None else ''
+            serial.append(f"c{i} 종류={ROLE_KO.get(c.get('kind'), '주기')}{own} bbox=({mm(c['box'])}) {c.get('text') or ' '.join(c.get('texts', []))}")
         serial.append("## 지시선 (주기 → 가리키는 위치)")
         for l in res['leaders']:
-            serial.append(f"c{l['callout']} → ({round(l['end'][0] * k, 1)},{round(l['end'][1] * k, 1)}) 길이={l['length_mm']}mm 부품 위={'예' if l['end_on_part'] else '아니오'}")
-        g = relation_graph('illustration', k, callouts=res['callouts'], leaders=res['leaders'], part_box=res.get('part_box')); serial += relation_lines(g)
+            tgt = f"part{l['part']}" if l.get('part') is not None else ('부품 위' if l['end_on_part'] else '빈 곳')
+            serial.append(f"c{l['callout']} → ({round(l['end'][0] * k, 1)},{round(l['end'][1] * k, 1)}) 길이={l['length_mm']}mm 대상={tgt}")
+        g = relation_graph('illustration', k, tables=tables, callouts=res['callouts'], leaders=res['leaders'], parts=parts); serial += relation_lines(g)
         open(prefix + '.txt', 'w', encoding='utf-8').write('\n'.join(serial) + '\n'); self.done('직렬화', t0)
         t0 = self.step('색인')
-        idx = build_index(serial, g['nodes'], res['texts'], []); self.done('색인', t0)
-        out.update(tables=[], callouts=res['callouts'], leaders=res['leaders'], part_box=res.get('part_box'), texts=res['texts'], **g,
+        idx = build_index(serial, g['nodes'], res['texts'], tables); self.done('색인', t0)
+        out.update(tables=tables, callouts=res['callouts'], leaders=res['leaders'], parts=parts, part_box=res.get('part_box'), texts=res['texts'], **g,
                    counts=dict(res['summary'], texts=len(res['texts']), nodes=len(g['nodes']), runs=len(g['runs'])), serial=serial, index=idx)
-        self.embed_page(out, crops=[res['part_box']] if res.get('part_box') else [])
+        self.embed_page(out, crops=[p['box'] for p in parts])
 
     # ---- 사진 ----
     def photo(self, out):

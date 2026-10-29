@@ -3,11 +3,16 @@ import sys, json, re, collections
 
 NOTES = {}
 def name_of(n):
-    tags = [t for t in n['texts'] if re.match(r'^[A-Z]\d{4}$', t)]
+    # 장비 태그(문자 1 + 숫자 4). 문자 인식이 0을 O로 읽은 경우를 되돌림
+    tags = [t[0] + t[1:].replace('O', '0') for t in n['texts'] if re.match(r'^[A-Z][0-9O]{4}$', t)]
     if tags:
         return tags[0]
     if n['role'] == 'instrument':
         return ' '.join(n['texts'][:2])
+    # 노즐 번호(N1 등)·치수 숫자는 이름으로 쓰지 않음
+    cands = [t for t in n['texts'] if not re.match(r'^N[0-9I]{1,2}$', t) and not re.match(r'^[\d.,/\-%]+$', t)]
+    if cands:
+        return cands[0]
     if n['texts']:
         return n['texts'][0]
     if n['id'] in NOTES:

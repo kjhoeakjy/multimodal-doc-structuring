@@ -4,24 +4,17 @@
    "box": [
     96,
     75,
-    680,
+    852,
     193
    ],
    "texts": [
     "NIST PMI Test Models",
+    "2014",
+    "7",
     "NOTES (UNLESS OTHERWISE SPECIFIED):"
-   ]
-  },
-  {
-   "box": [
-    713,
-    75,
-    852,
-    139
    ],
-   "texts": [
-    "2014"
-   ]
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -33,7 +26,9 @@
    "texts": [
     "Feature and Specification Index",
     "nist_ftc_07_asmel_rd_fsi pdf"
-   ]
+   ],
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -48,18 +43,9 @@
     "REV.",
     "IS REQUIRED",
     "TO COMPLETE PRODUCT DEFINITION."
-   ]
-  },
-  {
-   "box": [
-    1311,
-    233,
-    1347,
-    259
    ],
-   "texts": [
-    "2"
-   ]
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -70,8 +56,10 @@
    ],
    "texts": [
     "003",
+    "2",
     "~ooo",
     "4251",
+    "R",
     "0.250 `",
     "X",
     "+.02",
@@ -90,14 +78,16 @@
     "0:",
     "0:",
     "F1.2"
-   ]
+   ],
+   "kind": "note",
+   "part": 0
   },
   {
    "box": [
     101,
     307,
-    868,
-    660
+    1055,
+    665
    ],
    "texts": [
     "2. DIRECTLY-TOLERANCED DIMENSIONS AND",
@@ -108,25 +98,46 @@
     "THE MODEL. THE MODEL REPRESENTS BASIC",
     "DIMENSIONAL DATA UNLESS OTHERWISE",
     "003",
+    "0",
     "~Ooo",
+    "2",
     "SPECIFIED.",
     "2X$ .250 `",
     "X",
+    "0,0230.425",
+    "R",
     "730 +.02"
-   ]
+   ],
+   "kind": "note",
+   "part": 0
   },
   {
    "box": [
-    943,
-    484,
-    1055,
-    557
+    1555,
+    492,
+    2042,
+    799
    ],
    "texts": [
-    "0",
+    "7 015/",
+    "SURFACES",
+    "F1.2",
+    "AND",
+    "IF1.1,",
     "2",
-    "R"
-   ]
+    "003",
+    "A",
+    "F1.1",
+    "Jooo",
+    "?01524251",
+    "P",
+    "0.250 `",
+    "730 +.02",
+    "X",
+    "2"
+   ],
+   "kind": "note",
+   "part": 0
   },
   {
    "box": [
@@ -141,28 +152,9 @@
     "DATASET.",
     "ASME Y14.5M-1994 APPLIES TO",
     "DIMENSIONING AND TOLERANCING."
-   ]
-  },
-  {
-   "box": [
-    1555,
-    492,
-    1905,
-    779
    ],
-   "texts": [
-    "7 015/",
-    "SURFACES",
-    "F1.2",
-    "AND",
-    "2",
-    "003",
-    "A",
-    "F1.1",
-    "0.250 `",
-    "730 +.02",
-    "X"
-   ]
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -179,18 +171,9 @@
     "C",
     "APPLIES TO ALL",
     "UNTOLERANCED SURFACES."
-   ]
-  },
-  {
-   "box": [
-    1929,
-    774,
-    1961,
-    799
    ],
-   "texts": [
-    "2"
-   ]
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -201,7 +184,9 @@
    ],
    "texts": [
     "12"
-   ]
+   ],
+   "kind": "dimension",
+   "part": 0
   },
   {
    "box": [
@@ -220,18 +205,9 @@
     "PROCESS PLAN NEEDED TO COMPLETELY",
     "DEFINE STATISTICAL PARAMETERS AND",
     "REQUIREMENTS."
-   ]
-  },
-  {
-   "box": [
-    101,
-    1132,
-    326,
-    1165
    ],
-   "texts": [
-    "6. UNITS: INCHES"
-   ]
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -243,7 +219,22 @@
    "texts": [
     "0",
     "0"
-   ]
+   ],
+   "kind": "dimension",
+   "part": 0
+  },
+  {
+   "box": [
+    101,
+    1132,
+    326,
+    1165
+   ],
+   "texts": [
+    "6. UNITS: INCHES"
+   ],
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -258,7 +249,9 @@
     "5",
     "2",
     "9"
-   ]
+   ],
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -270,10 +263,13 @@
    "texts": [
     "PMI Fully-Toleranced Test Case 7 -",
     "View A",
+    "=",
     "Includes Atomic Test Cases",
     "84, 85",
     "7"
-   ]
+   ],
+   "kind": "note",
+   "part": null
   },
   {
    "box": [
@@ -284,126 +280,78 @@
    ],
    "texts": [
     "Rev D"
-   ]
+   ],
+   "kind": "note",
+   "part": null
   }
  ],
  "leaders": [
   {
-   "callout": 0,
+   "callout": 3,
    "start": [
-    82,
-    144
+    1234,
+    442
    ],
    "end": [
-    2082,
-    144
+    1234,
+    916
    ],
-   "length_mm": 246.6,
-   "end_on_part": false
-  },
-  {
-   "callout": 2,
-   "start": [
-    2082,
-    144
-   ],
-   "end": [
-    82,
-    144
-   ],
-   "length_mm": 246.6,
-   "end_on_part": false
-  },
-  {
-   "callout": 18,
-   "start": [
-    2082,
-    1664
-   ],
-   "end": [
-    81,
-    1664
-   ],
-   "length_mm": 246.7,
-   "end_on_part": false
-  },
-  {
-   "callout": 5,
-   "start": [
-    1200,
-    526
-   ],
-   "end": [
-    1869,
-    912
-   ],
-   "length_mm": 95.2,
-   "end_on_part": true
-  },
-  {
-   "callout": 12,
-   "start": [
-    1784,
-    874
-   ],
-   "end": [
-    1266,
-    575
-   ],
-   "length_mm": 73.7,
-   "end_on_part": true
-  },
-  {
-   "callout": 6,
-   "start": [
-    639,
-    632
-   ],
-   "end": [
-    779,
-    808
-   ],
-   "length_mm": 27.7,
-   "end_on_part": true
-  },
-  {
-   "callout": 7,
-   "start": [
-    977,
-    510
-   ],
-   "end": [
-    839,
-    590
-   ],
-   "length_mm": 19.7,
-   "end_on_part": false
-  },
-  {
-   "callout": 9,
-   "start": [
-    1622,
-    789
-   ],
-   "end": [
-    1268,
-    581
-   ],
-   "length_mm": 50.6,
-   "end_on_part": true
+   "length_mm": 58.4,
+   "end_on_part": true,
+   "part": 0
   },
   {
    "callout": 4,
    "start": [
-    1330,
-    224
+    1075,
+    617
    ],
    "end": [
-    1269,
-    258
+    803,
+    771
    ],
-   "length_mm": 8.6,
-   "end_on_part": false
+   "length_mm": 38.5,
+   "end_on_part": true,
+   "part": 0
+  },
+  {
+   "callout": 5,
+   "start": [
+    1653,
+    809
+   ],
+   "end": [
+    1250,
+    576
+   ],
+   "length_mm": 57.4,
+   "end_on_part": true,
+   "part": 0
+  },
+  {
+   "callout": 8,
+   "start": [
+    1788,
+    883
+   ],
+   "end": [
+    1471,
+    697
+   ],
+   "length_mm": 45.3,
+   "end_on_part": true,
+   "part": 0
+  }
+ ],
+ "parts": [
+  {
+   "box": [
+    639,
+    352,
+    1882,
+    1505
+   ],
+   "area_mm2": 1570.0
   }
  ],
  "part_box": [
@@ -412,13 +360,18 @@
   1882,
   1505
  ],
+ "tables": [],
  "summary": {
-  "texts": 96,
-  "callouts": 19,
-  "callouts_with_leader": 9,
+  "texts": 104,
+  "callouts": 15,
+  "dimensions": 2,
+  "notes": 13,
+  "callouts_with_leader": 4,
   "leader_end_on_part": 4,
-  "segments": 289,
-  "mean_conf": 0.76
+  "parts": 1,
+  "tables": 0,
+  "segments": 298,
+  "mean_conf": 0.71
  },
  "texts": [
   {
@@ -429,6 +382,16 @@
     75,
     680,
     140
+   ]
+  },
+  {
+   "text": "7",
+   "conf": 0.09,
+   "box": [
+    686,
+    103,
+    705,
+    121
    ]
   },
   {
@@ -529,6 +492,16 @@
     248,
     612,
     280
+   ]
+  },
+  {
+   "text": "R",
+   "conf": 0.19,
+   "box": [
+    1276,
+    257,
+    1309,
+    283
    ]
   },
   {
@@ -758,6 +731,16 @@
     1555,
     640,
     1579,
+    670
+   ]
+  },
+  {
+   "text": "P",
+   "conf": 0.12,
+   "box": [
+    2015,
+    645,
+    2042,
     670
    ]
   },
@@ -1052,6 +1035,16 @@
    ]
   },
   {
+   "text": "=",
+   "conf": 0.12,
+   "box": [
+    1274,
+    1578,
+    1293,
+    1597
+   ]
+  },
+  {
    "text": "View A",
    "conf": 1.0,
    "box": [
@@ -1322,6 +1315,16 @@
    ]
   },
   {
+   "text": "0,0230.425",
+   "conf": 0.15,
+   "box": [
+    765,
+    535,
+    947,
+    665
+   ]
+  },
+  {
    "text": "730 +.02",
    "conf": 0.72,
    "box": [
@@ -1342,6 +1345,16 @@
    ]
   },
   {
+   "text": "IF1.1,",
+   "conf": 0.09,
+   "box": [
+    1577,
+    603,
+    1663,
+    671
+   ]
+  },
+  {
    "text": "003",
    "conf": 0.97,
    "box": [
@@ -1359,6 +1372,26 @@
     640,
     1739,
     709
+   ]
+  },
+  {
+   "text": "Jooo",
+   "conf": 0.08,
+   "box": [
+    1814,
+    640,
+    1904,
+    707
+   ]
+  },
+  {
+   "text": "?01524251",
+   "conf": 0.1,
+   "box": [
+    1836,
+    648,
+    2018,
+    780
    ]
   },
   {
@@ -1384,8 +1417,8 @@
  ],
  "times": {
   "ocr": 0.0,
-  "structure": 0.2,
-  "total": 0.2
+  "structure": 0.3,
+  "total": 0.3
  },
  "image": {
   "path": "input_gray.png",

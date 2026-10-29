@@ -8,12 +8,12 @@
   "snapshot": {
    "cores": 4,
    "total_gb": 15.7,
-   "avail_gb": 14.9,
-   "cpu_busy": 0.0
+   "avail_gb": 14.7,
+   "cpu_busy": 2.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
-   "가용 메모리 14.9 GB → 인식 배치 8, 입력 상한 12 MP",
+   "가용 메모리 14.7 GB → 인식 배치 8, 입력 상한 12 MP",
    "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
   ]
  },
@@ -30,12 +30,13 @@
   "midtone": 0.047,
   "ink": 0.029,
   "text_ink": 0.7,
-  "axis_ink": 0.26,
+  "axis_ink": 0.25,
   "free_ink": 0.05,
+  "solid_ink": 0.01,
   "long_lines": 14,
   "big_circles": 0,
   "texts": 34,
-  "reason": "문자 잉크 70%, 그 밖 잉크 5%",
+  "reason": "문자 잉크 70%, 선화 잉크 5%",
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
   "skew_deg": 0.29
@@ -407,29 +408,131 @@
      "Actuator",
      "Part number",
      "Leakage cclmin",
-     "Action",
-     ""
+     "Action"
     ],
     [
      "UH MLG",
      "11443200-5",
      "3.2",
-     "Replace",
-     ""
+     "Replace"
     ],
     [
      "RIH MLG",
      "11443200-5",
      "1.9",
-     "Monitor",
-     ""
+     "Monitor"
     ],
     [
      "NLG steering",
      "114A3410-2",
      "1.1",
-     "None",
-     ""
+     "None"
+    ]
+   ],
+   "cell_boxes": [
+    [
+     [
+      116,
+      342,
+      428,
+      384
+     ],
+     [
+      428,
+      342,
+      658,
+      384
+     ],
+     [
+      658,
+      342,
+      887,
+      384
+     ],
+     [
+      887,
+      342,
+      1116,
+      384
+     ]
+    ],
+    [
+     [
+      116,
+      384,
+      428,
+      426
+     ],
+     [
+      428,
+      384,
+      658,
+      426
+     ],
+     [
+      658,
+      384,
+      887,
+      426
+     ],
+     [
+      887,
+      384,
+      1116,
+      426
+     ]
+    ],
+    [
+     [
+      116,
+      426,
+      428,
+      468
+     ],
+     [
+      428,
+      426,
+      658,
+      468
+     ],
+     [
+      658,
+      426,
+      887,
+      468
+     ],
+     [
+      887,
+      426,
+      1116,
+      468
+     ]
+    ],
+    [
+     [
+      116,
+      468,
+      428,
+      509
+     ],
+     [
+      428,
+      468,
+      658,
+      509
+     ],
+     [
+      658,
+      468,
+      887,
+      509
+     ],
+     [
+      887,
+      468,
+      1116,
+      509
+     ]
     ]
    ]
   }
@@ -437,24 +540,21 @@
  "figures": [
   {
    "box": [
-    120,
-    645,
-    588,
-    647
+    114,
+    601,
+    745,
+    941
    ],
-   "area_mm2": 19.1,
-   "label": 1,
-   "table": null
-  },
-  {
-   "box": [
-    173,
-    689,
-    686,
-    827
+   "area_mm2": 6151.7,
+   "frame": true,
+   "texts": [
+    "limit 4 0_cclmin",
+    "01",
+    "02",
+    "03",
+    "03",
+    "04"
    ],
-   "area_mm2": 68.8,
-   "label": 3,
    "table": null
   }
  ],
@@ -467,6 +567,7 @@
     697,
     166
    ],
+   "col": 0,
    "bbox_mm": [
     18.6,
     18.5,
@@ -482,6 +583,7 @@
     1046,
     285
    ],
+   "col": 0,
    "bbox_mm": [
     18.8,
     31.7,
@@ -497,6 +599,7 @@
     598,
     554
    ],
+   "col": 0,
    "bbox_mm": [
     19.1,
     88.9,
@@ -505,31 +608,33 @@
    ]
   },
   {
-   "text": "limit 4 0_cclmin",
+   "text": "Figure 1. UHMLG actuator leakage trend over five inspections",
    "box": [
-    590,
-    625,
-    704,
-    650
+    110,
+    950,
+    613,
+    983
    ],
+   "col": 0,
    "bbox_mm": [
-    99.9,
-    105.8,
-    119.2,
-    110.1
+    18.6,
+    160.9,
+    103.8,
+    166.5
    ]
   },
   {
-   "text": "01 02 03 04 03 Figure 1. UHMLG actuator leakage trend over five inspections Conclusion: The left main landing gear actuator (11443200-5) has reached 80 percent of the allowable leakage and is scheduled for replacement before the next inspection interval. A functional test and leakage re-measurement follow the replacement:",
+   "text": "Conclusion: The left main landing gear actuator (11443200-5) has reached 80 percent of the allowable leakage and is scheduled for replacement before the next inspection interval. A functional test and leakage re-measurement follow the replacement:",
    "box": [
     108,
-    909,
+    1001,
     1112,
     1100
    ],
+   "col": 0,
    "bbox_mm": [
     18.3,
-    153.9,
+    169.5,
     188.3,
     186.3
    ]
@@ -542,6 +647,7 @@
     362,
     1676
    ],
+   "col": 0,
    "bbox_mm": [
     19.1,
     279.1,
@@ -550,202 +656,611 @@
    ]
   }
  ],
- "nodes": [],
- "runs": [],
+ "nodes": [
+  {
+   "id": "t0",
+   "role": "table",
+   "bbox": [
+    19.3,
+    57.6,
+    189.7,
+    87.0
+   ],
+   "texts": [
+    "Actuator | Part number | Leakage cclmin | Action"
+   ],
+   "degree": 5,
+   "attached_to": null
+  },
+  {
+   "id": "t0r0",
+   "role": "row",
+   "bbox": [
+    19.6,
+    57.9,
+    189.0,
+    65.0
+   ],
+   "texts": [
+    "Actuator | Part number | Leakage cclmin | Action"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "t0r1",
+   "role": "row",
+   "bbox": [
+    19.6,
+    65.0,
+    189.0,
+    72.1
+   ],
+   "texts": [
+    "UH MLG | 11443200-5 | 3.2 | Replace"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "t0r2",
+   "role": "row",
+   "bbox": [
+    19.6,
+    72.1,
+    189.0,
+    79.2
+   ],
+   "texts": [
+    "RIH MLG | 11443200-5 | 1.9 | Monitor"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "t0r3",
+   "role": "row",
+   "bbox": [
+    19.6,
+    79.2,
+    189.0,
+    86.2
+   ],
+   "texts": [
+    "NLG steering | 114A3410-2 | 1.1 | None"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "f0",
+   "role": "figure",
+   "bbox": [
+    19.3,
+    101.8,
+    126.2,
+    159.3
+   ],
+   "texts": [
+    "limit 4 0_cclmin / 01 / 02 / 03 / 03 / 04"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "p0",
+   "role": "paragraph",
+   "bbox": [
+    18.6,
+    18.5,
+    118.0,
+    28.1
+   ],
+   "texts": [
+    "Hydraulic System Inspection Summary"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "p1",
+   "role": "paragraph",
+   "bbox": [
+    18.8,
+    31.7,
+    177.1,
+    48.3
+   ],
+   "texts": [
+    "This summary records the third quarter inspection of the mai"
+   ],
+   "degree": 2,
+   "attached_to": null
+  },
+  {
+   "id": "p2",
+   "role": "paragraph",
+   "bbox": [
+    19.1,
+    88.9,
+    101.3,
+    93.8
+   ],
+   "texts": [
+    "Table 1. Leakage by actuator (mean of three measurements)"
+   ],
+   "degree": 3,
+   "attached_to": null
+  },
+  {
+   "id": "p3",
+   "role": "paragraph",
+   "bbox": [
+    18.6,
+    160.9,
+    103.8,
+    166.5
+   ],
+   "texts": [
+    "Figure 1. UHMLG actuator leakage trend over five inspections"
+   ],
+   "degree": 3,
+   "attached_to": null
+  },
+  {
+   "id": "p4",
+   "role": "paragraph",
+   "bbox": [
+    18.3,
+    169.5,
+    188.3,
+    186.3
+   ],
+   "texts": [
+    "Conclusion: The left main landing gear actuator (11443200-5)"
+   ],
+   "degree": 2,
+   "attached_to": null
+  },
+  {
+   "id": "p5",
+   "role": "paragraph",
+   "bbox": [
+    19.1,
+    279.1,
+    61.3,
+    283.8
+   ],
+   "texts": [
+    "Synthetic document; 2026-10-29"
+   ],
+   "degree": 1,
+   "attached_to": null
+  }
+ ],
+ "runs": [
+  {
+   "id": "r0",
+   "a": "t0",
+   "b": "t0r0",
+   "coords": [
+    [
+     104.48,
+     72.31
+    ],
+    [
+     104.31,
+     61.47
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r1",
+   "a": "t0",
+   "b": "t0r1",
+   "coords": [
+    [
+     104.48,
+     72.31
+    ],
+    [
+     104.31,
+     68.58
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r2",
+   "a": "t0",
+   "b": "t0r2",
+   "coords": [
+    [
+     104.48,
+     72.31
+    ],
+    [
+     104.31,
+     75.69
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r3",
+   "a": "t0",
+   "b": "t0r3",
+   "coords": [
+    [
+     104.48,
+     72.31
+    ],
+    [
+     104.31,
+     82.72
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r4",
+   "a": "p0",
+   "b": "p1",
+   "coords": [
+    [
+     68.33,
+     23.28
+    ],
+    [
+     97.96,
+     39.96
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r5",
+   "a": "p2",
+   "b": "t0",
+   "coords": [
+    [
+     60.2,
+     91.36
+    ],
+    [
+     104.48,
+     72.31
+    ]
+   ],
+   "kind": "describe",
+   "texts": [
+    "Table 1"
+   ],
+   "gap": 0
+  },
+  {
+   "id": "r6",
+   "a": "p1",
+   "b": "p2",
+   "coords": [
+    [
+     97.96,
+     39.96
+    ],
+    [
+     60.2,
+     91.36
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r7",
+   "a": "p3",
+   "b": "f0",
+   "coords": [
+    [
+     61.21,
+     163.66
+    ],
+    [
+     72.73,
+     130.56
+    ]
+   ],
+   "kind": "describe",
+   "texts": [
+    "Figure 1"
+   ],
+   "gap": 0
+  },
+  {
+   "id": "r8",
+   "a": "p2",
+   "b": "p3",
+   "coords": [
+    [
+     60.2,
+     91.36
+    ],
+    [
+     61.21,
+     163.66
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r9",
+   "a": "p3",
+   "b": "p4",
+   "coords": [
+    [
+     61.21,
+     163.66
+    ],
+    [
+     103.29,
+     177.88
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r10",
+   "a": "p4",
+   "b": "p5",
+   "coords": [
+    [
+     103.29,
+     177.88
+    ],
+    [
+     40.22,
+     281.43
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  }
+ ],
  "junctions": [],
  "counts": {
   "tables": 1,
-  "cells": 20,
-  "figures": 2,
+  "cells": 16,
+  "figures": 1,
   "figures_in_cells": 0,
   "rows_with_figure": 0,
   "mean_conf": 0.82,
   "paragraphs": 6,
-  "texts": 34
+  "texts": 34,
+  "nodes": 12,
+  "runs": 11
  },
  "serial": [
   "# 쪽 구조 (좌표 단위 mm, 원점 좌상단)",
   "## 표",
-  "t0 bbox=(19.3,57.6,189.7,87.0) 행수=4 열수=5",
-  "t0 행0: Actuator | Part number | Leakage cclmin | Action | ",
-  "t0 행1: UH MLG | 11443200-5 | 3.2 | Replace | ",
-  "t0 행2: RIH MLG | 11443200-5 | 1.9 | Monitor | ",
-  "t0 행3: NLG steering | 114A3410-2 | 1.1 | None | ",
-  "## 표 안 그림 영역",
-  "그림 bbox=(20.3,109.2,99.6,109.6) 소속=없음",
-  "그림 bbox=(29.3,116.7,116.2,140.0) 소속=없음",
+  "t0 bbox=(19.3,57.6,189.7,87.0) 행수=4 열수=4",
+  "t0 행0: Actuator | Part number | Leakage cclmin | Action",
+  "t0 행1: UH MLG | 11443200-5 | 3.2 | Replace",
+  "t0 행2: RIH MLG | 11443200-5 | 1.9 | Monitor",
+  "t0 행3: NLG steering | 114A3410-2 | 1.1 | None",
+  "## 그림 영역",
+  "f0 bbox=(19.3,101.8,126.2,159.3) 안 문자=limit 4 0_cclmin / 01 / 02 / 03 / 03 / 04",
   "## 본문",
   "p0 bbox=(18.6,18.5,118.0,28.1) Hydraulic System Inspection Summary",
   "p1 bbox=(18.8,31.7,177.1,48.3) This summary records the third quarter inspection of the main and nose landing gear hydraulic actuators. Internal Ileakage was measured three times per actuator at 3000 psi with fluid at 40 C Results are listed in Table 1 and plotted in Figure 1.",
   "p2 bbox=(19.1,88.9,101.3,93.8) Table 1. Leakage by actuator (mean of three measurements)",
-  "p3 bbox=(99.9,105.8,119.2,110.1) limit 4 0_cclmin",
-  "p4 bbox=(18.3,153.9,188.3,186.3) 01 02 03 04 03 Figure 1. UHMLG actuator leakage trend over five inspections Conclusion: The left main landing gear actuator (11443200-5) has reached 80 percent of the allowable leakage and is scheduled for replacement before the next inspection interval. A functional test and leakage re-measurement follow the replacement:",
-  "p5 bbox=(19.1,279.1,61.3,283.8) Synthetic document; 2026-10-29"
+  "p3 bbox=(18.6,160.9,103.8,166.5) Figure 1. UHMLG actuator leakage trend over five inspections",
+  "p4 bbox=(18.3,169.5,188.3,186.3) Conclusion: The left main landing gear actuator (11443200-5) has reached 80 percent of the allowable leakage and is scheduled for replacement before the next inspection interval. A functional test and leakage re-measurement follow the replacement:",
+  "p5 bbox=(19.1,279.1,61.3,283.8) Synthetic document; 2026-10-29",
+  "## 관계 (노드 종류 · 이름 · 좌표, 간선 종류)",
+  "t0 종류=표 이름=Actuator | Part number | Leakage cclmin  bbox=(19.3,57.6,189.7,87.0)",
+  "t0r0 종류=행 이름=Actuator | Part number | Leakage cclmin  bbox=(19.6,57.9,189.0,65.0)",
+  "t0r1 종류=행 이름=UH MLG | 11443200-5 | 3.2 | Replace bbox=(19.6,65.0,189.0,72.1)",
+  "t0r2 종류=행 이름=RIH MLG | 11443200-5 | 1.9 | Monitor bbox=(19.6,72.1,189.0,79.2)",
+  "t0r3 종류=행 이름=NLG steering | 114A3410-2 | 1.1 | None bbox=(19.6,79.2,189.0,86.2)",
+  "f0 종류=그림 이름=limit 4 0_cclmin / 01 / 02 / 03 / 03 / 0 bbox=(19.3,101.8,126.2,159.3)",
+  "p0 종류=문단 이름=Hydraulic System Inspection Summary bbox=(18.6,18.5,118.0,28.1)",
+  "p1 종류=문단 이름=This summary records the third quarter i bbox=(18.8,31.7,177.1,48.3)",
+  "p2 종류=문단 이름=Table 1. Leakage by actuator (mean of th bbox=(19.1,88.9,101.3,93.8)",
+  "p3 종류=문단 이름=Figure 1. UHMLG actuator leakage trend o bbox=(18.6,160.9,103.8,166.5)",
+  "p4 종류=문단 이름=Conclusion: The left main landing gear a bbox=(18.3,169.5,188.3,186.3)",
+  "p5 종류=문단 이름=Synthetic document; 2026-10-29 bbox=(19.1,279.1,61.3,283.8)",
+  "r0 종류=포함 A=t0 B=t0r0",
+  "r1 종류=포함 A=t0 B=t0r1",
+  "r2 종류=포함 A=t0 B=t0r2",
+  "r3 종류=포함 A=t0 B=t0r3",
+  "r4 종류=순서 A=p0 B=p1",
+  "r5 종류=설명 A=p2 B=t0 라벨=Table 1",
+  "r6 종류=순서 A=p1 B=p2",
+  "r7 종류=설명 A=p3 B=f0 라벨=Figure 1",
+  "r8 종류=순서 A=p2 B=p3",
+  "r9 종류=순서 A=p3 B=p4",
+  "r10 종류=순서 A=p4 B=p5"
  ],
  "index": {
   "bm25": {
-   "tokens": 216,
-   "vocab": 159,
+   "tokens": 474,
+   "vocab": 189,
    "top": [
     [
+     "종류",
+     25
+    ],
+    [
      "bbox",
+     20
+    ],
+    [
+     "a",
+     13
+    ],
+    [
+     "이름",
+     13
+    ],
+    [
+     "t0",
+     11
+    ],
+    [
+     "b",
+     11
+    ],
+    [
+     "actuator",
+     9
+    ],
+    [
+     "leakage",
      9
     ],
     [
      "the",
+     8
+    ],
+    [
+     "문단",
      6
     ],
     [
-     "t0",
+     "cclmin",
      5
     ],
     [
-     "actuator",
+     "11443200-5",
      5
     ],
     [
-     "leakage",
+     "1.",
      5
+    ],
+    [
+     "p2",
+     5
+    ],
+    [
+     "p3",
+     5
+    ],
+    [
+     "순서",
+     5
+    ],
+    [
+     "19.3",
+     4
+    ],
+    [
+     "4",
+     4
+    ],
+    [
+     "mlg",
+     4
+    ],
+    [
+     "03",
+     4
+    ],
+    [
+     "18.6",
+     4
+    ],
+    [
+     "inspection",
+     4
+    ],
+    [
+     "summary",
+     4
+    ],
+    [
+     "p1",
+     4
+    ],
+    [
+     "of",
+     4
     ],
     [
      "and",
      4
     ],
     [
-     "11443200-5",
-     3
-    ],
-    [
-     "그림",
-     3
-    ],
-    [
-     "inspection",
-     3
-    ],
-    [
-     "of",
-     3
-    ],
-    [
-     "1.",
-     3
-    ],
-    [
-     "표",
-     2
-    ],
-    [
-     "4",
-     2
-    ],
-    [
-     "cclmin",
-     2
-    ],
-    [
-     "mlg",
-     2
-    ],
-    [
-     "소속",
-     2
-    ],
-    [
-     "없음",
-     2
-    ],
-    [
-     "hydraulic",
-     2
-    ],
-    [
-     "summary",
-     2
-    ],
-    [
-     "main",
-     2
-    ],
-    [
-     "landing",
-     2
-    ],
-    [
-     "gear",
-     2
-    ],
-    [
-     "three",
-     2
-    ],
-    [
-     "at",
-     2
-    ],
-    [
-     "in",
-     2
-    ],
-    [
      "table",
-     2
+     4
     ],
     [
      "figure",
-     2
+     4
     ],
     [
      "19.1",
-     2
+     4
     ],
     [
-     "03",
-     2
+     "p4",
+     4
     ],
     [
-     "replacement",
-     2
+     "행",
+     4
     ],
     [
-     "쪽",
-     1
+     "19.6",
+     4
     ],
     [
-     "구조",
-     1
+     "189.0",
+     4
     ],
     [
-     "좌표",
-     1
+     "포함",
+     4
     ],
     [
-     "단위",
-     1
+     "part",
+     3
     ],
     [
-     "mm",
-     1
+     "number",
+     3
     ],
     [
-     "원점",
-     1
+     "f0",
+     3
     ],
     [
-     "좌상단",
-     1
+     "0",
+     3
     ],
     [
-     "19.3",
-     1
+     "p0",
+     3
     ],
     [
-     "57.6",
-     1
-    ],
-    [
-     "189.7",
-     1
+     "hydraulic",
+     3
     ]
    ]
   },
@@ -754,49 +1269,49 @@
    {
     "table": "t0",
     "row": 0,
-    "text": "Actuator | Part number | Leakage cclmin | Action | "
+    "text": "Actuator | Part number | Leakage cclmin | Action"
    },
    {
     "table": "t0",
     "row": 1,
-    "text": "UH MLG | 11443200-5 | 3.2 | Replace | "
+    "text": "UH MLG | 11443200-5 | 3.2 | Replace"
    },
    {
     "table": "t0",
     "row": 2,
-    "text": "RIH MLG | 11443200-5 | 1.9 | Monitor | "
+    "text": "RIH MLG | 11443200-5 | 1.9 | Monitor"
    },
    {
     "table": "t0",
     "row": 3,
-    "text": "NLG steering | 114A3410-2 | 1.1 | None | "
+    "text": "NLG steering | 114A3410-2 | 1.1 | None"
    }
   ]
  },
  "embedding": {
   "available": false,
-  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
-  "regions": 3
+  "reason": "가중치 내려받기 실패(외부망 차단). 가중치 파일을 torch 캐시 폴더에 두면 동작",
+  "regions": 2
  },
  "times": {
   "입력 판별": 0.1,
-  "문자 인식": 46.1,
-  "해상도 · 종류 판별": 0.0,
+  "문자 인식": 4.2,
+  "해상도 · 종류 판별": 0.1,
   "structure": 0.0,
   "표 · 그림 영역": 0.2,
   "본문 묶기": 0.0,
   "직렬화": 0.0,
   "색인": 0.0,
-  "이미지 임베딩": 0.4
+  "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 4.37,
-  "min_avail_gb": 11.08
+  "peak_rss_gb": 1.41,
+  "min_avail_gb": 14.08
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
-  "avail_gb": 14.5,
+  "avail_gb": 14.4,
   "cpu_busy": 0.0
  }
 }

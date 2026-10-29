@@ -1,0 +1,519 @@
+{
+ "tables": [
+  {
+   "box": [
+    153,
+    455,
+    1492,
+    684
+   ],
+   "n_rows": 4,
+   "n_cols": 4,
+   "rows": [
+    [
+     "Actuator",
+     "Part number",
+     "Leakage cc/min",
+     "Action"
+    ],
+    [
+     "L/H MLG",
+     "114A3200-5",
+     "3.2",
+     "Replace"
+    ],
+    [
+     "R/H MLG",
+     "114A3200-5",
+     "1.9",
+     "Monitor"
+    ],
+    [
+     "NLG steering",
+     "114A3410-2",
+     "1.1",
+     "None"
+    ]
+   ],
+   "cell_boxes": [
+    [
+     [
+      155,
+      457,
+      571,
+      512
+     ],
+     [
+      571,
+      457,
+      877,
+      512
+     ],
+     [
+      877,
+      457,
+      1182,
+      512
+     ],
+     [
+      1182,
+      457,
+      1488,
+      512
+     ]
+    ],
+    [
+     [
+      155,
+      512,
+      571,
+      569
+     ],
+     [
+      571,
+      512,
+      877,
+      569
+     ],
+     [
+      877,
+      512,
+      1182,
+      569
+     ],
+     [
+      1182,
+      512,
+      1488,
+      569
+     ]
+    ],
+    [
+     [
+      155,
+      569,
+      571,
+      624
+     ],
+     [
+      571,
+      569,
+      877,
+      624
+     ],
+     [
+      877,
+      569,
+      1182,
+      624
+     ],
+     [
+      1182,
+      569,
+      1488,
+      624
+     ]
+    ],
+    [
+     [
+      155,
+      624,
+      571,
+      679
+     ],
+     [
+      571,
+      624,
+      877,
+      679
+     ],
+     [
+      877,
+      624,
+      1182,
+      679
+     ],
+     [
+      1182,
+      624,
+      1488,
+      679
+     ]
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "box": [
+    152,
+    802,
+    992,
+    1253
+   ],
+   "area_mm2": 6110.3,
+   "frame": true,
+   "texts": [
+    "limit 4.0 cc/min",
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q3"
+   ],
+   "table": null
+  }
+ ],
+ "figure_rows": [],
+ "frames": [
+  [
+   152,
+   802,
+   992,
+   1253
+  ]
+ ],
+ "summary": {
+  "tables": 1,
+  "cells": 16,
+  "figures": 1,
+  "figures_in_cells": 0,
+  "rows_with_figure": 0,
+  "mean_conf": 1.0
+ },
+ "texts": [
+  {
+   "text": "Hydraulic System Inspection Summary",
+   "conf": 1.0,
+   "box": [
+    155,
+    146,
+    918,
+    207
+   ]
+  },
+  {
+   "text": "This summary records the third quarter inspection of the main and nose landing gear hydraulic",
+   "conf": 1.0,
+   "box": [
+    155,
+    249,
+    1371,
+    290
+   ]
+  },
+  {
+   "text": "actuators. Internal leakage was measured three times per actuator at 3000 psi with fluid at 40 C.",
+   "conf": 1.0,
+   "box": [
+    155,
+    293,
+    1395,
+    333
+   ]
+  },
+  {
+   "text": "Results are listed in Table 1 and plotted in Figure 1.",
+   "conf": 1.0,
+   "box": [
+    155,
+    336,
+    821,
+    376
+   ]
+  },
+  {
+   "text": "Actuator",
+   "conf": 1.0,
+   "box": [
+    166,
+    468,
+    275,
+    505
+   ]
+  },
+  {
+   "text": "Part number",
+   "conf": 1.0,
+   "box": [
+    583,
+    468,
+    738,
+    505
+   ]
+  },
+  {
+   "text": "Leakage cc/min",
+   "conf": 1.0,
+   "box": [
+    888,
+    468,
+    1085,
+    505
+   ]
+  },
+  {
+   "text": "Action",
+   "conf": 1.0,
+   "box": [
+    1194,
+    468,
+    1276,
+    505
+   ]
+  },
+  {
+   "text": "L/H MLG",
+   "conf": 1.0,
+   "box": [
+    166,
+    524,
+    272,
+    560
+   ]
+  },
+  {
+   "text": "114A3200-5",
+   "conf": 1.0,
+   "box": [
+    583,
+    524,
+    727,
+    560
+   ]
+  },
+  {
+   "text": "3.2",
+   "conf": 1.0,
+   "box": [
+    888,
+    524,
+    925,
+    560
+   ]
+  },
+  {
+   "text": "Replace",
+   "conf": 1.0,
+   "box": [
+    1194,
+    524,
+    1291,
+    560
+   ]
+  },
+  {
+   "text": "R/H MLG",
+   "conf": 1.0,
+   "box": [
+    166,
+    579,
+    276,
+    616
+   ]
+  },
+  {
+   "text": "114A3200-5",
+   "conf": 1.0,
+   "box": [
+    583,
+    579,
+    727,
+    616
+   ]
+  },
+  {
+   "text": "1.9",
+   "conf": 1.0,
+   "box": [
+    888,
+    579,
+    925,
+    616
+   ]
+  },
+  {
+   "text": "Monitor",
+   "conf": 1.0,
+   "box": [
+    1194,
+    579,
+    1282,
+    616
+   ]
+  },
+  {
+   "text": "NLG steering",
+   "conf": 1.0,
+   "box": [
+    166,
+    635,
+    322,
+    671
+   ]
+  },
+  {
+   "text": "114A3410-2",
+   "conf": 1.0,
+   "box": [
+    583,
+    635,
+    727,
+    671
+   ]
+  },
+  {
+   "text": "1.1",
+   "conf": 1.0,
+   "box": [
+    888,
+    635,
+    925,
+    671
+   ]
+  },
+  {
+   "text": "None",
+   "conf": 1.0,
+   "box": [
+    1194,
+    635,
+    1257,
+    671
+   ]
+  },
+  {
+   "text": "Table 1. Leakage by actuator (mean of three measurements)",
+   "conf": 1.0,
+   "box": [
+    155,
+    699,
+    792,
+    732
+   ]
+  },
+  {
+   "text": "Q1",
+   "conf": 1.0,
+   "box": [
+    222,
+    1210,
+    250,
+    1239
+   ]
+  },
+  {
+   "text": "Q2",
+   "conf": 1.0,
+   "box": [
+    388,
+    1210,
+    416,
+    1239
+   ]
+  },
+  {
+   "text": "Q3",
+   "conf": 1.0,
+   "box": [
+    555,
+    1210,
+    583,
+    1239
+   ]
+  },
+  {
+   "text": "Q4",
+   "conf": 1.0,
+   "box": [
+    722,
+    1210,
+    750,
+    1239
+   ]
+  },
+  {
+   "text": "Q3",
+   "conf": 1.0,
+   "box": [
+    888,
+    1210,
+    916,
+    1239
+   ]
+  },
+  {
+   "text": "limit 4.0 cc/min",
+   "conf": 1.0,
+   "box": [
+    794,
+    833,
+    932,
+    861
+   ]
+  },
+  {
+   "text": "Figure 1. L/H MLG actuator leakage trend over five inspections",
+   "conf": 1.0,
+   "box": [
+    155,
+    1269,
+    811,
+    1301
+   ]
+  },
+  {
+   "text": "Conclusion. The left main landing gear actuator (114A3200-5) has reached 80 percent of the allowable",
+   "conf": 1.0,
+   "box": [
+    155,
+    1333,
+    1478,
+    1373
+   ]
+  },
+  {
+   "text": "leakage and is scheduled for replacement before the next inspection interval. A functional test and",
+   "conf": 1.0,
+   "box": [
+    155,
+    1376,
+    1420,
+    1416
+   ]
+  },
+  {
+   "text": "leakage re-measurement follow the replacement.",
+   "conf": 1.0,
+   "box": [
+    155,
+    1419,
+    787,
+    1459
+   ]
+  },
+  {
+   "text": "Synthetic document, 2026-10-29",
+   "conf": 1.0,
+   "box": [
+    155,
+    2198,
+    476,
+    2228
+   ]
+  }
+ ],
+ "times": {
+  "ocr": 0.0,
+  "structure": 0.1,
+  "total": 0.1
+ },
+ "image": {
+  "path": "input_gray.png",
+  "px": [
+   1653,
+   2339
+  ],
+  "dpi": 200
+ }
+}

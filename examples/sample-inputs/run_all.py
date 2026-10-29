@@ -7,7 +7,11 @@ IN, OUT = os.path.join(HERE, 'input'), os.path.join(HERE, 'output'); os.makedirs
 def run(files):
     res_ = pl.Resources()
     for f in files:
-        d = os.path.join(OUT, os.path.splitext(f)[0]); shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
+        d = os.path.join(OUT, os.path.splitext(f)[0])
+        cache = os.path.join(d, 'doc_ocr.json'); keep = open(cache, 'rb').read() if os.path.exists(cache) else None   # 문자 인식 결과는 다시 쓰지 않고 재사용
+        shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
+        if keep:
+            open(cache, 'wb').write(keep)
         steps = []
         t0 = time.time()
         try:

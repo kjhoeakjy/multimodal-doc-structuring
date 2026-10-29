@@ -56,7 +56,7 @@ def add_relations(R, gray, d):
                 t['cell_boxes'] = t2.get('cell_boxes')
         g = pl.relation_graph('page', k, tables=tables, figures=R.get('figures', []), paragraphs=R.get('paragraphs', []))
     elif R['kind'] == 'illustration':
-        g = pl.relation_graph('illustration', k, callouts=R.get('callouts', []), leaders=R.get('leaders', []), part_box=R.get('part_box'))
+        g = pl.relation_graph('illustration', k, tables=R.get('tables', []), callouts=R.get('callouts', []), leaders=R.get('leaders', []), parts=R.get('parts', []), part_box=R.get('part_box'))
     else:
         g = pl.relation_graph('photo', k, texts=R.get('texts', []), page_px=[gray.shape[1], gray.shape[0]])
     R.update(g); R['serial'] = R.get('serial', []) + pl.relation_lines(g)

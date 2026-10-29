@@ -41,7 +41,7 @@ main{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(360px,1fr)}
 .ov-text rect{fill:none;stroke:var(--txt);stroke-width:1}
 .ov-node rect{fill:none;stroke-width:1.6}
 .ov-node .equipment{stroke:var(--eq)} .ov-node .instrument{stroke:var(--ins)} .ov-node .symbol,.ov-node .nozzle,.ov-node .shape{stroke:var(--sym)} .ov-node .note{stroke:var(--ins);stroke-dasharray:4 3} .ov-node .mark,.ov-node .arrow{stroke:var(--sym);stroke-width:.8}
-.ov-node .table{stroke:var(--tbl)} .ov-node .row{stroke:var(--txt);stroke-width:.8} .ov-node .figure,.ov-node .part,.ov-node .photo{stroke:var(--fig)} .ov-node .paragraph{stroke:var(--mute);stroke-dasharray:5 3} .ov-node .callout{stroke:var(--ins)} .ov-node .text{stroke:var(--txt);stroke-width:.8}
+.ov-node .table{stroke:var(--tbl)} .ov-node .row{stroke:var(--txt);stroke-width:.8} .ov-node .figure,.ov-node .part,.ov-node .photo{stroke:var(--fig)} .ov-node .paragraph{stroke:var(--mute);stroke-dasharray:5 3} .ov-node .callout,.ov-node .dimension,.ov-node .datum{stroke:var(--ins)} .ov-node .text{stroke:var(--txt);stroke-width:.8}
 .ov-run polyline{fill:none;stroke:#8a8f98;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round} .ov-run .pipe,.ov-run .signal{stroke-width:2.2} .ov-run .pipe{stroke:var(--pipe)} .ov-run .signal{stroke:var(--sig);stroke-dasharray:6 4} .ov-run .gap{stroke-dasharray:2 4} .ov-run .next{stroke-dasharray:3 5;stroke-width:1} .ov-run .describe,.ov-run .mention{stroke:var(--fig)} .ov-run .point{stroke:var(--pipe)}
 .ov-jct circle{fill:var(--jct)}
 .ov-hl rect,.ov-hl polyline{fill:none;stroke:var(--acc);stroke-width:3.5}
@@ -109,14 +109,14 @@ pre .hl{color:var(--acc);font-weight:600}
 <script>
 const SAMPLES = /*__DATA__*/[];
 const $ = s => document.querySelector(s);
-const ROLE = {equipment:'장비', instrument:'계기', symbol:'기호', nozzle:'접속구', note:'주석', mark:'표식', arrow:'화살표', shape:'도형', junction:'분기점', table:'표', row:'행', figure:'그림', paragraph:'문단', callout:'주기', part:'부품', photo:'사진', text:'문자'};
-const EDGE = {pipe:'배관', signal:'신호선', contain:'포함', belong:'소속', describe:'설명', mention:'언급', next:'순서', point:'지시'};
+const ROLE = {equipment:'장비', instrument:'계기', symbol:'기호', nozzle:'접속구', note:'주석', mark:'표식', arrow:'화살표', shape:'도형', junction:'분기점', table:'표', row:'행', figure:'그림', paragraph:'문단', callout:'주기', dimension:'치수', datum:'기준 문자', part:'투상도', photo:'사진', text:'문자'};
+const EDGE = {pipe:'배관', signal:'신호선', contain:'포함', belong:'소속', describe:'설명', mention:'언급', next:'순서', point:'지시', dimension:'치수'};
 const KIND = {vector:'벡터 도면', drawing:'래스터 도면', page:'표 · 본문 쪽', illustration:'도해 · 기계 도면', photo:'사진 · 렌더링'};
 const STEPS = {
   vector: ['벡터 요소 읽기(직선 · 곡선 · 타원 · 문자, 좌표 mm)', '틀 · 표 분리', '닫힌 도형 · 기호 묶음', '선 병합 · 접속 판정', '문자 부착 · 역할 추정', '관계 그래프 구성', '텍스트 직렬화'],
   drawing: ['기울기 보정 · 잡음 제거', '문자 인식', '축 평행 선 · 닫힌 윤곽 · 기호 추출', '틀 · 표 제거', '접속 판정 · 문자 부착 · 역할 추정', '관계 그래프 구성', '텍스트 직렬화'],
   page: ['기울기 보정', '문자 인식', '격자선 분할 · 칸별 문자 배정', '그림 영역 추출 · 행 연결', '본문 줄 · 문단 묶음', '관계 그래프 구성(표 · 행 · 그림 · 문단)', '텍스트 직렬화'],
-  illustration: ['기울기 보정', '문자 인식', '주기 묶음', '부품 영역 · 지시선 추출', '관계 그래프 구성(주기 · 부품)', '텍스트 직렬화'],
+  illustration: ['기울기 보정', '문자 인식', '틀 · 표제란 분리', '투상도 영역 추출', '치수 · 주기 묶음 · 지시선 추출', '관계 그래프 구성(투상도 · 치수 · 주기 · 표)', '텍스트 직렬화'],
   photo: ['연속 계조 판별(구조 추출 제외)', '사진 위 문자 인식', '이미지 임베딩(검색용)', '텍스트 직렬화']};
 let R = null, S = null, scale = 1;
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
@@ -172,9 +172,9 @@ function graph(){
     for (let i = 0; i < all.length; i++) for (let j = i + 1; j < all.length; j++) { const u = all[i].id, v = all[j].id; let dx = pos[u][0] - pos[v][0], dy = pos[u][1] - pos[v][1]; let d = Math.hypot(dx, dy) || 0.01; const f = k * k / d; disp[u][0] += dx / d * f; disp[u][1] += dy / d * f; disp[v][0] -= dx / d * f; disp[v][1] -= dy / d * f; }
     edges.forEach(e => { let dx = pos[e.a][0] - pos[e.b][0], dy = pos[e.a][1] - pos[e.b][1]; let d = Math.hypot(dx, dy) || 0.01; const f = d * d / k; disp[e.a][0] -= dx / d * f; disp[e.a][1] -= dy / d * f; disp[e.b][0] += dx / d * f; disp[e.b][1] += dy / d * f; });
     all.forEach(a => { disp[a.id][0] -= (pos[a.id][0] - 320) * 0.03; disp[a.id][1] -= (pos[a.id][1] - 200) * 0.03; const d = Math.hypot(...disp[a.id]) || 0.01; const m = Math.min(d, T); pos[a.id][0] = Math.max(20, Math.min(620, pos[a.id][0] + disp[a.id][0] / d * m)); pos[a.id][1] = Math.max(20, Math.min(380, pos[a.id][1] + disp[a.id][1] / d * m)); }); }
-  const col = {equipment:'var(--eq)', instrument:'var(--ins)', junction:'var(--jct)', note:'var(--ins)', table:'var(--tbl)', row:'var(--txt)', figure:'var(--fig)', part:'var(--fig)', photo:'var(--fig)', paragraph:'var(--mute)', callout:'var(--ins)', text:'var(--txt)'};
+  const col = {equipment:'var(--eq)', instrument:'var(--ins)', junction:'var(--jct)', note:'var(--ins)', table:'var(--tbl)', row:'var(--txt)', figure:'var(--fig)', part:'var(--fig)', photo:'var(--fig)', paragraph:'var(--mute)', callout:'var(--ins)', dimension:'var(--ins)', datum:'var(--ins)', text:'var(--txt)'};
   let s = edges.map(e => `<line class="e ${e.kind}" x1="${pos[e.a][0]}" y1="${pos[e.a][1]}" x2="${pos[e.b][0]}" y2="${pos[e.b][1]}"/>`).join('');
-  s += all.map(a => { const r = {equipment: 9, instrument: 7, junction: 3, table: 9, figure: 6, part: 9, photo: 9, paragraph: 6, callout: 5, row: 3.5, text: 3}[a.role] || 4.5; const lbl = ['equipment','instrument'].includes(a.role) ? a.name : (['table','figure','part','photo','paragraph','callout'].includes(a.role) ? a.id : ''); return `<g class="n" data-id="${a.id}" transform="translate(${pos[a.id][0]} ${pos[a.id][1]})"><circle r="${r}" fill="${col[a.role] || 'var(--sym)'}"/>${lbl ? `<text x="${r + 3}" y="3">${esc(lbl)}</text>` : ''}<title>${a.id} ${ROLE[a.role] || a.role} ${esc(a.name)}</title></g>`; }).join('');
+  s += all.map(a => { const r = {equipment: 9, instrument: 7, junction: 3, table: 9, figure: 6, part: 9, photo: 9, paragraph: 6, callout: 5, dimension: 5, datum: 4, row: 3.5, text: 3}[a.role] || 4.5; const lbl = ['equipment','instrument'].includes(a.role) ? a.name : (['table','figure','part','photo','paragraph','callout','dimension'].includes(a.role) ? a.id : ''); return `<g class="n" data-id="${a.id}" transform="translate(${pos[a.id][0]} ${pos[a.id][1]})"><circle r="${r}" fill="${col[a.role] || 'var(--sym)'}"/>${lbl ? `<text x="${r + 3}" y="3">${esc(lbl)}</text>` : ''}<title>${a.id} ${ROLE[a.role] || a.role} ${esc(a.name)}</title></g>`; }).join('');
   svg.innerHTML = s;
   svg.querySelectorAll('g.n').forEach(g => g.addEventListener('click', () => highlight([g.dataset.id], [])));
 }

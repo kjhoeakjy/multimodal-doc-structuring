@@ -6,7 +6,7 @@ drawing 모드: 문자·주기 상자(callout)와 그 상자에서 출발하는 
 관계를 만든다. 가장 큰 잉크 덩어리를 부품 영역으로 본다.
 정답 자료가 없으므로 수치는 추출 개수와 시간이고 정확도는 표본을 눈으로 대조해 따로 기록한다.
 """
-import sys, json, time, math, collections
+import sys, json, time, math, re, collections
 import numpy as np, cv2
 
 def mm_of(dpi):
@@ -55,6 +55,13 @@ def table_mode(gray, ink, texts, k):
     hm = axis_mask(ink, k, 15.0, 'h'); vm = axis_mask(ink, k, 8.0, 'v')
     solid = cv2.dilate(cv2.bitwise_and(hm, vm), np.ones((5, 5), np.uint8))   # 두 방향 모두 긴 영역 = 채워진 면(그래프 막대 등), 선이 아님
     hm[solid > 0] = 0; vm[solid > 0] = 0
+    # 도면 틀: 가장자리 띠(15 mm) 안에서 쪽 길이의 5할 이상인 선은 표의 괘선이 아니므로 지운다(표제란이 틀과 붙어 있어도 분리됨)
+    H_, W_ = ink.shape; band = int(15.0 / k)
+    fh = axis_mask(hm, k, 0.5 * W_ * k, 'h'); fv = axis_mask(vm, k, 0.5 * H_ * k, 'v')
+    frame_mask = np.zeros_like(ink); frame_mask[:band, :] = fh[:band, :]; frame_mask[-band:, :] = fh[-band:, :]
+    frame_mask[:, :band] = fv[:, :band]; frame_mask[:, -band:] = fv[:, -band:]
+    frame_mask = cv2.dilate(frame_mask, np.ones((5, 5), np.uint8))
+    hm[frame_mask > 0] = 0; vm[frame_mask > 0] = 0
     grid = cv2.bitwise_or(hm, vm)
     regions, lab = components(cv2.dilate(grid, np.ones((5, 5), np.uint8)), k, min_area_mm2=40)
     regions = [r for r in regions if (r['box'][2] - r['box'][0]) * (r['box'][3] - r['box'][1]) * k * k >= 400]   # 외곽 상자 면적 기준(테두리만 있는 틀 포함)
@@ -73,6 +80,7 @@ def table_mode(gray, ink, texts, k):
                     on = False
             return es
         ys = edges(rows_prof, y0); xs = edges(cols_prof, x0)
+        if ys and ys[-1] < y1 - 3: ys = ys + [y1]          # 아래 괘선이 틀 선과 겹쳐 지워진 경우
         if len(ys) < 3:
             frames.append(r['box']); continue                 # 가로 괘선이 둘 미만이면 표가 아니라 틀(그림·차트 테두리)
         if not xs or xs[0] > x0 + 3: xs = [x0] + xs
@@ -114,8 +122,8 @@ def table_mode(gray, ink, texts, k):
                 ts = [t['text'] for t in texts if inside(center(t['box']), cb)]
                 row.append(dict(box=cb, text=' '.join(ts), figures=[]))
             cells.append(row)
-        # 높이 1 mm 미만이고 문자가 없는 행(스캔 이중선)은 제거
-        cells = [row for row in cells if (row[0]['box'][3] - row[0]['box'][1]) * k >= 1.0 or any(c['text'] for c in row)]
+        # 높이 2 mm 미만이고 문자가 없는 행(스캔 이중선)은 제거
+        cells = [row for row in cells if (row[0]['box'][3] - row[0]['box'][1]) * k >= 2.0 or any(c['text'] for c in row)]
         if len(cells) < 2 or len(xs) - 1 < 2:
             frames.append(r['box']); continue              # 열이 하나뿐이면 표가 아니라 틀
         tables.append(dict(box=[int(v) for v in r['box']], rows=cells, n_rows=len(cells), n_cols=len(xs) - 1))
@@ -174,11 +182,40 @@ def table_mode(gray, ink, texts, k):
                              figures=len(figs), figures_in_cells=linked, rows_with_figure=len(rows_with_fig)))
 
 # ---------------- 도면 쪽 ----------------
+DIM = re.compile(r'(Ø|⌀|∅|±|°|THRU|TYP|B\.?C\.?|[Rr]\d|[Hh]\d|\d\s*[xX×]\s*\d|\d+\.\d+|\d+/\d+)')
+NOTE_START = re.compile(r'^(NOTES?|\d+\.|[A-Z]{3,}:)', re.I)
+
+def callout_kind(text):
+    """주기의 종류: 치수(숫자·기호 위주 짧은 문자열), 주기(문장), 식별 문자(한두 글자)."""
+    t = text.strip()
+    if NOTE_START.match(t) and len(t) > 12:
+        return 'note'
+    if len(t) <= 2 and t.isalpha():
+        return 'datum'
+    if DIM.search(t) and len(t) <= 40 and sum(c.isdigit() for c in t) >= 1:
+        return 'dimension'
+    if len(t) > 25 or t.count(' ') >= 3:
+        return 'note'
+    return 'dimension' if any(c.isdigit() for c in t) else 'note'
+
 def drawing_mode(gray, ink, texts, k):
     H, W = ink.shape
+    # 표제란·개정란 등 표: 괘선 격자가 있는 영역(2행·2열 이상). 표 안 문자는 주기에서 뺀다
+    tb = table_mode(gray, ink, texts, k)
+    tables = tb['tables']
+    in_table = lambda b: any(inside(center(b), t['box']) for t in tables)
+    texts_free = [t for t in texts if not in_table(t['box'])]
     noink = erase(ink, texts, 1)
-    # 주기 상자: 문자 상자를 2 mm 안에서 묶어 한 주기(callout)로 본다. 가로로 이어진 줄과 세로로 쌓인 줄 모두 묶음
-    n = len(texts); parent = list(range(n))
+    for t in tables:
+        x0, y0, x1, y1 = t['box']; cv2.rectangle(noink, (x0 - 2, y0 - 2), (x1 + 2, y1 + 2), 0, -1)
+    # 도면 틀: 가장자리 띠(20 mm) 안에서 쪽 길이의 5할 이상인 수평·수직선을 지운다
+    band = int(20.0 / k)
+    hm = axis_mask(noink, k, 0.5 * W * k, 'h'); vm = axis_mask(noink, k, 0.5 * H * k, 'v')
+    frame = np.zeros_like(noink); frame[:band, :] = hm[:band, :]; frame[-band:, :] = hm[-band:, :]
+    frame[:, :band] = vm[:, :band]; frame[:, -band:] = vm[:, -band:]
+    noink[cv2.dilate(frame, np.ones((5, 5), np.uint8)) > 0] = 0
+    # 주기 상자: 문자 상자를 2 mm 안에서 묶어 한 주기(callout)로 본다
+    n = len(texts_free); parent = list(range(n))
     def find(i):
         while parent[i] != i:
             parent[i] = parent[parent[i]]; i = parent[i]
@@ -186,7 +223,7 @@ def drawing_mode(gray, ink, texts, k):
     pad = int(2.0 / k)
     for i in range(n):
         for j in range(i + 1, n):
-            a, b = texts[i]['box'], texts[j]['box']
+            a, b = texts_free[i]['box'], texts_free[j]['box']
             if a[0] - pad <= b[2] and b[0] - pad <= a[2] and a[1] - pad <= b[3] and b[1] - pad <= a[3]:
                 parent[find(i)] = find(j)
     groups = collections.defaultdict(list)
@@ -194,37 +231,60 @@ def drawing_mode(gray, ink, texts, k):
         groups[find(i)].append(i)
     callouts = []
     for g in groups.values():
-        bs = [texts[i]['box'] for i in g]
-        callouts.append(dict(box=[min(b[0] for b in bs), min(b[1] for b in bs), max(b[2] for b in bs), max(b[3] for b in bs)],
-                             texts=[texts[i]['text'] for i in sorted(g, key=lambda i: (texts[i]['box'][1] // max(1, pad), texts[i]['box'][0]))]))
-    # 부품 영역: 가장 큰 잉크 덩어리(음영 포함)
+        bs = [texts_free[i]['box'] for i in g]
+        ts = [texts_free[i]['text'] for i in sorted(g, key=lambda i: (texts_free[i]['box'][1] // max(1, pad), texts_free[i]['box'][0]))]
+        callouts.append(dict(box=[min(b[0] for b in bs), min(b[1] for b in bs), max(b[2] for b in bs), max(b[3] for b in bs)], texts=ts, kind=callout_kind(' '.join(ts))))
+    callouts.sort(key=lambda c: (c['box'][1], c['box'][0]))
+    # 투상도(부품) 영역: 틀·표·문자를 지운 잉크 덩어리 중 15 mm 이상인 것. 가장 큰 것의 2% 미만은 제외
     closed = cv2.morphologyEx(noink, cv2.MORPH_CLOSE, np.ones((9, 9), np.uint8))
-    comps, lab = components(closed, k, min_area_mm2=0)
-    part = max(comps, key=lambda c: c['area_mm2']) if comps else None
-    part_mask = (lab == part['label']).astype(np.uint8) * 255 if part else np.zeros_like(ink)
-    # 지시선: 어느 방향이든 직선 조각(4 mm 이상). 한 끝이 주기 상자 3 mm 안, 다른 끝은 상자에서 5 mm 이상 떨어짐
+    comps, lab = components(closed, k, min_area_mm2=0, min_dim_mm=15.0)
+    comps = [c for c in comps if min(c['box'][2] - c['box'][0], c['box'][3] - c['box'][1]) * k >= 15.0]   # 가늘고 긴 조각(치수선)은 투상도가 아님
+    comps.sort(key=lambda c: -c['area_mm2'])
+    parts = [c for c in comps if comps and c['area_mm2'] >= 0.02 * comps[0]['area_mm2']][:8]
+    part_mask = np.zeros_like(ink)
+    for pi, c in enumerate(parts):
+        part_mask[lab == c['label']] = pi + 1
+    part_dil = cv2.dilate(part_mask, np.ones((7, 7), np.uint8))
+    # 지시선: 어느 방향이든 직선 조각(4 mm 이상, 60 mm 이하). 한 끝이 주기 상자 3 mm 안, 다른 끝은 상자에서 5 mm 이상 떨어짐
     thin = cv2.ximgproc.thinning(noink) if hasattr(cv2, 'ximgproc') else noink
     segs = cv2.HoughLinesP(thin, 1, np.pi / 360, threshold=int(3.0 / k), minLineLength=int(4.0 / k), maxLineGap=int(1.0 / k))
     segs = [tuple(int(v) for v in s) for s in np.asarray(segs).reshape(-1, 4)] if segs is not None else []
     leaders = []
     for (x0, y0, x1, y1) in segs:
+        L = math.hypot(x1 - x0, y1 - y0) * k
+        if L > 60.0 or L < 6.0:
+            continue
         for ci, c in enumerate(callouts):
             b = c['box']
             for near, far in (((x0, y0), (x1, y1)), ((x1, y1), (x0, y0))):
                 if inside(near, b, int(3.0 / k)) and not inside(far, b, int(5.0 / k)):
-                    L = math.hypot(x1 - x0, y1 - y0) * k
-                    on_part = bool(cv2.dilate(part_mask, np.ones((7, 7), np.uint8))[min(H - 1, far[1]), min(W - 1, far[0])])
-                    leaders.append(dict(callout=ci, start=list(near), end=list(far), length_mm=round(L, 1), end_on_part=on_part))
+                    pid = int(part_dil[min(H - 1, max(0, far[1])), min(W - 1, max(0, far[0]))])
+                    leaders.append(dict(callout=ci, start=list(near), end=list(far), length_mm=round(L, 1), end_on_part=pid > 0, part=pid - 1 if pid > 0 else None))
                     break
-    # 주기당 지시선 하나: 가장 긴 것
     best = {}
     for l in leaders:
-        if l['callout'] not in best or l['length_mm'] > best[l['callout']]['length_mm']:
+        if l['callout'] not in best or (l['end_on_part'], l['length_mm']) > (best[l['callout']]['end_on_part'], best[l['callout']]['length_mm']):
             best[l['callout']] = l
-    leaders = list(best.values())
-    return dict(callouts=callouts, leaders=leaders, part_box=part['box'] if part else None,
-                summary=dict(texts=len(texts), callouts=len(callouts), callouts_with_leader=len(leaders),
-                             leader_end_on_part=sum(1 for l in leaders if l['end_on_part']), segments=len(segs)))
+    leaders = sorted(best.values(), key=lambda l: l['callout'])
+    # 치수·주기의 소속 투상도: 지시선 끝이 닿은 부품, 없으면 20 mm 안의 가장 가까운 부품
+    lead_of = {l['callout']: l for l in leaders}
+    def dist(a, b):
+        dx = max(b[0] - a[2], a[0] - b[2], 0); dy = max(b[1] - a[3], a[1] - b[3], 0)
+        return math.hypot(dx, dy) * k
+    for ci, c in enumerate(callouts):
+        c['part'] = None
+        l = lead_of.get(ci)
+        if l and l['part'] is not None:
+            c['part'] = l['part']; continue
+        if parts and c['kind'] in ('dimension', 'datum'):
+            d, pi = min((dist(c['box'], p['box']), pi) for pi, p in enumerate(parts))
+            if d <= 20.0:
+                c['part'] = pi
+    return dict(callouts=callouts, leaders=leaders, parts=[dict(box=p['box'], area_mm2=p['area_mm2']) for p in parts],
+                part_box=parts[0]['box'] if parts else None, tables=tables,
+                summary=dict(texts=len(texts), callouts=len(callouts), dimensions=sum(1 for c in callouts if c['kind'] == 'dimension'),
+                             notes=sum(1 for c in callouts if c['kind'] == 'note'), callouts_with_leader=len(leaders),
+                             leader_end_on_part=sum(1 for l in leaders if l['end_on_part']), parts=len(parts), tables=len(tables), segments=len(segs)))
 
 def overlay(gray, texts, result, mode, out_png):
     im = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)
@@ -236,8 +296,8 @@ def overlay(gray, texts, result, mode, out_png):
         for f in result['figures']:
             x0, y0, x1, y1 = f['box']; cv2.rectangle(im, (x0, y0), (x1, y1), (0, 160, 0) if f.get('table') else (160, 160, 160), 2)
     else:
-        if result['part_box']:
-            x0, y0, x1, y1 = result['part_box']; cv2.rectangle(im, (x0, y0), (x1, y1), (160, 160, 160), 1)
+        for pbox in [p['box'] for p in result.get('parts', [])] or ([result['part_box']] if result.get('part_box') else []):
+            x0, y0, x1, y1 = pbox; cv2.rectangle(im, (x0, y0), (x1, y1), (160, 160, 160), 1)
         for c in result['callouts']:
             x0, y0, x1, y1 = c['box']; cv2.rectangle(im, (x0, y0), (x1, y1), (200, 0, 200), 1)
         for l in result['leaders']:

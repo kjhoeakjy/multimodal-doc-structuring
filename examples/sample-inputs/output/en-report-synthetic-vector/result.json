@@ -8,196 +8,369 @@
   "snapshot": {
    "cores": 4,
    "total_gb": 15.7,
-   "avail_gb": 14.5,
-   "cpu_busy": 3.0
+   "avail_gb": 14.9,
+   "cpu_busy": 0.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
-   "가용 메모리 14.5 GB → 인식 배치 8, 입력 상한 12 MP",
+   "가용 메모리 14.9 GB → 인식 배치 8, 입력 상한 12 MP",
    "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
   ]
  },
  "steps": [],
- "kind": "vector",
- "svg": "input.svg",
- "detect": {
-  "reason": "PDF 벡터(경로 21개, 문자 있음)"
- },
- "dpi": null,
- "view": {
-  "url": "view.png",
-  "w": 1240,
-  "h": 1755,
-  "mm_per_px": 0.4798387096774194
- },
- "nodes": [
+ "kind": "page",
+ "png": "input_gray.png",
+ "dpi": 200,
+ "texts": [
   {
-   "id": "n0",
-   "role": "symbol",
-   "bbox": [
-    83.5,
-    391.5,
-    88.5,
-    396.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
+   "text": "Hydraulic System Inspection Summary",
+   "conf": 1.0,
+   "box": [
+    155,
+    146,
+    918,
+    207
+   ]
   },
   {
-   "id": "n1",
-   "role": "symbol",
-   "bbox": [
-    143.5,
-    379.5,
-    148.5,
-    384.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
+   "text": "This summary records the third quarter inspection of the main and nose landing gear hydraulic",
+   "conf": 1.0,
+   "box": [
+    155,
+    249,
+    1371,
+    290
+   ]
   },
   {
-   "id": "n2",
-   "role": "symbol",
-   "bbox": [
-    203.5,
-    364.5,
-    208.5,
-    369.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
+   "text": "actuators. Internal leakage was measured three times per actuator at 3000 psi with fluid at 40 C.",
+   "conf": 1.0,
+   "box": [
+    155,
+    293,
+    1395,
+    333
+   ]
   },
   {
-   "id": "n3",
-   "role": "symbol",
-   "bbox": [
-    263.5,
-    355.5,
-    268.5,
-    360.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
+   "text": "Results are listed in Table 1 and plotted in Figure 1.",
+   "conf": 1.0,
+   "box": [
+    155,
+    336,
+    821,
+    376
+   ]
   },
   {
-   "id": "n4",
-   "role": "symbol",
-   "bbox": [
-    323.5,
-    331.5,
-    328.5,
-    336.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
+   "text": "Actuator",
+   "conf": 1.0,
+   "box": [
+    166,
+    468,
+    275,
+    505
+   ]
   },
   {
-   "id": "n5",
-   "role": "symbol",
-   "bbox": [
-    86.0,
-    334.0,
-    326.0,
-    394.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  }
- ],
- "junctions": [
+   "text": "Part number",
+   "conf": 1.0,
+   "box": [
+    583,
+    468,
+    738,
+    505
+   ]
+  },
   {
-   "id": "j0",
-   "pt": [
-    356.0,
-    310.0
+   "text": "Leakage cc/min",
+   "conf": 1.0,
+   "box": [
+    888,
+    468,
+    1085,
+    505
+   ]
+  },
+  {
+   "text": "Action",
+   "conf": 1.0,
+   "box": [
+    1194,
+    468,
+    1276,
+    505
+   ]
+  },
+  {
+   "text": "L/H MLG",
+   "conf": 1.0,
+   "box": [
+    166,
+    524,
+    272,
+    560
+   ]
+  },
+  {
+   "text": "114A3200-5",
+   "conf": 1.0,
+   "box": [
+    583,
+    524,
+    727,
+    560
+   ]
+  },
+  {
+   "text": "3.2",
+   "conf": 1.0,
+   "box": [
+    888,
+    524,
+    925,
+    560
+   ]
+  },
+  {
+   "text": "Replace",
+   "conf": 1.0,
+   "box": [
+    1194,
+    524,
+    1291,
+    560
+   ]
+  },
+  {
+   "text": "R/H MLG",
+   "conf": 1.0,
+   "box": [
+    166,
+    579,
+    276,
+    616
+   ]
+  },
+  {
+   "text": "114A3200-5",
+   "conf": 1.0,
+   "box": [
+    583,
+    579,
+    727,
+    616
+   ]
+  },
+  {
+   "text": "1.9",
+   "conf": 1.0,
+   "box": [
+    888,
+    579,
+    925,
+    616
+   ]
+  },
+  {
+   "text": "Monitor",
+   "conf": 1.0,
+   "box": [
+    1194,
+    579,
+    1282,
+    616
+   ]
+  },
+  {
+   "text": "NLG steering",
+   "conf": 1.0,
+   "box": [
+    166,
+    635,
+    322,
+    671
+   ]
+  },
+  {
+   "text": "114A3410-2",
+   "conf": 1.0,
+   "box": [
+    583,
+    635,
+    727,
+    671
+   ]
+  },
+  {
+   "text": "1.1",
+   "conf": 1.0,
+   "box": [
+    888,
+    635,
+    925,
+    671
+   ]
+  },
+  {
+   "text": "None",
+   "conf": 1.0,
+   "box": [
+    1194,
+    635,
+    1257,
+    671
+   ]
+  },
+  {
+   "text": "Table 1. Leakage by actuator (mean of three measurements)",
+   "conf": 1.0,
+   "box": [
+    155,
+    699,
+    792,
+    732
+   ]
+  },
+  {
+   "text": "Q1",
+   "conf": 1.0,
+   "box": [
+    222,
+    1210,
+    250,
+    1239
+   ]
+  },
+  {
+   "text": "Q2",
+   "conf": 1.0,
+   "box": [
+    388,
+    1210,
+    416,
+    1239
+   ]
+  },
+  {
+   "text": "Q3",
+   "conf": 1.0,
+   "box": [
+    555,
+    1210,
+    583,
+    1239
+   ]
+  },
+  {
+   "text": "Q4",
+   "conf": 1.0,
+   "box": [
+    722,
+    1210,
+    750,
+    1239
+   ]
+  },
+  {
+   "text": "Q3",
+   "conf": 1.0,
+   "box": [
+    888,
+    1210,
+    916,
+    1239
+   ]
+  },
+  {
+   "text": "limit 4.0 cc/min",
+   "conf": 1.0,
+   "box": [
+    794,
+    833,
+    932,
+    861
+   ]
+  },
+  {
+   "text": "Figure 1. L/H MLG actuator leakage trend over five inspections",
+   "conf": 1.0,
+   "box": [
+    155,
+    1269,
+    811,
+    1301
+   ]
+  },
+  {
+   "text": "Conclusion. The left main landing gear actuator (114A3200-5) has reached 80 percent of the allowable",
+   "conf": 1.0,
+   "box": [
+    155,
+    1333,
+    1478,
+    1373
+   ]
+  },
+  {
+   "text": "leakage and is scheduled for replacement before the next inspection interval. A functional test and",
+   "conf": 1.0,
+   "box": [
+    155,
+    1376,
+    1420,
+    1416
+   ]
+  },
+  {
+   "text": "leakage re-measurement follow the replacement.",
+   "conf": 1.0,
+   "box": [
+    155,
+    1419,
+    787,
+    1459
+   ]
+  },
+  {
+   "text": "Synthetic document, 2026-10-29",
+   "conf": 1.0,
+   "box": [
+    155,
+    2198,
+    476,
+    2228
    ]
   }
  ],
- "runs": [
-  {
-   "id": "r0",
-   "a": "open@(56.0, 450.0)",
-   "b": "j0",
-   "coords": [
-    [
-     56.0,
-     450.0
-    ],
-    [
-     356.0,
-     450.0
-    ],
-    [
-     356.0,
-     310.0
-    ]
-   ],
-   "kind": "pipe",
-   "texts": [
-    "Q1",
-    "Q2",
-    "Q3",
-    "Q4",
-    "Q3"
-   ],
-   "gap": 0
-  },
-  {
-   "id": "r1",
-   "a": "j0",
-   "b": "open@(56.0, 290.0)",
-   "coords": [
-    [
-     356.0,
-     310.0
-    ],
-    [
-     356.0,
-     290.0
-    ],
-    [
-     56.0,
-     290.0
-    ]
-   ],
-   "kind": "pipe",
-   "texts": [],
-   "gap": 0
-  },
-  {
-   "id": "r2",
-   "a": "j0",
-   "b": "open@(56.0, 310.0)",
-   "coords": [
-    [
-     356.0,
-     310.0
-    ],
-    [
-     56.0,
-     310.0
-    ]
-   ],
-   "kind": "signal",
-   "texts": [
-    "limit 4.0 cc/min"
-   ],
-   "gap": 0
-  }
- ],
+ "view": {
+  "url": "input_gray.png",
+  "w": 1653,
+  "h": 2339,
+  "mm_per_px": 0.127
+ },
+ "detect": {
+  "px": [
+   1653,
+   2339
+  ],
+  "reason": "PDF 글자 층(단어 133개, 그림 경로 21개)",
+  "dpi_source": "PDF 200 dpi 렌더",
+  "ocr_lang": "글자 층(문자 인식 생략)"
+ },
  "tables": [
   {
    "bbox": [
-    56.0,
-    165.0,
-    536.0,
-    245.0
+    19.4,
+    57.8,
+    189.5,
+    86.9
+   ],
+   "box": [
+    153,
+    455,
+    1492,
+    684
    ],
    "rows": [
     [
@@ -224,305 +397,839 @@
      "1.1",
      "None"
     ]
+   ],
+   "cell_boxes": [
+    [
+     [
+      155,
+      457,
+      571,
+      512
+     ],
+     [
+      571,
+      457,
+      877,
+      512
+     ],
+     [
+      877,
+      457,
+      1182,
+      512
+     ],
+     [
+      1182,
+      457,
+      1488,
+      512
+     ]
+    ],
+    [
+     [
+      155,
+      512,
+      571,
+      569
+     ],
+     [
+      571,
+      512,
+      877,
+      569
+     ],
+     [
+      877,
+      512,
+      1182,
+      569
+     ],
+     [
+      1182,
+      512,
+      1488,
+      569
+     ]
+    ],
+    [
+     [
+      155,
+      569,
+      571,
+      624
+     ],
+     [
+      571,
+      569,
+      877,
+      624
+     ],
+     [
+      877,
+      569,
+      1182,
+      624
+     ],
+     [
+      1182,
+      569,
+      1488,
+      624
+     ]
+    ],
+    [
+     [
+      155,
+      624,
+      571,
+      679
+     ],
+     [
+      571,
+      624,
+      877,
+      679
+     ],
+     [
+      877,
+      624,
+      1182,
+      679
+     ],
+     [
+      1182,
+      624,
+      1488,
+      679
+     ]
+    ]
    ]
   }
  ],
- "texts": [],
- "labels": [
+ "figures": [
   {
-   "text": "Q1",
-   "x": 80.0,
-   "y": 444.0,
-   "angle": 0,
-   "bbox": [
-    80.0,
-    436.5,
-    87.5,
-    445.5
+   "box": [
+    152,
+    802,
+    992,
+    1253
    ],
-   "owner": [
-    "run",
-    0,
-    4.5
+   "area_mm2": 6110.3,
+   "frame": true,
+   "texts": [
+    "limit 4.0 cc/min",
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q3"
+   ],
+   "table": null
+  }
+ ],
+ "paragraphs": [
+  {
+   "text": "Hydraulic System Inspection Summary",
+   "box": [
+    155,
+    146,
+    918,
+    207
+   ],
+   "col": 0,
+   "bbox_mm": [
+    19.7,
+    18.5,
+    116.6,
+    26.3
    ]
   },
   {
-   "text": "Q2",
-   "x": 140.0,
-   "y": 444.0,
-   "angle": 0,
-   "bbox": [
-    140.0,
-    436.5,
-    147.5,
-    445.5
+   "text": "This summary records the third quarter inspection of the main and nose landing gear hydraulic actuators. Internal leakage was measured three times per actuator at 3000 psi with fluid at 40 C. Results are listed in Table 1 and plotted in Figure 1.",
+   "box": [
+    155,
+    249,
+    1395,
+    376
    ],
-   "owner": [
-    "run",
-    0,
-    4.5
+   "col": 0,
+   "bbox_mm": [
+    19.7,
+    31.6,
+    177.2,
+    47.8
    ]
   },
   {
-   "text": "Q3",
-   "x": 200.0,
-   "y": 444.0,
-   "angle": 0,
-   "bbox": [
-    200.0,
-    436.5,
-    207.5,
-    445.5
+   "text": "Table 1. Leakage by actuator (mean of three measurements)",
+   "box": [
+    155,
+    699,
+    792,
+    732
    ],
-   "owner": [
-    "run",
-    0,
-    4.5
+   "col": 0,
+   "bbox_mm": [
+    19.7,
+    88.8,
+    100.6,
+    93.0
    ]
   },
   {
-   "text": "Q4",
-   "x": 260.0,
-   "y": 444.0,
-   "angle": 0,
-   "bbox": [
-    260.0,
-    436.5,
-    267.5,
-    445.5
+   "text": "Figure 1. L/H MLG actuator leakage trend over five inspections",
+   "box": [
+    155,
+    1269,
+    811,
+    1301
    ],
-   "owner": [
-    "run",
-    0,
-    4.5
+   "col": 0,
+   "bbox_mm": [
+    19.7,
+    161.2,
+    103.0,
+    165.2
    ]
   },
   {
-   "text": "Q3",
-   "x": 320.0,
-   "y": 444.0,
-   "angle": 0,
-   "bbox": [
-    320.0,
-    436.5,
-    327.5,
-    445.5
+   "text": "Conclusion. The left main landing gear actuator (114A3200-5) has reached 80 percent of the allowable leakage and is scheduled for replacement before the next inspection interval. A functional test and leakage re-measurement follow the replacement.",
+   "box": [
+    155,
+    1333,
+    1478,
+    1459
    ],
-   "owner": [
-    "run",
-    0,
-    4.5
+   "col": 0,
+   "bbox_mm": [
+    19.7,
+    169.3,
+    187.7,
+    185.3
    ]
   },
   {
-   "text": "limit 4.0 cc/min",
-   "x": 286.0,
-   "y": 308.0,
-   "angle": 0,
-   "bbox": [
-    286.0,
-    300.5,
-    346.0,
-    309.5
+   "text": "Synthetic document, 2026-10-29",
+   "box": [
+    155,
+    2198,
+    476,
+    2228
    ],
-   "owner": [
-    "run",
-    2,
-    0.5
+   "col": 0,
+   "bbox_mm": [
+    19.7,
+    279.1,
+    60.5,
+    283.0
    ]
   }
  ],
+ "nodes": [
+  {
+   "id": "t0",
+   "role": "table",
+   "bbox": [
+    19.4,
+    57.8,
+    189.5,
+    86.9
+   ],
+   "texts": [
+    "Actuator | Part number | Leakage cc/min | Action"
+   ],
+   "degree": 5,
+   "attached_to": null
+  },
+  {
+   "id": "t0r0",
+   "role": "row",
+   "bbox": [
+    19.7,
+    58.0,
+    189.0,
+    65.0
+   ],
+   "texts": [
+    "Actuator | Part number | Leakage cc/min | Action"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "t0r1",
+   "role": "row",
+   "bbox": [
+    19.7,
+    65.0,
+    189.0,
+    72.3
+   ],
+   "texts": [
+    "L/H MLG | 114A3200-5 | 3.2 | Replace"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "t0r2",
+   "role": "row",
+   "bbox": [
+    19.7,
+    72.3,
+    189.0,
+    79.2
+   ],
+   "texts": [
+    "R/H MLG | 114A3200-5 | 1.9 | Monitor"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "t0r3",
+   "role": "row",
+   "bbox": [
+    19.7,
+    79.2,
+    189.0,
+    86.2
+   ],
+   "texts": [
+    "NLG steering | 114A3410-2 | 1.1 | None"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "f0",
+   "role": "figure",
+   "bbox": [
+    19.3,
+    101.9,
+    126.0,
+    159.1
+   ],
+   "texts": [
+    "limit 4.0 cc/min / Q1 / Q2 / Q3 / Q4 / Q3"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "p0",
+   "role": "paragraph",
+   "bbox": [
+    19.7,
+    18.5,
+    116.6,
+    26.3
+   ],
+   "texts": [
+    "Hydraulic System Inspection Summary"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "p1",
+   "role": "paragraph",
+   "bbox": [
+    19.7,
+    31.6,
+    177.2,
+    47.8
+   ],
+   "texts": [
+    "This summary records the third quarter inspection of the mai"
+   ],
+   "degree": 2,
+   "attached_to": null
+  },
+  {
+   "id": "p2",
+   "role": "paragraph",
+   "bbox": [
+    19.7,
+    88.8,
+    100.6,
+    93.0
+   ],
+   "texts": [
+    "Table 1. Leakage by actuator (mean of three measurements)"
+   ],
+   "degree": 3,
+   "attached_to": null
+  },
+  {
+   "id": "p3",
+   "role": "paragraph",
+   "bbox": [
+    19.7,
+    161.2,
+    103.0,
+    165.2
+   ],
+   "texts": [
+    "Figure 1. L/H MLG actuator leakage trend over five inspectio"
+   ],
+   "degree": 3,
+   "attached_to": null
+  },
+  {
+   "id": "p4",
+   "role": "paragraph",
+   "bbox": [
+    19.7,
+    169.3,
+    187.7,
+    185.3
+   ],
+   "texts": [
+    "Conclusion. The left main landing gear actuator (114A3200-5)"
+   ],
+   "degree": 2,
+   "attached_to": null
+  },
+  {
+   "id": "p5",
+   "role": "paragraph",
+   "bbox": [
+    19.7,
+    279.1,
+    60.5,
+    283.0
+   ],
+   "texts": [
+    "Synthetic document, 2026-10-29"
+   ],
+   "degree": 1,
+   "attached_to": null
+  }
+ ],
+ "runs": [
+  {
+   "id": "r0",
+   "a": "t0",
+   "b": "t0r0",
+   "coords": [
+    [
+     104.46,
+     72.33
+    ],
+    [
+     104.33,
+     61.53
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r1",
+   "a": "t0",
+   "b": "t0r1",
+   "coords": [
+    [
+     104.46,
+     72.33
+    ],
+    [
+     104.33,
+     68.64
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r2",
+   "a": "t0",
+   "b": "t0r2",
+   "coords": [
+    [
+     104.46,
+     72.33
+    ],
+    [
+     104.33,
+     75.76
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r3",
+   "a": "t0",
+   "b": "t0r3",
+   "coords": [
+    [
+     104.46,
+     72.33
+    ],
+    [
+     104.33,
+     82.74
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r4",
+   "a": "p0",
+   "b": "p1",
+   "coords": [
+    [
+     68.14,
+     22.42
+    ],
+    [
+     98.42,
+     39.69
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r5",
+   "a": "p2",
+   "b": "t0",
+   "coords": [
+    [
+     60.13,
+     90.87
+    ],
+    [
+     104.46,
+     72.33
+    ]
+   ],
+   "kind": "describe",
+   "texts": [
+    "Table 1"
+   ],
+   "gap": 0
+  },
+  {
+   "id": "r6",
+   "a": "p1",
+   "b": "p2",
+   "coords": [
+    [
+     98.42,
+     39.69
+    ],
+    [
+     60.13,
+     90.87
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r7",
+   "a": "p3",
+   "b": "f0",
+   "coords": [
+    [
+     61.34,
+     163.19
+    ],
+    [
+     72.64,
+     130.49
+    ]
+   ],
+   "kind": "describe",
+   "texts": [
+    "Figure 1"
+   ],
+   "gap": 0
+  },
+  {
+   "id": "r8",
+   "a": "p2",
+   "b": "p3",
+   "coords": [
+    [
+     60.13,
+     90.87
+    ],
+    [
+     61.34,
+     163.19
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r9",
+   "a": "p3",
+   "b": "p4",
+   "coords": [
+    [
+     61.34,
+     163.19
+    ],
+    [
+     103.7,
+     177.29
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r10",
+   "a": "p4",
+   "b": "p5",
+   "coords": [
+    [
+     103.7,
+     177.29
+    ],
+    [
+     40.07,
+     281.05
+    ]
+   ],
+   "kind": "next",
+   "texts": [],
+   "gap": 0
+  }
+ ],
+ "junctions": [],
  "counts": {
-  "primitives": 28,
-  "texts": 16,
-  "nodes": 6,
-  "runs": 3,
-  "junctions": 1,
   "tables": 1,
-  "symbol": 6
+  "cells": 16,
+  "figures": 1,
+  "figures_in_cells": 0,
+  "rows_with_figure": 0,
+  "mean_conf": 1.0,
+  "paragraphs": 6,
+  "texts": 32,
+  "nodes": 12,
+  "runs": 11
  },
  "serial": [
-  "# 그림 관계 그래프 (좌표 단위 mm, 원점 좌상단)",
-  "## 요소",
-  "n0 종류=symbol 이름=n0 라벨=- bbox=(83.5,391.5,88.5,396.5)",
-  "n1 종류=symbol 이름=n1 라벨=- bbox=(143.5,379.5,148.5,384.5)",
-  "n2 종류=symbol 이름=n2 라벨=- bbox=(203.5,364.5,208.5,369.5)",
-  "n3 종류=symbol 이름=n3 라벨=- bbox=(263.5,355.5,268.5,360.5)",
-  "n4 종류=symbol 이름=n4 라벨=- bbox=(323.5,331.5,328.5,336.5)",
-  "n5 종류=symbol 이름=n5 라벨=- bbox=(86.0,334.0,326.0,394.0)",
-  "## 분기점",
-  "j0 pt=(356.0,310.0)",
-  "## 연결 (선과 접점으로 확인한 관계)",
-  "r0 종류=pipe A=open@(56.0, 450.0) B=j0 라벨=Q1|Q2|Q3|Q4|Q3 경로=(56.0,450.0)→(356.0,450.0)→(356.0,310.0)",
-  "r1 종류=pipe A=j0 B=open@(56.0, 290.0) 경로=(356.0,310.0)→(356.0,290.0)→(56.0,290.0)",
-  "r2 종류=signal A=j0 B=open@(56.0, 310.0) 라벨=limit 4.0 cc/min 경로=(356.0,310.0)→(56.0,310.0)",
+  "# 쪽 구조 (좌표 단위 mm, 원점 좌상단)",
   "## 표",
-  "t0 bbox=(56.0,165.0,536.0,245.0) 행수=4 첫행=Actuator / Part number / Leakage cc/min / Action"
+  "t0 bbox=(19.4,57.8,189.5,86.9) 행수=4 열수=4",
+  "t0 행0: Actuator | Part number | Leakage cc/min | Action",
+  "t0 행1: L/H MLG | 114A3200-5 | 3.2 | Replace",
+  "t0 행2: R/H MLG | 114A3200-5 | 1.9 | Monitor",
+  "t0 행3: NLG steering | 114A3410-2 | 1.1 | None",
+  "## 그림 영역",
+  "f0 bbox=(19.3,101.9,126.0,159.1) 안 문자=limit 4.0 cc/min / Q1 / Q2 / Q3 / Q4 / Q3",
+  "## 본문",
+  "p0 bbox=(19.7,18.5,116.6,26.3) Hydraulic System Inspection Summary",
+  "p1 bbox=(19.7,31.6,177.2,47.8) This summary records the third quarter inspection of the main and nose landing gear hydraulic actuators. Internal leakage was measured three times per actuator at 3000 psi with fluid at 40 C. Results are listed in Table 1 and plotted in Figure 1.",
+  "p2 bbox=(19.7,88.8,100.6,93.0) Table 1. Leakage by actuator (mean of three measurements)",
+  "p3 bbox=(19.7,161.2,103.0,165.2) Figure 1. L/H MLG actuator leakage trend over five inspections",
+  "p4 bbox=(19.7,169.3,187.7,185.3) Conclusion. The left main landing gear actuator (114A3200-5) has reached 80 percent of the allowable leakage and is scheduled for replacement before the next inspection interval. A functional test and leakage re-measurement follow the replacement.",
+  "p5 bbox=(19.7,279.1,60.5,283.0) Synthetic document, 2026-10-29",
+  "## 관계 (노드 종류 · 이름 · 좌표, 간선 종류)",
+  "t0 종류=표 이름=Actuator | Part number | Leakage cc/min  bbox=(19.4,57.8,189.5,86.9)",
+  "t0r0 종류=행 이름=Actuator | Part number | Leakage cc/min  bbox=(19.7,58.0,189.0,65.0)",
+  "t0r1 종류=행 이름=L/H MLG | 114A3200-5 | 3.2 | Replace bbox=(19.7,65.0,189.0,72.3)",
+  "t0r2 종류=행 이름=R/H MLG | 114A3200-5 | 1.9 | Monitor bbox=(19.7,72.3,189.0,79.2)",
+  "t0r3 종류=행 이름=NLG steering | 114A3410-2 | 1.1 | None bbox=(19.7,79.2,189.0,86.2)",
+  "f0 종류=그림 이름=limit 4.0 cc/min / Q1 / Q2 / Q3 / Q4 / Q bbox=(19.3,101.9,126.0,159.1)",
+  "p0 종류=문단 이름=Hydraulic System Inspection Summary bbox=(19.7,18.5,116.6,26.3)",
+  "p1 종류=문단 이름=This summary records the third quarter i bbox=(19.7,31.6,177.2,47.8)",
+  "p2 종류=문단 이름=Table 1. Leakage by actuator (mean of th bbox=(19.7,88.8,100.6,93.0)",
+  "p3 종류=문단 이름=Figure 1. L/H MLG actuator leakage trend bbox=(19.7,161.2,103.0,165.2)",
+  "p4 종류=문단 이름=Conclusion. The left main landing gear a bbox=(19.7,169.3,187.7,185.3)",
+  "p5 종류=문단 이름=Synthetic document, 2026-10-29 bbox=(19.7,279.1,60.5,283.0)",
+  "r0 종류=포함 A=t0 B=t0r0",
+  "r1 종류=포함 A=t0 B=t0r1",
+  "r2 종류=포함 A=t0 B=t0r2",
+  "r3 종류=포함 A=t0 B=t0r3",
+  "r4 종류=순서 A=p0 B=p1",
+  "r5 종류=설명 A=p2 B=t0 라벨=Table 1",
+  "r6 종류=순서 A=p1 B=p2",
+  "r7 종류=설명 A=p3 B=f0 라벨=Figure 1",
+  "r8 종류=순서 A=p2 B=p3",
+  "r9 종류=순서 A=p3 B=p4",
+  "r10 종류=순서 A=p4 B=p5"
  ],
  "index": {
   "bm25": {
-   "tokens": 157,
-   "vocab": 85,
+   "tokens": 473,
+   "vocab": 185,
    "top": [
     [
      "종류",
-     9
-    ],
-    [
-     "라벨",
-     8
+     25
     ],
     [
      "bbox",
-     7
+     20
     ],
     [
-     "56.0",
-     7
-    ],
-    [
-     "symbol",
-     6
-    ],
-    [
-     "이름",
-     6
-    ],
-    [
-     "356.0",
-     6
-    ],
-    [
-     "310.0",
-     6
-    ],
-    [
-     "j0",
-     4
+     "19.7",
+     16
     ],
     [
      "a",
-     3
+     13
     ],
     [
-     "open",
-     3
+     "이름",
+     13
     ],
     [
-     "450.0",
-     3
+     "t0",
+     11
     ],
     [
      "b",
-     3
+     11
     ],
     [
-     "경로",
-     3
+     "leakage",
+     10
     ],
     [
-     "290.0",
-     3
+     "actuator",
+     9
     ],
     [
-     "관계",
-     2
+     "the",
+     8
     ],
     [
-     "n0",
-     2
+     "mlg",
+     6
     ],
     [
-     "n1",
-     2
-    ],
-    [
-     "n2",
-     2
-    ],
-    [
-     "n3",
-     2
-    ],
-    [
-     "n4",
-     2
-    ],
-    [
-     "n5",
-     2
-    ],
-    [
-     "pipe",
-     2
-    ],
-    [
-     "q3",
-     2
+     "문단",
+     6
     ],
     [
      "cc/min",
-     2
+     5
     ],
     [
-     "그림",
-     1
+     "114a3200-5",
+     5
     ],
     [
-     "그래프",
-     1
+     "1.",
+     5
     ],
     [
-     "좌표",
-     1
+     "p2",
+     5
     ],
     [
-     "단위",
-     1
+     "p3",
+     5
     ],
     [
-     "mm",
-     1
+     "순서",
+     5
     ],
     [
-     "원점",
-     1
+     "l/h",
+     4
     ],
     [
-     "좌상단",
-     1
+     "inspection",
+     4
     ],
     [
-     "요소",
-     1
+     "summary",
+     4
     ],
     [
-     "83.5",
-     1
+     "p1",
+     4
     ],
     [
-     "391.5",
-     1
+     "of",
+     4
     ],
     [
-     "88.5",
-     1
+     "and",
+     4
     ],
     [
-     "396.5",
-     1
+     "table",
+     4
     ],
     [
-     "143.5",
-     1
+     "figure",
+     4
     ],
     [
-     "379.5",
-     1
+     "p4",
+     4
     ],
     [
-     "148.5",
-     1
+     "행",
+     4
+    ],
+    [
+     "189.0",
+     4
+    ],
+    [
+     "포함",
+     4
+    ],
+    [
+     "part",
+     3
+    ],
+    [
+     "number",
+     3
+    ],
+    [
+     "f0",
+     3
+    ],
+    [
+     "q3",
+     3
+    ],
+    [
+     "p0",
+     3
+    ],
+    [
+     "hydraulic",
+     3
+    ],
+    [
+     "main",
+     3
+    ],
+    [
+     "landing",
+     3
+    ],
+    [
+     "gear",
+     3
+    ],
+    [
+     "1",
+     3
     ]
    ]
   },
@@ -552,25 +1259,27 @@
  },
  "embedding": {
   "available": false,
-  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
-  "regions": 1
+  "reason": "가중치 내려받기 실패(외부망 차단). 가중치 파일을 torch 캐시 폴더에 두면 동작",
+  "regions": 2
  },
  "times": {
-  "입력 판별": 0.7,
-  "요소 추출 · 관계 그래프": 0.0,
-  "보기 그림": 0.1,
+  "문자 인식": 0.0,
+  "입력 판별": 0.6,
+  "structure": 0.1,
+  "표 · 그림 영역": 0.1,
+  "본문 묶기": 0.0,
   "직렬화": 0.0,
   "색인": 0.0,
-  "이미지 임베딩": 0.0
+  "이미지 임베딩": 2.0
  },
  "memory": {
-  "peak_rss_gb": 1.0,
-  "min_avail_gb": 14.46
+  "peak_rss_gb": 0.81,
+  "min_avail_gb": 14.67
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
-  "avail_gb": 14.4,
-  "cpu_busy": 0.0
+  "avail_gb": 14.7,
+  "cpu_busy": 1.0
  }
 }

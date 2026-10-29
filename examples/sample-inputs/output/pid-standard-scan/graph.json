@@ -668,38 +668,6 @@
    "annotates": null
   },
   {
-   "id": "n36",
-   "role": "mark",
-   "bbox": [
-    202.946,
-    70.993,
-    203.708,
-    71.755
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n37",
-   "role": "mark",
-   "bbox": [
-    204.343,
-    71.12,
-    204.978,
-    71.628
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n38",
    "role": "symbol",
    "bbox": [
@@ -711,70 +679,6 @@
    "texts": [
     "N7"
    ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n39",
-   "role": "symbol",
-   "bbox": [
-    208.28,
-    71.374,
-    209.296,
-    73.152
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n40",
-   "role": "mark",
-   "bbox": [
-    181.356,
-    72.263,
-    181.991,
-    72.898
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n41",
-   "role": "mark",
-   "bbox": [
-    179.959,
-    72.39,
-    180.594,
-    72.898
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n42",
-   "role": "mark",
-   "bbox": [
-    206.629,
-    73.025,
-    207.772,
-    73.533
-   ],
-   "texts": [],
    "primitives": 0,
    "degree": 0,
    "attached_to": null,
@@ -814,22 +718,6 @@
    "annotates": null
   },
   {
-   "id": "n45",
-   "role": "mark",
-   "bbox": [
-    179.324,
-    76.708,
-    180.467,
-    77.343
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n46",
    "role": "symbol",
    "bbox": [
@@ -841,22 +729,6 @@
    "texts": [],
    "primitives": 0,
    "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n47",
-   "role": "mark",
-   "bbox": [
-    212.725,
-    81.915,
-    213.233,
-    82.677
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
    "attached_to": null,
    "direction": null,
    "annotates": null
@@ -928,54 +800,6 @@
    "annotates": null
   },
   {
-   "id": "n52",
-   "role": "symbol",
-   "bbox": [
-    255.143,
-    92.202,
-    259.08,
-    93.47200000000001
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n53",
-   "role": "mark",
-   "bbox": [
-    212.598,
-    92.964,
-    213.36,
-    93.726
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n54",
-   "role": "mark",
-   "bbox": [
-    212.598,
-    94.234,
-    213.36,
-    94.996
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n55",
    "role": "symbol",
    "bbox": [
@@ -987,38 +811,6 @@
    "texts": [],
    "primitives": 0,
    "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n56",
-   "role": "symbol",
-   "bbox": [
-    210.566,
-    95.377,
-    212.344,
-    97.282
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n57",
-   "role": "symbol",
-   "bbox": [
-    212.598,
-    95.504,
-    213.233,
-    97.282
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
    "attached_to": null,
    "direction": null,
    "annotates": null
@@ -1071,86 +863,6 @@
    "texts": [
     "I"
    ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n61",
-   "role": "symbol",
-   "bbox": [
-    326.009,
-    100.584,
-    328.041,
-    101.854
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n62",
-   "role": "mark",
-   "bbox": [
-    155.956,
-    100.83800000000001,
-    156.591,
-    101.21900000000001
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n63",
-   "role": "symbol",
-   "bbox": [
-    155.956,
-    100.83800000000001,
-    157.988,
-    102.616
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n64",
-   "role": "symbol",
-   "bbox": [
-    155.956,
-    102.997,
-    157.988,
-    105.283
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n65",
-   "role": "symbol",
-   "bbox": [
-    338.32800000000003,
-    104.775,
-    340.233,
-    107.569
-   ],
-   "texts": [],
    "primitives": 0,
    "degree": 0,
    "attached_to": null,
@@ -1227,38 +939,6 @@
    "annotates": null
   },
   {
-   "id": "n70",
-   "role": "mark",
-   "bbox": [
-    271.272,
-    118.872,
-    272.415,
-    119.888
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n71",
-   "role": "mark",
-   "bbox": [
-    272.923,
-    118.872,
-    273.431,
-    120.015
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n72",
    "role": "nozzle",
    "bbox": [
@@ -1291,38 +971,6 @@
    "annotates": null
   },
   {
-   "id": "n74",
-   "role": "mark",
-   "bbox": [
-    179.324,
-    120.65,
-    180.467,
-    121.285
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n75",
-   "role": "symbol",
-   "bbox": [
-    271.272,
-    120.65,
-    273.30400000000003,
-    121.158
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n76",
    "role": "nozzle",
    "bbox": [
@@ -1351,118 +999,6 @@
    "primitives": 0,
    "degree": 0,
    "attached_to": "n10",
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n78",
-   "role": "symbol",
-   "bbox": [
-    156.464,
-    122.047,
-    158.496,
-    123.31700000000001
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n79",
-   "role": "symbol",
-   "bbox": [
-    271.272,
-    121.92,
-    273.177,
-    123.063
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n80",
-   "role": "mark",
-   "bbox": [
-    131.826,
-    122.174,
-    132.715,
-    122.555
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n81",
-   "role": "mark",
-   "bbox": [
-    322.45300000000003,
-    122.174,
-    323.21500000000003,
-    122.936
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n82",
-   "role": "mark",
-   "bbox": [
-    323.85,
-    122.174,
-    324.485,
-    122.809
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n83",
-   "role": "mark",
-   "bbox": [
-    326.898,
-    122.174,
-    327.66,
-    122.936
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n84",
-   "role": "mark",
-   "bbox": [
-    328.295,
-    122.174,
-    329.057,
-    122.936
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
    "direction": null,
    "annotates": null
   },
@@ -1517,38 +1053,6 @@
    "annotates": null
   },
   {
-   "id": "n88",
-   "role": "mark",
-   "bbox": [
-    192.913,
-    128.27,
-    193.548,
-    128.778
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n89",
-   "role": "mark",
-   "bbox": [
-    194.437,
-    128.27,
-    195.072,
-    128.778
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n90",
    "role": "instrument",
    "bbox": [
@@ -1579,22 +1083,6 @@
    "texts": [],
    "primitives": 0,
    "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n92",
-   "role": "mark",
-   "bbox": [
-    340.741,
-    128.524,
-    341.249,
-    129.032
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
    "attached_to": null,
    "direction": null,
    "annotates": null
@@ -1655,70 +1143,6 @@
    "annotates": null
   },
   {
-   "id": "n96",
-   "role": "mark",
-   "bbox": [
-    340.741,
-    129.794,
-    341.249,
-    130.302
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n97",
-   "role": "mark",
-   "bbox": [
-    340.741,
-    130.937,
-    341.249,
-    131.445
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n98",
-   "role": "mark",
-   "bbox": [
-    131.699,
-    131.953,
-    132.461,
-    132.715
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n99",
-   "role": "mark",
-   "bbox": [
-    147.701,
-    131.953,
-    148.209,
-    132.588
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n100",
    "role": "nozzle",
    "bbox": [
@@ -1762,38 +1186,6 @@
    "texts": [],
    "primitives": 0,
    "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n103",
-   "role": "mark",
-   "bbox": [
-    322.45300000000003,
-    137.16,
-    323.21500000000003,
-    137.79500000000002
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n104",
-   "role": "mark",
-   "bbox": [
-    344.805,
-    137.16,
-    345.567,
-    137.79500000000002
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
    "attached_to": null,
    "direction": null,
    "annotates": null
@@ -1990,22 +1382,6 @@
    "annotates": null
   },
   {
-   "id": "n116",
-   "role": "symbol",
-   "bbox": [
-    249.30100000000002,
-    152.273,
-    252.984,
-    155.702
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n117",
    "role": "symbol",
    "bbox": [
@@ -2059,54 +1435,6 @@
    "annotates": null
   },
   {
-   "id": "n120",
-   "role": "mark",
-   "bbox": [
-    74.422,
-    152.90800000000002,
-    75.057,
-    153.543
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n121",
-   "role": "mark",
-   "bbox": [
-    92.964,
-    152.90800000000002,
-    93.47200000000001,
-    153.543
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n122",
-   "role": "mark",
-   "bbox": [
-    147.701,
-    152.90800000000002,
-    148.209,
-    153.67000000000002
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n123",
    "role": "symbol",
    "bbox": [
@@ -2120,38 +1448,6 @@
    ],
    "primitives": 0,
    "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n124",
-   "role": "mark",
-   "bbox": [
-    241.427,
-    152.90800000000002,
-    242.062,
-    153.543
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n125",
-   "role": "mark",
-   "bbox": [
-    259.969,
-    153.035,
-    260.477,
-    153.543
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
    "attached_to": null,
    "direction": null,
    "annotates": null
@@ -2210,22 +1506,6 @@
    "annotates": null
   },
   {
-   "id": "n129",
-   "role": "mark",
-   "bbox": [
-    241.427,
-    154.43200000000002,
-    242.062,
-    155.067
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
    "id": "n130",
    "role": "symbol",
    "bbox": [
@@ -2255,22 +1535,6 @@
    "texts": [],
    "primitives": 0,
    "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n132",
-   "role": "symbol",
-   "bbox": [
-    241.681,
-    155.321,
-    244.475,
-    157.353
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
    "attached_to": null,
    "direction": null,
    "annotates": null
@@ -2440,54 +1704,6 @@
    "texts": [],
    "primitives": 0,
    "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n143",
-   "role": "symbol",
-   "bbox": [
-    341.249,
-    166.116,
-    343.154,
-    169.037
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n144",
-   "role": "symbol",
-   "bbox": [
-    341.249,
-    169.92600000000002,
-    343.662,
-    171.958
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n145",
-   "role": "symbol",
-   "bbox": [
-    341.249,
-    172.847,
-    343.027,
-    173.355
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
    "attached_to": null,
    "direction": null,
    "annotates": null
@@ -7670,13 +6886,14 @@
   "nodes": 149,
   "runs": 141,
   "junctions": 24,
-  "tables": 5
+  "tables": 5,
+  "dropped_fragments": 49
  },
  "times": {
   "ocr": 0.3,
-  "lines_symbols": 14.8,
-  "graph": 0.9,
-  "total": 15.9
+  "lines_symbols": 12.8,
+  "graph": 0.6,
+  "total": 13.7
  },
  "dpi": 200,
  "skew_deg": 0.0
