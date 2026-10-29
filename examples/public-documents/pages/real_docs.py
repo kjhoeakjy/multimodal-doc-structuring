@@ -53,6 +53,8 @@ def center(b):
 # ---------------- 표 쪽 ----------------
 def table_mode(gray, ink, texts, k):
     hm = axis_mask(ink, k, 15.0, 'h'); vm = axis_mask(ink, k, 8.0, 'v')
+    solid = cv2.dilate(cv2.bitwise_and(hm, vm), np.ones((5, 5), np.uint8))   # 두 방향 모두 긴 영역 = 채워진 면(그래프 막대 등), 선이 아님
+    hm[solid > 0] = 0; vm[solid > 0] = 0
     grid = cv2.bitwise_or(hm, vm)
     regions, lab = components(cv2.dilate(grid, np.ones((5, 5), np.uint8)), k, min_area_mm2=400)
     tables = []

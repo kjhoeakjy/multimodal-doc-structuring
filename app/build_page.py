@@ -12,7 +12,7 @@ import raster_graph as rg
 
 SOURCE = {'pid-standard': 'DEXPI 공개 예제', 'pid-plant': 'DEXPI 공개 예제', 'pid-lab': 'DEXPI 공개 예제', 'mech-flange': '합성', 'mech-iso': 'NIST 공개 도면',
           'faa-': 'FAA AC 43.13-1B', 'ko-': '합성', 'en-report': '합성', 'photo-': '공개 사진'}
-QTAG = {'pid-standard-vector.svg': 'P4712', 'pid-standard-200dpi.png': 'T4750', 'pid-standard-scan.png': 'T4750', 'pid-plant-complex-vector.svg': 'P4712', 'pid-lab-vector.svg': 'P4712'}
+QTAG = {'pid-standard-vector.svg': 'P4712', 'pid-standard-200dpi.png': 'T4750', 'pid-standard-scan.png': 'T4750', 'pid-plant-complex-vector.svg': 'P4712', 'pid-lab-vector.svg': 'P4712', 'faa-bolt-table-illustrations.jpg': 'AN3-20', 'ko-report-synthetic.png': 'f0', 'en-report-synthetic-scan150.jpg': 't0', 'mech-flange-synthetic-200dpi.png': 'part', 'mech-iso-tolerance-real.jpg': 'part', 'ko-table-text-scan200.jpg': 't0'}
 
 def jpeg_uri(img, max_side, q):
     h, w = img.shape[:2]; s = min(1.0, max_side / max(h, w))

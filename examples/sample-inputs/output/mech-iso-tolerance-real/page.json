@@ -1385,7 +1385,7 @@
  "times": {
   "ocr": 0.0,
   "structure": 0.2,
-  "total": 0.3
+  "total": 0.2
  },
  "image": {
   "path": "input_gray.png",

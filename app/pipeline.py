@@ -194,9 +194,12 @@ def classify(gray, texts, dpi):
     tm = np.zeros_like(ink)
     for t in texts:
         b = t['box']; cv2.rectangle(tm, (b[0] - 2, b[1] - 2), (b[2] + 2, b[3] + 2), 255, -1)
-    hm = rd.axis_mask(ink, k, 15.0, 'h'); vm = rd.axis_mask(ink, k, 8.0, 'v'); am = cv2.bitwise_or(hm, vm)
+    hm = rd.axis_mask(ink, k, 15.0, 'h'); vm = rd.axis_mask(ink, k, 8.0, 'v')
+    solid_m = cv2.dilate(cv2.bitwise_and(hm, vm), np.ones((5, 5), np.uint8))   # 채워진 면(그래프 막대·사진)
+    hm[solid_m > 0] = 0; vm[solid_m > 0] = 0; am = cv2.bitwise_or(hm, vm)
     text_ink = ((ink > 0) & (tm > 0)).sum() / tot
     axis = ((ink > 0) & (am > 0) & (tm == 0)).sum() / tot
+    solid = ((ink > 0) & (solid_m > 0) & (tm == 0)).sum() / tot
     free = max(0.0, 1 - text_ink - axis)
     hl, _ = rg.axis_lines(ink, dpi, eg.LONG, 'h'); vl, _ = rg.axis_lines(ink, dpi, eg.LONG, 'v')
     fb = rg.inner_frame(hl + vl, W * k, H * k); inner = fb.buffer(-1.0)
@@ -207,9 +210,9 @@ def classify(gray, texts, dpi):
     rmin = max(4, int(8.0 / k * 0.5))
     circles = cv2.HoughCircles(small, cv2.HOUGH_GRADIENT, dp=1, minDist=rmin, param1=150, param2=150, minRadius=rmin, maxRadius=int(min(small.shape) / 2))
     n_circ = 0 if circles is None else int(circles.shape[1])
-    f = dict(text_ink=round(float(text_ink), 2), axis_ink=round(float(axis), 2), free_ink=round(float(free), 2), long_lines=int(long_in), big_circles=n_circ, texts=len(texts))
-    if text_ink >= 0.6 or (text_ink >= 0.4 and free <= 0.25):
-        f['reason'] = f'문자 잉크 {text_ink:.0%}, 그 밖 잉크 {free:.0%}'; return 'page', f
+    f = dict(text_ink=round(float(text_ink), 2), axis_ink=round(float(axis), 2), free_ink=round(float(free), 2), solid_ink=round(float(solid), 2), long_lines=int(long_in), big_circles=n_circ, texts=len(texts))
+    if text_ink >= 0.6 or (text_ink >= 0.4 and free - solid <= 0.28):      # 선화 잉크(그 밖 − 채워진 면)가 적으면 쪽
+        f['reason'] = f'문자 잉크 {text_ink:.0%}, 선화 잉크 {free - solid:.0%}'; return 'page', f
     if axis >= 0.45 and (long_in >= 80 or (long_in >= 40 and n_circ == 0)):
         f['reason'] = f'축 평행 긴 선 {long_in}개, 선 잉크 {axis:.0%}'; return 'drawing', f
     f['reason'] = f'문자 잉크 {text_ink:.0%}, 큰 원 {n_circ}개, 긴 선 {long_in}개'; return 'illustration', f
@@ -308,11 +311,14 @@ def relation_graph(kind, k, tables=(), figures=(), paragraphs=(), callouts=(), l
                 rid = node(f"t{ti}r{ri}", 'row', rb, [' | '.join(c for c in row if c)])
                 row_ids[(ti, ri)] = rid
                 run(tid, rid, 'contain', ctr(t['box']), ctr(rb))
+        node_box = {n['id']: n['bbox'] for n in nodes}      # mm
         for fi, f in enumerate(figures):
             fid = node(f"f{fi}", 'figure', f['box'], [])
-            if f.get('table') is not None and f.get('row') is not None and (f['table'], f['row']) in row_ids:
-                run(fid, row_ids[(f['table'], f['row'])], 'belong', ctr(f['box']), ctr([n for n in nodes if n['id'] == row_ids[(f['table'], f['row'])]][0]['bbox']) and ctr(f['box']), [])
-                runs[-1]['coords'][1] = [round(v, 2) for v in ctr([n for n in nodes if n['id'] == row_ids[(f['table'], f['row'])]][0]['bbox'])]
+            loc = f.get('table')                                 # [표, 행, 칸] 또는 None
+            if isinstance(loc, (list, tuple)) and len(loc) >= 2 and (loc[0], loc[1]) in row_ids:
+                rid = row_ids[(loc[0], loc[1])]; rb = node_box[rid]
+                run(fid, rid, 'belong', ctr(f['box']), ctr(f['box']), [])
+                runs[-1]['coords'][1] = [round((rb[0] + rb[2]) / 2, 2), round((rb[1] + rb[3]) / 2, 2)]
         prev = None
         for pi, p_ in enumerate(paragraphs):
             pid_ = node(f"p{pi}", 'paragraph', p_['box'], [p_['text'][:60]])
@@ -568,7 +574,7 @@ class Job:
             tables.append(dict(bbox=bb, box=tb['box'], rows=tb['rows'], cell_boxes=tb.get('cell_boxes')))
         serial.append("## 표 안 그림 영역")
         for f in res['figures']:
-            owner = f"t{f['table']} 행{f['row']}" if f.get('table') is not None and f.get('row') is not None else '없음'
+            loc = f.get('table'); owner = f"t{loc[0]} 행{loc[1]}" if isinstance(loc, (list, tuple)) and len(loc) >= 2 else '없음'
             serial.append(f"그림 bbox=({','.join(str(round(v * k, 1)) for v in f['box'])}) 소속={owner}")
         serial.append("## 본문")
         for i, p in enumerate(paras):

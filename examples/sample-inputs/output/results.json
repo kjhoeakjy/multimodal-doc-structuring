@@ -38,20 +38,20 @@
  {
   "file": "faa-bolt-table-illustrations.jpg",
   "kind": "page",
-  "reason": "문자 잉크 47%, 그 밖 잉크 25%",
+  "reason": "문자 잉크 47%, 선화 잉크 25%",
   "dpi": 104,
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
-  "nodes": null,
-  "runs": null,
+  "nodes": 56,
+  "runs": 53,
   "texts": 83,
   "tables": 3,
   "figures": 26,
   "paragraphs": 3,
   "callouts": null,
   "leaders": null,
-  "time": 20.6,
-  "peak_gb": 2.48
+  "time": 17.9,
+  "peak_gb": 2.5
  },
  {
   "file": "faa-text-page.jpg",
@@ -110,20 +110,20 @@
  {
   "file": "ko-report-synthetic.png",
   "kind": "page",
-  "reason": "문자 잉크 47%, 그 밖 잉크 0%",
+  "reason": "문자 잉크 47%, 선화 잉크 0%",
   "dpi": 200,
   "dpi_source": "파일 메타데이터",
   "ocr_lang": "ko+en",
-  "nodes": null,
-  "runs": null,
+  "nodes": 13,
+  "runs": 10,
   "texts": 38,
   "tables": 1,
-  "figures": 0,
+  "figures": 2,
   "paragraphs": 5,
   "callouts": null,
   "leaders": null,
-  "time": 39.2,
-  "peak_gb": 4.46
+  "time": 96.6,
+  "peak_gb": 4.34
  },
  {
   "file": "ko-table-text-scan200.jpg",
@@ -186,16 +186,16 @@
   "dpi": 206,
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
-  "nodes": null,
-  "runs": null,
+  "nodes": 20,
+  "runs": 9,
   "texts": 96,
   "tables": null,
   "figures": null,
   "paragraphs": null,
   "callouts": 19,
   "leaders": 9,
-  "time": 45.1,
-  "peak_gb": 4.89
+  "time": 48.7,
+  "peak_gb": 4.73
  },
  {
   "file": "photo-astronaut.png",

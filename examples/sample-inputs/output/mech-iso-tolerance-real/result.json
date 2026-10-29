@@ -8,12 +8,12 @@
   "snapshot": {
    "cores": 4,
    "total_gb": 15.7,
-   "avail_gb": 14.2,
-   "cpu_busy": 4.0
+   "avail_gb": 14.4,
+   "cpu_busy": 2.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
-   "가용 메모리 14.2 GB → 인식 배치 8, 입력 상한 12 MP",
+   "가용 메모리 14.4 GB → 인식 배치 8, 입력 상한 12 MP",
    "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
   ]
  },
@@ -32,6 +32,7 @@
   "text_ink": 0.58,
   "axis_ink": 0.12,
   "free_ink": 0.3,
+  "solid_ink": 0.0,
   "long_lines": 27,
   "big_circles": 0,
   "texts": 96,
@@ -1422,16 +1423,516 @@
   1882,
   1505
  ],
- "nodes": [],
- "runs": [],
- "junctions": [],
+ "nodes": [
+  {
+   "id": "part",
+   "role": "part",
+   "bbox": [
+    78.8,
+    43.4,
+    232.1,
+    185.6
+   ],
+   "texts": [],
+   "degree": 4,
+   "attached_to": null
+  },
+  {
+   "id": "c0",
+   "role": "callout",
+   "bbox": [
+    11.8,
+    9.2,
+    83.8,
+    23.8
+   ],
+   "texts": [
+    "NIST PMI Test Models NOTES (UNLESS OTHERWISE SPECIFIED):"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "c1",
+   "role": "callout",
+   "bbox": [
+    87.9,
+    9.2,
+    105.1,
+    17.1
+   ],
+   "texts": [
+    "2014"
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c2",
+   "role": "callout",
+   "bbox": [
+    204.7,
+    18.6,
+    254.4,
+    28.1
+   ],
+   "texts": [
+    "Feature and Specification Index nist_ftc_07_asmel_rd_fsi pdf"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "c3",
+   "role": "callout",
+   "bbox": [
+    12.3,
+    26.9,
+    89.1,
+    34.5
+   ],
+   "texts": [
+    "1. CAD MODEL REV. IS REQUIRED TO COMPLETE PRODUCT DEFINITION."
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c4",
+   "role": "callout",
+   "bbox": [
+    161.6,
+    28.7,
+    166.1,
+    31.9
+   ],
+   "texts": [
+    "2"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "c5",
+   "role": "callout",
+   "bbox": [
+    120.7,
+    28.6,
+    199.0,
+    68.4
+   ],
+   "texts": [
+    "003 ~ooo 4251 0.250 ` X +.02 6,620@ +003 730 = 1_001 6 4X 0.250 _ B 7500 D '+.02 7.30 = 7.0236 0: 0: F1.2"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "c6",
+   "role": "callout",
+   "bbox": [
+    12.5,
+    37.9,
+    107.0,
+    81.4
+   ],
+   "texts": [
+    "2. DIRECTLY-TOLERANCED DIMENSIONS AND BASIC DIMENSIONS DEFINED ON THE DRAWING TAKE PRECEDENCE OVER DIMENSIONAL DATA DEFINED BY THE MODEL: OBTAIN ALL OTHER DIMENSIONAL DATA FROM THE MODEL. THE MODEL REPRESENTS BASIC DIMENSIONAL DATA UNLESS OTHERWISE 003 ~Ooo SPECIFIED. 2X$ .250 ` X 730 +.02"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "c7",
+   "role": "callout",
+   "bbox": [
+    116.3,
+    59.7,
+    130.1,
+    68.7
+   ],
+   "texts": [
+    "0 2 R"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "c8",
+   "role": "callout",
+   "bbox": [
+    12.5,
+    71.5,
+    71.6,
+    90.6
+   ],
+   "texts": [
+    "3. APPLICABLE STANDARDS: ASME Y14.41-2003 APPLIES TO DATASET. ASME Y14.5M-1994 APPLIES TO DIMENSIONING AND TOLERANCING."
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c9",
+   "role": "callout",
+   "bbox": [
+    191.7,
+    60.7,
+    234.9,
+    96.1
+   ],
+   "texts": [
+    "7 015/ SURFACES F1.2 AND 2 003 A F1.1 0.250 ` 730 +.02 X"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "c10",
+   "role": "callout",
+   "bbox": [
+    12.6,
+    94.0,
+    69.0,
+    101.7
+   ],
+   "texts": [
+    "4 .06 A B C APPLIES TO ALL UNTOLERANCED SURFACES."
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c11",
+   "role": "callout",
+   "bbox": [
+    237.8,
+    95.4,
+    241.8,
+    98.5
+   ],
+   "texts": [
+    "2"
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c12",
+   "role": "callout",
+   "bbox": [
+    222.7,
+    102.0,
+    227.5,
+    106.7
+   ],
+   "texts": [
+    "12"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "c13",
+   "role": "callout",
+   "bbox": [
+    12.5,
+    105.1,
+    82.4,
+    136.2
+   ],
+   "texts": [
+    "5. FEATURES IDENTIFIED AS STATISTICALLY TOLERANCED (ST) SHALL BE PRODUCED WITH STATISTICAL PROCESS CONTROLS OR TO THE MORE RESTRICTIVE ARITHMETIC LIMITS SPECIFIED DETAILED PROCESS PLAN NEEDED TO COMPLETELY DEFINE STATISTICAL PARAMETERS AND REQUIREMENTS."
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c14",
+   "role": "callout",
+   "bbox": [
+    12.5,
+    139.6,
+    40.2,
+    143.6
+   ],
+   "texts": [
+    "6. UNITS: INCHES"
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c15",
+   "role": "callout",
+   "bbox": [
+    111.2,
+    136.6,
+    130.2,
+    151.3
+   ],
+   "texts": [
+    "0 0"
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c16",
+   "role": "callout",
+   "bbox": [
+    257.9,
+    166.3,
+    263.0,
+    201.8
+   ],
+   "texts": [
+    "2 1 5 2 9"
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c17",
+   "role": "callout",
+   "bbox": [
+    92.8,
+    192.5,
+    173.5,
+    203.3
+   ],
+   "texts": [
+    "PMI Fully-Toleranced Test Case 7 - View A Includes Atomic Test Cases 84, 85 7"
+   ],
+   "degree": 0,
+   "attached_to": null
+  },
+  {
+   "id": "c18",
+   "role": "callout",
+   "bbox": [
+    244.9,
+    200.1,
+    255.4,
+    204.1
+   ],
+   "texts": [
+    "Rev D"
+   ],
+   "degree": 1,
+   "attached_to": null
+  }
+ ],
+ "runs": [
+  {
+   "id": "r0",
+   "a": "c0",
+   "b": "j0",
+   "coords": [
+    [
+     10.11,
+     17.76
+    ],
+    [
+     256.71,
+     17.76
+    ]
+   ],
+   "kind": "point",
+   "texts": [],
+   "gap": 1
+  },
+  {
+   "id": "r1",
+   "a": "c2",
+   "b": "j1",
+   "coords": [
+    [
+     256.71,
+     17.76
+    ],
+    [
+     10.11,
+     17.76
+    ]
+   ],
+   "kind": "point",
+   "texts": [],
+   "gap": 1
+  },
+  {
+   "id": "r2",
+   "a": "c18",
+   "b": "j2",
+   "coords": [
+    [
+     256.71,
+     205.17
+    ],
+    [
+     9.99,
+     205.17
+    ]
+   ],
+   "kind": "point",
+   "texts": [],
+   "gap": 1
+  },
+  {
+   "id": "r3",
+   "a": "c5",
+   "b": "part",
+   "coords": [
+    [
+     147.96,
+     64.86
+    ],
+    [
+     230.45,
+     112.45
+    ]
+   ],
+   "kind": "point",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r4",
+   "a": "c12",
+   "b": "part",
+   "coords": [
+    [
+     219.97,
+     107.77
+    ],
+    [
+     156.1,
+     70.9
+    ]
+   ],
+   "kind": "point",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r5",
+   "a": "c6",
+   "b": "part",
+   "coords": [
+    [
+     78.79,
+     77.93
+    ],
+    [
+     96.05,
+     99.63
+    ]
+   ],
+   "kind": "point",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r6",
+   "a": "c7",
+   "b": "j3",
+   "coords": [
+    [
+     120.47,
+     62.88
+    ],
+    [
+     103.45,
+     72.75
+    ]
+   ],
+   "kind": "point",
+   "texts": [],
+   "gap": 1
+  },
+  {
+   "id": "r7",
+   "a": "c9",
+   "b": "part",
+   "coords": [
+    [
+     199.99,
+     97.28
+    ],
+    [
+     156.35,
+     71.64
+    ]
+   ],
+   "kind": "point",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r8",
+   "a": "c4",
+   "b": "j4",
+   "coords": [
+    [
+     163.99,
+     27.62
+    ],
+    [
+     156.47,
+     31.81
+    ]
+   ],
+   "kind": "point",
+   "texts": [],
+   "gap": 1
+  }
+ ],
+ "junctions": [
+  {
+   "id": "j0",
+   "pt": [
+    256.71,
+    17.76
+   ]
+  },
+  {
+   "id": "j1",
+   "pt": [
+    10.11,
+    17.76
+   ]
+  },
+  {
+   "id": "j2",
+   "pt": [
+    9.99,
+    205.17
+   ]
+  },
+  {
+   "id": "j3",
+   "pt": [
+    103.45,
+    72.75
+   ]
+  },
+  {
+   "id": "j4",
+   "pt": [
+    156.47,
+    31.81
+   ]
+  }
+ ],
  "counts": {
   "texts": 96,
   "callouts": 19,
   "callouts_with_leader": 9,
   "leader_end_on_part": 4,
   "segments": 289,
-  "mean_conf": 0.76
+  "mean_conf": 0.76,
+  "nodes": 20,
+  "runs": 9
  },
  "serial": [
   "# 도해 구조 (좌표 단위 mm, 원점 좌상단)",
@@ -1466,20 +1967,74 @@
   "c6 → (96.1,99.6) 길이=27.7mm 부품 위=예",
   "c7 → (103.4,72.7) 길이=19.7mm 부품 위=아니오",
   "c9 → (156.3,71.6) 길이=50.6mm 부품 위=예",
-  "c4 → (156.5,31.8) 길이=8.6mm 부품 위=아니오"
+  "c4 → (156.5,31.8) 길이=8.6mm 부품 위=아니오",
+  "## 관계 (노드 종류 · 이름 · 좌표, 간선 종류)",
+  "part 종류=부품 이름=- bbox=(78.8,43.4,232.1,185.6)",
+  "c0 종류=주기 이름=NIST PMI Test Models NOTES (UNLESS OTHER bbox=(11.8,9.2,83.8,23.8)",
+  "c1 종류=주기 이름=2014 bbox=(87.9,9.2,105.1,17.1)",
+  "c2 종류=주기 이름=Feature and Specification Index nist_ftc bbox=(204.7,18.6,254.4,28.1)",
+  "c3 종류=주기 이름=1. CAD MODEL REV. IS REQUIRED TO COMPLET bbox=(12.3,26.9,89.1,34.5)",
+  "c4 종류=주기 이름=2 bbox=(161.6,28.7,166.1,31.9)",
+  "c5 종류=주기 이름=003 ~ooo 4251 0.250 ` X +.02 6,620@ +003 bbox=(120.7,28.6,199.0,68.4)",
+  "c6 종류=주기 이름=2. DIRECTLY-TOLERANCED DIMENSIONS AND BA bbox=(12.5,37.9,107.0,81.4)",
+  "c7 종류=주기 이름=0 2 R bbox=(116.3,59.7,130.1,68.7)",
+  "c8 종류=주기 이름=3. APPLICABLE STANDARDS: ASME Y14.41-200 bbox=(12.5,71.5,71.6,90.6)",
+  "c9 종류=주기 이름=7 015/ SURFACES F1.2 AND 2 003 A F1.1 0. bbox=(191.7,60.7,234.9,96.1)",
+  "c10 종류=주기 이름=4 .06 A B C APPLIES TO ALL UNTOLERANCED  bbox=(12.6,94.0,69.0,101.7)",
+  "c11 종류=주기 이름=2 bbox=(237.8,95.4,241.8,98.5)",
+  "c12 종류=주기 이름=12 bbox=(222.7,102.0,227.5,106.7)",
+  "c13 종류=주기 이름=5. FEATURES IDENTIFIED AS STATISTICALLY  bbox=(12.5,105.1,82.4,136.2)",
+  "c14 종류=주기 이름=6. UNITS: INCHES bbox=(12.5,139.6,40.2,143.6)",
+  "c15 종류=주기 이름=0 0 bbox=(111.2,136.6,130.2,151.3)",
+  "c16 종류=주기 이름=2 1 5 2 9 bbox=(257.9,166.3,263.0,201.8)",
+  "c17 종류=주기 이름=PMI Fully-Toleranced Test Case 7 - View  bbox=(92.8,192.5,173.5,203.3)",
+  "c18 종류=주기 이름=Rev D bbox=(244.9,200.1,255.4,204.1)",
+  "r0 종류=지시 A=c0 B=j0",
+  "r1 종류=지시 A=c2 B=j1",
+  "r2 종류=지시 A=c18 B=j2",
+  "r3 종류=지시 A=c5 B=part",
+  "r4 종류=지시 A=c12 B=part",
+  "r5 종류=지시 A=c6 B=part",
+  "r6 종류=지시 A=c7 B=j3",
+  "r7 종류=지시 A=c9 B=part",
+  "r8 종류=지시 A=c4 B=j4"
  ],
  "index": {
   "bm25": {
-   "tokens": 408,
-   "vocab": 272,
+   "tokens": 747,
+   "vocab": 296,
    "top": [
     [
      "bbox",
-     20
+     40
+    ],
+    [
+     "종류",
+     31
+    ],
+    [
+     "주기",
+     21
+    ],
+    [
+     "이름",
+     21
+    ],
+    [
+     "a",
+     14
+    ],
+    [
+     "2",
+     12
+    ],
+    [
+     "b",
+     12
     ],
     [
      "부품",
-     10
+     11
     ],
     [
      "길이",
@@ -1490,19 +2045,39 @@
      9
     ],
     [
-     "to",
-     6
-    ],
-    [
-     "2",
-     6
+     "지시",
+     9
     ],
     [
      "and",
-     5
+     8
+    ],
+    [
+     "to",
+     8
     ],
     [
      "0",
+     8
+    ],
+    [
+     "12.5",
+     8
+    ],
+    [
+     "003",
+     7
+    ],
+    [
+     "part",
+     6
+    ],
+    [
+     "test",
+     5
+    ],
+    [
+     "02",
      5
     ],
     [
@@ -1510,128 +2085,84 @@
      5
     ],
     [
+     "7",
+     5
+    ],
+    [
      "아니오",
      5
     ],
     [
-     "003",
+     "c0",
      4
     ],
     [
-     "02",
+     "9.2",
      4
     ],
     [
-     "12.5",
+     "nist",
+     4
+    ],
+    [
+     "pmi",
+     4
+    ],
+    [
+     "105.1",
+     4
+    ],
+    [
+     "c2",
+     4
+    ],
+    [
+     "model",
+     4
+    ],
+    [
+     "c4",
+     4
+    ],
+    [
+     "c5",
+     4
+    ],
+    [
+     "0.250",
+     4
+    ],
+    [
+     "x",
+     4
+    ],
+    [
+     "c6",
+     4
+    ],
+    [
+     "c7",
+     4
+    ],
+    [
+     "applies",
+     4
+    ],
+    [
+     "c9",
+     4
+    ],
+    [
+     "c12",
+     4
+    ],
+    [
+     "c18",
      4
     ],
     [
      "예",
      4
-    ],
-    [
-     "test",
-     3
-    ],
-    [
-     "model",
-     3
-    ],
-    [
-     "0.250",
-     3
-    ],
-    [
-     "x",
-     3
-    ],
-    [
-     "730",
-     3
-    ],
-    [
-     "dimensional",
-     3
-    ],
-    [
-     "data",
-     3
-    ],
-    [
-     "applies",
-     3
-    ],
-    [
-     "7",
-     3
-    ],
-    [
-     "a",
-     3
-    ],
-    [
-     "주기",
-     2
-    ],
-    [
-     "c0",
-     2
-    ],
-    [
-     "9.2",
-     2
-    ],
-    [
-     "nist",
-     2
-    ],
-    [
-     "pmi",
-     2
-    ],
-    [
-     "unless",
-     2
-    ],
-    [
-     "otherwise",
-     2
-    ],
-    [
-     "specified",
-     2
-    ],
-    [
-     "105.1",
-     2
-    ],
-    [
-     "c2",
-     2
-    ],
-    [
-     "c4",
-     2
-    ],
-    [
-     "c5",
-     2
-    ],
-    [
-     "ooo",
-     2
-    ],
-    [
-     "6",
-     2
-    ],
-    [
-     "1",
-     2
-    ],
-    [
-     "b",
-     2
     ]
    ]
   },
@@ -1640,22 +2171,22 @@
  },
  "embedding": {
   "available": false,
-  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "reason": "가중치 내려받기 실패(외부망 차단). 가중치 파일을 torch 캐시 폴더에 두면 동작",
   "regions": 2
  },
  "times": {
   "입력 판별": 0.1,
-  "문자 인식": 44.3,
+  "문자 인식": 48.0,
   "해상도 · 종류 판별": 0.1,
   "structure": 0.2,
-  "주기 · 지시선 · 부품 영역": 0.4,
+  "주기 · 지시선 · 부품 영역": 0.3,
   "직렬화": 0.0,
   "색인": 0.0,
   "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 4.89,
-  "min_avail_gb": 10.55
+  "peak_rss_gb": 4.73,
+  "min_avail_gb": 10.74
  },
  "resources_after": {
   "cores": 4,

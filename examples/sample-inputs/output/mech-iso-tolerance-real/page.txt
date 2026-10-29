@@ -31,3 +31,33 @@ c6 → (96.1,99.6) 길이=27.7mm 부품 위=예
 c7 → (103.4,72.7) 길이=19.7mm 부품 위=아니오
 c9 → (156.3,71.6) 길이=50.6mm 부품 위=예
 c4 → (156.5,31.8) 길이=8.6mm 부품 위=아니오
+## 관계 (노드 종류 · 이름 · 좌표, 간선 종류)
+part 종류=부품 이름=- bbox=(78.8,43.4,232.1,185.6)
+c0 종류=주기 이름=NIST PMI Test Models NOTES (UNLESS OTHER bbox=(11.8,9.2,83.8,23.8)
+c1 종류=주기 이름=2014 bbox=(87.9,9.2,105.1,17.1)
+c2 종류=주기 이름=Feature and Specification Index nist_ftc bbox=(204.7,18.6,254.4,28.1)
+c3 종류=주기 이름=1. CAD MODEL REV. IS REQUIRED TO COMPLET bbox=(12.3,26.9,89.1,34.5)
+c4 종류=주기 이름=2 bbox=(161.6,28.7,166.1,31.9)
+c5 종류=주기 이름=003 ~ooo 4251 0.250 ` X +.02 6,620@ +003 bbox=(120.7,28.6,199.0,68.4)
+c6 종류=주기 이름=2. DIRECTLY-TOLERANCED DIMENSIONS AND BA bbox=(12.5,37.9,107.0,81.4)
+c7 종류=주기 이름=0 2 R bbox=(116.3,59.7,130.1,68.7)
+c8 종류=주기 이름=3. APPLICABLE STANDARDS: ASME Y14.41-200 bbox=(12.5,71.5,71.6,90.6)
+c9 종류=주기 이름=7 015/ SURFACES F1.2 AND 2 003 A F1.1 0. bbox=(191.7,60.7,234.9,96.1)
+c10 종류=주기 이름=4 .06 A B C APPLIES TO ALL UNTOLERANCED  bbox=(12.6,94.0,69.0,101.7)
+c11 종류=주기 이름=2 bbox=(237.8,95.4,241.8,98.5)
+c12 종류=주기 이름=12 bbox=(222.7,102.0,227.5,106.7)
+c13 종류=주기 이름=5. FEATURES IDENTIFIED AS STATISTICALLY  bbox=(12.5,105.1,82.4,136.2)
+c14 종류=주기 이름=6. UNITS: INCHES bbox=(12.5,139.6,40.2,143.6)
+c15 종류=주기 이름=0 0 bbox=(111.2,136.6,130.2,151.3)
+c16 종류=주기 이름=2 1 5 2 9 bbox=(257.9,166.3,263.0,201.8)
+c17 종류=주기 이름=PMI Fully-Toleranced Test Case 7 - View  bbox=(92.8,192.5,173.5,203.3)
+c18 종류=주기 이름=Rev D bbox=(244.9,200.1,255.4,204.1)
+r0 종류=지시 A=c0 B=j0
+r1 종류=지시 A=c2 B=j1
+r2 종류=지시 A=c18 B=j2
+r3 종류=지시 A=c5 B=part
+r4 종류=지시 A=c12 B=part
+r5 종류=지시 A=c6 B=part
+r6 종류=지시 A=c7 B=j3
+r7 종류=지시 A=c9 B=part
+r8 종류=지시 A=c4 B=j4
