@@ -131,15 +131,38 @@ hline(50, 1550, 66, INK, 1.2)
 
 ZOOM = (176, 72, 158, 112)
 px = [50, 345, 640, 935, 1230]; pw = 265; py = 112; ph = 190
-heads = [("입력", "벡터 PDF · CAD · 스캔"), ("1 시각 요소 추출", "직선 · 곡선 · 타원 · 문자"), ("2 관계 그래프", "접속 · 분기 · 포함 · 지시"), ("3 근거 연결 · 색인", "좌표 · 그래프 텍스트 · 임베딩"), ("4 텍스트 LLM", "부분 그래프 → 답변 · 근거")]
+heads = [("입력", "도면 · 표 · 삽화 · 본문 · 사진"), ("1 시각 요소 추출", "직선 · 곡선 · 타원 · 문자"), ("2 관계 그래프", "접속 · 분기 · 포함 · 지시"), ("3 근거 연결 · 색인", "좌표 · 그래프 텍스트 · 임베딩"), ("4 텍스트 LLM", "부분 그래프 → 답변 · 근거")]
 for i, (h1, h2) in enumerate(heads):
     t(px[i], py - 22, h1, 15, 600, ACC if i in (2,) else INK)
     t(px[i] + pw, py - 22, h2, 11.5, 400, GR, "end")
     if i < 4: arrow(px[i] + pw + 8, py + ph / 2, px[i + 1] - 8, py + ph / 2)
 
-# 입력: 전체 도면 + 스캔
-crop(px[0], py, pw, ph, (0, 0, 420, 297), MONO_D)
-t(px[0] + 6, py + ph - 8, "A3 420 × 297 mm", 10, 400, GR)
+# 입력: 종류별 실제 표본 여섯 칸
+import base64, io
+from PIL import Image
+EX = os.path.join(HERE, '..', '..', 'examples', 'public-documents')
+def img_tile(x, y, w, h, path, box, label):
+    im = Image.open(path).convert('RGB').crop(box)
+    im = im.resize((420, int(420 * im.size[1] / im.size[0])))
+    buf = io.BytesIO(); im.save(buf, 'JPEG', quality=82)
+    uri = 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode()
+    out.append(f'<svg x="{x}" y="{y}" width="{w}" height="{h}" viewBox="0 0 {im.size[0]} {im.size[1]}" preserveAspectRatio="xMidYMid slice"><image width="{im.size[0]}" height="{im.size[1]}" href="{uri}"/></svg>')
+    tile_label(x, y, w, h, label)
+def tile_label(x, y, w, h, label):
+    out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="none" stroke="{LINE}"/>')
+    out.append(f'<rect x="{x}" y="{y+h-15}" width="{len(label)*9.6+10}" height="15" fill="#FFFFFF" opacity=".92"/>')
+    t(x + 5, y + h - 4, label, 9.5, 500)
+TW, TH, TG = 126, 56, 7
+tiles = [(0, 0), (1, 0), (0, 1), (1, 1), (0, 2), (1, 2)]
+tx = lambda c: px[0] + c * (TW + 13); ty = lambda r: py + r * (TH + TG)
+crop(tx(0), ty(0), TW, TH, (176, 86, 126, 56), MONO_D); tile_label(tx(0), ty(0), TW, TH, "벡터 도면")
+img_tile(tx(1), ty(0), TW, TH, os.path.join(EX, 'pid', 'output', 'scan', 'C01_scan_crop.png'), (0, 50, 700, 361), "스캔 도면")
+img_tile(tx(0), ty(1), TW, TH, os.path.join(EX, 'pages', 'input', 'faa_p10.jpg'), (95, 110, 420, 254), "표")
+img_tile(tx(1), ty(1), TW, TH, os.path.join(EX, 'pages', 'input', 'nist-ftc-07.jpg'), (700, 430, 1950, 985), "삽화 · 지시선")
+img_tile(tx(0), ty(2), TW, TH, os.path.join(EX, 'pages', 'input', 'faa_p8.jpg'), (95, 300, 760, 595), "본문")
+out.append(f'<rect x="{tx(1)}" y="{ty(2)}" width="{TW}" height="{TH}" fill="{FILL}"/>')
+t(tx(1) + TW / 2, ty(2) + 24, "연속 계조", 10, 400, GR, "middle")
+tile_label(tx(1), ty(2), TW, TH, "사진 · 렌더링")
 # 1: 요소 유형별 색
 crop(px[1], py, pw, ph, ZOOM, TYPED_D)
 # 2: 겹층 + 그래프
@@ -159,9 +182,15 @@ crop(px[4], py, pw, ph, (236, 84, 60, 84), DIM_D + overlay(hl=hl_a))
 y2 = 330
 for i in range(5):
     hline(px[i], px[i] + pw, y2 - 14, LINE)
-# 입력 경로 두 갈래
-t(px[0], y2 + 6, "벡터", 12, 600); t(px[0] + 44, y2 + 6, "경로 · 문자 좌표", 11.5, 400, GR)
-t(px[0], y2 + 28, "스캔", 12, 600); t(px[0] + 44, y2 + 28, "보정 → OCR → 선 · 윤곽", 11.5, 400, GR)
+# 입력 종류별 경로
+routes = [("도면", "벡터 경로 · 스캔은 OCR · 선", "1 2 3 4"), ("표", "격자 · 칸 · 행", "3 4"), ("삽화", "주기 · 지시선", "2 3 4"), ("본문", "문단", "3 4"), ("사진", "이미지 임베딩", "3")]
+for j, (a, b_, c_) in enumerate(routes):
+    yy = y2 + 6 + j * 21
+    t(px[0], yy, a, 12, 600); t(px[0] + 40, yy, b_, 11.5, 400, GR)
+    for k_, ch in enumerate(c_.split()):
+        xx = px[0] + 200 + k_ * 16
+        out.append(f'<rect x="{xx-6}" y="{yy-10}" width="13" height="13" rx="2" fill="{ACC if ch in ("1","2","3","4") else INK}"/>')
+        t(xx + .5, yy, ch, 9.5, 600, "#FFFFFF", "middle", mono=True)
 # 1: 유형 범례와 개수
 cnt = {'line': sum(1 for k_, _ in prims if k_ == 'line'), 'curve': sum(1 for k_, _ in prims if k_ == 'curve'), 'arc': sum(1 for k_, _ in prims if k_ == 'arc'), 'text': sum(1 for k_, _ in prims if k_ == 'text')}
 for j, (c, nm, n_) in enumerate([(C_LINE, "직선", cnt['line']), (C_CURVE, "곡선", cnt['curve']), (C_ARC, "타원", cnt['arc']), (C_TEXT, "문자", cnt['text'])]):
