@@ -1,10 +1,10 @@
 # 생성 데이터, 렌더 이미지, 캐시는 커밋하지 않음
 data/
 render/
-poc/*/data/
-poc/*/.cache/
-poc/*/render/
-poc/tmp/
+archive/이전-구상/poc/*/data/
+archive/이전-구상/poc/*/.cache/
+archive/이전-구상/poc/*/render/
+archive/이전-구상/poc/tmp/
 __pycache__/
 *.pyc
 .venv/
