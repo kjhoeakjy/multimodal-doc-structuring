@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="Pretendard, 'Noto Sans KR', sans-serif">
 <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 z" fill="#111111"/></marker></defs>
 <rect width="1600" height="900" fill="#FFFFFF"/>
-<text x="60" y="58" font-size="26" font-weight="600" fill="#111111" text-anchor="start" letter-spacing="-0.5">표와 이미지에 분산된 정보의 관계와 적용 조건을 보존하는 전처리 및 구조화</text>
+<text x="60" y="58" font-size="26" font-weight="600" fill="#111111" text-anchor="start" letter-spacing="-0.5">표와 이미지에 분산된 정보의 적용 범위를 보존하는 전처리 및 구조화</text>
 <text x="60" y="86" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="start">설계 전제: 폐쇄망 운용, 제한된 연산 자원, 독립 실행 가능한 공개 모델</text>
-<text x="1540" y="86" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="end">적용 대상: PDF와 스캔 형태의 기술문서(정비 교범, 시험 기준, 규격)</text>
+<text x="1540" y="86" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="end">과제 정의: ConditionalQA(ACL 2022), TAT-QA(ACL 2021)의 확장. 구성 요소: DocLayNet(KDD 2022), TableFormer(CVPR 2022), Self-RAG(ICLR 2024)</text>
 <line x1="60" y1="104" x2="1540" y2="104" stroke="#111111" stroke-width="1.2"/>
 <text x="60" y="134" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">처리 흐름</text>
 <rect x="60" y="150" width="228" height="190" stroke="#B5B5B5" fill="#F3F3F3" stroke-width="1"/>
 <text x="74" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">입력</text>
 <line x1="74" y1="192" x2="274" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="74" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">PDF, 스캔 문서</text>
-<text x="74" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">그림, 표, 각주, 조항</text>
+<text x="74" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">PDF, 스캔 기술문서</text>
+<text x="74" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">표, 그림, 각주, 주의문, 일반 주기</text>
 <line x1="74" y1="304" x2="274" y2="304" stroke="#B5B5B5" stroke-width="1"/>
 <text x="74" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">텍스트 레이어 유무 확인</text>
 <line x1="290" y1="245.0" x2="308" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
@@ -27,52 +27,52 @@
 <line x1="540" y1="245.0" x2="558" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <rect x="560" y="150" width="228" height="190" stroke="#111111" fill="none" stroke-width="1"/>
 <text x="574" y="180" font-size="22" font-weight="700" fill="#111111" text-anchor="start">2</text>
-<text x="600" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">구조화와 관계 점검</text>
+<text x="600" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">상속과 완결성 점검</text>
 <line x1="574" y1="192" x2="774" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="574" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">항목: 대상, 속성 또는 관계, 값,</text>
-<text x="574" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">적용 조건, 출처(영역, 셀, 각주 단위)</text>
-<text x="574" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">점검: 각주 기호, 그림과 표의 대응,</text>
-<text x="574" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">식별자 대조, 값 충돌</text>
+<text x="574" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">적용 범위 상속: 주의문, 머리글,</text>
+<text x="574" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">계열 행, 셀, 각주 순으로 조건 결합</text>
+<text x="574" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">참조 완결성 점검: 각주 기호, 열 수,</text>
+<text x="574" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">공차 기호 문법, 식별자, 단위</text>
 <line x1="574" y1="304" x2="774" y2="304" stroke="#B5B5B5" stroke-width="1"/>
-<text x="574" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">문제 영역 목록 산출</text>
+<text x="574" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">위반 영역 목록 산출</text>
 <line x1="790" y1="245.0" x2="808" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <rect x="810" y="150" width="228" height="190" stroke="#111111" fill="none" stroke-width="1"/>
 <text x="824" y="180" font-size="22" font-weight="700" fill="#1F4FD8" text-anchor="start">3</text>
-<text x="850" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">선택적 추가 분석</text>
+<text x="850" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">선택적 재추출</text>
 <line x1="824" y1="192" x2="1024" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="824" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">문제 영역에 한정</text>
-<text x="824" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">고해상도 재처리 또는</text>
-<text x="824" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">소형 시각언어모델(VLM) 재해석</text>
-<text x="824" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">결과를 2단계에 재투입</text>
+<text x="824" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">위반 영역에 한정, 횟수 제한</text>
+<text x="824" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">고해상도 재처리 뒤</text>
+<text x="824" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">소형 시각언어모델(VLM) 재추출</text>
+<text x="824" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">1차 추출과 대조해 환각 기각</text>
 <line x1="824" y1="304" x2="1024" y2="304" stroke="#B5B5B5" stroke-width="1"/>
-<text x="824" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">추가 분석 영역 수, 미해결 연결 수 측정</text>
+<text x="824" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">재추출 영역 수, 미해결 참조 수 측정</text>
 <line x1="1040" y1="245.0" x2="1058" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <rect x="1060" y="150" width="228" height="190" stroke="#111111" fill="none" stroke-width="1"/>
 <text x="1074" y="180" font-size="22" font-weight="700" fill="#111111" text-anchor="start">4</text>
 <text x="1100" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">저장</text>
 <line x1="1074" y1="192" x2="1274" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1074" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">적용 조건과 출처를 함께 보존</text>
-<text x="1074" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">조건별 값은 각각 보존</text>
-<text x="1074" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">미확정 관계는 원본과 함께 보류</text>
+<text x="1074" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">대상, 속성, 값, 적용 범위, 출처</text>
+<text x="1074" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">범위가 다른 값은 각각 보존</text>
+<text x="1074" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">미확정 참조는 원본과 함께 보류</text>
 <text x="1074" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">문서 등록 시 1회 처리 후 재사용</text>
 <line x1="1074" y1="304" x2="1274" y2="304" stroke="#B5B5B5" stroke-width="1"/>
 <text x="1074" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">이후 질의에서 재처리 없음</text>
 <line x1="1290" y1="245.0" x2="1308" y2="245.0" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <rect x="1310" y="150" width="228" height="190" stroke="#111111" fill="none" stroke-width="1"/>
 <text x="1324" y="180" font-size="22" font-weight="700" fill="#111111" text-anchor="start">5</text>
-<text x="1350" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">질의 시 전달</text>
+<text x="1350" y="180" font-size="17" font-weight="600" fill="#111111" text-anchor="start">범위 일치 전달</text>
 <line x1="1324" y1="192" x2="1524" y2="192" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1324" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">대상과 조건이 일치하는 항목 조회</text>
-<text x="1324" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">조건 미지정: 조건별 값 병기</text>
-<text x="1324" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">기록 없는 조건: 기준 부재 전달</text>
-<text x="1324" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">소형 로컬 LLM에 값, 조건, 출처 입력</text>
+<text x="1324" y="216" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">질문 조건과 적용 범위가 일치하는 항목</text>
+<text x="1324" y="237" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">조건 미지정: 범위별 값 병기</text>
+<text x="1324" y="258" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">기록 없는 조건: 범위를 밝히고 보류</text>
+<text x="1324" y="279" font-size="13.5" font-weight="400" fill="#111111" text-anchor="start">수치는 저장값 그대로 로컬 LLM에 입력</text>
 <line x1="1324" y1="304" x2="1524" y2="304" stroke="#B5B5B5" stroke-width="1"/>
 <text x="1324" y="324" font-size="12.5" font-weight="400" fill="#6B6B6B" text-anchor="start">질의당 입력 토큰 최소화</text>
 <line x1="924.0" y1="340" x2="924.0" y2="358" stroke="#1F4FD8" stroke-width="1.2"/>
 <line x1="674.0" y1="358" x2="924.0" y2="358" stroke="#1F4FD8" stroke-width="1.2"/>
 <line x1="674.0" y1="358" x2="674.0" y2="343" stroke="#1F4FD8" stroke-width="1.2" marker-end="url(#ah)"/>
 <text x="799.0" y="373" font-size="12" font-weight="500" fill="#1F4FD8" text-anchor="middle">재점검</text>
-<text x="60" y="412" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">사례: 가상 정비 문서</text>
+<text x="60" y="412" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">사례: 합성 정비 문서</text>
 <line x1="60" y1="420" x2="1540" y2="420" stroke="#B5B5B5" stroke-width="1"/>
 <text x="60" y="454" font-size="13.5" font-weight="600" fill="#111111" text-anchor="start">그림 1 조립도</text>
 <rect x="60" y="464" width="170" height="96" stroke="#B5B5B5" fill="none" stroke-width="1"/>
@@ -112,7 +112,7 @@
 <text x="496" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">대상</text>
 <text x="566" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">속성 또는 관계</text>
 <text x="666" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">값</text>
-<text x="736" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">적용 조건</text>
+<text x="736" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">적용 범위</text>
 <text x="808" y="482" font-size="12" font-weight="600" fill="#111111" text-anchor="start">출처</text>
 <line x1="496" y1="488" x2="958" y2="488" stroke="#111111" stroke-width="1"/>
 <text x="496" y="502" font-size="12" font-weight="400" fill="#111111" text-anchor="start">체결부 3</text>
@@ -139,11 +139,11 @@
 <text x="736" y="562" font-size="12" font-weight="400" fill="#111111" text-anchor="start">윤활</text>
 <text x="808" y="562" font-size="12" font-weight="400" fill="#111111" text-anchor="start">표 1 각주 *</text>
 <line x1="496" y1="568" x2="958" y2="568" stroke="#B5B5B5" stroke-width="1"/>
-<text x="60" y="600" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">스캔본 추가 분석: 체결부 수 8과 행 수 6 불일치, 번호 1과 7 미판독</text>
-<text x="60" y="618" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">표 영역과 해당 원에 한해 고해상도 재처리 또는 VLM 재해석</text>
-<text x="496" y="600" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">연결 원칙: 표는 헤더, 셀, 각주의 문서 구조 기준으로 연결</text>
+<text x="60" y="600" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">스캔본 재추출: 체결부 수 8과 행 수 6 불일치, 번호 1과 7 미판독</text>
+<text x="60" y="618" font-size="12" font-weight="400" fill="#1F4FD8" text-anchor="start">표 영역과 해당 원에 한해 고해상도 재처리 또는 VLM 재추출</text>
+<text x="496" y="600" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">상속 원칙: 바깥에서 안쪽 순으로 조건을 결합하고 안쪽 표기가 바깥 표기를 덮어씀</text>
 <text x="496" y="618" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">그림은 체결부 번호와 부품 상자의 포함 관계로 연결, 근접은 근거 아님</text>
-<text x="496" y="636" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">조건별 값 각각 보존. 식별자 정규화 뒤 대조. S1000D 적용성 개념 적용</text>
+<text x="496" y="636" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">실제 문서(FAA AC 43.13-1B 표 7-1): 값 하나의 범위가 나사 계열, 너트 종류, 하중 조건, 도금 조건, 추정값 표시의 다섯 겹</text>
 <line x1="970" y1="520" x2="988" y2="520" stroke="#111111" stroke-width="1.2" marker-end="url(#ah)"/>
 <text x="1000" y="454" font-size="13.5" font-weight="600" fill="#111111" text-anchor="start">질의 시 전달</text>
 <text x="1000" y="482" font-size="12.5" font-weight="500" fill="#111111" text-anchor="start">질문: HV-202를 고정하는 체결부의 윤활 조건 토크 값</text>
@@ -155,23 +155,23 @@
 <text x="1110" y="532" font-size="12" font-weight="400" fill="#111111" text-anchor="start">건식 25 N·m와 윤활 20 N·m 병기</text>
 <line x1="1000" y1="539" x2="1540" y2="539" stroke="#B5B5B5" stroke-width="1"/>
 <text x="1000" y="554" font-size="12" font-weight="600" fill="#111111" text-anchor="start">기록 없는 조건</text>
-<text x="1110" y="554" font-size="12" font-weight="400" fill="#111111" text-anchor="start">기준 부재 전달, 필수 근거 없으면 보류</text>
+<text x="1110" y="554" font-size="12" font-weight="400" fill="#111111" text-anchor="start">두 범위를 밝히고 보류</text>
 <line x1="1000" y1="561" x2="1540" y2="561" stroke="#B5B5B5" stroke-width="1"/>
-<text x="1000" y="596" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">고정 길이 분할 입력은 소속 관계가 텍스트에 없어 답변 불가</text>
+<text x="1000" y="596" font-size="12" font-weight="400" fill="#6B6B6B" text-anchor="start">텍스트 분할 입력은 소속 관계가 텍스트에 없어 답변 불가</text>
 <line x1="60" y1="652" x2="1540" y2="652" stroke="#B5B5B5" stroke-width="1"/>
 <text x="60" y="680" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">검증</text>
 <text x="60" y="706" font-size="13" font-weight="600" fill="#111111" text-anchor="start">비교군</text>
-<text x="130" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효율: 전체 페이지 OCR, 레이아웃 파서 기본 처리, 소형 VLM 전체 페이지 변환, 제안(기본 추출 뒤 문제 영역 한정 재처리)</text>
-<text x="130" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효과: 고정 길이 분할, 요소 단위 분할(마크다운 표와 각주), 페이지 전체 입력, 페이지 이미지 VLM 직접 입력, 제안</text>
+<text x="130" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">전처리: 고정 길이 분할, Docling 기본 파이프라인, 소형 문서 VLM 페이지 전체 변환, 제안(기본 추출 뒤 위반 영역 한정 재추출)</text>
+<text x="130" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">구조화와 전달: 전처리 결과의 검색 입력, 페이지 전체 입력, 페이지 이미지 직접 입력(ColPali, VisRAG), 제안</text>
 <text x="60" y="762" font-size="13" font-weight="600" fill="#111111" text-anchor="start">지표</text>
-<text x="130" y="762" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효율: 페이지당 처리 시간, 최대 메모리, 추가 분석 영역 수, 미해결 연결 수</text>
-<text x="130" y="784" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효과: 질의 유형별 정답률(값, 조건 포함, 그림 연결, 조건 미지정), 질의당 입력 토큰</text>
+<text x="130" y="762" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효율: 문서당 처리 시간, 시각 모델 호출 수, 재추출 선별의 정밀도와 재현율, 미해결 참조 수. 실측 1쪽 전처리 제안 0.2초, Docling 19초, 문서 VLM 120초</text>
+<text x="130" y="784" font-size="13" font-weight="400" fill="#111111" text-anchor="start">효과: 질의 유형별 정답률(값, 조건 포함, 그림 연결, 조건 미지정), 조건 혼동 오답률, 적절한 보류 비율, 질의당 입력 토큰</text>
 <line x1="1010" y1="666" x2="1010" y2="802" stroke="#B5B5B5" stroke-width="1"/>
 <text x="1030" y="680" font-size="13" font-weight="600" fill="#6B6B6B" text-anchor="start" letter-spacing="1">한계</text>
-<text x="1030" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">처음부터 누락된 객체와 잘못 인식된 관계는 관계 점검으로 발견되지 않음</text>
-<text x="1030" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">대응: 원본과의 표본 대조, 중요 값의 별도 확인, 미확정 관계는 보류</text>
-<text x="1030" y="750" font-size="13" font-weight="400" fill="#111111" text-anchor="start">OCR 재처리는 비용 절감이 없음. 절감은 페이지당 비용이 큰 VLM 처리에서 성립</text>
-<text x="1030" y="772" font-size="13" font-weight="400" fill="#111111" text-anchor="start">실측은 합성 문서 기준. 실제 문서는 다단 배치와 여러 쪽에 걸친 표로 더 어려움</text>
+<text x="1030" y="706" font-size="13" font-weight="400" fill="#111111" text-anchor="start">추출 단계에서 빠진 객체는 참조 완결성 점검으로 찾지 못함</text>
+<text x="1030" y="728" font-size="13" font-weight="400" fill="#111111" text-anchor="start">대응: 원본과의 표본 대조, 중요 값의 별도 확인, 미확정 참조는 보류</text>
+<text x="1030" y="750" font-size="13" font-weight="400" fill="#111111" text-anchor="start">소형 VLM이 문서에 없는 문장을 생성한 사례 확인. 1차 추출과의 대조로 기각</text>
+<text x="1030" y="772" font-size="13" font-weight="400" fill="#111111" text-anchor="start">실측은 합성 문서와 공개 문서 2종(FAA 토크 표, NIST 도면) 기준</text>
 <line x1="60" y1="822" x2="1540" y2="822" stroke="#111111" stroke-width="1.2"/>
-<text x="60" y="848" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">사용 기술: CPU 문서 파서(텍스트 레이어, 벡터 객체, 표 구조), 기본 OCR, 도형 검출(선, 원, 윤곽선), 소형 시각언어모델(VLM) 영역 재해석, 조건 연결 항목 저장, 소형 로컬 LLM 질의응답</text>
+<text x="60" y="848" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">사용 기술: 레이아웃 모델(DocLayNet 계열), 표 구조 모델(TableFormer 계열), 텍스트 층과 벡터 객체 파서, 기본 OCR, 소형 시각언어모델(VLM) 영역 재추출, 적용 범위 포함 항목 저장, 소형 로컬 LLM 질의응답</text>
 </svg>
