@@ -4,17 +4,18 @@
 
 ## 현행 구상
 
-[v11 표와 이미지에 분산된 정보의 적용 범위를 보존하는 전처리 및 구조화 방안](docs/concept/v11-적용-범위-상속-참조-완결성.md)
+[v12 재구성 검증 기반 적응 표현: 로컬 LLM을 위한 기술문서 전처리 및 구조화 방안](docs/concept/v12-재구성-검증-기반-적응-표현.md)
 
-- 과제: 조건부 답변(ConditionalQA, ACL 2022)과 표와 본문의 결합(TAT-QA, ACL 2021)을 그림과 스캔이 포함된 기술문서로 확장
-- 핵심: 값이 놓인 문서 구조에서 적용 범위를 상속해 저장하고 문서 내부 참조의 완결성으로 추출 오류를 찾아 해당 영역에 한해 재추출하고 질문 조건과 적용 범위가 일치하는 값을 로컬 LLM에 전달함
-- 기반: 주요 학회 게재 방법(DocLayNet, TableFormer, Donut, TableRAG, Chain-of-Table, HippoRAG, Self-RAG, AWQ 등). 근거 목록은 [주요 학회 논문 근거](docs/research/학회-논문-근거.md)
-- 검증: 공개 원본(FAA AC 43.13-1B, NIST 시험 도면)과 합성 문서. [PoC v6](poc/v6/README.md)
-- 전체 그림: [docs/figures](docs/figures/README.md)
+- 과제: 문서의 각 영역을 로컬 LLM이 쓸 수 있는 가장 싼 표현으로 바꾸되 정보 손실이 없어야 함
+- 기준: 변환 결과로 영역을 다시 그려 원본과 비교하는 재구성 검증 하나로 손실을 판정. 통과한 가장 싼 표현을 채택하고 실패 영역에 한해 연산 예산 안에서 수준 상승
+- 표현 수준: 텍스트 층, OCR, 구조화 텍스트, 소형 문서 VLM 전사, 이미지 조각
+- 구조화: 값마다 레이아웃 경로를 붙인 문장(Dense X Retrieval, EMNLP 2024의 확장). 변환기는 DocLayNet(KDD 2022), TableFormer(CVPR 2022), DePlot, Donut
+- 검증: 공개 원본(FAA AC 43.13-1B, NIST 시험 도면)과 합성 문서. [PoC 목록](poc/README.md)
+- 전체 그림: [docs/figures](docs/figures/README.md) (v11 기준, 갱신 예정)
 
 ## 읽는 순서
 
-1. 현행 구상안 `docs/concept/v11-*.md`
+1. 현행 구상안 `docs/concept/v12-*.md`
 2. 전체 그림 `docs/figures/`
 3. 검증 데이터와 결과 `poc/README.md`, `poc/v6/README.md`
 4. 근거 `docs/research/`
@@ -48,3 +49,4 @@
 | 2026-10-28 | 구상안 전체 그림 두 안. 제조 문서 세 풀 선정(FAA AC 43.13-1B 7장, NIST 시험 도면, 부품 도해 목록) |
 | 2026-10-28 | 저장소 구조 정리(구상안 archive, PoC 목록, 그림 목록) |
 | 2026-10-28 | v11. 주요 학회 논문 25편을 기반 연구로 재구성, 적용 범위 상속, 참조 완결성 기반 재추출, 적용 범위 일치 전달을 방법론으로 정식화 |
+| 2026-10-29 | v12. 오류 유형 규칙을 버리고 재구성 검증과 연산 예산으로 영역별 표현 수준을 정하는 구조로 재편. 경로 직렬화 |
