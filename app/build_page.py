@@ -41,6 +41,28 @@ def view_image(src, R):
         gray, _ = rg.deskew(gray)
     return gray
 
+def add_relations(R, gray, d):
+    """처리 결과에 관계 그래프가 없으면(이전 판) 같은 규칙으로 만들어 붙임."""
+    import real_docs as rd
+    k = R['view']['mm_per_px']
+    if R['kind'] == 'page':
+        cache = os.path.join(d, 'page_ocr.json')
+        tables = R.get('tables', [])
+        if os.path.exists(cache) and tables and not tables[0].get('cell_boxes'):
+            texts = json.load(open(cache, encoding='utf-8'))
+            _, ink = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+            res = rd.table_mode(gray, ink, texts, k)
+            for t, t2 in zip(tables, res['tables']):
+                t['cell_boxes'] = t2.get('cell_boxes')
+        g = pl.relation_graph('page', k, tables=tables, figures=R.get('figures', []), paragraphs=R.get('paragraphs', []))
+    elif R['kind'] == 'illustration':
+        g = pl.relation_graph('illustration', k, callouts=R.get('callouts', []), leaders=R.get('leaders', []), part_box=R.get('part_box'))
+    else:
+        g = pl.relation_graph('photo', k, texts=R.get('texts', []), page_px=[gray.shape[1], gray.shape[0]])
+    R.update(g); R['serial'] = R.get('serial', []) + pl.relation_lines(g)
+    R['counts'].update(nodes=len(g['nodes']), runs=len(g['runs']))
+    R['index'] = pl.build_index(R['serial'], g['nodes'], R.get('texts', []), [dict(rows=t['rows']) for t in R.get('tables', [])])
+
 def main(folder, out_html):
     IN, OUT = os.path.join(folder, 'input'), os.path.join(folder, 'output')
     samples = []
@@ -54,6 +76,8 @@ def main(folder, out_html):
         if abs(vw - R['view']['w']) > 2 or abs(vh - R['view']['h']) > 2:
             print('크기 불일치', f, (vw, vh), (R['view']['w'], R['view']['h']))
         R['view']['w'], R['view']['h'] = vw, vh
+        if not R.get('nodes') and R['kind'] in ('page', 'illustration', 'photo'):
+            add_relations(R, img, os.path.join(OUT, os.path.splitext(f)[0]))
         for k in ('labels', 'steps', 'svg', 'png', 'name', 'resources_after'):
             R.pop(k, None)
         src = next((v for k, v in SOURCE.items() if f.startswith(k)), '')

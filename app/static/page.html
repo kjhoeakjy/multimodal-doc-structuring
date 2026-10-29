@@ -35,8 +35,8 @@ main{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(380px,1fr);min-h
 .layer{display:none}.layer.on{display:block}
 .ov-text rect{fill:none;stroke:var(--txt);stroke-width:1}
 .ov-node rect{fill:none;stroke-width:1.6}
-.ov-node .equipment{stroke:var(--eq)} .ov-node .instrument{stroke:var(--ins)} .ov-node .symbol,.ov-node .nozzle,.ov-node .shape{stroke:var(--sym)} .ov-node .note{stroke:var(--ins);stroke-dasharray:4 3} .ov-node .mark,.ov-node .arrow{stroke:var(--sym);stroke-width:.8}
-.ov-run polyline{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ov-node .equipment{stroke:var(--eq)} .ov-node .instrument{stroke:var(--ins)} .ov-node .symbol,.ov-node .nozzle,.ov-node .shape{stroke:var(--sym)} .ov-node .note{stroke:var(--ins);stroke-dasharray:4 3} .ov-node .mark,.ov-node .arrow{stroke:var(--sym);stroke-width:.8} .ov-node .table{stroke:var(--tbl)} .ov-node .row{stroke:var(--txt);stroke-width:.8} .ov-node .figure,.ov-node .part,.ov-node .photo{stroke:var(--fig)} .ov-node .paragraph{stroke:var(--mute);stroke-dasharray:5 3} .ov-node .callout{stroke:var(--ins)} .ov-node .text{stroke:var(--txt);stroke-width:.8}
+.ov-run polyline{fill:none;stroke:#8a8f98;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round} .ov-run .pipe,.ov-run .signal{stroke-width:2.2} .ov-run .next{stroke-dasharray:3 5;stroke-width:1} .ov-run .describe,.ov-run .mention{stroke:var(--fig)} .ov-run .point{stroke:var(--pipe)}
 .ov-run .pipe{stroke:var(--pipe)} .ov-run .signal{stroke:var(--sig);stroke-dasharray:6 4} .ov-run .gap{stroke-dasharray:2 4}
 .ov-jct circle{fill:var(--jct)}
 .ov-tbl rect{fill:rgba(138,143,152,.08);stroke:var(--tbl);stroke-width:1.5}
@@ -77,7 +77,7 @@ table.t tr:first-child td{background:var(--soft);font-weight:600}
 .btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);padding:8px 14px;cursor:pointer}
 .btn.ghost{background:var(--bg);color:var(--ink)}
 .gsvg{width:100%;height:auto;border:1px solid var(--line);background:#fff}
-.gsvg .e{stroke-width:1.2} .gsvg .pipe{stroke:var(--pipe)} .gsvg .signal{stroke:var(--sig);stroke-dasharray:4 3}
+.gsvg .e{stroke:#aaa;stroke-width:1.2} .gsvg .pipe{stroke:var(--pipe)} .gsvg .signal{stroke:var(--sig);stroke-dasharray:4 3} .gsvg .next{stroke-dasharray:2 4} .gsvg .describe,.gsvg .mention{stroke:var(--fig)} .gsvg .point{stroke:var(--pipe)}
 .gsvg text{font-size:9px;font-family:var(--mono);fill:#111;pointer-events:none}
 .gsvg g.n{cursor:pointer}
 .gsvg g.hl circle{stroke:var(--acc);stroke-width:3}
@@ -98,7 +98,7 @@ table.t tr:first-child td{background:var(--soft);font-weight:600}
     <div class="tools" id="tools">
       <span class="lg on" data-l="text"><i style="background:var(--txt)"></i>문자</span>
       <span class="lg on" data-l="node"><i style="background:var(--eq)"></i>장비 <i style="background:var(--ins)"></i>계기 <i style="background:var(--sym)"></i>기호</span>
-      <span class="lg on" data-l="run"><i style="background:var(--pipe)"></i>배관 <i style="background:var(--sig)"></i>신호선</span>
+      <span class="lg on" data-l="run"><i style="background:var(--pipe)"></i>배관 <i style="background:var(--sig)"></i>신호선 <i style="background:#8a8f98"></i>관계</span>
       <span class="lg on" data-l="jct"><i style="background:var(--jct)"></i>분기점</span>
       <span class="lg on" data-l="tbl"><i style="background:var(--tbl)"></i>표</span>
       <span class="lg on" data-l="fig"><i style="background:var(--fig)"></i>그림 영역</span>
@@ -133,7 +133,8 @@ table.t tr:first-child td{background:var(--soft);font-weight:600}
 <script>
 const SAMPLES = /*__DATA__*/[];
 const $ = s => document.querySelector(s);
-const ROLE = {equipment:'장비', instrument:'계기', symbol:'기호', nozzle:'접속구', note:'주석', mark:'표식', arrow:'화살표', shape:'도형', junction:'분기점'};
+const ROLE = {equipment:'장비', instrument:'계기', symbol:'기호', nozzle:'접속구', note:'주석', mark:'표식', arrow:'화살표', shape:'도형', junction:'분기점', table:'표', row:'행', figure:'그림', paragraph:'문단', callout:'주기', part:'부품', photo:'사진', text:'문자'};
+const EDGE = {pipe:'배관', signal:'신호선', contain:'포함', belong:'소속', describe:'설명', mention:'언급', next:'순서', point:'지시'};
 const KIND = {vector:'벡터 도면', drawing:'래스터 도면 · 도식', page:'표 · 본문 쪽', illustration:'도해 · 기계 도면', photo:'사진 · 렌더링'};
 let R = null, S = null, scale = 1;
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
@@ -154,7 +155,7 @@ addEventListener('resize', fit);
 // ---- 결과 그리기 ----
 const px = v => v / R.view.mm_per_px;
 function render(){
-  const W = R.view.w, H = R.view.h; const hasMM = R.kind === 'vector' || R.kind === 'drawing';
+  const W = R.view.w, H = R.view.h; const hasMM = (R.runs || []).length > 0;
   const sw = Math.max(1, W / 1400);
   let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}"><image href="${S.img}" width="${W}" height="${H}" preserveAspectRatio="none"/>`;
   s += `<g id="ov-tbl" class="layer ov-tbl">` + (R.tables || []).map(t => { const b = t.box || t.bbox.map(px); return `<rect x="${b[0]}" y="${b[1]}" width="${b[2]-b[0]}" height="${b[3]-b[1]}"/>`; }).join('') + `</g>`;
@@ -162,7 +163,7 @@ function render(){
   s += `<g id="ov-fig" class="layer ov-fig">` + (R.figures || []).map(f => `<rect x="${f.box[0]}" y="${f.box[1]}" width="${f.box[2]-f.box[0]}" height="${f.box[3]-f.box[1]}"/>`).join('') + `</g>`;
   s += `<g id="ov-par" class="layer ov-par">` + (R.paragraphs || []).map(p => `<rect x="${p.box[0]}" y="${p.box[1]}" width="${p.box[2]-p.box[0]}" height="${p.box[3]-p.box[1]}"/>`).join('') + `</g>`;
   s += `<g id="ov-lead" class="layer ov-lead">` + (R.part_box ? `<rect class="part" x="${R.part_box[0]}" y="${R.part_box[1]}" width="${R.part_box[2]-R.part_box[0]}" height="${R.part_box[3]-R.part_box[1]}"/>` : '') + (R.callouts || []).map((c, i) => `<rect x="${c.box[0]}" y="${c.box[1]}" width="${c.box[2]-c.box[0]}" height="${c.box[3]-c.box[1]}"><title>c${i} ${esc((c.texts || []).join(' '))}</title></rect>`).join('') + (R.leaders || []).map(l => `<line class="${l.end_on_part ? '' : 'off'}" x1="${l.start[0]}" y1="${l.start[1]}" x2="${l.end[0]}" y2="${l.end[1]}"/>`).join('') + `</g>`;
-  s += `<g id="ov-run" class="layer ov-run" style="stroke-width:${2.2*sw}">` + (R.runs || []).map(r => `<polyline id="ov-${r.id}" class="${r.kind}${r.gap ? ' gap' : ''}" points="${r.coords.map(c => px(c[0]) + ',' + px(c[1])).join(' ')}"><title>${r.id} ${r.kind} ${r.a}→${r.b} ${esc(r.texts.join(' '))}</title></polyline>`).join('') + `</g>`;
+  s += `<g id="ov-run" class="layer ov-run" style="stroke-width:${2.2*sw}">` + (R.runs || []).map(r => `<polyline id="ov-${r.id}" class="${r.kind}${r.gap ? ' gap' : ''}" points="${r.coords.map(c => px(c[0]) + ',' + px(c[1])).join(' ')}"><title>${r.id} ${EDGE[r.kind] || r.kind} ${r.a}→${r.b} ${esc(r.texts.join(' '))}</title></polyline>`).join('') + `</g>`;
   s += `<g id="ov-node" class="layer ov-node">` + (R.nodes || []).map(n => { const b = n.bbox.map(px); return `<rect id="ov-${n.id}" class="${n.role}" x="${b[0]-2}" y="${b[1]-2}" width="${b[2]-b[0]+4}" height="${b[3]-b[1]+4}" rx="2"><title>${n.id} ${ROLE[n.role]||n.role} ${esc(n.texts.join(' '))}</title></rect>`; }).join('') + `</g>`;
   s += `<g id="ov-jct" class="layer ov-jct">` + (R.junctions || []).map(j => `<circle id="ov-${j.id}" cx="${px(j.pt[0])}" cy="${px(j.pt[1])}" r="${4*sw}"/>`).join('') + `</g>`;
   s += `<g id="ov-hl" class="layer ov-hl on"></g></svg>`;
@@ -171,7 +172,7 @@ function render(){
   const p = R.plan || {}; const sn = p.snapshot || {};
   $('#sys').innerHTML = `<span class="chip">코어<b>${sn.cores ?? '-'}</b></span><span class="chip">사용 스레드<b>${p.threads ?? '-'}</b></span>` + (sn.total_gb ? `<span class="chip">메모리 가용<b>${sn.avail_gb} / ${sn.total_gb} GB</b></span>` : '') + `<span class="chip">인식 배치<b>${p.batch ?? '-'}</b></span><span class="chip">처리<b>${Object.values(R.times || {}).reduce((a, b) => a + b, 0).toFixed(1)}초</b></span>`;
   $('#foot-l').textContent = `${S.name} · ${S.source}`;
-  summary(); graph(); serial(); index(); tables(); $('#qout').textContent = hasMM ? '태그를 넣고 부분 그래프를 누름.' : '관계 그래프가 없는 입력(표 · 본문 · 도해 · 사진).'; $('#qtag').value = S.qtag || '';
+  summary(); graph(); serial(); index(); tables(); $('#qout').textContent = hasMM ? '태그 또는 노드 이름(예 t0, f1, c2)을 넣고 부분 그래프를 누름.' : '관계가 없는 입력.'; $('#qtag').value = S.qtag || '';
   if (S.qtag && hasMM) query();
 }
 function summary(){
@@ -203,9 +204,9 @@ function graph(){
     for (let i = 0; i < all.length; i++) for (let j = i + 1; j < all.length; j++) { const u = all[i].id, v = all[j].id; let dx = pos[u][0] - pos[v][0], dy = pos[u][1] - pos[v][1]; let d = Math.hypot(dx, dy) || 0.01; const f = k * k / d; disp[u][0] += dx / d * f; disp[u][1] += dy / d * f; disp[v][0] -= dx / d * f; disp[v][1] -= dy / d * f; }
     edges.forEach(e => { let dx = pos[e.a][0] - pos[e.b][0], dy = pos[e.a][1] - pos[e.b][1]; let d = Math.hypot(dx, dy) || 0.01; const f = d * d / k; disp[e.a][0] -= dx / d * f; disp[e.a][1] -= dy / d * f; disp[e.b][0] += dx / d * f; disp[e.b][1] += dy / d * f; });
     all.forEach(a => { disp[a.id][0] -= (pos[a.id][0] - 320) * 0.03; disp[a.id][1] -= (pos[a.id][1] - 220) * 0.03; const d = Math.hypot(...disp[a.id]) || 0.01; const m = Math.min(d, T); pos[a.id][0] = Math.max(20, Math.min(620, pos[a.id][0] + disp[a.id][0] / d * m)); pos[a.id][1] = Math.max(20, Math.min(420, pos[a.id][1] + disp[a.id][1] / d * m)); }); }
-  const col = {equipment:'var(--eq)', instrument:'var(--ins)', junction:'var(--jct)', note:'var(--ins)'};
+  const col = {equipment:'var(--eq)', instrument:'var(--ins)', junction:'var(--jct)', note:'var(--ins)', table:'var(--tbl)', row:'var(--txt)', figure:'var(--fig)', part:'var(--fig)', photo:'var(--fig)', paragraph:'var(--mute)', callout:'var(--ins)', text:'var(--txt)'};
   let s = edges.map(e => `<line class="e ${e.kind}" x1="${pos[e.a][0]}" y1="${pos[e.a][1]}" x2="${pos[e.b][0]}" y2="${pos[e.b][1]}"/>`).join('');
-  s += all.map(a => { const r = {equipment: 9, instrument: 7, junction: 3}[a.role] || 4.5; return `<g class="n" data-id="${a.id}" transform="translate(${pos[a.id][0]} ${pos[a.id][1]})"><circle r="${r}" fill="${col[a.role] || 'var(--sym)'}"/>${a.name && ['equipment','instrument'].includes(a.role) ? `<text x="${r + 3}" y="3">${esc(a.name)}</text>` : ''}<title>${a.id} ${ROLE[a.role] || a.role} ${esc(a.name)}</title></g>`; }).join('');
+  s += all.map(a => { const r = {equipment: 9, instrument: 7, junction: 3, table: 9, figure: 6, part: 9, photo: 9, paragraph: 6, callout: 5, row: 3.5, text: 3}[a.role] || 4.5; const lbl = ['equipment','instrument'].includes(a.role) ? a.name : (['table','figure','part','photo','paragraph','callout'].includes(a.role) ? a.id : ''); return `<g class="n" data-id="${a.id}" transform="translate(${pos[a.id][0]} ${pos[a.id][1]})"><circle r="${r}" fill="${col[a.role] || 'var(--sym)'}"/>${lbl ? `<text x="${r + 3}" y="3">${esc(lbl)}</text>` : ''}<title>${a.id} ${ROLE[a.role] || a.role} ${esc(a.name)}</title></g>`; }).join('');
   svg.innerHTML = s;
   svg.querySelectorAll('g.n').forEach(g => g.addEventListener('click', () => highlight([g.dataset.id], [])));
 }
@@ -240,14 +241,14 @@ function subgraph(tag, depth){
   const lift = id => nodes[id] && nodes[id].attached_to ? nodes[id].attached_to : id;
   const label = id => nodes[id] ? `${id}[${nodes[id].role} ${nameOf(nodes[id])}]` : id;
   const where = id => { if (nodes[id]) return 'bbox=(' + nodes[id].bbox.map(v => v.toFixed(1)).join(',') + ')'; const j = (R.junctions || []).find(x => x.id === id); return j ? `pt=(${j.pt[0].toFixed(1)},${j.pt[1].toFixed(1)})` : ''; };
-  let start = (R.nodes || []).find(n => nameOf(n) === tag || n.texts.includes(tag));
+  let start = (R.nodes || []).find(n => nameOf(n) === tag || n.texts.includes(tag) || n.id === tag || n.texts.some(x => x.includes(tag) && tag.length >= 4));
   if (!start) return {found: false, lines: [`'${tag}' 이름의 요소 없음`], nodes: [], runs: []};
   start = lift(start.id);
   const adj = {}; (R.runs || []).forEach(r => { const a = lift(r.a), b = lift(r.b); if (a === b) return; (adj[a] = adj[a] || []).push([b, r]); (adj[b] = adj[b] || []).push([a, r]); });
   const seen = new Set([start]); let frontier = [start]; const sub = []; const used = new Set();
   for (let d = 0; d < depth; d++) { const nxt = []; frontier.forEach(v => (adj[v] || []).forEach(([w, r]) => { if (used.has(r.id)) return; used.add(r.id); sub.push([v, w, r]); if (!seen.has(w)) { seen.add(w); nxt.push(w); } })); frontier = nxt; }
   const lines = [`# 질의 부분 그래프: ${tag} 기준 ${depth}단계, 간선 ${sub.length}`];
-  sub.forEach(([v, w, r]) => lines.push(`${label(v)} --${r.id}${r.texts.length ? '(' + r.texts.join('|') + ')' : ''} ${r.kind}--> ${label(w)} 근거=${where(v)} ${where(w)}`));
+  sub.forEach(([v, w, r]) => lines.push(`${label(v)} --${r.id}${r.texts.length ? '(' + r.texts.join('|') + ')' : ''} ${EDGE[r.kind] || r.kind}--> ${label(w)} 근거=${where(v)} ${where(w)}`));
   return {found: true, lines, nodes: [...seen], runs: [...used]};
 }
 $('#qgo').addEventListener('click', query); $('#qtag').addEventListener('keydown', e => { if (e.key === 'Enter') query(); });

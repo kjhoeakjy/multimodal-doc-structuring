@@ -103,7 +103,7 @@ def table_mode(gray, ink, texts, k):
             if any(c['figures'] for c in row):
                 rows_with_fig.append(dict(table=ti, row=ri, cells=[c['text'] for c in row]))
     return dict(tables=[dict(box=t['box'], n_rows=t['n_rows'], n_cols=t['n_cols'],
-                             rows=[[c['text'] for c in r] for r in t['rows']]) for t in tables],
+                             rows=[[c['text'] for c in r] for r in t['rows']], cell_boxes=[[c['box'] for c in r] for r in t['rows']]) for t in tables],
                 figures=figs, figure_rows=rows_with_fig,
                 summary=dict(tables=len(tables), cells=sum(t['n_rows'] * t['n_cols'] for t in tables),
                              figures=len(figs), figures_in_cells=linked, rows_with_figure=len(rows_with_fig)))

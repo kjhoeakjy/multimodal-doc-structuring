@@ -283,6 +283,94 @@ def subgraph(g, tag, depth=3):
     return dict(found=True, start=start, lines=lines, nodes=sorted(seen), runs=sorted(used))
 
 
+# ---------------- 쪽 · 도해 · 사진의 관계 그래프 ----------------
+CAPTION = re.compile(r'^(그림|표|Figure|Fig\.?|Table)\s*(\d+)', re.I)
+
+def relation_graph(kind, k, tables=(), figures=(), paragraphs=(), callouts=(), leaders=(), part_box=None, texts=(), page_px=None):
+    """도면이 아닌 입력을 같은 노드·간선 형식으로 만든다. 좌표는 mm. 간선 종류: 포함, 소속, 설명, 언급, 순서, 지시."""
+    mm = lambda b: [round(v * k, 1) for v in b]
+    ctr = lambda b: ((b[0] + b[2]) / 2, (b[1] + b[3]) / 2)
+    nodes, runs, junctions = [], [], []
+    def node(nid, role, box_px, texts_):
+        nodes.append(dict(id=nid, role=role, bbox=mm(box_px), texts=[t for t in texts_ if t][:6], degree=0, attached_to=None)); return nid
+    def run(a, b, kind_, ca, cb, texts_=(), gap=0):
+        runs.append(dict(id=f"r{len(runs)}", a=a, b=b, coords=[[round(ca[0] * k, 2), round(ca[1] * k, 2)], [round(cb[0] * k, 2), round(cb[1] * k, 2)]], kind=kind_, texts=list(texts_), gap=gap))
+    if kind == 'page':
+        row_ids = {}
+        for ti, t in enumerate(tables):
+            tid = node(f"t{ti}", 'table', t['box'], [' | '.join(t['rows'][0])] if t['rows'] else [])
+            cbs = t.get('cell_boxes') or []
+            for ri, row in enumerate(t['rows']):
+                if ri < len(cbs) and cbs[ri]:
+                    rb = [min(b[0] for b in cbs[ri]), min(b[1] for b in cbs[ri]), max(b[2] for b in cbs[ri]), max(b[3] for b in cbs[ri])]
+                else:
+                    y0 = t['box'][1] + (t['box'][3] - t['box'][1]) * ri / max(1, len(t['rows'])); rb = [t['box'][0], int(y0), t['box'][2], int(y0 + (t['box'][3] - t['box'][1]) / max(1, len(t['rows'])))]
+                rid = node(f"t{ti}r{ri}", 'row', rb, [' | '.join(c for c in row if c)])
+                row_ids[(ti, ri)] = rid
+                run(tid, rid, 'contain', ctr(t['box']), ctr(rb))
+        for fi, f in enumerate(figures):
+            fid = node(f"f{fi}", 'figure', f['box'], [])
+            if f.get('table') is not None and f.get('row') is not None and (f['table'], f['row']) in row_ids:
+                run(fid, row_ids[(f['table'], f['row'])], 'belong', ctr(f['box']), ctr([n for n in nodes if n['id'] == row_ids[(f['table'], f['row'])]][0]['bbox']) and ctr(f['box']), [])
+                runs[-1]['coords'][1] = [round(v, 2) for v in ctr([n for n in nodes if n['id'] == row_ids[(f['table'], f['row'])]][0]['bbox'])]
+        prev = None
+        for pi, p_ in enumerate(paragraphs):
+            pid_ = node(f"p{pi}", 'paragraph', p_['box'], [p_['text'][:60]])
+            m = CAPTION.match(p_['text'].strip())
+            if m:   # 설명문: 가장 가까운 그림 영역 또는 표에 연결
+                targets = [(ti, t['box'], 'table') for ti, t in enumerate(tables)] if m.group(1) in ('표', 'Table') else [(fi, f['box'], 'figure') for fi, f in enumerate(figures)]
+                if targets:
+                    cx, cy = ctr(p_['box'])
+                    i_, b_, role = min(targets, key=lambda x: abs(ctr(x[1])[0] - cx) + abs(ctr(x[1])[1] - cy))
+                    run(pid_, f"t{i_}" if role == 'table' else f"f{i_}", 'describe', ctr(p_['box']), ctr(b_), [m.group(0)])
+            else:
+                for (ti, ri), rid in row_ids.items():   # 본문이 표 행의 부품 번호를 언급
+                    keys = [c for c in tables[ti]['rows'][ri] if PART_NO.match(c.strip())]
+                    hit = [c for c in keys if c.strip() in p_['text']]
+                    if hit:
+                        run(pid_, rid, 'mention', ctr(p_['box']), ctr([n for n in nodes if n['id'] == rid][0]['bbox']), hit[:2])
+                        runs[-1]['coords'][1] = [round(v, 2) for v in ctr([n for n in nodes if n['id'] == rid][0]['bbox'])]
+            if prev:
+                run(prev, pid_, 'next', ctr(paragraphs[pi - 1]['box']), ctr(p_['box']))
+            prev = pid_
+    elif kind == 'illustration':
+        part = node('part', 'part', part_box, []) if part_box else None
+        for ci, c in enumerate(callouts):
+            node(f"c{ci}", 'callout', c['box'], [' '.join(c.get('texts', []))])
+        for li, l in enumerate(leaders):
+            cid = f"c{l['callout']}"
+            if l['end_on_part'] and part:
+                run(cid, part, 'point', l['start'], l['end'], [])
+            else:
+                junctions.append(dict(id=f"j{len(junctions)}", pt=[round(l['end'][0] * k, 2), round(l['end'][1] * k, 2)]))
+                run(cid, junctions[-1]['id'], 'point', l['start'], l['end'], [], gap=1)
+    elif kind == 'photo' and page_px:
+        ph = node('photo', 'photo', [0, 0, page_px[0], page_px[1]], [])
+        for ti, t in enumerate(texts):
+            tid = node(f"x{ti}", 'text', t['box'], [t['text']])
+            run(ph, tid, 'contain', ctr([0, 0, page_px[0], page_px[1]]), ctr(t['box']))
+    # 간선 좌표: 양 끝 노드 중심으로 통일(쪽), 차수 계산
+    deg = collections.Counter()
+    for r in runs:
+        deg[r['a']] += 1; deg[r['b']] += 1
+    for n in nodes:
+        n['degree'] = deg[n['id']]
+    return dict(nodes=nodes, runs=runs, junctions=junctions)
+
+KIND_KO = {'contain': '포함', 'belong': '소속', 'describe': '설명', 'mention': '언급', 'next': '순서', 'point': '지시'}
+ROLE_KO = {'table': '표', 'row': '행', 'figure': '그림', 'paragraph': '문단', 'callout': '주기', 'part': '부품', 'photo': '사진', 'text': '문자'}
+
+def relation_lines(g):
+    nodes = {n['id']: n for n in g['nodes']}
+    L = ["## 관계 (노드 종류 · 이름 · 좌표, 간선 종류)"]
+    for n in g['nodes']:
+        L.append(f"{n['id']} 종류={ROLE_KO.get(n['role'], n['role'])} 이름={(n['texts'][0] if n['texts'] else '-')[:40]} bbox=({','.join(f'{v:.1f}' for v in n['bbox'])})")
+    for r in g['runs']:
+        lab = f" 라벨={'|'.join(r['texts'])}" if r['texts'] else ''
+        L.append(f"{r['id']} 종류={KIND_KO.get(r['kind'], r['kind'])} A={r['a']} B={r['b']}{lab}")
+    return L
+
+
 # ---------------- 색인 ----------------
 def build_index(serial_lines, nodes, texts_flat, tables):
     toks = collections.Counter(t.lower() for l in serial_lines for t in WORD.findall(l))
@@ -477,7 +565,7 @@ class Job:
             serial.append(f"t{ti} bbox=({','.join(map(str, bb))}) 행수={tb['n_rows']} 열수={tb['n_cols']}")
             for ri, row in enumerate(tb['rows']):
                 serial.append(f"t{ti} 행{ri}: " + ' | '.join(row))
-            tables.append(dict(bbox=bb, box=tb['box'], rows=tb['rows']))
+            tables.append(dict(bbox=bb, box=tb['box'], rows=tb['rows'], cell_boxes=tb.get('cell_boxes')))
         serial.append("## 표 안 그림 영역")
         for f in res['figures']:
             owner = f"t{f['table']} 행{f['row']}" if f.get('table') is not None and f.get('row') is not None else '없음'
@@ -485,11 +573,12 @@ class Job:
         serial.append("## 본문")
         for i, p in enumerate(paras):
             serial.append(f"p{i} bbox=({','.join(map(str, p['bbox_mm']))}) {p['text']}")
+        g = relation_graph('page', k, tables=tables, figures=res['figures'], paragraphs=paras); serial += relation_lines(g)
         open(prefix + '.txt', 'w', encoding='utf-8').write('\n'.join(serial) + '\n'); self.done('직렬화', t0)
         t0 = self.step('색인')
-        idx = build_index(serial, [], res['texts'], tables); self.done('색인', t0)
-        out.update(tables=tables, figures=res['figures'], paragraphs=paras, texts=res['texts'], nodes=[], runs=[], junctions=[],
-                   counts=dict(res['summary'], paragraphs=len(paras), texts=len(res['texts'])), serial=serial, index=idx)
+        idx = build_index(serial, g['nodes'], res['texts'], tables); self.done('색인', t0)
+        out.update(tables=tables, figures=res['figures'], paragraphs=paras, texts=res['texts'], **g,
+                   counts=dict(res['summary'], paragraphs=len(paras), texts=len(res['texts']), nodes=len(g['nodes']), runs=len(g['runs'])), serial=serial, index=idx)
         self.embed_page(out, crops=[f['box'] for f in res['figures']])
 
     # ---- 도해 · 기계 도면(주기와 지시선) ----
@@ -509,11 +598,12 @@ class Job:
         serial.append("## 지시선 (주기 → 가리키는 위치)")
         for l in res['leaders']:
             serial.append(f"c{l['callout']} → ({round(l['end'][0] * k, 1)},{round(l['end'][1] * k, 1)}) 길이={l['length_mm']}mm 부품 위={'예' if l['end_on_part'] else '아니오'}")
+        g = relation_graph('illustration', k, callouts=res['callouts'], leaders=res['leaders'], part_box=res.get('part_box')); serial += relation_lines(g)
         open(prefix + '.txt', 'w', encoding='utf-8').write('\n'.join(serial) + '\n'); self.done('직렬화', t0)
         t0 = self.step('색인')
-        idx = build_index(serial, [], res['texts'], []); self.done('색인', t0)
-        out.update(tables=[], callouts=res['callouts'], leaders=res['leaders'], part_box=res.get('part_box'), texts=res['texts'], nodes=[], runs=[], junctions=[],
-                   counts=dict(res['summary'], texts=len(res['texts'])), serial=serial, index=idx)
+        idx = build_index(serial, g['nodes'], res['texts'], []); self.done('색인', t0)
+        out.update(tables=[], callouts=res['callouts'], leaders=res['leaders'], part_box=res.get('part_box'), texts=res['texts'], **g,
+                   counts=dict(res['summary'], texts=len(res['texts']), nodes=len(g['nodes']), runs=len(g['runs'])), serial=serial, index=idx)
         self.embed_page(out, crops=[res['part_box']] if res.get('part_box') else [])
 
     # ---- 사진 ----
@@ -525,8 +615,9 @@ class Job:
         self.done('문자 인식', t0)
         serial = ["# 사진·렌더링 (구조 추출 없음, 이미지 검색 대상)", f"크기 {gray.shape[1]}×{gray.shape[0]} px", "## 사진 위 문자"]
         serial += [f"{t['text']} bbox=({','.join(str(round(v * k, 1)) for v in t['box'])})" for t in texts]
-        idx = build_index(serial, [], texts, [])
-        out.update(tables=[], texts=texts, nodes=[], runs=[], junctions=[], counts=dict(texts=len(texts)), serial=serial, index=idx)
+        g = relation_graph('photo', k, texts=texts, page_px=[gray.shape[1], gray.shape[0]]); serial += relation_lines(g)
+        idx = build_index(serial, g['nodes'], texts, [])
+        out.update(tables=[], texts=texts, **g, counts=dict(texts=len(texts), nodes=len(g['nodes']), runs=len(g['runs'])), serial=serial, index=idx)
         self.embed_page(out)
 
     def embed_page(self, out, crops=()):
