@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문서 구조화</title>
+<style>
+:root{--ink:#111;--mute:#6b6b6b;--line:#d9dbe0;--soft:#f4f5f7;--bg:#fff;--acc:#1f4fd8;--eq:#d7263d;--ins:#7b2cbf;--sym:#1f4fd8;--pipe:#1b8a3a;--sig:#2f80ed;--jct:#e3a008;--tbl:#8a8f98;--txt:#5aa9e6;--fig:#e07a1f;
+ --mono:ui-monospace,"SF Mono",Consolas,"D2Coding",monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#ededed;--mute:#9a9a9a;--line:#333;--soft:#1b1b1b;--bg:#111;--acc:#6f8fff}}
+:root[data-theme="dark"]{--ink:#ededed;--mute:#9a9a9a;--line:#333;--soft:#1b1b1b;--bg:#111;--acc:#6f8fff}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 "Pretendard","Pretendard Variable","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;letter-spacing:-.01em}
+button,select,input{font:inherit;color:inherit}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;border-bottom:1px solid var(--ink)}
+header h1{font-size:18px;font-weight:600;margin:0;letter-spacing:-.02em}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12px;color:var(--mute);white-space:nowrap}
+.chip b{color:var(--ink);font-weight:600;margin-left:4px}
+.gallery{display:flex;gap:10px;overflow-x:auto;padding:12px 24px;border-bottom:1px solid var(--line)}
+.gallery .card{flex:0 0 150px;border:1px solid var(--line);cursor:pointer;background:var(--bg)}
+.gallery .card.on{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}
+.gallery .card img{display:block;width:148px;height:100px;object-fit:cover;object-position:top;background:#fff}
+.gallery .card div{padding:5px 7px;font-size:11px;line-height:1.3;color:var(--mute);border-top:1px solid var(--line)}
+.gallery .card div b{display:block;color:var(--ink);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+main{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(380px,1fr);min-height:calc(100vh - 200px)}
+.viewer{border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:8px 16px;border-bottom:1px solid var(--line);font-size:12px}
+.tools .lg{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);padding:3px 8px;cursor:pointer;user-select:none;color:var(--mute)}
+.tools .lg.on{color:var(--ink);border-color:var(--ink)}
+.tools .lg i{width:10px;height:10px;display:inline-block}
+.tools .sp{flex:1}
+.canvas{flex:1;overflow:auto;background:var(--soft);position:relative}
+.canvas svg{display:block;background:#fff;margin:0 auto}
+.layer{display:none}.layer.on{display:block}
+.ov-text rect{fill:none;stroke:var(--txt);stroke-width:1}
+.ov-node rect{fill:none;stroke-width:1.6}
+.ov-node .equipment{stroke:var(--eq)} .ov-node .instrument{stroke:var(--ins)} .ov-node .symbol,.ov-node .nozzle,.ov-node .shape{stroke:var(--sym)} .ov-node .note{stroke:var(--ins);stroke-dasharray:4 3} .ov-node .mark,.ov-node .arrow{stroke:var(--sym);stroke-width:.8}
+.ov-run polyline{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ov-run .pipe{stroke:var(--pipe)} .ov-run .signal{stroke:var(--sig);stroke-dasharray:6 4} .ov-run .gap{stroke-dasharray:2 4}
+.ov-jct circle{fill:var(--jct)}
+.ov-tbl rect{fill:rgba(138,143,152,.08);stroke:var(--tbl);stroke-width:1.5}
+.ov-fig rect{fill:none;stroke:var(--fig);stroke-width:1.5}
+.ov-par rect{fill:none;stroke:var(--txt);stroke-width:1;stroke-dasharray:5 3}
+.ov-lead rect{fill:none;stroke:var(--ins);stroke-width:1.5} .ov-lead line{stroke:var(--pipe);stroke-width:2} .ov-lead line.off{stroke:var(--eq)} .ov-lead rect.part{stroke:var(--fig);stroke-dasharray:6 3}
+.ov-hl rect,.ov-hl polyline{fill:none;stroke:var(--acc);stroke-width:3.5}
+.ov-hl circle{fill:none;stroke:var(--acc);stroke-width:3}
+.panel{display:flex;flex-direction:column;min-width:0}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tabs button{flex:1;background:none;border:0;border-bottom:2px solid transparent;padding:11px 6px;cursor:pointer;color:var(--mute);font-size:13px}
+.tabs button.on{color:var(--ink);border-bottom-color:var(--ink);font-weight:600}
+.tab{display:none;padding:16px 20px;overflow:auto;flex:1}
+.tab.on{display:block}
+h3{font-size:12px;font-weight:600;color:var(--mute);margin:18px 0 8px;letter-spacing:.02em}
+h3:first-child{margin-top:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px 14px}
+.kpi b{display:block;font-size:24px;font-weight:600;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{font-size:11.5px;color:var(--mute)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px}
+.kv span{color:var(--mute);white-space:nowrap}
+.kv b{font-weight:500;word-break:break-all}
+pre{font-family:var(--mono);font-size:11.5px;line-height:1.5;background:var(--soft);padding:12px;margin:0;white-space:pre-wrap;word-break:break-all;max-height:60vh;overflow:auto}
+pre .hl{color:var(--acc);font-weight:600}
+.toks{display:flex;flex-wrap:wrap;gap:4px}
+.tok{font-family:var(--mono);font-size:11px;border:1px solid var(--line);padding:1px 6px;cursor:pointer}
+.tok.key{border-color:var(--acc);color:var(--acc)}
+.tok small{color:var(--mute);margin-left:4px}
+table.t{border-collapse:collapse;width:100%;font-size:12px;margin-bottom:12px}
+table.t td{border:1px solid var(--line);padding:4px 6px;vertical-align:top}
+table.t tr:first-child td{background:var(--soft);font-weight:600}
+.vec{display:flex;align-items:flex-end;gap:2px;height:48px}
+.vec i{display:block;width:5px;background:var(--acc)}
+.vec i.neg{background:var(--tbl)}
+.q{display:flex;gap:8px;margin-bottom:10px}
+.q input{flex:1;border:1px solid var(--line);padding:8px 10px;background:var(--bg)}
+.q select{border:1px solid var(--line);background:var(--bg);padding:6px 8px}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);padding:8px 14px;cursor:pointer}
+.btn.ghost{background:var(--bg);color:var(--ink)}
+.gsvg{width:100%;height:auto;border:1px solid var(--line);background:#fff}
+.gsvg .e{stroke-width:1.2} .gsvg .pipe{stroke:var(--pipe)} .gsvg .signal{stroke:var(--sig);stroke-dasharray:4 3}
+.gsvg text{font-size:9px;font-family:var(--mono);fill:#111;pointer-events:none}
+.gsvg g.n{cursor:pointer}
+.gsvg g.hl circle{stroke:var(--acc);stroke-width:3}
+.warn{border-left:3px solid var(--eq);padding:6px 10px;font-size:12.5px;margin:10px 0}
+.note{font-size:12px;color:var(--mute)}
+.foot{padding:10px 24px;border-top:1px solid var(--line);font-size:11.5px;color:var(--mute);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:980px){main{grid-template-columns:1fr}.viewer{border-right:0;border-bottom:1px solid var(--line);min-height:50vh}}
+</style>
+</head>
+<body>
+<header>
+  <h1>문서 구조화</h1>
+  <div class="chips" id="sys"></div>
+</header>
+<div class="gallery" id="gallery"></div>
+<main>
+  <section class="viewer">
+    <div class="tools" id="tools">
+      <span class="lg on" data-l="text"><i style="background:var(--txt)"></i>문자</span>
+      <span class="lg on" data-l="node"><i style="background:var(--eq)"></i>장비 <i style="background:var(--ins)"></i>계기 <i style="background:var(--sym)"></i>기호</span>
+      <span class="lg on" data-l="run"><i style="background:var(--pipe)"></i>배관 <i style="background:var(--sig)"></i>신호선</span>
+      <span class="lg on" data-l="jct"><i style="background:var(--jct)"></i>분기점</span>
+      <span class="lg on" data-l="tbl"><i style="background:var(--tbl)"></i>표</span>
+      <span class="lg on" data-l="fig"><i style="background:var(--fig)"></i>그림 영역</span>
+      <span class="lg on" data-l="par"><i style="background:var(--txt)"></i>문단</span>
+      <span class="lg on" data-l="lead"><i style="background:var(--ins)"></i>주기 <i style="background:var(--pipe)"></i>지시선</span>
+      <span class="sp"></span>
+      <span class="lg" id="zoom">배율 1×</span>
+    </div>
+    <div class="canvas" id="canvas"></div>
+  </section>
+  <aside class="panel">
+    <div class="tabs" id="tabs">
+      <button data-t="sum" class="on">요약</button><button data-t="graph">그래프</button><button data-t="serial">직렬화</button><button data-t="index">색인</button><button data-t="table">표 · 본문</button><button data-t="query">질의</button>
+    </div>
+    <div class="tab on" id="t-sum"><div id="summary"></div></div>
+    <div class="tab" id="t-graph"><h3>관계 그래프 <span id="gcount"></span></h3><svg class="gsvg" id="gsvg" viewBox="0 0 640 440"></svg><p class="note">노드 클릭 시 원본에서 위치 강조. 배치는 연결 관계만 반영.</p></div>
+    <div class="tab" id="t-serial"><h3>텍스트 LLM 입력용 직렬화 <span id="scount"></span> <button class="btn ghost" id="copy" style="padding:2px 8px;font-size:12px;margin-left:8px">복사</button></h3><pre id="serial"></pre></div>
+    <div class="tab" id="t-index">
+      <h3>완전 일치 (태그 · 부품 번호)</h3><div class="toks" id="ix-exact"></div>
+      <h3>희소 색인 BM25 (그래프 · 표 · 본문 텍스트)</h3><div id="ix-bm25"></div>
+      <h3>표 행</h3><div id="ix-rows"></div>
+      <h3>이미지 임베딩 (쪽 · 그림 영역)</h3><div id="ix-embed"></div>
+    </div>
+    <div class="tab" id="t-table"><div id="tables"></div><h3>본문 문단</h3><div id="paras"></div></div>
+    <div class="tab" id="t-query">
+      <div class="q"><input id="qtag" placeholder="태그 또는 라벨 (예 P4712)"><select id="qdepth"><option>1</option><option>2</option><option selected>3</option><option>4</option></select><button class="btn" id="qgo">부분 그래프</button></div>
+      <pre id="qout"></pre>
+    </div>
+  </aside>
+</main>
+<div class="foot"><span id="foot-l"></span><span>처리는 저장소의 python 도구(app/process.py)로 수행, 이 파일은 결과를 담은 정적 화면</span></div>
+<script>
+const SAMPLES = /*__DATA__*/[];
+const $ = s => document.querySelector(s);
+const ROLE = {equipment:'장비', instrument:'계기', symbol:'기호', nozzle:'접속구', note:'주석', mark:'표식', arrow:'화살표', shape:'도형', junction:'분기점'};
+const KIND = {vector:'벡터 도면', drawing:'래스터 도면 · 도식', page:'표 · 본문 쪽', illustration:'도해 · 기계 도면', photo:'사진 · 렌더링'};
+let R = null, S = null, scale = 1;
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+// ---- 표본 선택 ----
+const gal = $('#gallery');
+SAMPLES.forEach((s, i) => { const c = document.createElement('div'); c.className = 'card'; c.innerHTML = `<img src="${s.thumb}" alt=""><div><b>${esc(s.name)}</b>${KIND[s.R.kind] || s.R.kind} · ${esc(s.source)}</div>`; c.addEventListener('click', () => select(i)); gal.appendChild(c); });
+function select(i){ S = SAMPLES[i]; R = S.R; document.querySelectorAll('.gallery .card').forEach((c, j) => c.classList.toggle('on', j === i)); scale = 1; $('#zoom').textContent = '배율 1×'; render(); show('sum'); }
+
+// ---- 탭·겹층 ----
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) show(b.dataset.t); });
+function show(t){ document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('on', b.dataset.t === t)); document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x.id === 't-' + t)); }
+$('#tools').addEventListener('click', e => { const lg = e.target.closest('.lg[data-l]'); if (!lg) return; lg.classList.toggle('on'); const g = document.getElementById('ov-' + lg.dataset.l); if (g) g.classList.toggle('on', lg.classList.contains('on')); });
+$('#zoom').addEventListener('click', () => { scale = scale >= 3 ? 1 : scale + 1; $('#zoom').textContent = `배율 ${scale}×`; fit(); });
+function fit(){ const svg = $('#canvas svg'); if (!svg || !R) return; const w = $('#canvas').clientWidth - 2; const vw = R.view.w, vh = R.view.h; const s = Math.min(1, w / vw) * scale; svg.setAttribute('width', vw * s); svg.setAttribute('height', vh * s); }
+addEventListener('resize', fit);
+
+// ---- 결과 그리기 ----
+const px = v => v / R.view.mm_per_px;
+function render(){
+  const W = R.view.w, H = R.view.h; const hasMM = R.kind === 'vector' || R.kind === 'drawing';
+  const sw = Math.max(1, W / 1400);
+  let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}"><image href="${S.img}" width="${W}" height="${H}" preserveAspectRatio="none"/>`;
+  s += `<g id="ov-tbl" class="layer ov-tbl">` + (R.tables || []).map(t => { const b = t.box || t.bbox.map(px); return `<rect x="${b[0]}" y="${b[1]}" width="${b[2]-b[0]}" height="${b[3]-b[1]}"/>`; }).join('') + `</g>`;
+  s += `<g id="ov-text" class="layer ov-text">` + (R.texts || []).map(t => `<rect x="${t.box[0]}" y="${t.box[1]}" width="${t.box[2]-t.box[0]}" height="${t.box[3]-t.box[1]}"><title>${esc(t.text)} (${t.conf})</title></rect>`).join('') + `</g>`;
+  s += `<g id="ov-fig" class="layer ov-fig">` + (R.figures || []).map(f => `<rect x="${f.box[0]}" y="${f.box[1]}" width="${f.box[2]-f.box[0]}" height="${f.box[3]-f.box[1]}"/>`).join('') + `</g>`;
+  s += `<g id="ov-par" class="layer ov-par">` + (R.paragraphs || []).map(p => `<rect x="${p.box[0]}" y="${p.box[1]}" width="${p.box[2]-p.box[0]}" height="${p.box[3]-p.box[1]}"/>`).join('') + `</g>`;
+  s += `<g id="ov-lead" class="layer ov-lead">` + (R.part_box ? `<rect class="part" x="${R.part_box[0]}" y="${R.part_box[1]}" width="${R.part_box[2]-R.part_box[0]}" height="${R.part_box[3]-R.part_box[1]}"/>` : '') + (R.callouts || []).map((c, i) => `<rect x="${c.box[0]}" y="${c.box[1]}" width="${c.box[2]-c.box[0]}" height="${c.box[3]-c.box[1]}"><title>c${i} ${esc((c.texts || []).join(' '))}</title></rect>`).join('') + (R.leaders || []).map(l => `<line class="${l.end_on_part ? '' : 'off'}" x1="${l.start[0]}" y1="${l.start[1]}" x2="${l.end[0]}" y2="${l.end[1]}"/>`).join('') + `</g>`;
+  s += `<g id="ov-run" class="layer ov-run" style="stroke-width:${2.2*sw}">` + (R.runs || []).map(r => `<polyline id="ov-${r.id}" class="${r.kind}${r.gap ? ' gap' : ''}" points="${r.coords.map(c => px(c[0]) + ',' + px(c[1])).join(' ')}"><title>${r.id} ${r.kind} ${r.a}→${r.b} ${esc(r.texts.join(' '))}</title></polyline>`).join('') + `</g>`;
+  s += `<g id="ov-node" class="layer ov-node">` + (R.nodes || []).map(n => { const b = n.bbox.map(px); return `<rect id="ov-${n.id}" class="${n.role}" x="${b[0]-2}" y="${b[1]-2}" width="${b[2]-b[0]+4}" height="${b[3]-b[1]+4}" rx="2"><title>${n.id} ${ROLE[n.role]||n.role} ${esc(n.texts.join(' '))}</title></rect>`; }).join('') + `</g>`;
+  s += `<g id="ov-jct" class="layer ov-jct">` + (R.junctions || []).map(j => `<circle id="ov-${j.id}" cx="${px(j.pt[0])}" cy="${px(j.pt[1])}" r="${4*sw}"/>`).join('') + `</g>`;
+  s += `<g id="ov-hl" class="layer ov-hl on"></g></svg>`;
+  $('#canvas').innerHTML = s; document.querySelectorAll('.tools .lg[data-l]').forEach(l => { const g = document.getElementById('ov-' + l.dataset.l); if (g) g.classList.toggle('on', l.classList.contains('on')); });
+  fit();
+  const p = R.plan || {}; const sn = p.snapshot || {};
+  $('#sys').innerHTML = `<span class="chip">코어<b>${sn.cores ?? '-'}</b></span><span class="chip">사용 스레드<b>${p.threads ?? '-'}</b></span>` + (sn.total_gb ? `<span class="chip">메모리 가용<b>${sn.avail_gb} / ${sn.total_gb} GB</b></span>` : '') + `<span class="chip">인식 배치<b>${p.batch ?? '-'}</b></span><span class="chip">처리<b>${Object.values(R.times || {}).reduce((a, b) => a + b, 0).toFixed(1)}초</b></span>`;
+  $('#foot-l').textContent = `${S.name} · ${S.source}`;
+  summary(); graph(); serial(); index(); tables(); $('#qout').textContent = hasMM ? '태그를 넣고 부분 그래프를 누름.' : '관계 그래프가 없는 입력(표 · 본문 · 도해 · 사진).'; $('#qtag').value = S.qtag || '';
+  if (S.qtag && hasMM) query();
+}
+function summary(){
+  const c = R.counts || {}; const kp = [];
+  const add = (k, l) => { if (c[k] != null) kp.push(`<div class="kpi"><b>${c[k]}</b><span>${l}</span></div>`); };
+  add('nodes','노드'); add('runs','간선'); add('junctions','분기점'); add('equipment','장비'); add('instrument','계기'); add('symbol','기호'); add('texts','문자'); add('tables','표'); add('cells','칸'); add('figures','그림 영역'); add('rows_with_figure','그림 든 행'); add('paragraphs','문단'); add('primitives','기본 요소'); add('callouts','주기'); add('callouts_with_leader','지시선 붙은 주기'); add('leader_end_on_part','끝점 부품 위');
+  const t = R.times || {}; const tt = Object.values(t).reduce((a, b) => a + b, 0);
+  const d = R.detect || {}; const p = R.plan || {}; const m = R.memory || {};
+  $('#summary').innerHTML = `
+   <h3>판별</h3><div class="kv"><span>종류</span><b>${KIND[R.kind] || R.kind}</b><span>근거</span><b>${esc(d.reason || '')}</b>${R.dpi ? `<span>해상도</span><b>${R.dpi} dpi · ${esc(d.dpi_source || '')}${d.resized ? ' · 입력 축소' : ''}</b>` : ''}${d.skew_deg != null ? `<span>기울기 보정</span><b>${d.skew_deg}°</b>` : ''}${d.ocr_lang ? `<span>문자 모델</span><b>${d.ocr_lang === 'ko+en' ? '한글 · 영어' : '영어'}</b>` : ''}${d.px ? `<span>크기</span><b>${d.px[0]} × ${d.px[1]} px</b>` : ''}${d.text_ink != null ? `<span>잉크 구성</span><b>문자 ${Math.round(d.text_ink*100)}% · 축 평행 선 ${Math.round(d.axis_ink*100)}% · 그 밖 ${Math.round(d.free_ink*100)}% · 긴 선 ${d.long_lines} · 큰 원 ${d.big_circles}</b>` : ''}</div>
+   <h3>개수</h3><div class="kpis">${kp.join('')}</div>
+   <h3>시간 · 합계 ${tt.toFixed(1)}초</h3><div class="kv">${Object.entries(t).map(([k, v]) => `<span>${esc(k)}</span><b>${v}초</b>`).join('')}</div>
+   <h3>자원</h3><div class="kv"><span>설정</span><b>${(p.why || []).map(esc).join('<br>')}</b><span>최대 메모리</span><b>${m.peak_rss_gb != null ? m.peak_rss_gb + ' GB (이 처리)' : '-'}${m.min_avail_gb != null ? ' · 최저 가용 ' + m.min_avail_gb + ' GB' : ''}</b></div>
+   ${R.warning ? `<div class="warn">${esc(R.warning)}</div>` : ''}`;
+}
+function graph(){
+  const svg = $('#gsvg'); svg.innerHTML = '';
+  const nodes = (R.nodes || []).filter(n => !['mark','arrow'].includes(n.role) && !n.attached_to);
+  const lift = id => { const n = (R.nodes || []).find(x => x.id === id); return n && n.attached_to ? n.attached_to : id; };
+  const ids = new Set(nodes.map(n => n.id)); const J = new Set();
+  const edges = []; (R.runs || []).forEach(r => { const a = lift(r.a), b = lift(r.b); if (a === b || a.startsWith('open') || b.startsWith('open')) return; [a, b].forEach(v => { if (v.startsWith('j')) J.add(v); }); if ((ids.has(a) || J.has(a)) && (ids.has(b) || J.has(b))) edges.push({a, b, kind: r.kind, id: r.id}); });
+  $('#gcount').textContent = nodes.length ? `노드 ${nodes.length} · 분기점 ${J.size} · 간선 ${edges.length}` : '없음';
+  if (!nodes.length) return;
+  const pos = {}; const all = [...nodes.map(n => ({id: n.id, role: n.role, c: [(n.bbox[0]+n.bbox[2])/2, (n.bbox[1]+n.bbox[3])/2], name: n.texts[0] || ''})), ...[...J].map(j => { const jj = R.junctions.find(x => x.id === j); return {id: j, role: 'junction', c: jj ? jj.pt : [0, 0], name: ''}; })];
+  const xs = all.map(a => a.c[0]), ys = all.map(a => a.c[1]); const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  all.forEach(a => pos[a.id] = [30 + (a.c[0] - x0) / ((x1 - x0) || 1) * 580, 30 + (a.c[1] - y0) / ((y1 - y0) || 1) * 380]);
+  const k = Math.sqrt(640 * 440 / all.length) * 0.45; const N = all.length > 400 ? 60 : 220;
+  for (let it = 0; it < N; it++) { const disp = {}; all.forEach(a => disp[a.id] = [0, 0]); const T = 18 * (1 - it / N) + 0.5;
+    for (let i = 0; i < all.length; i++) for (let j = i + 1; j < all.length; j++) { const u = all[i].id, v = all[j].id; let dx = pos[u][0] - pos[v][0], dy = pos[u][1] - pos[v][1]; let d = Math.hypot(dx, dy) || 0.01; const f = k * k / d; disp[u][0] += dx / d * f; disp[u][1] += dy / d * f; disp[v][0] -= dx / d * f; disp[v][1] -= dy / d * f; }
+    edges.forEach(e => { let dx = pos[e.a][0] - pos[e.b][0], dy = pos[e.a][1] - pos[e.b][1]; let d = Math.hypot(dx, dy) || 0.01; const f = d * d / k; disp[e.a][0] -= dx / d * f; disp[e.a][1] -= dy / d * f; disp[e.b][0] += dx / d * f; disp[e.b][1] += dy / d * f; });
+    all.forEach(a => { disp[a.id][0] -= (pos[a.id][0] - 320) * 0.03; disp[a.id][1] -= (pos[a.id][1] - 220) * 0.03; const d = Math.hypot(...disp[a.id]) || 0.01; const m = Math.min(d, T); pos[a.id][0] = Math.max(20, Math.min(620, pos[a.id][0] + disp[a.id][0] / d * m)); pos[a.id][1] = Math.max(20, Math.min(420, pos[a.id][1] + disp[a.id][1] / d * m)); }); }
+  const col = {equipment:'var(--eq)', instrument:'var(--ins)', junction:'var(--jct)', note:'var(--ins)'};
+  let s = edges.map(e => `<line class="e ${e.kind}" x1="${pos[e.a][0]}" y1="${pos[e.a][1]}" x2="${pos[e.b][0]}" y2="${pos[e.b][1]}"/>`).join('');
+  s += all.map(a => { const r = {equipment: 9, instrument: 7, junction: 3}[a.role] || 4.5; return `<g class="n" data-id="${a.id}" transform="translate(${pos[a.id][0]} ${pos[a.id][1]})"><circle r="${r}" fill="${col[a.role] || 'var(--sym)'}"/>${a.name && ['equipment','instrument'].includes(a.role) ? `<text x="${r + 3}" y="3">${esc(a.name)}</text>` : ''}<title>${a.id} ${ROLE[a.role] || a.role} ${esc(a.name)}</title></g>`; }).join('');
+  svg.innerHTML = s;
+  svg.querySelectorAll('g.n').forEach(g => g.addEventListener('click', () => highlight([g.dataset.id], [])));
+}
+function highlight(nodeIds, runIds){
+  const hl = $('#ov-hl'); if (!hl) return; hl.innerHTML = '';
+  [...nodeIds, ...runIds].forEach(id => { const el = document.getElementById('ov-' + id); if (el) { const c = el.cloneNode(true); c.removeAttribute('id'); hl.appendChild(c); } });
+  document.querySelectorAll('#gsvg g.n').forEach(g => g.classList.toggle('hl', nodeIds.includes(g.dataset.id)));
+  const first = document.getElementById('ov-' + (nodeIds[0] || runIds[0])); if (first && first.scrollIntoView) first.scrollIntoView({block: 'center', inline: 'center', behavior: 'smooth'});
+}
+function serial(){ const L = R.serial || []; $('#serial').textContent = L.join('\n'); $('#scount').textContent = `${L.length}줄 · ${(R.index && R.index.bm25) ? R.index.bm25.tokens + ' 토큰' : ''}`; }
+$('#copy').addEventListener('click', () => navigator.clipboard && navigator.clipboard.writeText($('#serial').textContent));
+function index(){
+  const ix = R.index || {};
+  $('#ix-exact').innerHTML = (ix.exact || []).length ? ix.exact.map(e => `<span class="tok key" data-t="${esc(e.target)}">${esc(e.key)}<small>${esc(e.target)}</small></span>`).join('') : '<span class="note">없음</span>';
+  $('#ix-exact').querySelectorAll('.tok').forEach(t => t.addEventListener('click', () => { if (t.dataset.t !== 'text') highlight([t.dataset.t], []); }));
+  const b = ix.bm25 || {}; $('#ix-bm25').innerHTML = `<div class="kv"><span>토큰</span><b>${b.tokens || 0}</b><span>어휘</span><b>${b.vocab || 0}</b></div><div class="toks" style="margin-top:8px">${(b.top || []).slice(0, 40).map(([t, c]) => `<span class="tok">${esc(t)}<small>${c}</small></span>`).join('')}</div>`;
+  $('#ix-rows').innerHTML = (ix.rows || []).length ? `<div class="kv"><span>행</span><b>${ix.rows.length}</b></div><pre style="max-height:160px;margin-top:8px">${ix.rows.slice(0, 12).map(r => esc(`${r.table} 행${r.row}: ${r.text}`)).join('\n')}</pre>` : '<span class="note">없음</span>';
+  const e = R.embedding || {};
+  $('#ix-embed').innerHTML = e.available ? `<div class="kv"><span>차원</span><b>${e.dims}</b><span>영역</span><b>${e.items.length}</b></div>` + e.items.slice(0, 6).map(it => `<div style="margin-top:8px"><div class="note">${esc(it.id)} · 앞 32차원</div><div class="vec">${it.head.map(v => `<i class="${v < 0 ? 'neg' : ''}" style="height:${Math.min(48, Math.abs(v) * 400 + 2).toFixed(0)}px"></i>`).join('')}</div></div>`).join('')
+    : `<div class="kv"><span>상태</span><b>모델 없음</b><span>사유</span><b>${esc(e.reason || '')}</b><span>대상 영역</span><b>${e.regions || 0}</b></div><p class="note">공개 가중치 파일을 설치하면 쪽과 그림 영역의 밀집 벡터를 만듦. 관계 질의에는 쓰지 않음.</p>`;
+}
+function tables(){
+  const T = R.tables || [];
+  $('#tables').innerHTML = T.length ? T.map((t, i) => `<h3>t${i} · ${t.rows.length}행</h3><table class="t">${t.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table>`).join('') : '<h3>표</h3><span class="note">없음</span>';
+  const P = R.paragraphs || [];
+  $('#paras').innerHTML = P.length ? P.map((p, i) => `<p style="margin:0 0 8px;font-size:13px"><span class="note" style="font-family:var(--mono)">p${i}</span> ${esc(p.text)}</p>`).join('') : '<span class="note">없음</span>';
+}
+// ---- 질의: 부분 그래프 (처리 도구의 규칙과 동일) ----
+function nameOf(n){ const tags = n.texts.filter(t => /^[A-Z]\d{4}$/.test(t)); if (tags.length) return tags[0]; if (n.role === 'instrument') return n.texts.slice(0, 2).join(' '); if (n.texts.length) return n.texts[0]; return n.id; }
+function subgraph(tag, depth){
+  const nodes = {}; (R.nodes || []).forEach(n => nodes[n.id] = n);
+  const lift = id => nodes[id] && nodes[id].attached_to ? nodes[id].attached_to : id;
+  const label = id => nodes[id] ? `${id}[${nodes[id].role} ${nameOf(nodes[id])}]` : id;
+  const where = id => { if (nodes[id]) return 'bbox=(' + nodes[id].bbox.map(v => v.toFixed(1)).join(',') + ')'; const j = (R.junctions || []).find(x => x.id === id); return j ? `pt=(${j.pt[0].toFixed(1)},${j.pt[1].toFixed(1)})` : ''; };
+  let start = (R.nodes || []).find(n => nameOf(n) === tag || n.texts.includes(tag));
+  if (!start) return {found: false, lines: [`'${tag}' 이름의 요소 없음`], nodes: [], runs: []};
+  start = lift(start.id);
+  const adj = {}; (R.runs || []).forEach(r => { const a = lift(r.a), b = lift(r.b); if (a === b) return; (adj[a] = adj[a] || []).push([b, r]); (adj[b] = adj[b] || []).push([a, r]); });
+  const seen = new Set([start]); let frontier = [start]; const sub = []; const used = new Set();
+  for (let d = 0; d < depth; d++) { const nxt = []; frontier.forEach(v => (adj[v] || []).forEach(([w, r]) => { if (used.has(r.id)) return; used.add(r.id); sub.push([v, w, r]); if (!seen.has(w)) { seen.add(w); nxt.push(w); } })); frontier = nxt; }
+  const lines = [`# 질의 부분 그래프: ${tag} 기준 ${depth}단계, 간선 ${sub.length}`];
+  sub.forEach(([v, w, r]) => lines.push(`${label(v)} --${r.id}${r.texts.length ? '(' + r.texts.join('|') + ')' : ''} ${r.kind}--> ${label(w)} 근거=${where(v)} ${where(w)}`));
+  return {found: true, lines, nodes: [...seen], runs: [...used]};
+}
+$('#qgo').addEventListener('click', query); $('#qtag').addEventListener('keydown', e => { if (e.key === 'Enter') query(); });
+function query(){
+  if (!R) return; const tag = $('#qtag').value.trim(); if (!tag) return;
+  const r = subgraph(tag, +$('#qdepth').value);
+  $('#qout').innerHTML = r.lines.map(l => esc(l).replace(/(n\d+|j\d+|r\d+)(?=\[| |$|--)/g, '<span class="hl">$1</span>')).join('\n');
+  if (r.found) highlight(r.nodes, r.runs);
+}
+select(0);
+</script>
+</body>
+</html>
