@@ -26,8 +26,12 @@
 python prepare_docs.py          # C02·C03 벡터 도면 처리(표본 결과는 examples/sample-inputs/output 사용)
 python make_questions.py        # questions.json
 python contexts.py              # contexts.json(세 조건 문맥)
-python run_qa.py --backend anthropic --model <모델 id>      # 키는 환경 변수 ANTHROPIC_API_KEY
+python run_qa.py --backend api --model <모델 id> --label <결과 이름>   # OpenAI 호환 API, 환경 변수 LLM_API_BASE·LLM_API_KEY
 python run_qa.py --backend ollama --model <모델 이름>        # 공개 가중치 모델, 로컬 Ollama
 ```
 
-결과는 `results/<모델>.jsonl`(문항·조건별 응답)과 `results/<모델>.md`(자료별·질문 종류별 정답률, 입력 길이, 응답 시간). 중단 후 다시 실행하면 남은 문항만 호출함.
+결과는 `results/<결과 이름>.jsonl`(문항·조건별 응답)과 `results/<결과 이름>.md`(자료별·질문 종류별 정답률, 입력 길이, 응답 시간). 중단 후 다시 실행하면 남은 문항만 호출함. 결과 이름에는 공급사·모델명을 쓰지 않고 규모와 시점만 적음.
+
+## 결과
+
+- `results/api-small-2026-10.md`: 상용 API 소형 모델, 2026-10-30, 720회 호출. 요지는 아래 표.

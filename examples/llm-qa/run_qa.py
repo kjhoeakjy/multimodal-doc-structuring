@@ -1,25 +1,22 @@
 """세 조건(ocr / full / retrieved)으로 LLM에 질문하고 정답률을 잰다.
-사용: python run_qa.py --backend anthropic --model <모델 id>   (키는 환경 변수 ANTHROPIC_API_KEY)
-      python run_qa.py --backend ollama --model <모델 이름>     (로컬 http://127.0.0.1:11434, 공개 가중치 모델)
+사용: python run_qa.py --backend api --model <모델 id> --label <결과 이름>   (OpenAI 호환 API, 환경 변수 LLM_API_BASE·LLM_API_KEY)
+      python run_qa.py --backend ollama --model <모델 이름>                   (로컬 http://127.0.0.1:11434, 공개 가중치 모델)
       --conds ocr,full,retrieved --limit N --docs pid-standard-vector,...  --dry(호출 없이 프롬프트 수만 셈)
-결과: results/<모델>.jsonl(문항·조건별 응답, 이어서 실행 가능), results/<모델>.md(정답률 표)"""
+결과: results/<label>.jsonl(문항·조건별 응답, 이어서 실행 가능), results/<label>.md(정답률 표). label 기본값은 모델 id"""
 import os, sys, json, re, time, argparse, collections, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 SYSTEM = ("주어진 자료만 근거로 답한다. 답은 값·태그·짧은 구만 쓰고 설명은 붙이지 않는다. 여러 개면 쉼표로 나열한다. "
           "자료에 근거가 없으면 '자료에 없음'이라고만 답한다. Answer using only the given material; output only the value, tag or short phrase.")
 
-def ask_anthropic(model, system, user, max_tokens=120):
-    import anthropic
-    client = anthropic.Anthropic()
-    # 최신 모델은 기본으로 사고(thinking)를 켜 max_tokens를 다 써 버리므로 끈다
-    kw = dict(model=model, max_tokens=max_tokens, system=system, messages=[{"role": "user", "content": user}], thinking={"type": "disabled"})
-    try:
-        r = client.messages.create(temperature=0, **kw)
-    except (TypeError, anthropic.BadRequestError) as e:
-        if 'temperature' not in str(e):
-            raise
-        r = client.messages.create(**kw)  # 최신 SDK·API는 temperature 인자를 받지 않음
-    return ''.join(b.text for b in r.content if getattr(b, 'type', '') == 'text').strip()
+def ask_api(model, system, user, max_tokens=120):
+    """OpenAI 호환 chat/completions 형식의 외부 API. 주소와 키는 환경 변수 LLM_API_BASE, LLM_API_KEY. 공급사 이름은 코드에 두지 않음."""
+    base = os.environ.get('LLM_API_BASE', '').rstrip('/'); key = os.environ.get('LLM_API_KEY', '')
+    if not base or not key:
+        raise RuntimeError('환경 변수 LLM_API_BASE, LLM_API_KEY 필요')
+    body = json.dumps(dict(model=model, max_tokens=max_tokens, messages=[{"role": "system", "content": system}, {"role": "user", "content": user}])).encode()
+    req = urllib.request.Request(base + '/chat/completions', data=body, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
+    r = json.loads(urllib.request.urlopen(req, timeout=120).read())
+    return (r['choices'][0]['message']['content'] or '').strip()
 
 def ask_ollama(model, system, user, max_tokens=120):
     body = json.dumps(dict(model=model, system=system, prompt=user, stream=False, options=dict(temperature=0, num_predict=max_tokens, num_ctx=8192))).encode()
@@ -43,7 +40,7 @@ def score(q, resp):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--backend', default='anthropic'); ap.add_argument('--model', required=True)
+    ap.add_argument('--backend', default='api'); ap.add_argument('--model', required=True); ap.add_argument('--label', default='')
     ap.add_argument('--conds', default='ocr,full,retrieved'); ap.add_argument('--limit', type=int, default=0); ap.add_argument('--docs', default='')
     ap.add_argument('--dry', action='store_true'); ap.add_argument('--sleep', type=float, default=0.0)
     a = ap.parse_args()
@@ -54,13 +51,13 @@ def main():
         Q = Q[:a.limit]
     conds = a.conds.split(',')
     os.makedirs(os.path.join(HERE, 'results'), exist_ok=True)
-    tag = re.sub(r'[^A-Za-z0-9._-]+', '_', a.model)
+    tag = re.sub(r'[^A-Za-z0-9._-]+', '_', a.label or a.model)
     out_path = os.path.join(HERE, 'results', f'{tag}.jsonl')
     done = {}
     if os.path.exists(out_path):
         for line in open(out_path, encoding='utf-8'):
             r = json.loads(line); done[(r['id'], r['cond'])] = r
-    ask = ask_anthropic if a.backend == 'anthropic' else ask_ollama
+    ask = ask_api if a.backend == 'api' else ask_ollama
     todo = [(q, c) for q in Q for c in conds if (q['id'], c) not in done]
     print(f'문항 {len(Q)} × 조건 {len(conds)} = {len(Q) * len(conds)}, 남은 호출 {len(todo)}')
     if a.dry:
@@ -79,7 +76,7 @@ def main():
                 print(i, q['doc'], c, repr(resp)[:60], r['correct'], flush=True)
             if a.sleep:
                 time.sleep(a.sleep)
-    report(Q, conds, done, os.path.join(HERE, 'results', f'{tag}.md'), a.model)
+    report(Q, conds, done, os.path.join(HERE, 'results', f'{tag}.md'), a.label or a.model)
 
 GROUP = {'pid-standard-vector': 'P&ID 벡터(C01)', 'pid-c02-vector': 'P&ID 벡터(C02·C03)', 'pid-c03-vector': 'P&ID 벡터(C02·C03)', 'pid-standard-200dpi': 'P&ID 래스터(C01 200 dpi)', 'pid-standard-scan': 'P&ID 래스터(C01 스캔)',
          'en-report-synthetic-vector': '보고서 PDF 글자 층', 'en-report-synthetic-scan150': '보고서 스캔(영문)', 'ko-report-synthetic': '보고서(한글)', 'ko-table-text-scan200': '표·본문 스캔(한글)',
