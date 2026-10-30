@@ -293,6 +293,9 @@ def subgraph(g, tag, depth=3):
     for nid in sorted(seen):
         if nid in nodes and nodes[nid]['role'] not in ('mark', 'arrow'):
             lines.append(sz.node_line(nodes[nid], where(nid)))
+    if start in nodes and nodes[start]['role'] == 'equipment':
+        rs = sz.equipment_links(g).get(start, [])
+        lines.append(f"# 장비 간 배관 연결: {sz.name_of(nodes[start])} → {', '.join(sz.name_of(nodes[r]) for r in rs) if rs else '없음'}")
     return dict(found=True, start=start, lines=lines, nodes=sorted(seen), runs=sorted(used))
 
 

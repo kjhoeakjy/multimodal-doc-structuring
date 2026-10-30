@@ -42,6 +42,35 @@ def node_line(n, bbox_s=''):
     nz = f" 접속구={','.join(noz)}" if noz else ''
     return f"{n['id']} 종류={n['role']} 이름={name_of(n)} 라벨={'|'.join(n['texts']) or '-'}{nz} {bbox_s}{extra}"
 
+def equipment_links(g):
+    """장비에서 배관 연결을 따라(분기점·밸브·기호는 지나고 다른 장비는 지나지 않음) 바로 도달하는 장비 목록. 노즐은 소속 장비로 올림."""
+    nodes = {n['id']: n for n in g['nodes']}
+    def lift(nid):
+        n = nodes.get(nid); return n['attached_to'] if n and n.get('attached_to') else nid
+    adj = collections.defaultdict(set)
+    for r in g['runs']:
+        a, b = lift(r['a']), lift(r['b'])
+        if a != b:
+            adj[a].add(b); adj[b].add(a)
+    equip = [n['id'] for n in g['nodes'] if n['role'] == 'equipment' and not n.get('attached_to')]
+    out = {}
+    for e in equip:
+        seen, frontier, reach = {e}, [e], set()
+        while frontier:
+            nxt = []
+            for v in frontier:
+                for w in adj[v]:
+                    if w in seen:
+                        continue
+                    seen.add(w)
+                    if w in equip:
+                        reach.add(w)
+                    elif not str(w).startswith('open'):
+                        nxt.append(w)
+            frontier = nxt
+        out[e] = sorted(reach)
+    return out
+
 def main(graph_path, out_txt, question_node=None, depth=3):
     g = json.load(open(graph_path))
     nodes = {n['id']: n for n in g['nodes']}
@@ -87,6 +116,10 @@ def main(graph_path, out_txt, question_node=None, depth=3):
         txt = (f" 라벨={'|'.join(r['texts'])}" + line_fields(r['texts'])) if r['texts'] else ''
         path = '→'.join(f"({x:.1f},{y:.1f})" for x, y in r['coords'])
         lines.append(f"{r['id']} 종류={r['kind']} A={label(a)} B={label(b)}{arrow}{txt}{gap} 경로={path}")
+    lines.append("## 장비 간 배관 연결 (밸브·분기점은 지나고 다른 장비는 지나지 않은 도달)")
+    links = equipment_links(g)
+    for e, rs in links.items():
+        lines.append(f"{name_of(nodes[e])} → {', '.join(name_of(nodes[r]) for r in rs) if rs else '없음'}")
     lines.append("## 표")
     for i, t in enumerate(g['tables']):
         lines.append(f"t{i} bbox=({','.join(f'{v:.1f}' for v in t['bbox'])}) 행수={len(t['rows'])} 첫행={' / '.join(t['rows'][0])}")

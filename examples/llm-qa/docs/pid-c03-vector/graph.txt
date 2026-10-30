@@ -54,4 +54,8 @@ r26 종류=signal A=open@(108.0, 73.2) B=open@(108.0, 65.9) 간격=6.3mm(후보)
 r27 종류=signal A=n17[symbol n17] B=n1[symbol n1] 간격=1.4mm(후보) 경로=(35.0,56.0)→(35.0,54.6)
 r28 종류=signal A=n18[symbol n18] B=n7[equipment n7] 간격=0.9mm(후보) 경로=(67.2,68.0)→(68.1,68.0)
 r29 종류=signal A=n19[symbol n19] B=n7[equipment n7] 간격=0.9mm(후보) 경로=(78.0,68.0)→(77.1,68.0)
+## 장비 간 배관 연결 (밸브·분기점은 지나고 다른 장비는 지나지 않은 도달)
+ESV → n7
+n7 → ESV
+SP → 없음
 ## 표

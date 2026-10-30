@@ -6890,10 +6890,10 @@
   "dropped_fragments": 49
  },
  "times": {
-  "ocr": 0.2,
-  "lines_symbols": 12.6,
-  "graph": 0.5,
-  "total": 13.3
+  "ocr": 0.3,
+  "lines_symbols": 13.2,
+  "graph": 0.6,
+  "total": 14.1
  },
  "dpi": 200,
  "skew_deg": 0.0
