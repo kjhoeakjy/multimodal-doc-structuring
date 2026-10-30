@@ -142,6 +142,12 @@ def remove_frame_and_tables(W, H, prims, texts):
         inside = [t for t in texts if text_bbox(t).centroid.within(bb.buffer(0.3))]
         if len(inside) < 6:
             continue
+        # 밖에서 선이 둘 이상 닿아 있으면 표가 아니라 장비(탑·열교환기 등 격자 모양 기호)
+        gids = {id(longs[i]) for i in g}
+        attached = sum(1 for p in prims if p['kind'] == 'line' and id(p) not in gids and not p['geom'].within(bb.buffer(0.3))
+                       and any(bb.exterior.distance(SPoint(e)) < 2 * TOUCH for e in p['ends']))
+        if attached >= 2:
+            continue
         rows = collections.defaultdict(list)
         for t in inside:
             rows[round(t['y'], 1)].append(t)
@@ -357,6 +363,14 @@ def connect(nodes, lines):
             pieces.append(dict(ends=[(a.x, a.y), (b.x, b.y)], va=v0, vb=v1, src=l['lid'],
                                width=l['width'], dashed=l['dashed']))
     all_ends = [(pc, k) for pc in pieces for k in (0, 1)]
+    corners = []
+    def corner_key(pt):
+        # 모서리 꼭짓점은 TOUCH 안의 기존 꼭짓점에 맞춰 같은 키를 쓴다(두 끝의 좌표가 조금 달라도 하나의 모서리)
+        for c in corners:
+            if math.dist(c, pt) < TOUCH:
+                return ('C', c)
+        c = (round(pt[0], 1), round(pt[1], 1)); corners.append(c)
+        return ('C', c)
     def vertex_of(pc, k):
         fixed = pc['va'] if k == 0 else pc['vb']
         if fixed:
@@ -370,7 +384,7 @@ def connect(nodes, lines):
                 return ('J', j)
         for pc2, k2 in all_ends:
             if pc2 is not pc and math.dist(pc2['ends'][k2], pt) < TOUCH:
-                return ('C', (round(pt[0], 1), round(pt[1], 1)))   # 모서리
+                return corner_key(pt)                               # 모서리
         # 선 방향으로 조금 연장했을 때 요소에 닿으면 간격이 있는 연결 후보로 본다
         other = pc['ends'][1 - k]
         L = math.dist(pt, other)
@@ -387,7 +401,7 @@ def connect(nodes, lines):
                     pc.setdefault('gap', {})[k] = round(math.dist(pt, pc2['ends'][k2]), 2)
                     pc2.setdefault('gap', {})[k2] = pc['gap'][k]
                     q = pc2['ends'][k2]
-                    return ('C', (round((pt[0] + q[0]) / 2, 1), round((pt[1] + q[1]) / 2, 1)))
+                    return corner_key(((pt[0] + q[0]) / 2, (pt[1] + q[1]) / 2))
         return ('O', (round(pt[0], 1), round(pt[1], 1)))           # 열린 끝
     adj = collections.defaultdict(list)
     for pc in pieces:
@@ -425,7 +439,8 @@ def connect(nodes, lines):
     return runs, junctions
 
 # ---------- 6. 문자 연결과 역할 ----------
-TAG_EQUIP = re.compile(r'^[A-Z]\d{4}$')
+TAG_EQUIP = re.compile(r'^[A-Z]{1,2} ?\d{4}$')
+FAR_TAG = 30.0      # 장비 밖에 따로 적힌 장비 태그를 가장 가까운 무명 장비에 붙이는 한계 거리(mm)
 TAG_INSTR = re.compile(r'^[A-Z]{2,5}$')
 TAG_LOOP = re.compile(r'^\d{4}\.\d{2}$')
 TAG_LINE = re.compile(r'^[A-Z]{2,3}[a-z]? \d{5} ')
@@ -479,7 +494,7 @@ def main(svg_path, out_prefix):
     nodes, lines = build_nodes(prims)
     return assemble(W, H, nodes, lines, texts, tables, out_prefix, n_prims=len(prims))
 
-def assemble(W, H, nodes, lines, texts, tables, out_prefix, n_prims=0):
+def assemble(W, H, nodes, lines, texts, tables, out_prefix, n_prims=0, signal_ratio=None):
     """요소(nodes)와 선(lines)에서 연결을 찾고 문자를 붙여 그래프 파일을 쓴다. 벡터·래스터 경로가 공유함."""
     global GAP
     # 간격 허용치는 도면의 주 배관 굵기에 비례(굵은 선으로 그린 도면은 기호도 크고 간격도 큼)
@@ -541,6 +556,17 @@ def assemble(W, H, nodes, lines, texts, tables, out_prefix, n_prims=0):
             n['role'] = 'note'
         elif n['role'] == 'shape':
             n['role'] = 'equipment' if deg[i] >= 2 and box(*n['bbox']).area >= 30 else 'symbol'
+    # 장비 밖에 따로 적힌 장비 태그(예: 탑 옆의 K 2750)는 태그가 없는 가장 가까운 장비의 문자로 붙인다
+    for l in labels:
+        if l['owner'] or not TAG_EQUIP.match(l['text']):
+            continue
+        tb = box(*l['bbox'])
+        cands = [(tb.distance(box(*m['bbox'])), j) for j, m in enumerate(nodes)
+                 if m['role'] == 'equipment' and not any(TAG_EQUIP.match(t) for t in m['texts'])]
+        d, j = min(cands) if cands else (None, None)
+        if d is not None and d < FAR_TAG:
+            l['owner'] = ('node', j, round(d, 2))
+            nodes[j]['texts'].insert(0, l['text'])
     for i, n in enumerate(nodes):                     # 붙어 있는 기호의 문자는 소속 요소의 문자로 합친다
         if 'attached_to' in n:
             nodes[n['attached_to']]['texts'] += [t for t in n['texts'] if t not in nodes[n['attached_to']]['texts']]
@@ -555,7 +581,7 @@ def assemble(W, H, nodes, lines, texts, tables, out_prefix, n_prims=0):
     wc = collections.Counter(round(r['width'], 2) for r in runs)
     pipe_w = max([w for w, c in wc.items() if c >= 3] or [max(wc) if wc else 0.5])
     def run_kind(r):
-        return 'signal' if r['dashed'] or r['width'] < SIGNAL_RATIO * pipe_w else 'pipe'
+        return 'signal' if r['dashed'] or r['width'] < (signal_ratio or SIGNAL_RATIO) * pipe_w else 'pipe'
     def vname(v):
         return {'N': f"n{v[1]}", 'J': f"j{v[1]}"}.get(v[0], f"open@{v[1]}")
     out = dict(

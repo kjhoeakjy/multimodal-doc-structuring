@@ -191,7 +191,7 @@ function highlight(nodeIds, runIds){
   document.querySelectorAll('#gsvg g.n').forEach(g => g.classList.toggle('hl', nodeIds.includes(g.dataset.id)));
   const first = document.getElementById('ov-' + (nodeIds[0] || runIds[0])); if (first && first.scrollIntoView) first.scrollIntoView({block: 'center', inline: 'center', behavior: 'smooth'});
 }
-function nameOf(n){ const tags = n.texts.filter(t => /^[A-Z][0-9O]{4}$/.test(t)).map(t => t[0] + t.slice(1).replace(/O/g, '0')); if (tags.length) return tags[0]; if (n.role === 'instrument') return n.texts.slice(0, 2).join(' '); const c = n.texts.filter(t => !/^N[0-9I]{1,2}$/.test(t) && !/^[\d.,\/\-%]+$/.test(t)); if (c.length) return c[0]; return n.id; }
+function nameOf(n){ const tags = n.texts.map(t => /^([A-Z]{1,2} ?)([0-9O]{4})$/.exec(t)).filter(Boolean).map(m => m[1] + m[2].replace(/O/g, '0')); if (tags.length) return tags[0]; if (n.role === 'instrument') return n.texts.slice(0, 2).join(' '); const c = n.texts.filter(t => !/^N[0-9I]{1,2}$/.test(t) && !/^[\d.,\/\-%]+$/.test(t)); if (c.length) return c[0]; return n.id; }
 function subgraph(tag, depth){
   const nodes = {}; (R.nodes || []).forEach(n => nodes[n.id] = n);
   const lift = id => nodes[id] && nodes[id].attached_to ? nodes[id].attached_to : id;

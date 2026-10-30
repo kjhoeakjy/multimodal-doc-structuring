@@ -34,7 +34,7 @@ def score(q, resp):
     r = norm(resp)
     if q['kind'] == 'set':
         want = set(norm(a) for a in q['answers'])
-        got = set(norm(t) for t in TAG.findall(resp))
+        got = set(norm(t) for t in TAG.findall(resp)) - {norm(q.get('focus') or '')}   # 질문에 든 기준 태그는 답으로 세지 않음
         return 1 if got == want else 0
     return 1 if any(norm(a) and norm(a) in r for a in q['answers']) else 0
 
@@ -43,6 +43,7 @@ def main():
     ap.add_argument('--backend', default='api'); ap.add_argument('--model', required=True); ap.add_argument('--label', default='')
     ap.add_argument('--conds', default='ocr,full,retrieved'); ap.add_argument('--limit', type=int, default=0); ap.add_argument('--docs', default='')
     ap.add_argument('--dry', action='store_true'); ap.add_argument('--sleep', type=float, default=0.0)
+    ap.add_argument('--rescore', action='store_true', help='저장된 응답을 다시 채점해 표만 다시 씀')
     a = ap.parse_args()
     Q = json.load(open(os.path.join(HERE, 'questions.json'), encoding='utf-8')); C = json.load(open(os.path.join(HERE, 'contexts.json'), encoding='utf-8'))
     if a.docs:
@@ -57,6 +58,13 @@ def main():
     if os.path.exists(out_path):
         for line in open(out_path, encoding='utf-8'):
             r = json.loads(line); done[(r['id'], r['cond'])] = r
+    if a.rescore:
+        qmap = {q['id']: q for q in Q}
+        for r in done.values():
+            if r['id'] in qmap:
+                r['correct'] = score(qmap[r['id']], r['response'])
+        open(out_path, 'w', encoding='utf-8').write(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in done.values()))
+        report(Q, conds, done, os.path.join(HERE, 'results', f'{tag}.md'), a.label or a.model); return
     ask = ask_api if a.backend == 'api' else ask_ollama
     todo = [(q, c) for q in Q for c in conds if (q['id'], c) not in done]
     print(f'문항 {len(Q)} × 조건 {len(conds)} = {len(Q) * len(conds)}, 남은 호출 {len(todo)}')

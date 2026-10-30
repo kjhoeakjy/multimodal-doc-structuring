@@ -159,6 +159,71 @@ def deskew(gray):
     M = cv2.getRotationMatrix2D((W / 2, H / 2), ang, 1.0)
     return cv2.warpAffine(gray, M, (W, H), flags=cv2.INTER_LINEAR, borderValue=255), ang
 
+def merge_fragments(nodes, gap_mm=15.0, max_mm=60.0):
+    """래스터에서 긴 변이 선으로 뽑혀 끊긴 도형 조각을 다시 합친다.
+    (1) 맞닿거나 겹치는 도형끼리, (2) 폭(또는 높이)이 같고 그 방향으로 gap_mm 안에 나란히 놓인 도형끼리,
+    (3) 도형 상자 안에 절반 이상 든 작은 기호는 그 도형에 합침. 합친 크기가 max_mm를 넘으면 합치지 않음."""
+    def union(a, b):
+        ba, bb = a['bbox'], b['bbox']
+        return dict(role='shape', prims=[], geom=unary_union([a['geom'], b['geom']]),
+                    bbox=[min(ba[0], bb[0]), min(ba[1], bb[1]), max(ba[2], bb[2]), max(ba[3], bb[3])])
+    def ok_size(bb):
+        return bb[2] - bb[0] <= max_mm and bb[3] - bb[1] <= max_mm
+    shapes = [n for n in nodes if n['role'] == 'shape']
+    others = [n for n in nodes if n['role'] != 'shape']
+    merged = 0; changed = True
+    while changed:
+        changed = False
+        for i in range(len(shapes)):
+            for j in range(i + 1, len(shapes)):
+                a, b = shapes[i]['bbox'], shapes[j]['bbox']
+                ox = min(a[2], b[2]) - max(a[0], b[0]); oy = min(a[3], b[3]) - max(a[1], b[1])
+                wa, ha, wb, hb = a[2] - a[0], a[3] - a[1], b[2] - b[0], b[3] - b[1]
+                touch = ox > -1.0 and oy > -1.0
+                big = wa * ha >= 30 and wb * hb >= 30
+                v_stack = big and abs(wa - wb) < 0.15 * max(wa, wb) and ox > 0.7 * min(wa, wb) and -gap_mm <= oy <= 0
+                h_stack = big and abs(ha - hb) < 0.15 * max(ha, hb) and oy > 0.7 * min(ha, hb) and -gap_mm <= ox <= 0
+                if touch or v_stack or h_stack:
+                    u = union(shapes[i], shapes[j])
+                    if ok_size(u['bbox']):
+                        shapes[i] = u; del shapes[j]; merged += 1; changed = True
+                        break
+            if changed:
+                break
+    # (4) 배관을 가로지르는 짧은 표시(플랜지·노즐 눈금)는 선 제거로 위아래(좌우) 두 조각이 되므로 다시 하나로 합침
+    small = [n for n in others if n['role'] in ('symbol', 'mark') and max(n['bbox'][2] - n['bbox'][0], n['bbox'][3] - n['bbox'][1]) < 2.5]
+    rest = [n for n in others if n not in small]
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(small)):
+            for j in range(i + 1, len(small)):
+                a, b = small[i]['bbox'], small[j]['bbox']
+                ox = min(a[2], b[2]) - max(a[0], b[0]); oy = min(a[3], b[3]) - max(a[1], b[1])
+                wa, ha, wb, hb = a[2] - a[0], a[3] - a[1], b[2] - b[0], b[3] - b[1]
+                across_v = ox > 0.7 * min(wa, wb) and -1.5 <= oy <= 0
+                across_h = oy > 0.7 * min(ha, hb) and -1.5 <= ox <= 0
+                if across_v or across_h:
+                    u = union(small[i], small[j])
+                    ub = u['bbox']; u['role'] = 'mark' if max(ub[2] - ub[0], ub[3] - ub[1]) < 4.0 else 'symbol'   # 눈금 크기면 선을 자르지 않는 표시
+                    small[i] = u; del small[j]; merged += 1; changed = True
+                    break
+            if changed:
+                break
+    others = rest + small
+    keep = []
+    for n in others:
+        if n['role'] == 'symbol':
+            b = box(*n['bbox']); host = None
+            for s in shapes:
+                if b.intersection(box(*s['bbox'])).area >= 0.5 * b.area:
+                    host = s; break
+            if host is not None:
+                host['geom'] = unary_union([host['geom'], n['geom']]); merged += 1
+                continue
+        keep.append(n)
+    return shapes + keep, merged
+
 def inner_frame(lines, W, H, band=20.0):
     """가장자리 띠 안의 긴 수평·수직선 중 가장 안쪽 네 개로 도면 틀을 정한다. 없으면 쪽 전체."""
     top, bottom, left, right = 0.0, H, 0.0, W
@@ -264,9 +329,10 @@ def main(png_path, dpi, out_prefix, reader=None, ocr_json=None):
     lines, texts, tables = eg.remove_frame_and_tables(W, H, lines, texts)
     tb = [box(*t['bbox']) for t in tables]
     nodes = [s for s in shapes + symbols if not any(box(*s['bbox']).within(b.buffer(0.5)) for b in tb)]
+    nodes, n_merged = merge_fragments(nodes)
     times['lines_symbols'] = round(time.time() - t1, 1); t2 = time.time()
-    eg.SIGNAL_RATIO = 0.35     # 래스터에서는 선 굵기 측정 오차가 커 신호선 판정 비율을 낮춘다
-    out = eg.assemble(W, H, nodes, lines, texts, tables, out_prefix, n_prims=len(lines) + len(nodes))
+    # 래스터에서는 선 굵기 측정 오차가 커 신호선 판정 비율을 낮춘다(이 호출에만 적용)
+    out = eg.assemble(W, H, nodes, lines, texts, tables, out_prefix, n_prims=len(lines) + len(nodes), signal_ratio=0.35)
     times['graph'] = round(time.time() - t2, 1); times['total'] = round(time.time() - t0, 1)
     out['times'] = times
     out['dpi'] = dpi

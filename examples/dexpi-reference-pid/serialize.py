@@ -3,8 +3,8 @@ import sys, json, re, collections
 
 NOTES = {}
 def name_of(n):
-    # 장비 태그(문자 1 + 숫자 4). 문자 인식이 0을 O로 읽은 경우를 되돌림
-    tags = [t[0] + t[1:].replace('O', '0') for t in n['texts'] if re.match(r'^[A-Z][0-9O]{4}$', t)]
+    # 장비 태그(문자 1~2 + 숫자 4). 문자 인식이 0을 O로 읽은 경우를 되돌림
+    tags = [m.group(1) + m.group(2) + m.group(3).replace('O', '0') for m in (re.match(r'^([A-Z]{1,2})( ?)([0-9O]{4})$', t) for t in n['texts']) if m]
     if tags:
         return tags[0]
     if n['role'] == 'instrument':
@@ -28,19 +28,23 @@ def nozzles_of(n):
     return out
 
 LINE_LABEL = re.compile(r'^([A-Z]{2,3}[a-z]?) (\d{5}) (\w+) (\d{2,3})$')
+LINE_LABEL2 = re.compile(r'^[A-Z]-(\d{2}[A-Z]\d{5}[A-Z]?)-(\d{4})([A-Z]{2})-([A-Z0-9]{5})-')
 def line_fields(texts):
-    """배관 라벨 '유체 라인번호 등급 호칭지름' 형식을 항목으로 풀어 씀."""
+    """배관 라벨을 항목으로 풀어 씀. 형식 1 '유체 라인번호 등급 호칭지름', 형식 2 'D-라인번호-호칭지름유체-등급-…'."""
     for t in texts:
         m = LINE_LABEL.match(t)
         if m:
             return f" 라인={m.group(2)} 유체={m.group(1)} 등급={m.group(3)} DN={m.group(4)}"
+        m = LINE_LABEL2.match(t)
+        if m:
+            return f" 라인={m.group(1)} DN={int(m.group(2))} 유체={m.group(3)} 등급={m.group(4)}"
     return ''
 
 def node_line(n, bbox_s=''):
     extra = f" 설명대상={n['annotates']}" if n.get('annotates') else ''
     noz = nozzles_of(n) if n['role'] == 'equipment' else []
     nz = f" 접속구={','.join(noz)}" if noz else ''
-    return f"{n['id']} 종류={n['role']} 이름={name_of(n)} 라벨={'|'.join(n['texts']) or '-'}{nz} {bbox_s}{extra}"
+    return f"{n['id']} 종류={n['role']} 이름={name_of(n)} 라벨={'|'.join(n['texts']) or '-'}{line_fields(n['texts'])}{nz} {bbox_s}{extra}"
 
 def equipment_links(g):
     """장비에서 배관 연결을 따라(분기점·밸브·기호는 지나고 다른 장비는 지나지 않음) 바로 도달하는 장비 목록. 노즐은 소속 장비로 올림."""
@@ -74,6 +78,7 @@ def equipment_links(g):
 def main(graph_path, out_txt, question_node=None, depth=3):
     g = json.load(open(graph_path))
     nodes = {n['id']: n for n in g['nodes']}
+    NOTES.clear()                                     # 문서마다 새로 채움(한 프로세스에서 여러 문서를 처리할 때 섞이지 않도록)
     for n in g['nodes']:
         if n['role'] == 'note' and n.get('annotates') and n['texts']:
             NOTES[n['annotates']] = n['texts'][0]
@@ -123,6 +128,18 @@ def main(graph_path, out_txt, question_node=None, depth=3):
     lines.append("## 표")
     for i, t in enumerate(g['tables']):
         lines.append(f"t{i} bbox=({','.join(f'{v:.1f}' for v in t['bbox'])}) 행수={len(t['rows'])} 첫행={' / '.join(t['rows'][0])}")
+    free = [l for l in g.get('labels', []) if not l.get('owner')]
+    if free:
+        lines.append("## 기타 문자 (요소·선에 붙지 않은 문자, 세로로 이어진 것끼리 한 줄)")
+        cols = []
+        for l in sorted(free, key=lambda l: (round(l['x']), l['y'])):
+            for c in cols:
+                if abs(c[-1]['x'] - l['x']) < 3 and 0 <= l['y'] - c[-1]['y'] < 8:
+                    c.append(l); break
+            else:
+                cols.append([l])
+        for c in sorted(cols, key=lambda c: (c[0]['y'], c[0]['x'])):
+            lines.append(f"pos=({c[0]['x']:.1f},{c[0]['y']:.1f}) {' | '.join(l['text'] for l in c)}{line_fields([l['text'] for l in c])}")
     open(out_txt, 'w', encoding='utf-8').write('\n'.join(lines) + '\n')
     # 질의용 부분 그래프: 지정 요소에서 배관 연결을 따라 depth 단계
     if question_node:

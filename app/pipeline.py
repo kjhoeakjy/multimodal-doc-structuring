@@ -421,6 +421,33 @@ def build_index(serial_lines, nodes, texts_flat, tables):
     return dict(bm25=dict(tokens=sum(toks.values()), vocab=len(toks), top=toks.most_common(40)), exact=exact, rows=rows)
 
 
+# ---------------- 표 직렬화 ----------------
+def table_lines(tid, rows):
+    """머리글 행(위쪽 4행 안에서 모든 열이 찬 첫 행)을 찾아 자료 행을 '열 이름=값' 쌍으로 쓴다. 머리글 위 행은 표 제목 줄로 둔다."""
+    if not rows:
+        return []
+    ncol = max(len(r) for r in rows)
+    hdr = next((i for i, r in enumerate(rows[:4]) if ncol >= 2 and sum(1 for c in r if c.strip()) == ncol), None)
+    out = []
+    if hdr is None:
+        for ri, row in enumerate(rows):
+            out.append(f"{tid} 행{ri}: " + ' | '.join(row))
+        return out
+    for ri in range(hdr):
+        out.append(f"{tid} 제목줄{ri}: " + ' | '.join(c for c in rows[ri] if c.strip()))
+    names = [c.strip() for c in rows[hdr]]
+    out.append(f"{tid} 열 이름: " + ' | '.join(names))
+    for ri, row in enumerate(rows):
+        if ri <= hdr:
+            continue
+        filled = [c for c in row if c.strip()]
+        if len(filled) <= 1:                     # 구간 제목 행(예: FINE THREAD SERIES)
+            out.append(f"{tid} 행{ri} 구간: {filled[0] if filled else ''}")
+        else:
+            out.append(f"{tid} 행{ri}: " + ' | '.join(f"{names[ci]}={c.strip()}" for ci, c in enumerate(row) if c.strip() and ci < len(names)))
+    return out
+
+
 # ---------------- 본문 묶기 ----------------
 HEADING = re.compile(r'^(\d+(\.\d+)*\.?|\d+-\d+\.|[가-힣]\.|\(?[a-zA-Z]\)|[A-Z]{3,}:)\s+\S')
 
@@ -720,8 +747,7 @@ class Job:
         for ti, tb in enumerate(res['tables']):
             bb = [round(v * k, 1) for v in tb['box']]
             serial.append(f"t{ti} bbox=({','.join(map(str, bb))}) 행수={tb['n_rows']} 열수={tb['n_cols']}")
-            for ri, row in enumerate(tb['rows']):
-                serial.append(f"t{ti} 행{ri}: " + ' | '.join(row))
+            serial += table_lines(f"t{ti}", tb['rows'])
             tables.append(dict(bbox=bb, box=tb['box'], rows=tb['rows'], cell_boxes=tb.get('cell_boxes')))
         serial.append("## 그림 영역")
         for fi, f in enumerate(res['figures']):
@@ -756,8 +782,7 @@ class Job:
         for ti, tb in enumerate(res.get('tables', [])):
             bb = [round(v * k, 1) for v in tb['box']]
             serial.append(f"t{ti} bbox=({','.join(map(str, bb))}) 행수={tb['n_rows']} 열수={tb['n_cols']}")
-            for ri, row in enumerate(tb['rows']):
-                serial.append(f"t{ti} 행{ri}: " + ' | '.join(row))
+            serial += table_lines(f"t{ti}", tb['rows'])
             tables.append(dict(bbox=bb, box=tb['box'], rows=tb['rows'], cell_boxes=tb.get('cell_boxes')))
         serial.append("## 치수 · 주기 (문자 묶음)")
         for i, c in enumerate(res['callouts']):
