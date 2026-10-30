@@ -38,6 +38,21 @@ def main():
         lo, hi = boot_ci(v, a.n, a.seed)
         ch = sum(by[c][i]['chars'] for i in ids if i in by[c]) / len(v); sec = sum(by[c][i]['secs'] for i in ids if i in by[c]) / len(v)
         L.append(f"| {c} | {sum(v) / len(v) * 100:.1f}% | [{lo * 100:.1f}, {hi * 100:.1f}] | {ch:,.0f} | {sec:.1f} |")
+    # 문항 독립성: 같은 질문 문장을 원본·래스터·스캔 자료에 반복한 경우가 있어, 질문 문장 단위로 묶어 재표집한 구간도 함께 씀
+    qtext = {i: by[conds[0]][i]['question'] for i in ids}
+    clusters = collections.defaultdict(list)
+    for i in ids:
+        clusters[qtext[i]].append(i)
+    cl = list(clusters.values()); rnd = random.Random(a.seed)
+    L += ['', f'## 질문 문장 단위 재표집 구간(서로 다른 질문 문장 {len(cl)}개를 묶음으로 재표집)', '', '| 조건 | 정답률 | 95% 구간(문장 묶음) |', '|---|---|---|']
+    for c in conds:
+        means = []
+        for _ in range(a.n):
+            pick = [cl[rnd.randrange(len(cl))] for _ in range(len(cl))]
+            v = [by[c][i]['correct'] for grp in pick for i in grp if i in by[c]]
+            means.append(sum(v) / len(v))
+        means.sort(); v = [by[c][i]['correct'] for i in ids if i in by[c]]
+        L.append(f"| {c} | {sum(v) / len(v) * 100:.1f}% | [{means[int(a.n * 0.025)] * 100:.1f}, {means[int(a.n * 0.975) - 1] * 100:.1f}] |")
     L += ['', '## 조건 간 대응 비교(같은 문항에서 한쪽만 맞춘 수)', '', '| 비교 | 앞만 정답 | 뒤만 정답 | 둘 다 정답 | 둘 다 오답 | 차이의 95% 구간(%p) |', '|---|---|---|---|---|---|']
     for i in range(len(conds)):
         for j in range(i + 1, len(conds)):
@@ -62,6 +77,14 @@ def main():
     for name, ks in g.items():
         c = collections.Counter(ks)
         L.append(f"| {name} | {len(ks)} | {c['정답']} | {c['자료에 없음']} | {c['다른 값']} | {c['긴 응답(설명 포함)']} |")
+    # 질문 종류별 표현 선택(사후 규칙): 관계 질문(연결·개수·노즐·라인·계기)은 그래프 조건, 읽기 질문(표·본문·치수·그림·주석)은 문자 인식 텍스트
+    REL = {'연결', '개수', '노즐', '라인', '계기'}
+    L += ['', '## 질문 종류별 표현 선택(사후 규칙: 관계 질문은 그래프, 읽기 질문은 문자 인식 텍스트)', '',
+          '규칙은 결과를 본 뒤 정한 것이므로 상한에 가까운 추정이며, 별도 평가 세트에서 다시 재야 함.', '',
+          '| 선택 | 정답률 |', '|---|---|']
+    for gname in [c for c in ('full', 'retrieved') if c in by]:
+        v = [by[gname][i]['correct'] if by[conds[0]][i]['type'] in REL else by['ocr'][i]['correct'] for i in ids if i in by[gname] and i in by['ocr']]
+        L.append(f"| 관계 질문 {gname}, 읽기 질문 ocr | {sum(v) / len(v) * 100:.1f}% ({sum(v)}/{len(v)}) |")
     out = os.path.join(HERE, 'results', a.label + '-analysis.md')
     open(out, 'w', encoding='utf-8').write('\n'.join(L) + '\n'); print(out); print('\n'.join(L[:12]))
 

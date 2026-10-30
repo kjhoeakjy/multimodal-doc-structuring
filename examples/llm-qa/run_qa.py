@@ -25,18 +25,34 @@ def ask_ollama(model, system, user, max_tokens=120):
 
 def norm(s):
     s = s.lower().replace('ø', '').replace('⌀', '').replace('–', '-').replace('~', '-').replace(',', '').replace('·', ' ')
-    return re.sub(r'\s+', '', s)
+    return re.sub(r'\s+', ' ', s).strip()
 
 TAG = re.compile(r'\b[A-Z]{1,2}\s?\d{3,5}\b')
+NONE = re.compile(r'자료에\s*(근거가?\s*)?없|근거\s*(가\s*)?없|확인되지\s*않|알\s*수\s*없|not\s+(found|available|present|stated|specified|given)|no\s+(information|data|evidence)|cannot\s+(be\s+)?determine', re.I)
+NUM = re.compile(r'^[\d.]+$')
 def score(q, resp):
+    """채점. 근거 없음 취지의 응답은 오답. 숫자 답은 자릿수 경계가 맞는 숫자 토큰만 인정(80과 800 구분), 문자 답은 낱말 경계 안에서 포함 여부. 집합 답은 태그 집합 완전 일치."""
     if resp is None:
         return 0
     r = norm(resp)
+    if NONE.search(resp):
+        return 0
     if q['kind'] == 'set':
-        want = set(norm(a) for a in q['answers'])
-        got = set(norm(t) for t in TAG.findall(resp)) - {norm(q.get('focus') or '')}   # 질문에 든 기준 태그는 답으로 세지 않음
+        want = set(norm(a).replace(' ', '') for a in q['answers'])
+        got = set(norm(t).replace(' ', '') for t in TAG.findall(resp)) - {norm(q.get('focus') or '').replace(' ', '')}   # 질문에 든 기준 태그는 답으로 세지 않음
         return 1 if got == want else 0
-    return 1 if any(norm(a) and norm(a) in r for a in q['answers']) else 0
+    for a in q['answers']:
+        a = norm(a)
+        if not a:
+            continue
+        if NUM.match(a):
+            if re.search(r'(?<![\d.])' + re.escape(a) + r'(?![\d.])', r):
+                return 1
+        else:
+            pat = r'(?<![a-z0-9가-힣])' + re.escape(a).replace(r'\ ', r'\s*') + r'(?:e?s)?(?![a-z0-9가-힣])'   # 영문 복수형 허용
+            if re.search(pat, r):
+                return 1
+    return 0
 
 def main():
     ap = argparse.ArgumentParser()
