@@ -11,7 +11,14 @@ SYSTEM = ("주어진 자료만 근거로 답한다. 답은 값·태그·짧은 �
 def ask_anthropic(model, system, user, max_tokens=120):
     import anthropic
     client = anthropic.Anthropic()
-    r = client.messages.create(model=model, max_tokens=max_tokens, temperature=0, system=system, messages=[{"role": "user", "content": user}])
+    # 최신 모델은 기본으로 사고(thinking)를 켜 max_tokens를 다 써 버리므로 끈다
+    kw = dict(model=model, max_tokens=max_tokens, system=system, messages=[{"role": "user", "content": user}], thinking={"type": "disabled"})
+    try:
+        r = client.messages.create(temperature=0, **kw)
+    except (TypeError, anthropic.BadRequestError) as e:
+        if 'temperature' not in str(e):
+            raise
+        r = client.messages.create(**kw)  # 최신 SDK·API는 temperature 인자를 받지 않음
     return ''.join(b.text for b in r.content if getattr(b, 'type', '') == 'text').strip()
 
 def ask_ollama(model, system, user, max_tokens=120):
