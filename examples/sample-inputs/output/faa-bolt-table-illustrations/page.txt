@@ -1,32 +1,32 @@
 # 쪽 구조 (좌표 단위 mm, 원점 좌상단)
 ## 표
 t0 bbox=(24.4,28.6,105.0,95.2) 행수=4 열수=2
-t0 행0: Screw MS; AN; or NAS Number | Description
-t0 행1: NAS6100-6103 | Screw; hex head, tri-wing recess, full thr , titanium
-t0 행2: NAS65O0-6506 | Screw; 100" oval hd , ~tri-wing recess, full thr , cres.
-t0 행3: NAS6900-6904 | Screw; panhead, tri-wing recess, full thr , cres
+t0 열 이름: Screw MS; AN; or NAS Number | Description
+t0 행1: Screw MS; AN; or NAS Number=NAS6100-6103 | Description=Screw; hex head, tri-wing recess, full thr , titanium
+t0 행2: Screw MS; AN; or NAS Number=NAS65O0-6506 | Description=Screw; 100" oval hd , ~tri-wing recess, full thr , cres.
+t0 행3: Screw MS; AN; or NAS Number=NAS6900-6904 | Description=Screw; panhead, tri-wing recess, full thr , cres
 t1 bbox=(108.2,28.6,189.0,241.3) 행수=12 열수=2
-t1 행0: Bolt Numbec | Descrintion
-t1 행1: AN148551-149350 | Bolt, socket head_ 6-hole drilled, .190-.625
-t1 행2: AN1O1001-101900 | Bolt, hex, steel, head
-t1 행3: AN101901-102800 | Bolt, hex , drilled shank, steel
-t1 행4: AN102801-103700 | Bolt . Drilled hex Head, (one steel {hole);
-t1 행5: AN103701-104600 | Boll; drilled hex. Head, steel, (six holes)
-t1 행6: AN104601-105500 | Bolt, hex Head, corro- sion-resistant steel
-t1 행7: AN105501-106400 | Boll; hex Head, drilled shank; corrosion-resistant steel
-t1 행8: AN106401-107300 | Boll; hex , drilled head, (one holes), corrosion-resistant steel
-t1 행9: AN107301-108200 | Boll; hex , drilled head, (six holes) , corrosion-resistant steel
-t1 행10: Ms9033-9039 | Boll; machine 12pt. Head, 130,000 psi min: TS.
-t1 행11: Ms9060-9086 | Boll; machine 12p1 Double hex 130,000 psi min T.S. ext washer head, drilled
+t1 열 이름: Bolt Numbec | Descrintion
+t1 행1: Bolt Numbec=AN148551-149350 | Descrintion=Bolt, socket head_ 6-hole drilled, .190-.625
+t1 행2: Bolt Numbec=AN1O1001-101900 | Descrintion=Bolt, hex, steel, head
+t1 행3: Bolt Numbec=AN101901-102800 | Descrintion=Bolt, hex , drilled shank, steel
+t1 행4: Bolt Numbec=AN102801-103700 | Descrintion=Bolt . Drilled hex Head, (one steel {hole);
+t1 행5: Bolt Numbec=AN103701-104600 | Descrintion=Boll; drilled hex. Head, steel, (six holes)
+t1 행6: Bolt Numbec=AN104601-105500 | Descrintion=Bolt, hex Head, corro- sion-resistant steel
+t1 행7: Bolt Numbec=AN105501-106400 | Descrintion=Boll; hex Head, drilled shank; corrosion-resistant steel
+t1 행8: Bolt Numbec=AN106401-107300 | Descrintion=Boll; hex , drilled head, (one holes), corrosion-resistant steel
+t1 행9: Bolt Numbec=AN107301-108200 | Descrintion=Boll; hex , drilled head, (six holes) , corrosion-resistant steel
+t1 행10: Bolt Numbec=Ms9033-9039 | Descrintion=Boll; machine 12pt. Head, 130,000 psi min: TS.
+t1 행11: Bolt Numbec=Ms9060-9086 | Descrintion=Boll; machine 12p1 Double hex 130,000 psi min T.S. ext washer head, drilled
 t2 bbox=(24.7,102.1,105.3,239.3) 행수=8 열수=2
-t2 행0: Bolt umber | Description
-t2 행1: AN3-20 | Bolt, machine
-t2 행2: AN21-36 | Boll, clevis
-t2 행3: AN42-49 | Boll; eye
-t2 행4: AN73-81 | Bollt, machine, drilled
-t2 행5: AN173-186 | Bolt, aircraft Close tolerance
-t2 행6: AN774 | BolL; flared tube
-t2 행7: AN775 | Boll; universal fitting
+t2 열 이름: Bolt umber | Description
+t2 행1: Bolt umber=AN3-20 | Description=Bolt, machine
+t2 행2: Bolt umber=AN21-36 | Description=Boll, clevis
+t2 행3: Bolt umber=AN42-49 | Description=Boll; eye
+t2 행4: Bolt umber=AN73-81 | Description=Bollt, machine, drilled
+t2 행5: Bolt umber=AN173-186 | Description=Bolt, aircraft Close tolerance
+t2 행6: Bolt umber=AN774 | Description=BolL; flared tube
+t2 행7: Bolt umber=AN775 | Description=Boll; universal fitting
 ## 그림 영역
 f0 bbox=(115.5,38.3,146.8,47.1) 소속=t1 행1
 f1 bbox=(38.6,43.0,61.5,50.6) 소속=t0 행1

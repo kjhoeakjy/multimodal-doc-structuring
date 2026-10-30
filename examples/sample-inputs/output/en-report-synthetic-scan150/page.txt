@@ -1,10 +1,10 @@
 # 쪽 구조 (좌표 단위 mm, 원점 좌상단)
 ## 표
 t0 bbox=(19.3,57.6,189.7,87.0) 행수=4 열수=4
-t0 행0: Actuator | Part number | Leakage cclmin | Action
-t0 행1: UH MLG | 11443200-5 | 3.2 | Replace
-t0 행2: RIH MLG | 11443200-5 | 1.9 | Monitor
-t0 행3: NLG steering | 114A3410-2 | 1.1 | None
+t0 열 이름: Actuator | Part number | Leakage cclmin | Action
+t0 행1: Actuator=UH MLG | Part number=11443200-5 | Leakage cclmin=3.2 | Action=Replace
+t0 행2: Actuator=RIH MLG | Part number=11443200-5 | Leakage cclmin=1.9 | Action=Monitor
+t0 행3: Actuator=NLG steering | Part number=114A3410-2 | Leakage cclmin=1.1 | Action=None
 ## 그림 영역
 f0 bbox=(19.3,101.8,126.2,159.3) 안 문자=limit 4 0_cclmin / 01 / 02 / 03 / 03 / 04
 ## 본문

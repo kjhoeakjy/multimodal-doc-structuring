@@ -8,12 +8,12 @@
   "snapshot": {
    "cores": 4,
    "total_gb": 15.7,
-   "avail_gb": 14.9,
-   "cpu_busy": 2.0
+   "avail_gb": 14.7,
+   "cpu_busy": 3.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
-   "가용 메모리 14.9 GB → 인식 배치 8, 입력 상한 12 MP",
+   "가용 메모리 14.7 GB → 인식 배치 8, 입력 상한 12 MP",
    "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
   ]
  },
@@ -1059,10 +1059,10 @@
   "# 쪽 구조 (좌표 단위 mm, 원점 좌상단)",
   "## 표",
   "t0 bbox=(19.3,57.6,189.7,87.0) 행수=4 열수=4",
-  "t0 행0: Actuator | Part number | Leakage cclmin | Action",
-  "t0 행1: UH MLG | 11443200-5 | 3.2 | Replace",
-  "t0 행2: RIH MLG | 11443200-5 | 1.9 | Monitor",
-  "t0 행3: NLG steering | 114A3410-2 | 1.1 | None",
+  "t0 열 이름: Actuator | Part number | Leakage cclmin | Action",
+  "t0 행1: Actuator=UH MLG | Part number=11443200-5 | Leakage cclmin=3.2 | Action=Replace",
+  "t0 행2: Actuator=RIH MLG | Part number=11443200-5 | Leakage cclmin=1.9 | Action=Monitor",
+  "t0 행3: Actuator=NLG steering | Part number=114A3410-2 | Leakage cclmin=1.1 | Action=None",
   "## 그림 영역",
   "f0 bbox=(19.3,101.8,126.2,159.3) 안 문자=limit 4 0_cclmin / 01 / 02 / 03 / 03 / 04",
   "## 본문",
@@ -1099,7 +1099,7 @@
  ],
  "index": {
   "bm25": {
-   "tokens": 474,
+   "tokens": 493,
    "vocab": 189,
    "top": [
     [
@@ -1111,12 +1111,20 @@
      20
     ],
     [
+     "이름",
+     14
+    ],
+    [
      "a",
      13
     ],
     [
-     "이름",
-     13
+     "actuator",
+     12
+    ],
+    [
+     "leakage",
+     12
     ],
     [
      "t0",
@@ -1127,24 +1135,24 @@
      11
     ],
     [
-     "actuator",
-     9
-    ],
-    [
-     "leakage",
-     9
+     "cclmin",
+     8
     ],
     [
      "the",
      8
     ],
     [
-     "문단",
+     "part",
      6
     ],
     [
-     "cclmin",
-     5
+     "number",
+     6
+    ],
+    [
+     "문단",
+     6
     ],
     [
      "11443200-5",
@@ -1172,6 +1180,10 @@
     ],
     [
      "4",
+     4
+    ],
+    [
+     "action",
      4
     ],
     [
@@ -1239,14 +1251,6 @@
      4
     ],
     [
-     "part",
-     3
-    ],
-    [
-     "number",
-     3
-    ],
-    [
      "f0",
      3
     ],
@@ -1256,10 +1260,6 @@
     ],
     [
      "p0",
-     3
-    ],
-    [
-     "hydraulic",
      3
     ]
    ]
@@ -1302,16 +1302,16 @@
   "본문 묶기": 0.0,
   "직렬화": 0.0,
   "색인": 0.0,
-  "이미지 임베딩": 0.4
+  "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 1.33,
-  "min_avail_gb": 14.12
+  "peak_rss_gb": 1.41,
+  "min_avail_gb": 14.14
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
-  "avail_gb": 14.4,
-  "cpu_busy": 0.0
+  "avail_gb": 14.5,
+  "cpu_busy": 2.0
  }
 }

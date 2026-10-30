@@ -3,8 +3,8 @@ import sys, json, re, collections
 
 NOTES = {}
 def name_of(n):
-    # 장비 태그(문자 1~2 + 숫자 4). 문자 인식이 0을 O로 읽은 경우를 되돌림
-    tags = [m.group(1) + m.group(2) + m.group(3).replace('O', '0') for m in (re.match(r'^([A-Z]{1,2})( ?)([0-9O]{4})$', t) for t in n['texts']) if m]
+    # 장비 태그(문자 1~2 + 숫자 4). 문자 인식이 0을 O로, 1을 I로 읽은 경우를 되돌림
+    tags = [m.group(1) + m.group(2) + m.group(3).replace('O', '0').replace('I', '1') for m in (re.match(r'^([A-Z]{1,2})( ?)([0-9OI]{4})$', t) for t in n['texts']) if m]
     if tags:
         return tags[0]
     if n['role'] == 'instrument':

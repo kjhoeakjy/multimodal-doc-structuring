@@ -14,8 +14,8 @@
   "paragraphs": 6,
   "callouts": null,
   "leaders": null,
-  "time": 47.0,
-  "peak_gb": 1.33
+  "time": 46.6,
+  "peak_gb": 1.41
  },
  {
   "file": "en-report-synthetic-vector.pdf",
@@ -32,13 +32,13 @@
   "paragraphs": 6,
   "callouts": null,
   "leaders": null,
-  "time": 0.8,
-  "peak_gb": 1.01
+  "time": 3.1,
+  "peak_gb": 0.79
  },
  {
   "file": "faa-bolt-table-illustrations.jpg",
   "kind": "page",
-  "reason": "문자 잉크 45%, 선화 잉크 26%",
+  "reason": "문자 잉크 47%, 선화 잉크 25%",
   "dpi": 104,
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
@@ -51,12 +51,12 @@
   "callouts": null,
   "leaders": null,
   "time": 18.0,
-  "peak_gb": 1.0
+  "peak_gb": 1.03
  },
  {
   "file": "faa-text-page.png",
   "kind": "page",
-  "reason": "문자 잉크 99%, 선화 잉크 1%",
+  "reason": "문자 잉크 100%, 선화 잉크 0%",
   "dpi": 104,
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
@@ -69,7 +69,7 @@
   "callouts": null,
   "leaders": null,
   "time": 20.6,
-  "peak_gb": 1.0
+  "peak_gb": 1.02
  },
  {
   "file": "faa-torque-table-scan.jpg",
@@ -86,8 +86,8 @@
   "paragraphs": 9,
   "callouts": null,
   "leaders": null,
-  "time": 55.9,
-  "peak_gb": 1.0
+  "time": 56.0,
+  "peak_gb": 1.03
  },
  {
   "file": "faa-torque-table.jpg",
@@ -105,7 +105,7 @@
   "callouts": null,
   "leaders": null,
   "time": 31.3,
-  "peak_gb": 1.0
+  "peak_gb": 1.02
  },
  {
   "file": "ko-report-synthetic.png",
@@ -122,13 +122,13 @@
   "paragraphs": 10,
   "callouts": null,
   "leaders": null,
-  "time": 96.5,
-  "peak_gb": 1.33
+  "time": 96.0,
+  "peak_gb": 1.03
  },
  {
   "file": "ko-table-text-scan200.jpg",
   "kind": "page",
-  "reason": "문자 잉크 59%, 선화 잉크 19%",
+  "reason": "문자 잉크 68%, 선화 잉크 9%",
   "dpi": 200,
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
@@ -141,7 +141,7 @@
   "callouts": null,
   "leaders": null,
   "time": 40.7,
-  "peak_gb": 1.0
+  "peak_gb": 1.02
  },
  {
   "file": "mech-flange-synthetic-200dpi.png",
@@ -159,7 +159,7 @@
   "callouts": 6,
   "leaders": 3,
   "time": 42.3,
-  "peak_gb": 1.05
+  "peak_gb": 1.03
  },
  {
   "file": "mech-flange-synthetic-vector.svg",
@@ -176,13 +176,13 @@
   "paragraphs": null,
   "callouts": 8,
   "leaders": 4,
-  "time": 0.7,
-  "peak_gb": 1.0
+  "time": 0.8,
+  "peak_gb": 1.03
  },
  {
   "file": "mech-iso-tolerance-real.jpg",
   "kind": "illustration",
-  "reason": "문자 잉크 57%, 큰 원 0개, 긴 선 27개",
+  "reason": "문자 잉크 58%, 큰 원 0개, 긴 선 27개",
   "dpi": 206,
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
@@ -194,8 +194,8 @@
   "paragraphs": null,
   "callouts": 15,
   "leaders": 4,
-  "time": 48.9,
-  "peak_gb": 1.01
+  "time": 48.7,
+  "peak_gb": 1.03
  },
  {
   "file": "photo-astronaut.png",
@@ -259,15 +259,15 @@
   "dpi_source": null,
   "ocr_lang": null,
   "nodes": 104,
-  "runs": 94,
+  "runs": 92,
   "texts": 0,
   "tables": 0,
   "figures": null,
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 1.1,
-  "peak_gb": 0.83
+  "time": 2.7,
+  "peak_gb": 0.82
  },
  {
   "file": "pid-plant-complex-150dpi.png",
@@ -276,16 +276,16 @@
   "dpi": 176,
   "dpi_source": "문자 적음, A2 용지 150 dpi 근방 가정",
   "ocr_lang": "en",
-  "nodes": 825,
-  "runs": 542,
+  "nodes": 633,
+  "runs": 391,
   "texts": 0,
   "tables": 0,
   "figures": null,
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 96.6,
-  "peak_gb": 1.23
+  "time": 107.6,
+  "peak_gb": 1.42
  },
  {
   "file": "pid-plant-complex-vector.svg",
@@ -295,15 +295,15 @@
   "dpi_source": null,
   "ocr_lang": null,
   "nodes": 345,
-  "runs": 290,
+  "runs": 292,
   "texts": 0,
   "tables": 0,
   "figures": null,
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 5.7,
-  "peak_gb": 0.81
+  "time": 6.1,
+  "peak_gb": 1.06
  },
  {
   "file": "pid-standard-200dpi.png",
@@ -312,16 +312,16 @@
   "dpi": 200,
   "dpi_source": "문자 높이 4.5 mm 가정과 A3 용지 일치",
   "ocr_lang": "en",
-  "nodes": 178,
-  "runs": 120,
+  "nodes": 103,
+  "runs": 86,
   "texts": 104,
   "tables": 5,
   "figures": null,
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 58.8,
-  "peak_gb": 1.33
+  "time": 58.4,
+  "peak_gb": 1.21
  },
  {
   "file": "pid-standard-scan.png",
@@ -330,16 +330,16 @@
   "dpi": 200,
   "dpi_source": "문자 높이 4.5 mm 가정과 A3 용지 일치",
   "ocr_lang": "en",
-  "nodes": 149,
-  "runs": 141,
+  "nodes": 87,
+  "runs": 90,
   "texts": 106,
   "tables": 5,
   "figures": null,
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 74.5,
-  "peak_gb": 1.12
+  "time": 76.9,
+  "peak_gb": 1.34
  },
  {
   "file": "pid-standard-vector.svg",
@@ -356,7 +356,7 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 2.9,
-  "peak_gb": 0.8
+  "time": 0.8,
+  "peak_gb": 1.06
  }
 ]

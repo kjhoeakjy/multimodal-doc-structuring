@@ -22,18 +22,22 @@
    "degree": 0,
    "attached_to": null,
    "direction": null,
-   "annotates": "n44"
+   "annotates": "n13"
   },
   {
    "id": "n1",
    "role": "equipment",
    "bbox": [
     78.74,
-    154.05100000000002,
+    148.844,
     88.773,
     159.258
    ],
    "texts": [
+    "P4711",
+    "NI",
+    "N2",
+    "80",
     "80"
    ],
    "primitives": 0,
@@ -47,11 +51,15 @@
    "role": "equipment",
    "bbox": [
     136.017,
-    149.86,
+    130.81,
     144.018,
     156.21
    ],
    "texts": [
+    "N3",
+    "N2",
+    "50",
+    "80",
     "NI",
     "N4",
     "80",
@@ -59,7 +67,7 @@
     "H1O07"
    ],
    "primitives": 0,
-   "degree": 10,
+   "degree": 18,
    "attached_to": null,
    "direction": null,
    "annotates": null
@@ -74,7 +82,10 @@
     159.258
    ],
    "texts": [
+    "P4712",
     "NI",
+    "N2",
+    "50",
     "50"
    ],
    "primitives": 0,
@@ -87,82 +98,26 @@
    "id": "n4",
    "role": "equipment",
    "bbox": [
-    78.74,
-    148.844,
-    88.773,
-    153.924
-   ],
-   "texts": [
-    "NI"
-   ],
-   "primitives": 0,
-   "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n5",
-   "role": "equipment",
-   "bbox": [
     323.469,
-    133.477,
-    344.551,
+    126.492,
+    346.202,
     153.924
    ],
    "texts": [
+    "S8",
     "NI",
     "N4",
     "50",
     "50"
    ],
    "primitives": 0,
-   "degree": 5,
+   "degree": 8,
    "attached_to": null,
    "direction": null,
    "annotates": null
   },
   {
-   "id": "n6",
-   "role": "equipment",
-   "bbox": [
-    136.017,
-    130.81,
-    144.018,
-    137.03300000000002
-   ],
-   "texts": [
-    "N3",
-    "N2",
-    "50",
-    "80"
-   ],
-   "primitives": 0,
-   "degree": 10,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n7",
-   "role": "equipment",
-   "bbox": [
-    325.247,
-    126.492,
-    346.202,
-    133.477
-   ],
-   "texts": [
-    "S8"
-   ],
-   "primitives": 0,
-   "degree": 7,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n8",
+   "id": "n5",
    "role": "equipment",
    "bbox": [
     179.07,
@@ -191,10 +146,10 @@
    "annotates": null
   },
   {
-   "id": "n9",
+   "id": "n6",
    "role": "note",
    "bbox": [
-    358.394,
+    344.043,
     288.036,
     379.984,
     292.735
@@ -203,6 +158,7 @@
     "201604-07 / DEXPI example PID",
     "PROJECT",
     "P3.1415",
+    "2016-04-01",
     "DRAWING NO",
     "123/493"
    ],
@@ -213,28 +169,10 @@
    "annotates": null
   },
   {
-   "id": "n10",
+   "id": "n7",
    "role": "note",
    "bbox": [
-    344.043,
-    288.036,
-    358.394,
-    292.735
-   ],
-   "texts": [
-    "2016-04-01"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n11",
-   "role": "note",
-   "bbox": [
-    314.071,
+    296.164,
     288.036,
     343.916,
     292.735
@@ -248,26 +186,10 @@
    "degree": 0,
    "attached_to": null,
    "direction": null,
-   "annotates": "n12"
-  },
-  {
-   "id": "n12",
-   "role": "symbol",
-   "bbox": [
-    296.164,
-    288.036,
-    313.944,
-    292.735
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
    "annotates": null
   },
   {
-   "id": "n13",
+   "id": "n8",
    "role": "instrument",
    "bbox": [
     197.104,
@@ -286,7 +208,7 @@
    "annotates": null
   },
   {
-   "id": "n14",
+   "id": "n9",
    "role": "symbol",
    "bbox": [
     208.915,
@@ -302,7 +224,7 @@
    "annotates": null
   },
   {
-   "id": "n15",
+   "id": "n10",
    "role": "symbol",
    "bbox": [
     197.104,
@@ -318,7 +240,7 @@
    "annotates": null
   },
   {
-   "id": "n16",
+   "id": "n11",
    "role": "symbol",
    "bbox": [
     209.55,
@@ -334,123 +256,7 @@
    "annotates": null
   },
   {
-   "id": "n17",
-   "role": "symbol",
-   "bbox": [
-    179.197,
-    63.754,
-    180.594,
-    65.532
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n18",
-   "role": "symbol",
-   "bbox": [
-    181.356,
-    63.881,
-    182.75300000000001,
-    65.532
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n19",
-   "role": "symbol",
-   "bbox": [
-    198.882,
-    64.135,
-    200.279,
-    64.77
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n25",
-   "role": "symbol",
-   "bbox": [
-    251.333,
-    79.883,
-    253.238,
-    82.296
-   ],
-   "texts": [
-    "80"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n26",
-   "role": "symbol",
-   "bbox": [
-    217.17000000000002,
-    81.28,
-    218.69400000000002,
-    82.677
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n28",
-   "role": "symbol",
-   "bbox": [
-    217.17000000000002,
-    83.312,
-    218.69400000000002,
-    84.709
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n29",
-   "role": "symbol",
-   "bbox": [
-    309.372,
-    84.58200000000001,
-    310.642,
-    86.995
-   ],
-   "texts": [
-    "180"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n30",
+   "id": "n12",
    "role": "nozzle",
    "bbox": [
     175.768,
@@ -463,12 +269,12 @@
    ],
    "primitives": 0,
    "degree": 2,
-   "attached_to": "n8",
+   "attached_to": "n5",
    "direction": null,
    "annotates": null
   },
   {
-   "id": "n31",
+   "id": "n13",
    "role": "symbol",
    "bbox": [
     267.843,
@@ -484,73 +290,7 @@
    "annotates": null
   },
   {
-   "id": "n32",
-   "role": "symbol",
-   "bbox": [
-    155.956,
-    91.059,
-    157.607,
-    91.94800000000001
-   ],
-   "texts": [
-    "1"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n35",
-   "role": "symbol",
-   "bbox": [
-    217.17000000000002,
-    92.202,
-    218.821,
-    93.726
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n42",
-   "role": "symbol",
-   "bbox": [
-    217.17000000000002,
-    94.234,
-    218.821,
-    95.758
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n44",
-   "role": "symbol",
-   "bbox": [
-    281.305,
-    95.123,
-    283.718,
-    97.028
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n50",
+   "id": "n15",
    "role": "symbol",
    "bbox": [
     322.326,
@@ -566,25 +306,7 @@
    "annotates": null
   },
   {
-   "id": "n51",
-   "role": "symbol",
-   "bbox": [
-    156.083,
-    97.028,
-    157.861,
-    98.044
-   ],
-   "texts": [
-    "8"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n53",
+   "id": "n16",
    "role": "nozzle",
    "bbox": [
     175.768,
@@ -597,12 +319,12 @@
    ],
    "primitives": 0,
    "degree": 2,
-   "attached_to": "n8",
+   "attached_to": "n5",
    "direction": null,
    "annotates": null
   },
   {
-   "id": "n66",
+   "id": "n17",
    "role": "symbol",
    "bbox": [
     338.32800000000003,
@@ -620,7 +342,7 @@
    "annotates": null
   },
   {
-   "id": "n71",
+   "id": "n18",
    "role": "nozzle",
    "bbox": [
     174.752,
@@ -631,12 +353,12 @@
    "texts": [],
    "primitives": 0,
    "degree": 2,
-   "attached_to": "n8",
+   "attached_to": "n5",
    "direction": null,
    "annotates": null
   },
   {
-   "id": "n74",
+   "id": "n19",
    "role": "instrument",
    "bbox": [
     130.175,
@@ -655,7 +377,7 @@
    "annotates": null
   },
   {
-   "id": "n75",
+   "id": "n20",
    "role": "symbol",
    "bbox": [
     140.335,
@@ -671,7 +393,7 @@
    "annotates": null
   },
   {
-   "id": "n76",
+   "id": "n21",
    "role": "symbol",
    "bbox": [
     151.76500000000001,
@@ -687,25 +409,7 @@
    "annotates": null
   },
   {
-   "id": "n77",
-   "role": "symbol",
-   "bbox": [
-    271.272,
-    117.47500000000001,
-    273.05,
-    118.491
-   ],
-   "texts": [
-    "1"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n80",
+   "id": "n22",
    "role": "symbol",
    "bbox": [
     130.175,
@@ -721,7 +425,7 @@
    "annotates": null
   },
   {
-   "id": "n81",
+   "id": "n23",
    "role": "symbol",
    "bbox": [
     142.24,
@@ -737,25 +441,7 @@
    "annotates": null
   },
   {
-   "id": "n92",
-   "role": "symbol",
-   "bbox": [
-    271.399,
-    123.444,
-    273.177,
-    124.333
-   ],
-   "texts": [
-    "4"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n98",
+   "id": "n29",
    "role": "symbol",
    "bbox": [
     316.103,
@@ -773,7 +459,7 @@
    "annotates": null
   },
   {
-   "id": "n101",
+   "id": "n30",
    "role": "instrument",
    "bbox": [
     274.193,
@@ -792,7 +478,7 @@
    "annotates": null
   },
   {
-   "id": "n102",
+   "id": "n31",
    "role": "symbol",
    "bbox": [
     285.242,
@@ -808,7 +494,7 @@
    "annotates": null
   },
   {
-   "id": "n104",
+   "id": "n32",
    "role": "symbol",
    "bbox": [
     369.697,
@@ -826,7 +512,7 @@
    "annotates": null
   },
   {
-   "id": "n105",
+   "id": "n33",
    "role": "symbol",
    "bbox": [
     358.14,
@@ -844,39 +530,7 @@
    "annotates": null
   },
   {
-   "id": "n107",
-   "role": "symbol",
-   "bbox": [
-    322.072,
-    129.794,
-    324.993,
-    130.175
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 6,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n111",
-   "role": "symbol",
-   "bbox": [
-    358.14,
-    132.207,
-    359.283,
-    134.62
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n112",
+   "id": "n34",
    "role": "symbol",
    "bbox": [
     370.332,
@@ -892,7 +546,7 @@
    "annotates": null
   },
   {
-   "id": "n114",
+   "id": "n35",
    "role": "symbol",
    "bbox": [
     192.913,
@@ -914,39 +568,7 @@
    "annotates": null
   },
   {
-   "id": "n121",
-   "role": "symbol",
-   "bbox": [
-    137.541,
-    137.41400000000002,
-    142.494,
-    143.256
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 4,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n122",
-   "role": "symbol",
-   "bbox": [
-    137.541,
-    143.764,
-    142.494,
-    149.606
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 4,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n126",
+   "id": "n36",
    "role": "symbol",
    "bbox": [
     279.908,
@@ -966,7 +588,7 @@
    "annotates": null
   },
   {
-   "id": "n127",
+   "id": "n37",
    "role": "symbol",
    "bbox": [
     363.855,
@@ -984,45 +606,7 @@
    "annotates": null
   },
   {
-   "id": "n128",
-   "role": "equipment",
-   "bbox": [
-    84.074,
-    148.59,
-    89.408,
-    153.67000000000002
-   ],
-   "texts": [
-    "P4711",
-    "N2"
-   ],
-   "primitives": 0,
-   "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n129",
-   "role": "equipment",
-   "bbox": [
-    251.079,
-    148.59,
-    256.413,
-    153.67000000000002
-   ],
-   "texts": [
-    "P4712",
-    "N2"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n131",
+   "id": "n39",
    "role": "symbol",
    "bbox": [
     377.952,
@@ -1038,23 +622,7 @@
    "annotates": null
   },
   {
-   "id": "n133",
-   "role": "symbol",
-   "bbox": [
-    373.12600000000003,
-    152.14600000000002,
-    375.031,
-    153.67000000000002
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n134",
+   "id": "n41",
    "role": "symbol",
    "bbox": [
     200.406,
@@ -1073,7 +641,7 @@
    "annotates": null
   },
   {
-   "id": "n136",
+   "id": "n42",
    "role": "symbol",
    "bbox": [
     228.854,
@@ -1091,7 +659,7 @@
    "annotates": null
   },
   {
-   "id": "n141",
+   "id": "n43",
    "role": "symbol",
    "bbox": [
     214.88400000000001,
@@ -1109,25 +677,7 @@
    "annotates": null
   },
   {
-   "id": "n144",
-   "role": "symbol",
-   "bbox": [
-    84.074,
-    154.305,
-    89.408,
-    159.385
-   ],
-   "texts": [
-    "80"
-   ],
-   "primitives": 0,
-   "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n145",
+   "id": "n44",
    "role": "symbol",
    "bbox": [
     214.88400000000001,
@@ -1143,25 +693,7 @@
    "annotates": null
   },
   {
-   "id": "n146",
-   "role": "symbol",
-   "bbox": [
-    251.079,
-    154.305,
-    256.413,
-    159.385
-   ],
-   "texts": [
-    "50"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n147",
+   "id": "n45",
    "role": "symbol",
    "bbox": [
     34.417,
@@ -1177,7 +709,7 @@
    "annotates": null
   },
   {
-   "id": "n148",
+   "id": "n46",
    "role": "symbol",
    "bbox": [
     263.906,
@@ -1195,164 +727,68 @@
    "annotates": null
   },
   {
-   "id": "n149",
+   "id": "n48",
    "role": "symbol",
    "bbox": [
-    373.12600000000003,
-    154.43200000000002,
-    374.904,
-    155.829
+    198.882,
+    64.135,
+    200.279,
+    64.77
    ],
    "texts": [],
    "primitives": 0,
-   "degree": 2,
+   "degree": 1,
    "attached_to": null,
    "direction": null,
    "annotates": null
   },
   {
-   "id": "n150",
+   "id": "n52",
    "role": "symbol",
    "bbox": [
-    118.237,
-    161.163,
-    119.761,
-    162.814
+    251.333,
+    79.883,
+    253.238,
+    82.296
    ],
    "texts": [
-    "3",
-    "1"
+    "80"
    ],
    "primitives": 0,
-   "degree": 1,
+   "degree": 0,
    "attached_to": null,
    "direction": null,
    "annotates": null
   },
   {
-   "id": "n151",
+   "id": "n55",
    "role": "symbol",
    "bbox": [
-    120.269,
-    161.163,
-    121.793,
-    162.814
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n152",
-   "role": "symbol",
-   "bbox": [
-    151.257,
-    161.036,
-    152.781,
-    162.687
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n153",
-   "role": "symbol",
-   "bbox": [
-    153.28900000000002,
-    161.036,
-    154.686,
-    162.56
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n154",
-   "role": "symbol",
-   "bbox": [
-    342.773,
-    161.036,
-    344.297,
-    162.687
+    309.372,
+    84.58200000000001,
+    310.642,
+    86.995
    ],
    "texts": [
-    "8"
+    "180"
    ],
    "primitives": 0,
-   "degree": 2,
+   "degree": 0,
    "attached_to": null,
    "direction": null,
    "annotates": null
   },
   {
-   "id": "n155",
+   "id": "n56",
    "role": "symbol",
    "bbox": [
-    344.805,
-    161.163,
-    346.202,
-    162.687
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 2,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n156",
-   "role": "symbol",
-   "bbox": [
-    351.282,
-    161.036,
-    352.67900000000003,
-    162.56
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n157",
-   "role": "symbol",
-   "bbox": [
-    353.314,
-    161.036,
-    354.711,
-    162.56
-   ],
-   "texts": [],
-   "primitives": 0,
-   "degree": 1,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n158",
-   "role": "symbol",
-   "bbox": [
-    349.885,
-    169.799,
-    352.298,
-    171.704
+    155.956,
+    91.059,
+    157.988,
+    98.044
    ],
    "texts": [
+    "1",
     "8"
    ],
    "primitives": 0,
@@ -1362,13 +798,86 @@
    "annotates": null
   },
   {
-   "id": "n159",
+   "id": "n57",
+   "role": "symbol",
+   "bbox": [
+    318.516,
+    91.44,
+    320.548,
+    104.648
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n67",
+   "role": "symbol",
+   "bbox": [
+    271.272,
+    117.47500000000001,
+    273.30400000000003,
+    124.333
+   ],
+   "texts": [
+    "1",
+    "4"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n79",
+   "role": "symbol",
+   "bbox": [
+    358.14,
+    132.207,
+    359.283,
+    134.62
+   ],
+   "texts": [],
+   "primitives": 0,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n100",
+   "role": "symbol",
+   "bbox": [
+    349.758,
+    169.799,
+    352.298,
+    186.309
+   ],
+   "texts": [
+    "8",
+    "8",
+    "8",
+    "1",
+    "1"
+   ],
+   "primitives": 0,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n101",
    "role": "symbol",
    "bbox": [
     149.479,
     172.212,
-    151.00300000000001,
-    173.101
+    151.511,
+    181.991
    ],
    "texts": [
     "3"
@@ -1380,67 +889,13 @@
    "annotates": null
   },
   {
-   "id": "n163",
+   "id": "n102",
    "role": "symbol",
    "bbox": [
-    349.758,
-    174.371,
-    351.536,
-    175.387
-   ],
-   "texts": [
-    "8"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n165",
-   "role": "symbol",
-   "bbox": [
-    349.758,
-    176.53,
-    351.282,
-    177.419
-   ],
-   "texts": [
-    "1"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n173",
-   "role": "symbol",
-   "bbox": [
-    349.758,
-    185.166,
-    351.663,
-    186.309
-   ],
-   "texts": [
-    "1"
-   ],
-   "primitives": 0,
-   "degree": 0,
-   "attached_to": null,
-   "direction": null,
-   "annotates": null
-  },
-  {
-   "id": "n174",
-   "role": "symbol",
-   "bbox": [
-    149.606,
+    149.479,
     191.516,
-    151.38400000000001,
-    192.532
+    151.511,
+    197.485
    ],
    "texts": [
     "0"
@@ -1597,8 +1052,8 @@
  "runs": [
   {
    "id": "r0",
-   "a": "n13",
-   "b": "n14",
+   "a": "n8",
+   "b": "n9",
    "coords": [
     [
      199.77,
@@ -1618,8 +1073,8 @@
   },
   {
    "id": "r1",
-   "a": "n13",
-   "b": "n15",
+   "a": "n8",
+   "b": "n10",
    "coords": [
     [
      197.88,
@@ -1639,8 +1094,8 @@
   },
   {
    "id": "r2",
-   "a": "n13",
-   "b": "n14",
+   "a": "n8",
+   "b": "n9",
    "coords": [
     [
      197.88,
@@ -1660,8 +1115,8 @@
   },
   {
    "id": "r3",
-   "a": "n14",
-   "b": "n16",
+   "a": "n9",
+   "b": "n11",
    "coords": [
     [
      210.0,
@@ -1681,8 +1136,8 @@
   },
   {
    "id": "r4",
-   "a": "n16",
-   "b": "open@(340.6, 61.0)",
+   "a": "n11",
+   "b": "n17",
    "coords": [
     [
      210.24,
@@ -1691,6 +1146,10 @@
     [
      340.61,
      61.0
+    ],
+    [
+     340.5,
+     105.03
     ]
    ],
    "width": 0.25,
@@ -1702,7 +1161,7 @@
   },
   {
    "id": "r5",
-   "a": "n19",
+   "a": "n48",
    "b": "j0",
    "coords": [
     [
@@ -1745,7 +1204,7 @@
   {
    "id": "r7",
    "a": "j0",
-   "b": "n8",
+   "b": "n5",
    "coords": [
     [
      204.0,
@@ -1786,16 +1245,20 @@
   },
   {
    "id": "r9",
-   "a": "n8",
-   "b": "n28",
+   "a": "n5",
+   "b": "n15",
    "coords": [
     [
      208.79,
      83.0
     ],
     [
-     217.9,
+     323.6,
      83.0
+    ],
+    [
+     323.5,
+     96.14
     ]
    ],
    "width": 0.38,
@@ -1803,33 +1266,37 @@
    "kind": "pipe",
    "gap": 0,
    "arrows": [],
-   "texts": []
+   "texts": [
+    "MNc 47127 7SHB13 50"
+   ]
   },
   {
    "id": "r10",
-   "a": "n8",
-   "b": "n35",
+   "a": "n5",
+   "b": "n13",
    "coords": [
     [
      208.79,
      94.0
     ],
     [
-     217.95,
+     266.83,
      94.0
     ]
    ],
    "width": 0.25,
    "dashed": false,
    "kind": "pipe",
-   "gap": 0,
+   "gap": 1.52,
    "arrows": [],
-   "texts": []
+   "texts": [
+    "MNc 47125 7SHB13 50"
+   ]
   },
   {
    "id": "r11",
-   "a": "n8",
-   "b": "n18",
+   "a": "n5",
+   "b": "n21",
    "coords": [
     [
      181.0,
@@ -1837,10 +1304,18 @@
     ],
     [
      181.0,
-     64.59
+     60.71
+    ],
+    [
+     159.77,
+     61.0
+    ],
+    [
+     160.0,
+     117.09
     ]
    ],
-   "width": 0.48,
+   "width": 0.51,
    "dashed": false,
    "kind": "pipe",
    "gap": 0,
@@ -1849,8 +1324,8 @@
   },
   {
    "id": "r12",
-   "a": "n8",
-   "b": "n30",
+   "a": "n5",
+   "b": "n12",
    "coords": [
     [
      179.0,
@@ -1870,8 +1345,8 @@
   },
   {
    "id": "r13",
-   "a": "n8",
-   "b": "n53",
+   "a": "n5",
+   "b": "n16",
    "coords": [
     [
      179.0,
@@ -1891,8 +1366,8 @@
   },
   {
    "id": "r14",
-   "a": "n8",
-   "b": "n71",
+   "a": "n5",
+   "b": "n18",
    "coords": [
     [
      179.0,
@@ -1912,8 +1387,8 @@
   },
   {
    "id": "r15",
-   "a": "n8",
-   "b": "n71",
+   "a": "n5",
+   "b": "n18",
    "coords": [
     [
      179.0,
@@ -1933,7 +1408,7 @@
   },
   {
    "id": "r16",
-   "a": "n8",
+   "a": "n5",
    "b": "j4",
    "coords": [
     [
@@ -1954,7 +1429,7 @@
   },
   {
    "id": "r17",
-   "a": "n8",
+   "a": "n5",
    "b": "j5",
    "coords": [
     [
@@ -1975,8 +1450,8 @@
   },
   {
    "id": "r18",
-   "a": "n8",
-   "b": "n114",
+   "a": "n5",
+   "b": "n35",
    "coords": [
     [
      194.1,
@@ -1996,29 +1471,6 @@
   },
   {
    "id": "r19",
-   "a": "n26",
-   "b": "open@(323.6, 83.0)",
-   "coords": [
-    [
-     217.9,
-     83.0
-    ],
-    [
-     323.6,
-     83.0
-    ]
-   ],
-   "width": 0.38,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": [
-    "MNc 47127 7SHB13 50"
-   ]
-  },
-  {
-   "id": "r20",
    "a": "open@(307.7, 83.7)",
    "b": "open@(315.8, 83.7)",
    "coords": [
@@ -2039,31 +1491,8 @@
    "texts": []
   },
   {
-   "id": "r21",
-   "a": "n42",
-   "b": "n31",
-   "coords": [
-    [
-     217.95,
-     94.0
-    ],
-    [
-     266.83,
-     94.0
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 1.52,
-   "arrows": [],
-   "texts": [
-    "MNc 47125 7SHB13 50"
-   ]
-  },
-  {
-   "id": "r22",
-   "a": "n31",
+   "id": "r20",
+   "a": "n13",
    "b": "j3",
    "coords": [
     [
@@ -2083,9 +1512,9 @@
    "texts": []
   },
   {
-   "id": "r23",
-   "a": "n66",
-   "b": "open@(327.9, 113.0)",
+   "id": "r21",
+   "a": "n17",
+   "b": "n4",
    "coords": [
     [
      338.58,
@@ -2094,6 +1523,10 @@
     [
      327.91,
      113.0
+    ],
+    [
+     328.0,
+     126.62
     ]
    ],
    "width": 0.25,
@@ -2104,9 +1537,9 @@
    "texts": []
   },
   {
-   "id": "r24",
-   "a": "n66",
-   "b": "open@(353.2, 113.0)",
+   "id": "r22",
+   "a": "n17",
+   "b": "open@(353.0, 201.9)",
    "coords": [
     [
      342.39,
@@ -2115,30 +1548,13 @@
     [
      353.19,
      113.0
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r25",
-   "a": "n66",
-   "b": "open@(340.5, 60.8)",
-   "coords": [
-    [
-     340.5,
-     105.03
     ],
     [
-     340.5,
-     60.83
+     353.0,
+     201.93
     ]
    ],
-   "width": 0.25,
+   "width": 0.38,
    "dashed": false,
    "kind": "pipe",
    "gap": 0,
@@ -2146,9 +1562,9 @@
    "texts": []
   },
   {
-   "id": "r26",
-   "a": "n80",
-   "b": "n74",
+   "id": "r23",
+   "a": "n22",
+   "b": "n19",
    "coords": [
     [
      130.18,
@@ -2167,9 +1583,9 @@
    "texts": []
   },
   {
-   "id": "r27",
-   "a": "n74",
-   "b": "n75",
+   "id": "r24",
+   "a": "n19",
+   "b": "n20",
    "coords": [
     [
      131.45,
@@ -2188,9 +1604,9 @@
    "texts": []
   },
   {
-   "id": "r28",
-   "a": "n75",
-   "b": "n81",
+   "id": "r25",
+   "a": "n20",
+   "b": "n23",
    "coords": [
     [
      142.41,
@@ -2209,9 +1625,9 @@
    "texts": []
   },
   {
-   "id": "r29",
-   "a": "n81",
-   "b": "n76",
+   "id": "r26",
+   "a": "n23",
+   "b": "n21",
    "coords": [
     [
      143.15,
@@ -2230,30 +1646,9 @@
    "texts": []
   },
   {
-   "id": "r30",
-   "a": "n76",
-   "b": "open@(160.0, 60.7)",
-   "coords": [
-    [
-     160.0,
-     117.09
-    ],
-    [
-     160.0,
-     60.71
-    ]
-   ],
-   "width": 0.51,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r31",
-   "a": "n76",
-   "b": "open@(160.0, 133.2)",
+   "id": "r27",
+   "a": "n21",
+   "b": "n2",
    "coords": [
     [
      160.0,
@@ -2262,6 +1657,10 @@
     [
      160.0,
      133.22
+    ],
+    [
+     143.76,
+     133.0
     ]
    ],
    "width": 0.51,
@@ -2272,9 +1671,9 @@
    "texts": []
   },
   {
-   "id": "r32",
-   "a": "n101",
-   "b": "n102",
+   "id": "r28",
+   "a": "n30",
+   "b": "n31",
    "coords": [
     [
      276.73,
@@ -2293,7 +1692,7 @@
    "texts": []
   },
   {
-   "id": "r33",
+   "id": "r29",
    "a": "open@(360.8, 128.3)",
    "b": "j1",
    "coords": [
@@ -2314,9 +1713,9 @@
    "texts": []
   },
   {
-   "id": "r34",
+   "id": "r30",
    "a": "j1",
-   "b": "n104",
+   "b": "n32",
    "coords": [
     [
      365.0,
@@ -2335,7 +1734,7 @@
    "texts": []
   },
   {
-   "id": "r35",
+   "id": "r31",
    "a": "j1",
    "b": "open@(365.0, 97.9)",
    "coords": [
@@ -2356,9 +1755,9 @@
    "texts": []
   },
   {
-   "id": "r36",
-   "a": "n104",
-   "b": "n111",
+   "id": "r32",
+   "a": "n32",
+   "b": "n79",
    "coords": [
     [
      370.92,
@@ -2377,9 +1776,9 @@
    "texts": []
   },
   {
-   "id": "r37",
-   "a": "n104",
-   "b": "n112",
+   "id": "r33",
+   "a": "n32",
+   "b": "n34",
    "coords": [
     [
      370.92,
@@ -2398,142 +1797,16 @@
    "texts": []
   },
   {
-   "id": "r38",
-   "a": "n107",
-   "b": "n7",
+   "id": "r34",
+   "a": "j8",
+   "b": "n4",
    "coords": [
     [
      325.12,
-     129.4
-    ],
-    [
-     341.12,
-     129.4
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 1.36,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r39",
-   "a": "n107",
-   "b": "n50",
-   "coords": [
-    [
-     323.5,
-     126.62
-    ],
-    [
-     323.5,
-     99.82
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 3.18,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r40",
-   "a": "n107",
-   "b": "open@(321.8, 126.4)",
-   "coords": [
-    [
-     321.8,
-     129.92
-    ],
-    [
-     321.8,
-     126.36
-    ]
-   ],
-   "width": 0.38,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r41",
-   "a": "n107",
-   "b": "open@(321.8, 133.6)",
-   "coords": [
-    [
-     321.8,
-     129.92
-    ],
-    [
-     321.8,
-     133.6
-    ]
-   ],
-   "width": 0.38,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r42",
-   "a": "n107",
-   "b": "j7",
-   "coords": [
-    [
-     325.2,
-     129.92
-    ],
-    [
-     325.2,
-     129.4
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r43",
-   "a": "n107",
-   "b": "n7",
-   "coords": [
-    [
-     325.2,
-     129.92
-    ],
-    [
-     325.2,
-     129.95
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r44",
-   "a": "n7",
-   "b": "j8",
-   "coords": [
-    [
-     341.12,
      130.6
     ],
     [
-     325.12,
+     341.12,
      130.6
     ]
    ],
@@ -2545,80 +1818,17 @@
    "texts": []
   },
   {
-   "id": "r45",
-   "a": "n7",
-   "b": "open@(328.0, 112.9)",
+   "id": "r35",
+   "a": "j8",
+   "b": "j7",
    "coords": [
-    [
-     328.0,
-     126.62
-    ],
-    [
-     328.0,
-     112.9
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r46",
-   "a": "n7",
-   "b": "j6",
-   "coords": [
-    [
-     325.2,
-     126.36
-    ],
-    [
-     325.2,
-     128.3
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r47",
-   "a": "n7",
-   "b": "j8",
-   "coords": [
-    [
-     325.2,
-     129.95
-    ],
     [
      325.2,
      130.6
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r48",
-   "a": "n7",
-   "b": "n5",
-   "coords": [
-    [
-     344.6,
-     133.35
     ],
     [
-     344.6,
-     143.49
+     325.2,
+     129.4
     ]
    ],
    "width": 0.25,
@@ -2629,7 +1839,7 @@
    "texts": []
   },
   {
-   "id": "r49",
+   "id": "r36",
    "a": "j8",
    "b": "j9",
    "coords": [
@@ -2650,17 +1860,90 @@
    "texts": []
   },
   {
-   "id": "r50",
-   "a": "n6",
-   "b": "open@(119.9, 133.0)",
+   "id": "r37",
+   "a": "n4",
+   "b": "n36",
    "coords": [
     [
-     136.27,
-     133.0
+     334.62,
+     154.1
     ],
     [
-     119.89,
-     133.0
+     290.83,
+     154.1
+    ],
+    [
+     287.15,
+     154.1
+    ],
+    [
+     280.96,
+     154.1
+    ]
+   ],
+   "width": 0.51,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 3.68,
+   "arrows": [],
+   "texts": [
+    "MNc 47126 7SHB13 50"
+   ]
+  },
+  {
+   "id": "r38",
+   "a": "n4",
+   "b": "n37",
+   "coords": [
+    [
+     334.62,
+     154.1
+    ],
+    [
+     364.94,
+     154.1
+    ]
+   ],
+   "width": 0.51,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r39",
+   "a": "n4",
+   "b": "n15",
+   "coords": [
+    [
+     323.5,
+     126.62
+    ],
+    [
+     323.5,
+     99.82
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 1.75,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r40",
+   "a": "n4",
+   "b": "j6",
+   "coords": [
+    [
+     325.2,
+     126.36
+    ],
+    [
+     325.2,
+     128.3
     ]
    ],
    "width": 0.25,
@@ -2671,20 +1954,20 @@
    "texts": []
   },
   {
-   "id": "r51",
-   "a": "n6",
-   "b": "open@(160.3, 133.0)",
+   "id": "r41",
+   "a": "n4",
+   "b": "j9",
    "coords": [
     [
-     143.76,
-     133.0
+     325.2,
+     133.6
     ],
     [
-     160.27,
-     133.0
+     325.2,
+     131.8
     ]
    ],
-   "width": 0.48,
+   "width": 0.25,
    "dashed": false,
    "kind": "pipe",
    "gap": 0,
@@ -2692,16 +1975,62 @@
    "texts": []
   },
   {
-   "id": "r52",
-   "a": "n6",
-   "b": "n121",
+   "id": "r42",
+   "a": "n4",
+   "b": "open@(344.6, 201.9)",
    "coords": [
     [
-     139.95,
+     344.6,
+     136.18
+    ],
+    [
+     344.6,
+     201.93
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r43",
+   "a": "n2",
+   "b": "open@(120.0, 201.9)",
+   "coords": [
+    [
+     136.27,
+     133.0
+    ],
+    [
+     119.89,
+     133.0
+    ],
+    [
+     120.0,
+     201.93
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r44",
+   "a": "n2",
+   "b": "j11",
+   "coords": [
+    [
+     139.94,
      137.1
     ],
     [
-     139.94,
+     135.89,
      137.1
     ]
    ],
@@ -2713,12 +2042,12 @@
    "texts": []
   },
   {
-   "id": "r53",
-   "a": "n6",
+   "id": "r45",
+   "a": "n2",
    "b": "j16",
    "coords": [
     [
-     139.95,
+     139.94,
      137.1
     ],
     [
@@ -2734,8 +2063,140 @@
    "texts": []
   },
   {
-   "id": "r54",
-   "a": "n6",
+   "id": "r46",
+   "a": "n2",
+   "b": "j12",
+   "coords": [
+    [
+     139.94,
+     143.5
+    ],
+    [
+     135.89,
+     143.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r47",
+   "a": "n2",
+   "b": "j17",
+   "coords": [
+    [
+     139.94,
+     143.5
+    ],
+    [
+     144.15,
+     143.5
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r48",
+   "a": "n2",
+   "b": "j13",
+   "coords": [
+    [
+     139.94,
+     149.9
+    ],
+    [
+     135.89,
+     149.9
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r49",
+   "a": "n2",
+   "b": "j18",
+   "coords": [
+    [
+     139.94,
+     149.9
+    ],
+    [
+     144.15,
+     149.9
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r50",
+   "a": "n2",
+   "b": "n1",
+   "coords": [
+    [
+     136.27,
+     154.1
+    ],
+    [
+     84.89,
+     154.1
+    ]
+   ],
+   "width": 0.48,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": [
+    "MNb 47122 7SHE13 80"
+   ]
+  },
+  {
+   "id": "r51",
+   "a": "n2",
+   "b": "open@(153.0, 201.9)",
+   "coords": [
+    [
+     143.76,
+     154.1
+    ],
+    [
+     153.16,
+     154.1
+    ],
+    [
+     153.0,
+     201.93
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r52",
+   "a": "n2",
    "b": "j10",
    "coords": [
     [
@@ -2745,6 +2206,48 @@
     [
      136.0,
      133.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r53",
+   "a": "n2",
+   "b": "j11",
+   "coords": [
+    [
+     136.0,
+     143.46
+    ],
+    [
+     136.0,
+     137.1
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r54",
+   "a": "n2",
+   "b": "j12",
+   "coords": [
+    [
+     136.0,
+     143.46
+    ],
+    [
+     136.0,
+     143.5
     ]
    ],
    "width": 0.25,
@@ -2756,16 +2259,16 @@
   },
   {
    "id": "r55",
-   "a": "n6",
-   "b": "j10",
+   "a": "n2",
+   "b": "j14",
    "coords": [
     [
      136.0,
-     133.54
+     156.34
     ],
     [
      136.0,
-     133.0
+     154.1
     ]
    ],
    "width": 0.25,
@@ -2777,28 +2280,7 @@
   },
   {
    "id": "r56",
-   "a": "n6",
-   "b": "j11",
-   "coords": [
-    [
-     136.0,
-     133.54
-    ],
-    [
-     136.0,
-     137.1
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r57",
-   "a": "n6",
+   "a": "n2",
    "b": "j15",
    "coords": [
     [
@@ -2818,17 +2300,38 @@
    "texts": []
   },
   {
-   "id": "r58",
-   "a": "n6",
-   "b": "j15",
+   "id": "r57",
+   "a": "n2",
+   "b": "j16",
    "coords": [
     [
      144.0,
-     133.54
+     143.46
     ],
     [
      144.0,
-     133.0
+     137.1
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r58",
+   "a": "n2",
+   "b": "j17",
+   "coords": [
+    [
+     144.0,
+     143.46
+    ],
+    [
+     144.0,
+     143.5
     ]
    ],
    "width": 0.25,
@@ -2840,16 +2343,16 @@
   },
   {
    "id": "r59",
-   "a": "n6",
-   "b": "j16",
+   "a": "n2",
+   "b": "j19",
    "coords": [
     [
      144.0,
-     133.54
+     156.46
     ],
     [
      144.0,
-     137.1
+     154.1
     ]
    ],
    "width": 0.25,
@@ -2925,7 +2428,7 @@
   {
    "id": "r63",
    "a": "j2",
-   "b": "n127",
+   "b": "n37",
    "coords": [
     [
      365.0,
@@ -2946,18 +2449,18 @@
   {
    "id": "r64",
    "a": "j11",
-   "b": "n121",
+   "b": "j10",
    "coords": [
     [
-     135.89,
+     136.0,
      137.1
     ],
     [
-     139.94,
-     137.1
+     136.0,
+     133.0
     ]
    ],
-   "width": 0.38,
+   "width": 0.25,
    "dashed": false,
    "kind": "pipe",
    "gap": 0,
@@ -2966,16 +2469,16 @@
   },
   {
    "id": "r65",
-   "a": "j11",
-   "b": "j12",
+   "a": "j16",
+   "b": "j15",
    "coords": [
     [
-     136.0,
+     144.0,
      137.1
     ],
     [
-     136.0,
-     143.5
+     144.0,
+     133.0
     ]
    ],
    "width": 0.25,
@@ -2987,16 +2490,16 @@
   },
   {
    "id": "r66",
-   "a": "n121",
-   "b": "n122",
+   "a": "j12",
+   "b": "j13",
    "coords": [
     [
-     139.94,
+     136.0,
      143.5
     ],
     [
-     139.94,
-     143.5
+     136.0,
+     149.9
     ]
    ],
    "width": 0.25,
@@ -3008,132 +2511,6 @@
   },
   {
    "id": "r67",
-   "a": "n121",
-   "b": "j17",
-   "coords": [
-    [
-     139.94,
-     143.5
-    ],
-    [
-     144.15,
-     143.5
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r68",
-   "a": "j16",
-   "b": "j17",
-   "coords": [
-    [
-     144.0,
-     137.1
-    ],
-    [
-     144.0,
-     143.5
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r69",
-   "a": "j12",
-   "b": "n122",
-   "coords": [
-    [
-     135.89,
-     143.5
-    ],
-    [
-     139.94,
-     143.5
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r70",
-   "a": "j12",
-   "b": "j13",
-   "coords": [
-    [
-     136.0,
-     143.5
-    ],
-    [
-     136.0,
-     149.9
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r71",
-   "a": "n122",
-   "b": "j13",
-   "coords": [
-    [
-     139.94,
-     149.9
-    ],
-    [
-     135.89,
-     149.9
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r72",
-   "a": "n122",
-   "b": "n2",
-   "coords": [
-    [
-     139.94,
-     149.9
-    ],
-    [
-     139.95,
-     149.9
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r73",
    "a": "j17",
    "b": "j18",
    "coords": [
@@ -3154,99 +2531,13 @@
    "texts": []
   },
   {
-   "id": "r74",
+   "id": "r68",
    "a": "j13",
-   "b": "n2",
-   "coords": [
-    [
-     136.0,
-     149.9
-    ],
-    [
-     136.0,
-     153.3
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r75",
-   "a": "n2",
-   "b": "j18",
-   "coords": [
-    [
-     139.95,
-     149.9
-    ],
-    [
-     144.15,
-     149.9
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r76",
-   "a": "n2",
-   "b": "n128",
-   "coords": [
-    [
-     136.27,
-     154.1
-    ],
-    [
-     87.25,
-     154.1
-    ]
-   ],
-   "width": 0.48,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": [
-    "MNb 47122 7SHE13 80"
-   ]
-  },
-  {
-   "id": "r77",
-   "a": "n2",
-   "b": "open@(153.2, 154.1)",
-   "coords": [
-    [
-     143.76,
-     154.1
-    ],
-    [
-     153.16,
-     154.1
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r78",
-   "a": "n2",
    "b": "j14",
    "coords": [
     [
      136.0,
-     153.3
+     149.9
     ],
     [
      136.0,
@@ -3261,55 +2552,13 @@
    "texts": []
   },
   {
-   "id": "r79",
-   "a": "n2",
-   "b": "j14",
+   "id": "r69",
+   "a": "j18",
+   "b": "j19",
    "coords": [
-    [
-     136.0,
-     156.34
-    ],
-    [
-     136.0,
-     154.1
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r80",
-   "a": "n2",
-   "b": "j18",
-   "coords": [
-    [
-     144.0,
-     153.3
-    ],
     [
      144.0,
      149.9
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r81",
-   "a": "n2",
-   "b": "j19",
-   "coords": [
-    [
-     144.0,
-     153.3
     ],
     [
      144.0,
@@ -3324,29 +2573,8 @@
    "texts": []
   },
   {
-   "id": "r82",
-   "a": "n2",
-   "b": "j19",
-   "coords": [
-    [
-     144.0,
-     156.46
-    ],
-    [
-     144.0,
-     154.1
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r83",
-   "a": "n147",
+   "id": "r70",
+   "a": "n45",
    "b": "n1",
    "coords": [
     [
@@ -3354,7 +2582,7 @@
      154.1
     ],
     [
-     83.44,
+     84.89,
      154.1
     ]
    ],
@@ -3368,72 +2596,9 @@
    ]
   },
   {
-   "id": "r84",
-   "a": "n1",
-   "b": "n4",
-   "coords": [
-    [
-     83.44,
-     154.1
-    ],
-    [
-     83.44,
-     154.1
-    ]
-   ],
-   "width": 0.48,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r85",
-   "a": "n4",
-   "b": "n144",
-   "coords": [
-    [
-     83.44,
-     154.1
-    ],
-    [
-     87.01,
-     154.1
-    ]
-   ],
-   "width": 0.48,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r86",
-   "a": "n144",
-   "b": "n128",
-   "coords": [
-    [
-     87.01,
-     154.1
-    ],
-    [
-     87.25,
-     154.1
-    ]
-   ],
-   "width": 0.48,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r87",
-   "a": "n134",
-   "b": "open@(193.8, 154.1)",
+   "id": "r71",
+   "a": "n41",
+   "b": "n35",
    "coords": [
     [
      201.17,
@@ -3442,6 +2607,10 @@
     [
      193.8,
      154.1
+    ],
+    [
+     194.1,
+     138.81
     ]
    ],
    "width": 0.51,
@@ -3452,9 +2621,9 @@
    "texts": []
   },
   {
-   "id": "r88",
-   "a": "n134",
-   "b": "n145",
+   "id": "r72",
+   "a": "n41",
+   "b": "n44",
    "coords": [
     [
      204.85,
@@ -3473,9 +2642,9 @@
    "texts": []
   },
   {
-   "id": "r89",
-   "a": "n145",
-   "b": "n136",
+   "id": "r73",
+   "a": "n44",
+   "b": "n42",
    "coords": [
     [
      217.93,
@@ -3494,8 +2663,8 @@
    "texts": []
   },
   {
-   "id": "r90",
-   "a": "n136",
+   "id": "r74",
+   "a": "n42",
    "b": "n3",
    "coords": [
     [
@@ -3515,9 +2684,9 @@
    "texts": []
   },
   {
-   "id": "r91",
+   "id": "r75",
    "a": "n3",
-   "b": "n148",
+   "b": "n46",
    "coords": [
     [
      255.91,
@@ -3536,8 +2705,8 @@
    "texts": []
   },
   {
-   "id": "r92",
-   "a": "n148",
+   "id": "r76",
+   "a": "n46",
    "b": "j3",
    "coords": [
     [
@@ -3557,9 +2726,9 @@
    "texts": []
   },
   {
-   "id": "r93",
+   "id": "r77",
    "a": "j3",
-   "b": "n126",
+   "b": "n36",
    "coords": [
     [
      269.0,
@@ -3578,148 +2747,12 @@
    "texts": []
   },
   {
-   "id": "r94",
-   "a": "n126",
-   "b": "n5",
-   "coords": [
-    [
-     280.96,
-     154.1
-    ],
-    [
-     287.15,
-     154.1
-    ],
-    [
-     290.83,
-     154.1
-    ],
-    [
-     333.95,
-     154.1
-    ]
-   ],
-   "width": 0.51,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 3.68,
-   "arrows": [],
-   "texts": [
-    "MNc 47126 7SHB13 50"
-   ]
-  },
-  {
-   "id": "r95",
-   "a": "n5",
-   "b": "n127",
-   "coords": [
-    [
-     333.95,
-     154.1
-    ],
-    [
-     364.94,
-     154.1
-    ]
-   ],
-   "width": 0.51,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r96",
-   "a": "n5",
-   "b": "j9",
-   "coords": [
-    [
-     325.2,
-     133.6
-    ],
-    [
-     325.2,
-     131.8
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r97",
-   "a": "n5",
-   "b": "n154",
-   "coords": [
-    [
-     344.6,
-     143.49
-    ],
-    [
-     344.6,
-     161.83
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r98",
-   "a": "n127",
-   "b": "n149",
-   "coords": [
-    [
-     364.94,
-     154.1
-    ],
-    [
-     373.91,
-     154.1
-    ]
-   ],
-   "width": 0.51,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r99",
-   "a": "n149",
-   "b": "n133",
-   "coords": [
-    [
-     373.91,
-     154.1
-    ],
-    [
-     373.97,
-     154.1
-    ]
-   ],
-   "width": 0.51,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r100",
-   "a": "n133",
+   "id": "r78",
+   "a": "n37",
    "b": "open@(378.1, 154.1)",
    "coords": [
     [
-     373.97,
+     364.94,
      154.1
     ],
     [
@@ -3735,7 +2768,7 @@
    "texts": []
   },
   {
-   "id": "r101",
+   "id": "r79",
    "a": "open@(295.7, 278.0)",
    "b": "open@(358.5, 278.0)",
    "coords": [
@@ -3761,51 +2794,9 @@
    ]
   },
   {
-   "id": "r102",
-   "a": "n17",
-   "b": "open@(181.0, 60.7)",
-   "coords": [
-    [
-     181.0,
-     64.54
-    ],
-    [
-     181.0,
-     60.71
-    ]
-   ],
-   "width": 0.48,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r103",
-   "a": "n17",
-   "b": "n18",
-   "coords": [
-    [
-     181.0,
-     64.54
-    ],
-    [
-     181.0,
-     64.59
-    ]
-   ],
-   "width": 0.48,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r104",
-   "a": "n30",
-   "b": "n53",
+   "id": "r80",
+   "a": "n12",
+   "b": "n16",
    "coords": [
     [
      179.0,
@@ -3824,7 +2815,7 @@
    "texts": []
   },
   {
-   "id": "r105",
+   "id": "r81",
    "a": "j4",
    "b": "j5",
    "coords": [
@@ -3845,28 +2836,7 @@
    "texts": []
   },
   {
-   "id": "r106",
-   "a": "n50",
-   "b": "open@(323.5, 82.8)",
-   "coords": [
-    [
-     323.5,
-     96.14
-    ],
-    [
-     323.5,
-     82.8
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r107",
+   "id": "r82",
    "a": "open@(174.9, 88.8)",
    "b": "open@(174.9, 99.3)",
    "coords": [
@@ -3887,17 +2857,17 @@
    "texts": []
   },
   {
-   "id": "r108",
-   "a": "n156",
-   "b": "open@(353.0, 112.9)",
+   "id": "r83",
+   "a": "open@(321.8, 126.4)",
+   "b": "open@(321.8, 133.6)",
    "coords": [
     [
-     353.0,
-     161.71
+     321.8,
+     126.36
     ],
     [
-     353.0,
-     112.9
+     321.8,
+     133.6
     ]
    ],
    "width": 0.38,
@@ -3908,49 +2878,7 @@
    "texts": []
   },
   {
-   "id": "r109",
-   "a": "n157",
-   "b": "open@(353.0, 201.9)",
-   "coords": [
-    [
-     353.0,
-     161.71
-    ],
-    [
-     353.0,
-     201.93
-    ]
-   ],
-   "width": 0.38,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r110",
-   "a": "n114",
-   "b": "open@(194.1, 154.3)",
-   "coords": [
-    [
-     194.1,
-     138.81
-    ],
-    [
-     194.1,
-     154.31
-    ]
-   ],
-   "width": 0.51,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r111",
+   "id": "r84",
    "a": "j6",
    "b": "j7",
    "coords": [
@@ -3971,154 +2899,7 @@
    "texts": []
   },
   {
-   "id": "r112",
-   "a": "n150",
-   "b": "open@(120.0, 132.8)",
-   "coords": [
-    [
-     120.0,
-     161.94
-    ],
-    [
-     120.0,
-     132.84
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r113",
-   "a": "n151",
-   "b": "open@(120.0, 201.9)",
-   "coords": [
-    [
-     120.0,
-     161.94
-    ],
-    [
-     120.0,
-     201.93
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r114",
-   "a": "n154",
-   "b": "n155",
-   "coords": [
-    [
-     344.6,
-     161.83
-    ],
-    [
-     344.6,
-     161.89
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r115",
-   "a": "n155",
-   "b": "open@(344.6, 201.9)",
-   "coords": [
-    [
-     344.6,
-     161.89
-    ],
-    [
-     344.6,
-     201.93
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r116",
-   "a": "n153",
-   "b": "open@(153.0, 153.9)",
-   "coords": [
-    [
-     153.0,
-     161.71
-    ],
-    [
-     153.0,
-     153.92
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r117",
-   "a": "n153",
-   "b": "n152",
-   "coords": [
-    [
-     153.0,
-     161.71
-    ],
-    [
-     153.0,
-     161.77
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r118",
-   "a": "n152",
-   "b": "open@(153.0, 201.9)",
-   "coords": [
-    [
-     153.0,
-     161.77
-    ],
-    [
-     153.0,
-     201.93
-    ]
-   ],
-   "width": 0.25,
-   "dashed": false,
-   "kind": "pipe",
-   "gap": 0,
-   "arrows": [],
-   "texts": []
-  },
-  {
-   "id": "r119",
+   "id": "r85",
    "a": "open@(380.0, 262.6)",
    "b": "open@(380.0, 273.2)",
    "coords": [
@@ -4153,7 +2934,7 @@
    ],
    "owner": [
     "node",
-    13,
+    8,
     0.13
    ]
   },
@@ -4170,7 +2951,7 @@
    ],
    "owner": [
     "node",
-    13,
+    8,
     0.0
    ]
   },
@@ -4187,7 +2968,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     0.38
    ]
   },
@@ -4204,7 +2985,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     1.4
    ]
   },
@@ -4221,7 +3002,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     0.0
    ]
   },
@@ -4238,7 +3019,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     0.0
    ]
   },
@@ -4268,7 +3049,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     0.51
    ]
   },
@@ -4285,7 +3066,7 @@
    ],
    "owner": [
     "run",
-    19,
+    9,
     0.0
    ]
   },
@@ -4302,7 +3083,7 @@
    ],
    "owner": [
     "node",
-    25,
+    52,
     0.13
    ]
   },
@@ -4319,7 +3100,7 @@
    ],
    "owner": [
     "node",
-    32,
+    56,
     0.0
    ]
   },
@@ -4336,7 +3117,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     0.89
    ]
   },
@@ -4353,7 +3134,7 @@
    ],
    "owner": [
     "node",
-    29,
+    55,
     0.13
    ]
   },
@@ -4370,7 +3151,7 @@
    ],
    "owner": [
     "node",
-    30,
+    12,
     2.29
    ]
   },
@@ -4387,7 +3168,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     0.51
    ]
   },
@@ -4404,7 +3185,7 @@
    ],
    "owner": [
     "run",
-    21,
+    10,
     0.0
    ]
   },
@@ -4438,7 +3219,7 @@
    ],
    "owner": [
     "node",
-    53,
+    16,
     1.9
    ]
   },
@@ -4455,7 +3236,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     0.89
    ]
   },
@@ -4489,7 +3270,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     0.0
    ]
   },
@@ -4523,7 +3304,7 @@
    ],
    "owner": [
     "node",
-    51,
+    56,
     0.13
    ]
   },
@@ -4540,7 +3321,7 @@
    ],
    "owner": [
     "node",
-    77,
+    67,
     0.0
    ]
   },
@@ -4557,7 +3338,7 @@
    ],
    "owner": [
     "node",
-    74,
+    19,
     0.63
    ]
   },
@@ -4574,7 +3355,7 @@
    ],
    "owner": [
     "node",
-    66,
+    17,
     0.13
    ]
   },
@@ -4591,7 +3372,7 @@
    ],
    "owner": [
     "node",
-    74,
+    19,
     0.0
    ]
   },
@@ -4608,7 +3389,7 @@
    ],
    "owner": [
     "node",
-    98,
+    29,
     0.56
    ]
   },
@@ -4625,7 +3406,7 @@
    ],
    "owner": [
     "node",
-    7,
+    4,
     0.0
    ]
   },
@@ -4642,7 +3423,7 @@
    ],
    "owner": [
     "node",
-    8,
+    5,
     0.25
    ]
   },
@@ -4659,7 +3440,7 @@
    ],
    "owner": [
     "node",
-    6,
+    2,
     0.63
    ]
   },
@@ -4676,7 +3457,7 @@
    ],
    "owner": [
     "node",
-    6,
+    2,
     0.38
    ]
   },
@@ -4693,7 +3474,7 @@
    ],
    "owner": [
     "node",
-    114,
+    35,
     3.07
    ]
   },
@@ -4710,7 +3491,7 @@
    ],
    "owner": [
     "node",
-    92,
+    67,
     0.13
    ]
   },
@@ -4727,7 +3508,7 @@
    ],
    "owner": [
     "node",
-    101,
+    30,
     2.29
    ]
   },
@@ -4744,7 +3525,7 @@
    ],
    "owner": [
     "node",
-    105,
+    33,
     0.13
    ]
   },
@@ -4761,7 +3542,7 @@
    ],
    "owner": [
     "node",
-    101,
+    30,
     0.0
    ]
   },
@@ -4778,7 +3559,7 @@
    ],
    "owner": [
     "node",
-    104,
+    32,
     0.0
    ]
   },
@@ -4795,7 +3576,7 @@
    ],
    "owner": [
     "node",
-    6,
+    2,
     0.89
    ]
   },
@@ -4812,7 +3593,7 @@
    ],
    "owner": [
     "node",
-    6,
+    2,
     0.76
    ]
   },
@@ -4829,7 +3610,7 @@
    ],
    "owner": [
     "node",
-    114,
+    35,
     1.4
    ]
   },
@@ -4846,7 +3627,7 @@
    ],
    "owner": [
     "node",
-    114,
+    35,
     1.27
    ]
   },
@@ -4863,7 +3644,7 @@
    ],
    "owner": [
     "node",
-    5,
+    4,
     0.0
    ]
   },
@@ -4880,7 +3661,7 @@
    ],
    "owner": [
     "node",
-    5,
+    4,
     0.0
    ]
   },
@@ -4897,7 +3678,7 @@
    ],
    "owner": [
     "node",
-    5,
+    4,
     0.0
    ]
   },
@@ -4914,7 +3695,7 @@
    ],
    "owner": [
     "node",
-    5,
+    4,
     0.0
    ]
   },
@@ -4931,8 +3712,8 @@
    ],
    "owner": [
     "node",
-    128,
-    0.0
+    1,
+    0.15
    ]
   },
   {
@@ -4948,7 +3729,7 @@
    ],
    "owner": [
     "node",
-    114,
+    35,
     1.4
    ]
   },
@@ -4965,8 +3746,8 @@
    ],
    "owner": [
     "node",
-    129,
-    0.46
+    3,
+    0.71
    ]
   },
   {
@@ -4982,7 +3763,7 @@
    ],
    "owner": [
     "node",
-    126,
+    36,
     0.76
    ]
   },
@@ -4999,7 +3780,7 @@
    ],
    "owner": [
     "node",
-    127,
+    37,
     1.14
    ]
   },
@@ -5016,7 +3797,7 @@
    ],
    "owner": [
     "run",
-    83,
+    70,
     0.56
    ]
   },
@@ -5033,7 +3814,7 @@
    ],
    "owner": [
     "node",
-    4,
+    1,
     0.76
    ]
   },
@@ -5050,8 +3831,8 @@
    ],
    "owner": [
     "node",
-    128,
-    0.25
+    1,
+    0.89
    ]
   },
   {
@@ -5067,7 +3848,7 @@
    ],
    "owner": [
     "run",
-    76,
+    50,
     0.56
    ]
   },
@@ -5118,7 +3899,7 @@
    ],
    "owner": [
     "node",
-    114,
+    35,
     8.19
    ]
   },
@@ -5135,7 +3916,7 @@
    ],
    "owner": [
     "node",
-    134,
+    41,
     0.0
    ]
   },
@@ -5152,7 +3933,7 @@
    ],
    "owner": [
     "node",
-    141,
+    43,
     0.41
    ]
   },
@@ -5169,7 +3950,7 @@
    ],
    "owner": [
     "node",
-    136,
+    42,
     0.28
    ]
   },
@@ -5203,8 +3984,8 @@
    ],
    "owner": [
     "node",
-    129,
-    0.25
+    3,
+    0.64
    ]
   },
   {
@@ -5220,7 +4001,7 @@
    ],
    "owner": [
     "run",
-    94,
+    37,
     0.56
    ]
   },
@@ -5237,7 +4018,7 @@
    ],
    "owner": [
     "node",
-    126,
+    36,
     4.06
    ]
   },
@@ -5271,8 +4052,8 @@
    ],
    "owner": [
     "node",
-    144,
-    0.51
+    1,
+    1.14
    ]
   },
   {
@@ -5339,8 +4120,8 @@
    ],
    "owner": [
     "node",
-    146,
-    0.25
+    3,
+    0.64
    ]
   },
   {
@@ -5356,7 +4137,7 @@
    ],
    "owner": [
     "node",
-    126,
+    36,
     1.9
    ]
   },
@@ -5390,7 +4171,7 @@
    ],
    "owner": [
     "node",
-    134,
+    41,
     8.93
    ]
   },
@@ -5407,7 +4188,7 @@
    ],
    "owner": [
     "node",
-    148,
+    46,
     0.13
    ]
   },
@@ -5424,8 +4205,8 @@
    ],
    "owner": [
     "node",
-    154,
-    2.79
+    100,
+    5.97
    ]
   },
   {
@@ -5441,7 +4222,7 @@
    ],
    "owner": [
     "node",
-    158,
+    100,
     0.0
    ]
   },
@@ -5456,11 +4237,7 @@
     119.0,
     172.72
    ],
-   "owner": [
-    "node",
-    150,
-    4.57
-   ]
+   "owner": null
   },
   {
    "text": "3",
@@ -5475,7 +4252,7 @@
    ],
    "owner": [
     "node",
-    159,
+    101,
     0.0
    ]
   },
@@ -5492,7 +4269,7 @@
    ],
    "owner": [
     "node",
-    163,
+    100,
     5.59
    ]
   },
@@ -5507,11 +4284,7 @@
     119.0,
     185.34
    ],
-   "owner": [
-    "node",
-    150,
-    8.51
-   ]
+   "owner": null
   },
   {
    "text": "0",
@@ -5539,7 +4312,7 @@
    ],
    "owner": [
     "node",
-    174,
+    102,
     0.0
    ]
   },
@@ -5556,7 +4329,7 @@
    ],
    "owner": [
     "node",
-    165,
+    100,
     5.97
    ]
   },
@@ -5599,7 +4372,7 @@
    ],
    "owner": [
     "node",
-    173,
+    100,
     0.13
    ]
   },
@@ -5655,7 +4428,7 @@
    ],
    "owner": [
     "run",
-    101,
+    79,
     5.41
    ]
   },
@@ -5685,7 +4458,7 @@
    ],
    "owner": [
     "run",
-    101,
+    79,
     0.5
    ]
   },
@@ -5702,7 +4475,7 @@
    ],
    "owner": [
     "run",
-    101,
+    79,
     0.5
    ]
   },
@@ -5719,7 +4492,7 @@
    ],
    "owner": [
     "run",
-    101,
+    79,
     0.64
    ]
   },
@@ -5736,7 +4509,7 @@
    ],
    "owner": [
     "node",
-    11,
+    7,
     4.72
    ]
   },
@@ -5753,7 +4526,7 @@
    ],
    "owner": [
     "node",
-    9,
+    6,
     4.27
    ]
   },
@@ -5770,7 +4543,7 @@
    ],
    "owner": [
     "node",
-    11,
+    7,
     0.33
    ]
   },
@@ -5787,7 +4560,7 @@
    ],
    "owner": [
     "node",
-    9,
+    6,
     0.33
    ]
   },
@@ -5804,7 +4577,7 @@
    ],
    "owner": [
     "node",
-    9,
+    6,
     0.5
    ]
   },
@@ -5821,7 +4594,7 @@
    ],
    "owner": [
     "node",
-    11,
+    7,
     0.0
    ]
   },
@@ -5838,7 +4611,7 @@
    ],
    "owner": [
     "node",
-    10,
+    6,
     0.0
    ]
   },
@@ -5855,7 +4628,7 @@
    ],
    "owner": [
     "node",
-    9,
+    6,
     0.0
    ]
   },
@@ -5872,7 +4645,7 @@
    ],
    "owner": [
     "node",
-    9,
+    6,
     0.38
    ]
   }
@@ -6272,19 +5045,19 @@
   }
  ],
  "counts": {
-  "primitives": 244,
+  "primitives": 169,
   "texts": 104,
-  "nodes": 178,
-  "runs": 120,
+  "nodes": 103,
+  "runs": 86,
   "junctions": 20,
   "tables": 5,
-  "dropped_fragments": 96
+  "dropped_fragments": 54
  },
  "times": {
   "ocr": 0.2,
-  "lines_symbols": 7.9,
-  "graph": 0.6,
-  "total": 8.7
+  "lines_symbols": 8.3,
+  "graph": 0.4,
+  "total": 8.8
  },
  "dpi": 200,
  "skew_deg": 0.0

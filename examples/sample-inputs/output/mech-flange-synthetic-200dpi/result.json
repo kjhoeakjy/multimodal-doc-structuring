@@ -8,12 +8,12 @@
   "snapshot": {
    "cores": 4,
    "total_gb": 15.7,
-   "avail_gb": 14.4,
-   "cpu_busy": 3.0
+   "avail_gb": 14.5,
+   "cpu_busy": 2.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
-   "가용 메모리 14.4 GB → 인식 배치 8, 입력 상한 12 MP",
+   "가용 메모리 14.5 GB → 인식 배치 8, 입력 상한 12 MP",
    "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
   ]
  },
@@ -897,10 +897,10 @@
   "part1 bbox=(199.8,27.1,235.0,160.3)",
   "## 표 (표제란 등)",
   "t0 bbox=(176.5,167.5,287.7,200.7) 행수=4 열수=3",
-  "t0 행0: TITLE | 34 FLANGE; MOUNTING | ",
-  "t0 행1: PART NO | FL-204O-A | REV B",
-  "t0 행2: MATERIAL | AL 6061-T6 | SCALE 1:1",
-  "t0 행3: FINISH | ANODIZE CL2 | SHT 1/1",
+  "t0 제목줄0: TITLE | 34 FLANGE; MOUNTING",
+  "t0 열 이름: PART NO | FL-204O-A | REV B",
+  "t0 행2: PART NO=MATERIAL | FL-204O-A=AL 6061-T6 | REV B=SCALE 1:1",
+  "t0 행3: PART NO=FINISH | FL-204O-A=ANODIZE CL2 | REV B=SHT 1/1",
   "## 치수 · 주기 (문자 묶음)",
   "c0 종류=주석 bbox=(13.0,16.0,218.7,21.0) NOTES: 1. BREAK ALL SHARP EDGES 0.5 MAX 2. DIMENSIONS IN MM 3. TOLERANCE +0.2 UNLESS NOTED",
   "c1 종류=치수 소속=part0 bbox=(84.3,23.9,95.6,27.6) 0856 H7",
@@ -938,7 +938,7 @@
  ],
  "index": {
   "bm25": {
-   "tokens": 421,
+   "tokens": 432,
    "vocab": 169,
    "top": [
     [
@@ -951,15 +951,15 @@
     ],
     [
      "이름",
-     14
+     15
+    ],
+    [
+     "b",
+     13
     ],
     [
      "치수",
      13
-    ],
-    [
-     "b",
-     11
     ],
     [
      "t0",
@@ -983,6 +983,22 @@
     ],
     [
      "24.0",
+     4
+    ],
+    [
+     "part",
+     4
+    ],
+    [
+     "no",
+     4
+    ],
+    [
+     "fl-204o-a",
+     4
+    ],
+    [
+     "rev",
      4
     ],
     [
@@ -1084,22 +1100,6 @@
     [
      "166.0",
      2
-    ],
-    [
-     "199.8",
-     2
-    ],
-    [
-     "27.1",
-     2
-    ],
-    [
-     "235.0",
-     2
-    ],
-    [
-     "160.3",
-     2
     ]
    ]
   },
@@ -1143,13 +1143,13 @@
   "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 1.05,
-  "min_avail_gb": 14.45
+  "peak_rss_gb": 1.03,
+  "min_avail_gb": 14.47
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
-  "avail_gb": 14.4,
-  "cpu_busy": 1.0
+  "avail_gb": 14.5,
+  "cpu_busy": 2.0
  }
 }

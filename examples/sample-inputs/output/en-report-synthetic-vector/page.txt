@@ -1,10 +1,10 @@
 # 쪽 구조 (좌표 단위 mm, 원점 좌상단)
 ## 표
 t0 bbox=(19.4,57.8,189.5,86.9) 행수=4 열수=4
-t0 행0: Actuator | Part number | Leakage cc/min | Action
-t0 행1: L/H MLG | 114A3200-5 | 3.2 | Replace
-t0 행2: R/H MLG | 114A3200-5 | 1.9 | Monitor
-t0 행3: NLG steering | 114A3410-2 | 1.1 | None
+t0 열 이름: Actuator | Part number | Leakage cc/min | Action
+t0 행1: Actuator=L/H MLG | Part number=114A3200-5 | Leakage cc/min=3.2 | Action=Replace
+t0 행2: Actuator=R/H MLG | Part number=114A3200-5 | Leakage cc/min=1.9 | Action=Monitor
+t0 행3: Actuator=NLG steering | Part number=114A3410-2 | Leakage cc/min=1.1 | Action=None
 ## 그림 영역
 f0 bbox=(19.3,101.9,126.0,159.1) 안 문자=limit 4.0 cc/min / Q1 / Q2 / Q3 / Q4 / Q3
 ## 본문
