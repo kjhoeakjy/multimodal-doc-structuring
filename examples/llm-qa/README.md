@@ -30,6 +30,7 @@ python make_questions.py        # questions.json
 python contexts.py              # contexts.json(세 조건 문맥)
 python run_qa.py --backend api --model <모델 id> --label <결과 이름>   # OpenAI 호환 API, 환경 변수 LLM_API_BASE·LLM_API_KEY
 python run_qa.py --backend ollama --model <모델 이름>        # 공개 가중치 모델, 로컬 Ollama
+python run_qa.py --backend ollama --model <모델 이름> --ids subset-80.json --label open-8b-2026-10-s80   # CPU 실행 시간이 길 때 층화 80문항(자료 묶음×질문 종류 비율 유지, 씨앗 0)
 bash run_open_models.sh [모델 ...]  # 공개 가중치 비교군(8B·7B·14B급) 일괄 실행, 결과 이름 open-<규모>-<연월>
 python analyze.py <결과 이름>   # results/<결과 이름>-analysis.md: 신뢰구간, 조건 간 대응 비교, 종류별 정답률, 오답 유형
 ```

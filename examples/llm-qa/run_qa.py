@@ -1,7 +1,7 @@
 """세 조건(ocr / full / retrieved)으로 LLM에 질문하고 정답률을 잰다.
 사용: python run_qa.py --backend api --model <모델 id> --label <결과 이름>   (OpenAI 호환 API, 환경 변수 LLM_API_BASE·LLM_API_KEY)
       python run_qa.py --backend ollama --model <모델 이름>                   (로컬 http://127.0.0.1:11434, 공개 가중치 모델)
-      --conds ocr,full,retrieved --limit N --docs pid-standard-vector,...  --dry(호출 없이 프롬프트 수만 셈)
+      --conds ocr,full,retrieved --limit N --docs pid-standard-vector,... --ids subset-80.json  --dry(호출 없이 프롬프트 수만 셈)
 결과: results/<label>.jsonl(문항·조건별 응답, 이어서 실행 가능), results/<label>.md(정답률 표). label 기본값은 모델 id"""
 import os, sys, json, re, time, argparse, collections, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -44,8 +44,11 @@ def main():
     ap.add_argument('--conds', default='ocr,full,retrieved'); ap.add_argument('--limit', type=int, default=0); ap.add_argument('--docs', default='')
     ap.add_argument('--dry', action='store_true'); ap.add_argument('--sleep', type=float, default=0.0)
     ap.add_argument('--rescore', action='store_true', help='저장된 응답을 다시 채점해 표만 다시 씀')
+    ap.add_argument('--ids', default='', help='문항 id 목록 파일(json 배열). 예: subset-80.json')
     a = ap.parse_args()
     Q = json.load(open(os.path.join(HERE, 'questions.json'), encoding='utf-8')); C = json.load(open(os.path.join(HERE, 'contexts.json'), encoding='utf-8'))
+    if a.ids:
+        keep = set(json.load(open(os.path.join(HERE, a.ids), encoding='utf-8'))); Q = [q for q in Q if q['id'] in keep]
     if a.docs:
         keep = set(a.docs.split(',')); Q = [q for q in Q if q['doc'] in keep]
     if a.limit:
