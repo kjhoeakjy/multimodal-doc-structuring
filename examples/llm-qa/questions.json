@@ -1,0 +1,2956 @@
+[
+ {
+  "id": "q000",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "장비 H1007에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "P4711",
+   "T4750"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q001",
+  "doc": "pid-standard-200dpi",
+  "type": "연결",
+  "question": "장비 H1007에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "P4711",
+   "T4750"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q002",
+  "doc": "pid-standard-scan",
+  "type": "연결",
+  "question": "장비 H1007에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "P4711",
+   "T4750"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q003",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "장비 H1008에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "P4712",
+   "T4750"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q004",
+  "doc": "pid-standard-200dpi",
+  "type": "연결",
+  "question": "장비 H1008에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "P4712",
+   "T4750"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q005",
+  "doc": "pid-standard-scan",
+  "type": "연결",
+  "question": "장비 H1008에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "P4712",
+   "T4750"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q006",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "장비 P4711에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "H1007"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q007",
+  "doc": "pid-standard-200dpi",
+  "type": "연결",
+  "question": "장비 P4711에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "H1007"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q008",
+  "doc": "pid-standard-scan",
+  "type": "연결",
+  "question": "장비 P4711에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "H1007"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q009",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "장비 P4712에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "H1008",
+   "T4750"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q010",
+  "doc": "pid-standard-200dpi",
+  "type": "연결",
+  "question": "장비 P4712에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "H1008",
+   "T4750"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q011",
+  "doc": "pid-standard-scan",
+  "type": "연결",
+  "question": "장비 P4712에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "H1008",
+   "T4750"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q012",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "장비 T4750에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "H1007",
+   "H1008",
+   "P4712"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q013",
+  "doc": "pid-standard-200dpi",
+  "type": "연결",
+  "question": "장비 T4750에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "H1007",
+   "H1008",
+   "P4712"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q014",
+  "doc": "pid-standard-scan",
+  "type": "연결",
+  "question": "장비 T4750에서 배관을 따라가면 (다른 장비를 거치지 않고) 바로 도달하는 장비 태그는 무엇인가? 태그만 모두 나열하라.",
+  "answers": [
+   "H1007",
+   "H1008",
+   "P4712"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "set"
+ },
+ {
+  "id": "q015",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "장비 H1007의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q016",
+  "doc": "pid-standard-200dpi",
+  "type": "개수",
+  "question": "장비 H1007의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q017",
+  "doc": "pid-standard-scan",
+  "type": "개수",
+  "question": "장비 H1007의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q018",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "장비 H1008의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q019",
+  "doc": "pid-standard-200dpi",
+  "type": "개수",
+  "question": "장비 H1008의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q020",
+  "doc": "pid-standard-scan",
+  "type": "개수",
+  "question": "장비 H1008의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q021",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "장비 P4711의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q022",
+  "doc": "pid-standard-200dpi",
+  "type": "개수",
+  "question": "장비 P4711의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q023",
+  "doc": "pid-standard-scan",
+  "type": "개수",
+  "question": "장비 P4711의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q024",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "장비 P4712의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q025",
+  "doc": "pid-standard-200dpi",
+  "type": "개수",
+  "question": "장비 P4712의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q026",
+  "doc": "pid-standard-scan",
+  "type": "개수",
+  "question": "장비 P4712의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q027",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "장비 T4750의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "7"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q028",
+  "doc": "pid-standard-200dpi",
+  "type": "개수",
+  "question": "장비 T4750의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "7"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q029",
+  "doc": "pid-standard-scan",
+  "type": "개수",
+  "question": "장비 T4750의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "7"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q030",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q031",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q032",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q033",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q034",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q035",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q036",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q037",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q038",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q039",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N4의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q040",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N4의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q041",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 H1007의 노즐 N4의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q042",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q043",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q044",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q045",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q046",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q047",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q048",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q049",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q050",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q051",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N4의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q052",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N4의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q053",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 H1008의 노즐 N4의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q054",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 P4711의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q055",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 P4711의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q056",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 P4711의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q057",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 P4711의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q058",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 P4711의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q059",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 P4711의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q060",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 P4712의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q061",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 P4712의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q062",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 P4712의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q063",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 P4712의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q064",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 P4712의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q065",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 P4712의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q066",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q067",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q068",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q069",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q070",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q071",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q072",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q073",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q074",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q075",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N5의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q076",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N5의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q077",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N5의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q078",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N6의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q079",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N6의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q080",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N6의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q081",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N7의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "25"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q082",
+  "doc": "pid-standard-200dpi",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N7의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "25"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q083",
+  "doc": "pid-standard-scan",
+  "type": "노즐",
+  "question": "장비 T4750의 노즐 N7의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "25"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q084",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47121 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80",
+   "80"
+  ],
+  "focus": "47121",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q085",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47121 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80",
+   "80"
+  ],
+  "focus": "47121",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q086",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47121 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80",
+   "80"
+  ],
+  "focus": "47121",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q087",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47122 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47122",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q088",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47122 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47122",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q089",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47122 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47122",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q090",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47123 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "MNb"
+  ],
+  "focus": "47123",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q091",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47123 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "MNb"
+  ],
+  "focus": "47123",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q092",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47123 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "MNb"
+  ],
+  "focus": "47123",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q093",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47124 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80",
+   "80"
+  ],
+  "focus": "47124",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q094",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47124 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80",
+   "80"
+  ],
+  "focus": "47124",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q095",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47124 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "80",
+   "80"
+  ],
+  "focus": "47124",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q096",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47125 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "73HG12"
+  ],
+  "focus": "47125",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q097",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47125 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "73HG12"
+  ],
+  "focus": "47125",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q098",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47125 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "73HG12"
+  ],
+  "focus": "47125",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q099",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47126 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "MNc"
+  ],
+  "focus": "47126",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q100",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47126 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "MNc"
+  ],
+  "focus": "47126",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q101",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47126 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "MNc"
+  ],
+  "focus": "47126",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q102",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47127 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50",
+   "50"
+  ],
+  "focus": "47127",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q103",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47127 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50",
+   "50"
+  ],
+  "focus": "47127",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q104",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47127 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50",
+   "50"
+  ],
+  "focus": "47127",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q105",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47130 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47130",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q106",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47130 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47130",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q107",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47130 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47130",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q108",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47131 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "WKb"
+  ],
+  "focus": "47131",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q109",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47131 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "WKb"
+  ],
+  "focus": "47131",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q110",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47131 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "WKb"
+  ],
+  "focus": "47131",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q111",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47140 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50",
+   "50"
+  ],
+  "focus": "47140",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q112",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47140 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50",
+   "50"
+  ],
+  "focus": "47140",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q113",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47140 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50",
+   "50"
+  ],
+  "focus": "47140",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q114",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "라인 번호 47141 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47141",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q115",
+  "doc": "pid-standard-200dpi",
+  "type": "라인",
+  "question": "라인 번호 47141 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47141",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q116",
+  "doc": "pid-standard-scan",
+  "type": "라인",
+  "question": "라인 번호 47141 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47141",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q117",
+  "doc": "pid-standard-vector",
+  "type": "계기",
+  "question": "계기 번호 4712.01의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "PI"
+  ],
+  "focus": "PI",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q118",
+  "doc": "pid-standard-200dpi",
+  "type": "계기",
+  "question": "계기 번호 4712.01의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "PI"
+  ],
+  "focus": "PI",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q119",
+  "doc": "pid-standard-scan",
+  "type": "계기",
+  "question": "계기 번호 4712.01의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "PI"
+  ],
+  "focus": "PI",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q120",
+  "doc": "pid-standard-vector",
+  "type": "계기",
+  "question": "계기 번호 4712.02의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "PICSA"
+  ],
+  "focus": "PICSA",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q121",
+  "doc": "pid-standard-200dpi",
+  "type": "계기",
+  "question": "계기 번호 4712.02의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "PICSA"
+  ],
+  "focus": "PICSA",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q122",
+  "doc": "pid-standard-scan",
+  "type": "계기",
+  "question": "계기 번호 4712.02의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "PICSA"
+  ],
+  "focus": "PICSA",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q123",
+  "doc": "pid-standard-vector",
+  "type": "계기",
+  "question": "계기 번호 4750.01의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "HS"
+  ],
+  "focus": "HS",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q124",
+  "doc": "pid-standard-200dpi",
+  "type": "계기",
+  "question": "계기 번호 4750.01의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "HS"
+  ],
+  "focus": "HS",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q125",
+  "doc": "pid-standard-scan",
+  "type": "계기",
+  "question": "계기 번호 4750.01의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "HS"
+  ],
+  "focus": "HS",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q126",
+  "doc": "pid-standard-vector",
+  "type": "계기",
+  "question": "계기 번호 4750.03의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "TICSA"
+  ],
+  "focus": "TICSA",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q127",
+  "doc": "pid-standard-200dpi",
+  "type": "계기",
+  "question": "계기 번호 4750.03의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "TICSA"
+  ],
+  "focus": "TICSA",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q128",
+  "doc": "pid-standard-scan",
+  "type": "계기",
+  "question": "계기 번호 4750.03의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "TICSA"
+  ],
+  "focus": "TICSA",
+  "source": "DEXPI C01 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q129",
+  "doc": "pid-c02-vector",
+  "type": "개수",
+  "question": "장비 K2750의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "9"
+  ],
+  "focus": "K2750",
+  "source": "DEXPI C02 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q130",
+  "doc": "pid-c02-vector",
+  "type": "노즐",
+  "question": "장비 K2750의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "200"
+  ],
+  "focus": "K2750",
+  "source": "DEXPI C02 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q131",
+  "doc": "pid-c02-vector",
+  "type": "노즐",
+  "question": "장비 K2750의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "150"
+  ],
+  "focus": "K2750",
+  "source": "DEXPI C02 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q132",
+  "doc": "pid-c02-vector",
+  "type": "노즐",
+  "question": "장비 K2750의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "150"
+  ],
+  "focus": "K2750",
+  "source": "DEXPI C02 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q133",
+  "doc": "pid-c02-vector",
+  "type": "노즐",
+  "question": "장비 K2750의 노즐 N4의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "200"
+  ],
+  "focus": "K2750",
+  "source": "DEXPI C02 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q134",
+  "doc": "pid-c02-vector",
+  "type": "노즐",
+  "question": "장비 K2750의 노즐 N5의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "K2750",
+  "source": "DEXPI C02 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q135",
+  "doc": "pid-c02-vector",
+  "type": "노즐",
+  "question": "장비 K2750의 노즐 N7의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "K2750",
+  "source": "DEXPI C02 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q136",
+  "doc": "pid-c02-vector",
+  "type": "라인",
+  "question": "라인 번호 2750.001.6 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "150",
+   "150"
+  ],
+  "focus": "2750.001.6",
+  "source": "DEXPI C02 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q137",
+  "doc": "pid-c03-vector",
+  "type": "라인",
+  "question": "라인 번호 13L37014A 배관의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "answers": [
+   "200",
+   "0200"
+  ],
+  "focus": "13L37014A",
+  "source": "DEXPI C03 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q138",
+  "doc": "pid-c03-vector",
+  "type": "라인",
+  "question": "라인 번호 13L37007A 배관의 배관 등급(piping class) 코드는? 코드만 답하라.",
+  "answers": [
+   "FS720"
+  ],
+  "focus": "13L37007A",
+  "source": "DEXPI C03 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q139",
+  "doc": "pid-c03-vector",
+  "type": "라인",
+  "question": "라인 번호 43L37007A 배관의 유체 코드(fluid code)는? 코드만 답하라.",
+  "answers": [
+   "VF"
+  ],
+  "focus": "43L37007A",
+  "source": "DEXPI C03 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q140",
+  "doc": "pid-c03-vector",
+  "type": "계기",
+  "question": "계기 번호 3712의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.",
+  "answers": [
+   "ESV"
+  ],
+  "focus": "ESV",
+  "source": "DEXPI C03 XML",
+  "kind": "single"
+ },
+ {
+  "id": "q141",
+  "doc": "en-report-synthetic-vector",
+  "type": "표",
+  "question": "What is the part number of the L/H MLG actuator?",
+  "answers": [
+   "114A3200-5"
+  ],
+  "focus": "114A3200-5",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q142",
+  "doc": "en-report-synthetic-vector",
+  "type": "표",
+  "question": "What is the measured leakage (cc/min) of the R/H MLG actuator?",
+  "answers": [
+   "1.9"
+  ],
+  "focus": "R/H MLG",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q143",
+  "doc": "en-report-synthetic-vector",
+  "type": "표",
+  "question": "What is the part number of the NLG steering actuator?",
+  "answers": [
+   "114A3410-2"
+  ],
+  "focus": "114A3410-2",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q144",
+  "doc": "en-report-synthetic-vector",
+  "type": "표",
+  "question": "What action is listed for the L/H MLG actuator?",
+  "answers": [
+   "Replace"
+  ],
+  "focus": "L/H MLG",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q145",
+  "doc": "en-report-synthetic-vector",
+  "type": "표",
+  "question": "Which actuator has leakage 1.1 cc/min?",
+  "answers": [
+   "NLG steering",
+   "NLG"
+  ],
+  "focus": "1.1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q146",
+  "doc": "en-report-synthetic-vector",
+  "type": "그림",
+  "question": "What leakage limit (cc/min) is drawn in Figure 1?",
+  "answers": [
+   "4.0",
+   "4"
+  ],
+  "focus": "Figure 1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q147",
+  "doc": "en-report-synthetic-vector",
+  "type": "본문",
+  "question": "At what pressure (psi) was internal leakage measured?",
+  "answers": [
+   "3000"
+  ],
+  "focus": "psi",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q148",
+  "doc": "en-report-synthetic-vector",
+  "type": "본문",
+  "question": "What does Table 1 show? Answer with the table caption.",
+  "answers": [
+   "Leakage by actuator"
+  ],
+  "focus": "Table 1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q149",
+  "doc": "en-report-synthetic-vector",
+  "type": "본문",
+  "question": "How many quarters/inspections are plotted in Figure 1?",
+  "answers": [
+   "5",
+   "five"
+  ],
+  "focus": "Figure 1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q150",
+  "doc": "en-report-synthetic-scan150",
+  "type": "표",
+  "question": "What is the part number of the L/H MLG actuator?",
+  "answers": [
+   "114A3200-5"
+  ],
+  "focus": "114A3200-5",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q151",
+  "doc": "en-report-synthetic-scan150",
+  "type": "표",
+  "question": "What is the measured leakage (cc/min) of the R/H MLG actuator?",
+  "answers": [
+   "1.9"
+  ],
+  "focus": "R/H MLG",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q152",
+  "doc": "en-report-synthetic-scan150",
+  "type": "표",
+  "question": "What is the part number of the NLG steering actuator?",
+  "answers": [
+   "114A3410-2"
+  ],
+  "focus": "114A3410-2",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q153",
+  "doc": "en-report-synthetic-scan150",
+  "type": "표",
+  "question": "What action is listed for the L/H MLG actuator?",
+  "answers": [
+   "Replace"
+  ],
+  "focus": "L/H MLG",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q154",
+  "doc": "en-report-synthetic-scan150",
+  "type": "표",
+  "question": "Which actuator has leakage 1.1 cc/min?",
+  "answers": [
+   "NLG steering",
+   "NLG"
+  ],
+  "focus": "1.1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q155",
+  "doc": "en-report-synthetic-scan150",
+  "type": "그림",
+  "question": "What leakage limit (cc/min) is drawn in Figure 1?",
+  "answers": [
+   "4.0",
+   "4"
+  ],
+  "focus": "Figure 1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q156",
+  "doc": "en-report-synthetic-scan150",
+  "type": "본문",
+  "question": "At what pressure (psi) was internal leakage measured?",
+  "answers": [
+   "3000"
+  ],
+  "focus": "psi",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q157",
+  "doc": "en-report-synthetic-scan150",
+  "type": "본문",
+  "question": "What does Table 1 show? Answer with the table caption.",
+  "answers": [
+   "Leakage by actuator"
+  ],
+  "focus": "Table 1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q158",
+  "doc": "en-report-synthetic-scan150",
+  "type": "본문",
+  "question": "How many quarters/inspections are plotted in Figure 1?",
+  "answers": [
+   "5",
+   "five"
+  ],
+  "focus": "Figure 1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q159",
+  "doc": "ko-report-synthetic",
+  "type": "표",
+  "question": "L/H MLG 작동기의 부품 번호는?",
+  "answers": [
+   "114A3200-5"
+  ],
+  "focus": "114A3200-5",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q160",
+  "doc": "ko-report-synthetic",
+  "type": "표",
+  "question": "R/H MLG 작동기의 조치는?",
+  "answers": [
+   "추적 점검"
+  ],
+  "focus": "R/H MLG",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q161",
+  "doc": "ko-report-synthetic",
+  "type": "표",
+  "question": "L/H MLG 작동기 교체 기한은?",
+  "answers": [
+   "2026-11-30"
+  ],
+  "focus": "2026-11-30",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q162",
+  "doc": "ko-report-synthetic",
+  "type": "표",
+  "question": "유압유의 부품 번호(규격)는?",
+  "answers": [
+   "MIL-PRF-83282"
+  ],
+  "focus": "MIL-PRF-83282",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q163",
+  "doc": "ko-report-synthetic",
+  "type": "표",
+  "question": "NLG 조향 작동기의 부품 번호는?",
+  "answers": [
+   "114A3410-2"
+  ],
+  "focus": "114A3410-2",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q164",
+  "doc": "ko-report-synthetic",
+  "type": "그림",
+  "question": "그림 1에서 L/H MLG의 누설량 값은?",
+  "answers": [
+   "3.2"
+  ],
+  "focus": "그림 1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q165",
+  "doc": "ko-report-synthetic",
+  "type": "그림",
+  "question": "그림 1에 표시된 허용 한계 값은?",
+  "answers": [
+   "4.0",
+   "4"
+  ],
+  "focus": "허용 한계",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q166",
+  "doc": "ko-report-synthetic",
+  "type": "본문",
+  "question": "점검 기준이 된 정비 교범의 장 번호는?",
+  "answers": [
+   "32"
+  ],
+  "focus": "교범",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q167",
+  "doc": "ko-report-synthetic",
+  "type": "본문",
+  "question": "표 1의 제목은?",
+  "answers": [
+   "조치 사항"
+  ],
+  "focus": "표 1",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q168",
+  "doc": "ko-table-text-scan200",
+  "type": "표",
+  "question": "AN3-5A의 체결 토크(in-lb) 범위는?",
+  "answers": [
+   "20-25",
+   "20~25"
+  ],
+  "focus": "AN3-5A",
+  "source": "korean-ocr make_page.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q169",
+  "doc": "ko-table-text-scan200",
+  "type": "표",
+  "question": "NAS6204-10의 명칭은?",
+  "answers": [
+   "고강도 볼트, 합금강",
+   "고강도 볼트"
+  ],
+  "focus": "NAS6204-10",
+  "source": "korean-ocr make_page.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q170",
+  "doc": "ko-table-text-scan200",
+  "type": "표",
+  "question": "MS20365-428의 나사 규격은?",
+  "answers": [
+   "1/4-28"
+  ],
+  "focus": "MS20365-428",
+  "source": "korean-ocr make_page.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q171",
+  "doc": "ko-table-text-scan200",
+  "type": "표",
+  "question": "AN960-416의 명칭은?",
+  "answers": [
+   "평와셔, 카드뮴 도금",
+   "평와셔"
+  ],
+  "focus": "AN960-416",
+  "source": "korean-ocr make_page.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q172",
+  "doc": "ko-table-text-scan200",
+  "type": "표",
+  "question": "체결 토크 50-70 in-lb인 부품 번호를 모두 나열하라.",
+  "answers": [
+   "AN4-7A",
+   "MS21042-4"
+  ],
+  "focus": "50-70",
+  "source": "korean-ocr make_page.py 생성 값",
+  "kind": "set"
+ },
+ {
+  "id": "q173",
+  "doc": "ko-table-text-scan200",
+  "type": "본문",
+  "question": "윤활 시 표 값의 몇 %를 적용하는가? 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "윤활",
+  "source": "korean-ocr make_page.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q174",
+  "doc": "ko-table-text-scan200",
+  "type": "본문",
+  "question": "토크 렌치 측정 범위의 몇 % 이하 구간은 사용하지 않는가? 숫자만 답하라.",
+  "answers": [
+   "20"
+  ],
+  "focus": "토크 렌치",
+  "source": "korean-ocr make_page.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q175",
+  "doc": "ko-table-text-scan200",
+  "type": "본문",
+  "question": "표 7-1의 제목은?",
+  "answers": [
+   "체결 토크"
+  ],
+  "focus": "표 7-1",
+  "source": "korean-ocr make_page.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q176",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "치수",
+  "question": "What is the outer diameter of the flange (mm)? Number only.",
+  "answers": [
+   "120"
+  ],
+  "focus": "120",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q177",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "치수",
+  "question": "How many bolt holes are there and what is their diameter? Answer as 'N x D'.",
+  "answers": [
+   "8 x 9",
+   "8x9",
+   "8 x Ø9",
+   "8xØ9"
+  ],
+  "focus": "THRU",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q178",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "치수",
+  "question": "What is the bolt circle diameter (mm)? Number only.",
+  "answers": [
+   "92"
+  ],
+  "focus": "B.C.",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q179",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "치수",
+  "question": "What is the flange thickness shown on the side view (mm)? Number only.",
+  "answers": [
+   "14"
+  ],
+  "focus": "14",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q180",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "치수",
+  "question": "What is the bore diameter and its fit class?",
+  "answers": [
+   "56 H7",
+   "Ø56 H7"
+  ],
+  "focus": "H7",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q181",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "표",
+  "question": "What is the part number in the title block?",
+  "answers": [
+   "FL-2040-A"
+  ],
+  "focus": "PART NO",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q182",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "표",
+  "question": "What material is specified?",
+  "answers": [
+   "AL 6061-T6",
+   "6061-T6"
+  ],
+  "focus": "MATERIAL",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q183",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "표",
+  "question": "What is the drawing title?",
+  "answers": [
+   "FLANGE, MOUNTING",
+   "FLANGE MOUNTING"
+  ],
+  "focus": "TITLE",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q184",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "주석",
+  "question": "What tolerance applies unless noted (±)?",
+  "answers": [
+   "0.2",
+   "±0.2"
+  ],
+  "focus": "TOLERANCE",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q185",
+  "doc": "mech-flange-synthetic-vector",
+  "type": "치수",
+  "question": "What is the fillet radius (R) shown on the side view (mm)? Number only.",
+  "answers": [
+   "4"
+  ],
+  "focus": "R4",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q186",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "치수",
+  "question": "What is the outer diameter of the flange (mm)? Number only.",
+  "answers": [
+   "120"
+  ],
+  "focus": "120",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q187",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "치수",
+  "question": "How many bolt holes are there and what is their diameter? Answer as 'N x D'.",
+  "answers": [
+   "8 x 9",
+   "8x9",
+   "8 x Ø9",
+   "8xØ9"
+  ],
+  "focus": "THRU",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q188",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "치수",
+  "question": "What is the bolt circle diameter (mm)? Number only.",
+  "answers": [
+   "92"
+  ],
+  "focus": "B.C.",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q189",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "치수",
+  "question": "What is the flange thickness shown on the side view (mm)? Number only.",
+  "answers": [
+   "14"
+  ],
+  "focus": "14",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q190",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "치수",
+  "question": "What is the bore diameter and its fit class?",
+  "answers": [
+   "56 H7",
+   "Ø56 H7"
+  ],
+  "focus": "H7",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q191",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "표",
+  "question": "What is the part number in the title block?",
+  "answers": [
+   "FL-2040-A"
+  ],
+  "focus": "PART NO",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q192",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "표",
+  "question": "What material is specified?",
+  "answers": [
+   "AL 6061-T6",
+   "6061-T6"
+  ],
+  "focus": "MATERIAL",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q193",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "표",
+  "question": "What is the drawing title?",
+  "answers": [
+   "FLANGE, MOUNTING",
+   "FLANGE MOUNTING"
+  ],
+  "focus": "TITLE",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q194",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "주석",
+  "question": "What tolerance applies unless noted (±)?",
+  "answers": [
+   "0.2",
+   "±0.2"
+  ],
+  "focus": "TOLERANCE",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q195",
+  "doc": "mech-flange-synthetic-200dpi",
+  "type": "치수",
+  "question": "What is the fillet radius (R) shown on the side view (mm)? Number only.",
+  "answers": [
+   "4"
+  ],
+  "focus": "R4",
+  "source": "make_samples.py 생성 값",
+  "kind": "single"
+ },
+ {
+  "id": "q196",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 8-36: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "12-15",
+   "12–15"
+  ],
+  "focus": "8-36",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q197",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 10-32: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "25"
+  ],
+  "focus": "10-32",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q198",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 1/4-28: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "50-70",
+   "50–70"
+  ],
+  "focus": "1/4-28",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q199",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 5/16-24: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "140"
+  ],
+  "focus": "5/16-24",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q200",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 3/8-24: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "160-190",
+   "160–190"
+  ],
+  "focus": "3/8-24",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q201",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 7/16-20: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "500"
+  ],
+  "focus": "7/16-20",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q202",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 1/2-20: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "480-690",
+   "480–690"
+  ],
+  "focus": "1/2-20",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q203",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 9/16-18: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "960"
+  ],
+  "focus": "9/16-18",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q204",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 5/8-18: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "1100-1300",
+   "1100–1300"
+  ],
+  "focus": "5/8-18",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q205",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 3/4-16: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "3000"
+  ],
+  "focus": "3/4-16",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q206",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Fine thread series, thread size 1/4-28: what is the recommended torque range (in-lb) for shear type nuts?",
+  "answers": [
+   "30-40"
+  ],
+  "focus": "1/4-28",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q207",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Coarse thread series, thread size 1/4-20: what is the recommended torque range (in-lb) for tension type nuts?",
+  "answers": [
+   "40-50"
+  ],
+  "focus": "1/4-20",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q208",
+  "doc": "faa-torque-table",
+  "type": "표",
+  "question": "Coarse thread series, thread size 1/2-13: what is the maximum allowable tightening torque (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "880"
+  ],
+  "focus": "1/2-13",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q209",
+  "doc": "faa-torque-table",
+  "type": "본문",
+  "question": "What condition must be met for the torque values in the table to apply to the threads (what plating)?",
+  "answers": [
+   "cadmium",
+   "cadmium plated",
+   "oil free cadmium plated"
+  ],
+  "focus": "CAUTION",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q210",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 8-36: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "12-15",
+   "12–15"
+  ],
+  "focus": "8-36",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q211",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 10-32: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "25"
+  ],
+  "focus": "10-32",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q212",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 1/4-28: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "50-70",
+   "50–70"
+  ],
+  "focus": "1/4-28",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q213",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 5/16-24: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "140"
+  ],
+  "focus": "5/16-24",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q214",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 3/8-24: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "160-190",
+   "160–190"
+  ],
+  "focus": "3/8-24",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q215",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 7/16-20: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "500"
+  ],
+  "focus": "7/16-20",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q216",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 1/2-20: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "480-690",
+   "480–690"
+  ],
+  "focus": "1/2-20",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q217",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 9/16-18: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "960"
+  ],
+  "focus": "9/16-18",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q218",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 5/8-18: what is the recommended torque range (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "1100-1300",
+   "1100–1300"
+  ],
+  "focus": "5/8-18",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q219",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 3/4-16: what is the maximum allowable tightening torque (in-lb) for shear type nuts (MS20364 and AN320)?",
+  "answers": [
+   "3000"
+  ],
+  "focus": "3/4-16",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q220",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Fine thread series, thread size 1/4-28: what is the recommended torque range (in-lb) for shear type nuts?",
+  "answers": [
+   "30-40"
+  ],
+  "focus": "1/4-28",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q221",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Coarse thread series, thread size 1/4-20: what is the recommended torque range (in-lb) for tension type nuts?",
+  "answers": [
+   "40-50"
+  ],
+  "focus": "1/4-20",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q222",
+  "doc": "faa-torque-table-scan",
+  "type": "표",
+  "question": "Coarse thread series, thread size 1/2-13: what is the maximum allowable tightening torque (in-lb) for tension type nuts (MS20365 and AN310)?",
+  "answers": [
+   "880"
+  ],
+  "focus": "1/2-13",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q223",
+  "doc": "faa-torque-table-scan",
+  "type": "본문",
+  "question": "What condition must be met for the torque values in the table to apply to the threads (what plating)?",
+  "answers": [
+   "cadmium",
+   "cadmium plated",
+   "oil free cadmium plated"
+  ],
+  "focus": "CAUTION",
+  "source": "FAA AC 43.13-1B Table 7-1",
+  "kind": "single"
+ },
+ {
+  "id": "q224",
+  "doc": "faa-bolt-table-illustrations",
+  "type": "표",
+  "question": "In the table of bolts, what is the description of bolt number AN3-20?",
+  "answers": [
+   "machine"
+  ],
+  "focus": "AN3-20",
+  "source": "FAA AC 43.13-1B Table 7-12",
+  "kind": "single"
+ },
+ {
+  "id": "q225",
+  "doc": "faa-bolt-table-illustrations",
+  "type": "표",
+  "question": "In the table of bolts, what is the description of bolt number AN21-36?",
+  "answers": [
+   "clevis"
+  ],
+  "focus": "AN21-36",
+  "source": "FAA AC 43.13-1B Table 7-12",
+  "kind": "single"
+ },
+ {
+  "id": "q226",
+  "doc": "faa-bolt-table-illustrations",
+  "type": "표",
+  "question": "In the table of bolts, what is the description of bolt number AN42-49?",
+  "answers": [
+   "eye"
+  ],
+  "focus": "AN42-49",
+  "source": "FAA AC 43.13-1B Table 7-12",
+  "kind": "single"
+ },
+ {
+  "id": "q227",
+  "doc": "faa-bolt-table-illustrations",
+  "type": "표",
+  "question": "In the table of bolts, what is the description of bolt number AN73-81?",
+  "answers": [
+   "machine, drilled"
+  ],
+  "focus": "AN73-81",
+  "source": "FAA AC 43.13-1B Table 7-12",
+  "kind": "single"
+ },
+ {
+  "id": "q228",
+  "doc": "faa-bolt-table-illustrations",
+  "type": "표",
+  "question": "In the table of bolts, what is the description of bolt number AN173-186?",
+  "answers": [
+   "close tolerance"
+  ],
+  "focus": "AN173-186",
+  "source": "FAA AC 43.13-1B Table 7-12",
+  "kind": "single"
+ },
+ {
+  "id": "q229",
+  "doc": "faa-bolt-table-illustrations",
+  "type": "표",
+  "question": "In the table of bolts, what is the description of bolt number AN774?",
+  "answers": [
+   "flared tube"
+  ],
+  "focus": "AN774",
+  "source": "FAA AC 43.13-1B Table 7-12",
+  "kind": "single"
+ },
+ {
+  "id": "q230",
+  "doc": "faa-bolt-table-illustrations",
+  "type": "표",
+  "question": "In the table of bolts, what is the description of bolt number AN775?",
+  "answers": [
+   "universal fitting"
+  ],
+  "focus": "AN775",
+  "source": "FAA AC 43.13-1B Table 7-12",
+  "kind": "single"
+ },
+ {
+  "id": "q231",
+  "doc": "faa-bolt-table-illustrations",
+  "type": "표",
+  "question": "Which bolt number range is described as 'Bolt, clevis'?",
+  "answers": [
+   "AN21-36"
+  ],
+  "focus": "clevis",
+  "source": "FAA AC 43.13-1B Table 7-12",
+  "kind": "single"
+ },
+ {
+  "id": "q232",
+  "doc": "faa-text-page",
+  "type": "본문",
+  "question": "Which nut is AN316?",
+  "answers": [
+   "checknut",
+   "check nut"
+  ],
+  "focus": "AN316",
+  "source": "FAA AC 43.13-1B par. 7-67~7-73",
+  "kind": "single"
+ },
+ {
+  "id": "q233",
+  "doc": "faa-text-page",
+  "type": "본문",
+  "question": "Which nut is AN350?",
+  "answers": [
+   "wingnut",
+   "wing nut"
+  ],
+  "focus": "AN350",
+  "source": "FAA AC 43.13-1B par. 7-67~7-73",
+  "kind": "single"
+ },
+ {
+  "id": "q234",
+  "doc": "faa-text-page",
+  "type": "본문",
+  "question": "Which nut is AN365?",
+  "answers": [
+   "sheet spring nut",
+   "speed nut"
+  ],
+  "focus": "AN365",
+  "source": "FAA AC 43.13-1B par. 7-67~7-73",
+  "kind": "single"
+ },
+ {
+  "id": "q235",
+  "doc": "faa-text-page",
+  "type": "본문",
+  "question": "Which nut is AN320?",
+  "answers": [
+   "castellated shear nut",
+   "castellated"
+  ],
+  "focus": "AN320",
+  "source": "FAA AC 43.13-1B par. 7-67~7-73",
+  "kind": "single"
+ },
+ {
+  "id": "q236",
+  "doc": "faa-text-page",
+  "type": "본문",
+  "question": "What are AN315 and AN335?",
+  "answers": [
+   "plain nut"
+  ],
+  "focus": "AN315",
+  "source": "FAA AC 43.13-1B par. 7-67~7-73",
+  "kind": "single"
+ },
+ {
+  "id": "q237",
+  "doc": "faa-text-page",
+  "type": "본문",
+  "question": "What are AN340 and AN345?",
+  "answers": [
+   "light hex nut"
+  ],
+  "focus": "AN340",
+  "source": "FAA AC 43.13-1B par. 7-67~7-73",
+  "kind": "single"
+ },
+ {
+  "id": "q238",
+  "doc": "faa-text-page",
+  "type": "본문",
+  "question": "Which paragraph numbers are reserved?",
+  "answers": [
+   "7-73 through 7-84",
+   "7-73",
+   "7-84"
+  ],
+  "focus": "RESERVED",
+  "source": "FAA AC 43.13-1B par. 7-67~7-73",
+  "kind": "single"
+ },
+ {
+  "id": "q239",
+  "doc": "faa-text-page",
+  "type": "본문",
+  "question": "What type of nut is commonly called a speed nut?",
+  "answers": [
+   "sheet spring nut"
+  ],
+  "focus": "speed nut",
+  "source": "FAA AC 43.13-1B par. 7-67~7-73",
+  "kind": "single"
+ }
+]

@@ -1,0 +1,1237 @@
+{
+ "page": [
+  240.0,
+  125.0
+ ],
+ "nodes": [
+  {
+   "id": "n0",
+   "role": "equipment",
+   "bbox": [
+    68.1,
+    48.2,
+    77.1,
+    57.2
+   ],
+   "texts": [],
+   "primitives": 5,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n1",
+   "role": "symbol",
+   "bbox": [
+    33.56,
+    52.2,
+    36.44,
+    54.6
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n2",
+   "role": "symbol",
+   "bbox": [
+    122.0,
+    63.5,
+    128.0,
+    69.5
+   ],
+   "texts": [
+    "0200x0800"
+   ],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n3",
+   "role": "symbol",
+   "bbox": [
+    130.0,
+    9.0,
+    170.0,
+    19.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n4",
+   "role": "symbol",
+   "bbox": [
+    152.0,
+    41.5,
+    155.0,
+    56.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n5",
+   "role": "symbol",
+   "bbox": [
+    12.57,
+    24.57,
+    27.43,
+    39.42
+   ],
+   "texts": [
+    "D-13",
+    "ESV",
+    "3712",
+    "D-13"
+   ],
+   "primitives": 5,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n6",
+   "role": "note",
+   "bbox": [
+    49.18,
+    35.58,
+    64.03,
+    50.42
+   ],
+   "texts": [
+    "ESV",
+    "3712"
+   ],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": "n0"
+  },
+  {
+   "id": "n7",
+   "role": "equipment",
+   "bbox": [
+    68.1,
+    63.5,
+    77.1,
+    72.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 8,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n8",
+   "role": "equipment",
+   "bbox": [
+    111.9,
+    63.5,
+    120.9,
+    72.5
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 4,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n9",
+   "role": "symbol",
+   "bbox": [
+    12.57,
+    24.57,
+    27.43,
+    39.42
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n10",
+   "role": "mark",
+   "bbox": [
+    61.4,
+    50.5,
+    68.6,
+    61.75
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 0,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n11",
+   "role": "nozzle",
+   "bbox": [
+    71.7,
+    72.8,
+    73.5,
+    75.0
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": "n7",
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n12",
+   "role": "symbol",
+   "bbox": [
+    100.6,
+    68.6,
+    102.4,
+    71.8
+   ],
+   "texts": [],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n13",
+   "role": "symbol",
+   "bbox": [
+    150.6,
+    30.5,
+    152.8,
+    32.3
+   ],
+   "texts": [
+    "D-43L37007A-0800VF-AS7F0-0F000N"
+   ],
+   "primitives": 4,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n14",
+   "role": "symbol",
+   "bbox": [
+    148.25,
+    19.5,
+    151.75,
+    26.5
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n15",
+   "role": "symbol",
+   "bbox": [
+    64.6,
+    5.5,
+    80.6,
+    25.0
+   ],
+   "texts": [
+    "D",
+    "ESD"
+   ],
+   "primitives": 4,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n16",
+   "role": "symbol",
+   "bbox": [
+    71.6,
+    29.0,
+    73.6,
+    32.0
+   ],
+   "texts": [],
+   "primitives": 3,
+   "degree": 3,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n17",
+   "role": "symbol",
+   "bbox": [
+    31.25,
+    56.0,
+    38.75,
+    56.0
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n18",
+   "role": "symbol",
+   "bbox": [
+    67.2,
+    64.25,
+    67.2,
+    71.75
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n19",
+   "role": "symbol",
+   "bbox": [
+    78.0,
+    64.25,
+    78.0,
+    71.75
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 2,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  },
+  {
+   "id": "n20",
+   "role": "symbol",
+   "bbox": [
+    105.2,
+    62.75,
+    105.2,
+    73.25
+   ],
+   "texts": [],
+   "primitives": 1,
+   "degree": 1,
+   "attached_to": null,
+   "direction": null,
+   "annotates": null
+  }
+ ],
+ "junctions": [
+  {
+   "id": "j0",
+   "pt": [
+    72.6,
+    32.0
+   ]
+  },
+  {
+   "id": "j1",
+   "pt": [
+    101.5,
+    68.6
+   ]
+  },
+  {
+   "id": "j2",
+   "pt": [
+    150.6,
+    31.4
+   ]
+  }
+ ],
+ "runs": [
+  {
+   "id": "r0",
+   "a": "n15",
+   "b": "n16",
+   "coords": [
+    [
+     72.6,
+     25.0
+    ],
+    [
+     72.6,
+     30.14
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r1",
+   "a": "n16",
+   "b": "j0",
+   "coords": [
+    [
+     72.6,
+     30.14
+    ],
+    [
+     72.6,
+     32.0
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r2",
+   "a": "n16",
+   "b": "n5",
+   "coords": [
+    [
+     72.6,
+     32.0
+    ],
+    [
+     27.43,
+     32.0
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r3",
+   "a": "j0",
+   "b": "n0",
+   "coords": [
+    [
+     72.6,
+     32.0
+    ],
+    [
+     72.6,
+     48.2
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r4",
+   "a": "n0",
+   "b": "n7",
+   "coords": [
+    [
+     72.6,
+     52.7
+    ],
+    [
+     72.6,
+     63.5
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r5",
+   "a": "n0",
+   "b": "n7",
+   "coords": [
+    [
+     68.1,
+     63.5
+    ],
+    [
+     68.1,
+     68.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 6.3,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r6",
+   "a": "n0",
+   "b": "n7",
+   "coords": [
+    [
+     77.1,
+     63.5
+    ],
+    [
+     77.1,
+     68.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 6.3,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r7",
+   "a": "n7",
+   "b": "open@(68.1, 72.5)",
+   "coords": [
+    [
+     68.1,
+     68.0
+    ],
+    [
+     68.1,
+     72.5
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r8",
+   "a": "n7",
+   "b": "open@(77.1, 72.5)",
+   "coords": [
+    [
+     77.1,
+     68.0
+    ],
+    [
+     77.1,
+     72.5
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r9",
+   "a": "n11",
+   "b": "open@(72.6, 110.0)",
+   "coords": [
+    [
+     72.6,
+     74.15
+    ],
+    [
+     72.6,
+     90.0
+    ],
+    [
+     72.6,
+     100.0
+    ],
+    [
+     72.6,
+     110.0
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 10.0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r10",
+   "a": "n17",
+   "b": "n18",
+   "coords": [
+    [
+     35.0,
+     56.0
+    ],
+    [
+     35.0,
+     68.0
+    ],
+    [
+     67.2,
+     68.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r11",
+   "a": "n19",
+   "b": "j1",
+   "coords": [
+    [
+     78.0,
+     68.0
+    ],
+    [
+     101.5,
+     68.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r12",
+   "a": "n12",
+   "b": "n20",
+   "coords": [
+    [
+     101.5,
+     68.0
+    ],
+    [
+     105.15,
+     68.0
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r13",
+   "a": "n12",
+   "b": "open@(101.5, 99.0)",
+   "coords": [
+    [
+     101.5,
+     70.52
+    ],
+    [
+     101.5,
+     99.0
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r14",
+   "a": "n2",
+   "b": "n13",
+   "coords": [
+    [
+     128.0,
+     68.0
+    ],
+    [
+     150.0,
+     68.0
+    ],
+    [
+     150.0,
+     31.4
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r15",
+   "a": "open@(31.2, 54.8)",
+   "b": "n1",
+   "coords": [
+    [
+     31.25,
+     54.8
+    ],
+    [
+     35.0,
+     54.8
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r16",
+   "a": "n1",
+   "b": "open@(38.8, 54.8)",
+   "coords": [
+    [
+     35.0,
+     54.8
+    ],
+    [
+     38.75,
+     54.8
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r17",
+   "a": "open@(110.8, 62.8)",
+   "b": "open@(110.8, 73.2)",
+   "coords": [
+    [
+     110.8,
+     62.75
+    ],
+    [
+     110.8,
+     73.25
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r18",
+   "a": "open@(111.9, 63.5)",
+   "b": "n8",
+   "coords": [
+    [
+     111.9,
+     63.5
+    ],
+    [
+     111.9,
+     68.0
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r19",
+   "a": "n8",
+   "b": "open@(111.9, 72.5)",
+   "coords": [
+    [
+     111.9,
+     68.0
+    ],
+    [
+     111.9,
+     72.5
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r20",
+   "a": "n8",
+   "b": "open@(120.9, 63.5)",
+   "coords": [
+    [
+     120.9,
+     68.0
+    ],
+    [
+     120.9,
+     63.5
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r21",
+   "a": "n8",
+   "b": "open@(120.9, 72.5)",
+   "coords": [
+    [
+     120.9,
+     68.0
+    ],
+    [
+     120.9,
+     72.5
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r22",
+   "a": "n13",
+   "b": "open@(156.8, 31.4)",
+   "coords": [
+    [
+     151.95,
+     31.4
+    ],
+    [
+     156.8,
+     31.4
+    ]
+   ],
+   "width": 0.2,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r23",
+   "a": "n3",
+   "b": "n14",
+   "coords": [
+    [
+     150.0,
+     19.0
+    ],
+    [
+     150.0,
+     23.68
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r24",
+   "a": "n14",
+   "b": "j2",
+   "coords": [
+    [
+     150.0,
+     23.68
+    ],
+    [
+     150.0,
+     31.4
+    ]
+   ],
+   "width": 1.0,
+   "dashed": false,
+   "kind": "pipe",
+   "gap": 0,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r25",
+   "a": "open@(108.0, 62.8)",
+   "b": "open@(108.0, 68.0)",
+   "coords": [
+    [
+     108.0,
+     62.75
+    ],
+    [
+     108.0,
+     66.95
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 6.3,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r26",
+   "a": "open@(108.0, 73.2)",
+   "b": "open@(108.0, 65.9)",
+   "coords": [
+    [
+     108.0,
+     73.25
+    ],
+    [
+     108.0,
+     69.05
+    ]
+   ],
+   "width": 0.4,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 6.3,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r27",
+   "a": "n17",
+   "b": "n1",
+   "coords": [
+    [
+     35.0,
+     56.0
+    ],
+    [
+     35.0,
+     54.6
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 1.4,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r28",
+   "a": "n18",
+   "b": "n7",
+   "coords": [
+    [
+     67.2,
+     68.0
+    ],
+    [
+     68.1,
+     68.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0.9,
+   "arrows": [],
+   "texts": []
+  },
+  {
+   "id": "r29",
+   "a": "n19",
+   "b": "n7",
+   "coords": [
+    [
+     78.0,
+     68.0
+    ],
+    [
+     77.1,
+     68.0
+    ]
+   ],
+   "width": 0.25,
+   "dashed": false,
+   "kind": "signal",
+   "gap": 0.9,
+   "arrows": [],
+   "texts": []
+  }
+ ],
+ "labels": [
+  {
+   "text": "ESV",
+   "x": 56.6,
+   "y": 41.25,
+   "angle": 0,
+   "bbox": [
+    52.85,
+    36.25,
+    60.35,
+    42.25
+   ],
+   "owner": [
+    "node",
+    6,
+    0.0
+   ]
+  },
+  {
+   "text": "3712",
+   "x": 56.6,
+   "y": 46.65,
+   "angle": 0,
+   "bbox": [
+    51.6,
+    41.65,
+    61.6,
+    47.65
+   ],
+   "owner": [
+    "node",
+    6,
+    0.0
+   ]
+  },
+  {
+   "text": "D-13",
+   "x": 12.07,
+   "y": 26.57,
+   "angle": 0,
+   "bbox": [
+    2.07,
+    21.57,
+    12.07,
+    27.57
+   ],
+   "owner": [
+    "node",
+    5,
+    0.5
+   ]
+  },
+  {
+   "text": "D-13L37014A-0200PB-FD120-0F000N",
+   "x": 93.1,
+   "y": 113.05,
+   "angle": 0,
+   "bbox": [
+    54.35,
+    108.05,
+    131.85,
+    114.05
+   ],
+   "owner": null
+  },
+  {
+   "text": "D-13L37007A-0200PB-FS720-0F000N",
+   "x": 130.0,
+   "y": 102.25,
+   "angle": 0,
+   "bbox": [
+    91.25,
+    97.25,
+    168.75,
+    103.25
+   ],
+   "owner": null
+  },
+  {
+   "text": "D-43L37007A-0800VF-AS7F0-0F000N",
+   "x": 195.0,
+   "y": 32.25,
+   "angle": 0,
+   "bbox": [
+    156.25,
+    27.25,
+    233.75,
+    33.25
+   ],
+   "owner": [
+    "node",
+    13,
+    3.45
+   ]
+  },
+  {
+   "text": "0200x0800",
+   "x": 137.0,
+   "y": 61.25,
+   "angle": 0,
+   "bbox": [
+    125.75,
+    56.25,
+    148.25,
+    62.25
+   ],
+   "owner": [
+    "node",
+    2,
+    1.25
+   ]
+  },
+  {
+   "text": "ESV",
+   "x": 20.0,
+   "y": 30.25,
+   "angle": 0,
+   "bbox": [
+    16.25,
+    25.25,
+    23.75,
+    31.25
+   ],
+   "owner": [
+    "node",
+    5,
+    0.0
+   ]
+  },
+  {
+   "text": "3712",
+   "x": 20.0,
+   "y": 35.65,
+   "angle": 0,
+   "bbox": [
+    15.0,
+    30.65,
+    25.0,
+    36.65
+   ],
+   "owner": [
+    "node",
+    5,
+    0.0
+   ]
+  },
+  {
+   "text": "D-13",
+   "x": 12.07,
+   "y": 26.57,
+   "angle": 0,
+   "bbox": [
+    2.07,
+    21.57,
+    12.07,
+    27.57
+   ],
+   "owner": [
+    "node",
+    5,
+    0.5
+   ]
+  },
+  {
+   "text": "D",
+   "x": 63.6,
+   "y": 8.1,
+   "angle": 0,
+   "bbox": [
+    61.1,
+    3.1,
+    63.6,
+    9.1
+   ],
+   "owner": [
+    "node",
+    15,
+    1.0
+   ]
+  },
+  {
+   "text": "ESD",
+   "x": 72.6,
+   "y": 14.1,
+   "angle": 0,
+   "bbox": [
+    68.85,
+    9.1,
+    76.35,
+    15.1
+   ],
+   "owner": [
+    "node",
+    15,
+    0.0
+   ]
+  }
+ ],
+ "tables": [],
+ "counts": {
+  "primitives": 80,
+  "texts": 12,
+  "nodes": 21,
+  "runs": 30,
+  "junctions": 3,
+  "tables": 0
+ }
+}
