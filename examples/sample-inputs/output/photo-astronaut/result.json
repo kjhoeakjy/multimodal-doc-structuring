@@ -8,12 +8,12 @@
   "snapshot": {
    "cores": 4,
    "total_gb": 15.7,
-   "avail_gb": 14.3,
-   "cpu_busy": 0.0
+   "avail_gb": 14.4,
+   "cpu_busy": 2.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
-   "가용 메모리 14.3 GB → 인식 배치 8, 입력 상한 12 MP",
+   "가용 메모리 14.4 GB → 인식 배치 8, 입력 상한 12 MP",
    "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
   ]
  },
@@ -41,28 +41,62 @@
  },
  "tables": [],
  "texts": [],
- "nodes": [],
+ "nodes": [
+  {
+   "id": "photo",
+   "role": "photo",
+   "bbox": [
+    0.0,
+    0.0,
+    43.3,
+    43.3
+   ],
+   "texts": [],
+   "degree": 0,
+   "attached_to": null
+  }
+ ],
  "runs": [],
  "junctions": [],
  "counts": {
-  "texts": 0
+  "texts": 0,
+  "nodes": 1,
+  "runs": 0
  },
  "serial": [
   "# 사진·렌더링 (구조 추출 없음, 이미지 검색 대상)",
   "크기 512×512 px",
-  "## 사진 위 문자"
+  "## 사진 위 문자",
+  "## 관계 (노드 종류 · 이름 · 좌표, 간선 종류)",
+  "photo 종류=사진 이름=- bbox=(0.0,0.0,43.3,43.3)"
  ],
  "index": {
   "bm25": {
-   "tokens": 15,
-   "vocab": 13,
+   "tokens": 31,
+   "vocab": 23,
    "top": [
     [
      "사진",
-     2
+     3
+    ],
+    [
+     "종류",
+     3
     ],
     [
      "512",
+     2
+    ],
+    [
+     "이름",
+     2
+    ],
+    [
+     "0.0",
+     2
+    ],
+    [
+     "43.3",
      2
     ],
     [
@@ -108,6 +142,30 @@
     [
      "문자",
      1
+    ],
+    [
+     "관계",
+     1
+    ],
+    [
+     "노드",
+     1
+    ],
+    [
+     "좌표",
+     1
+    ],
+    [
+     "간선",
+     1
+    ],
+    [
+     "photo",
+     1
+    ],
+    [
+     "bbox",
+     1
     ]
    ]
   },
@@ -116,7 +174,7 @@
  },
  "embedding": {
   "available": false,
-  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "reason": "가중치 내려받기 실패(외부망 차단). 가중치 파일을 torch 캐시 폴더에 두면 동작",
   "regions": 1
  },
  "times": {
@@ -125,13 +183,13 @@
   "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 1.5,
-  "min_avail_gb": 13.97
+  "peak_rss_gb": 0.95,
+  "min_avail_gb": 14.41
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
-  "avail_gb": 14.3,
+  "avail_gb": 14.4,
   "cpu_busy": 0.0
  }
 }

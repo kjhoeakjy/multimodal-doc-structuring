@@ -1868,7 +1868,7 @@
  "times": {
   "ocr": 0.0,
   "structure": 0.0,
-  "total": 0.0
+  "total": 0.1
  },
  "image": {
   "path": "input_gray.png",

@@ -8,12 +8,12 @@
   "snapshot": {
    "cores": 4,
    "total_gb": 15.7,
-   "avail_gb": 14.4,
+   "avail_gb": 14.5,
    "cpu_busy": 2.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
-   "가용 메모리 14.4 GB → 인식 배치 8, 입력 상한 12 MP",
+   "가용 메모리 14.5 GB → 인식 배치 8, 입력 상한 12 MP",
    "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
   ]
  },
@@ -118,19 +118,6 @@
     "P = 6 barg",
     "DN = 25/50"
    ],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n6",
-   "role": "symbol",
-   "bbox": [
-    255.25,
-    92.36,
-    258.75,
-    93.24
-   ],
-   "texts": [],
    "degree": 0,
    "attached_to": null
   },
@@ -701,97 +688,6 @@
    "attached_to": null
   },
   {
-   "id": "n43",
-   "role": "mark",
-   "bbox": [
-    315.3,
-    83.0,
-    316.0,
-    83.7
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n44",
-   "role": "mark",
-   "bbox": [
-    313.9,
-    82.3,
-    315.3,
-    83.7
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n45",
-   "role": "mark",
-   "bbox": [
-    312.5,
-    82.3,
-    313.9,
-    83.7
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n46",
-   "role": "mark",
-   "bbox": [
-    311.1,
-    82.3,
-    312.5,
-    83.7
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n47",
-   "role": "mark",
-   "bbox": [
-    309.7,
-    82.3,
-    311.1,
-    83.7
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n48",
-   "role": "mark",
-   "bbox": [
-    308.3,
-    82.3,
-    309.7,
-    83.7
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n49",
-   "role": "mark",
-   "bbox": [
-    307.6,
-    82.3,
-    308.3,
-    83.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
    "id": "n50",
    "role": "arrow",
    "bbox": [
@@ -883,188 +779,6 @@
    "attached_to": null
   },
   {
-   "id": "n57",
-   "role": "mark",
-   "bbox": [
-    132.0,
-    132.0,
-    132.0,
-    134.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n58",
-   "role": "mark",
-   "bbox": [
-    132.0,
-    153.0,
-    132.0,
-    155.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n59",
-   "role": "mark",
-   "bbox": [
-    148.0,
-    132.0,
-    148.0,
-    134.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n60",
-   "role": "mark",
-   "bbox": [
-    148.0,
-    153.0,
-    148.0,
-    155.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n61",
-   "role": "mark",
-   "bbox": [
-    322.5,
-    137.5,
-    324.5,
-    137.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n62",
-   "role": "mark",
-   "bbox": [
-    343.5,
-    137.5,
-    345.5,
-    137.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n63",
-   "role": "mark",
-   "bbox": [
-    322.5,
-    122.5,
-    324.5,
-    122.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n64",
-   "role": "mark",
-   "bbox": [
-    327.0,
-    122.5,
-    329.0,
-    122.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n65",
-   "role": "mark",
-   "bbox": [
-    74.8,
-    153.0,
-    74.8,
-    155.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n66",
-   "role": "mark",
-   "bbox": [
-    93.2,
-    153.0,
-    93.2,
-    155.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n67",
-   "role": "mark",
-   "bbox": [
-    241.8,
-    153.0,
-    241.8,
-    155.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n68",
-   "role": "mark",
-   "bbox": [
-    260.2,
-    153.0,
-    260.2,
-    155.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n69",
-   "role": "mark",
-   "bbox": [
-    180.0,
-    72.6,
-    182.0,
-    72.6
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n70",
-   "role": "mark",
-   "bbox": [
-    193.0,
-    128.5,
-    195.0,
-    128.5
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
    "id": "n71",
    "role": "nozzle",
    "bbox": [
@@ -1079,45 +793,6 @@
    ],
    "degree": 1,
    "attached_to": "n21"
-  },
-  {
-   "id": "n72",
-   "role": "mark",
-   "bbox": [
-    213.0,
-    82.0,
-    213.0,
-    84.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n73",
-   "role": "mark",
-   "bbox": [
-    213.0,
-    93.0,
-    213.0,
-    95.0
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
-  },
-  {
-   "id": "n74",
-   "role": "mark",
-   "bbox": [
-    203.0,
-    71.3,
-    205.0,
-    71.3
-   ],
-   "texts": [],
-   "degree": 0,
-   "attached_to": null
   }
  ],
  "junctions": [
@@ -3962,13 +3637,13 @@
   "runs": 43,
   "junctions": 5,
   "tables": 5,
-  "symbol": 21,
+  "dropped_fragments": 25,
+  "symbol": 20,
   "note": 2,
   "instrument": 4,
   "equipment": 5,
   "nozzle": 11,
-  "arrow": 8,
-  "mark": 24
+  "arrow": 8
  },
  "serial": [
   "# 그림 관계 그래프 (좌표 단위 mm, 원점 좌상단)",
@@ -3979,7 +3654,6 @@
   "n3 종류=symbol 이름=73KH12-50 라벨=73KH12-50 bbox=(229.0,153.0,233.0,155.0)",
   "n4 종류=symbol 이름=SV 104.01 라벨=- bbox=(268.0,89.0,271.0,96.0)",
   "n5 종류=note 이름=SV 104.01 라벨=SV 104.01|P = 6 barg|DN = 25/50 bbox=(273.0,90.9,289.0,101.0) 설명대상=n4",
-  "n6 종류=symbol 이름=n6 라벨=- bbox=(255.2,92.4,258.8,93.2)",
   "n7 종류=symbol 이름=73KH12-25 라벨=73KH12-25 bbox=(264.0,158.0,266.0,162.0)",
   "n8 종류=symbol 이름=73KH12-25 라벨=73KH12-25 bbox=(280.0,146.0,282.0,150.0)",
   "n9 종류=symbol 이름=73KH12-50 라벨=73KH12-50 bbox=(287.0,153.0,291.0,155.0)",
@@ -4002,7 +3676,7 @@
   "n26 종류=equipment 이름=P4711 라벨=P4711|N1|80|N2|80 bbox=(78.8,148.8,89.2,159.2)",
   "n27 종류=equipment 이름=P4712 라벨=P4712|N1|50|N2|50 bbox=(245.8,148.8,256.2,159.2)",
   "n28 종류=symbol 이름=n28 라벨=- bbox=(31.0,150.5,38.0,157.5)",
-  "n32 종류=symbol 이름=80/50 라벨=80/50 bbox=(215.0,153.0,219.0,155.0)",
+  "n32 종류=symbol 이름=n32 라벨=80/50 bbox=(215.0,153.0,219.0,155.0)",
   "n55 종류=symbol 이름=n55 라벨=- bbox=(280.0,145.2,282.0,145.2)",
   "n56 종류=symbol 이름=n56 라벨=- bbox=(364.0,145.2,366.0,145.2)",
   "## 분기점",
@@ -4018,8 +3692,8 @@
   "r3 종류=pipe A=n18[equipment H1007] B=open@(120.0, 202.0) 흐름=B→A 라벨=WKa 47130 75HB13 50 경로=(136.0,133.0)→(120.0,133.0)→(120.0,202.0)",
   "r4 종류=pipe A=n18[equipment H1007] B=n0[symbol F.C.] 경로=(144.0,133.0)→(160.0,133.0)→(160.0,121.0)",
   "r5 종류=pipe A=n2[symbol 75SA21-80] B=n1[symbol 66KL21-80] 라벨=MNc 47124 75HB13 80 경로=(201.0,154.0)→(194.0,154.0)→(194.0,139.0)",
-  "r6 종류=pipe A=n2[symbol 75SA21-80] B=n32[symbol 80/50] 경로=(205.0,154.0)→(215.0,154.0)",
-  "r7 종류=pipe A=n32[symbol 80/50] B=n3[symbol 73KH12-50] 경로=(219.0,154.0)→(229.0,154.0)",
+  "r6 종류=pipe A=n2[symbol 75SA21-80] B=n32[symbol n32] 경로=(205.0,154.0)→(215.0,154.0)",
+  "r7 종류=pipe A=n32[symbol n32] B=n3[symbol 73KH12-50] 경로=(219.0,154.0)→(229.0,154.0)",
   "r8 종류=pipe A=n3[symbol 73KH12-50] B=n27[equipment P4712] 경로=(233.0,154.0)→(245.8,154.0)",
   "r9 종류=pipe A=n27[equipment P4712] B=j2 경로=(256.2,154.0)→(265.0,154.0)",
   "r10 종류=pipe A=j2 B=j0 경로=(265.0,154.0)→(269.0,154.0)",
@@ -4063,16 +3737,16 @@
  ],
  "index": {
   "bm25": {
-   "tokens": 1343,
-   "vocab": 349,
+   "tokens": 1332,
+   "vocab": 345,
    "top": [
     [
      "종류",
-     74
+     73
     ],
     [
      "symbol",
-     53
+     52
     ],
     [
      "a",
@@ -4084,7 +3758,7 @@
     ],
     [
      "라벨",
-     47
+     46
     ],
     [
      "경로",
@@ -4100,11 +3774,11 @@
     ],
     [
      "bbox",
-     37
+     36
     ],
     [
      "이름",
-     32
+     31
     ],
     [
      "equipment",
@@ -4211,6 +3885,10 @@
      6
     ],
     [
+     "n32",
+     6
+    ],
+    [
      "n55",
      6
     ],
@@ -4221,10 +3899,6 @@
     [
      "176.0",
      6
-    ],
-    [
-     "sv",
-     5
     ]
    ]
   },
@@ -4505,11 +4179,11 @@
  },
  "embedding": {
   "available": false,
-  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "reason": "가중치 내려받기 실패(외부망 차단). 가중치 파일을 torch 캐시 폴더에 두면 동작",
   "regions": 1
  },
  "times": {
-  "입력 판별": 0.0,
+  "입력 판별": 0.1,
   "요소 추출 · 관계 그래프": 0.5,
   "보기 그림": 0.0,
   "직렬화": 0.0,
@@ -4517,13 +4191,13 @@
   "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 1.17,
-  "min_avail_gb": 14.35
+  "peak_rss_gb": 1.02,
+  "min_avail_gb": 14.48
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
-  "avail_gb": 14.4,
-  "cpu_busy": 0.0
+  "avail_gb": 14.5,
+  "cpu_busy": 1.0
  }
 }

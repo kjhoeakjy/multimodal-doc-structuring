@@ -8,10 +8,13 @@ def run(files):
     res_ = pl.Resources()
     for f in files:
         d = os.path.join(OUT, os.path.splitext(f)[0])
-        cache = os.path.join(d, 'doc_ocr.json'); keep = open(cache, 'rb').read() if os.path.exists(cache) else None   # 문자 인식 결과는 다시 쓰지 않고 재사용
+        keep = {}
+        for c in ('doc_ocr.json', 'doc_ocr.time'):          # 문자 인식 결과와 그 소요 시간은 다시 쓰지 않고 재사용
+            if os.path.exists(os.path.join(d, c)):
+                keep[c] = open(os.path.join(d, c), 'rb').read()
         shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
-        if keep:
-            open(cache, 'wb').write(keep)
+        for c, data in keep.items():
+            open(os.path.join(d, c), 'wb').write(data)
         steps = []
         t0 = time.time()
         try:

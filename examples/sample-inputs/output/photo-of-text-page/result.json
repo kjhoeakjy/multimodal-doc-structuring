@@ -8,12 +8,12 @@
   "snapshot": {
    "cores": 4,
    "total_gb": 15.7,
-   "avail_gb": 14.3,
-   "cpu_busy": 2.0
+   "avail_gb": 14.4,
+   "cpu_busy": 0.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
-   "가용 메모리 14.3 GB → 인식 배치 8, 입력 상한 12 MP",
+   "가용 메모리 14.4 GB → 인식 배치 8, 입력 상한 12 MP",
    "문자 탐지 원본 해상도(정확도 우선), 한 번에 한 작업"
   ]
  },
@@ -162,11 +162,424 @@
    ]
   }
  ],
- "nodes": [],
- "runs": [],
+ "nodes": [
+  {
+   "id": "photo",
+   "role": "photo",
+   "bbox": [
+    0.0,
+    0.0,
+    101.6,
+    50.5
+   ],
+   "texts": [],
+   "degree": 12,
+   "attached_to": null
+  },
+  {
+   "id": "x0",
+   "role": "text",
+   "bbox": [
+    0.8,
+    1.9,
+    78.6,
+    10.6
+   ],
+   "texts": [
+    "Region-based segmentation"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x1",
+   "role": "text",
+   "bbox": [
+    0.0,
+    11.6,
+    100.5,
+    18.0
+   ],
+   "texts": [
+    "Let us first  determine   markers  of the coins ad the"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x2",
+   "role": "text",
+   "bbox": [
+    0.3,
+    16.1,
+    100.3,
+    23.3
+   ],
+   "texts": [
+    "background. These markers are pixels that we can label"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x3",
+   "role": "text",
+   "bbox": [
+    0.3,
+    20.9,
+    100.3,
+    28.0
+   ],
+   "texts": [
+    "unambiguously as either object or background. Here;"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x4",
+   "role": "text",
+   "bbox": [
+    7.1,
+    25.9,
+    78.8,
+    32.3
+   ],
+   "texts": [
+    "markers are found at the two extreme"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x5",
+   "role": "text",
+   "bbox": [
+    88.9,
+    26.2,
+    100.3,
+    31.0
+   ],
+   "texts": [
+    "of the"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x6",
+   "role": "text",
+   "bbox": [
+    18.0,
+    30.7,
+    46.0,
+    37.0
+   ],
+   "texts": [
+    "of grey values:"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x7",
+   "role": "text",
+   "bbox": [
+    10.3,
+    44.5,
+    23.5,
+    48.9
+   ],
+   "texts": [
+    "ackers"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x8",
+   "role": "text",
+   "bbox": [
+    27.3,
+    45.8,
+    64.0,
+    50.3
+   ],
+   "texts": [
+    "p.zeros_Like ( coins)"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x9",
+   "role": "text",
+   "bbox": [
+    0.0,
+    24.9,
+    7.4,
+    30.4
+   ],
+   "texts": [
+    "the"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x10",
+   "role": "text",
+   "bbox": [
+    78.1,
+    26.5,
+    89.4,
+    31.8
+   ],
+   "texts": [
+    "parts"
+   ],
+   "degree": 1,
+   "attached_to": null
+  },
+  {
+   "id": "x11",
+   "role": "text",
+   "bbox": [
+    0.0,
+    29.1,
+    18.8,
+    36.5
+   ],
+   "texts": [
+    "'histogram"
+   ],
+   "degree": 1,
+   "attached_to": null
+  }
+ ],
+ "runs": [
+  {
+   "id": "r0",
+   "a": "photo",
+   "b": "x0",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     39.69,
+     6.22
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r1",
+   "a": "photo",
+   "b": "x1",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     50.27,
+     14.82
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r2",
+   "a": "photo",
+   "b": "x2",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     50.27,
+     19.71
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r3",
+   "a": "photo",
+   "b": "x3",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     50.27,
+     24.47
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r4",
+   "a": "photo",
+   "b": "x4",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     42.99,
+     29.1
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r5",
+   "a": "photo",
+   "b": "x5",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     94.59,
+     28.57
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r6",
+   "a": "photo",
+   "b": "x6",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     32.01,
+     33.87
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r7",
+   "a": "photo",
+   "b": "x7",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     16.93,
+     46.7
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r8",
+   "a": "photo",
+   "b": "x8",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     45.64,
+     48.02
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r9",
+   "a": "photo",
+   "b": "x9",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     3.7,
+     27.65
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r10",
+   "a": "photo",
+   "b": "x10",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     83.74,
+     29.1
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  },
+  {
+   "id": "r11",
+   "a": "photo",
+   "b": "x11",
+   "coords": [
+    [
+     50.8,
+     25.27
+    ],
+    [
+     9.39,
+     32.81
+    ]
+   ],
+   "kind": "contain",
+   "texts": [],
+   "gap": 0
+  }
+ ],
  "junctions": [],
  "counts": {
-  "texts": 12
+  "texts": 12,
+  "nodes": 13,
+  "runs": 12
  },
  "serial": [
   "# 사진·렌더링 (구조 추출 없음, 이미지 검색 대상)",
@@ -183,172 +596,198 @@
   "p.zeros_Like ( coins) bbox=(27.3,45.8,64.0,50.3)",
   "the bbox=(0.0,24.9,7.4,30.4)",
   "parts bbox=(78.1,26.5,89.4,31.8)",
-  "'histogram bbox=(0.0,29.1,18.8,36.5)"
+  "'histogram bbox=(0.0,29.1,18.8,36.5)",
+  "## 관계 (노드 종류 · 이름 · 좌표, 간선 종류)",
+  "photo 종류=사진 이름=- bbox=(0.0,0.0,101.6,50.5)",
+  "x0 종류=문자 이름=Region-based segmentation bbox=(0.8,1.9,78.6,10.6)",
+  "x1 종류=문자 이름=Let us first  determine   markers  of th bbox=(0.0,11.6,100.5,18.0)",
+  "x2 종류=문자 이름=background. These markers are pixels tha bbox=(0.3,16.1,100.3,23.3)",
+  "x3 종류=문자 이름=unambiguously as either object or backgr bbox=(0.3,20.9,100.3,28.0)",
+  "x4 종류=문자 이름=markers are found at the two extreme bbox=(7.1,25.9,78.8,32.3)",
+  "x5 종류=문자 이름=of the bbox=(88.9,26.2,100.3,31.0)",
+  "x6 종류=문자 이름=of grey values: bbox=(18.0,30.7,46.0,37.0)",
+  "x7 종류=문자 이름=ackers bbox=(10.3,44.5,23.5,48.9)",
+  "x8 종류=문자 이름=p.zeros_Like ( coins) bbox=(27.3,45.8,64.0,50.3)",
+  "x9 종류=문자 이름=the bbox=(0.0,24.9,7.4,30.4)",
+  "x10 종류=문자 이름=parts bbox=(78.1,26.5,89.4,31.8)",
+  "x11 종류=문자 이름='histogram bbox=(0.0,29.1,18.8,36.5)",
+  "r0 종류=포함 A=photo B=x0",
+  "r1 종류=포함 A=photo B=x1",
+  "r2 종류=포함 A=photo B=x2",
+  "r3 종류=포함 A=photo B=x3",
+  "r4 종류=포함 A=photo B=x4",
+  "r5 종류=포함 A=photo B=x5",
+  "r6 종류=포함 A=photo B=x6",
+  "r7 종류=포함 A=photo B=x7",
+  "r8 종류=포함 A=photo B=x8",
+  "r9 종류=포함 A=photo B=x9",
+  "r10 종류=포함 A=photo B=x10",
+  "r11 종류=포함 A=photo B=x11"
  ],
  "index": {
   "bm25": {
-   "tokens": 122,
-   "vocab": 93,
+   "tokens": 370,
+   "vocab": 132,
    "top": [
     [
+     "종류",
+     27
+    ],
+    [
      "bbox",
+     25
+    ],
+    [
+     "이름",
+     14
+    ],
+    [
+     "문자",
+     13
+    ],
+    [
+     "photo",
+     13
+    ],
+    [
+     "포함",
+     12
+    ],
+    [
+     "a",
+     12
+    ],
+    [
+     "b",
      12
     ],
     [
      "the",
-     5
-    ],
-    [
-     "markers",
-     3
-    ],
-    [
-     "of",
-     3
+     8
     ],
     [
      "0.0",
-     3
+     8
+    ],
+    [
+     "markers",
+     6
+    ],
+    [
+     "of",
+     6
     ],
     [
      "100.3",
-     3
-    ],
-    [
-     "사진",
-     2
-    ],
-    [
-     "coins",
-     2
+     6
     ],
     [
      "18.0",
-     2
-    ],
-    [
-     "background.",
-     2
+     4
     ],
     [
      "are",
-     2
+     4
     ],
     [
      "0.3",
-     2
+     4
     ],
     [
-     "렌더링",
-     1
+     "사진",
+     3
     ],
     [
-     "구조",
-     1
+     "coins",
+     3
     ],
     [
-     "추출",
-     1
-    ],
-    [
-     "없음",
-     1
-    ],
-    [
-     "이미지",
-     1
-    ],
-    [
-     "검색",
-     1
-    ],
-    [
-     "대상",
-     1
-    ],
-    [
-     "크기",
-     1
-    ],
-    [
-     "384",
-     1
-    ],
-    [
-     "191",
-     1
-    ],
-    [
-     "px",
-     1
-    ],
-    [
-     "위",
-     1
-    ],
-    [
-     "문자",
-     1
+     "background.",
+     3
     ],
     [
      "region-based",
-     1
+     2
     ],
     [
      "segmentation",
-     1
+     2
     ],
     [
      "0.8",
-     1
+     2
     ],
     [
      "1.9",
-     1
+     2
     ],
     [
      "78.6",
-     1
+     2
     ],
     [
      "10.6",
-     1
+     2
     ],
     [
      "let",
-     1
+     2
     ],
     [
      "us",
-     1
+     2
     ],
     [
      "first",
-     1
+     2
     ],
     [
      "determine",
-     1
-    ],
-    [
-     "ad",
-     1
+     2
     ],
     [
      "11.6",
-     1
+     2
     ],
     [
      "100.5",
-     1
+     2
     ],
     [
      "these",
-     1
+     2
     ],
     [
      "pixels",
-     1
+     2
+    ],
+    [
+     "16.1",
+     2
+    ],
+    [
+     "23.3",
+     2
+    ],
+    [
+     "unambiguously",
+     2
+    ],
+    [
+     "as",
+     2
+    ],
+    [
+     "either",
+     2
+    ],
+    [
+     "object",
+     2
+    ],
+    [
+     "or",
+     2
     ]
    ]
   },
@@ -357,7 +796,7 @@
  },
  "embedding": {
   "available": false,
-  "reason": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "reason": "가중치 내려받기 실패(외부망 차단). 가중치 파일을 torch 캐시 폴더에 두면 동작",
   "regions": 1
  },
  "times": {
@@ -366,13 +805,13 @@
   "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 1.16,
-  "min_avail_gb": 14.16
+  "peak_rss_gb": 0.95,
+  "min_avail_gb": 14.42
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
-  "avail_gb": 14.2,
-  "cpu_busy": 0.0
+  "avail_gb": 14.4,
+  "cpu_busy": 1.0
  }
 }

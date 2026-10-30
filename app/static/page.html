@@ -55,7 +55,7 @@ pre .hl{color:var(--acc);font-weight:600}
 .btn.ghost{background:var(--bg);color:var(--ink);padding:2px 8px;font-size:12px}
 .gsvg{width:100%;height:auto;border:1px solid var(--line);background:#fff}
 .gsvg .e{stroke:#aaa;stroke-width:1.2} .gsvg .pipe{stroke:var(--pipe)} .gsvg .signal{stroke:var(--sig);stroke-dasharray:4 3} .gsvg .next{stroke-dasharray:2 4} .gsvg .describe,.gsvg .mention{stroke:var(--fig)} .gsvg .point{stroke:var(--pipe)}
-.gsvg text{font-size:9px;font-family:var(--mono);fill:#111;pointer-events:none}
+.gsvg text.iso{fill:var(--mute);font-size:10px} .gsvg text{font-size:9px;font-family:var(--mono);fill:#111;pointer-events:none}
 .gsvg g.n{cursor:pointer}
 .gsvg g.hl circle{stroke:var(--acc);stroke-width:3}
 .q{display:flex;gap:8px;margin-bottom:10px}
@@ -164,18 +164,25 @@ function graph(){
   const edges = []; (R.runs || []).forEach(r => { const a = lift(r.a), b = lift(r.b); if (a === b || a.startsWith('open') || b.startsWith('open')) return; [a, b].forEach(v => { if (v.startsWith('j')) J.add(v); }); if ((ids.has(a) || J.has(a)) && (ids.has(b) || J.has(b))) edges.push({a, b, kind: r.kind, id: r.id}); });
   $('#gcount').textContent = nodes.length ? `· 노드 ${nodes.length + J.size} · 간선 ${edges.length}` : '· 없음';
   if (!nodes.length) return;
-  const pos = {}; const all = [...nodes.map(n => ({id: n.id, role: n.role, c: [(n.bbox[0]+n.bbox[2])/2, (n.bbox[1]+n.bbox[3])/2], name: n.texts[0] || ''})), ...[...J].map(j => { const jj = (R.junctions || []).find(x => x.id === j); return {id: j, role: 'junction', c: jj ? jj.pt : [0, 0], name: ''}; })];
+  const pos = {}; const all = [...nodes.map(n => ({id: n.id, role: n.role, c: [(n.bbox[0]+n.bbox[2])/2, (n.bbox[1]+n.bbox[3])/2], name: nameOf(n)})), ...[...J].map(j => { const jj = (R.junctions || []).find(x => x.id === j); return {id: j, role: 'junction', c: jj ? jj.pt : [0, 0], name: ''}; })];
   const xs = all.map(a => a.c[0]), ys = all.map(a => a.c[1]); const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
-  all.forEach(a => pos[a.id] = [30 + (a.c[0] - x0) / ((x1 - x0) || 1) * 580, 30 + (a.c[1] - y0) / ((y1 - y0) || 1) * 340]);
-  const k = Math.sqrt(640 * 400 / all.length) * 0.45; const N = all.length > 400 ? 60 : 220;
-  for (let it = 0; it < N; it++) { const disp = {}; all.forEach(a => disp[a.id] = [0, 0]); const T = 18 * (1 - it / N) + 0.5;
-    for (let i = 0; i < all.length; i++) for (let j = i + 1; j < all.length; j++) { const u = all[i].id, v = all[j].id; let dx = pos[u][0] - pos[v][0], dy = pos[u][1] - pos[v][1]; let d = Math.hypot(dx, dy) || 0.01; const f = k * k / d; disp[u][0] += dx / d * f; disp[u][1] += dy / d * f; disp[v][0] -= dx / d * f; disp[v][1] -= dy / d * f; }
+  // 연결이 있는 요소는 힘 기반 배치, 연결이 없는 요소는 아래 띠에 격자로 둠
+  const linked = new Set(); edges.forEach(e => { linked.add(e.a); linked.add(e.b); });
+  const conn = all.filter(a => linked.has(a.id)), iso = all.filter(a => !linked.has(a.id));
+  const yMax = iso.length ? 290 : 380, cy = iso.length ? 155 : 200;
+  conn.forEach(a => pos[a.id] = [30 + (a.c[0] - x0) / ((x1 - x0) || 1) * 580, 30 + (a.c[1] - y0) / ((y1 - y0) || 1) * (yMax - 50)]);
+  const k = Math.sqrt(640 * (yMax - 20) / Math.max(1, conn.length)) * 0.45; const N = conn.length > 400 ? 60 : 220;
+  for (let it = 0; it < N; it++) { const disp = {}; conn.forEach(a => disp[a.id] = [0, 0]); const T = 18 * (1 - it / N) + 0.5;
+    for (let i = 0; i < conn.length; i++) for (let j = i + 1; j < conn.length; j++) { const u = conn[i].id, v = conn[j].id; let dx = pos[u][0] - pos[v][0], dy = pos[u][1] - pos[v][1]; let d = Math.hypot(dx, dy) || 0.01; const f = k * k / d; disp[u][0] += dx / d * f; disp[u][1] += dy / d * f; disp[v][0] -= dx / d * f; disp[v][1] -= dy / d * f; }
     edges.forEach(e => { let dx = pos[e.a][0] - pos[e.b][0], dy = pos[e.a][1] - pos[e.b][1]; let d = Math.hypot(dx, dy) || 0.01; const f = d * d / k; disp[e.a][0] -= dx / d * f; disp[e.a][1] -= dy / d * f; disp[e.b][0] += dx / d * f; disp[e.b][1] += dy / d * f; });
-    all.forEach(a => { disp[a.id][0] -= (pos[a.id][0] - 320) * 0.03; disp[a.id][1] -= (pos[a.id][1] - 200) * 0.03; const d = Math.hypot(...disp[a.id]) || 0.01; const m = Math.min(d, T); pos[a.id][0] = Math.max(20, Math.min(620, pos[a.id][0] + disp[a.id][0] / d * m)); pos[a.id][1] = Math.max(20, Math.min(380, pos[a.id][1] + disp[a.id][1] / d * m)); }); }
+    conn.forEach(a => { disp[a.id][0] -= (pos[a.id][0] - 320) * 0.03; disp[a.id][1] -= (pos[a.id][1] - cy) * 0.03; const d = Math.hypot(...disp[a.id]) || 0.01; const m = Math.min(d, T); pos[a.id][0] = Math.max(20, Math.min(620, pos[a.id][0] + disp[a.id][0] / d * m)); pos[a.id][1] = Math.max(20, Math.min(yMax, pos[a.id][1] + disp[a.id][1] / d * m)); }); }
+  const step = iso.length > 120 ? 9 : (iso.length > 60 ? 12 : 16); const perRow = Math.floor(600 / step);
+  iso.forEach((a, i) => pos[a.id] = [24 + (i % perRow) * step, 318 + Math.floor(i / perRow) * step]);
   const col = {equipment:'var(--eq)', instrument:'var(--ins)', junction:'var(--jct)', note:'var(--ins)', table:'var(--tbl)', row:'var(--txt)', figure:'var(--fig)', part:'var(--fig)', photo:'var(--fig)', paragraph:'var(--mute)', callout:'var(--ins)', dimension:'var(--ins)', datum:'var(--ins)', text:'var(--txt)'};
   let s = edges.map(e => `<line class="e ${e.kind}" x1="${pos[e.a][0]}" y1="${pos[e.a][1]}" x2="${pos[e.b][0]}" y2="${pos[e.b][1]}"/>`).join('');
   s += all.map(a => { const r = {equipment: 9, instrument: 7, junction: 3, table: 9, figure: 6, part: 9, photo: 9, paragraph: 6, callout: 5, dimension: 5, datum: 4, row: 3.5, text: 3}[a.role] || 4.5; const lbl = ['equipment','instrument'].includes(a.role) ? a.name : (['table','figure','part','photo','paragraph','callout','dimension'].includes(a.role) ? a.id : ''); return `<g class="n" data-id="${a.id}" transform="translate(${pos[a.id][0]} ${pos[a.id][1]})"><circle r="${r}" fill="${col[a.role] || 'var(--sym)'}"/>${lbl ? `<text x="${r + 3}" y="3">${esc(lbl)}</text>` : ''}<title>${a.id} ${ROLE[a.role] || a.role} ${esc(a.name)}</title></g>`; }).join('');
   svg.innerHTML = s;
+  if (iso.length) svg.insertAdjacentHTML('beforeend', `<text x="24" y="306" class="iso">연결 없는 요소 ${iso.length}개</text>`);
   svg.querySelectorAll('g.n').forEach(g => g.addEventListener('click', () => highlight([g.dataset.id], [])));
 }
 function highlight(nodeIds, runIds){
@@ -184,7 +191,7 @@ function highlight(nodeIds, runIds){
   document.querySelectorAll('#gsvg g.n').forEach(g => g.classList.toggle('hl', nodeIds.includes(g.dataset.id)));
   const first = document.getElementById('ov-' + (nodeIds[0] || runIds[0])); if (first && first.scrollIntoView) first.scrollIntoView({block: 'center', inline: 'center', behavior: 'smooth'});
 }
-function nameOf(n){ const tags = n.texts.filter(t => /^[A-Z]\d{4}$/.test(t)); if (tags.length) return tags[0]; if (n.role === 'instrument') return n.texts.slice(0, 2).join(' '); if (n.texts.length) return n.texts[0]; return n.id; }
+function nameOf(n){ const tags = n.texts.filter(t => /^[A-Z][0-9O]{4}$/.test(t)).map(t => t[0] + t.slice(1).replace(/O/g, '0')); if (tags.length) return tags[0]; if (n.role === 'instrument') return n.texts.slice(0, 2).join(' '); const c = n.texts.filter(t => !/^N[0-9I]{1,2}$/.test(t) && !/^[\d.,\/\-%]+$/.test(t)); if (c.length) return c[0]; return n.id; }
 function subgraph(tag, depth){
   const nodes = {}; (R.nodes || []).forEach(n => nodes[n.id] = n);
   const lift = id => nodes[id] && nodes[id].attached_to ? nodes[id].attached_to : id;

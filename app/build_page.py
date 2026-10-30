@@ -29,9 +29,10 @@ def view_image(src, R):
         doc = pymupdf.open(src); page = doc[0]; pix = page.get_pixmap(dpi=150)
         a = np.frombuffer(pix.samples, np.uint8).reshape(pix.height, pix.width, pix.n)
         return cv2.cvtColor(a, cv2.COLOR_RGB2GRAY) if pix.n >= 3 else a[:, :, 0]
-    if ext == '.pdf':
+    if ext in ('.pdf', '.svg'):          # 글자 층 PDF 쪽·벡터 기계 도면: 처리 때와 같은 200 dpi 렌더, 기울기 보정 없음
         import pymupdf
-        pix = pymupdf.open(src)[0].get_pixmap(dpi=200); a = np.frombuffer(pix.samples, np.uint8).reshape(pix.height, pix.width, pix.n); gray = cv2.cvtColor(a, cv2.COLOR_RGB2GRAY)
+        pix = pymupdf.open(src)[0].get_pixmap(dpi=R.get('dpi') or 200, colorspace='gray')
+        return np.frombuffer(pix.samples, np.uint8).reshape(pix.height, pix.width, pix.n)[:, :, 0].copy()
     else:
         gray = cv2.imread(src, cv2.IMREAD_GRAYSCALE)
     max_mp = R.get('plan', {}).get('max_mp', 12.0); H, W = gray.shape; mp = W * H / 1e6

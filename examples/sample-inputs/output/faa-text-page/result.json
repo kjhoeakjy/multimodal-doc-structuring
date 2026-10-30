@@ -9,7 +9,7 @@
    "cores": 4,
    "total_gb": 15.7,
    "avail_gb": 14.4,
-   "cpu_busy": 2.0
+   "cpu_busy": 0.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
@@ -29,14 +29,14 @@
   "resized": false,
   "midtone": 0.059,
   "ink": 0.035,
-  "text_ink": 1.0,
+  "text_ink": 0.99,
   "axis_ink": 0.0,
-  "free_ink": 0.0,
+  "free_ink": 0.01,
   "solid_ink": 0.0,
   "long_lines": 0,
   "big_circles": 0,
-  "texts": 72,
-  "reason": "문자 잉크 100%, 선화 잉크 0%",
+  "texts": 70,
+  "reason": "문자 잉크 99%, 선화 잉크 1%",
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
   "skew_deg": 0.0
@@ -1527,18 +1527,18 @@
  },
  "times": {
   "입력 판별": 0.0,
-  "문자 인식": 0.0,
+  "문자 인식": 20.5,
   "해상도 · 종류 판별": 0.0,
   "structure": 0.0,
-  "표 · 그림 영역": 0.0,
+  "표 · 그림 영역": 0.1,
   "본문 묶기": 0.0,
   "직렬화": 0.0,
   "색인": 0.0,
   "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 1.02,
-  "min_avail_gb": 14.36
+  "peak_rss_gb": 1.0,
+  "min_avail_gb": 14.37
  },
  "resources_after": {
   "cores": 4,

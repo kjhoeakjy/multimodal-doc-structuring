@@ -14,8 +14,8 @@
   "paragraphs": 6,
   "callouts": null,
   "leaders": null,
-  "time": 4.6,
-  "peak_gb": 1.41
+  "time": 47.0,
+  "peak_gb": 1.33
  },
  {
   "file": "en-report-synthetic-vector.pdf",
@@ -32,13 +32,13 @@
   "paragraphs": 6,
   "callouts": null,
   "leaders": null,
-  "time": 2.8,
-  "peak_gb": 0.81
+  "time": 0.8,
+  "peak_gb": 1.01
  },
  {
   "file": "faa-bolt-table-illustrations.jpg",
   "kind": "page",
-  "reason": "문자 잉크 47%, 선화 잉크 25%",
+  "reason": "문자 잉크 45%, 선화 잉크 26%",
   "dpi": 104,
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
@@ -50,13 +50,13 @@
   "paragraphs": 4,
   "callouts": null,
   "leaders": null,
-  "time": 0.0,
-  "peak_gb": 1.02
+  "time": 18.0,
+  "peak_gb": 1.0
  },
  {
   "file": "faa-text-page.png",
   "kind": "page",
-  "reason": "문자 잉크 100%, 선화 잉크 0%",
+  "reason": "문자 잉크 99%, 선화 잉크 1%",
   "dpi": 104,
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
@@ -68,8 +68,8 @@
   "paragraphs": 11,
   "callouts": null,
   "leaders": null,
-  "time": 0.0,
-  "peak_gb": 1.02
+  "time": 20.6,
+  "peak_gb": 1.0
  },
  {
   "file": "faa-torque-table-scan.jpg",
@@ -86,8 +86,8 @@
   "paragraphs": 9,
   "callouts": null,
   "leaders": null,
-  "time": 0.6,
-  "peak_gb": 1.02
+  "time": 55.9,
+  "peak_gb": 1.0
  },
  {
   "file": "faa-torque-table.jpg",
@@ -104,8 +104,8 @@
   "paragraphs": 9,
   "callouts": null,
   "leaders": null,
-  "time": 0.1,
-  "peak_gb": 1.02
+  "time": 31.3,
+  "peak_gb": 1.0
  },
  {
   "file": "ko-report-synthetic.png",
@@ -122,13 +122,13 @@
   "paragraphs": 10,
   "callouts": null,
   "leaders": null,
-  "time": 0.4,
-  "peak_gb": 1.02
+  "time": 96.5,
+  "peak_gb": 1.33
  },
  {
   "file": "ko-table-text-scan200.jpg",
   "kind": "page",
-  "reason": "문자 잉크 77%, 선화 잉크 0%",
+  "reason": "문자 잉크 59%, 선화 잉크 19%",
   "dpi": 200,
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
@@ -140,8 +140,8 @@
   "paragraphs": 7,
   "callouts": null,
   "leaders": null,
-  "time": 0.6,
-  "peak_gb": 1.02
+  "time": 40.7,
+  "peak_gb": 1.0
  },
  {
   "file": "mech-flange-synthetic-200dpi.png",
@@ -158,8 +158,8 @@
   "paragraphs": null,
   "callouts": 6,
   "leaders": 3,
-  "time": 5.3,
-  "peak_gb": 1.42
+  "time": 42.3,
+  "peak_gb": 1.05
  },
  {
   "file": "mech-flange-synthetic-vector.svg",
@@ -169,15 +169,15 @@
   "dpi_source": "벡터 200 dpi 렌더",
   "ocr_lang": "벡터 문자(문자 인식 생략)",
   "nodes": 15,
-  "runs": 12,
+  "runs": 11,
   "texts": 20,
   "tables": 1,
   "figures": null,
   "paragraphs": null,
   "callouts": 8,
-  "leaders": 5,
-  "time": 3.2,
-  "peak_gb": 0.81
+  "leaders": 4,
+  "time": 0.7,
+  "peak_gb": 1.0
  },
  {
   "file": "mech-iso-tolerance-real.jpg",
@@ -194,8 +194,8 @@
   "paragraphs": null,
   "callouts": 15,
   "leaders": 4,
-  "time": 0.9,
-  "peak_gb": 1.03
+  "time": 48.9,
+  "peak_gb": 1.01
  },
  {
   "file": "photo-astronaut.png",
@@ -204,8 +204,8 @@
   "dpi": 300,
   "dpi_source": "파일 메타데이터",
   "ocr_lang": "en",
-  "nodes": null,
-  "runs": null,
+  "nodes": 1,
+  "runs": 0,
   "texts": 0,
   "tables": null,
   "figures": null,
@@ -213,7 +213,7 @@
   "callouts": null,
   "leaders": null,
   "time": 4.0,
-  "peak_gb": 1.5
+  "peak_gb": 0.95
  },
  {
   "file": "photo-of-text-page.png",
@@ -222,8 +222,8 @@
   "dpi": 96,
   "dpi_source": "사진, 해상도 미정(96 가정)",
   "ocr_lang": "en",
-  "nodes": null,
-  "runs": null,
+  "nodes": 13,
+  "runs": 12,
   "texts": 12,
   "tables": null,
   "figures": null,
@@ -231,7 +231,7 @@
   "callouts": null,
   "leaders": null,
   "time": 2.5,
-  "peak_gb": 1.16
+  "peak_gb": 0.95
  },
  {
   "file": "photo-rocket-launch.jpg",
@@ -240,8 +240,8 @@
   "dpi": 96,
   "dpi_source": "사진, 해상도 미정(96 가정)",
   "ocr_lang": "en",
-  "nodes": null,
-  "runs": null,
+  "nodes": 1,
+  "runs": 0,
   "texts": 0,
   "tables": null,
   "figures": null,
@@ -249,7 +249,7 @@
   "callouts": null,
   "leaders": null,
   "time": 4.3,
-  "peak_gb": 1.55
+  "peak_gb": 0.95
  },
  {
   "file": "pid-lab-vector.svg",
@@ -267,7 +267,7 @@
   "callouts": null,
   "leaders": null,
   "time": 0.9,
-  "peak_gb": 1.19
+  "peak_gb": 1.05
  },
  {
   "file": "pid-plant-complex-150dpi.png",
@@ -284,8 +284,8 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 57.5,
-  "peak_gb": 1.3
+  "time": 95.9,
+  "peak_gb": 1.24
  },
  {
   "file": "pid-plant-complex-vector.svg",
@@ -302,8 +302,8 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 5.6,
-  "peak_gb": 1.21
+  "time": 5.9,
+  "peak_gb": 1.05
  },
  {
   "file": "pid-standard-200dpi.png",
@@ -320,13 +320,13 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 17.3,
-  "peak_gb": 1.2
+  "time": 59.9,
+  "peak_gb": 1.33
  },
  {
   "file": "pid-standard-scan.png",
   "kind": "drawing",
-  "reason": "축 평행 긴 선 140개, 선 잉크 49%",
+  "reason": "축 평행 긴 선 140개, 선 잉크 57%",
   "dpi": 200,
   "dpi_source": "문자 높이 4.5 mm 가정과 A3 용지 일치",
   "ocr_lang": "en",
@@ -338,8 +338,8 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 27.9,
-  "peak_gb": 1.2
+  "time": 74.8,
+  "peak_gb": 1.12
  },
  {
   "file": "pid-standard-vector.svg",
@@ -356,7 +356,7 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 0.5,
-  "peak_gb": 1.17
+  "time": 0.6,
+  "peak_gb": 1.02
  }
 ]

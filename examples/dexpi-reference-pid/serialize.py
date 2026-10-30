@@ -13,8 +13,6 @@ def name_of(n):
     cands = [t for t in n['texts'] if not re.match(r'^N[0-9I]{1,2}$', t) and not re.match(r'^[\d.,/\-%]+$', t)]
     if cands:
         return cands[0]
-    if n['texts']:
-        return n['texts'][0]
     if n['id'] in NOTES:
         return NOTES[n['id']]
     return n['id']

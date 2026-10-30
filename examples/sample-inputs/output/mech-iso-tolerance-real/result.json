@@ -2024,7 +2024,7 @@
  },
  "times": {
   "입력 판별": 0.1,
-  "문자 인식": 0.0,
+  "문자 인식": 48.0,
   "해상도 · 종류 판별": 0.1,
   "structure": 0.3,
   "투상도 · 치수 · 지시선 · 표제란": 0.4,
@@ -2033,13 +2033,13 @@
   "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 1.03,
-  "min_avail_gb": 14.35
+  "peak_rss_gb": 1.01,
+  "min_avail_gb": 14.41
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
   "avail_gb": 14.4,
-  "cpu_busy": 0.0
+  "cpu_busy": 1.0
  }
 }

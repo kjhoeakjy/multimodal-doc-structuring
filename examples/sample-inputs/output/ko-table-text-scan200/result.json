@@ -9,7 +9,7 @@
    "cores": 4,
    "total_gb": 15.7,
    "avail_gb": 14.4,
-   "cpu_busy": 1.0
+   "cpu_busy": 2.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
@@ -29,14 +29,14 @@
   "resized": false,
   "midtone": 0.042,
   "ink": 0.03,
-  "text_ink": 0.77,
+  "text_ink": 0.59,
   "axis_ink": 0.22,
-  "free_ink": 0.01,
+  "free_ink": 0.19,
   "solid_ink": 0.01,
   "long_lines": 15,
   "big_circles": 0,
-  "texts": 37,
-  "reason": "문자 잉크 77%, 선화 잉크 0%",
+  "texts": 35,
+  "reason": "문자 잉크 59%, 선화 잉크 19%",
   "dpi_source": "문자 높이 4.5 mm 가정과 A4 용지 일치",
   "ocr_lang": "en",
   "skew_deg": -0.4
@@ -1579,7 +1579,7 @@
  },
  "times": {
   "입력 판별": 0.1,
-  "문자 인식": 0.0,
+  "문자 인식": 40.1,
   "해상도 · 종류 판별": 0.1,
   "structure": 0.1,
   "표 · 그림 영역": 0.3,
@@ -1589,13 +1589,13 @@
   "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 1.02,
-  "min_avail_gb": 14.37
+  "peak_rss_gb": 1.0,
+  "min_avail_gb": 14.44
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
-  "avail_gb": 14.4,
-  "cpu_busy": 1.0
+  "avail_gb": 14.5,
+  "cpu_busy": 0.0
  }
 }

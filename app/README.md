@@ -10,15 +10,16 @@
 | 새 그림 처리 | `pip install -r app/requirements.txt` 후 `python app/process.py <그림 폴더>` → `<그림 폴더>-결과/문서-구조화.html` |
 | 표본 다시 만들기 | `python examples/sample-inputs/run_all.py` 후 `python app/build_page.py` |
 
-첫 처리 시 OCR 가중치(한글·영어)를 내려받음. 폐쇄망에서는 가중치 파일을 미리 `~/.EasyOCR/model/`에 둠. 이미지 임베딩 가중치가 없으면 그 항목은 "모델 없음"으로 표시되고 나머지는 동작함. `server.py`는 같은 처리를 브라우저 업로드로 하는 선택 방식(`python app/server.py`, http://127.0.0.1:8765).
+같은 출력 폴더에 문자 인식 결과(`doc_ocr.json`)가 있으면 다시 인식하지 않고 재사용함. 첫 처리 시 OCR 가중치(한글·영어)를 내려받음. 폐쇄망에서는 가중치 파일을 미리 `~/.EasyOCR/model/`에 둠. 이미지 임베딩 가중치가 없으면 그 항목은 "모델 없음"으로 표시되고 나머지는 동작함. `server.py`는 같은 처리를 브라우저 업로드로 하는 선택 방식(`python app/server.py`, http://127.0.0.1:8765).
 
 ## 처리 흐름
 
 | 단계 | 내용 | 코드 |
 |---|---|---|
-| 입력 판별 | SVG·PDF 벡터는 벡터 경로. 래스터는 연속 계조 비율로 사진을, 격자 영역과 격자 밖 긴 선 수로 도면과 표·본문 쪽을 가름. 해상도는 파일 메타데이터, 없으면 A4 짧은 변 210 mm 가정 | `pipeline.classify_raster` |
-| 도면 | 문자 인식, 긴 선, 닫힌 도형, 기호, 틀·표 제거, 연결 판정, 문자 부착, 역할 추정 | `examples/public-documents/pid/raster_graph.py`, `extract_graph.py` |
-| 표·본문 쪽 | 격자선으로 칸을 나누고 문자를 칸에 배정, 표 밖 잉크 덩어리를 그림 영역으로 행에 연결, 표 밖 문자를 줄·문단으로 묶음 | `examples/public-documents/pages/real_docs.py`, `pipeline.paragraphs` |
+| 입력 판별 | SVG·PDF 벡터는 벡터 경로(장비·계기 태그가 없고 치수 문자가 있으면 기계 도면으로 200 dpi 렌더 후 도해 경로). 글자 층이 있는 PDF 문서는 문자 인식 없이 글자 좌표로 쪽 경로. 래스터는 연속 계조 비율로 사진을, 문자 인식 후 잉크 구성(문자·축 평행 선·채움)으로 도면·도해·표·본문 쪽을 가름. 해상도는 파일 메타데이터, 없으면 문자 높이 4.5 mm 가정과 표준 용지 대조 | `pipeline.Job.prepare`, `classify` |
+| 도면 | 문자 인식, 긴 선, 닫힌 도형, 기호, 틀·표 제거, 연결 판정, 문자 부착, 역할 추정. 연결도 문자도 없는 4 mm 미만 조각 제외 | `examples/public-documents/pid/raster_graph.py`, `extract_graph.py` |
+| 표·본문 쪽 | 괘선으로 칸을 나누고 문자를 칸에 배정(괘선 없이 쌓인 자료 행은 문자 줄로 분할), 틀 안 조각·문자를 그림 영역 하나로 묶음, 표 밖 문자를 단·줄·문단으로 묶음(2단 분리, 그림·표 설명문과 제목 줄은 독립 문단) | `examples/public-documents/pages/real_docs.py`, `pipeline.paragraphs` |
+| 도해·기계 도면 | 틀 선 제거, 표제란 등 표 추출, 투상도 영역(15 mm 이상 잉크 덩어리), 치수·주석 구분, 지시선(6~60 mm), 치수의 소속 투상도 | `real_docs.drawing_mode` |
 | 사진 | 구조 추출 없음. 사진 위 문자와 이미지 임베딩 | `pipeline.Job.photo` |
 | 직렬화 | 노드·간선·좌표(또는 표 행·문단)를 텍스트 LLM 입력용 줄 단위 텍스트로 | `pid/serialize.py` |
 | 색인 | 완전 일치 키(태그·부품 번호), BM25용 토큰 통계, 표 행, 이미지 임베딩(쪽·그림 영역) | `pipeline.build_index`, `embed_images` |
@@ -45,7 +46,7 @@
 
 | 파일 | 내용 |
 |---|---|
-| `문서-구조화.html` | 표본 20건의 입력과 결과를 담은 정적 화면(6.6 MB, 외부 연결 없음) |
+| `문서-구조화.html` | 표본 20건의 입력과 결과를 담은 정적 화면(외부 연결 없음) |
 | `process.py` | 그림 폴더 처리 후 정적 화면 생성 |
 | `build_page.py` | 처리 결과 폴더에서 정적 화면 생성(`static/page.html` 틀) |
 | `pipeline.py` | 처리 묶음과 자원 제어 |

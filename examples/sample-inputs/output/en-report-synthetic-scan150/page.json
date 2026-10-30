@@ -525,7 +525,7 @@
  ],
  "times": {
   "ocr": 0.0,
-  "structure": 0.0,
+  "structure": 0.1,
   "total": 0.1
  },
  "image": {

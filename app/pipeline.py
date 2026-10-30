@@ -135,10 +135,13 @@ class TunedReader:
 
 def run_ocr(gray, reader, prefix):
     """문자 인식 한 번. 도면 경로(원시 결과)와 쪽 경로(상자 목록) 두 형식으로 저장."""
-    if os.path.exists(prefix + '_ocr.json'):      # 같은 입력을 다시 처리할 때 문자 인식 결과 재사용
+    t0 = time.time()
+    if os.path.exists(prefix + '_ocr.json'):      # 같은 입력을 다시 처리할 때 문자 인식 결과와 그때의 소요 시간을 재사용
         res = json.load(open(prefix + '_ocr.json')); reader.lang_used = getattr(reader, 'lang_used', None) or '저장된 결과'
+        secs = float(open(prefix + '_ocr.time').read()) if os.path.exists(prefix + '_ocr.time') else 0.0
     else:
         res = reader.readtext(gray, paragraph=False, min_size=4, text_threshold=0.6, low_text=0.3, mag_ratio=1.5)
+        secs = time.time() - t0; open(prefix + '_ocr.time', 'w').write(f'{secs:.1f}')
     raw = [[[[float(v) for v in p] for p in q], s, float(c)] for q, s, c in res]
     json.dump(raw, open(prefix + '_ocr.json', 'w'))
     texts = []
@@ -148,7 +151,7 @@ def run_ocr(gray, reader, prefix):
             continue
         xs = [p[0] for p in q]; ys = [p[1] for p in q]
         texts.append(dict(text=s, conf=round(float(c), 2), box=[int(min(xs)), int(min(ys)), int(max(xs)), int(max(ys))]))
-    return raw, texts
+    return raw, texts, secs
 
 
 # ---------------- 입력 판별 ----------------
@@ -592,11 +595,11 @@ class Job:
         self.done('입력 판별', t0)
         t0 = self.step('문자 인식')
         reader = TunedReader(plan['batch'])
-        raw, texts = run_ocr(gray, reader, os.path.join(self.dir, 'doc'))
+        raw, texts, secs = run_ocr(gray, reader, os.path.join(self.dir, 'doc'))
         json.dump(texts, open(os.path.join(self.dir, 'page_ocr.json'), 'w'), ensure_ascii=False)   # 쪽 경로의 캐시 형식
-        self.done('문자 인식', t0)
+        self.done('문자 인식', t0); self.times['문자 인식'] = max(self.times['문자 인식'], round(secs, 1))
         t0 = self.step('해상도 · 종류 판별')
-        sure = [t for t in texts if t['conf'] >= 0.3]      # 종류·해상도 판별에는 신뢰도 높은 문자만 사용(낮은 것은 기호 조각일 수 있음)
+        sure = [t for t in texts if t['conf'] >= 0.2]      # 종류·해상도 판별에는 신뢰도 0.2 이상 문자만 사용(낮은 것은 기호 조각일 수 있음)
         dpi, src_ = estimate_dpi(W, H, sure, meta_dpi)
         kind, f = classify(gray, sure, dpi)
         info.update(f, dpi_source=src_, ocr_lang=reader.lang_used, skew_deg=round(skew, 2))
@@ -770,8 +773,8 @@ class Job:
         gray = cv2.imread(out['png'], 0); k = 25.4 / out['dpi']
         t0 = self.step('문자 인식')
         reader = TunedReader(8)
-        raw, texts = run_ocr(gray, reader, os.path.join(self.dir, 'doc')); out['detect']['ocr_lang'] = reader.lang_used
-        self.done('문자 인식', t0)
+        raw, texts, secs = run_ocr(gray, reader, os.path.join(self.dir, 'doc')); out['detect']['ocr_lang'] = reader.lang_used
+        self.done('문자 인식', t0); self.times['문자 인식'] = max(self.times['문자 인식'], round(secs, 1))
         serial = ["# 사진·렌더링 (구조 추출 없음, 이미지 검색 대상)", f"크기 {gray.shape[1]}×{gray.shape[0]} px", "## 사진 위 문자"]
         serial += [f"{t['text']} bbox=({','.join(str(round(v * k, 1)) for v in t['box'])})" for t in texts]
         g = relation_graph('photo', k, texts=texts, page_px=[gray.shape[1], gray.shape[0]]); serial += relation_lines(g)
