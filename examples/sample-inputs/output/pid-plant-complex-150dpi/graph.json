@@ -18647,10 +18647,10 @@
   "dropped_fragments": 399
  },
  "times": {
-  "ocr": 0.3,
-  "lines_symbols": 23.5,
-  "graph": 5.9,
-  "total": 29.7
+  "ocr": 0.2,
+  "lines_symbols": 22.3,
+  "graph": 6.0,
+  "total": 28.5
  },
  "dpi": 176,
  "skew_deg": 0.0

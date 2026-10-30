@@ -1777,7 +1777,7 @@
    ],
    "width": 0.2,
    "dashed": false,
-   "kind": "pipe",
+   "kind": "signal",
    "gap": 0,
    "arrows": [],
    "texts": [
@@ -1800,7 +1800,7 @@
    ],
    "width": 0.2,
    "dashed": false,
-   "kind": "pipe",
+   "kind": "signal",
    "gap": 0,
    "arrows": [],
    "texts": []
@@ -1850,7 +1850,7 @@
    ],
    "width": 0.2,
    "dashed": false,
-   "kind": "pipe",
+   "kind": "signal",
    "gap": 0,
    "arrows": [],
    "texts": []
@@ -1896,7 +1896,7 @@
    ],
    "width": 0.2,
    "dashed": false,
-   "kind": "pipe",
+   "kind": "signal",
    "gap": 0,
    "arrows": [],
    "texts": []

@@ -6282,9 +6282,9 @@
  },
  "times": {
   "ocr": 0.2,
-  "lines_symbols": 8.6,
-  "graph": 0.5,
-  "total": 9.3
+  "lines_symbols": 7.8,
+  "graph": 0.6,
+  "total": 8.6
  },
  "dpi": 200,
  "skew_deg": 0.0

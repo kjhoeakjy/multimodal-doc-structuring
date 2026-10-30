@@ -9,7 +9,7 @@
    "cores": 4,
    "total_gb": 15.7,
    "avail_gb": 14.7,
-   "cpu_busy": 2.0
+   "cpu_busy": 4.0
   },
   "why": [
    "코어 4개 중 2개 사용(절반)",
@@ -1331,13 +1331,13 @@
   "이미지 임베딩": 0.0
  },
  "memory": {
-  "peak_rss_gb": 0.8,
-  "min_avail_gb": 14.68
+  "peak_rss_gb": 0.79,
+  "min_avail_gb": 14.72
  },
  "resources_after": {
   "cores": 4,
   "total_gb": 15.7,
   "avail_gb": 14.7,
-  "cpu_busy": 0.0
+  "cpu_busy": 1.0
  }
 }

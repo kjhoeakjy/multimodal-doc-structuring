@@ -1578,11 +1578,11 @@
   "id": "q129",
   "doc": "pid-c02-vector",
   "type": "개수",
-  "question": "장비 K2750의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
+  "question": "장비 K 2750의 노즐(접속구) 수는 몇 개인가? 숫자만 답하라.",
   "answers": [
    "9"
   ],
-  "focus": "K2750",
+  "focus": "K 2750",
   "source": "DEXPI C02 XML",
   "kind": "single"
  },
@@ -1590,11 +1590,11 @@
   "id": "q130",
   "doc": "pid-c02-vector",
   "type": "노즐",
-  "question": "장비 K2750의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "question": "장비 K 2750의 노즐 N1의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
   "answers": [
    "200"
   ],
-  "focus": "K2750",
+  "focus": "K 2750",
   "source": "DEXPI C02 XML",
   "kind": "single"
  },
@@ -1602,11 +1602,11 @@
   "id": "q131",
   "doc": "pid-c02-vector",
   "type": "노즐",
-  "question": "장비 K2750의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "question": "장비 K 2750의 노즐 N2의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
   "answers": [
    "150"
   ],
-  "focus": "K2750",
+  "focus": "K 2750",
   "source": "DEXPI C02 XML",
   "kind": "single"
  },
@@ -1614,11 +1614,11 @@
   "id": "q132",
   "doc": "pid-c02-vector",
   "type": "노즐",
-  "question": "장비 K2750의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "question": "장비 K 2750의 노즐 N3의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
   "answers": [
    "150"
   ],
-  "focus": "K2750",
+  "focus": "K 2750",
   "source": "DEXPI C02 XML",
   "kind": "single"
  },
@@ -1626,11 +1626,11 @@
   "id": "q133",
   "doc": "pid-c02-vector",
   "type": "노즐",
-  "question": "장비 K2750의 노즐 N4의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "question": "장비 K 2750의 노즐 N4의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
   "answers": [
    "200"
   ],
-  "focus": "K2750",
+  "focus": "K 2750",
   "source": "DEXPI C02 XML",
   "kind": "single"
  },
@@ -1638,11 +1638,11 @@
   "id": "q134",
   "doc": "pid-c02-vector",
   "type": "노즐",
-  "question": "장비 K2750의 노즐 N5의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "question": "장비 K 2750의 노즐 N5의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
   "answers": [
    "50"
   ],
-  "focus": "K2750",
+  "focus": "K 2750",
   "source": "DEXPI C02 XML",
   "kind": "single"
  },
@@ -1650,11 +1650,11 @@
   "id": "q135",
   "doc": "pid-c02-vector",
   "type": "노즐",
-  "question": "장비 K2750의 노즐 N7의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
+  "question": "장비 K 2750의 노즐 N7의 호칭 지름(DN) 숫자는? 숫자만 답하라.",
   "answers": [
    "50"
   ],
-  "focus": "K2750",
+  "focus": "K 2750",
   "source": "DEXPI C02 XML",
   "kind": "single"
  },

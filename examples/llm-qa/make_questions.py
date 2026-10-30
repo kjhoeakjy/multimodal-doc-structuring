@@ -20,7 +20,7 @@ def pid_questions(xml_path, docs, page_h, source):
     def name(cid):
         c = comps[cid]
         if c['kind'] == 'Equipment' and c['tag']:
-            return c['tag'].replace(' ', '')
+            return c['tag']
         if c['kind'] == 'ProcessInstrumentationFunction':
             return None
         return None

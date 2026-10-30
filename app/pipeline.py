@@ -287,8 +287,12 @@ def subgraph(g, tag, depth=3):
         frontier = nxt
     lines = [f"# 질의 부분 그래프: {tag} 기준 {depth}단계, 간선 {len(sub)}"]
     for v, w, r in sub:
-        txt = f"({'|'.join(r['texts'])})" if r['texts'] else ''
+        txt = (f"({'|'.join(r['texts'])})" + sz.line_fields(r['texts'])) if r['texts'] else ''
         lines.append(f"{label(v)} --{r['id']}{txt} {r['kind']}--> {label(w)} 근거={where(v)} {where(w)}")
+    lines.append("# 부분 그래프 요소")
+    for nid in sorted(seen):
+        if nid in nodes and nodes[nid]['role'] not in ('mark', 'arrow'):
+            lines.append(sz.node_line(nodes[nid], where(nid)))
     return dict(found=True, start=start, lines=lines, nodes=sorted(seen), runs=sorted(used))
 
 

@@ -266,8 +266,8 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 0.9,
-  "peak_gb": 1.05
+  "time": 0.8,
+  "peak_gb": 1.04
  },
  {
   "file": "pid-plant-complex-150dpi.png",
@@ -284,8 +284,8 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 95.9,
-  "peak_gb": 1.24
+  "time": 93.7,
+  "peak_gb": 1.31
  },
  {
   "file": "pid-plant-complex-vector.svg",
@@ -302,8 +302,8 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 5.9,
-  "peak_gb": 1.05
+  "time": 5.4,
+  "peak_gb": 1.04
  },
  {
   "file": "pid-standard-200dpi.png",
@@ -320,8 +320,8 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 59.9,
-  "peak_gb": 1.33
+  "time": 58.1,
+  "peak_gb": 1.41
  },
  {
   "file": "pid-standard-scan.png",
@@ -338,8 +338,8 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 74.8,
-  "peak_gb": 1.12
+  "time": 73.0,
+  "peak_gb": 1.19
  },
  {
   "file": "pid-standard-vector.svg",
@@ -356,7 +356,7 @@
   "paragraphs": null,
   "callouts": null,
   "leaders": null,
-  "time": 0.6,
-  "peak_gb": 1.02
+  "time": 2.8,
+  "peak_gb": 0.8
  }
 ]

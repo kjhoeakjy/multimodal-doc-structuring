@@ -17,6 +17,31 @@ def name_of(n):
         return NOTES[n['id']]
     return n['id']
 
+NOZ = re.compile(r'^N[0-9I]{1,2}$'); DN = re.compile(r'^\d{2,3}$')
+def nozzles_of(n):
+    """장비 라벨에서 접속구 번호와 바로 뒤 호칭 지름 쌍을 뽑음(N1 80 → N1:DN80)."""
+    out, ts = [], n['texts']
+    for i, t in enumerate(ts):
+        if NOZ.match(t):
+            dn = ts[i + 1] if i + 1 < len(ts) and DN.match(ts[i + 1]) else None
+            out.append(t.replace('I', '1') + (f':DN{dn}' if dn else ''))
+    return out
+
+LINE_LABEL = re.compile(r'^([A-Z]{2,3}[a-z]?) (\d{5}) (\w+) (\d{2,3})$')
+def line_fields(texts):
+    """배관 라벨 '유체 라인번호 등급 호칭지름' 형식을 항목으로 풀어 씀."""
+    for t in texts:
+        m = LINE_LABEL.match(t)
+        if m:
+            return f" 라인={m.group(2)} 유체={m.group(1)} 등급={m.group(3)} DN={m.group(4)}"
+    return ''
+
+def node_line(n, bbox_s=''):
+    extra = f" 설명대상={n['annotates']}" if n.get('annotates') else ''
+    noz = nozzles_of(n) if n['role'] == 'equipment' else []
+    nz = f" 접속구={','.join(noz)}" if noz else ''
+    return f"{n['id']} 종류={n['role']} 이름={name_of(n)} 라벨={'|'.join(n['texts']) or '-'}{nz} {bbox_s}{extra}"
+
 def main(graph_path, out_txt, question_node=None, depth=3):
     g = json.load(open(graph_path))
     nodes = {n['id']: n for n in g['nodes']}
@@ -43,8 +68,7 @@ def main(graph_path, out_txt, question_node=None, depth=3):
     for n in g['nodes']:
         if n['role'] in ('mark', 'arrow') or n.get('attached_to'):
             continue
-        extra = f" 설명대상={n['annotates']}" if n.get('annotates') else ''
-        lines.append(f"{n['id']} 종류={n['role']} 이름={name_of(n)} 라벨={'|'.join(n['texts']) or '-'} {bbox(n['id'])}{extra}")
+        lines.append(node_line(n, bbox(n['id'])))
     lines.append("## 분기점")
     for j in g['junctions']:
         lines.append(f"{j['id']} pt=({j['pt'][0]:.1f},{j['pt'][1]:.1f})")
@@ -60,7 +84,7 @@ def main(graph_path, out_txt, question_node=None, depth=3):
             dot = d[0] * (x1 - x0) + d[1] * (y1 - y0)
             arrow = f" 흐름={'A→B' if dot > 0 else 'B→A'}"
         gap = f" 간격={r['gap']}mm(후보)" if r['gap'] else ''
-        txt = f" 라벨={'|'.join(r['texts'])}" if r['texts'] else ''
+        txt = (f" 라벨={'|'.join(r['texts'])}" + line_fields(r['texts'])) if r['texts'] else ''
         path = '→'.join(f"({x:.1f},{y:.1f})" for x, y in r['coords'])
         lines.append(f"{r['id']} 종류={r['kind']} A={label(a)} B={label(b)}{arrow}{txt}{gap} 경로={path}")
     lines.append("## 표")
