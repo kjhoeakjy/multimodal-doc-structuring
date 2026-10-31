@@ -104,14 +104,14 @@ L, R = 56, 1544
 t(L, 34, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 14, False, GR, maxw=R - L)
 t(L, 78, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 32, True, maxw=R - L)
 t(L, 116, "문제", 16, True, ACC)
-t(L + 48, 116, "기존 OCR은 문자를 추출하지만, 선으로 표시된 장비 간 연결관계는 텍스트에 반영하기 어려움", 16, False, INK, maxw=R - L - 48)
+t(L + 48, 116, "기존 OCR의 텍스트 변환 결과에 선으로 표시된 장비 간 연결관계 누락", 16, False, INK, maxw=R - L - 48)
 import re as _re
 _q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='utf-8').read()
 _d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
 QS = 104
 out.append(f'<svg x="{R - QS}" y="22" width="{QS}" height="{QS}" viewBox="-2 -2 {_n + 4} {_n + 4}"><rect x="-2" y="-2" width="{_n + 4}" height="{_n + 4}" fill="#FFFFFF"/><path d="{_d}" stroke="#000000" stroke-width="1" fill="none" shape-rendering="crispEdges"/></svg>')
 t(R - QS - 14, 66, "처리 과정 시뮬레이션", 14, True, INK, "end")
-t(R - QS - 14, 88, "문서 종류별 예시 8건 재생", 13, False, GR, "end")
+t(R - QS - 14, 88, "문서 유형별 처리 예시 8건", 13, False, GR, "end")
 hline(L, R, 138, INK, 1.4)
 
 # ================= 중단: 실제 도면 처리 과정 =================
@@ -130,20 +130,20 @@ crop2(PX[0], TOP, PWS[0], IH, drawing(INK, INK) + EQ_HL)
 crop2(PX[1], TOP, PWS[1], IH, drawing("#C9CDD4", "#B0B5BD") + overlay())
 CAP = TOP + IH + 26
 t(PX[0], CAP, "공개 P&ID(배관·계장도) 벡터 도면", 14, True, maxw=PWS[0])
-t(PX[0], CAP + 22, "점선 상자는 질의 예시 장비", 13.5, False, GR, maxw=PWS[0])
+t(PX[0], CAP + 22, "점선 상자: 질의 대상 장비", 13.5, False, GR, maxw=PWS[0])
 leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브·기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "분기점"), (ACC, "P4712 배관 경로")]
 xx = PX[1]
 for c, nm_ in leg:
     out.append(f'<rect x="{xx}" y="{CAP-11}" width="11" height="11" fill="{c}"/>'); t(xx + 15, CAP, nm_, 13); xx += 15 + width(nm_, 13) * 1.07 + 12
 if xx - 12 > PX[1] + PWS[1]: sys.exit("범례 폭 초과")
-t(PX[1], CAP + 22, "선의 끝점·분기점과 장비 위치를 기준으로 연결관계 판별", 13.5, False, GR, maxw=PWS[1])
+t(PX[1], CAP + 22, "선의 끝점·분기점과 장비 위치 기준의 연결관계 판별", 13.5, False, GR, maxw=PWS[1])
 
 # 03: OCR 텍스트와 관계 기반 구조화 비교
 x3, w3 = PX[2], PWS[2]
 rect(x3, TOP, w3, 82, LINE, FILL)
 t(x3 + 12, TOP + 22, "OCR 텍스트", 13, True, GR)
 t(x3 + 12, TOP + 46, "T4750, P4712, H1008, TICSA 4750.03 …", 13, False, GR, mono=True, maxw=w3 - 24)
-t(x3 + 12, TOP + 69, "문자 목록, 장비 간 관계 확인 불가", 12.5, False, GR, maxw=w3 - 24)
+t(x3 + 12, TOP + 69, "문자 목록 형태, 장비 간 관계 확인 불가", 12.5, False, GR, maxw=w3 - 24)
 y3 = TOP + 94; GH = 158
 rect(x3, y3, w3, GH, ACC, "#FFFFFF", 1.4)
 t(x3 + 12, y3 + 22, "관계 기반 구조화", 13, True, ACC)
@@ -160,14 +160,14 @@ for k, nm_ in enumerate(tg_names):
     t((ax + bx) / 2 + 6, (ay + by_) / 2 + (-12 if k == 0 else 22), "배관 경로", 12, False, ACC, "middle")
     node(bx, by_, nm_, EQ)
 node(ax, ay, "P4712", EQ)
-t(x3 + 12, y3 + GH - 12, "장비·연결관계·원본 좌표를 함께 저장", 12.5, False, GR, maxw=w3 - 24)
+t(x3 + 12, y3 + GH - 12, "장비·연결관계·원본 좌표의 통합 저장", 12.5, False, GR, maxw=w3 - 24)
 yq = y3 + GH + 12
 QH = IH - (yq - TOP)
 rect(x3, yq, w3, QH, "none", FILL)
 t(x3 + 12, yq + QH / 2 - 6, "Q.", 14, True, GR); t(x3 + 40, yq + QH / 2 - 6, "P4712와 배관 경로로 연결되는 장비는?", 14, True, INK, maxw=w3 - 52)
 t(x3 + 12, yq + QH / 2 + 22, "A.", 14, True, GR); t(x3 + 40, yq + QH / 2 + 22, ", ".join(tg_names), 14, True, ACC, maxw=w3 - 52)
-t(x3, CAP, "기존 텍스트 LLM 입력으로 사용", 14, True, maxw=w3)
-t(x3, CAP + 22, "질문 관련 연결정보로 입력 한정, 전체의 약 28% 분량", 13.5, False, GR, maxw=w3)
+t(x3, CAP, "텍스트 전용 LLM의 입력 자료로 활용", 14, True, maxw=w3)
+t(x3, CAP + 22, "질문 관련 연결정보만 선별, 전체 분량의 약 28%", 13.5, False, GR, maxw=w3)
 
 # ================= 하단: 기술적 차별점(왼쪽 절반)과 성능(오른쪽 절반) =================
 # 성능 근거: examples/public-documents/README.md(도면별 정답 인접 쌍), examples/llm-qa/README.md(래스터·스캔 개선값),
@@ -185,8 +185,8 @@ hline(L, R, YB, INK, 1.4)
 MID = (L + R) / 2
 out.append(f'<line x1="{MID}" y1="{YB+16}" x2="{MID}" y2="{YB+182}" stroke="{LINE}" stroke-width="1"/>')
 t(L, YB + 32, "기술적 차별점", 16, True)
-cards = [("문자뿐 아니라 연결관계까지 구조화", ["선의 끝점과 분기점을 분석해 장비·계기 간 연결관계를 추출"]),
-         ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG의 선과 문자 좌표를 직접 추출하고 스캔본에는 OCR·영상처리 적용", "별도 생성형 VLM이나 GPU 없이 도면 전처리 가능"])]
+cards = [("문자와 연결관계의 통합 구조화", ["선의 끝점·분기점 분석을 통한 장비·계기 간 연결관계 추출"]),
+         ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG 원본은 선·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용", "생성형 VLM·GPU 없이 도면 전처리 수행"])]
 CWD = MID - L - 28
 cy = YB + 44
 for k, (tt, lines) in enumerate(cards):
@@ -200,8 +200,8 @@ for k, (tt, lines) in enumerate(cards):
 SXL = MID + 28
 t(SXL, YB + 32, "성능", 16, True)
 mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 5개 입력 조건 평균", "(원본 3건, 200 dpi·스캔 변환)"], INK),
-        ("20/21", "삽화–표 행 대응", ["FAA 정비 문서 볼트 표", "21개 행 육안 대조"], INK),
-        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개 가중치 8B · CPU · 동일 {nq}문항"], ACC)]
+        ("20/21", "삽화·표 행 대응", ["FAA 정비 문서 볼트 표", "21개 행 육안 대조"], INK),
+        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개 가중치 8B, CPU, 동일 {nq}문항"], ACC)]
 GW = (R - SXL) / 3
 for k, (big, s1, s2, col) in enumerate(mets):
     gx = SXL + k * GW
@@ -212,11 +212,12 @@ for k, (big, s1, s2, col) in enumerate(mets):
 t(SXL, YB + 184, "평가 자료  공개 P&ID, FAA 정비 문서, 합성 기술문서(동일 원본의 입력 형식 변형 포함)", 12, False, GR, maxw=R - SXL)
 
 BY = YB + 200
-rect(L, BY, R - L, 42, "none", INK)
-band = "기존 PDF·SVG 활용   ·   CPU 기반 도면 전처리   ·   기존 텍스트 LLM 연계   ·   폐쇄망 적용 가능한 구성"
-t((L + R) / 2, BY + 28, band, 17, True, "#FFFFFF", "middle", maxw=R - L - 20)
-t(L, BY + 64, "예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&ID  ·  연결 정답은 원본 설계 파일 기준", 12, False, GR, maxw=R - L)
-if BY + 64 > H - 8: sys.exit(f"세로 초과 {BY + 64}")
+rect(L, BY, R - L, 50, "none", INK)
+# 로컬 실행 근거: 전처리·OCR·LLM(공개 가중치) 모두 CPU 1대에서 실행, 외부 API 호출 없음
+band = "PDF·SVG 원본 직접 활용   ·   CPU 단독 처리   ·   텍스트 전용 LLM으로 도면 질의응답   ·   외부 서버 전송 없는 로컬 실행"
+t((L + R) / 2, BY + 33, band, 20, True, "#FFFFFF", "middle", maxw=R - L - 20)
+t(L, BY + 70, "예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&ID  ·  연결 정답은 원본 설계 파일 기준", 12, False, GR, maxw=R - L)
+if BY + 70 > H - 8: sys.exit(f"세로 초과 {BY + 70}")
 
 svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">
 <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="context-stroke"/></marker></defs>
@@ -225,4 +226,4 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
 </svg>"""
 open(os.path.join(HERE, '1장-도면-관계-구조화.svg'), 'w', encoding='utf-8').write(svg)
 open(os.path.join(HERE, '1장-도면-관계-구조화.html'), 'w', encoding='utf-8').write(f'<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0">{svg}</body></html>')
-print("ok", BY + 64, tg_names, round(100*sum(recall)/len(recall),2), round(qa_ocr,1), round(qa_full,1), nq)
+print("ok", BY + 70, tg_names, round(100*sum(recall)/len(recall),2), round(qa_ocr,1), round(qa_full,1), nq)

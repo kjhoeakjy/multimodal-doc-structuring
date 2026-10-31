@@ -18,7 +18,7 @@ EXAMPLES = [
     ('faa-text-page.png', '2단 본문 쪽', 'FAA AC 43.13-1B 본문, 스캔'),
     ('en-report-synthetic-vector.pdf', '글자 층 PDF 보고서', '합성 보고서, PDF 글자 층'),
     ('ko-table-text-scan200.jpg', '한글 표·본문 스캔', '합성 한글 문서, 200 dpi 스캔'),
-    ('photo-rocket-launch.jpg', '사진', '공개 사진'),
+    ('photo-rocket-launch.jpg', '사진', '공개 사진(scikit-image 예제 데이터)'),
 ]
 MAX_ROWS = 5        # 표마다 재생하는 행 수 상한
 MAX_SUB = 40        # 요소에 붙는 부속 상자 상한
@@ -119,7 +119,7 @@ def build(name, kind_name, source, folder):
     core = [n for n in nodes if n['role'] in ('equipment', 'instrument', 'symbol', 'note')]
 
     # 1. 요소 추출
-    stage('요소 추출', '문자, 선·도형·기호, 표 칸을 좌표와 함께 뽑음. 요소마다 원본 좌표가 남음')
+    stage('요소 추출', '문자, 선·도형·기호, 표 칸을 좌표와 함께 추출. 요소별 원본 좌표 보존')
     ext = []
     def act(kind_, line, **kw):   # 1단계에서는 sweep을 모아 한 동작으로 묶음
         if kind_ == 'sweep':
@@ -156,7 +156,7 @@ def build(name, kind_name, source, folder):
     acts.append(dict(kind='extract', groups=ext, lines=[detect_line] + [g['line'] for g in ext]))
 
     # 2. 관계 복원: 종류가 같은 요소는 한 번에 강조하고 줄도 한 번에 추가
-    stage('관계 복원', '문자를 거리·방향이 가장 가까운 요소에 붙여 이름을 정하고, 선의 양 끝이 닿는 요소로 연결을 확인함. 요소와 연결마다 텍스트 한 줄')
+    stage('관계 복원', '거리·방향 기준 최근접 요소에 문자를 할당해 명칭 결정. 선의 양 끝 접점 요소로 연결관계 확인. 요소·연결별 텍스트 1줄 생성')
     def batch(label, items, header=None):
         """같은 종류의 요소 묶음 하나. items: dict(kind, line, box|pts|boxes, cls, sub, ends)"""
         if items:
@@ -248,7 +248,7 @@ def build(name, kind_name, source, folder):
 
     # 3. 직렬화
     serial = R.get('serial', [])
-    stage('직렬화', '오른쪽 텍스트 전체가 텍스트 LLM 프롬프트에 문서로 들어감. 질문은 이 텍스트만 근거로 답함')
+    stage('직렬화', '오른쪽 텍스트 전체를 텍스트 LLM 프롬프트의 문서로 입력. 답변 근거는 이 텍스트로 한정')
     q, a = '', ''
     link = S.sections.get(S.head('장비 간'), [])
     if kind in ('vector', 'drawing') and link:

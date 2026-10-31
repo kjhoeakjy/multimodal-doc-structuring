@@ -83,7 +83,7 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.15fr) min
   </section>
 </main>
 <div class="rail" id="rail"></div>
-<div class="foot">같은 종류의 요소를 한 번에 강조하고, 요소마다 텍스트 한 줄을 오른쪽에 더함. 오른쪽 텍스트가 텍스트 LLM의 입력. 표본 처리 결과에서 생성.</div>
+<div class="foot">동일 유형 요소의 일괄 강조 및 요소별 텍스트 1줄 추가. 오른쪽 텍스트는 텍스트 LLM의 입력 자료. 표본 처리 결과 기반.</div>
 <script>
 const DATA=/*__DATA__*/[];
 const NS='http://www.w3.org/2000/svg';
@@ -210,7 +210,7 @@ async function play(a,my){
     const card=document.createElement('div');card.className='prompt';
     card.innerHTML=`<h3>텍스트 LLM 프롬프트</h3>
       <div class="blk"><b>문서 (직렬화 텍스트 ${a.nlines}줄, ${a.nchars.toLocaleString()}자 전체)</b><pre>${a.head.map(esc).join('\n')}\n…</pre></div>
-      ${a.q?`<div class="blk"><b>질문</b><pre>${esc(a.q)}</pre></div><div class="blk"><b>답 (텍스트 안의 줄에서 찾음)</b><pre class="ans">${esc(a.a)}</pre></div>`:''}`;
+      ${a.q?`<div class="blk"><b>질문</b><pre>${esc(a.q)}</pre></div><div class="blk"><b>답 (텍스트 내 근거 줄)</b><pre class="ans">${esc(a.a)}</pre></div>`:''}`;
     $('.stage').appendChild(card);
     await sleep(6000);return;
   }
