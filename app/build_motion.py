@@ -120,7 +120,13 @@ def build(name, kind_name, source, folder):
 
     # 1. 요소 추출
     stage('요소 추출', '문자, 선·도형·기호, 표 칸을 좌표와 함께 뽑음. 요소마다 원본 좌표가 남음')
-    act('text', f"판별 {kind_ko} · 근거 {det.get('reason', '')}" + (f" · {R.get('dpi')} dpi" if R.get('dpi') else ''))
+    ext = []
+    def act(kind_, line, **kw):   # 1단계에서는 sweep을 모아 한 동작으로 묶음
+        if kind_ == 'sweep':
+            ext.append(dict(line=line, **kw))
+        else:
+            a = dict(kind=kind_, line=line); a.update(kw); acts.append(a)
+    detect_line = f"판별 {kind_ko} · 근거 {det.get('reason', '')}" + (f" · {R.get('dpi')} dpi" if R.get('dpi') else '')
     if pool:
         act('sweep', text_line, items=[b for _, b in pool], cls='text')
     if kind in ('vector', 'drawing'):
@@ -146,6 +152,8 @@ def build(name, kind_name, source, folder):
             act('sweep', f"{ncol}단, 문자 줄 묶음 {len(R['paragraphs'])}개", items=[[int(v) for v in p['box']] for p in R['paragraphs']], cls='shape')
     else:
         act('sweep', f"사진 {vw}×{vh} px, 구조 추출 없음", items=[[0, 0, vw, vh]], cls='part')
+
+    acts.append(dict(kind='extract', groups=ext, lines=[detect_line] + [g['line'] for g in ext]))
 
     # 2. 관계 복원: 종류가 같은 요소는 한 번에 강조하고 줄도 한 번에 추가
     stage('관계 복원', '문자를 거리·방향이 가장 가까운 요소에 붙여 이름을 정하고, 선의 양 끝이 닿는 요소로 연결을 확인함. 요소와 연결마다 텍스트 한 줄')
@@ -240,8 +248,22 @@ def build(name, kind_name, source, folder):
 
     # 3. 직렬화
     serial = R.get('serial', [])
-    stage('직렬화', '좌표가 붙은 텍스트. 이 텍스트가 텍스트 LLM의 입력')
-    act('final', f"전체 {len(serial)}줄, {sum(len(l) for l in serial):,}자")
+    stage('직렬화', '오른쪽 텍스트 전체가 텍스트 LLM 프롬프트에 문서로 들어감. 질문은 이 텍스트만 근거로 답함')
+    q, a = '', ''
+    link = S.sections.get(S.head('장비 간'), [])
+    if kind in ('vector', 'drawing') and link:
+        src, dst = link[0].split('→', 1)
+        q, a = f"{src.strip()}와 배관으로 연결된 장비는?", dst.strip()
+    elif tables and len(tables[0]['rows']) > 1 and len(tables[0]['rows'][0]) > 1:
+        hdr, row = tables[0]['rows'][0], tables[0]['rows'][1]
+        q, a = f"{hdr[0]}이(가) {row[0]}인 행의 {hdr[1]}은?", row[1]
+    elif R.get('paragraphs'):
+        q, a = '본문 첫 문단의 내용은?', R['paragraphs'][0]['text'][:60]
+    elif kind == 'illustration' and R.get('leaders'):
+        q, a = 'part0에 지시선이 닿는 주기는?', ', '.join(f"c{l['callout']}" for l in R['leaders'])
+    elif kind == 'photo':
+        q, a = '사진의 크기는?', f"{vw}×{vh} px"
+    acts.append(dict(kind='final', nlines=len(serial), nchars=sum(len(l) for l in serial), head=serial[:7], q=q, a=a))
 
     serial = R.get('serial', [])
     total_t = times.get('total', sum(v for kk, v in times.items() if isinstance(v, (int, float))))
