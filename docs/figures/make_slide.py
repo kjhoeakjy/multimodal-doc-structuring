@@ -217,7 +217,7 @@ for k, (tt, lines) in enumerate(cards):
 SXL = MID + 30
 t(SXL, YB + 34, "성능", 17, True)
 mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 5개 입력 조건 평균", "원본 3건, 200 dpi·스캔 변환 2건"], INK),
-        (f"{100*sum(label)/len(label):.1f}%", "태그·요소 연결 정확도", ["공개 P&ID 5개 입력 조건 평균", f"태그 {label_n}개, 원본 설계 파일 기준"], INK),
+        (f"{100*sum(label)/len(label):.1f}%", "기호·명칭 대응 정확도", ["도면 기호마다 붙은 명칭(예: P4712)의", f"정답 일치 비율, 명칭 {label_n}건"], INK),
         (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개·합성 문서 {ndoc}건"], ACC)]
 GW = (R - SXL) / 3
 for k, (big, s1, s2, col) in enumerate(mets):
