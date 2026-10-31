@@ -102,7 +102,8 @@ def crop(x, y, w, h, body, fill="#FFFFFF"):
 # ================= 상단 =================
 L, R = 56, 1544
 t(L, 64, "제조·항공 기술도면의 연결관계 구조화 및 텍스트 LLM 활용", 32, True, maxw=1180)
-t(L, 104, "기존 OCR은 문자와 기호를 추출하지만, 선으로 표현된 장비 간 연결·참조 관계는 보존하기 어려움", 16, False, GR, maxw=1180)
+t(L, 104, "문제 제기:", 16, True, ACC)
+t(L + 86, 104, "기존 OCR은 문자와 기호를 추출하지만, 선으로 표현된 장비 간 연결·참조 관계는 보존하기 어려움", 16, False, GR, maxw=1100)
 import re as _re
 _q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='utf-8').read()
 _d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
@@ -162,7 +163,7 @@ t(x3, CAP + 22, "질문 관련 부분 그래프 입력, 전체 대비 길이 28%
 # ================= 하단: 차별점과 검증 =================
 YB = TOP + IH + 72
 hline(L, R, YB, INK, 1.4)
-CW = 452; CG = 20
+CW = 408; CG = 18
 cards = [("관계정보 복원", "02 단계", ["문자뿐 아니라 선·접점을 분석해", "장비 간 연결관계를 그래프로 구성"]),
          ("별도 VLM·GPU 없는 전처리", "01–02 단계", ["벡터 원본을 직접 활용하고", "스캔 도면에만 OCR·영상처리 적용"])]
 for k, (tt, tag, lines) in enumerate(cards):
@@ -173,13 +174,14 @@ for k, (tt, tag, lines) in enumerate(cards):
     t(cx + CW - 16, YB + 54, tag, 12.5, False, ACC, "end")
     for j, ln in enumerate(lines):
         t(cx + 20, YB + 86 + j * 24, ln, 14, False, GR, maxw=CW - 36)
-SX = L + 2 * CW + CG + 44
+SX = L + 2 * CW + CG + 38
 def stat(x, big, s1, s2, col):
-    t(x, YB + 70, big, 42, True, col)
+    t(x, YB + 70, big, 38, True, col)
     t(x, YB + 98, s1, 14.5, True, maxw=R - x)
     t(x, YB + 120, s2, 13, False, GR, maxw=R - x)
 stat(SX, "27 / 27", "정답 연결관계 복원", "공개 벡터 P&ID 도면 1건", ACC)
-stat(SX + 250, "+19.6%p", "LLM 질의응답 정답률", "OCR 39.2% → 구조화 58.8%", INK)
+stat(SX + 196, "88.4%", "도면 질의응답 정답률", "벡터 도면 43문항, OCR 약 16%", INK)
+stat(SX + 400, "+19.6%p", "전체 질의응답 정답률", "OCR 39.2% → 구조화 58.8%", INK)
 t(SX, YB + 146, "공개·합성 자료 15건, 240문항, 동일 LLM 비교(개발 평가)", 12.5, False, GR, maxw=R - SX)
 
 BY = YB + 160
