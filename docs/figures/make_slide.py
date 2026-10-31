@@ -107,7 +107,7 @@ L, R = 56, 1544
 t(L, 34, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 14, False, GR, maxw=R - L)
 t(L, 78, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 32, True, maxw=R - L)
 t(L, 116, "문제", 16, True, ACC)
-t(L + 48, 116, "기존 OCR의 텍스트 변환 결과에 선으로 표시된 장비 간 연결관계 누락", 16, False, INK, maxw=R - L - 48)
+t(L + 48, 116, "기존 OCR의 텍스트 변환 결과에 직선으로 표시된 장비 간 연결관계 누락", 16, False, INK, maxw=R - L - 48)
 import re as _re
 _q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='utf-8').read()
 _d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
@@ -139,7 +139,7 @@ xx = PX[1]
 for c, nm_ in leg:
     out.append(f'<rect x="{xx}" y="{CAP-11}" width="11" height="11" fill="{c}"/>'); t(xx + 15, CAP, nm_, 13); xx += 15 + width(nm_, 13) * 1.07 + 10
 if xx - 10 > PX[1] + PWS[1]: sys.exit("범례 폭 초과")
-t(PX[1], CAP + 22, "선분 끝점과 접속점, 장비 위치 기준의 연결관계 판별", 13.5, False, GR, maxw=PWS[1])
+t(PX[1], CAP + 22, "직선 끝점과 접속점, 장비 위치 기준의 연결관계 판별", 13.5, False, GR, maxw=PWS[1])
 
 # 03: OCR 텍스트와 관계정보 구조화 결과(실제 직렬화 텍스트 일부), 자연어 질문과 실제 LLM 응답
 x3, w3 = PX[2], PWS[2]
@@ -196,8 +196,8 @@ CWD = 600
 MID = L + CWD + 30
 out.append(f'<line x1="{MID}" y1="{YB+16}" x2="{MID}" y2="{YB+204}" stroke="{LINE}" stroke-width="1"/>')
 t(L, YB + 34, "기술적 차별점", 17, True)
-cards = [("문자와 연결관계의 통합 구조화", ["선분 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출"]),
-         ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG 원본은 선·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용", "VLM·GPU 없이 도면 전처리 수행"])]
+cards = [("문자와 연결관계의 통합 구조화", ["직선 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출"]),
+         ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG 원본은 직선·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용", "VLM·GPU 없이 도면 전처리 수행"])]
 cy = YB + 48
 for k, (tt, lines) in enumerate(cards):
     hh = 38 + 25 * len(lines)
