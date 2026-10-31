@@ -28,7 +28,7 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.15fr) min
 .col+.col{border-left:1px solid var(--line)}
 .stage{border:1px solid var(--line);background:#fff;flex:1;min-height:0;position:relative}
 .stage svg{display:block;width:100%;height:100%}
-.stage image{transition:opacity .6s}
+.stage image{}
 .cap{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-top:8px}
 .cap b{color:var(--ink);font-weight:500}
 .head{display:flex;align-items:baseline;gap:12px}
@@ -36,10 +36,10 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.15fr) min
 .head h2{font-size:17px;font-weight:600;margin:0;letter-spacing:-.02em}
 .desc{font-size:12.5px;color:var(--mute);margin:4px 0 8px}
 .bar{height:2px;background:var(--line);margin:0 0 12px;position:relative}
-.bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--ink);transition:width .3s}
-.out{flex:1;min-height:0;font-family:var(--mono);font-size:11.5px;line-height:1.5;background:var(--soft);padding:12px 14px;overflow:auto;white-space:pre-wrap;word-break:break-all;border:1px solid transparent;transition:border-color .4s}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--ink)}
+.out{flex:1;min-height:0;font-family:var(--mono);font-size:11.5px;line-height:1.5;background:var(--soft);padding:12px 14px;overflow:auto;white-space:pre-wrap;word-break:break-all;border:1px solid transparent}
 .out.llm{border-color:var(--ink)}
-.out .ln{opacity:0;transition:opacity .25s}
+.out .ln{opacity:0}
 .out .ln.on{opacity:1}
 .out .hd{color:var(--acc);font-weight:600;margin-top:8px}
 .out .hd:first-child{margin-top:0}
@@ -53,18 +53,13 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.15fr) min
 .rail .st.on{border-color:var(--ink);color:var(--bg);background:var(--ink)}
 .rail .st.done{color:var(--ink)}
 .rail .st em{font-style:normal;font-family:var(--mono);font-size:10.5px;margin-right:5px;opacity:.7}
-.prompt{position:absolute;left:8%;right:8%;top:10%;background:var(--bg);border:1px solid var(--ink);padding:18px 20px;font-size:12.5px;line-height:1.55;opacity:0;transition:opacity .5s;box-shadow:0 8px 30px rgba(0,0,0,.08)}
-.prompt.on{opacity:1}
+.prompt{position:absolute;left:8%;right:8%;top:10%;background:var(--bg);border:1px solid var(--ink);padding:18px 20px;font-size:12.5px;line-height:1.55;box-shadow:0 8px 30px rgba(0,0,0,.08)}
 .prompt h3{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.02em}
 .prompt .blk{border-top:1px solid var(--line);padding:8px 0}
 .prompt .blk b{display:block;font-size:11px;color:var(--mute);font-weight:500;margin-bottom:3px}
 .prompt pre{margin:0;font-family:var(--mono);font-size:11px;line-height:1.5;white-space:pre-wrap;word-break:break-all;color:var(--ink)}
 .prompt .ans{color:var(--acc);font-weight:600}
 .foot{padding:8px 24px;border-top:1px solid var(--line);font-size:11.5px;color:var(--mute)}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes pop{from{opacity:0}to{opacity:1}}
-.hi>rect,.hi>polyline{animation:pop .25s both}
-.hi polyline.dr{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .5s forwards ease-out}
 @media (max-width:980px){html,body{height:auto;overflow:auto}main{grid-template-columns:1fr}.col+.col{border-left:0;border-top:1px solid var(--line)}.stage svg{height:auto;max-height:60vh}.out{min-height:40vh}}
 </style>
 </head>
@@ -141,7 +136,7 @@ function markItem(it,g,strong){
     if(strong&&it.sub){it.sub.forEach(s=>el('rect',{x:s.box[0],y:s.box[1],width:Math.max(1,s.box[2]-s.box[0]),height:Math.max(1,s.box[3]-s.box[1]),fill:TXT+'33',stroke:TXT,'stroke-width':1.1*base},g));}
   }else if(it.kind==='poly'){
     const p=el('polyline',{points:it.pts.map(q=>q.join(',')).join(' '),fill:'none',stroke:c,'stroke-width':(strong?3:1.8)*base,'stroke-linecap':'round','stroke-linejoin':'round','stroke-dasharray':it.cls==='signal'&&!strong?`${5*base} ${3*base}`:''},g);
-    if(strong){p.setAttribute('pathLength','1');p.setAttribute('class','dr');
+    if(strong){
       (it.ends||[]).forEach(b=>el('rect',{x:b[0],y:b[1],width:b[2]-b[0],height:b[3]-b[1],fill:'none',stroke:ACC,'stroke-width':1.3*base,'stroke-dasharray':`${3*base} ${2*base}`},g));
       (it.sub||[]).forEach(s=>el('rect',{x:s.box[0],y:s.box[1],width:Math.max(1,s.box[2]-s.box[0]),height:Math.max(1,s.box[3]-s.box[1]),fill:TXT+'33',stroke:TXT,'stroke-width':1.1*base},g));}
   }
@@ -198,17 +193,17 @@ async function loop(){
     if(a.kind==='stage'||ex.acts[ai]&&ex.acts[ai].kind==='stage')rail();
   }
   if(my!==run)return;
-  if(playing&&ai>=ex.acts.length){await sleep(3500);if(my===run&&playing)load((ei+1)%DATA.length,0);}
+  if(playing&&ai>=ex.acts.length){await sleep(1500);if(my===run&&playing)load((ei+1)%DATA.length,0);}
 }
 async function reveal(texts,my,hold){
-  const out=$('#out'),ds=texts.map(t=>addLine(t,false));
-  const stag=Math.min(60,1200/Math.max(1,ds.length));
-  for(let i=0;i<ds.length;i++){if(my!==run)return;ds[i].classList.add('on');out.scrollTop=Math.max(0,ds[i].offsetTop+ds[i].offsetHeight-out.clientHeight+14);await sleep(stag);}
+  const out=$('#out'),ds=texts.map(t=>addLine(t,true));
+  if(ds.length){const first=ds[0],last=ds[ds.length-1],h=last.offsetTop+last.offsetHeight-first.offsetTop;
+    out.scrollTop=h>out.clientHeight-20?Math.max(0,first.offsetTop-12):Math.max(0,last.offsetTop+last.offsetHeight-out.clientHeight+14);}
   await sleep(hold);
 }
 async function play(a,my){
   const out=$('#out'),hi=$('#hi');
-  if(a.kind==='stage'){rail();setHead();await sleep(1100);return;}
+  if(a.kind==='stage'){rail();setHead();await sleep(700);return;}
   if(a.kind==='final'){
     out.classList.add('llm');out.scrollTop=0;
     const img=$('#svg image');img.style.opacity=.15;
@@ -216,31 +211,24 @@ async function play(a,my){
     card.innerHTML=`<h3>텍스트 LLM 프롬프트</h3>
       <div class="blk"><b>문서 (직렬화 텍스트 ${a.nlines}줄, ${a.nchars.toLocaleString()}자 전체)</b><pre>${a.head.map(esc).join('\n')}\n…</pre></div>
       ${a.q?`<div class="blk"><b>질문</b><pre>${esc(a.q)}</pre></div><div class="blk"><b>답 (텍스트 안의 줄에서 찾음)</b><pre class="ans">${esc(a.a)}</pre></div>`:''}`;
-    $('.stage').appendChild(card);await sleep(50);card.classList.add('on');
-    await sleep(1200);if(my!==run)return;
-    const t0=performance.now(),dur=Math.max(1500,Math.min(5000,out.scrollHeight*2.5)),top=out.scrollHeight-out.clientHeight;
-    await new Promise(res=>{const f=(t)=>{if(my!==run)return res();const u=Math.min(1,(t-t0)/dur);out.scrollTop=top*u;if(u<1)requestAnimationFrame(f);else res();};requestAnimationFrame(f);});
-    await sleep(2500);return;
+    $('.stage').appendChild(card);
+    await sleep(6000);return;
   }
   if(a.kind==='extract'){
-    const gs=a.groups.map((g,i)=>{const hs=markSweep(g,hi,true);hs.forEach((r,j)=>{r.style.animationDelay=(i*350+Math.min(12,700/hs.length)*j)+'ms';});return hs;});
-    await sleep(Math.min(2400,a.groups.length*350+500));if(my!==run)return;
-    await reveal(a.lines,my,1800);if(my!==run)return;
+    a.groups.forEach(g=>markSweep(g,hi,true));
+    await reveal(a.lines,my,3500);if(my!==run)return;
     settle(a);return;
   }
-  if(a.kind==='text'){await reveal([a.line],my,1200);return;}
+  if(a.kind==='text'){await reveal([a.line],my,1500);return;}
   hi.innerHTML='';
   if(a.kind==='sweep'){
-    const hs=markSweep(a,hi,true),dly=Math.min(25,1500/Math.max(1,hs.length));
-    hs.forEach((r,i)=>{r.style.animationDelay=(i*dly)+'ms';});
-    await sleep(Math.min(1700,hs.length*dly+300));if(my!==run)return;
-    await reveal([a.line],my,900);if(my!==run)return;
+    markSweep(a,hi,true);
+    await reveal([a.line],my,1500);if(my!==run)return;
     settle(a);return;
   }
   if(a.kind==='batch'){
-    a.items.forEach((it,i)=>{const g=el('g',{},hi);markItem(it,g,true);g.style.animationDelay=Math.min(40,800/a.items.length)*i+'ms';g.style.animation='pop .25s both';});
-    await sleep(Math.min(1100,a.items.length*40+400));if(my!==run)return;
-    await reveal(linesOf(a),my,Math.min(2600,900+a.items.length*90));if(my!==run)return;
+    a.items.forEach(it=>markItem(it,hi,true));
+    await reveal(linesOf(a),my,Math.min(6000,1800+a.items.length*120));if(my!==run)return;
     settle(a);
   }
 }
