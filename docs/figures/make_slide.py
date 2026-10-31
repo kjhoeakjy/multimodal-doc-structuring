@@ -114,7 +114,7 @@ _d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+
 QS = 104
 out.append(f'<svg x="{R - QS}" y="22" width="{QS}" height="{QS}" viewBox="-2 -2 {_n + 4} {_n + 4}"><rect x="-2" y="-2" width="{_n + 4}" height="{_n + 4}" fill="#FFFFFF"/><path d="{_d}" stroke="#000000" stroke-width="1" fill="none" shape-rendering="crispEdges"/></svg>')
 t(R - QS - 14, 66, "처리 과정 시뮬레이션", 14, True, INK, "end")
-t(R - QS - 14, 88, "문서 유형별 처리 예시 8건", 13, False, GR, "end")
+t(R - QS - 14, 88, "문서 유형별 예시 8건", 13, False, GR, "end")
 hline(L, R, 138, INK, 1.4)
 
 # ================= 중단: 실제 도면 처리 과정 =================
