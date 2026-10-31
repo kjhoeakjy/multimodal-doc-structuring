@@ -39,7 +39,6 @@ main{flex:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(400px,1fr)
 .out{flex:1;font-family:var(--mono);font-size:11.5px;line-height:1.55;background:var(--soft);padding:12px 14px;overflow:auto;height:56vh;min-height:240px;white-space:pre-wrap;word-break:break-all}
 .out .ln{opacity:0;transition:opacity .25s}
 .out .ln.on{opacity:1}
-.out .ln.now{background:#fff;outline:1px solid var(--acc)}
 .out .hd{color:var(--acc);font-weight:600;margin-top:8px}
 .out .hd:first-child{margin-top:0}
 .out .t0{font-weight:600}
@@ -53,13 +52,9 @@ main{flex:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(400px,1fr)
 .rail .st.done{color:var(--ink)}
 .rail .st em{font-style:normal;font-family:var(--mono);font-size:10.5px;margin-right:5px;opacity:.7}
 .foot{padding:10px 24px;border-top:1px solid var(--line);font-size:11.5px;color:var(--mute)}
-#fly{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;z-index:9}
-#fly .cl{position:fixed;left:0;top:0;transform-origin:0 0;background-repeat:no-repeat;outline:1.5px solid var(--acc);box-shadow:0 2px 10px rgba(0,0,0,.18);background-color:#fff}
-#fly .cl svg{display:block;width:100%;height:100%}
-#fly .w{position:fixed;left:0;top:0;transform-origin:0 0;background-repeat:no-repeat;outline:1px solid var(--txt);background-color:#fff}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes pop{from{opacity:0}to{opacity:1}}
-.hi rect,.hi polyline,.hi circle{animation:pop .25s both}
+.hi>rect,.hi>polyline{animation:pop .25s both}
 .hi polyline.dr{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .5s forwards ease-out}
 @media (max-width:980px){main{grid-template-columns:1fr}.col+.col{border-left:0;border-top:1px solid var(--line)}.out{height:40vh}}
 </style>
@@ -84,8 +79,7 @@ main{flex:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(400px,1fr)
   </section>
 </main>
 <div class="rail" id="rail"></div>
-<div class="foot">그림의 요소 하나가 문자 귀속을 거쳐 텍스트 한 줄이 되는 순서를 재생함. 오른쪽 텍스트가 텍스트 LLM의 입력. 표본 처리 결과에서 생성.</div>
-<div id="fly"></div>
+<div class="foot">같은 종류의 요소를 한 번에 강조하고, 요소마다 텍스트 한 줄을 오른쪽에 더함. 오른쪽 텍스트가 텍스트 LLM의 입력. 표본 처리 결과에서 생성.</div>
 <script>
 const DATA=/*__DATA__*/[];
 const NS='http://www.w3.org/2000/svg';
@@ -96,7 +90,6 @@ const ACC='#1f4fd8',TXT='#5aa9e6';
 let ei=0,ai=0,playing=true,run=0,ex=null,stages=[];
 const sleep=(ms)=>new Promise(r=>setTimeout(r,ms));
 function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
-function col(a){return RC[a.cls]||ACC;}
 
 /* 화면 구성 */
 function tabs(){
@@ -119,107 +112,57 @@ function jump(d){
   if(c<0){load((ei-1+DATA.length)%DATA.length,0);return;}
   load(ei,stages[c]);
 }
-
-/* 좌표 */
-function geo(){
-  const svg=$('#svg'),r=svg.getBoundingClientRect();
-  const s=Math.min(r.width/ex.w,r.height/ex.h);
-  return {s,ox:r.left+(r.width-ex.w*s)/2,oy:r.top+(r.height-ex.h*s)/2};
-}
-function grow(b,minS){const w=b[2]-b[0],h=b[3]-b[1];if(w>=minS&&h>=minS)return b;const cx=(b[0]+b[2])/2,cy=(b[1]+b[3])/2,W=Math.max(w,minS),H=Math.max(h,minS);return [cx-W/2,cy-H/2,cx+W/2,cy+H/2];}
-function bboxOf(pts,padv){let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;for(const [x,y] of pts){x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y);}return [x0-padv,y0-padv,x1+padv,y1+padv];}
-
-/* 그림 위 표시 */
-function mark(a,g,strong){
-  const base=Math.max(ex.w,ex.h)/800,c=strong?ACC:col(a),sw=(strong?2.6:1.1)*base;
-  if(a.kind==='box'||a.kind==='group'){
-    const boxes=a.kind==='group'?a.boxes:[a.box];
-    return boxes.map(bb=>{const b=strong?grow(bb,14*base):bb;return el('rect',{x:b[0],y:b[1],width:Math.max(1,b[2]-b[0]),height:Math.max(1,b[3]-b[1]),fill:strong?c+'14':'none',stroke:c,'stroke-width':sw,'stroke-dasharray':a.cls==='paragraph'?`${5*base} ${3*base}`:''},g);});
-  }
-  if(a.kind==='poly'){
-    const p=el('polyline',{points:a.pts.map(q=>q.join(',')).join(' '),fill:'none',stroke:c,'stroke-width':(strong?3:1.8)*base,'stroke-linecap':'round','stroke-linejoin':'round','stroke-dasharray':a.cls==='signal'&&!strong?`${5*base} ${3*base}`:''},g);
-    if(strong){p.setAttribute('pathLength','1');p.setAttribute('class','dr');}
-    return [p];
-  }
-  if(a.kind==='dot'){return [el('circle',{cx:a.pt[0],cy:a.pt[1],r:(strong?4.5:3)*base,fill:strong?ACC:'#e3a008'},g)];}
-  if(a.kind==='sweep'){const sc={text:TXT,shape:ACC,line:'#1b8a3a',table:'#8a8f98',part:'#e07a1f'}[a.cls]||ACC,o=strong?1:.4;
-    return (a.items||[]).map(b=>el('rect',{x:b[0],y:b[1],width:Math.max(1,b[2]-b[0]),height:Math.max(1,b[3]-b[1]),fill:'none',stroke:sc,'stroke-width':(a.cls==='text'?.8:1.3)*base,opacity:o},g))
-      .concat((a.lines||[]).map(pts=>el('polyline',{points:pts.map(q=>q.join(',')).join(' '),fill:'none',stroke:sc,'stroke-width':1.6*base,'stroke-linecap':'round',opacity:o},g)));}
-  return [];
-}
-function subMarks(a,g){
-  const base=Math.max(ex.w,ex.h)/800;
-  return (a.sub||[]).map(s=>el('rect',{x:s.box[0],y:s.box[1],width:Math.max(1,s.box[2]-s.box[0]),height:Math.max(1,s.box[3]-s.box[1]),fill:TXT+'22',stroke:TXT,'stroke-width':1.2*base},g));
-}
-
-/* 오른쪽 텍스트 */
-function addLine(a,on){
-  const out=$('#out'),d=document.createElement('div');
-  d.className=a.line.startsWith('#')?'hd ln':'ln';
-  d.textContent=a.line;
-  if(on)d.classList.add('on');
-  out.appendChild(d);
-  return d;
-}
-
-/* 날아가는 조각 */
-function cloneBox(b,g){
-  const d=document.createElement('div');d.className='cl';
-  const w=(b[2]-b[0])*g.s,h=(b[3]-b[1])*g.s;
-  d.style.width=w+'px';d.style.height=h+'px';
-  d.style.backgroundImage=`url(${ex.img})`;d.style.backgroundSize=`${ex.w*g.s}px ${ex.h*g.s}px`;d.style.backgroundPosition=`-${b[0]*g.s}px -${b[1]*g.s}px`;
-  d.style.transform=`translate(${g.ox+b[0]*g.s}px,${g.oy+b[1]*g.s}px)`;
-  $('#fly').appendChild(d);return d;
-}
-function clonePoly(a,g){
-  const b=bboxOf(a.pts,Math.max(ex.w,ex.h)/160);
-  const d=document.createElement('div');d.className='cl';d.style.outline='none';d.style.boxShadow='none';d.style.backgroundColor='transparent';
-  const w=(b[2]-b[0])*g.s,h=(b[3]-b[1])*g.s;
-  d.style.width=w+'px';d.style.height=h+'px';
-  d.style.transform=`translate(${g.ox+b[0]*g.s}px,${g.oy+b[1]*g.s}px)`;
-  const svg=el('svg',{viewBox:`${b[0]} ${b[1]} ${b[2]-b[0]} ${b[3]-b[1]}`,preserveAspectRatio:'none'});
-  el('polyline',{points:a.pts.map(q=>q.join(',')).join(' '),fill:'none',stroke:ACC,'stroke-width':Math.max(ex.w,ex.h)/300,'stroke-linecap':'round','stroke-linejoin':'round'},svg);
-  d.appendChild(svg);$('#fly').appendChild(d);return [d,b];
-}
-function flyTo(d,fromBox,g,target,ms){
-  const r=target.getBoundingClientRect();
-  const w=(fromBox[2]-fromBox[0])*g.s,h=(fromBox[3]-fromBox[1])*g.s;
-  const tw=Math.min(r.width,260),th=Math.max(14,Math.min(r.height,18));
-  const x0=g.ox+fromBox[0]*g.s,y0=g.oy+fromBox[1]*g.s,m=Math.min(6,Math.max(1,72/Math.max(w,h)));
-  const an=d.animate([
-    {transform:`translate(${x0}px,${y0}px) scale(1,1)`,opacity:1,easing:'ease-out'},
-    {transform:`translate(${x0+w/2-w*m/2}px,${y0+h/2-h*m/2}px) scale(${m},${m})`,opacity:1,offset:.38,easing:'cubic-bezier(.4,0,.2,1)'},
-    {transform:`translate(${r.left}px,${r.top}px) scale(${tw/w},${th/h})`,opacity:.25}
-  ],{duration:ms,fill:'forwards'});
-  return an.finished.then(()=>d.remove()).catch(()=>d.remove());
-}
-function flyWord(s,toBox,g,ms,delay){
-  const b=s.box,d=document.createElement('div');d.className='w';
-  const w=Math.max(2,(b[2]-b[0])*g.s),h=Math.max(2,(b[3]-b[1])*g.s);
-  d.style.width=w+'px';d.style.height=h+'px';
-  d.style.backgroundImage=`url(${ex.img})`;d.style.backgroundSize=`${ex.w*g.s}px ${ex.h*g.s}px`;d.style.backgroundPosition=`-${b[0]*g.s}px -${b[1]*g.s}px`;
-  const cx=g.ox+(toBox[0]+toBox[2])/2*g.s,cy=g.oy+(toBox[1]+toBox[3])/2*g.s;
-  d.style.transform=`translate(${g.ox+b[0]*g.s}px,${g.oy+b[1]*g.s}px)`;d.style.opacity=0;
-  $('#fly').appendChild(d);
-  const an=d.animate([
-    {transform:`translate(${g.ox+b[0]*g.s}px,${g.oy+b[1]*g.s}px) scale(1)`,opacity:0},
-    {transform:`translate(${g.ox+b[0]*g.s}px,${g.oy+b[1]*g.s}px) scale(1)`,opacity:1,offset:.15},
-    {transform:`translate(${cx-w*.2}px,${cy-h*.2}px) scale(.4)`,opacity:0}
-  ],{duration:ms,delay,easing:'cubic-bezier(.4,0,.2,1)',fill:'forwards'});
-  return an.finished.then(()=>d.remove()).catch(()=>d.remove());
-}
-
-/* 재생 */
 function setHead(){
   const s=stageAt(ai),st=s>=0?ex.acts[stages[s]]:null;
   $('#no').textContent=`${String(s+1).padStart(2,'0')} / ${String(stages.length).padStart(2,'0')}`;
   $('#title').textContent=st?st.title:'';$('#desc').textContent=st?st.desc:'';
   $('#bar').style.width=(100*ai/Math.max(1,ex.acts.length))+'%';
-  const sIdx=stageAt(ai);$('#note').textContent=sIdx>=2||ai>=ex.acts.length?`직렬화 ${ex.nlines}줄, ${ex.nchars.toLocaleString()}자`:`${ai-sIdx-1} / ${ex.acts.length-stages.length-1}`;
+  const a=ex.acts[Math.min(ai,ex.acts.length-1)];
+  $('#note').textContent=s>=2||ai>=ex.acts.length?`직렬화 ${ex.nlines}줄, ${ex.nchars.toLocaleString()}자`:(a&&a.kind==='batch'?a.label:'');
 }
+
+/* 그림 위 표시 */
+function grow(b,minS){const w=b[2]-b[0],h=b[3]-b[1];if(w>=minS&&h>=minS)return b;const cx=(b[0]+b[2])/2,cy=(b[1]+b[3])/2,W=Math.max(w,minS),H=Math.max(h,minS);return [cx-W/2,cy-H/2,cx+W/2,cy+H/2];}
+function markItem(it,g,strong){
+  const base=Math.max(ex.w,ex.h)/800,c=strong?ACC:(RC[it.cls]||ACC);
+  if(it.kind==='box'||it.kind==='group'){
+    const boxes=it.kind==='group'?it.boxes:[it.box];
+    boxes.forEach(bb=>{const b=strong?grow(bb,12*base):bb;el('rect',{x:b[0],y:b[1],width:Math.max(1,b[2]-b[0]),height:Math.max(1,b[3]-b[1]),fill:strong?c+'14':'none',stroke:c,'stroke-width':(strong?2.2:1.1)*base,'stroke-dasharray':it.cls==='paragraph'?`${5*base} ${3*base}`:''},g);});
+    if(strong&&it.sub){it.sub.forEach(s=>el('rect',{x:s.box[0],y:s.box[1],width:Math.max(1,s.box[2]-s.box[0]),height:Math.max(1,s.box[3]-s.box[1]),fill:TXT+'33',stroke:TXT,'stroke-width':1.1*base},g));}
+  }else if(it.kind==='poly'){
+    const p=el('polyline',{points:it.pts.map(q=>q.join(',')).join(' '),fill:'none',stroke:c,'stroke-width':(strong?3:1.8)*base,'stroke-linecap':'round','stroke-linejoin':'round','stroke-dasharray':it.cls==='signal'&&!strong?`${5*base} ${3*base}`:''},g);
+    if(strong){p.setAttribute('pathLength','1');p.setAttribute('class','dr');
+      (it.ends||[]).forEach(b=>el('rect',{x:b[0],y:b[1],width:b[2]-b[0],height:b[3]-b[1],fill:'none',stroke:ACC,'stroke-width':1.3*base,'stroke-dasharray':`${3*base} ${2*base}`},g));
+      (it.sub||[]).forEach(s=>el('rect',{x:s.box[0],y:s.box[1],width:Math.max(1,s.box[2]-s.box[0]),height:Math.max(1,s.box[3]-s.box[1]),fill:TXT+'33',stroke:TXT,'stroke-width':1.1*base},g));}
+  }
+}
+function markSweep(a,g,strong){
+  const base=Math.max(ex.w,ex.h)/800,sc={text:TXT,shape:ACC,line:'#1b8a3a',table:'#8a8f98',part:'#e07a1f'}[a.cls]||ACC,o=strong?1:.4;
+  return (a.items||[]).map(b=>el('rect',{x:b[0],y:b[1],width:Math.max(1,b[2]-b[0]),height:Math.max(1,b[3]-b[1]),fill:'none',stroke:sc,'stroke-width':(a.cls==='text'?.8:1.3)*base,opacity:o},g))
+    .concat((a.lines||[]).map(pts=>el('polyline',{points:pts.map(q=>q.join(',')).join(' '),fill:'none',stroke:sc,'stroke-width':1.6*base,'stroke-linecap':'round',opacity:o},g)));
+}
+function settle(a){
+  const done=$('#done');$('#hi').innerHTML='';
+  if(a.kind==='sweep')markSweep(a,done,false);
+  else if(a.kind==='batch')a.items.forEach(it=>markItem(it,done,false));
+}
+
+/* 오른쪽 텍스트 */
+function addLine(text,on){
+  const out=$('#out'),d=document.createElement('div');
+  d.className=text.startsWith('#')?'hd ln':'ln';d.textContent=text;
+  if(on)d.classList.add('on');
+  out.appendChild(d);return d;
+}
+function linesOf(a){
+  if(a.kind==='batch')return (a.header?[a.header]:[]).concat(a.items.map(it=>it.line));
+  if(a.kind==='stage'||a.kind==='final')return [];
+  return [a.line];
+}
+
+/* 재생 */
 function load(i,at){
   run++;ei=i;ex=DATA[i];stages=[];ex.acts.forEach((a,j)=>{if(a.kind==='stage')stages.push(j);});
-  $('#fly').innerHTML='';
   const svg=$('#svg');svg.innerHTML='';svg.setAttribute('viewBox',`0 0 ${ex.w} ${ex.h}`);
   el('image',{href:ex.img,x:0,y:0,width:ex.w,height:ex.h,preserveAspectRatio:'none'},svg);
   el('g',{id:'done'},svg);el('g',{id:'hi',class:'hi'},svg);
@@ -228,23 +171,16 @@ function load(i,at){
   $('#capL').innerHTML=`<b>${ex.name}</b> · ${ex.w}×${ex.h} px`;
   $('#capR').textContent=ex.total?`처리 ${ex.total}초`:'';
   ai=0;
-  while(ai<at){instant(ex.acts[ai]);ai++;}
+  while(ai<at){const a=ex.acts[ai];linesOf(a).forEach(t=>addLine(t,true));settle(a);ai++;}
   $('#out').scrollTop=$('#out').scrollHeight;
   tabs();rail();setHead();
   loop();
-}
-function instant(a){
-  if(a.kind==='stage'||a.kind==='final')return;
-  addLine(a,true);
-  if(a.kind!=='text'){mark(a,$('#done'),false);}
 }
 async function loop(){
   const my=++run;
   while(playing&&ai<ex.acts.length){
     const a=ex.acts[ai];
-    const n=ai-(stages[stageAt(ai)]||0);
-    const speed=(a.kind==='stage'||a.kind==='final')?1:(n<=4?1:n<=12?.6:.4);
-    await play(a,speed,my);
+    await play(a,my);
     if(my!==run)return;
     ai++;setHead();
     if(a.kind==='stage'||ex.acts[ai]&&ex.acts[ai].kind==='stage')rail();
@@ -252,57 +188,38 @@ async function loop(){
   if(my!==run)return;
   if(playing&&ai>=ex.acts.length){await sleep(3500);if(my===run&&playing)load((ei+1)%DATA.length,0);}
 }
-async function play(a,sp,my){
-  const out=$('#out'),hi=$('#hi'),done=$('#done');
-  const ms=(v)=>Math.round(v*sp);
-  if(a.kind==='stage'){rail();setHead();await sleep(ms(1100));return;}
+async function reveal(texts,my,hold){
+  const out=$('#out'),ds=texts.map(t=>addLine(t,false));
+  const stag=Math.min(60,1200/Math.max(1,ds.length));
+  for(let i=0;i<ds.length;i++){if(my!==run)return;ds[i].classList.add('on');out.scrollTop=out.scrollHeight;await sleep(stag);}
+  await sleep(hold);
+}
+async function play(a,my){
+  const out=$('#out'),hi=$('#hi');
+  if(a.kind==='stage'){rail();setHead();await sleep(1100);return;}
   if(a.kind==='final'){
-    out.scrollTop=0;await sleep(ms(900));if(my!==run)return;
+    out.scrollTop=0;await sleep(900);if(my!==run)return;
     const t0=performance.now(),dur=Math.max(1500,Math.min(5000,out.scrollHeight*2.5)),top=out.scrollHeight-out.clientHeight;
     await new Promise(res=>{const f=(t)=>{if(my!==run)return res();const u=Math.min(1,(t-t0)/dur);out.scrollTop=top*u;if(u<1)requestAnimationFrame(f);else res();};requestAnimationFrame(f);});
-    await sleep(ms(1500));return;
+    await sleep(1500);return;
   }
-  if(a.kind==='text'){
-    const d=addLine(a,false);out.scrollTop=out.scrollHeight;await sleep(60);d.classList.add('on');await sleep(ms(1400));return;
-  }
-  const g=geo();
-  // 1. 그림 위 강조
+  if(a.kind==='text'){await reveal([a.line],my,1200);return;}
   hi.innerHTML='';
-  const hs=mark(a,hi,true);
   if(a.kind==='sweep'){
-    const dly=Math.min(25,1800/Math.max(1,hs.length));
+    const hs=markSweep(a,hi,true),dly=Math.min(25,1500/Math.max(1,hs.length));
     hs.forEach((r,i)=>{r.style.animationDelay=(i*dly)+'ms';});
-    await sleep(Math.min(2000,hs.length*dly+300));if(my!==run)return;
-    const d=addLine(a,false);out.scrollTop=out.scrollHeight;await sleep(40);d.classList.add('on');
-    await sleep(ms(900));if(my!==run)return;
-    hi.innerHTML='';mark(a,done,false);return;
+    await sleep(Math.min(1700,hs.length*dly+300));if(my!==run)return;
+    await reveal([a.line],my,900);if(my!==run)return;
+    settle(a);return;
   }
-  if(a.kind==='poly'&&a.ends){a.ends.forEach(b=>el('rect',{x:b[0],y:b[1],width:b[2]-b[0],height:b[3]-b[1],fill:'none',stroke:ACC,'stroke-width':1.4*Math.max(ex.w,ex.h)/800,'stroke-dasharray':'4 3'},hi));}
-  await sleep(ms(a.kind==='poly'?520:320));if(my!==run)return;
-  // 2. 부속 문자 → 요소로 모임
-  const toBox=a.kind==='poly'?bboxOf(a.pts,0):(a.kind==='group'?a.boxes[0]:a.box);
-  if(a.sub&&a.sub.length){
-    subMarks(a,hi);
-    const n=Math.min(a.sub.length,14),stag=Math.min(40,400/n);
-    const ps=[];for(let i=0;i<n;i++)ps.push(flyWord(a.sub[i],toBox,g,ms(520),i*stag));
-    await Promise.all(ps);if(my!==run)return;
+  if(a.kind==='batch'){
+    a.items.forEach((it,i)=>{const g=el('g',{},hi);markItem(it,g,true);g.style.animationDelay=Math.min(40,800/a.items.length)*i+'ms';g.style.animation='pop .25s both';});
+    await sleep(Math.min(1100,a.items.length*40+400));if(my!==run)return;
+    await reveal(linesOf(a),my,Math.min(2600,900+a.items.length*90));if(my!==run)return;
+    settle(a);
   }
-  // 3. 요소 조각 → 텍스트 줄
-  const d=addLine(a,false);out.scrollTop=out.scrollHeight;
-  await sleep(30);
-  let cl,fromBox;
-  if(a.kind==='poly'){[cl,fromBox]=clonePoly(a,g);}
-  else if(a.kind==='dot'){const r=Math.max(ex.w,ex.h)/120;fromBox=[a.pt[0]-r,a.pt[1]-r,a.pt[0]+r,a.pt[1]+r];cl=cloneBox(fromBox,g);cl.style.borderRadius='50%';}
-  else {fromBox=grow(a.kind==='group'?a.boxes[0]:a.box,14*Math.max(ex.w,ex.h)/800);cl=cloneBox(fromBox,g);}
-  d.classList.add('now');
-  await flyTo(cl,fromBox,g,d,ms(900));if(my!==run){d.classList.remove('now');return;}
-  d.classList.add('on');
-  await sleep(ms(260));
-  d.classList.remove('now');
-  hi.innerHTML='';mark(a,done,false);
 }
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')jump(1);else if(e.key==='ArrowLeft')jump(-1);else if(e.key===' '){e.preventDefault();playing=!playing;rail();if(playing)loop();}});
-window.addEventListener('resize',()=>{$('#fly').innerHTML='';});
 if(DATA.length)load(0,0);
 </script>
 </body>

@@ -113,21 +113,6 @@ def build(name, kind_name, source, folder):
         acts.append(dict(kind='stage', title=title, desc=desc, line='# ' + title))
     def act(kind_, line, **kw):
         a = dict(kind=kind_, line=line); a.update(kw); acts.append(a)
-    def rows_of(t, i, box, cb=None):
-        """표 하나의 행 동작(칸 문자가 행 상자로 모여 머리글=값 줄이 됨)."""
-        nrow = len(t['rows']); h = (box[3] - box[1]) / max(1, nrow)
-        for j in range(min(nrow, MAX_ROWS)):
-            if cb and j < len(cb) and cb[j]:
-                cells = [[int(v) for v in c] for c in cb[j]]
-                rb = [min(c[0] for c in cells), min(c[1] for c in cells), max(c[2] for c in cells), max(c[3] for c in cells)]
-                sub = [dict(box=c, t='') for c in cells]
-            else:
-                rn = nid.get(f't{i}r{j}')
-                rb = px_box(rn['bbox'], k) if rn else [box[0], round(box[1] + j * h, 1), box[2], round(box[1] + (j + 1) * h, 1)]
-                sub = words_in(rb, 12)
-            line = S.find('표', f't{i} 열 이름') if j == 0 else S.find('표', f't{i} 행{j}:')
-            act('box', line or f"t{i} 행{j}: " + ' | '.join(t['rows'][j]), box=rb, cls='row', sub=sub)
-
     kind_ko = {'vector': '벡터 도면', 'drawing': '래스터 도면', 'page': '표·본문 쪽', 'illustration': '도해·기계 도면', 'photo': '사진·렌더링'}[kind]
     tables = [t for t in R.get('tables', []) if t.get('rows')]
     tbox = lambda t: [int(v) for v in t['box']] if t.get('box') else px_box(t['bbox'], k)
@@ -162,70 +147,96 @@ def build(name, kind_name, source, folder):
     else:
         act('sweep', f"사진 {vw}×{vh} px, 구조 추출 없음", items=[[0, 0, vw, vh]], cls='part')
 
-    # 2. 관계 복원
+    # 2. 관계 복원: 종류가 같은 요소는 한 번에 강조하고 줄도 한 번에 추가
     stage('관계 복원', '문자를 거리·방향이 가장 가까운 요소에 붙여 이름을 정하고, 선의 양 끝이 닿는 요소로 연결을 확인함. 요소와 연결마다 텍스트 한 줄')
+    def batch(label, items, header=None):
+        """같은 종류의 요소 묶음 하나. items: dict(kind, line, box|pts|boxes, cls, sub, ends)"""
+        if items:
+            acts.append(dict(kind='batch', label=label, header=header, items=items))
+    def node_item(n):
+        box = px_box(n['bbox'], k)
+        return dict(kind='box', line=S.find('요소', n['id'] + ' ') or f"{n['id']} 종류={n['role']}", box=box, cls=n['role'], sub=subs(n.get('texts', []), box))
+    def run_item(r, sec='연결'):
+        pts = px_pts(r['coords'], k)
+        xs = [q[0] for q in pts]; ys = [q[1] for q in pts]
+        return dict(kind='poly', line=S.find(sec, r['id'] + ' ') or f"{r['id']} 종류={r['kind']} A={r['a']} B={r['b']}", pts=pts, cls=r['kind'],
+                    ends=[px_box(nid[v]['bbox'], k) for v in (r['a'], r['b']) if v in nid], sub=subs(r.get('texts', []), [min(xs), min(ys), max(xs), max(ys)]))
+    def row_items(t, i, box, cb=None):
+        out = []
+        nrow = len(t['rows']); h = (box[3] - box[1]) / max(1, nrow)
+        for j in range(min(nrow, MAX_ROWS)):
+            if cb and j < len(cb) and cb[j]:
+                cells = [[int(v) for v in c] for c in cb[j]]
+                rb = [min(c[0] for c in cells), min(c[1] for c in cells), max(c[2] for c in cells), max(c[3] for c in cells)]
+                sub = [dict(box=c, t='') for c in cells]
+            else:
+                rn = nid.get(f't{i}r{j}')
+                rb = px_box(rn['bbox'], k) if rn else [box[0], round(box[1] + j * h, 1), box[2], round(box[1] + (j + 1) * h, 1)]
+                sub = words_in(rb, 12)
+            line = S.find('표', f't{i} 열 이름') if j == 0 else S.find('표', f't{i} 행{j}:')
+            out.append(dict(kind='box', line=line or f"t{i} 행{j}: " + ' | '.join(t['rows'][j]), box=rb, cls='row', sub=sub))
+        return out
+    ROLE_KO = {'equipment': '장비', 'instrument': '계기', 'symbol': '기호', 'note': '주석', 'pipe': '배관', 'signal': '신호선',
+               'dimension': '치수', 'note_c': '주기', 'point': '지시선', 'describe': '설명', 'mention': '언급', 'belong': '소속'}
     if kind in ('vector', 'drawing'):
-        act('text', S.head('요소'))
-        for n in core:
-            box = px_box(n['bbox'], k)
-            act('box', S.find('요소', n['id'] + ' ') or f"{n['id']} 종류={n['role']}", box=box, cls=n['role'], sub=subs(n.get('texts', []), box))
-        act('text', S.head('연결'))
+        for role in ('equipment', 'instrument', 'symbol', 'note'):
+            grp = [node_item(n) for n in core if n['role'] == role]
+            batch(f"{ROLE_KO[role]} {len(grp)}개", grp, header=S.head('요소') if role == 'equipment' or not any(n['role'] == 'equipment' for n in core) else None)
+        kinds = []
         for r in runs:
-            pts = px_pts(r['coords'], k)
-            xs = [q[0] for q in pts]; ys = [q[1] for q in pts]
-            ends = [px_box(nid[v]['bbox'], k) for v in (r['a'], r['b']) if v in nid]
-            act('poly', S.find('연결', r['id'] + ' ') or f"{r['id']} 종류={r['kind']} A={r['a']} B={r['b']}", pts=pts, cls=r['kind'], ends=ends,
-                sub=subs(r.get('texts', []), [min(xs), min(ys), max(xs), max(ys)]))
-        if tables:
-            act('text', S.head('표'))
-            for i, t in enumerate(tables):
-                rows_of(t, i, tbox(t), t.get('cell_boxes'))
+            if r['kind'] not in kinds:
+                kinds.append(r['kind'])
+        for ki, kd in enumerate(kinds):
+            grp = [run_item(r) for r in runs if r['kind'] == kd]
+            batch(f"{ROLE_KO.get(kd, kd)} {len(grp)}개", grp, header=S.head('연결') if ki == 0 else None)
+        for i, t in enumerate(tables):
+            box = tbox(t)
+            items = [dict(kind='box', line=S.find('표', f't{i} bbox') or f"t{i}", box=box, cls='table')] + row_items(t, i, box, t.get('cell_boxes'))
+            batch(f"표 t{i} 행 {len(t['rows'])}", items, header=S.head('표') if i == 0 else None)
         link = S.sections.get(S.head('장비 간'), [])
         if link:
-            act('text', S.head('장비 간'))
             byname = {n['texts'][0]: px_box(n['bbox'], k) for n in nodes if n['role'] == 'equipment' and n.get('texts')}
+            items = []
             for l in link:
                 names = [w.strip(',') for w in l.replace('→', ' ').split()]
-                act('group', l, boxes=[byname[w] for w in names if w in byname][:8], cls='equipment')
+                items.append(dict(kind='group', line=l, boxes=[byname[w] for w in names if w in byname][:8], cls='equipment'))
+            batch(f"장비 간 배관 연결 {len(items)}개", items, header=S.head('장비 간'))
     elif kind == 'illustration':
-        act('text', S.head('치수'))
-        for i, c in enumerate(R.get('callouts', [])):
-            box = [int(v) for v in c['box']]
-            act('box', S.find('치수', f'c{i} ') or f"c{i}", box=box, cls=c.get('kind', 'note'), sub=words_in(box))
-        if R.get('leaders'):
-            act('text', S.head('지시선'))
-            for l in R['leaders']:
-                pts = [[int(l['start'][0]), int(l['start'][1])], [int(l['end'][0]), int(l['end'][1])]]
-                act('poly', S.find('지시선', f"c{l['callout']} ") or f"c{l['callout']} → part{l['part']}", pts=pts, cls='point')
-        if tables:
-            act('text', S.head('표'))
-            for i, t in enumerate(tables):
-                rows_of(t, i, tbox(t), t.get('cell_boxes'))
+        cos = R.get('callouts', [])
+        for kd, label in (('dimension', '치수'), ('note', '주기'), ('datum', '기준 문자')):
+            grp = []
+            for i, c in enumerate(cos):
+                if c.get('kind', 'note') == kd or (kd == 'note' and c.get('kind') == 'callout'):
+                    box = [int(v) for v in c['box']]
+                    grp.append(dict(kind='box', line=S.find('치수', f'c{i} ') or f"c{i}", box=box, cls=kd, sub=words_in(box)))
+            batch(f"{label} {len(grp)}개", grp, header=S.head('치수') if kd == 'dimension' else None)
+        leaders = R.get('leaders', [])
+        if leaders:
+            items = [dict(kind='poly', line=S.find('지시선', f"c{l['callout']} ") or f"c{l['callout']} → part{l['part']}",
+                          pts=[[int(l['start'][0]), int(l['start'][1])], [int(l['end'][0]), int(l['end'][1])]], cls='point') for l in leaders]
+            batch(f"지시선 {len(items)}개", items, header=S.head('지시선'))
+        for i, t in enumerate(tables):
+            batch(f"표제란 t{i}", row_items(t, i, tbox(t), t.get('cell_boxes')), header=S.head('표') if i == 0 else None)
     elif kind == 'page':
-        if tables:
-            act('text', S.head('표'))
-            for i, t in enumerate(tables):
-                act('box', S.find('표', f't{i} bbox') or f"t{i}", box=tbox(t), cls='table')
-                rows_of(t, i, tbox(t), t.get('cell_boxes'))
-        if R.get('figures'):
-            act('text', S.head('그림'))
-            for i, f in enumerate(R['figures']):
-                act('box', S.find('그림', f'f{i} ') or f"f{i}", box=[int(v) for v in f['box']], cls='figure')
-        if R.get('paragraphs'):
-            act('text', S.head('본문'))
-            for i, p in enumerate(R['paragraphs']):
+        for i, t in enumerate(tables):
+            box = tbox(t)
+            items = [dict(kind='box', line=S.find('표', f't{i} bbox') or f"t{i}", box=box, cls='table')] + row_items(t, i, box, t.get('cell_boxes'))
+            batch(f"표 t{i} 행 {len(t['rows'])}", items, header=S.head('표') if i == 0 else None)
+        figs = R.get('figures', [])
+        if figs:
+            batch(f"그림 영역 {len(figs)}개", [dict(kind='box', line=S.find('그림', f'f{i} ') or f"f{i}", box=[int(v) for v in f['box']], cls='figure') for i, f in enumerate(figs)], header=S.head('그림'))
+        paras = R.get('paragraphs', [])
+        if paras:
+            items = []
+            for i, p in enumerate(paras):
                 box = [int(v) for v in p['box']]
-                act('box', S.find('본문', f'p{i} ') or f"p{i} {p['text'][:60]}", box=box, cls='paragraph', sub=words_in(box))
+                items.append(dict(kind='box', line=S.find('본문', f'p{i} ') or f"p{i} {p['text'][:60]}", box=box, cls='paragraph', sub=words_in(box)))
+            batch(f"문단 {len(items)}개", items, header=S.head('본문'))
         rel = [r for r in runs if r['kind'] in ('describe', 'mention', 'belong')]
         if rel:
-            act('text', S.head('관계'))
-            for r in rel:
-                pts = px_pts(r['coords'], k)
-                ends = [px_box(nid[v]['bbox'], k) for v in (r['a'], r['b']) if v in nid]
-                act('poly', S.find('관계', r['id'] + ' ') or f"{r['id']} 종류={r['kind']} A={r['a']} B={r['b']}", pts=pts, cls=r['kind'], ends=ends)
+            batch(f"설명·언급·소속 {len(rel)}개", [run_item(r, '관계') for r in rel], header=S.head('관계'))
     else:
-        for l in S.sections.get(S.head('관계'), []):
-            act('box', l, box=[0, 0, vw, vh], cls='photo')
+        batch('사진', [dict(kind='box', line=l, box=[0, 0, vw, vh], cls='photo') for l in S.sections.get(S.head('관계'), [])], header=S.head('관계'))
 
     # 3. 직렬화
     serial = R.get('serial', [])
