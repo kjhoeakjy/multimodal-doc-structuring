@@ -105,6 +105,14 @@ t(L, 66, "제조·항공 기술도면의 관계 구조 복원 기반 문서 구�
 t(L, 104, "문제", 15, True, ACC); t(L + 46, 104, "기존 OCR은 글자와 기호는 읽지만, 선으로 이어진 연결·참조 관계는 보존하지 못함", 15, maxw=R - L - 46)
 t(L, 130, "해결", 15, True, ACC); t(L + 46, 130, "원본의 선·접점·기호 관계를 복원해 좌표 기반 텍스트 구조로 변환하고, 기존 텍스트 LLM의 입력으로 활용", 15, maxw=R - L - 46)
 hline(L, R, 150, INK, 1.4)
+# 처리 과정 시뮬레이션 QR(https://kjhoeakjy.github.io/multimodal-doc-structuring/app/)
+import re as _re
+_q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='utf-8').read()
+_d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
+QS = 112
+out.append(f'<svg x="{R - QS}" y="22" width="{QS}" height="{QS}" viewBox="-2 -2 {_n + 4} {_n + 4}"><rect x="-2" y="-2" width="{_n + 4}" height="{_n + 4}" fill="#FFFFFF"/><path d="{_d}" stroke="#000000" stroke-width="1" fill="none" shape-rendering="crispEdges"/></svg>')
+t(R - QS - 14, 72, "처리 과정 시뮬레이션", 14, True, INK, "end")
+t(R - QS - 14, 94, "문서 종류별 예시 8건 재생", 13, False, GR, "end")
 
 # ================= 중단: 예시 3단계 =================
 PW, PG = 468, 42
