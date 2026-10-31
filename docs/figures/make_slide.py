@@ -101,9 +101,11 @@ def crop(x, y, w, h, body, fill="#FFFFFF"):
 
 # ================= 상단 =================
 L, R = 56, 1544
-t(L, 64, "제조·항공 기술도면의 연결관계 구조화 및 텍스트 LLM 활용", 32, True, maxw=1180)
-t(L, 104, "문제 제기:", 16, True, ACC)
-t(L + 86, 104, "기존 OCR은 문자와 기호를 추출하지만, 선으로 표현된 장비 간 연결·참조 관계는 보존하기 어려움", 16, False, GR, maxw=1100)
+t(L, 34, "주제 2", 13.5, True, ACC)
+t(L + 52, 34, "비정형 데이터(표, 이미지 등)를 AI가 효율적으로 이해하고 활용할 수 있도록 하기 위한 데이터 전처리 및 구조화 방안", 13.5, False, GR, maxw=1180 - 52)
+t(L, 76, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 31, True, maxw=1180)
+t(L, 113, "문제 제기:", 16, True, ACC)
+t(L + 86, 113, "기존 OCR은 문자와 기호를 추출하지만, 선으로 표현된 장비 간 연결·참조 관계는 보존하기 어려움", 16, False, GR, maxw=1100)
 import re as _re
 _q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='utf-8').read()
 _d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
@@ -111,7 +113,7 @@ QS = 104
 out.append(f'<svg x="{R - QS}" y="18" width="{QS}" height="{QS}" viewBox="-2 -2 {_n + 4} {_n + 4}"><rect x="-2" y="-2" width="{_n + 4}" height="{_n + 4}" fill="#FFFFFF"/><path d="{_d}" stroke="#000000" stroke-width="1" fill="none" shape-rendering="crispEdges"/></svg>')
 t(R - QS - 14, 64, "처리 과정 시뮬레이션", 14, True, INK, "end")
 t(R - QS - 14, 86, "문서 종류별 예시 8건 재생", 13, False, GR, "end")
-hline(L, R, 130, INK, 1.4)
+hline(L, R, 134, INK, 1.4)
 
 # ================= 중단: 실제 도면 처리 과정 =================
 PWS = [440, 560, 412]; PG = 38
