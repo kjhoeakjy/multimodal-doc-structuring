@@ -165,7 +165,7 @@ t(x3, CAP + 22, "질문 관련 연결정보로 입력 한정, 전체의 약 28% 
 # ================= 하단: 기술적 차별점(왼쪽 절반)과 성능(오른쪽 절반) =================
 # 성능 근거: examples/public-documents/README.md(도면별 정답 인접 쌍), examples/llm-qa/README.md(래스터·스캔 개선값),
 # examples/llm-qa/results/open-8b-2026-10-s80.jsonl(공개 가중치 8B, CPU, 80문항)
-recall = [27/27, 18/27, 16/27, 3/6, 4/9]   # C01 원본·200 dpi·스캔, C02·C03 원본
+recall = [27/27, 19/26, 17/24, 3/6, 4/9]   # C01 원본·200 dpi·스캔, C02·C03 원본. examples/public-documents/pid/output/current 재평가 값
 import json as _json
 _rows = [_json.loads(l) for l in open(os.path.join(ROOT, 'examples/llm-qa/results/open-8b-2026-10-s80.jsonl'), encoding='utf-8') if l.strip()]
 def _acc(cond):
