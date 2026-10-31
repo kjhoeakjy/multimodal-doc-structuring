@@ -105,6 +105,13 @@ t(L, 34, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화
 t(L, 78, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 32, True, maxw=R - L)
 t(L, 116, "문제", 16, True, ACC)
 t(L + 48, 116, "기존 OCR은 문자를 추출하지만, 선으로 표시된 장비 간 연결관계는 텍스트에 반영하기 어려움", 16, False, INK, maxw=R - L - 48)
+import re as _re
+_q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='utf-8').read()
+_d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
+QS = 104
+out.append(f'<svg x="{R - QS}" y="22" width="{QS}" height="{QS}" viewBox="-2 -2 {_n + 4} {_n + 4}"><rect x="-2" y="-2" width="{_n + 4}" height="{_n + 4}" fill="#FFFFFF"/><path d="{_d}" stroke="#000000" stroke-width="1" fill="none" shape-rendering="crispEdges"/></svg>')
+t(R - QS - 14, 66, "처리 과정 시뮬레이션", 14, True, INK, "end")
+t(R - QS - 14, 88, "문서 종류별 예시 8건 재생", 13, False, GR, "end")
 hline(L, R, 138, INK, 1.4)
 
 # ================= 중단: 실제 도면 처리 과정 =================
