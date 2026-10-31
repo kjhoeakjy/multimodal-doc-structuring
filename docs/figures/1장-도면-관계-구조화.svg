@@ -4,7 +4,7 @@
 <text x="56" y="34" font-size="14" font-weight="400" fill="#5F6368" text-anchor="start">AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화</text>
 <text x="56" y="78" font-size="32" font-weight="700" fill="#111111" text-anchor="start">제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화</text>
 <text x="56" y="116" font-size="16" font-weight="700" fill="#1F4FD8" text-anchor="start">문제</text>
-<text x="104" y="116" font-size="16" font-weight="400" fill="#111111" text-anchor="start">기존 OCR의 텍스트 변환 결과에서 도면에 존재하는 장비 간 연결관계 누락</text>
+<text x="104" y="116" font-size="16" font-weight="400" fill="#111111" text-anchor="start">기존 OCR 전처리 결과에서 도면에 존재하는 장비 간 연결관계를 표현하지 못함</text>
 <svg x="1440" y="22" width="104" height="104" viewBox="-2 -2 33 33"><rect x="-2" y="-2" width="33" height="33" fill="#FFFFFF"/><path d="M0 0.5h7m1 0h5m3 0h1m1 0h3m1 0h7m-29 1h1m5 0h1m1 0h4m6 0h1m1 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h3m3 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m3 0h4m1 0h3m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h1m3 0h2m2 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m1 0h2m2 0h5m1 0h1m-21 1h1m1 0h2m1 0h3m1 0h2m4 0h4m3 0h1m2 0h1m1 0h2m-27 1h2m1 0h1m2 0h3m2 0h1m4 0h3m1 0h3m3 0h1m-29 1h2m2 0h5m2 0h1m1 0h1m2 0h3m1 0h1m5 0h2m-28 1h3m1 0h1m2 0h1m1 0h2m2 0h4m4 0h1m1 0h2m3 0h1m-29 1h8m2 0h3m2 0h3m2 0h1m4 0h2m-25 1h1m8 0h2m1 0h4m1 0h1m1 0h3m2 0h3m-28 1h1m1 0h4m1 0h1m1 0h2m1 0h1m4 0h7m1 0h3m-26 1h3m1 0h1m2 0h1m1 0h1m2 0h2m3 0h2m2 0h1m2 0h1m-28 1h7m1 0h3m3 0h1m3 0h1m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h1m2 0h3m4 0h1m1 0h1m2 0h2m1 0h1m1 0h3m-28 1h1m1 0h2m2 0h1m1 0h1m2 0h6m4 0h1m1 0h1m2 0h1m-24 1h2m4 0h1m3 0h6m3 0h1m1 0h1m1 0h1m-26 1h2m1 0h3m3 0h2m1 0h2m1 0h11m-19 1h2m1 0h2m3 0h5m3 0h5m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m-28 1h1m5 0h1m1 0h7m1 0h1m1 0h1m1 0h1m3 0h2m1 0h1m-28 1h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h1m1 0h2m1 0h5m1 0h1m-27 1h1m1 0h3m1 0h1m1 0h4m1 0h1m1 0h2m2 0h1m1 0h1m1 0h3m2 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h1m1 0h4m1 0h1m1 0h1m2 0h1m1 0h1m-29 1h1m5 0h1m3 0h1m3 0h2m2 0h1m1 0h1m3 0h2m1 0h1m-28 1h7m1 0h2m1 0h1m2 0h1m1 0h1m1 0h4m5 0h1" stroke="#000000" stroke-width="1" fill="none" shape-rendering="crispEdges"/></svg>
 <text x="1426" y="66" font-size="14" font-weight="700" fill="#111111" text-anchor="end">처리 과정 시뮬레이션</text>
 <text x="1426" y="88" font-size="13" font-weight="400" fill="#5F6368" text-anchor="end">문서 유형별 처리 예시 8건</text>
@@ -1247,7 +1247,7 @@
 <text x="1003.9299999999998" y="482" font-size="13" font-weight="400" fill="#111111" text-anchor="start">H1008 배관 경로</text>
 <text x="626" y="504" font-size="13.5" font-weight="400" fill="#5F6368" text-anchor="start">직선 끝점과 접속점, 장비 위치 기준의 연결관계 판별</text>
 <rect x="1196" y="204" width="348" height="44" rx="0" stroke="#CFD3D9" fill="#F3F4F6" stroke-width="1"/>
-<text x="1208" y="221" font-size="12.5" font-weight="700" fill="#5F6368" text-anchor="start">OCR 텍스트</text>
+<text x="1208" y="221" font-size="12.5" font-weight="700" fill="#5F6368" text-anchor="start">OCR 전처리 결과</text>
 <text x="1208" y="239" font-size="11" font-weight="400" fill="#5F6368" text-anchor="start" font-family="Consolas, 'Noto Sans KR', monospace">N3 N2 80 PI H1008 PICSA 66KL21-80 50 80 4712.01</text>
 <rect x="1196" y="254" width="348" height="82" rx="0" stroke="#1F4FD8" fill="#FFFFFF" stroke-width="1.4"/>
 <text x="1208" y="272" font-size="12.5" font-weight="700" fill="#1F4FD8" text-anchor="start">구조화 텍스트 (일부)</text>
@@ -1255,14 +1255,14 @@
 <text x="1208" y="309" font-size="11" font-weight="400" fill="#333333" text-anchor="start" font-family="Consolas, 'Noto Sans KR', monospace">r30 종류=pipe A=n12[symbol PV4712.02] B=n19[equi …</text>
 <text x="1208" y="327" font-size="11" font-weight="700" fill="#111111" text-anchor="start" font-family="Consolas, 'Noto Sans KR', monospace"># 장비 간 배관 연결: H1008 → T4750, P4712</text>
 <text x="1196" y="360" font-size="15" font-weight="700" fill="#111111" text-anchor="start">04  LLM 응답 테스트</text>
-<text x="1344.03" y="360" font-size="12.5" font-weight="400" fill="#5F6368" text-anchor="start">공개 가중치 LLM 8B, CPU</text>
+<text x="1344.03" y="360" font-size="12.5" font-weight="400" fill="#5F6368" text-anchor="start">공개 가중치 LLM 8B, CPU 사용</text>
 <rect x="1196" y="368" width="348" height="88" rx="0" stroke="none" fill="#F3F4F6" stroke-width="1"/>
 <text x="1208" y="387" font-size="12.5" font-weight="700" fill="#5F6368" text-anchor="start">질문</text>
 <text x="1246" y="387" font-size="13" font-weight="700" fill="#111111" text-anchor="start">H1008과 배관으로 연결된 장비는 무엇인가요?</text>
 <text x="1208" y="407" font-size="12.5" font-weight="700" fill="#1F4FD8" text-anchor="start">응답</text>
 <text x="1246" y="407" font-size="13" font-weight="700" fill="#1F4FD8" text-anchor="start">H1008과 배관으로 연결된 장비는 T4750,</text>
 <text x="1246" y="425" font-size="13" font-weight="700" fill="#1F4FD8" text-anchor="start">P4712입니다.</text>
-<text x="1246" y="443" font-size="11.5" font-weight="400" fill="#5F6368" text-anchor="start">OCR 텍스트 입력 시: PICSA (오답)</text>
+<text x="1246" y="443" font-size="11.5" font-weight="400" fill="#5F6368" text-anchor="start">OCR 전처리 결과 입력 시: PICSA (오답)</text>
 <text x="1196" y="482" font-size="14" font-weight="700" fill="#111111" text-anchor="start">텍스트 전용 LLM의 입력 자료로 활용</text>
 <text x="1196" y="504" font-size="13.5" font-weight="400" fill="#5F6368" text-anchor="start">질문 관련 연결정보만 선별, 전체 분량의 약 28%</text>
 <line x1="56" y1="552" x2="1544" y2="552" stroke="#111111" stroke-width="1.4"/>
@@ -1270,7 +1270,7 @@
 <text x="56" y="586" font-size="17" font-weight="700" fill="#111111" text-anchor="start">기술적 차별점</text>
 <rect x="56" y="600" width="600" height="63" rx="0" stroke="#CFD3D9" fill="#F3F4F6" stroke-width="1"/>
 <rect x="56" y="600" width="4" height="63" fill="#1F4FD8"/>
-<text x="74" y="626" font-size="17" font-weight="700" fill="#111111" text-anchor="start">문자와 연결관계의 통합 구조화</text>
+<text x="74" y="626" font-size="17" font-weight="700" fill="#111111" text-anchor="start">문자와 연결관계 구조화</text>
 <text x="74" y="651" font-size="14.5" font-weight="400" fill="#5F6368" text-anchor="start">직선 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출</text>
 <rect x="56" y="671" width="600" height="88" rx="0" stroke="#CFD3D9" fill="#F3F4F6" stroke-width="1"/>
 <rect x="56" y="671" width="4" height="88" fill="#1F4FD8"/>
@@ -1291,6 +1291,6 @@
 <text x="1268.0" y="708" font-size="14" font-weight="400" fill="#5F6368" text-anchor="start">OCR 37.5%, 관계 구조화 65.0%</text>
 <text x="1268.0" y="731" font-size="14" font-weight="400" fill="#5F6368" text-anchor="start">공개·합성 문서 15건, 전체 240문항</text>
 <rect x="56" y="774" width="1488" height="54" rx="0" stroke="none" fill="#111111" stroke-width="1"/>
-<text x="800.0" y="809" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="middle">PDF·SVG 원본 직접 활용   ·   CPU 단독 처리   ·   텍스트 전용 LLM 응답 테스트   ·   외부 서버 전송 없는 로컬 실행</text>
+<text x="800.0" y="809" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="middle">PDF·SVG 원본 직접 활용   ·   CPU 사용   ·   텍스트 전용 LLM 응답 테스트   ·   외부 서버 전송 없는 로컬 실행</text>
 <text x="56" y="850" font-size="12" font-weight="400" fill="#5F6368" text-anchor="start">예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&amp;ID  ·  연결 정답은 원본 설계 파일 기준</text>
 </svg>

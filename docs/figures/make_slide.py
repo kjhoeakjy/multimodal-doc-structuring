@@ -107,7 +107,7 @@ L, R = 56, 1544
 t(L, 34, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 14, False, GR, maxw=R - L)
 t(L, 78, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 32, True, maxw=R - L)
 t(L, 116, "문제", 16, True, ACC)
-t(L + 48, 116, "기존 OCR의 텍스트 변환 결과에서 도면에 존재하는 장비 간 연결관계 누락", 16, False, INK, maxw=R - L - 48)
+t(L + 48, 116, "기존 OCR 전처리 결과에서 도면에 존재하는 장비 간 연결관계를 표현하지 못함", 16, False, INK, maxw=R - L - 48)
 import re as _re
 _q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='utf-8').read()
 _d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
@@ -148,7 +148,7 @@ def fit(s, size, maxw):  # 실제 텍스트를 칸 폭에 맞춰 뒤쪽을 줄�
     while width(s + ' …', size, mono=True) * 1.07 > maxw: s = s[:-1]
     return s.rstrip() + ' …'
 rect(x3, TOP, w3, 44, LINE, FILL)
-t(x3 + 12, TOP + 17, "OCR 텍스트", 12.5, True, GR)
+t(x3 + 12, TOP + 17, "OCR 전처리 결과", 12.5, True, GR)
 t(x3 + 12, TOP + 35, fit("N3 N2 80 PI H1008 PICSA 66KL21-80 50 80 4712.01", 11, w3 - 24), 11, False, GR, mono=True)
 y3 = TOP + 50; GH = 82
 rect(x3, y3, w3, GH, ACC, "#FFFFFF", 1.4)
@@ -162,7 +162,7 @@ NQ = json.load(open(os.path.join(ROOT, 'examples/llm-qa/results/slide-natural-qu
 ans = {r['cond']: r for r in NQ}
 y4 = y3 + GH + 24
 t(x3, y4, "04  LLM 응답 테스트", 15, True, INK)
-t(x3 + width("04  LLM 응답 테스트", 15, True) * 1.07 + 10, y4, "공개 가중치 LLM 8B, CPU", 12.5, False, GR)
+t(x3 + width("04  LLM 응답 테스트", 15, True) * 1.07 + 10, y4, "공개 가중치 LLM 8B, CPU 사용", 12.5, False, GR)
 yq = y4 + 8
 QH = IH - (yq - TOP)
 rect(x3, yq, w3, QH, "none", FILL)
@@ -179,7 +179,7 @@ al = wrap(ans['retrieved']['response'], 13, True, w3 - 60)
 for j, ln in enumerate(al):
     t(x3 + 50, yq + 39 + j * 18, ln, 13, True, ACC, maxw=w3 - 60)
 _ocr_ans = _re.search(r'장비는 (.+?)입니다', ans['ocr']['response']).group(1)  # 같은 질문에 OCR 텍스트를 넣었을 때의 응답
-t(x3 + 50, yq + 39 + len(al) * 18, f"OCR 텍스트 입력 시: {_ocr_ans} (오답)", 11.5, False, GR, maxw=w3 - 60)
+t(x3 + 50, yq + 39 + len(al) * 18, f"OCR 전처리 결과 입력 시: {_ocr_ans} (오답)", 11.5, False, GR, maxw=w3 - 60)
 if yq + 39 + len(al) * 18 > TOP + IH - 6: sys.exit("04 칸 높이 초과")
 t(x3, CAP, "텍스트 전용 LLM의 입력 자료로 활용", 14, True, maxw=w3)
 t(x3, CAP + 22, "질문 관련 연결정보만 선별, 전체 분량의 약 28%", 13.5, False, GR, maxw=w3)
@@ -203,7 +203,7 @@ CWD = 600
 MID = L + CWD + 30
 out.append(f'<line x1="{MID}" y1="{YB+16}" x2="{MID}" y2="{YB+204}" stroke="{LINE}" stroke-width="1"/>')
 t(L, YB + 34, "기술적 차별점", 17, True)
-cards = [("문자와 연결관계의 통합 구조화", ["직선 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출"]),
+cards = [("문자와 연결관계 구조화", ["직선 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출"]),
          ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG 원본은 직선·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용", "VLM·GPU 없이 도면 전처리 수행"])]
 cy = YB + 48
 for k, (tt, lines) in enumerate(cards):
@@ -229,7 +229,7 @@ for k, (big, s1, s2, col) in enumerate(mets):
 
 BY = YB + 222
 rect(L, BY, R - L, 54, "none", INK)
-band = "PDF·SVG 원본 직접 활용   ·   CPU 단독 처리   ·   텍스트 전용 LLM 응답 테스트   ·   외부 서버 전송 없는 로컬 실행"
+band = "PDF·SVG 원본 직접 활용   ·   CPU 사용   ·   텍스트 전용 LLM 응답 테스트   ·   외부 서버 전송 없는 로컬 실행"
 t((L + R) / 2, BY + 35, band, 21, True, "#FFFFFF", "middle", maxw=R - L - 20)
 t(L, BY + 76, "예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&ID  ·  연결 정답은 원본 설계 파일 기준", 12, False, GR, maxw=R - L)
 if BY + 76 > H - 8: sys.exit(f"세로 초과 {BY + 76}")
