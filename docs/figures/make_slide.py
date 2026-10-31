@@ -141,12 +141,12 @@ x3, w3 = PX[2], PWS[2]
 rect(x3, TOP, w3, 84, LINE, FILL)
 t(x3 + 12, TOP + 22, "OCR 텍스트", 13, True, GR)
 t(x3 + 12, TOP + 46, "T4750   P4712   H1008   73KH12-25   PV4712.02 ...", 12.5, False, GR, mono=True, maxw=w3 - 24)
-t(x3 + 12, TOP + 70, "글자만 나열되고 연결 정보 없음", 12.5, False, GR, maxw=w3 - 24)
+t(x3 + 12, TOP + 70, "문자 목록, 연결 정보 없음", 12.5, False, GR, maxw=w3 - 24)
 y3 = TOP + 96
 rect(x3, y3, w3, 170, ACC, "#FFFFFF", 1.4)
 t(x3 + 12, y3 + 22, "관계 텍스트", 13, True, ACC)
 bP = nid[start]['bbox']
-glines = [f"P4712 ─배관─ {nid[v]['texts'][0]}" for v in sorted(targets, key=lambda v: nid[v]['texts'][0])]
+glines = [f"P4712  배관 연결  {nid[v]['texts'][0]}" for v in sorted(targets, key=lambda v: nid[v]['texts'][0])]
 glines.append(f"P4712 좌표 ({bP[0]:.1f}, {bP[1]:.1f})–({bP[2]:.1f}, {bP[3]:.1f}) mm")
 for j, sline in enumerate(glines):
     t(x3 + 12, y3 + 54 + j * 30, sline, 13, False, INK, mono=True, maxw=w3 - 24)
@@ -155,10 +155,10 @@ t(x3 + 12, y3 + 158, "관계·속성·좌표를 텍스트로 LLM에 전달", 13,
 yq = y3 + 182
 rect(x3, yq, w3, IH - (yq - TOP), "none", FILL)
 QH = IH - (yq - TOP)
-t(x3 + 12, yq + QH / 2 - 8, "질문", 13, True, GR); t(x3 + 64, yq + QH / 2 - 8, "P4712와 배관으로 연결된 장비는?", 14, True, INK, maxw=w3 - 76)
+t(x3 + 12, yq + QH / 2 - 8, "질문", 13, True, GR); t(x3 + 64, yq + QH / 2 - 8, "P4712와 배관으로 연결된 장비", 14, True, INK, maxw=w3 - 76)
 t(x3 + 12, yq + QH / 2 + 24, "답변", 13, True, GR); t(x3 + 64, yq + QH / 2 + 24, "H1008, T4750", 14, True, ACC, maxw=w3 - 76)
 t(x3, CAP, "기존 텍스트 LLM 입력으로 사용", 14, True, maxw=w3)
-t(x3, CAP + 22, "질문과 관련된 연결 정보만 골라 입력(전체의 약 28% 분량)", 13.5, False, GR, maxw=w3)
+t(x3, CAP + 22, "질문 관련 연결 정보로 입력 한정(전체의 약 28% 분량)", 13.5, False, GR, maxw=w3)
 
 # ================= 하단: 차별점(왼쪽 절반)과 성능(오른쪽 절반) =================
 # 성능 수치(자료별 값의 평균). 출처: examples/public-documents/README.md, examples/llm-qa/README.md, examples/llm-qa/results/open-8b-2026-10-s80.jsonl
@@ -178,15 +178,14 @@ hline(L, R, YB, INK, 1.4)
 MID = (L + R) / 2
 out.append(f'<line x1="{MID}" y1="{YB+16}" x2="{MID}" y2="{YB+174}" stroke="{LINE}" stroke-width="1"/>')
 t(L, YB + 32, "기술적 차별점", 16, True)
-cards = [("관계정보 복원", "02 단계", "문자뿐 아니라 선·분기점을 분석해 장비 간 연결관계를 그래프로 구성"),
-         ("별도 VLM·GPU 없는 전처리", "01–02 단계", "도면 파일의 선·문자 좌표를 그대로 쓰고, 스캔본에만 OCR·영상처리 적용")]
+cards = [("관계정보 복원", "", "문자뿐 아니라 선·분기점을 분석해 장비 간 연결관계를 그래프로 구성"),
+         ("별도 VLM·GPU 없는 전처리", "", "도면 파일의 선·문자 좌표를 그대로 활용하고 스캔본에 한해 OCR·영상처리 적용")]
 CWD = MID - L - 28
 for k, (tt, tag, ln) in enumerate(cards):
     cy = YB + 46 + k * 66
     rect(L, cy, CWD, 58, LINE, FILL)
     out.append(f'<rect x="{L}" y="{cy}" width="4" height="58" fill="{ACC}"/>')
     t(L + 18, cy + 24, tt, 15.5, True, maxw=CWD - 110)
-    t(L + CWD - 14, cy + 24, tag, 12.5, False, ACC, "end")
     t(L + 18, cy + 46, ln, 13.5, False, GR, maxw=CWD - 32)
 SXL = MID + 28
 t(SXL, YB + 32, "성능", 16, True)
@@ -200,7 +199,7 @@ for k, (big, s1, s2) in enumerate(mets):
     t(gx, gy + 34, big, 28, True, ACC if k == 2 else INK)
     t(gx + 112, gy + 22, s1, 14, True, maxw=GW - 120)
     t(gx + 112, gy + 44, s2, 12.5, False, GR, maxw=GW - 120)
-t(SXL, YB + 192, "질의응답은 Ollama로 내려받은 오픈소스 LLM(8B)을 CPU에서 실행해 같은 질문을 OCR 텍스트와 관계 텍스트로 각각 입력해 비교", 12, False, GR, maxw=R - SXL)
+t(SXL, YB + 192, "질의응답 조건  Ollama 기반 오픈소스 LLM(8B) CPU 실행, 동일 질문에 OCR 텍스트와 관계 텍스트를 각각 입력해 비교", 12, False, GR, maxw=R - SXL)
 
 BY = YB + 206
 rect(L, BY, R - L, 44, "none", INK)

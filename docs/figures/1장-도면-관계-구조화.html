@@ -1243,34 +1243,32 @@
 <rect x="1132" y="176" width="412" height="84" rx="0" stroke="#CFD3D9" fill="#F3F4F6" stroke-width="1"/>
 <text x="1144" y="198" font-size="13" font-weight="700" fill="#5F6368" text-anchor="start">OCR 텍스트</text>
 <text x="1144" y="222" font-size="12.5" font-weight="400" fill="#5F6368" text-anchor="start" font-family="Consolas, 'Noto Sans KR', monospace">T4750   P4712   H1008   73KH12-25   PV4712.02 ...</text>
-<text x="1144" y="246" font-size="12.5" font-weight="400" fill="#5F6368" text-anchor="start">글자만 나열되고 연결 정보 없음</text>
+<text x="1144" y="246" font-size="12.5" font-weight="400" fill="#5F6368" text-anchor="start">문자 목록, 연결 정보 없음</text>
 <rect x="1132" y="272" width="412" height="170" rx="0" stroke="#1F4FD8" fill="#FFFFFF" stroke-width="1.4"/>
 <text x="1144" y="294" font-size="13" font-weight="700" fill="#1F4FD8" text-anchor="start">관계 텍스트</text>
-<text x="1144" y="326" font-size="13" font-weight="400" fill="#111111" text-anchor="start" font-family="Consolas, 'Noto Sans KR', monospace">P4712 ─배관─ H1008</text>
-<text x="1144" y="356" font-size="13" font-weight="400" fill="#111111" text-anchor="start" font-family="Consolas, 'Noto Sans KR', monospace">P4712 ─배관─ T4750</text>
+<text x="1144" y="326" font-size="13" font-weight="400" fill="#111111" text-anchor="start" font-family="Consolas, 'Noto Sans KR', monospace">P4712  배관 연결  H1008</text>
+<text x="1144" y="356" font-size="13" font-weight="400" fill="#111111" text-anchor="start" font-family="Consolas, 'Noto Sans KR', monospace">P4712  배관 연결  T4750</text>
 <text x="1144" y="386" font-size="13" font-weight="400" fill="#111111" text-anchor="start" font-family="Consolas, 'Noto Sans KR', monospace">P4712 좌표 (245.8, 148.8)–(256.2, 159.2) mm</text>
 <line x1="1144" y1="408" x2="1532" y2="408" stroke="#CFD3D9" stroke-width="1"/>
 <text x="1144" y="430" font-size="13" font-weight="400" fill="#5F6368" text-anchor="start">관계·속성·좌표를 텍스트로 LLM에 전달</text>
 <rect x="1132" y="454" width="412" height="74" rx="0" stroke="none" fill="#F3F4F6" stroke-width="1"/>
 <text x="1144" y="483.0" font-size="13" font-weight="700" fill="#5F6368" text-anchor="start">질문</text>
-<text x="1196" y="483.0" font-size="14" font-weight="700" fill="#111111" text-anchor="start">P4712와 배관으로 연결된 장비는?</text>
+<text x="1196" y="483.0" font-size="14" font-weight="700" fill="#111111" text-anchor="start">P4712와 배관으로 연결된 장비</text>
 <text x="1144" y="515.0" font-size="13" font-weight="700" fill="#5F6368" text-anchor="start">답변</text>
 <text x="1196" y="515.0" font-size="14" font-weight="700" fill="#1F4FD8" text-anchor="start">H1008, T4750</text>
 <text x="1132" y="554" font-size="14" font-weight="700" fill="#111111" text-anchor="start">기존 텍스트 LLM 입력으로 사용</text>
-<text x="1132" y="576" font-size="13.5" font-weight="400" fill="#5F6368" text-anchor="start">질문과 관련된 연결 정보만 골라 입력(전체의 약 28% 분량)</text>
+<text x="1132" y="576" font-size="13.5" font-weight="400" fill="#5F6368" text-anchor="start">질문 관련 연결 정보로 입력 한정(전체의 약 28% 분량)</text>
 <line x1="56" y1="600" x2="1544" y2="600" stroke="#111111" stroke-width="1.4"/>
 <line x1="800.0" y1="616" x2="800.0" y2="774" stroke="#CFD3D9" stroke-width="1"/>
 <text x="56" y="632" font-size="16" font-weight="700" fill="#111111" text-anchor="start">기술적 차별점</text>
 <rect x="56" y="646" width="716.0" height="58" rx="0" stroke="#CFD3D9" fill="#F3F4F6" stroke-width="1"/>
 <rect x="56" y="646" width="4" height="58" fill="#1F4FD8"/>
 <text x="74" y="670" font-size="15.5" font-weight="700" fill="#111111" text-anchor="start">관계정보 복원</text>
-<text x="758.0" y="670" font-size="12.5" font-weight="400" fill="#1F4FD8" text-anchor="end">02 단계</text>
 <text x="74" y="692" font-size="13.5" font-weight="400" fill="#5F6368" text-anchor="start">문자뿐 아니라 선·분기점을 분석해 장비 간 연결관계를 그래프로 구성</text>
 <rect x="56" y="712" width="716.0" height="58" rx="0" stroke="#CFD3D9" fill="#F3F4F6" stroke-width="1"/>
 <rect x="56" y="712" width="4" height="58" fill="#1F4FD8"/>
 <text x="74" y="736" font-size="15.5" font-weight="700" fill="#111111" text-anchor="start">별도 VLM·GPU 없는 전처리</text>
-<text x="758.0" y="736" font-size="12.5" font-weight="400" fill="#1F4FD8" text-anchor="end">01–02 단계</text>
-<text x="74" y="758" font-size="13.5" font-weight="400" fill="#5F6368" text-anchor="start">도면 파일의 선·문자 좌표를 그대로 쓰고, 스캔본에만 OCR·영상처리 적용</text>
+<text x="74" y="758" font-size="13.5" font-weight="400" fill="#5F6368" text-anchor="start">도면 파일의 선·문자 좌표를 그대로 활용하고 스캔본에 한해 OCR·영상처리 적용</text>
 <text x="828.0" y="632" font-size="16" font-weight="700" fill="#111111" text-anchor="start">성능</text>
 <text x="828.0" y="680" font-size="28" font-weight="700" fill="#111111" text-anchor="start">64.1%</text>
 <text x="940.0" y="668" font-size="14" font-weight="700" fill="#111111" text-anchor="start">도면 연결관계 복원율</text>
@@ -1284,7 +1282,7 @@
 <text x="1186.0" y="746" font-size="28" font-weight="700" fill="#111111" text-anchor="start">95.2%</text>
 <text x="1298.0" y="734" font-size="14" font-weight="700" fill="#111111" text-anchor="start">삽화와 표 행 연결률</text>
 <text x="1298.0" y="756" font-size="12.5" font-weight="400" fill="#5F6368" text-anchor="start">FAA 항공 정비 문서 볼트 표, 육안 대조</text>
-<text x="828.0" y="792" font-size="12" font-weight="400" fill="#5F6368" text-anchor="start">질의응답은 Ollama로 내려받은 오픈소스 LLM(8B)을 CPU에서 실행해 같은 질문을 OCR 텍스트와 관계 텍스트로 각각 입력해 비교</text>
+<text x="828.0" y="792" font-size="12" font-weight="400" fill="#5F6368" text-anchor="start">질의응답 조건  Ollama 기반 오픈소스 LLM(8B) CPU 실행, 동일 질문에 OCR 텍스트와 관계 텍스트를 각각 입력해 비교</text>
 <rect x="56" y="806" width="1488" height="44" rx="0" stroke="none" fill="#111111" stroke-width="1"/>
 <text x="800.0" y="835" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">기존 기술문서 활용   ·   CPU 기반 사전 처리   ·   기존 텍스트 LLM 재사용   ·   폐쇄망 배포 가능</text>
 <text x="56" y="872" font-size="12" font-weight="400" fill="#5F6368" text-anchor="start">예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&amp;ID  ·  연결 정답은 원본 설계 파일 기준</text>
