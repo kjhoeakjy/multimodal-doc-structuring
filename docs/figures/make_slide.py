@@ -14,7 +14,7 @@ CTX = json.load(open(os.path.join(ROOT, 'examples/llm-qa/contexts.json'), encodi
 
 W, H = 1600, 900
 ACC = "#1F4FD8"; INK = "#111111"; GR = "#5F6368"; LINE = "#CFD3D9"; FILL = "#F3F4F6"
-EQ, SYM, INS, PIPE, SIG, JCT = "#C8322E", "#1F4FD8", "#7A2BD1", "#1E8E57", "#2F80ED", "#E0A400"
+EQ, SYM, INS, PIPE, SIG, JCT, TBL = "#C8322E", "#1F4FD8", "#7A2BD1", "#1E8E57", "#2F80ED", "#E0A400", "#E8710A"
 FONT = "'Noto Sans KR', 'Malgun Gothic', sans-serif"; MONO = "Consolas, 'Noto Sans KR', monospace"
 FD = "C:/Windows/Fonts/"
 _f = {}
@@ -90,11 +90,14 @@ def overlay():
         if n['role'] not in ROLE_C: continue
         x0, y0, x1, y1 = n['bbox']
         b.append(f'<rect x="{x0-.7}" y="{y0-.7}" width="{x1-x0+1.4}" height="{y1-y0+1.4}" rx=".4" fill="none" stroke="{ROLE_C[n["role"]]}" stroke-width="{0.9 if n["id"] in hl_nodes else 0.55}"/>')
+    for tb in G['tables']:
+        x0, y0, x1, y1 = tb['bbox']; on = 'H1008' in tb['rows'][0]
+        b.append(f'<rect x="{x0}" y="{y0}" width="{x1-x0}" height="{y1-y0}" fill="{TBL}" fill-opacity=".10" stroke="{ACC if on else TBL}" stroke-width="{1.4 if on else 0.8}"/>')
     for j in juncs:
         b.append(f'<circle cx="{j["pt"][0]}" cy="{j["pt"][1]}" r="1.2" fill="{JCT}" stroke="#fff" stroke-width=".3"/>')
     return '\n'.join(b)
 
-VB = (122, 52, 268, 156)
+VB = (5.5, 52, 409, 242)
 def crop(x, y, w, h, body, fill="#FFFFFF"):
     rect(x, y, w, h, LINE, fill)
     out.append(f'<svg x="{x}" y="{y}" width="{w}" height="{h}" viewBox="{VB[0]} {VB[1]} {VB[2]} {VB[3]}" preserveAspectRatio="xMidYMid meet">{body}</svg>')
@@ -130,8 +133,8 @@ crop2(PX[0], TOP, PWS[0], IH, drawing(INK, INK) + EQ_HL)
 crop2(PX[1], TOP, PWS[1], IH, drawing("#C9CDD4", "#B0B5BD") + overlay())
 CAP = TOP + IH + 26
 t(PX[0], CAP, "공개 P&ID(배관·계장도) 벡터 도면", 14, True, maxw=PWS[0])
-t(PX[0], CAP + 22, "장비 5, 계기 4, 밸브·기호 19, 배관 구간 44  ·  점선 상자: 질의 대상 장비", 13.5, False, GR, maxw=PWS[0])
-leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브·기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "접속점"), (ACC, "H1008 배관 경로")]
+t(PX[0], CAP + 22, "장비 5, 계기 4, 밸브·기호 19, 배관 구간 44, 사양표 5  ·  점선: 질의 대상", 13.5, False, GR, maxw=PWS[0])
+leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브·기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "접속점"), (TBL, "표"), (ACC, "H1008 경로·사양표")]
 xx = PX[1]
 for c, nm_ in leg:
     out.append(f'<rect x="{xx}" y="{CAP-11}" width="11" height="11" fill="{c}"/>'); t(xx + 15, CAP, nm_, 13); xx += 15 + width(nm_, 13) * 1.07 + 10
@@ -151,7 +154,7 @@ y3 = TOP + 62; GH = 124
 rect(x3, y3, w3, GH, ACC, "#FFFFFF", 1.4)
 t(x3 + 12, y3 + 21, "구조화 텍스트 (실제 결과 일부)", 13, True, ACC)
 rl = CTX['retrieved'].splitlines()
-pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "r18 종류=pipe", "# 장비 간 배관 연결")]
+pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "t1 bbox=", "# 장비 간 배관 연결")]
 for k, ln in enumerate(pick):
     t(x3 + 12, y3 + 44 + k * 22, fit(ln, 11, w3 - 24), 11, k == 3, INK if k == 3 else "#333333", mono=True)
 NQ = json.load(open(os.path.join(ROOT, 'examples/llm-qa/results/slide-natural-question.json'), encoding='utf-8'))
