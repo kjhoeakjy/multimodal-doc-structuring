@@ -60,7 +60,7 @@ adj = {}
 for r in runs:
     if r['kind'] == 'pipe':
         adj.setdefault(r['a'], []).append((r['b'], r['id'])); adj.setdefault(r['b'], []).append((r['a'], r['id']))
-start = next(n['id'] for n in nodes if n['texts'] and n['texts'][0] == 'P4712')
+start = next(n['id'] for n in nodes if n['texts'] and n['texts'][0] == 'H1008')
 prev = {start: None}; q = deque([start])
 while q:
     v = q.popleft()
@@ -94,7 +94,7 @@ def overlay():
         b.append(f'<circle cx="{j["pt"][0]}" cy="{j["pt"][1]}" r="1.2" fill="{JCT}" stroke="#fff" stroke-width=".3"/>')
     return '\n'.join(b)
 
-VB = (168, 66, 186, 106)
+VB = (122, 52, 268, 156)
 def crop(x, y, w, h, body, fill="#FFFFFF"):
     rect(x, y, w, h, LINE, fill)
     out.append(f'<svg x="{x}" y="{y}" width="{w}" height="{h}" viewBox="{VB[0]} {VB[1]} {VB[2]} {VB[3]}" preserveAspectRatio="xMidYMid meet">{body}</svg>')
@@ -115,13 +115,13 @@ t(R - QS - 14, 88, "문서 유형별 처리 예시 8건", 13, False, GR, "end")
 hline(L, R, 138, INK, 1.4)
 
 # ================= 중단: 실제 도면 처리 과정 =================
-PWS = [440, 560, 412]; PG = 38
+PWS = [540, 540, 348]; PG = 30
 PX = [L, L + PWS[0] + PG, L + PWS[0] + PWS[1] + 2 * PG]
-TOP = 182; IH = 352
-heads = ["01  원본 도면", "02  구성요소 및 연결관계 추출", "03  관계정보 구조화 및 LLM 입력"]
+TOP = 194; IH = 310
+heads = ["01  원본 도면", "02  구성요소 및 연결관계 추출", "03  관계정보 구조화"]
 for i, hd in enumerate(heads):
     t(PX[i], TOP - 14, hd, 18, True, ACC if i == 1 else INK, maxw=PWS[i])
-    if i < 2: arrow(PX[i] + PWS[i] + 7, TOP + IH / 2, PX[i + 1] - 7, TOP + IH / 2)
+    if i < 2: arrow(PX[i] + PWS[i] + 5, TOP + IH / 2, PX[i + 1] - 5, TOP + IH / 2)
 EQ_HL = ''.join(f'<rect x="{nid[v]["bbox"][0]-1.6}" y="{nid[v]["bbox"][1]-1.6}" width="{nid[v]["bbox"][2]-nid[v]["bbox"][0]+3.2}" height="{nid[v]["bbox"][3]-nid[v]["bbox"][1]+3.2}" rx=".8" fill="none" stroke="{ACC}" stroke-width="1.1" stroke-dasharray="2 1"/>' for v in [start] + targets)
 def crop2(x, y, w, h, body):
     rect(x, y, w, h, LINE, "#FFFFFF")
@@ -130,64 +130,71 @@ crop2(PX[0], TOP, PWS[0], IH, drawing(INK, INK) + EQ_HL)
 crop2(PX[1], TOP, PWS[1], IH, drawing("#C9CDD4", "#B0B5BD") + overlay())
 CAP = TOP + IH + 26
 t(PX[0], CAP, "공개 P&ID(배관·계장도) 벡터 도면", 14, True, maxw=PWS[0])
-t(PX[0], CAP + 22, "점선 상자: 질의 대상 장비", 13.5, False, GR, maxw=PWS[0])
-leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브·기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "분기점"), (ACC, "P4712 배관 경로")]
+t(PX[0], CAP + 22, "장비 5, 계기 4, 밸브·기호 19, 배관 구간 44  ·  점선 상자: 질의 대상 장비", 13.5, False, GR, maxw=PWS[0])
+leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브·기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "접속점"), (ACC, "H1008 배관 경로")]
 xx = PX[1]
 for c, nm_ in leg:
-    out.append(f'<rect x="{xx}" y="{CAP-11}" width="11" height="11" fill="{c}"/>'); t(xx + 15, CAP, nm_, 13); xx += 15 + width(nm_, 13) * 1.07 + 12
-if xx - 12 > PX[1] + PWS[1]: sys.exit("범례 폭 초과")
-t(PX[1], CAP + 22, "선의 끝점·분기점과 장비 위치 기준의 연결관계 판별", 13.5, False, GR, maxw=PWS[1])
+    out.append(f'<rect x="{xx}" y="{CAP-11}" width="11" height="11" fill="{c}"/>'); t(xx + 15, CAP, nm_, 13); xx += 15 + width(nm_, 13) * 1.07 + 10
+if xx - 10 > PX[1] + PWS[1]: sys.exit("범례 폭 초과")
+t(PX[1], CAP + 22, "선분 끝점과 접속점, 장비 위치 기준의 연결관계 판별", 13.5, False, GR, maxw=PWS[1])
 
-# 03: OCR 텍스트와 관계 기반 구조화 비교
+# 03: OCR 텍스트와 관계정보 구조화 결과(실제 직렬화 텍스트 일부), 자연어 질문과 실제 LLM 응답
 x3, w3 = PX[2], PWS[2]
-rect(x3, TOP, w3, 82, LINE, FILL)
-t(x3 + 12, TOP + 22, "OCR 텍스트", 13, True, GR)
-t(x3 + 12, TOP + 46, "T4750, P4712, H1008, TICSA 4750.03 …", 13, False, GR, mono=True, maxw=w3 - 24)
-t(x3 + 12, TOP + 69, "문자 목록 형태, 장비 간 관계 확인 불가", 12.5, False, GR, maxw=w3 - 24)
-y3 = TOP + 94; GH = 158
+def fit(s, size, maxw):  # 실제 텍스트를 칸 폭에 맞춰 뒤쪽을 줄임표로 생략
+    if width(s, size, mono=True) * 1.07 <= maxw: return s
+    while width(s + ' …', size, mono=True) * 1.07 > maxw: s = s[:-1]
+    return s.rstrip() + ' …'
+rect(x3, TOP, w3, 54, LINE, FILL)
+t(x3 + 12, TOP + 20, "OCR 텍스트", 13, True, GR)
+t(x3 + 12, TOP + 41, fit("N3 N2 80 PI H1008 PICSA 66KL21-80 50 80 4712.01", 11.5, w3 - 24), 11.5, False, GR, mono=True)
+y3 = TOP + 62; GH = 124
 rect(x3, y3, w3, GH, ACC, "#FFFFFF", 1.4)
-t(x3 + 12, y3 + 22, "관계 기반 구조화", 13, True, ACC)
-def node(cx, cy, label, col):
-    wv = width(label, 14, True, True) + 24
-    rect(cx - wv / 2, cy - 15, wv, 30, col, "#FFFFFF", 1.6, 3)
-    t(cx, cy + 5, label, 14, True, col, "middle", mono=True)
-    return wv
-ax, ay = x3 + 80, y3 + 84
-tg_names = sorted(nid[v]['texts'][0] for v in targets)
-for k, nm_ in enumerate(tg_names):
-    by_ = y3 + 56 + k * 56; bx = x3 + w3 - 78
-    arrow(ax + 46, ay, bx - 50, by_, ACC, 1.6)
-    t((ax + bx) / 2 + 6, (ay + by_) / 2 + (-12 if k == 0 else 22), "배관 경로", 12, False, ACC, "middle")
-    node(bx, by_, nm_, EQ)
-node(ax, ay, "P4712", EQ)
-t(x3 + 12, y3 + GH - 12, "장비·연결관계·원본 좌표의 통합 저장", 12.5, False, GR, maxw=w3 - 24)
-yq = y3 + GH + 12
+t(x3 + 12, y3 + 21, "구조화 텍스트 (실제 결과 일부)", 13, True, ACC)
+rl = CTX['retrieved'].splitlines()
+pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "r18 종류=pipe", "# 장비 간 배관 연결")]
+for k, ln in enumerate(pick):
+    t(x3 + 12, y3 + 44 + k * 22, fit(ln, 11, w3 - 24), 11, k == 3, INK if k == 3 else "#333333", mono=True)
+NQ = json.load(open(os.path.join(ROOT, 'examples/llm-qa/results/slide-natural-question.json'), encoding='utf-8'))
+ans = {r['cond']: r for r in NQ}
+yq = y3 + GH + 8
 QH = IH - (yq - TOP)
 rect(x3, yq, w3, QH, "none", FILL)
-t(x3 + 12, yq + QH / 2 - 6, "Q.", 14, True, GR); t(x3 + 40, yq + QH / 2 - 6, "P4712와 배관 경로로 연결되는 장비는?", 14, True, INK, maxw=w3 - 52)
-t(x3 + 12, yq + QH / 2 + 22, "A.", 14, True, GR); t(x3 + 40, yq + QH / 2 + 22, ", ".join(tg_names), 14, True, ACC, maxw=w3 - 52)
+def wrap(s, size, bold, maxw):  # 어절 단위 줄 나눔
+    lines, cur = [], ''
+    for w_ in s.split(' '):
+        tryw = (cur + ' ' + w_).strip()
+        if cur and width(tryw, size, bold) * 1.07 > maxw: lines.append(cur); cur = w_
+        else: cur = tryw
+    return lines + [cur]
+t(x3 + 12, yq + 24, "질문", 13, True, GR); t(x3 + 52, yq + 24, ans['retrieved']['question'], 13.5, True, INK, maxw=w3 - 64)
+t(x3 + 12, yq + 50, "응답", 13, True, ACC)
+for j, ln in enumerate(wrap(ans['retrieved']['response'], 13.5, True, w3 - 64)):
+    t(x3 + 52, yq + 50 + j * 20, ln, 13.5, True, ACC, maxw=w3 - 64)
+_ocr_ans = _re.search(r'장비는 (.+?)입니다', ans['ocr']['response']).group(1)  # 같은 질문에 OCR 텍스트를 넣었을 때의 응답
+t(x3 + 52, yq + QH - 12, f"OCR 텍스트 입력 시 응답: {_ocr_ans} (오답)", 12, False, GR, maxw=w3 - 64)
 t(x3, CAP, "텍스트 전용 LLM의 입력 자료로 활용", 14, True, maxw=w3)
 t(x3, CAP + 22, "질문 관련 연결정보만 선별, 전체 분량의 약 28%", 13.5, False, GR, maxw=w3)
 
-# ================= 하단: 기술적 차별점(왼쪽 절반)과 성능(오른쪽 절반) =================
+# ================= 하단: 기술적 차별점(왼쪽)과 성능(오른쪽) =================
 # 성능 근거: examples/public-documents/README.md(도면별 정답 인접 쌍), examples/llm-qa/README.md(래스터·스캔 개선값),
-# examples/llm-qa/results/open-8b-2026-10-s80.jsonl(공개 가중치 8B, CPU, 80문항)
+# examples/llm-qa/results/open-8b-2026-10-s80.jsonl(공개 가중치 8B, CPU, 공개·합성 문서 15건)
 recall = [27/27, 19/26, 17/24, 3/6, 4/9]   # C01 원본·200 dpi·스캔, C02·C03 원본. examples/public-documents/pid/output/current 재평가 값
 import json as _json
 _rows = [_json.loads(l) for l in open(os.path.join(ROOT, 'examples/llm-qa/results/open-8b-2026-10-s80.jsonl'), encoding='utf-8') if l.strip()]
 def _acc(cond):
     r = [x for x in _rows if x['cond'] == cond]; return 100 * sum(1 for x in r if x['correct']) / len(r), len(r)
 qa_ocr, nq = _acc('ocr'); qa_full, _ = _acc('full')
+ndoc = len({x['doc'] for x in _rows})
 from decimal import Decimal, ROUND_HALF_UP
 f1 = lambda v: str(Decimal(str(v)).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP))
-YB = TOP + IH + 70
+YB = CAP + 64
 hline(L, R, YB, INK, 1.4)
-MID = (L + R) / 2
-out.append(f'<line x1="{MID}" y1="{YB+16}" x2="{MID}" y2="{YB+182}" stroke="{LINE}" stroke-width="1"/>')
+CWD = 600
+MID = L + CWD + 30
+out.append(f'<line x1="{MID}" y1="{YB+16}" x2="{MID}" y2="{YB+176}" stroke="{LINE}" stroke-width="1"/>')
 t(L, YB + 32, "기술적 차별점", 16, True)
-cards = [("문자와 연결관계의 통합 구조화", ["선의 끝점·분기점 분석을 통한 장비·계기 간 연결관계 추출"]),
-         ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG 원본은 선·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용", "생성형 VLM·GPU 없이 도면 전처리 수행"])]
-CWD = MID - L - 28
+cards = [("문자와 연결관계의 통합 구조화", ["선분 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출"]),
+         ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG 원본은 선·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용", "VLM·GPU 없이 도면 전처리 수행"])]
 cy = YB + 44
 for k, (tt, lines) in enumerate(cards):
     hh = 34 + 22 * len(lines)
@@ -197,23 +204,21 @@ for k, (tt, lines) in enumerate(cards):
     for j, ln in enumerate(lines):
         t(L + 18, cy + 47 + j * 22, ln, 13.5, False, GR, maxw=CWD - 32)
     cy += hh + 8
-SXL = MID + 28
+SXL = MID + 30
 t(SXL, YB + 32, "성능", 16, True)
-mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 5개 입력 조건 평균", "(원본 3건, 200 dpi·스캔 변환)"], INK),
-        ("20/21", "삽화·표 행 대응", ["FAA 정비 문서 볼트 표", "21개 행 육안 대조"], INK),
-        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개 가중치 8B, CPU, 동일 {nq}문항"], ACC)]
+mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 5개 입력 조건 평균", "원본 3건, 200 dpi·스캔 변환 2건"], INK),
+        ("20/21", "삽화·표 행 대응", ["FAA 정비 문서 볼트 표", "행 단위 육안 대조"], INK),
+        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개·합성 문서 {ndoc}건, 공개 가중치 8B"], ACC)]
 GW = (R - SXL) / 3
 for k, (big, s1, s2, col) in enumerate(mets):
     gx = SXL + k * GW
-    t(gx, YB + 80, big, 30, True, col, maxw=GW - 14)
-    t(gx, YB + 106, s1, 14, True, maxw=GW - 14)
+    t(gx, YB + 86, big, 36, True, col, maxw=GW - 14)
+    t(gx, YB + 116, s1, 15, True, maxw=GW - 14)
     for j, ln in enumerate(s2):
-        t(gx, YB + 128 + j * 19, ln, 12.5, False, GR, maxw=GW - 14)
-t(SXL, YB + 184, "평가 자료  공개 P&ID, FAA 정비 문서, 합성 기술문서(동일 원본의 입력 형식 변형 포함)", 12, False, GR, maxw=R - SXL)
+        t(gx, YB + 140 + j * 21, ln, 13, False, GR, maxw=GW - 14)
 
-BY = YB + 200
+BY = YB + 192
 rect(L, BY, R - L, 50, "none", INK)
-# 로컬 실행 근거: 전처리·OCR·LLM(공개 가중치) 모두 CPU 1대에서 실행, 외부 API 호출 없음
 band = "PDF·SVG 원본 직접 활용   ·   CPU 단독 처리   ·   텍스트 전용 LLM으로 도면 질의응답   ·   외부 서버 전송 없는 로컬 실행"
 t((L + R) / 2, BY + 33, band, 20, True, "#FFFFFF", "middle", maxw=R - L - 20)
 t(L, BY + 70, "예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&ID  ·  연결 정답은 원본 설계 파일 기준", 12, False, GR, maxw=R - L)
@@ -226,4 +231,4 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
 </svg>"""
 open(os.path.join(HERE, '1장-도면-관계-구조화.svg'), 'w', encoding='utf-8').write(svg)
 open(os.path.join(HERE, '1장-도면-관계-구조화.html'), 'w', encoding='utf-8').write(f'<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0">{svg}</body></html>')
-print("ok", BY + 70, tg_names, round(100*sum(recall)/len(recall),2), round(qa_ocr,1), round(qa_full,1), nq)
+print("ok", BY + 70, [nid[v]["texts"][0] for v in targets], round(100*sum(recall)/len(recall),2), round(qa_ocr,1), round(qa_full,1), nq)
