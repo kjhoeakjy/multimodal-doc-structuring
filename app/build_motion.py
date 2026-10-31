@@ -1,15 +1,13 @@
-"""문서 종류별 대표 예시 한 건씩의 처리 과정을 단계별로 재생하는 정적 화면을 만든다.
+"""문서 종류별 대표 예시 한 건씩에서 그림의 요소가 텍스트 줄로 바뀌는 과정을 재생하는 정적 화면을 만든다.
 실행: python app/build_motion.py [표본 폴더] [출력 html]   (기본: examples/sample-inputs → app/문서-구조화-과정.html)
 
-각 예시마다 경로(벡터 도면·래스터 도면·기계 도면·표/본문 쪽·글자 층 PDF·사진)에 맞는 단계 목록을 만들고,
-단계마다 원본 위에 겹쳐 그릴 요소(상자·선·점)와 그 단계에서 생기는 자료의 형태(텍스트 줄)를 담는다.
+예시마다 처리 순서대로 '동작' 목록을 만든다. 동작 하나는 그림 위의 요소 하나(상자·선·점)와
+그 요소에서 나오는 직렬화 텍스트 한 줄의 짝이다. 요소에 붙는 문자(라벨·칸·낱말)는 부속 상자로 둔다.
 """
-import os, sys, json, math, random
+import os, sys, json
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-import pipeline as pl
-import serialize as sz
-from build_page import view_image, jpeg_uri, add_relations, QTAG
+from build_page import view_image, jpeg_uri, add_relations
 
 # 종류별 대표 예시: (파일, 종류 이름, 출처)
 EXAMPLES = [
@@ -22,85 +20,44 @@ EXAMPLES = [
     ('ko-table-text-scan200.jpg', '한글 표·본문 스캔', '합성 한글 문서, 200 dpi 스캔'),
     ('photo-rocket-launch.jpg', '사진', '공개 사진'),
 ]
-ROLE_KO = {'equipment': '장비', 'instrument': '계기', 'symbol': '기호', 'nozzle': '접속구', 'note': '주석', 'mark': '표식', 'arrow': '화살표',
-           'shape': '도형', 'junction': '분기점', 'table': '표', 'row': '행', 'figure': '그림', 'paragraph': '문단', 'callout': '주기',
-           'dimension': '치수', 'datum': '기준 문자', 'part': '투상도', 'photo': '사진', 'text': '문자'}
-EDGE_KO = {'pipe': '배관', 'signal': '신호선', 'contain': '포함', 'belong': '소속', 'describe': '설명', 'mention': '언급', 'next': '순서', 'point': '지시', 'dimension': '치수'}
+MAX_ROWS = 5        # 표마다 재생하는 행 수 상한
+MAX_SUB = 40        # 요소에 붙는 부속 상자 상한
 
-def mm_box(b, k):
+def px_box(b, k):
     return [round(v / k, 1) for v in b]
 
-def layout_graph(nodes, runs, junctions, keep_roles, max_nodes=90):
-    """힘 기반 배치. 그림 좌표에서 출발해 풀어 놓음. 결과는 0~1 정규화 좌표."""
-    nid = {n['id']: n for n in nodes}
-    jid = {j['id']: j for j in junctions}
-    deg = {}
-    for r in runs:
-        for v in (r['a'], r['b']):
-            deg[v] = deg.get(v, 0) + 1
-    gnodes = [n['id'] for n in nodes if n['role'] in keep_roles and not n.get('attached_to') and (deg.get(n['id'], 0) > 0 or n['role'] in ('equipment', 'instrument', 'table', 'part', 'figure', 'paragraph', 'photo'))]
-    gnodes = gnodes[:max_nodes]
-    gnodes += [j['id'] for j in junctions if deg.get(j['id'], 0) > 0]
-    gset = set(gnodes)
-    def pos(v):
-        if v in nid:
-            b = nid[v]['bbox']; return [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2]
-        if v in jid:
-            return list(jid[v]['pt'])
-        return None
-    edges = [(r['a'], r['b'], r) for r in runs if r['a'] in gset and r['b'] in gset and r['a'] != r['b']]
-    if not gnodes:
-        return {}, []
-    random.seed(3)
-    P = {v: pos(v) for v in gnodes}
-    xs = [p[0] for p in P.values()]; ys = [p[1] for p in P.values()]
-    bx0, bx1, by0, by1 = min(xs) - 5, max(xs) + 5, min(ys) - 5, max(ys) + 5   # 배치 범위: 원본 좌표 범위에 고정
-    cx, cy = (bx0 + bx1) / 2, (by0 + by1) / 2
-    area = max(1.0, (bx1 - bx0) * (by1 - by0))
-    k = 0.45 * math.sqrt(area / max(1, len(gnodes)))   # 노드 수와 그림 크기에 맞춘 목표 간격
-    for it in range(300):
-        temp = (k / 2) * (1 - it / 300) + 0.3
-        disp = {v: [0.0, 0.0] for v in gnodes}
-        for i, a in enumerate(gnodes):
-            for b in gnodes[i + 1:]:
-                dx = P[a][0] - P[b][0]; dy = P[a][1] - P[b][1]
-                d = math.hypot(dx, dy) + 1e-3
-                f = k * k / d
-                disp[a][0] += dx / d * f; disp[a][1] += dy / d * f
-                disp[b][0] -= dx / d * f; disp[b][1] -= dy / d * f
-        for a, b, _ in edges:
-            dx = P[a][0] - P[b][0]; dy = P[a][1] - P[b][1]
-            d = math.hypot(dx, dy) + 1e-3
-            f = d * d / k
-            disp[a][0] -= dx / d * f; disp[a][1] -= dy / d * f
-            disp[b][0] += dx / d * f; disp[b][1] += dy / d * f
-        for v in gnodes:
-            dx, dy = disp[v]
-            dx += (cx - P[v][0]) * 0.08; dy += (cy - P[v][1]) * 0.08   # 약한 중심 인력
-            d = math.hypot(dx, dy) + 1e-3
-            P[v][0] = min(bx1, max(bx0, P[v][0] + dx / d * min(d, temp)))
-            P[v][1] = min(by1, max(by0, P[v][1] + dy / d * min(d, temp)))
-    xs = [p[0] for p in P.values()]; ys = [p[1] for p in P.values()]
-    x0, x1, y0, y1 = min(xs), max(xs) + 1e-6, min(ys), max(ys) + 1e-6
-    out = {}
-    for v in gnodes:
-        n = nid.get(v)
-        out[v] = dict(x=round((P[v][0] - x0) / (x1 - x0), 4), y=round((P[v][1] - y0) / (y1 - y0), 4),
-                      role=n['role'] if n else 'junction', name=(sz.name_of(n) if n else '')[:14], src=pos(v))
-    return out, [dict(a=a, b=b, kind=r['kind']) for a, b, r in edges]
+def px_pts(coords, k):
+    return [[round(x / k, 1), round(y / k, 1)] for x, y in coords]
 
-def serial_block(serial, head, limit=40):
-    """직렬화 줄 중 특정 머리글 절의 줄만 뽑음."""
-    out, on = [], False
-    for l in serial:
-        if l.startswith('## '):
-            on = l.startswith(head)
-            if on:
-                out.append(l)
-            continue
-        if on and l.strip():
-            out.append(l)
-    return out[:limit]
+def center(b):
+    return ((b[0] + b[2]) / 2, (b[1] + b[3]) / 2)
+
+def inside(b, box, pad):
+    cx, cy = center(b)
+    return box[0] - pad <= cx <= box[2] + pad and box[1] - pad <= cy <= box[3] + pad
+
+class Serial:
+    """직렬화 줄을 절(## 머리글)별로 나누어 id로 찾음."""
+    def __init__(self, lines):
+        self.sections, self.order, self.title = {}, [], ''
+        cur = ''
+        for l in lines:
+            if l.startswith('## '):
+                cur = l; self.order.append(cur); self.sections.setdefault(cur, [])
+            elif l.startswith('# '):
+                self.title = l
+            elif l.strip():
+                self.sections.setdefault(cur, []).append(l)
+    def head(self, word):
+        for h in self.order:
+            if word in h:
+                return h
+        return '## ' + word
+    def find(self, word, prefix):
+        for l in self.sections.get(self.head(word), []):
+            if l.startswith(prefix):
+                return l
+        return None
 
 def build(name, kind_name, source, folder):
     stem = os.path.splitext(name)[0]
@@ -113,125 +70,172 @@ def build(name, kind_name, source, folder):
         add_relations(R, img, d)
     k = R['view']['mm_per_px']
     kind = R['kind']
-    det = R.get('detect', {}); counts = R.get('counts', {}); times = R.get('times', {})
+    det = R.get('detect', {}); times = R.get('times', {})
     nodes, runs, juncs = R.get('nodes', []), R.get('runs', []), R.get('junctions', [])
-    serial = R.get('serial', [])
-    steps = []
-    def step(title, desc, layers, form, note=''):
-        steps.append(dict(title=title, desc=desc, layers=layers, form=form, note=note))
+    nid = {n['id']: n for n in nodes}
+    S = Serial(R.get('serial', []))
+    pad = 8 / k   # 문자 귀속 탐색 여유(8 mm)
 
-    # 0. 입력과 판별
-    reason = det.get('reason', '')
-    dpi_s = f"{R.get('dpi')} dpi({det.get('dpi_source')})" if R.get('dpi') else ''
-    kind_ko = {'vector': '벡터 도면', 'drawing': '래스터 도면', 'page': '표·본문 쪽', 'illustration': '도해·기계 도면', 'photo': '사진·렌더링'}[kind]
-    form0 = [f"파일 {name}", f"판별 {kind_ko}", f"근거 {reason}"] + ([f"해상도 {dpi_s}"] if dpi_s else []) + ([f"기울기 {det['skew_deg']}°" for _ in [0] if det.get('skew_deg')])
-    step('입력과 판별', '잉크 구성(문자·축 평행 선·채움)과 문자 수로 처리 경로를 정함', [], form0)
-
-    # 문자
-    texts = R.get('texts') or []
+    # 문자 모음: (문자, 화면 좌표 상자)
     if kind == 'vector':
         labels = R.get('labels') or json.load(open(os.path.join(d, 'graph.json'), encoding='utf-8')).get('labels', [])
-        tb = [dict(box=mm_box(l['bbox'], k), t=l['text']) for l in labels]
-        step('문자 좌표', 'SVG 문자 요소의 위치·각도를 그대로 읽음(문자 인식 없음)',
-             [dict(kind='box', cls='text', items=tb)],
-             [f"문자 {len(tb)}개"] + [f"{l['text']}  ({l['x']:.1f}, {l['y']:.1f}) mm" for l in labels[:14]])
-    elif texts:
-        tb = [dict(box=[int(v) for v in t['box']], t=t['text']) for t in texts]
-        title = '글자 층 좌표' if all(t.get('conf', 0) >= 0.999 for t in texts) else '문자 인식'
-        desc = 'PDF 글자 층의 낱말 좌표를 읽음(문자 인식 없음)' if title == '글자 층 좌표' else ('기울기 보정 후 CPU 문자 인식. 상자·문자·신뢰도를 얻음' + (f", {times.get('문자 인식', 0):.0f}초" if times.get('문자 인식') else ''))
-        step(title, desc, [dict(kind='box', cls='text', items=tb)],
-             [f"문자 {len(tb)}개"] + [f"{t['text'][:28]}  conf {t.get('conf', 1):.2f}  box {t['box']}" for t in texts[:14]])
+        pool = [(l['text'], px_box(l['bbox'], k)) for l in labels]
+        text_line = f"문자 {len(pool)}개, 위치와 각도를 글자 층에서 그대로 읽음"
+        text_title, text_desc = '문자 좌표', 'SVG 문자 요소의 위치·각도를 읽음. 문자 인식 없음'
+    else:
+        texts = R.get('texts') or []
+        pool = [(t['text'], [int(v) for v in t['box']]) for t in texts]
+        if texts and all(t.get('conf', 0) >= 0.999 for t in texts):
+            text_line = f"문자 {len(pool)}개, 글자 층의 낱말 좌표"
+            text_title, text_desc = '글자 층 좌표', 'PDF 글자 층의 낱말 좌표를 읽음. 문자 인식 없음'
+        else:
+            t_ocr = times.get('문자 인식')
+            text_line = f"문자 인식 {len(pool)}개" + (f", {t_ocr:.0f}초(CPU)" if t_ocr else '')
+            text_title, text_desc = '문자 인식', '기울기 보정 후 CPU 문자 인식. 상자·문자·신뢰도를 얻음'
 
+    def subs(words, box, cap=MAX_SUB):
+        """요소의 문자 목록에 해당하는 문자 상자를 요소 주변에서 찾음."""
+        want = {}
+        for w in words:
+            for piece in str(w).split('|'):
+                want[piece.strip()] = want.get(piece.strip(), 0) + 1
+        out = []
+        for t, b in pool:
+            if want.get(t, 0) > 0 and inside(b, box, pad):
+                out.append(dict(box=b, t=t)); want[t] -= 1
+        return out[:cap]
+
+    def words_in(box, cap=MAX_SUB):
+        return [dict(box=b, t=t) for t, b in pool if inside(b, box, 0)][:cap]
+
+    acts = []
+    def stage(title, desc):
+        acts.append(dict(kind='stage', title=title, desc=desc, line='# ' + title))
+    def act(kind_, line, **kw):
+        a = dict(kind=kind_, line=line); a.update(kw); acts.append(a)
+    def rows_of(t, i, box, cb=None):
+        """표 하나의 행 동작(칸 문자가 행 상자로 모여 머리글=값 줄이 됨)."""
+        nrow = len(t['rows']); h = (box[3] - box[1]) / max(1, nrow)
+        for j in range(min(nrow, MAX_ROWS)):
+            if cb and j < len(cb) and cb[j]:
+                cells = [[int(v) for v in c] for c in cb[j]]
+                rb = [min(c[0] for c in cells), min(c[1] for c in cells), max(c[2] for c in cells), max(c[3] for c in cells)]
+                sub = [dict(box=c, t='') for c in cells]
+            else:
+                rn = nid.get(f't{i}r{j}')
+                rb = px_box(rn['bbox'], k) if rn else [box[0], round(box[1] + j * h, 1), box[2], round(box[1] + (j + 1) * h, 1)]
+                sub = words_in(rb, 12)
+            line = S.find('표', f't{i} 열 이름') if j == 0 else S.find('표', f't{i} 행{j}:')
+            act('box', line or f"t{i} 행{j}: " + ' | '.join(t['rows'][j]), box=rb, cls='row', sub=sub)
+
+    kind_ko = {'vector': '벡터 도면', 'drawing': '래스터 도면', 'page': '표·본문 쪽', 'illustration': '도해·기계 도면', 'photo': '사진·렌더링'}[kind]
+    tables = [t for t in R.get('tables', []) if t.get('rows')]
+    tbox = lambda t: [int(v) for v in t['box']] if t.get('box') else px_box(t['bbox'], k)
+    core = [n for n in nodes if n['role'] in ('equipment', 'instrument', 'symbol', 'note')]
+
+    # 1. 요소 추출
+    stage('요소 추출', '문자, 선·도형·기호, 표 칸을 좌표와 함께 뽑음. 요소마다 원본 좌표가 남음')
+    act('text', f"판별 {kind_ko} · 근거 {det.get('reason', '')}" + (f" · {R.get('dpi')} dpi" if R.get('dpi') else ''))
+    if pool:
+        act('sweep', text_line, items=[b for _, b in pool], cls='text')
     if kind in ('vector', 'drawing'):
-        # 선·도형·기호
-        shape_items = [dict(box=mm_box(n['bbox'], k), t=ROLE_KO.get(n['role'], n['role'])) for n in nodes if n['role'] not in ('mark',)]
-        run_items = [dict(pts=[[round(x / k, 1), round(y / k, 1)] for x, y in r['coords']], t=r['kind']) for r in runs]
-        step('선·도형·기호', '축 평행 긴 선을 선 후보로, 닫힌 윤곽을 도형으로, 남은 잉크 덩이를 기호로 나눔' if kind == 'drawing' else '선·곡선·타원 기본 요소를 선 후보와 닫힌 도형·기호로 나눔',
-             [dict(kind='poly', cls='run-raw', items=run_items), dict(kind='box', cls='shape', items=shape_items)],
-             [f"선 후보 {counts.get('primitives', len(runs))}개, 도형·기호 {len(shape_items)}개"] + [f"{n['id']} bbox={[round(v, 1) for v in n['bbox']]} mm" for n in nodes[:12]])
-        # 틀·표
-        tbl = [dict(box=mm_box(t['bbox'], k), t='표') for t in R.get('tables', [])]
-        if tbl:
-            step('틀·표 분리', '격자 모양 선 묶음을 표로 읽어 칸과 문자를 행으로 묶고 도면 요소에서 뺌',
-                 [dict(kind='box', cls='table', items=tbl)],
-                 [f"표 {len(tbl)}개"] + [f"t{i} 행 {len(t['rows'])}: " + ' / '.join(t['rows'][0])[:60] for i, t in enumerate(R.get('tables', []))])
-        # 연결
-        jpts = [dict(pt=[round(j['pt'][0] / k, 1), round(j['pt'][1] / k, 1)], t=j['id']) for j in juncs]
-        step('연결과 분기점', '선 끝이 도형·기호에 닿는 점, 선 위에 놓인 기호, 다른 선의 끝이 닿는 분기점에서 선을 자르고 구간으로 이음. 모서리는 한 꼭짓점으로 맞춤',
-             [dict(kind='poly', cls='run', items=run_items, draw=True), dict(kind='dot', cls='junction', items=jpts)],
-             [f"선 구간 {len(runs)}개, 분기점 {len(juncs)}개"] + [f"{r['id']} {r['a']} — {r['b']}  {EDGE_KO.get(r['kind'], r['kind'])}" for r in runs[:14]])
-        # 문자 귀속·역할
-        role_items = [dict(box=mm_box(n['bbox'], k), t=(f"{ROLE_KO.get(n['role'], n['role'])} {sz.name_of(n)}"[:24] if n['role'] in ('equipment', 'instrument') else ''), role=n['role']) for n in nodes if n['role'] in ('equipment', 'instrument', 'symbol', 'note', 'nozzle')]
-        step('문자 귀속과 역할', '문자를 거리·방향으로 가장 가까운 요소나 선에 붙이고, 태그 형식·연결 수·크기로 장비·계기·기호·접속구를 정함',
-             [dict(kind='box', cls='role', items=role_items)],
-             [f"장비 {counts.get('equipment', 0)} · 계기 {counts.get('instrument', 0)} · 기호 {counts.get('symbol', 0)} · 접속구 {counts.get('nozzle', 0)}"] + serial_block(serial, '## 요소', 14)[1:])
-        keep = ('equipment', 'instrument', 'symbol', 'nozzle', 'note')
-    elif kind == 'illustration':
-        tbl = [dict(box=mm_box(t['bbox'], k), t='표제란') for t in R.get('tables', [])]
-        if tbl:
-            step('표제란', '괘선 격자를 표로 읽음', [dict(kind='box', cls='table', items=tbl)],
-                 [f"표 {len(tbl)}개"] + [f"t{i}: " + ' / '.join(t['rows'][0])[:60] for i, t in enumerate(R.get('tables', []))])
-        parts = [dict(box=[int(v) for v in p['box']], t=f"투상도 {p['area_mm2']:.0f} mm²") for p in R.get('parts', [])]
-        step('투상도 영역', '문자·표제란을 지운 뒤 남는 큰 잉크 덩이를 투상도(부품 그림) 영역으로 잡음',
-             [dict(kind='box', cls='part', items=parts)], [f"투상도 영역 {len(parts)}개"] + [p['t'] for p in parts])
-        kinds = {'dimension': '치수', 'note': '주기', 'datum': '기준 문자', 'callout': '주기'}
-        co = [dict(box=[int(v) for v in c['box']], t=kinds.get(c.get('kind'), '주기'), role=c.get('kind', 'callout')) for c in R.get('callouts', [])]
-        step('치수·주기 분류', '문자 묶음을 치수(수치·공차·지름 기호), 주기(NOTE·설명문), 기준 문자로 나눔',
-             [dict(kind='box', cls='role', items=co)],
-             [f"치수 {sum(1 for c in co if c['role'] == 'dimension')} · 주기 {sum(1 for c in co if c['role'] in ('note', 'callout'))} · 기준 문자 {sum(1 for c in co if c['role'] == 'datum')}"] + [f"{c['t']}: " + ' '.join(x['texts'])[:50] for c, x in zip(co, R.get('callouts', []))][:14])
-        ld = [dict(pts=[[int(l['start'][0]), int(l['start'][1])], [int(l['end'][0]), int(l['end'][1])]], t='지시선') for l in R.get('leaders', [])]
-        step('지시선', '문자 묶음에서 나와 투상도에 닿는 직선을 지시선으로 잡아 치수·주기를 부품에 연결',
-             [dict(kind='poly', cls='run', items=ld, draw=True)],
-             [f"지시선 {len(ld)}개"] + [f"주기 {l['callout']} → 투상도 {l['part']}  {l['length_mm']:.0f} mm" for l in R.get('leaders', [])])
-        keep = ('part', 'callout', 'dimension', 'note', 'datum', 'table')
-    elif kind == 'page':
-        tables = R.get('tables', [])
-        cells = [dict(box=[int(v) for v in c], t='') for t in tables for row in (t.get('cell_boxes') or []) for c in row]
-        tbl = [dict(box=[int(v) for v in t['box']] if t.get('box') else mm_box(t['bbox'], k), t='표') for t in tables]
+        act('sweep', f"도형·기호 {len(core)}개", items=[px_box(n['bbox'], k) for n in core], cls='shape')
+        act('sweep', f"선 구간 {len(runs)}개, 분기점 {len(juncs)}개", lines=[px_pts(r['coords'], k) for r in runs], items=[[j['pt'][0] / k - 3, j['pt'][1] / k - 3, j['pt'][0] / k + 3, j['pt'][1] / k + 3] for j in juncs], cls='line')
         if tables:
-            step('괘선과 표 칸', '괘선으로 칸을 나누고 문자를 칸에 배정. 괘선 없이 쌓인 행은 문자 줄로 나눔',
-                 [dict(kind='box', cls='cell', items=cells), dict(kind='box', cls='table', items=tbl)],
-                 [f"표 {len(tables)}개"] + [f"t{i} 행 {len(t['rows'])} × 열 {len(t['rows'][0])}: " + ' | '.join(t['rows'][0])[:60] for i, t in enumerate(tables)])
-        figs = [dict(box=[int(v) for v in f['box']], t='그림') for f in R.get('figures', [])]
-        if figs:
-            step('그림 영역', '표 밖의 큰 잉크 덩이와 틀 안의 조각·문자를 그림 영역으로 묶고, 같은 행의 표 칸에 소속시킴',
-                 [dict(kind='box', cls='figure', items=figs)],
-                 [f"그림 영역 {len(figs)}개"] + [f"f{i} {f['area_mm2']:.0f} mm²" + (f"  소속 표 {f['table']}" if f.get('table') else '') for i, f in enumerate(R.get('figures', []))][:14])
-        paras = [dict(box=[int(v) for v in p['box']], t=f"단{p['col'] + 1}", role=f"col{p['col']}") for p in R.get('paragraphs', [])]
-        ncol = len(set(p['col'] for p in R.get('paragraphs', []))) or 1
-        step('단과 문단', '문자 줄 사이의 세로 빈 띠로 단을 나누고, 줄 간격·글자 크기·제목 형식으로 문단을 끊어 읽는 순서를 정함',
-             [dict(kind='box', cls='para', items=paras)],
-             [f"{ncol}단, 문단 {len(paras)}개"] + [f"p{i} 단{p['col'] + 1}: {p['text'][:50]}" for i, p in enumerate(R.get('paragraphs', []))][:14])
-        keep = ('table', 'row', 'figure', 'paragraph')
-    else:   # photo
-        keep = ('photo',)
+            act('sweep', f"표 {len(tables)}개", items=[tbox(t) for t in tables], cls='table')
+    elif kind == 'illustration':
+        parts = R.get('parts', [])
+        if parts:
+            act('sweep', f"투상도 영역 {len(parts)}개", items=[[int(v) for v in p['box']] for p in parts], cls='part')
+        if tables:
+            act('sweep', f"표제란 {len(tables)}개", items=[tbox(t) for t in tables], cls='table')
+        act('sweep', f"문자 묶음 {len(R.get('callouts', []))}개", items=[[int(v) for v in c['box']] for c in R.get('callouts', [])], cls='shape')
+    elif kind == 'page':
+        if tables:
+            act('sweep', f"표 {len(tables)}개, 칸 {sum(len(r) for t in tables for r in (t.get('cell_boxes') or []))}개",
+                items=[tbox(t) for t in tables] + [[int(v) for v in c] for t in tables for row in (t.get('cell_boxes') or []) for c in row], cls='table')
+        if R.get('figures'):
+            act('sweep', f"그림 영역 {len(R['figures'])}개", items=[[int(v) for v in f['box']] for f in R['figures']], cls='part')
+        if R.get('paragraphs'):
+            ncol = len(set(p['col'] for p in R['paragraphs'])) or 1
+            act('sweep', f"{ncol}단, 문자 줄 묶음 {len(R['paragraphs'])}개", items=[[int(v) for v in p['box']] for p in R['paragraphs']], cls='shape')
+    else:
+        act('sweep', f"사진 {vw}×{vh} px, 구조 추출 없음", items=[[0, 0, vw, vh]], cls='part')
 
-    if kind != 'photo':
-        lay, edges = layout_graph(nodes, runs, juncs, keep)
-        src_px = {v: [round(p['src'][0] / k, 1), round(p['src'][1] / k, 1)] for v, p in lay.items() if p['src']}
-        for v in lay:
-            lay[v].pop('src', None)
-        step('관계 그래프', '요소를 노드로, 연결·포함·소속·지시를 간선으로 둔 그래프. 좌표는 노드마다 남김',
-             [dict(kind='graph', nodes=lay, edges=edges, src=src_px)],
-             [f"노드 {len(lay)}개, 간선 {len(edges)}개"] + [f"{e['a']} —{EDGE_KO.get(e['kind'], e['kind'])}— {e['b']}" for e in edges[:14]])
-    # 직렬화
-    step('직렬화', '그래프를 좌표가 붙은 텍스트 줄로 씀. 이 텍스트가 텍스트 LLM의 입력',
-         [], serial[:60], note=f"전체 {len(serial)}줄, {sum(len(l) for l in serial):,}자")
-    # 질의 부분 그래프
-    qtag = QTAG.get(name)
-    if qtag and kind != 'photo':
-        sg = pl.subgraph(dict(nodes=nodes, runs=runs, junctions=juncs), qtag, depth=2)
-        if sg.get('found'):
-            ids = set()
-            for l in sg['lines']:
-                for tok in l.replace('[', ' ').replace(']', ' ').replace('(', ' ').replace(')', ' ').split():
-                    ids.add(tok)
-            nb = {n['id']: n for n in nodes}
-            hl = [dict(box=mm_box(nb[v]['bbox'], k), t=sz.name_of(nb[v])[:16]) for v in ids if v in nb]
-            step('질의 부분 그래프', f"질문의 태그 {qtag}에서 연결을 2단계 따라간 부분만 추려 짧은 문맥을 만듦. 줄마다 원본 좌표가 있어 근거 영역을 되짚음",
-                 [dict(kind='box', cls='focus', items=hl)], sg['lines'][:40], note=f"{len(sg['lines'])}줄")
-    return dict(name=name, kind=kind, kind_name=kind_name, source=source, w=vw, h=vh, img=jpeg_uri(img, 2000, 76), steps=steps,
-                total=round(times.get('total', sum(v for kk, v in times.items() if isinstance(v, (int, float)))), 1))
+    # 2. 관계 복원
+    stage('관계 복원', '문자를 거리·방향이 가장 가까운 요소에 붙여 이름을 정하고, 선의 양 끝이 닿는 요소로 연결을 확인함. 요소와 연결마다 텍스트 한 줄')
+    if kind in ('vector', 'drawing'):
+        act('text', S.head('요소'))
+        for n in core:
+            box = px_box(n['bbox'], k)
+            act('box', S.find('요소', n['id'] + ' ') or f"{n['id']} 종류={n['role']}", box=box, cls=n['role'], sub=subs(n.get('texts', []), box))
+        act('text', S.head('연결'))
+        for r in runs:
+            pts = px_pts(r['coords'], k)
+            xs = [q[0] for q in pts]; ys = [q[1] for q in pts]
+            ends = [px_box(nid[v]['bbox'], k) for v in (r['a'], r['b']) if v in nid]
+            act('poly', S.find('연결', r['id'] + ' ') or f"{r['id']} 종류={r['kind']} A={r['a']} B={r['b']}", pts=pts, cls=r['kind'], ends=ends,
+                sub=subs(r.get('texts', []), [min(xs), min(ys), max(xs), max(ys)]))
+        if tables:
+            act('text', S.head('표'))
+            for i, t in enumerate(tables):
+                rows_of(t, i, tbox(t), t.get('cell_boxes'))
+        link = S.sections.get(S.head('장비 간'), [])
+        if link:
+            act('text', S.head('장비 간'))
+            byname = {n['texts'][0]: px_box(n['bbox'], k) for n in nodes if n['role'] == 'equipment' and n.get('texts')}
+            for l in link:
+                names = [w.strip(',') for w in l.replace('→', ' ').split()]
+                act('group', l, boxes=[byname[w] for w in names if w in byname][:8], cls='equipment')
+    elif kind == 'illustration':
+        act('text', S.head('치수'))
+        for i, c in enumerate(R.get('callouts', [])):
+            box = [int(v) for v in c['box']]
+            act('box', S.find('치수', f'c{i} ') or f"c{i}", box=box, cls=c.get('kind', 'note'), sub=words_in(box))
+        if R.get('leaders'):
+            act('text', S.head('지시선'))
+            for l in R['leaders']:
+                pts = [[int(l['start'][0]), int(l['start'][1])], [int(l['end'][0]), int(l['end'][1])]]
+                act('poly', S.find('지시선', f"c{l['callout']} ") or f"c{l['callout']} → part{l['part']}", pts=pts, cls='point')
+        if tables:
+            act('text', S.head('표'))
+            for i, t in enumerate(tables):
+                rows_of(t, i, tbox(t), t.get('cell_boxes'))
+    elif kind == 'page':
+        if tables:
+            act('text', S.head('표'))
+            for i, t in enumerate(tables):
+                act('box', S.find('표', f't{i} bbox') or f"t{i}", box=tbox(t), cls='table')
+                rows_of(t, i, tbox(t), t.get('cell_boxes'))
+        if R.get('figures'):
+            act('text', S.head('그림'))
+            for i, f in enumerate(R['figures']):
+                act('box', S.find('그림', f'f{i} ') or f"f{i}", box=[int(v) for v in f['box']], cls='figure')
+        if R.get('paragraphs'):
+            act('text', S.head('본문'))
+            for i, p in enumerate(R['paragraphs']):
+                box = [int(v) for v in p['box']]
+                act('box', S.find('본문', f'p{i} ') or f"p{i} {p['text'][:60]}", box=box, cls='paragraph', sub=words_in(box))
+        rel = [r for r in runs if r['kind'] in ('describe', 'mention', 'belong')]
+        if rel:
+            act('text', S.head('관계'))
+            for r in rel:
+                pts = px_pts(r['coords'], k)
+                ends = [px_box(nid[v]['bbox'], k) for v in (r['a'], r['b']) if v in nid]
+                act('poly', S.find('관계', r['id'] + ' ') or f"{r['id']} 종류={r['kind']} A={r['a']} B={r['b']}", pts=pts, cls=r['kind'], ends=ends)
+    else:
+        for l in S.sections.get(S.head('관계'), []):
+            act('box', l, box=[0, 0, vw, vh], cls='photo')
+
+    # 3. 직렬화
+    serial = R.get('serial', [])
+    stage('직렬화', '좌표가 붙은 텍스트. 이 텍스트가 텍스트 LLM의 입력')
+    act('final', f"전체 {len(serial)}줄, {sum(len(l) for l in serial):,}자")
+
+    serial = R.get('serial', [])
+    total_t = times.get('total', sum(v for kk, v in times.items() if isinstance(v, (int, float))))
+    return dict(name=name, kind=kind, kind_name=kind_name, source=source, w=vw, h=vh, img=jpeg_uri(img, 2000, 76), acts=acts,
+                nlines=len(serial), nchars=sum(len(l) for l in serial), total=round(total_t, 1))
 
 def main(folder, out_html):
     data = []
@@ -239,7 +243,7 @@ def main(folder, out_html):
         if not os.path.exists(os.path.join(folder, 'output', os.path.splitext(name)[0], 'result.json')):
             print('없음', name); continue
         ex = build(name, kind_name, source, folder)
-        data.append(ex); print(name, ex['kind'], len(ex['steps']), '단계')
+        data.append(ex); print(name, ex['kind'], len(ex['acts']), '동작')
     tpl = open(os.path.join(HERE, 'static', 'motion.html'), encoding='utf-8').read()
     html = tpl.replace('/*__DATA__*/[]', json.dumps(data, ensure_ascii=False, separators=(',', ':')))
     open(out_html, 'w', encoding='utf-8').write(html)
