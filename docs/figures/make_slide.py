@@ -186,11 +186,11 @@ t(x3, CAP + 22, "질문 관련 연결정보만 선별, 전체 분량의 약 28%"
 
 # ================= 하단: 기술적 차별점(왼쪽)과 성능(오른쪽) =================
 # 성능 근거: examples/public-documents/README.md(도면별 정답 인접 쌍), examples/llm-qa/README.md(래스터·스캔 개선값),
-# examples/llm-qa/results/open-8b-2026-10-s80.jsonl(공개 가중치 8B, CPU, 공개·합성 문서 15건)
+# examples/llm-qa/results/open-8b-2026-10-all.jsonl(공개 가중치 8B, CPU, 공개·합성 문서 15건, 240문항 전체)
 label = [60/62, 32/40, 28/31, 36/61, 4/4]; label_n = 62 + 40 + 31 + 61 + 4   # 문자 태그가 맞는 도면 요소에 붙은 비율, 같은 재평가 결과
 recall = [27/27, 19/26, 17/24, 3/6, 4/9]   # C01 원본·200 dpi·스캔, C02·C03 원본. examples/public-documents/pid/output/current 재평가 값
 import json as _json
-_rows = [_json.loads(l) for l in open(os.path.join(ROOT, 'examples/llm-qa/results/open-8b-2026-10-s80.jsonl'), encoding='utf-8') if l.strip()]
+_rows = [_json.loads(l) for l in open(os.path.join(ROOT, 'examples/llm-qa/results/open-8b-2026-10-all.jsonl'), encoding='utf-8') if l.strip()]
 def _acc(cond):
     r = [x for x in _rows if x['cond'] == cond]; return 100 * sum(1 for x in r if x['correct']) / len(r), len(r)
 qa_ocr, nq = _acc('ocr'); qa_full, _ = _acc('full')
@@ -218,7 +218,7 @@ SXL = MID + 30
 t(SXL, YB + 34, "성능", 17, True)
 mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 5개 입력 조건 평균", "원본 3건, 200 dpi·스캔 변환 2건"], INK),
         (f"{100*sum(label)/len(label):.1f}%", "기호·명칭 대응 정확도", ["도면 기호마다 붙은 명칭(예: P4712)의", f"정답 일치 비율, 명칭 {label_n}건"], INK),
-        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개·합성 문서 {ndoc}건"], ACC)]
+        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개·합성 문서 {ndoc}건, 전체 {nq}문항"], ACC)]
 GW = (R - SXL) / 3
 for k, (big, s1, s2, col) in enumerate(mets):
     gx = SXL + k * GW

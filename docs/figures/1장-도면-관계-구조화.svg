@@ -1286,10 +1286,10 @@
 <text x="992.0" y="682" font-size="16" font-weight="700" fill="#111111" text-anchor="start">기호·명칭 대응 정확도</text>
 <text x="992.0" y="708" font-size="14" font-weight="400" fill="#5F6368" text-anchor="start">도면 기호마다 붙은 명칭(예: P4712)의</text>
 <text x="992.0" y="731" font-size="14" font-weight="400" fill="#5F6368" text-anchor="start">정답 일치 비율, 명칭 198건</text>
-<text x="1268.0" y="650" font-size="40" font-weight="700" fill="#1F4FD8" text-anchor="start">+26.3%p</text>
+<text x="1268.0" y="650" font-size="40" font-weight="700" fill="#1F4FD8" text-anchor="start">+27.5%p</text>
 <text x="1268.0" y="682" font-size="16" font-weight="700" fill="#111111" text-anchor="start">LLM 정답률 개선</text>
-<text x="1268.0" y="708" font-size="14" font-weight="400" fill="#5F6368" text-anchor="start">OCR 36.3%, 관계 구조화 62.5%</text>
-<text x="1268.0" y="731" font-size="14" font-weight="400" fill="#5F6368" text-anchor="start">공개·합성 문서 15건</text>
+<text x="1268.0" y="708" font-size="14" font-weight="400" fill="#5F6368" text-anchor="start">OCR 37.5%, 관계 구조화 65.0%</text>
+<text x="1268.0" y="731" font-size="14" font-weight="400" fill="#5F6368" text-anchor="start">공개·합성 문서 15건, 전체 240문항</text>
 <rect x="56" y="774" width="1488" height="54" rx="0" stroke="none" fill="#111111" stroke-width="1"/>
 <text x="800.0" y="809" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="middle">PDF·SVG 원본 직접 활용   ·   CPU 단독 처리   ·   텍스트 전용 LLM 응답 테스트   ·   외부 서버 전송 없는 로컬 실행</text>
 <text x="56" y="850" font-size="12" font-weight="400" fill="#5F6368" text-anchor="start">예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&amp;ID  ·  연결 정답은 원본 설계 파일 기준</text>
