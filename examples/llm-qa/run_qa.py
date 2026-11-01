@@ -113,7 +113,7 @@ def report(Q, conds, done, path, model):
     def acc(rows):
         rows = [r for r in rows if r]
         return f"{sum(r['correct'] for r in rows) / len(rows) * 100:.0f}% ({sum(r['correct'] for r in rows)}/{len(rows)})" if rows else '-'
-    L = [f"# 질의응답 정답률 · 모델 {model}", '', f"문항 {len(Q)}, 조건: ocr=문자 인식 결과를 읽는 순서로 이어 붙인 텍스트, full=전체 직렬화(관계 그래프·표·문단), retrieved=질문 태그 기준 부분 그래프와 질문어 일치 줄.", '',
+    L = [f"# 질의응답 정답률 · 모델 {model}", '', f"문항 {len(Q)}, 조건: ocr=문자 인식 결과를 읽는 순서로 이어 붙인 텍스트, objects=요소·속성 목록(관계 없음), relations=요소+연결, full=relations+장비 간 도달(전체 직렬화), retrieved=질문 문장에 적힌 식별자 기준 부분 그래프와 질문어 일치 줄, both=ocr+full.", '',
          '| 자료 | 문항 | ' + ' | '.join(conds) + ' |', '|---|---|' + '---|' * len(conds)]
     groups = collections.OrderedDict()
     for q in Q:

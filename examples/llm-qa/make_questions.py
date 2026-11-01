@@ -86,7 +86,7 @@ def pid_questions(xml_path, docs, page_h, source):
         num = ga.get('ProcessInstrumentationFunctionNumberAssignmentClass'); cat = ga.get('ProcessInstrumentationFunctionCategoryAssignmentClass'); fn = ga.get('ProcessInstrumentationFunctionsAssignmentClass')
         if num and cat and fn and re.match(r'^[A-Z]+$', fn):
             for doc in docs:
-                add(doc, '계기', f"계기 번호 {num}의 기능 문자(예: PI, TIC)는 무엇인가? 문자만 답하라.", [cat + fn], focus=cat + fn, source=source)
+                add(doc, '계기', f"계기 번호 {num}의 기능 문자(예: FIC, LT)는 무엇인가? 문자만 답하라.", [cat + fn], focus=cat + fn, source=source)
 
 pid_questions(os.path.join(PID_IN, 'C01V04-VER.EX01.xml'), ['pid-standard-vector', 'pid-standard-200dpi', 'pid-standard-scan'], 297.053, 'DEXPI C01 XML')
 pid_questions(os.path.join(PID_IN, 'C02V03-VER.EX02.xml'), ['pid-c02-vector'], 594.1, 'DEXPI C02 XML')
