@@ -15,13 +15,14 @@ CTX = json.load(open(os.path.join(ROOT, 'examples/llm-qa/contexts.json'), encodi
 W, H = 1600, 900
 ACC = "#1F4FD8"; INK = "#111111"; GR = "#5F6368"; LINE = "#CFD3D9"; FILL = "#F3F4F6"
 EQ, SYM, INS, PIPE, SIG, JCT, TBL = "#C8322E", "#1F4FD8", "#7A2BD1", "#1E8E57", "#2F80ED", "#E0A400", "#E8710A"
-FONT = "'Noto Sans KR', 'Malgun Gothic', sans-serif"; MONO = "Consolas, 'Noto Sans KR', monospace"
+FONT = "'Wanted Sans', sans-serif"; MONO = "Consolas, 'Wanted Sans', monospace"
+WS = {False: os.path.join(HERE, 'fonts', 'WantedSans-Regular.ttf'), True: os.path.join(HERE, 'fonts', 'WantedSans-Bold.ttf')}   # Wanted Sans, SIL OFL 1.1
 FD = "C:/Windows/Fonts/"
 _f = {}
 def fnt(size, bold=False, mono=False):
     k = (size, bold, mono)
     if k not in _f:
-        _f[k] = ImageFont.truetype(FD + ("consola.ttf" if mono else ("NotoSansKR-Bold.ttf" if bold else "NotoSansKR-Regular.ttf")), size)
+        _f[k] = ImageFont.truetype(FD + "consola.ttf" if mono else WS[bold], size)
     return _f[k]
 def width(s, size, bold=False, mono=False):
     if mono:  # 고정폭 글꼴에 한글이 섞이면 한글은 대체 글꼴 폭으로 계산
@@ -210,7 +211,6 @@ cy = YB + 48
 for k, (tt, lines) in enumerate(cards):
     hh = 38 + 25 * len(lines)
     rect(L, cy, CWD, hh, LINE, FILL)
-    out.append(f'<rect x="{L}" y="{cy}" width="4" height="{hh}" fill="{ACC}"/>')
     t(L + 18, cy + 26, tt, 17, True, maxw=CWD - 32)
     for j, ln in enumerate(lines):
         t(L + 18, cy + 51 + j * 25, ln, 14.5, False, GR, maxw=CWD - 32)
@@ -235,8 +235,20 @@ t((L + R) / 2, BY + 35, band, 21, True, "#FFFFFF", "middle", maxw=R - L - 20)
 t(L, BY + 76, "예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&ID  ·  연결 정답은 원본 설계 파일 기준", 12, False, GR, maxw=R - L)
 if BY + 76 > H - 8: sys.exit(f"세로 초과 {BY + 76}")
 
+def font_css():  # 슬라이드에 쓰인 글자만 남긴 글꼴을 SVG 안에 넣어 PDF·PNG 어디서나 같은 글꼴로 보이게 함
+    import base64, io, re as _r
+    from fontTools import subset
+    chars = set(html.unescape(''.join(_r.findall(r'>([^<]*)</text>', ' '.join(out))))) | set('0123456789')
+    css = []
+    for bold, w in ((False, 400), (True, 700)):
+        f = subset.load_font(WS[bold], subset.Options()); o = subset.Options(); o.flavor = 'woff'
+        sb = subset.Subsetter(o); sb.populate(text=''.join(chars)); sb.subset(f)
+        b = io.BytesIO(); subset.save_font(f, b, o)
+        css.append(f"@font-face{{font-family:'Wanted Sans';font-weight:{w};src:url(data:font/woff;base64,{base64.b64encode(b.getvalue()).decode()}) format('woff')}}")
+    return '<style>' + ''.join(css) + '</style>'
+
 svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">
-<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="context-stroke"/></marker></defs>
+<defs>{font_css()}<marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="context-stroke"/></marker></defs>
 <rect width="{W}" height="{H}" fill="#FFFFFF"/>
 {chr(10).join(out)}
 </svg>"""
