@@ -76,8 +76,9 @@ def main(png4, out):
             p = tf.paragraphs[0]; p.alignment = {'start': PP_ALIGN.LEFT, 'middle': PP_ALIGN.CENTER, 'end': PP_ALIGN.RIGHT}[anchor]
             r = p.add_run(); r.text = t
             f = r.font; f.size = Pt(size * PT); f.bold = bold; f.color.rgb = rgb(a.get('fill', '#111111'))
+            FACE = 'Wanted Sans' if bold else 'Wanted Sans Medium'
             rPr = r._r.get_or_add_rPr()
-            for el, face in (('a:latin', 'Consolas' if mono else 'Wanted Sans'), ('a:ea', 'Wanted Sans'), ('a:cs', 'Wanted Sans')):
+            for el, face in (('a:latin', 'Consolas' if mono else FACE), ('a:ea', FACE), ('a:cs', FACE)):
                 rPr.append(rPr.makeelement(qn(el), {'typeface': face}))
     cp = prs.core_properties
     cp.title = 'PT_AI/AX 개발_0014-000463'; cp.author = ''; cp.last_modified_by = ''; cp.comments = ''; cp.subject = ''; cp.keywords = ''

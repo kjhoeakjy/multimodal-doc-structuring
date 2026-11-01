@@ -13,10 +13,10 @@ G = json.load(open(os.path.join(ROOT, 'examples/dexpi-reference-pid/output/graph
 CTX = json.load(open(os.path.join(ROOT, 'examples/llm-qa/contexts.json'), encoding='utf-8'))['q003']
 
 W, H = 1600, 900
-ACC = "#1F4FD8"; INK = "#111111"; GR = "#5F6368"; LINE = "#CFD3D9"; FILL = "#F3F4F6"
+ACC = "#1F4FD8"; INK = "#111111"; GR = "#3A3D42"; LINE = "#CFD3D9"; FILL = "#F3F4F6"
 EQ, SYM, INS, PIPE, SIG, JCT, TBL = "#C8322E", "#1F4FD8", "#7A2BD1", "#1E8E57", "#2F80ED", "#E0A400", "#E8710A"
 FONT = "'Wanted Sans', sans-serif"; MONO = "Consolas, 'Wanted Sans', monospace"
-WS = {False: os.path.join(HERE, 'fonts', 'WantedSans-Regular.ttf'), True: os.path.join(HERE, 'fonts', 'WantedSans-Bold.ttf')}   # Wanted Sans, SIL OFL 1.1
+WS = {False: os.path.join(HERE, 'fonts', 'WantedSans-Medium.ttf'), True: os.path.join(HERE, 'fonts', 'WantedSans-Bold.ttf')}   # Wanted Sans, SIL OFL 1.1
 FD = "C:/Windows/Fonts/"
 _f = {}
 def fnt(size, bold=False, mono=False):
@@ -124,7 +124,7 @@ PX = [L, L + PWS[0] + PG, L + PWS[0] + PWS[1] + 2 * PG]
 TOP = 204 + 22; IH = 242
 heads = ["01  원본 도면", "02  구성요소 및 연결관계 추출", "03  관계정보 구조화"]
 for i, hd in enumerate(heads):
-    t(PX[i], TOP - 14, hd, 18, True, ACC if i == 1 else INK, maxw=PWS[i])
+    t(PX[i], TOP - 14, hd, 18, True, INK, maxw=PWS[i])
     if i < 2: arrow(PX[i] + PWS[i] + 5, TOP + IH / 2, PX[i + 1] - 5, TOP + IH / 2)
 EQ_HL = ''.join(f'<rect x="{nid[v]["bbox"][0]-1.6}" y="{nid[v]["bbox"][1]-1.6}" width="{nid[v]["bbox"][2]-nid[v]["bbox"][0]+3.2}" height="{nid[v]["bbox"][3]-nid[v]["bbox"][1]+3.2}" rx=".8" fill="none" stroke="{ACC}" stroke-width="1.1" stroke-dasharray="2 1"/>' for v in [start] + targets)
 def crop2(x, y, w, h, body):
