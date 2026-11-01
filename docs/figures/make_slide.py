@@ -108,7 +108,7 @@ L, R = 80, 1520; TY = 34   # 바깥 여백
 t(L, 34 + TY, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 14, False, GR, maxw=R - L)
 t(L, 78 + TY, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 32, True, maxw=R - L)
 t(L, 116 + TY, "문제", 16, True, ACC)
-t(L + 48, 116 + TY, "기존 OCR 인식 등의 비정형 데이터 전처리 방법은 복잡한 도면에 존재하는 다양한 연결관계를 반영하지 못함", 16, False, INK, maxw=R - L - 48)
+t(L + 48, 116 + TY, "기존 OCR 인식 등의 비정형 데이터 전처리 방식은 복잡한 도면에 존재하는 다양한 연결관계를 반영하지 못함", 16, False, INK, maxw=R - L - 48)
 import re as _re
 _q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='utf-8').read()
 _d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
