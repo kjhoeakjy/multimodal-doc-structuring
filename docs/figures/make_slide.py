@@ -104,7 +104,7 @@ def crop(x, y, w, h, body, fill="#FFFFFF"):
     out.append(f'<svg x="{x}" y="{y}" width="{w}" height="{h}" viewBox="{VB[0]} {VB[1]} {VB[2]} {VB[3]}" preserveAspectRatio="xMidYMid meet">{body}</svg>')
 
 # ================= 상단 =================
-L, R = 80, 1520; TY = 42   # 바깥 여백
+L, R = 80, 1520; TY = 38   # 바깥 여백
 t(L, 30 + TY, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 12.5, False, GR, maxw=R - L)
 t(L, 68 + TY, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 28, True, maxw=R - L)
 t(L, 101 + TY, "문제", 14, True, ACC)
@@ -118,15 +118,14 @@ t(R - QS - 12, 60 + TY, "데이터 처리 과정 시뮬레이터", 12.5, True, I
 t(R - QS - 12, 79 + TY, "문서 유형별 예시 8건", 11.5, False, GR, "end")
 hline(L, R, 120 + TY, INK, 1.4)
 
-# ================= 중단: 실제 도면 처리 과정 =================
-PWS = [568, 568, 256]; PG = 24
-PX = [L, L + PWS[0] + PG, L + PWS[0] + PWS[1] + 2 * PG]
-TOP = 226; IH = 263
-heads = ["01  원본 도면", "02  구성요소 및 연결관계 추출", "03  관계정보 구조화"]
+# ================= 중단: 원본 도면과 추출 결과 =================
+PWS = [708, 708]; PG = 24
+PX = [L, L + PWS[0] + PG]
+TOP = 206; IH = 322
+heads = ["01  원본 도면", "02  구성요소 및 연결관계 추출"]
 for i, hd in enumerate(heads):
     t(PX[i], TOP - 12, hd, 15.5, True, INK, maxw=PWS[i])
-    ay_ = TOP + IH / 2 if i == 0 else TOP + 72 + 8 + (IH - 80) / 2   # 02에서 03으로는 구조화 텍스트 칸을 가리킴
-    if i < 2: arrow(PX[i] + PWS[i] + 5, ay_, PX[i + 1] - 5, ay_)
+arrow(PX[0] + PWS[0] + 5, TOP + IH / 2, PX[1] - 5, TOP + IH / 2)
 EQ_HL = ''.join(f'<rect x="{nid[v]["bbox"][0]-1.6}" y="{nid[v]["bbox"][1]-1.6}" width="{nid[v]["bbox"][2]-nid[v]["bbox"][0]+3.2}" height="{nid[v]["bbox"][3]-nid[v]["bbox"][1]+3.2}" rx=".8" fill="none" stroke="{ACC}" stroke-width="1.1" stroke-dasharray="2 1"/>' for v in [start] + targets)
 def crop2(x, y, w, h, body):
     rect(x, y, w, h, LINE, "#FFFFFF")
@@ -139,40 +138,17 @@ t(PX[0], CAP + 19, "장비 5, 계기 4, 밸브·기호 19, 배관 구간 44  · 
 leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브·기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "접속점"), (ACC, "H1008 배관 경로")]
 xx = PX[1]
 for c, nm_ in leg:
-    out.append(f'<rect x="{xx}" y="{CAP-10}" width="10" height="10" fill="{c}"/>'); t(xx + 14, CAP, nm_, 12); xx += 14 + width(nm_, 12) * 1.07 + 10
-if xx - 10 > PX[1] + PWS[1]: sys.exit("범례 폭 초과")
+    out.append(f'<rect x="{xx}" y="{CAP-10}" width="10" height="10" fill="{c}"/>'); t(xx + 14, CAP, nm_, 12); xx += 14 + width(nm_, 12) * 1.07 + 12
+if xx - 12 > PX[1] + PWS[1]: sys.exit("범례 폭 초과")
 t(PX[1], CAP + 19, "연결선 끝점과 접속점, 장비 위치 기준의 연결관계 판별", 12, False, GR, maxw=PWS[1])
 
-# 03: OCR 결과와 관계정보 구조화 결과(전체 직렬화 텍스트 일부). 04의 응답도 성능 수치와 같은 전체 직렬화 입력 조건
-x3, w3 = PX[2], PWS[2]
 def fit(s, size, maxw):  # 실제 텍스트를 칸 폭에 맞춰 뒤쪽을 줄임표로 생략
     if width(s, size, mono=True) * 1.07 <= maxw: return s
     while width(s + ' …', size, mono=True) * 1.07 > maxw: s = s[:-1]
     return s.rstrip() + ' …'
-ol = CTX['ocr'].splitlines(); oi = next(i for i, l in enumerate(ol) if 'H1008' in l)
-OH = 72
-rect(x3, TOP, w3, OH, ORG, "#FFF4EC", 1.2)
-t(x3 + 10, TOP + 17, "OCR 전처리 결과 (일부)", 11.5, True, ORG)
-for k, ln in enumerate(ol[oi:oi + 3]):
-    t(x3 + 10, TOP + 35 + k * 15, fit(ln, 10, w3 - 20), 10, False, GR, mono=True)
-y3 = TOP + OH + 8; GH = IH - OH - 8
-rect(x3, y3, w3, GH, GRN, "#F0F9F3", 1.4)
-t(x3 + 10, y3 + 17, "구조화 텍스트 (일부)", 11.5, True, GRN)
-rl = CTX['full'].splitlines()
-pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r18 종류=pipe", "r30 종류=pipe", "r32 종류=pipe", "## 장비 간 배관 연결", "H1008 →", "P4712 →")]
-SP = (GH - 38 - 14) / (len(pick) - 1)   # 칸 높이에 맞춰 줄 간격 배분
-for k, ln in enumerate(pick):
-    em = ln.startswith(('H1008 →', 'P4712 →'))
-    t(x3 + 10, y3 + 38 + k * SP, fit(ln, 10, w3 - 20), 10, em, INK if em else "#333333", mono=True)
-if SP < 15: sys.exit("03 줄 간격 부족")
-# 04: 자연어 질문에 대한 LLM 응답(examples/llm-qa/results/slide-natural-question.json, llama3.1:8b, CPU, temperature 0)
-NQ = json.load(open(os.path.join(ROOT, 'examples/llm-qa/results/slide-natural-question.json'), encoding='utf-8'))
-ans = {r['cond']: r for r in NQ}
-t(x3, CAP, "텍스트 전용 LLM의 입력 자료로 활용", 12.5, True, maxw=w3)
-t(x3, CAP + 19, "장비·연결관계·표를 단일 텍스트로 변환", 12, False, GR, maxw=w3)
 
-# ================= 하단: LLM 응답 테스트(왼쪽)와 성능(오른쪽) =================
-# 성능 근거: examples/public-documents/README.md(도면별 정답 인접 쌍), examples/llm-qa/README.md(래스터·스캔 개선값),
+# ================= 하단: 03 관계정보 구조화, 04 LLM 응답 테스트, 05 성능 =================
+# 성능 근거: examples/public-documents/README.md(도면별 정답 인접 쌍), examples/llm-qa/README.md,
 # examples/llm-qa/results/open-8b-2026-10-all.jsonl(공개 가중치 8B, CPU, 공개·합성 문서 15건, 240문항 전체)
 label = [60/62, 32/40, 28/31, 36/61, 4/4]; label_n = 62 + 40 + 31 + 61 + 4   # 문자 태그가 맞는 도면 요소에 붙은 비율, 같은 재평가 결과
 recall = [27/27, 19/26, 17/24, 3/6, 4/9, 82/157, 10/25]   # C01 원본·200 dpi·스캔, C02·C03·증류 플랜트·증류 실험실 원본. examples/public-documents/pid/output/current 재평가 값
@@ -185,37 +161,64 @@ qa_ocr, nq = _acc('ocr'); qa_full, _ = _acc('full')
 ndoc = len({x['doc'] for x in _rows})
 from decimal import Decimal, ROUND_HALF_UP
 f1 = lambda v: str(Decimal(str(v)).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP))
-YB = CAP + 58
-hline(L, R, YB, INK, 1.4)
-CWD = 600
-MID = L + CWD + 30
-out.append(f'<line x1="{MID}" y1="{YB+16}" x2="{MID}" y2="{YB+184}" stroke="{LINE}" stroke-width="1"/>')
-t(L, YB + 30, "04  LLM 응답 테스트", 15.5, True)
-t(L + width("04  LLM 응답 테스트", 15.5, True) * 1.07 + 12, YB + 30, "공개 가중치 8B, CPU 사용, 같은 질문에 입력 자료만 교체", 12, False, GR)
-QY = YB + 42; QB = 142
-rect(L, QY, CWD, QB, "none", FILL)
-rows = [("질문", GR, ans['full']['question']),
-        ("구조화 입력", GRN, ans['full']['response'] + "  (정답)"),
-        ("OCR 입력", ORG, ans['ocr']['response'] + "  (오답)")]
-for k, (lab, col, txt) in enumerate(rows):
-    yy = QY + 32 + k * 46
-    t(L + 16, yy, lab, 12.5, True, col)
-    t(L + 112, yy, txt, 14, True, INK if k == 0 else col, maxw=CWD - 128)
-    if k < 2: out.append(f'<line x1="{L + 16}" y1="{yy + 16}" x2="{L + CWD - 16}" y2="{yy + 16}" stroke="{LINE}" stroke-width="1"/>')
-SXL = MID + 30
-t(SXL, YB + 30, "05  성능", 15.5, True)
-mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 7종 평균", f"정답 연결 {n_pairs}쌍"], INK),
-        (f"{100*sum(label)/len(label):.1f}%", "기호·명칭 대응 정확도", ["도면 기호마다 붙은 명칭(예: P4712)의", f"정답 일치 비율, 명칭 {label_n}건"], INK),
-        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개·합성 문서 {ndoc}건, 전체 {nq}문항"], ACC)]
-GW = (R - SXL) / 3
-for k, (big, s1, s2, col) in enumerate(mets):
-    gx = SXL + k * GW
-    t(gx, YB + 84, big, 34, True, col, maxw=GW - 14)
-    t(gx, YB + 111, s1, 14, True, maxw=GW - 14)
-    for j, ln in enumerate(s2):
-        t(gx, YB + 134 + j * 20, ln, 12.5, False, GR, maxw=GW - 14)
+NQ = json.load(open(os.path.join(ROOT, 'examples/llm-qa/results/slide-natural-question.json'), encoding='utf-8'))   # llama3.1:8b, CPU, temperature 0
+ans = {r['cond']: r for r in NQ}
 
-BY = YB + 202
+YB = CAP + 40
+hline(L, R, YB, INK, 1.4)
+BW = [420, 480, 1440 - 420 - 480 - 2 * 24]
+BX = [L, L + BW[0] + 24, L + BW[0] + BW[1] + 48]
+HY = YB + 30; BT = YB + 42; BH = 128
+for i in (1, 2):
+    out.append(f'<line x1="{BX[i] - 12}" y1="{YB + 16}" x2="{BX[i] - 12}" y2="{BT + BH}" stroke="{LINE}" stroke-width="1"/>')
+def head(i, txt, note):
+    t(BX[i], HY, txt, 15.5, True)
+    hw = width(txt, 15.5, True) * 1.07 + 12
+    t(BX[i] + hw, HY, note, 11.5, False, GR, maxw=BW[i] - hw)
+
+# 03 관계정보 구조화: OCR 결과와 구조화 텍스트(전체 직렬화 텍스트 일부, 성능 수치와 같은 입력 조건)
+x3, w3 = BX[0], BW[0]
+head(0, "03  관계정보 구조화", "장비·연결관계·표를 단일 텍스트로 변환")
+ol = CTX['ocr'].splitlines(); oi = next(i for i, l in enumerate(ol) if 'H1008' in l)
+OH = 46
+rect(x3, BT, w3, OH, ORG, "#FFF4EC", 1.2)
+t(x3 + 10, BT + 17, "OCR 전처리 결과 (일부)", 11.5, True, ORG)
+t(x3 + 10, BT + 35, fit('  '.join(ol[oi:oi + 3]), 10, w3 - 20), 10, False, GR, mono=True)
+y3 = BT + OH + 6; GH = BH - OH - 6
+rect(x3, y3, w3, GH, GRN, "#F0F9F3", 1.4)
+t(x3 + 10, y3 + 17, "구조화 텍스트 (일부)", 11.5, True, GRN)
+rl = CTX['full'].splitlines()
+pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "H1008 →")]
+for k, ln in enumerate(pick):
+    em = ln.startswith('H1008 →')
+    t(x3 + 10, y3 + 35 + k * 16, fit(ln, 10, w3 - 20), 10, em, INK if em else "#333333", mono=True)
+if y3 + 35 + 2 * 16 > BT + BH - 4: sys.exit("03 칸 높이 초과")
+
+# 04 LLM 응답 테스트: 같은 질문에 입력 자료만 바꾼 실제 응답
+x4, w4 = BX[1], BW[1]
+head(1, "04  LLM 응답 테스트", "공개 가중치 8B, CPU 사용")
+rect(x4, BT, w4, BH, "none", FILL)
+rows = [("질문", GR, INK, ans['full']['question']),
+        ("구조화 텍스트 입력", GRN, GRN, ans['full']['response'] + "  (정답)"),
+        ("OCR 전처리 결과 입력", ORG, ORG, ans['ocr']['response'] + "  (오답)")]
+for k, (lab, lc, tc, txt) in enumerate(rows):
+    yy = BT + 18 + k * 40
+    t(x4 + 14, yy, lab, 11, True, lc)
+    t(x4 + 14, yy + 17, txt, 12.5, True, tc, maxw=w4 - 28)
+
+# 05 성능: 지표를 세로로 나열
+x5, w5 = BX[2], BW[2]
+head(2, "05  성능", "")
+mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", f"공개 P&ID 7종 평균, 정답 연결 {n_pairs}쌍", INK),
+        (f"{100*sum(label)/len(label):.1f}%", "기호·명칭 대응 정확도", f"도면 기호에 붙은 명칭(예: P4712)의 정답 일치, {label_n}건", INK),
+        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%, 문서 {ndoc}건·{nq}문항", ACC)]
+for k, (big, s1, s2, col) in enumerate(mets):
+    yy = BT + k * 44
+    t(x5, yy + 32, big, 27, True, col, maxw=136)
+    t(x5 + 140, yy + 17, s1, 13, True, maxw=w5 - 140)
+    t(x5 + 140, yy + 35, s2, 11.5, False, GR, maxw=w5 - 140)
+
+BY = BT + BH + 16
 rect(L, BY, R - L, 46, "none", INK)
 band = "PDF·SVG 원본 직접 활용   ·   CPU 사용   ·   텍스트 전용 LLM 응답 테스트   ·   외부 서버 전송 없는 로컬 실행"
 t((L + R) / 2, BY + 30, band, 18, True, "#FFFFFF", "middle", maxw=R - L - 20)
