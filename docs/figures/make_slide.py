@@ -141,7 +141,7 @@ for c, nm_ in leg:
 if xx - 10 > PX[1] + PWS[1]: sys.exit("범례 폭 초과")
 t(PX[1], CAP + 22, "직선 끝점과 접속점, 장비 위치 기준의 연결관계 판별", 13.5, False, GR, maxw=PWS[1])
 
-# 03: OCR 텍스트와 관계정보 구조화 결과(실제 직렬화 텍스트 일부), 자연어 질문과 실제 LLM 응답
+# 03: OCR 결과와 관계정보 구조화 결과(전체 직렬화 텍스트 일부). 04의 응답도 성능 수치와 같은 전체 직렬화 입력 조건
 x3, w3 = PX[2], PWS[2]
 def fit(s, size, maxw):  # 실제 텍스트를 칸 폭에 맞춰 뒤쪽을 줄임표로 생략
     if width(s, size, mono=True) * 1.07 <= maxw: return s
@@ -153,8 +153,8 @@ t(x3 + 12, TOP + 35, fit("N3 N2 80 PI H1008 PICSA 66KL21-80 50 80 4712.01", 11, 
 y3 = TOP + 50; GH = 82
 rect(x3, y3, w3, GH, ACC, "#FFFFFF", 1.4)
 t(x3 + 12, y3 + 18, "구조화 텍스트 (일부)", 12.5, True, ACC)
-rl = CTX['retrieved'].splitlines()
-pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "# 장비 간 배관 연결")]
+rl = CTX['full'].splitlines()
+pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "H1008 →")]
 for k, ln in enumerate(pick):
     t(x3 + 12, y3 + 37 + k * 18, fit(ln, 11, w3 - 24), 11, k == 2, INK if k == 2 else "#333333", mono=True)
 # 04: 자연어 질문에 대한 LLM 응답(examples/llm-qa/results/slide-natural-question.json, llama3.1:8b, CPU, temperature 0)
@@ -173,22 +173,23 @@ def wrap(s, size, bold, maxw):  # 어절 단위 줄 나눔
         if cur and width(tryw, size, bold) * 1.07 > maxw: lines.append(cur); cur = w_
         else: cur = tryw
     return lines + [cur]
-t(x3 + 12, yq + 19, "질문", 12.5, True, GR); t(x3 + 50, yq + 19, ans['retrieved']['question'], 13, True, INK, maxw=w3 - 60)
+t(x3 + 12, yq + 19, "질문", 12.5, True, GR); t(x3 + 50, yq + 19, ans['full']['question'], 13, True, INK, maxw=w3 - 60)
 t(x3 + 12, yq + 39, "응답", 12.5, True, ACC)
-al = wrap(ans['retrieved']['response'], 13, True, w3 - 60)
+al = wrap(ans['full']['response'], 13, True, w3 - 60)
 for j, ln in enumerate(al):
     t(x3 + 50, yq + 39 + j * 18, ln, 13, True, ACC, maxw=w3 - 60)
 _ocr_ans = _re.search(r'장비는 (.+?)입니다', ans['ocr']['response']).group(1)  # 같은 질문에 OCR 텍스트를 넣었을 때의 응답
 t(x3 + 50, yq + 39 + len(al) * 18, f"OCR 전처리 결과 입력 시: {_ocr_ans} (오답)", 11.5, False, GR, maxw=w3 - 60)
 if yq + 39 + len(al) * 18 > TOP + IH - 6: sys.exit("04 칸 높이 초과")
 t(x3, CAP, "텍스트 전용 LLM의 입력 자료로 활용", 14, True, maxw=w3)
-t(x3, CAP + 22, "질문 관련 연결정보만 선별, 전체 분량의 약 28%", 13.5, False, GR, maxw=w3)
+t(x3, CAP + 22, "장비·연결관계·표를 단일 텍스트로 변환", 13.5, False, GR, maxw=w3)
 
 # ================= 하단: 기술적 차별점(왼쪽)과 성능(오른쪽) =================
 # 성능 근거: examples/public-documents/README.md(도면별 정답 인접 쌍), examples/llm-qa/README.md(래스터·스캔 개선값),
 # examples/llm-qa/results/open-8b-2026-10-all.jsonl(공개 가중치 8B, CPU, 공개·합성 문서 15건, 240문항 전체)
 label = [60/62, 32/40, 28/31, 36/61, 4/4]; label_n = 62 + 40 + 31 + 61 + 4   # 문자 태그가 맞는 도면 요소에 붙은 비율, 같은 재평가 결과
-recall = [27/27, 19/26, 17/24, 3/6, 4/9]   # C01 원본·200 dpi·스캔, C02·C03 원본. examples/public-documents/pid/output/current 재평가 값
+recall = [27/27, 19/26, 17/24, 3/6, 4/9, 82/157, 10/25]   # C01 원본·200 dpi·스캔, C02·C03·증류 플랜트·증류 실험실 원본. examples/public-documents/pid/output/current 재평가 값
+n_pairs = 27 + 26 + 24 + 6 + 9 + 157 + 25
 import json as _json
 _rows = [_json.loads(l) for l in open(os.path.join(ROOT, 'examples/llm-qa/results/open-8b-2026-10-all.jsonl'), encoding='utf-8') if l.strip()]
 def _acc(cond):
@@ -216,7 +217,7 @@ for k, (tt, lines) in enumerate(cards):
     cy += hh + 8
 SXL = MID + 30
 t(SXL, YB + 34, "성능", 17, True)
-mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 5개 입력 조건 평균", "원본 3건, 200 dpi·스캔 변환 2건"], INK),
+mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 7개 입력 조건 평균", f"원본 5건·변환 2건, 정답 연결 {n_pairs}쌍"], INK),
         (f"{100*sum(label)/len(label):.1f}%", "기호·명칭 대응 정확도", ["도면 기호마다 붙은 명칭(예: P4712)의", f"정답 일치 비율, 명칭 {label_n}건"], INK),
         (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개·합성 문서 {ndoc}건, 전체 {nq}문항"], ACC)]
 GW = (R - SXL) / 3
