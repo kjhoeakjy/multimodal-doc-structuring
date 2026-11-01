@@ -104,7 +104,7 @@ def crop(x, y, w, h, body, fill="#FFFFFF"):
     out.append(f'<svg x="{x}" y="{y}" width="{w}" height="{h}" viewBox="{VB[0]} {VB[1]} {VB[2]} {VB[3]}" preserveAspectRatio="xMidYMid meet">{body}</svg>')
 
 # ================= 상단 =================
-L, R = 80, 1520; TY = 38   # 바깥 여백
+L, R = 80, 1520; TY = 36   # 바깥 여백
 t(L, 30 + TY, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 12.5, False, GR, maxw=R - L)
 t(L, 68 + TY, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 28, True, maxw=R - L)
 t(L, 101 + TY, "문제", 14, True, ACC)
@@ -121,7 +121,7 @@ hline(L, R, 120 + TY, INK, 1.4)
 # ================= 중단: 원본 도면과 추출 결과 =================
 PWS = [708, 708]; PG = 24
 PX = [L, L + PWS[0] + PG]
-TOP = 200; IH = 328
+TOP = 198; IH = 328
 heads = ["01  원본 도면", "02  구성요소 및 연결관계 추출"]
 for i, hd in enumerate(heads):
     t(PX[i], TOP - 12, hd, 15.5, True, INK, maxw=PWS[i])
@@ -165,7 +165,7 @@ NQ = json.load(open(os.path.join(ROOT, 'examples/llm-qa/results/slide-natural-qu
 ans = {r['cond']: r for r in NQ}
 
 YB = CAP + 34
-CW = (R - L - 2 * 20) / 3; CH = 172
+CW = (R - L - 2 * 20) / 3; CH = 182
 CX = [L + i * (CW + 20) for i in range(3)]
 CARD = "#F4F5F7"
 for i in range(3):
@@ -183,16 +183,19 @@ ol = CTX['ocr'].splitlines(); oi = next(i for i, l in enumerate(ol) if 'H1008' i
 OH = 40
 rect(IX[0], IY, IW, OH, ORG, "#FFFFFF", 1.2)
 t(IX[0] + 10, IY + 15, "OCR 전처리 결과", 11, True, ORG)
+t(IX[0] + IW - 10, IY + 15, "장비 간 연결관계 미반영", 11, True, ACC, "end")
 t(IX[0] + 10, IY + 31, fit('  '.join(ol[oi:oi + 3]), 10, IW - 20), 10, False, GR, mono=True)
-y3 = IY + OH + 6; GH = YB + CH - 14 - y3
+y3 = IY + OH + 18; GH = YB + CH - 14 - y3
+arrow(IX[0] + IW / 2, IY + OH + 2, IX[0] + IW / 2, y3 - 2, ACC, 1.6)
 rect(IX[0], y3, IW, GH, GRN, "#FFFFFF", 1.4)
 t(IX[0] + 10, y3 + 15, "구조화 텍스트", 11, True, GRN)
+t(IX[0] + IW - 10, y3 + 15, "장비·연결관계·원본 좌표 저장", 11, True, ACC, "end")
 rl = CTX['full'].splitlines()
 pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "H1008 →")]
 for k, ln in enumerate(pick):
     em = ln.startswith('H1008 →')
-    t(IX[0] + 10, y3 + 32 + k * 16, fit(ln, 10, IW - 20), 10, em, INK if em else "#333333", mono=True)
-if y3 + 32 + 2 * 16 > y3 + GH - 4: sys.exit("03 칸 높이 초과")
+    t(IX[0] + 10, y3 + 31 + k * 15, fit(ln, 10, IW - 20), 10, em, INK if em else "#333333", mono=True)
+if 31 + 2 * 15 > GH - 4: sys.exit(f"03 칸 높이 초과 {GH}")
 
 # 04 LLM 응답 테스트: 같은 질문에 입력 자료만 바꾼 실제 응답. 구분 표시만 색, 답변 내용은 검정
 head(1, "04  LLM 응답 테스트", "공개 가중치 8B, CPU 사용")
