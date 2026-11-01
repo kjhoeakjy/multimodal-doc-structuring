@@ -176,7 +176,8 @@ def wrap(s, size, bold, maxw):  # 어절 단위 줄 나눔
     return lines + [cur]
 t(x3 + 12, yq + 19, "질문", 12.5, True, GR); t(x3 + 50, yq + 19, ans['full']['question'], 13, True, INK, maxw=w3 - 60)
 t(x3 + 12, yq + 39, "응답", 12.5, True, ACC)
-al = wrap(ans['full']['response'], 13, True, w3 - 60)
+_r = ans['full']['response']; _i = _r.find('는 ') + 1   # 장비 목록이 두 줄로 갈리지 않게 '~는' 뒤에서 줄 나눔
+al = [_r[:_i], _r[_i:].strip()]
 for j, ln in enumerate(al):
     t(x3 + 50, yq + 39 + j * 18, ln, 13, True, ACC, maxw=w3 - 60)
 _ocr_ans = _re.search(r'장비는 (.+?)입니다', ans['ocr']['response']).group(1)  # 같은 질문에 OCR 텍스트를 넣었을 때의 응답
@@ -204,7 +205,7 @@ hline(L, R, YB, INK, 1.4)
 CWD = 600
 MID = L + CWD + 30
 out.append(f'<line x1="{MID}" y1="{YB+16}" x2="{MID}" y2="{YB+204}" stroke="{LINE}" stroke-width="1"/>')
-t(L, YB + 34, "기술적 차별점", 17, True)
+t(L, YB + 34, "기술적 차별점", 18, True)
 cards = [("문자와 연결관계 구조화", ["연결선 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출"]),
          ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG 원본은 도형·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용", "VLM·GPU 없이 도면 전처리 수행"])]
 cy = YB + 48
@@ -216,8 +217,8 @@ for k, (tt, lines) in enumerate(cards):
         t(L + 18, cy + 51 + j * 25, ln, 14.5, False, GR, maxw=CWD - 32)
     cy += hh + 8
 SXL = MID + 30
-t(SXL, YB + 34, "성능", 17, True)
-mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", [f"공개 P&ID 7종 평균, 정답 연결 {n_pairs}쌍"], INK),
+t(SXL, YB + 34, "성능", 18, True)
+mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 7종 평균", f"정답 연결 {n_pairs}쌍"], INK),
         (f"{100*sum(label)/len(label):.1f}%", "기호·명칭 대응 정확도", ["도면 기호마다 붙은 명칭(예: P4712)의", f"정답 일치 비율, 명칭 {label_n}건"], INK),
         (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개·합성 문서 {ndoc}건, 전체 {nq}문항"], ACC)]
 GW = (R - SXL) / 3

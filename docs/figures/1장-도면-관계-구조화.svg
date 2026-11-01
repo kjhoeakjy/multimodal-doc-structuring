@@ -1260,14 +1260,14 @@
 <text x="1184" y="405" font-size="12.5" font-weight="700" fill="#3A3D42" text-anchor="start">질문</text>
 <text x="1222" y="405" font-size="13" font-weight="700" fill="#111111" text-anchor="start">H1008과 배관으로 연결된 장비는 무엇인가요?</text>
 <text x="1184" y="425" font-size="12.5" font-weight="700" fill="#1F4FD8" text-anchor="start">응답</text>
-<text x="1222" y="425" font-size="13" font-weight="700" fill="#1F4FD8" text-anchor="start">H1008과 배관으로 연결된 장비는 T4750,</text>
-<text x="1222" y="443" font-size="13" font-weight="700" fill="#1F4FD8" text-anchor="start">P4712입니다.</text>
+<text x="1222" y="425" font-size="13" font-weight="700" fill="#1F4FD8" text-anchor="start">H1008과 배관으로 연결된 장비는</text>
+<text x="1222" y="443" font-size="13" font-weight="700" fill="#1F4FD8" text-anchor="start">T4750, P4712입니다.</text>
 <text x="1222" y="461" font-size="11.5" font-weight="400" fill="#3A3D42" text-anchor="start">OCR 전처리 결과 입력 시: PICSA (오답)</text>
 <text x="1172" y="494" font-size="14" font-weight="700" fill="#111111" text-anchor="start">텍스트 전용 LLM의 입력 자료로 활용</text>
 <text x="1172" y="516" font-size="13.5" font-weight="400" fill="#3A3D42" text-anchor="start">장비·연결관계·표를 단일 텍스트로 변환</text>
 <line x1="80" y1="550" x2="1520" y2="550" stroke="#111111" stroke-width="1.4"/>
 <line x1="710" y1="566" x2="710" y2="754" stroke="#CFD3D9" stroke-width="1"/>
-<text x="80" y="584" font-size="17" font-weight="700" fill="#111111" text-anchor="start">기술적 차별점</text>
+<text x="80" y="584" font-size="18" font-weight="700" fill="#111111" text-anchor="start">기술적 차별점</text>
 <rect x="80" y="598" width="600" height="63" rx="0" stroke="#CFD3D9" fill="#F3F4F6" stroke-width="1"/>
 <text x="98" y="624" font-size="17" font-weight="700" fill="#111111" text-anchor="start">문자와 연결관계 구조화</text>
 <text x="98" y="649" font-size="14.5" font-weight="400" fill="#3A3D42" text-anchor="start">연결선 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출</text>
@@ -1275,10 +1275,11 @@
 <text x="98" y="695" font-size="17" font-weight="700" fill="#111111" text-anchor="start">벡터 원본 우선 활용 · CPU 기반 전처리</text>
 <text x="98" y="720" font-size="14.5" font-weight="400" fill="#3A3D42" text-anchor="start">PDF·SVG 원본은 도형·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용</text>
 <text x="98" y="745" font-size="14.5" font-weight="400" fill="#3A3D42" text-anchor="start">VLM·GPU 없이 도면 전처리 수행</text>
-<text x="740" y="584" font-size="17" font-weight="700" fill="#111111" text-anchor="start">성능</text>
+<text x="740" y="584" font-size="18" font-weight="700" fill="#111111" text-anchor="start">성능</text>
 <text x="740.0" y="648" font-size="40" font-weight="700" fill="#111111" text-anchor="start">61.5%</text>
 <text x="740.0" y="680" font-size="16" font-weight="700" fill="#111111" text-anchor="start">배관 연결 재현율</text>
-<text x="740.0" y="706" font-size="14" font-weight="400" fill="#3A3D42" text-anchor="start">공개 P&amp;ID 7종 평균, 정답 연결 274쌍</text>
+<text x="740.0" y="706" font-size="14" font-weight="400" fill="#3A3D42" text-anchor="start">공개 P&amp;ID 7종 평균</text>
+<text x="740.0" y="729" font-size="14" font-weight="400" fill="#3A3D42" text-anchor="start">정답 연결 274쌍</text>
 <text x="1000.0" y="648" font-size="40" font-weight="700" fill="#111111" text-anchor="start">85.2%</text>
 <text x="1000.0" y="680" font-size="16" font-weight="700" fill="#111111" text-anchor="start">기호·명칭 대응 정확도</text>
 <text x="1000.0" y="706" font-size="14" font-weight="400" fill="#3A3D42" text-anchor="start">도면 기호마다 붙은 명칭(예: P4712)의</text>
