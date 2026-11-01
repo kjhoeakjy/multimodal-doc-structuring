@@ -202,7 +202,7 @@ for k, ln in enumerate(pick):
 if 31 + 2 * 15 > GH - 4: sys.exit(f"03 칸 높이 초과 {GH}")
 
 # 04 LLM 응답 테스트: 같은 질문에 입력 자료만 바꾼 실제 응답. 구분 표시만 색, 답변 내용은 검정
-head(1, "04  LLM 응답 테스트", "공개 가중치 8B, CPU 사용")
+head(1, "04  LLM 응답 테스트", "Llama 3.1 8B, CPU 사용")
 rows = [("질문", GR, ans['full']['question']),
         ("구조화 입력 답변 · 정답", GRN, ans['full']['response']),
         ("OCR 입력 답변 · 오답", ORG, ans['ocr']['response'])]
@@ -214,14 +214,18 @@ for k, (lab, lc, txt) in enumerate(rows):
 
 # 05 성능: 지표를 세로로 나열
 head(2, "05  성능", "공개·합성 자료 기준 실측")
-mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", f"공개 P&ID 7종 평균, 정답 연결 {n_pairs}쌍", INK),
-        (f"{100*sum(label)/len(label):.1f}%", "기호와 명칭 대응 정확도", f"도면 기호에 붙은 명칭의 정답 일치, {label_n}건", INK),
-        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%, {nq}문항", ACC)]
+mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", f"공개 P&ID 5장, 정답 연결 {n_pairs}쌍", INK),
+        (f"{100*sum(label)/len(label):.1f}%", "기호와 명칭 대응 정확도", "", INK),
+        (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%, 문서 {ndoc}건 {nq}문항 평균", ACC)]
+NX = R - 6 - width(mets[2][0], 24, True) * 1.07   # 가장 긴 숫자의 끝을 위 도면 칸 오른쪽 끝에 맞추고 세 숫자는 왼쪽 정렬
 for k, (big, s1, s2, col) in enumerate(mets):
     yy = IY + k * 46
-    t(IX[2], yy + 13, s1, 12.5, True, maxw=IW - 130)
-    t(IX[2], yy + 30, s2, 11, False, GR, maxw=IW - 130)
-    t(IX[2] + IW - 120, yy + 27, big, 24, True, col, maxw=120)   # 숫자는 오른쪽 열에서 왼쪽 정렬
+    if s2:
+        t(IX[2], yy + 13, s1, 12.5, True, maxw=NX - IX[2] - 10)
+        t(IX[2], yy + 30, s2, 11, False, GR, maxw=NX - IX[2] - 10)
+    else:
+        t(IX[2], yy + 22, s1, 12.5, True, maxw=NX - IX[2] - 10)
+    t(NX, yy + 27, big, 24, True, col)
     if k < 2: out.append(f'<line x1="{IX[2]}" y1="{yy + 42}" x2="{IX[2] + IW}" y2="{yy + 42}" stroke="#D5D8DD" stroke-width="1"/>')
 
 BY = YB + CH + 14
@@ -231,7 +235,7 @@ bw = [width(b, 18, True) * 1.07 for b in band]; gap = (R - L - 80 - sum(bw)) / (
 bx = L + 40
 for b, w_ in zip(band, bw):
     t(bx, BY + 30, b, 18, True, "#FFFFFF"); bx += w_ + gap
-t(L, BY + 66, "예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&ID  ·  연결 정답은 원본 설계 파일 기준", 11, False, GR, maxw=R - L)
+t(L, BY + 66, "예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&ID", 11, False, GR, maxw=R - L)
 if BY + 66 > H - 8: sys.exit(f"세로 초과 {BY + 66}")
 
 def font_css():  # 슬라이드에 쓰인 글자만 남긴 글꼴을 SVG 안에 넣어 PDF·PNG 어디서나 같은 글꼴로 보이게 함
