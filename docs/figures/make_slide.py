@@ -106,7 +106,7 @@ def crop(x, y, w, h, body, fill="#FFFFFF"):
     out.append(f'<svg x="{x}" y="{y}" width="{w}" height="{h}" viewBox="{VB[0]} {VB[1]} {VB[2]} {VB[3]}" preserveAspectRatio="xMidYMid meet">{body}</svg>')
 
 # ================= 상단 =================
-L, R = 80, 1520; TY = 36   # 바깥 여백
+L, R = 80, 1520; TY = 34   # 바깥 여백
 t(L, 30 + TY, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 12.5, False, GR, maxw=R - L)
 t(L, 68 + TY, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 28, True, maxw=R - L)
 t(L, 101 + TY, "문제", 14, True, ACC)
@@ -123,7 +123,7 @@ hline(L, R, 120 + TY, INK, 1.4)
 # ================= 중단: 원본 도면과 추출 결과 =================
 PWS = [708, 708]; PG = 24
 PX = [L, L + PWS[0] + PG]
-TOP = 198; IH = 328
+TOP = 196; IH = 328
 heads = ["01  원본 도면", "02  구성요소 및 연결관계 추출"]
 for i, hd in enumerate(heads):
     t(PX[i], TOP - 12, hd, 15.5, True, INK, maxw=PWS[i])
@@ -167,7 +167,7 @@ NQ = json.load(open(os.path.join(ROOT, 'examples/llm-qa/results/slide-natural-qu
 ans = {r['cond']: r for r in NQ}
 
 YB = CAP + 34
-CW = (R - L - 2 * 20) / 3; CH = 182
+CW = (R - L - 2 * 20) / 3; CH = 186
 CX = [L + i * (CW + 20) for i in range(3)]
 CARD = "#F4F5F7"
 for i in range(3):
@@ -186,11 +186,12 @@ OH = 40
 rect(IX[0], IY, IW, OH, ORG, "#FFFFFF", 1.2)
 t(IX[0] + 10, IY + 15, "OCR 전처리 결과", 11, True, ORG)
 NA, NB = "장비 간 연결관계 미반영", "장비, 연결관계, 원본 좌표 저장"
-XC = IX[0] + IW / 2   # 두 설명과 화살표를 칸 가운데에 맞춤
+OCRL = fit('  '.join(ol[oi:oi + 3]), 10, IW - 20)
+XC = IX[0] + 10 + width(OCRL, 10, mono=True) * 1.07 / 2   # 두 설명과 화살표를 칸 안 글자 덩어리의 가운데에 맞춤
 t(XC, IY + 15, NA, 11, True, ACC, "middle")
-t(IX[0] + 10, IY + 31, fit('  '.join(ol[oi:oi + 3]), 10, IW - 20), 10, False, GR, mono=True)
-y3 = IY + OH + 18; GH = YB + CH - 14 - y3
-arrow(XC, IY + OH + 3, XC, y3 - 5, ACC, 1.6)
+t(IX[0] + 10, IY + 31, OCRL, 10, False, GR, mono=True)
+y3 = IY + OH + 22; GH = YB + CH - 14 - y3
+arrow(XC, IY + OH + 4, XC, y3 - 8, ACC, 1.6)
 rect(IX[0], y3, IW, GH, GRN, "#FFFFFF", 1.4)
 t(IX[0] + 10, y3 + 15, "구조화 텍스트", 11, True, GRN)
 t(XC, y3 + 15, NB, 11, True, ACC, "middle")
