@@ -136,7 +136,7 @@ crop2(PX[0], TOP, PWS[0], IH, drawing(INK, INK) + EQ_HL)
 crop2(PX[1], TOP, PWS[1], IH, drawing("#C9CDD4", "#B0B5BD") + overlay())
 CAP = TOP + IH + 22
 t(PX[0], CAP, "공개 P&ID(배관계장도) 벡터 도면", 12.5, True, maxw=PWS[0])
-t(PX[0], CAP + 19, "장비 5, 계기 4, 밸브 및 기호 19, 배관 구간 44  ·  점선: 질의 대상 장비", 12, False, GR, maxw=PWS[0])
+t(PX[0], CAP + 19, "장비 5, 계기 4, 밸브 및 기호 19, 배관 구간 37, 신호선 7  ·  점선: 질의 대상 장비", 12, False, GR, maxw=PWS[0])
 leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브 및 기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "접속점"), (ACC, "H1008 배관 경로")]
 xx = PX[1]
 for c, nm_ in leg:
@@ -215,7 +215,7 @@ for k, (lab, lc, txt) in enumerate(rows):
 
 # 05 성능: 지표를 세로로 나열
 head(2, "05  성능", "공개·합성 자료 기준 실측")
-mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", f"공개 P&ID 5장, 정답 연결 {n_pairs}쌍", INK),
+mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", f"공개 P&ID 5장 원본과 변환본, 정답 연결 {n_pairs}쌍", INK),
         (f"{100*sum(label)/len(label):.1f}%", "기호와 명칭 대응 정확도", "", INK),
         (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%, 문서 {ndoc}건 {nq}문항 평균", ACC)]
 NX = R - 6 - width(mets[2][0], 24, True) * 1.07   # 가장 긴 숫자의 끝을 위 도면 칸 오른쪽 끝에 맞추고 세 숫자는 왼쪽 정렬
