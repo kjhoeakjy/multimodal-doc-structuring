@@ -114,7 +114,7 @@ _q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='
 _d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
 QS = 104
 out.append(f'<svg x="{R - QS}" y="{22 + TY}" width="{QS}" height="{QS}" viewBox="-2 -2 {_n + 4} {_n + 4}"><rect x="-2" y="-2" width="{_n + 4}" height="{_n + 4}" fill="#FFFFFF"/><path d="{_d}" stroke="#000000" stroke-width="1" fill="none" shape-rendering="crispEdges"/></svg>')
-t(R - QS - 14, 66 + TY, "처리 과정 시뮬레이션", 14, True, INK, "end")
+t(R - QS - 14, 66 + TY, "데이터 처리 과정 시뮬레이터", 14, True, INK, "end")
 t(R - QS - 14, 88 + TY, "문서 유형별 예시 8건", 13, False, GR, "end")
 hline(L, R, 138 + TY, INK, 1.4)
 
@@ -140,7 +140,7 @@ xx = PX[1]
 for c, nm_ in leg:
     out.append(f'<rect x="{xx}" y="{CAP-11}" width="11" height="11" fill="{c}"/>'); t(xx + 15, CAP, nm_, 13); xx += 15 + width(nm_, 13) * 1.07 + 10
 if xx - 10 > PX[1] + PWS[1]: sys.exit("범례 폭 초과")
-t(PX[1], CAP + 22, "직선 끝점과 접속점, 장비 위치 기준의 연결관계 판별", 13.5, False, GR, maxw=PWS[1])
+t(PX[1], CAP + 22, "연결선 끝점과 접속점, 장비 위치 기준의 연결관계 판별", 13.5, False, GR, maxw=PWS[1])
 
 # 03: OCR 결과와 관계정보 구조화 결과(전체 직렬화 텍스트 일부). 04의 응답도 성능 수치와 같은 전체 직렬화 입력 조건
 x3, w3 = PX[2], PWS[2]
@@ -205,8 +205,8 @@ CWD = 600
 MID = L + CWD + 30
 out.append(f'<line x1="{MID}" y1="{YB+16}" x2="{MID}" y2="{YB+204}" stroke="{LINE}" stroke-width="1"/>')
 t(L, YB + 34, "기술적 차별점", 17, True)
-cards = [("문자와 연결관계 구조화", ["직선 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출"]),
-         ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG 원본은 직선·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용", "VLM·GPU 없이 도면 전처리 수행"])]
+cards = [("문자와 연결관계 구조화", ["연결선 끝점·접속점 분석을 통한 장비·계기 간 연결관계 추출"]),
+         ("벡터 원본 우선 활용 · CPU 기반 전처리", ["PDF·SVG 원본은 도형·문자 좌표 직접 추출, 스캔본은 OCR·영상처리 적용", "VLM·GPU 없이 도면 전처리 수행"])]
 cy = YB + 48
 for k, (tt, lines) in enumerate(cards):
     hh = 38 + 25 * len(lines)
@@ -217,7 +217,7 @@ for k, (tt, lines) in enumerate(cards):
     cy += hh + 8
 SXL = MID + 30
 t(SXL, YB + 34, "성능", 17, True)
-mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", ["공개 P&ID 7개 입력 조건 평균", f"원본 5건·변환 2건, 정답 연결 {n_pairs}쌍"], INK),
+mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", [f"공개 P&ID 7종 평균, 정답 연결 {n_pairs}쌍"], INK),
         (f"{100*sum(label)/len(label):.1f}%", "기호·명칭 대응 정확도", ["도면 기호마다 붙은 명칭(예: P4712)의", f"정답 일치 비율, 명칭 {label_n}건"], INK),
         (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", [f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%", f"공개·합성 문서 {ndoc}건, 전체 {nq}문항"], ACC)]
 GW = (R - SXL) / 3

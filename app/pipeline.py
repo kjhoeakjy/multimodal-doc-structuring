@@ -621,7 +621,7 @@ class Job:
         if photo:
             png = os.path.join(self.dir, 'input_gray.png'); cv2.imwrite(png, gray)
             dpi, src_ = (meta_dpi, '파일 메타데이터') if meta_dpi else (96, '사진, 해상도 미정(96 가정)')
-            info.update(reason='연속 계조 비율이 높음', dpi_source=src_)
+            info.update(reason='연속 계조 비율 높음', dpi_source=src_)
             out.update(kind='photo', png=png, dpi=dpi, detect=info, view=dict(url='input_gray.png', w=W, h=H, mm_per_px=25.4 / dpi))
             self.done('입력 판별', t0); return
         gray, skew = rg.deskew(gray)                 # 잡음 제거(중앙값 필터)는 도면 경로 안에서만 수행. 100 dpi 작은 글자가 뭉개짐

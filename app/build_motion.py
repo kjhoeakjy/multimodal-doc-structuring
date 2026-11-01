@@ -80,7 +80,7 @@ def build(name, kind_name, source, folder):
     if kind == 'vector':
         labels = R.get('labels') or json.load(open(os.path.join(d, 'graph.json'), encoding='utf-8')).get('labels', [])
         pool = [(l['text'], px_box(l['bbox'], k)) for l in labels]
-        text_line = f"문자 {len(pool)}개, 위치와 각도를 글자 층에서 그대로 읽음"
+        text_line = f"문자 {len(pool)}개, 글자 층의 위치·각도 직접 추출"
         text_title, text_desc = '문자 좌표', 'SVG 문자 요소의 위치·각도를 읽음. 문자 인식 없음'
     else:
         texts = R.get('texts') or []
