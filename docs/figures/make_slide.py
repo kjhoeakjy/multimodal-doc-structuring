@@ -104,24 +104,24 @@ def crop(x, y, w, h, body, fill="#FFFFFF"):
     out.append(f'<svg x="{x}" y="{y}" width="{w}" height="{h}" viewBox="{VB[0]} {VB[1]} {VB[2]} {VB[3]}" preserveAspectRatio="xMidYMid meet">{body}</svg>')
 
 # ================= 상단 =================
-L, R = 56, 1544
-t(L, 34, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 14, False, GR, maxw=R - L)
-t(L, 78, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 32, True, maxw=R - L)
-t(L, 116, "문제", 16, True, ACC)
-t(L + 48, 116, "기존 OCR 인식 등의 비정형 데이터 전처리 방법은 복잡한 도면에 존재하는 다양한 연결관계를 반영하지 못함", 16, False, INK, maxw=R - L - 48)
+L, R = 80, 1520; TY = 34   # 바깥 여백
+t(L, 34 + TY, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 14, False, GR, maxw=R - L)
+t(L, 78 + TY, "제조·항공 기술문서의 시각정보 추출 및 관계 기반 구조화", 32, True, maxw=R - L)
+t(L, 116 + TY, "문제", 16, True, ACC)
+t(L + 48, 116 + TY, "기존 OCR 인식 등의 비정형 데이터 전처리 방법은 복잡한 도면에 존재하는 다양한 연결관계를 반영하지 못함", 16, False, INK, maxw=R - L - 48)
 import re as _re
 _q = open(os.path.join(HERE, 'qr-처리-과정-시뮬레이션.svg'), encoding='utf-8').read()
 _d = _re.search(r' d="([^"]+)"', _q).group(1); _n = int(_re.search(r'width="(\d+)"', _q).group(1)) // 4
 QS = 104
-out.append(f'<svg x="{R - QS}" y="22" width="{QS}" height="{QS}" viewBox="-2 -2 {_n + 4} {_n + 4}"><rect x="-2" y="-2" width="{_n + 4}" height="{_n + 4}" fill="#FFFFFF"/><path d="{_d}" stroke="#000000" stroke-width="1" fill="none" shape-rendering="crispEdges"/></svg>')
-t(R - QS - 14, 66, "처리 과정 시뮬레이션", 14, True, INK, "end")
-t(R - QS - 14, 88, "문서 유형별 예시 8건", 13, False, GR, "end")
-hline(L, R, 138, INK, 1.4)
+out.append(f'<svg x="{R - QS}" y="{22 + TY}" width="{QS}" height="{QS}" viewBox="-2 -2 {_n + 4} {_n + 4}"><rect x="-2" y="-2" width="{_n + 4}" height="{_n + 4}" fill="#FFFFFF"/><path d="{_d}" stroke="#000000" stroke-width="1" fill="none" shape-rendering="crispEdges"/></svg>')
+t(R - QS - 14, 66 + TY, "처리 과정 시뮬레이션", 14, True, INK, "end")
+t(R - QS - 14, 88 + TY, "문서 유형별 예시 8건", 13, False, GR, "end")
+hline(L, R, 138 + TY, INK, 1.4)
 
 # ================= 중단: 실제 도면 처리 과정 =================
-PWS = [540, 540, 348]; PG = 30
+PWS = [522, 522, 348]; PG = 24
 PX = [L, L + PWS[0] + PG, L + PWS[0] + PWS[1] + 2 * PG]
-TOP = 204; IH = 252
+TOP = 204 + 22; IH = 242
 heads = ["01  원본 도면", "02  구성요소 및 연결관계 추출", "03  관계정보 구조화"]
 for i, hd in enumerate(heads):
     t(PX[i], TOP - 14, hd, 18, True, ACC if i == 1 else INK, maxw=PWS[i])
@@ -151,7 +151,7 @@ def fit(s, size, maxw):  # 실제 텍스트를 칸 폭에 맞춰 뒤쪽을 줄�
 rect(x3, TOP, w3, 44, LINE, FILL)
 t(x3 + 12, TOP + 17, "OCR 전처리 결과", 12.5, True, GR)
 t(x3 + 12, TOP + 35, fit("N3 N2 80 PI H1008 PICSA 66KL21-80 50 80 4712.01", 11, w3 - 24), 11, False, GR, mono=True)
-y3 = TOP + 50; GH = 82
+y3 = TOP + 50; GH = 78
 rect(x3, y3, w3, GH, ACC, "#FFFFFF", 1.4)
 t(x3 + 12, y3 + 18, "구조화 텍스트 (일부)", 12.5, True, ACC)
 rl = CTX['full'].splitlines()
@@ -199,7 +199,7 @@ qa_ocr, nq = _acc('ocr'); qa_full, _ = _acc('full')
 ndoc = len({x['doc'] for x in _rows})
 from decimal import Decimal, ROUND_HALF_UP
 f1 = lambda v: str(Decimal(str(v)).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP))
-YB = CAP + 70
+YB = CAP + 56
 hline(L, R, YB, INK, 1.4)
 CWD = 600
 MID = L + CWD + 30
@@ -228,7 +228,7 @@ for k, (big, s1, s2, col) in enumerate(mets):
     for j, ln in enumerate(s2):
         t(gx, YB + 156 + j * 23, ln, 14, False, GR, maxw=GW - 14)
 
-BY = YB + 222
+BY = YB + 216
 rect(L, BY, R - L, 54, "none", INK)
 band = "PDF·SVG 원본 직접 활용   ·   CPU 사용   ·   텍스트 전용 LLM 응답 테스트   ·   외부 서버 전송 없는 로컬 실행"
 t((L + R) / 2, BY + 35, band, 21, True, "#FFFFFF", "middle", maxw=R - L - 20)
