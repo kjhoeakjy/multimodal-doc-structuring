@@ -80,6 +80,13 @@ def main(png4, out):
             rPr = r._r.get_or_add_rPr()
             for el, face in (('a:latin', 'Consolas' if mono else FACE), ('a:ea', FACE), ('a:cs', FACE)):
                 rPr.append(rPr.makeelement(qn(el), {'typeface': face}))
+    for sh in s.shapes:   # 한국어 PowerPoint의 기본 개체 이름으로 통일
+        tag = sh._element.tag.split('}')[1]
+        if tag == 'pic': nm = '그림'
+        elif tag == 'cxnSp': nm = '직선 화살표 연결선' if sh._element.find('.//' + qn('a:tailEnd')) is not None else '직선 연결선'
+        elif sh.has_text_frame and sh.text_frame.text: nm = 'TextBox' if False else '텍스트 상자'
+        else: nm = '직사각형'
+        sh.name = f'{nm} {sh.shape_id - 1}'
     cp = prs.core_properties
     cp.title = 'PT_AI/AX 개발_0014-000463'; cp.author = ''; cp.last_modified_by = ''; cp.comments = ''; cp.subject = ''; cp.keywords = ''
     prs.save(out)
