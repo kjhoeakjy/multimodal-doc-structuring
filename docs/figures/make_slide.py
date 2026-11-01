@@ -203,22 +203,22 @@ rows = [("질문", GR, ans['full']['question']),
         ("구조화 입력 답변 · 정답", GRN, ans['full']['response']),
         ("OCR 입력 답변 · 오답", ORG, ans['ocr']['response'])]
 for k, (lab, lc, txt) in enumerate(rows):
-    yy = IY + 12 + k * 42
+    yy = IY + 14 + k * 46
     t(IX[1], yy, lab, 11, True, lc)
     t(IX[1], yy + 18, txt, 13, True, INK, maxw=IW)
-    if k < 2: out.append(f'<line x1="{IX[1]}" y1="{yy + 28}" x2="{IX[1] + IW}" y2="{yy + 28}" stroke="#D5D8DD" stroke-width="1"/>')
+    if k < 2: out.append(f'<line x1="{IX[1]}" y1="{yy + 30}" x2="{IX[1] + IW}" y2="{yy + 30}" stroke="#D5D8DD" stroke-width="1"/>')
 
 # 05 성능: 지표를 세로로 나열
-head(2, "05  성능", "")
+head(2, "05  성능", "공개·합성 자료 기준 실측")
 mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", f"공개 P&ID 7종 평균, 정답 연결 {n_pairs}쌍", INK),
         (f"{100*sum(label)/len(label):.1f}%", "기호·명칭 대응 정확도", f"도면 기호에 붙은 명칭의 정답 일치, {label_n}건", INK),
         (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%, {nq}문항", ACC)]
 for k, (big, s1, s2, col) in enumerate(mets):
-    yy = IY - 2 + k * 42
+    yy = IY + k * 46
     t(IX[2], yy + 27, big, 24, True, col, maxw=118)
     t(IX[2] + 122, yy + 13, s1, 12.5, True, maxw=IW - 122)
     t(IX[2] + 122, yy + 30, s2, 11, False, GR, maxw=IW - 122)
-    if k < 2: out.append(f'<line x1="{IX[2]}" y1="{yy + 40}" x2="{IX[2] + IW}" y2="{yy + 40}" stroke="#D5D8DD" stroke-width="1"/>')
+    if k < 2: out.append(f'<line x1="{IX[2]}" y1="{yy + 42}" x2="{IX[2] + IW}" y2="{yy + 42}" stroke="#D5D8DD" stroke-width="1"/>')
 
 BY = YB + CH + 14
 rect(L, BY, R - L, 46, "none", INK)
