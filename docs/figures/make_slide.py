@@ -221,12 +221,12 @@ for k, (big, s1, s2, col) in enumerate(mets):
     yy = IY + k * 46
     t(IX[2], yy + 13, s1, 12.5, True, maxw=IW - 130)
     t(IX[2], yy + 30, s2, 11, False, GR, maxw=IW - 130)
-    t(IX[2] + IW, yy + 27, big, 24, True, col, "end", maxw=125)
+    t(IX[2] + IW - 120, yy + 27, big, 24, True, col, maxw=120)   # 숫자는 오른쪽 열에서 왼쪽 정렬
     if k < 2: out.append(f'<line x1="{IX[2]}" y1="{yy + 42}" x2="{IX[2] + IW}" y2="{yy + 42}" stroke="#D5D8DD" stroke-width="1"/>')
 
 BY = YB + CH + 14
 rect(L, BY, R - L, 46, "none", INK)
-band = ["PDF, SVG 원본 직접 활용", "CPU 사용", "LLM 추가 학습 없이 활용", "외부 서버 전송 없는 로컬 실행"]   # 네 항목을 같은 간격의 공백으로 구분
+band = ["PDF, SVG 원본 직접 활용", "CPU 사용", "VLM, GPU 사용 없이 비정형 데이터 처리", "외부 서버 전송 없는 로컬 실행"]   # 네 항목을 같은 간격의 공백으로 구분
 bw = [width(b, 18, True) * 1.07 for b in band]; gap = (R - L - 80 - sum(bw)) / (len(band) - 1)
 bx = L + 40
 for b, w_ in zip(band, bw):
