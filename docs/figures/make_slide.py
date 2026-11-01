@@ -13,7 +13,7 @@ G = json.load(open(os.path.join(ROOT, 'examples/dexpi-reference-pid/output/graph
 CTX = json.load(open(os.path.join(ROOT, 'examples/llm-qa/contexts.json'), encoding='utf-8'))['q003']
 
 W, H = 1600, 900
-ACC = "#1F4FD8"; INK = "#111111"; GR = "#3A3D42"; LINE = "#CFD3D9"; FILL = "#F3F4F6"
+ACC = "#1F4FD8"; ORG = "#D9480F"; GRN = "#15803D"; INK = "#111111"; GR = "#3A3D42"; LINE = "#CFD3D9"; FILL = "#F3F4F6"
 EQ, SYM, INS, PIPE, SIG, JCT, TBL = "#C8322E", "#1F4FD8", "#7A2BD1", "#1E8E57", "#2F80ED", "#E0A400", "#E8710A"
 FONT = "'Wanted Sans', sans-serif"; MONO = "Consolas, 'Wanted Sans', monospace"
 WS = {False: os.path.join(HERE, 'fonts', 'WantedSans-Medium.ttf'), True: os.path.join(HERE, 'fonts', 'WantedSans-Bold.ttf')}   # Wanted Sans, SIL OFL 1.1
@@ -149,12 +149,12 @@ def fit(s, size, maxw):  # 실제 텍스트를 칸 폭에 맞춰 뒤쪽을 줄�
     if width(s, size, mono=True) * 1.07 <= maxw: return s
     while width(s + ' …', size, mono=True) * 1.07 > maxw: s = s[:-1]
     return s.rstrip() + ' …'
-rect(x3, TOP, w3, 40, LINE, FILL)
-t(x3 + 10, TOP + 16, "OCR 전처리 결과", 11.5, True, GR)
+rect(x3, TOP, w3, 40, ORG, "#FFF4EC", 1.2)
+t(x3 + 10, TOP + 16, "OCR 전처리 결과", 11.5, True, ORG)
 t(x3 + 10, TOP + 32, fit("N3 N2 80 PI H1008 PICSA 66KL21-80 50 80 4712.01", 10, w3 - 20), 10, False, GR, mono=True)
 y3 = TOP + 46; GH = 76
-rect(x3, y3, w3, GH, ACC, "#FFFFFF", 1.4)
-t(x3 + 10, y3 + 17, "구조화 텍스트 (일부)", 11.5, True, ACC)
+rect(x3, y3, w3, GH, GRN, "#F0F9F3", 1.4)
+t(x3 + 10, y3 + 17, "구조화 텍스트 (일부)", 11.5, True, GRN)
 rl = CTX['full'].splitlines()
 pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "H1008 →")]
 for k, ln in enumerate(pick):
@@ -180,13 +180,13 @@ ql = wrap(ans['full']['question'], 12, True, w3 - 54)
 for j, ln in enumerate(ql):
     t(x3 + 44, yq + 20 + j * 17, ln, 12, True, INK, maxw=w3 - 54)
 ya = yq + 20 + len(ql) * 17 + 6
-t(x3 + 10, ya, "응답", 11.5, True, ACC)
+t(x3 + 10, ya, "응답", 11.5, True, GRN)
 _r = ans['full']['response']; _i = _r.find('는 ') + 1   # 장비 목록이 두 줄로 갈리지 않게 '~는' 뒤에서 줄 나눔
 al = [_r[:_i], _r[_i:].strip()]
 for j, ln in enumerate(al):
-    t(x3 + 44, ya + j * 17, ln, 12, True, ACC, maxw=w3 - 54)
+    t(x3 + 44, ya + j * 17, ln, 12, True, GRN, maxw=w3 - 54)
 _ocr_ans = _re.search(r'장비는 (.+?)입니다', ans['ocr']['response']).group(1)  # 같은 질문에 OCR 텍스트를 넣었을 때의 응답
-t(x3 + 44, ya + len(al) * 17 + 3, f"OCR 전처리 결과 입력 시: {_ocr_ans} (오답)", 10.5, False, GR, maxw=w3 - 54)
+t(x3 + 44, ya + len(al) * 17 + 3, f"OCR 전처리 결과 입력 시: {_ocr_ans} (오답)", 10.5, True, ORG, maxw=w3 - 54)
 if ya + len(al) * 17 + 3 > TOP + IH - 8: sys.exit(f"04 칸 높이 초과 {ya + len(al) * 17 + 3 - TOP - IH}")
 print("04 남은 높이", TOP + IH - (ya + len(al) * 17 + 3))
 t(x3, CAP, "텍스트 전용 LLM의 입력 자료로 활용", 12.5, True, maxw=w3)
