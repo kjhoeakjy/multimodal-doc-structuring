@@ -109,6 +109,8 @@ def crop(x, y, w, h, body, fill="#FFFFFF"):
 L, R = 80, 1520; TY = 34   # 바깥 여백
 t(L, 30 + TY, "AI/AX 개발  |  주제 2. 비정형 데이터 전처리 및 구조화", 12.5, False, GR, maxw=R - L)
 t(L, 68 + TY, "제조·항공 기술문서의 시각정보 추출 및 관계 구조화", 28, True, maxw=R - L)
+TW = width('제조, 항공 기술문서의 시각정보 추출 및 관계 구조화', 28, True) * 1.0
+hline(L, L + TW, 77 + TY, INK, 2)   # 제목 밑줄
 t(L, 101 + TY, "문제", 14, True, ACC)
 t(L + 42, 101 + TY, "기존 OCR 인식 등의 비정형 데이터 전처리 방식은 복잡한 도면에 존재하는 다양한 연결관계를 반영하지 못함", 14, False, INK, maxw=R - L - 42)
 import re as _re
