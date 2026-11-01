@@ -31,6 +31,8 @@ def width(s, size, bold=False, mono=False):
 
 out = []
 def t(x, y, s, size=14, bold=False, color=INK, anchor="start", mono=False, maxw=None):
+    if not mono:
+        import re as _r0; s = _r0.sub(r"\s*·\s*", ", ", s)   # 낱말 사이 가운뎃점은 쉼표로
     if maxw is not None and width(s, size, bold, mono) * 1.07 > maxw:  # 브라우저 렌더링 폭 여유 7%
         sys.exit(f"폭 초과({width(s, size, bold, mono):.0f}>{maxw}): {s}")
     fam = f' font-family="{MONO}"' if mono else ""
@@ -133,9 +135,9 @@ def crop2(x, y, w, h, body):
 crop2(PX[0], TOP, PWS[0], IH, drawing(INK, INK) + EQ_HL)
 crop2(PX[1], TOP, PWS[1], IH, drawing("#C9CDD4", "#B0B5BD") + overlay())
 CAP = TOP + IH + 22
-t(PX[0], CAP, "공개 P&ID(배관·계장도) 벡터 도면", 12.5, True, maxw=PWS[0])
-t(PX[0], CAP + 19, "장비 5, 계기 4, 밸브·기호 19, 배관 구간 44  ·  점선: 질의 대상 장비", 12, False, GR, maxw=PWS[0])
-leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브·기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "접속점"), (ACC, "H1008 배관 경로")]
+t(PX[0], CAP, "공개 P&ID(배관계장도) 벡터 도면", 12.5, True, maxw=PWS[0])
+t(PX[0], CAP + 19, "장비 5, 계기 4, 밸브 및 기호 19, 배관 구간 44  ·  점선: 질의 대상 장비", 12, False, GR, maxw=PWS[0])
+leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브 및 기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "접속점"), (ACC, "H1008 배관 경로")]
 xx = PX[1]
 for c, nm_ in leg:
     out.append(f'<rect x="{xx}" y="{CAP-10}" width="10" height="10" fill="{c}"/>'); t(xx + 14, CAP, nm_, 12); xx += 14 + width(nm_, 12) * 1.07 + 12
@@ -183,13 +185,15 @@ ol = CTX['ocr'].splitlines(); oi = next(i for i, l in enumerate(ol) if 'H1008' i
 OH = 40
 rect(IX[0], IY, IW, OH, ORG, "#FFFFFF", 1.2)
 t(IX[0] + 10, IY + 15, "OCR 전처리 결과", 11, True, ORG)
-t(IX[0] + IW - 10, IY + 15, "장비 간 연결관계 미반영", 11, True, ACC, "end")
+NA, NB = "장비 간 연결관계 미반영", "장비, 연결관계, 원본 좌표 저장"
+XC = IX[0] + IW - 10 - max(width(NA, 11, True), width(NB, 11, True)) * 1.07 / 2   # 두 설명과 화살표의 가운데를 맞춤
+t(XC, IY + 15, NA, 11, True, ACC, "middle")
 t(IX[0] + 10, IY + 31, fit('  '.join(ol[oi:oi + 3]), 10, IW - 20), 10, False, GR, mono=True)
 y3 = IY + OH + 18; GH = YB + CH - 14 - y3
-arrow(IX[0] + IW / 2, IY + OH + 2, IX[0] + IW / 2, y3 - 2, ACC, 1.6)
+arrow(XC, IY + OH + 2, XC, y3 - 2, ACC, 1.6)
 rect(IX[0], y3, IW, GH, GRN, "#FFFFFF", 1.4)
 t(IX[0] + 10, y3 + 15, "구조화 텍스트", 11, True, GRN)
-t(IX[0] + IW - 10, y3 + 15, "장비·연결관계·원본 좌표 저장", 11, True, ACC, "end")
+t(XC, y3 + 15, NB, 11, True, ACC, "middle")
 rl = CTX['full'].splitlines()
 pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "H1008 →")]
 for k, ln in enumerate(pick):
@@ -211,19 +215,22 @@ for k, (lab, lc, txt) in enumerate(rows):
 # 05 성능: 지표를 세로로 나열
 head(2, "05  성능", "공개·합성 자료 기준 실측")
 mets = [(f"{100*sum(recall)/len(recall):.1f}%", "배관 연결 재현율", f"공개 P&ID 7종 평균, 정답 연결 {n_pairs}쌍", INK),
-        (f"{100*sum(label)/len(label):.1f}%", "기호·명칭 대응 정확도", f"도면 기호에 붙은 명칭의 정답 일치, {label_n}건", INK),
+        (f"{100*sum(label)/len(label):.1f}%", "기호와 명칭 대응 정확도", f"도면 기호에 붙은 명칭의 정답 일치, {label_n}건", INK),
         (f"+{f1(qa_full-qa_ocr)}%p", "LLM 정답률 개선", f"OCR {f1(qa_ocr)}%, 관계 구조화 {f1(qa_full)}%, {nq}문항", ACC)]
 for k, (big, s1, s2, col) in enumerate(mets):
     yy = IY + k * 46
-    t(IX[2], yy + 27, big, 24, True, col, maxw=118)
-    t(IX[2] + 122, yy + 13, s1, 12.5, True, maxw=IW - 122)
-    t(IX[2] + 122, yy + 30, s2, 11, False, GR, maxw=IW - 122)
+    t(IX[2], yy + 13, s1, 12.5, True, maxw=IW - 130)
+    t(IX[2], yy + 30, s2, 11, False, GR, maxw=IW - 130)
+    t(IX[2] + IW, yy + 27, big, 24, True, col, "end", maxw=125)
     if k < 2: out.append(f'<line x1="{IX[2]}" y1="{yy + 42}" x2="{IX[2] + IW}" y2="{yy + 42}" stroke="#D5D8DD" stroke-width="1"/>')
 
 BY = YB + CH + 14
 rect(L, BY, R - L, 46, "none", INK)
-band = "PDF·SVG 원본 직접 활용   ·   CPU 사용   ·   LLM 추가 학습 없이 활용   ·   외부 서버 전송 없는 로컬 실행"
-t((L + R) / 2, BY + 30, band, 18, True, "#FFFFFF", "middle", maxw=R - L - 20)
+band = ["PDF, SVG 원본 직접 활용", "CPU 사용", "LLM 추가 학습 없이 활용", "외부 서버 전송 없는 로컬 실행"]   # 네 항목을 같은 간격의 공백으로 구분
+bw = [width(b, 18, True) * 1.07 for b in band]; gap = (R - L - 80 - sum(bw)) / (len(band) - 1)
+bx = L + 40
+for b, w_ in zip(band, bw):
+    t(bx, BY + 30, b, 18, True, "#FFFFFF"); bx += w_ + gap
 t(L, BY + 66, "예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&ID  ·  연결 정답은 원본 설계 파일 기준", 11, False, GR, maxw=R - L)
 if BY + 66 > H - 8: sys.exit(f"세로 초과 {BY + 66}")
 
