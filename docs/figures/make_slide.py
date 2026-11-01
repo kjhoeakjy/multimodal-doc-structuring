@@ -230,12 +230,14 @@ for k, (big, s1, s2, col) in enumerate(mets):
     if k < 2: out.append(f'<line x1="{IX[2]}" y1="{yy + 42}" x2="{IX[2] + IW}" y2="{yy + 42}" stroke="#D5D8DD" stroke-width="1"/>')
 
 BY = YB + CH + 14
-rect(L, BY, R - L, 46, "none", INK)
+DRED = "#9B1C1C"   # 진한 빨강
+rect(L, BY, R - L, 46, "none", "#FBF3F3")
+hline(L, R, BY, DRED, 1.6); hline(L, R, BY + 46, DRED, 1.6)
 band = ["PDF, SVG 원본 직접 활용", "CPU 사용", "VLM, GPU 사용 없이 비정형 데이터 처리", "외부 서버 전송 없는 로컬 실행"]   # 네 항목을 같은 간격의 공백으로 구분
 bw = [width(b, 18, True) * 1.07 for b in band]; gap = (R - L - 80 - sum(bw)) / (len(band) - 1)
 bx = L + 40
 for b, w_ in zip(band, bw):
-    t(bx, BY + 30, b, 18, True, "#FFFFFF"); bx += w_ + gap
+    t(bx, BY + 30, b, 18, True, DRED); bx += w_ + gap
 t(L, BY + 66, "예시 도면  공정 설계 데이터 교환 표준(DEXPI)의 공개 P&ID", 11, False, GR, maxw=R - L)
 if BY + 66 > H - 8: sys.exit(f"세로 초과 {BY + 66}")
 
