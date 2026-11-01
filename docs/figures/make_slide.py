@@ -135,14 +135,14 @@ def crop2(x, y, w, h, body):
 crop2(PX[0], TOP, PWS[0], IH, drawing(INK, INK) + EQ_HL)
 crop2(PX[1], TOP, PWS[1], IH, drawing("#C9CDD4", "#B0B5BD") + overlay())
 CAP = TOP + IH + 22
-t(PX[0], CAP, "공개 P&ID(배관계장도) 벡터 도면", 12.5, True, maxw=PWS[0])
+t(PX[0], CAP, "공개 P&ID 벡터 도면에서 선, 곡선, 문자 좌표 직접 추출", 12.5, True, maxw=PWS[0])
 t(PX[0], CAP + 19, "장비 5, 계기 4, 밸브 및 기호 19, 배관 구간 44  ·  점선: 질의 대상 장비", 12, False, GR, maxw=PWS[0])
 leg = [(EQ, "장비"), (INS, "계기"), (SYM, "밸브 및 기호"), (PIPE, "배관"), (SIG, "신호선"), (JCT, "접속점"), (ACC, "H1008 배관 경로")]
 xx = PX[1]
 for c, nm_ in leg:
     out.append(f'<rect x="{xx}" y="{CAP-10}" width="10" height="10" fill="{c}"/>'); t(xx + 14, CAP, nm_, 12); xx += 14 + width(nm_, 12) * 1.07 + 12
 if xx - 12 > PX[1] + PWS[1]: sys.exit("범례 폭 초과")
-t(PX[1], CAP + 19, "연결선 끝점과 접속점, 장비 위치 기준의 연결관계 판별", 12, False, GR, maxw=PWS[1])
+t(PX[1], CAP + 19, "장비와 기호를 구분한 뒤 선의 끝점과 접촉 위치로 배관 연결관계 계산", 12, False, GR, maxw=PWS[1])
 
 def fit(s, size, maxw):  # 실제 텍스트를 칸 폭에 맞춰 뒤쪽을 줄임표로 생략
     if width(s, size, mono=True) * 1.07 <= maxw: return s
@@ -179,27 +179,20 @@ def head(i, txt, note):
         t(CX[i] + CW - 18, YB + 28, note, 11, False, GR, "end", maxw=CW - 36 - hw)
 IX = [x + 18 for x in CX]; IW = CW - 36; IY = YB + 42
 
-# 03 관계정보 구조화: OCR 결과와 구조화 텍스트(전체 직렬화 텍스트 일부, 성능 수치와 같은 입력 조건)
-head(0, "03  관계정보 구조화", "장비·연결관계·표를 단일 텍스트로 변환")
-ol = CTX['ocr'].splitlines(); oi = next(i for i, l in enumerate(ol) if 'H1008' in l)
-OH = 40
-rect(IX[0], IY, IW, OH, ORG, "#FFFFFF", 1.2)
-t(IX[0] + 10, IY + 15, "OCR 전처리 결과", 11, True, ORG)
-NA, NB = "장비 간 연결관계 미반영", "장비, 연결관계, 원본 좌표 저장"
-XC = IX[0] + IW - 10 - max(width(NA, 11, True), width(NB, 11, True)) * 1.07 / 2   # 두 설명과 화살표의 가운데를 맞춤
-t(XC, IY + 15, NA, 11, True, ACC, "middle")
-t(IX[0] + 10, IY + 31, fit('  '.join(ol[oi:oi + 3]), 10, IW - 20), 10, False, GR, mono=True)
-y3 = IY + OH + 18; GH = YB + CH - 14 - y3
-arrow(XC, IY + OH + 2, XC, y3 - 2, ACC, 1.6)
-rect(IX[0], y3, IW, GH, GRN, "#FFFFFF", 1.4)
-t(IX[0] + 10, y3 + 15, "구조화 텍스트", 11, True, GRN)
-t(XC, y3 + 15, NB, 11, True, ACC, "middle")
-rl = CTX['full'].splitlines()
-pick = [next(l for l in rl if l.startswith(p)) for p in ("n19 종류=equipment", "r30 종류=pipe", "H1008 →")]
-for k, ln in enumerate(pick):
-    em = ln.startswith('H1008 →')
-    t(IX[0] + 10, y3 + 31 + k * 15, fit(ln, 10, IW - 20), 10, em, INK if em else "#333333", mono=True)
-if 31 + 2 * 15 > GH - 4: sys.exit(f"03 칸 높이 초과 {GH}")
+# 03 좌표 기반 관계 분석 및 구조화: examples/public-documents/pid/extract_graph.py의 실제 처리 단계
+head(0, "03  좌표 기반 관계 분석 및 구조화", "")
+steps = [("요소 식별", "끝점이 모두 맞물린 닫힌 윤곽은 장비, 맞닿은 짧은 선과 곡선 묶음은 기호"),
+         ("연결 판별", "같은 축 선분 병합, 선 끝점이 닿은 위치는 접속점, 단순 교차는 연결 제외"),
+         ("관계 구조화", "문자 좌표 거리와 태그 형식으로 이름 부여, 노드와 간선을 텍스트로 저장")]
+for k, (lab, desc) in enumerate(steps):
+    yy = IY + 12 + k * 37
+    t(IX[0], yy, lab, 12, True, ACC)
+    t(IX[0], yy + 17, desc, 11, False, INK, maxw=IW)
+eg = next(l for l in CTX['full'].splitlines() if l.startswith('H1008 →'))
+ey = IY + 12 + 2 * 37 + 36
+t(IX[0], ey, "구조화 결과 예", 11, True, GRN)
+t(IX[0] + width("구조화 결과 예", 11, True) * 1.07 + 10, ey, eg, 11, True, INK, mono=True)
+if ey > YB + CH - 12: sys.exit("03 칸 높이 초과")
 
 # 04 LLM 응답 테스트: 같은 질문에 입력 자료만 바꾼 실제 응답. 구분 표시만 색, 답변 내용은 검정
 head(1, "04  LLM 응답 테스트", "Llama 3.1 8B, CPU 사용")
