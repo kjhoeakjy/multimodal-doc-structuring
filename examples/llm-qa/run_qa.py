@@ -19,7 +19,7 @@ def ask_api(model, system, user, max_tokens=120):
     return (r['choices'][0]['message']['content'] or '').strip()
 
 def ask_ollama(model, system, user, max_tokens=120):
-    body = json.dumps(dict(model=model, system=system, prompt=user, stream=False, options=dict(temperature=0, num_predict=max_tokens, num_ctx=8192))).encode()
+    body = json.dumps(dict(model=model, system=system, prompt=user, stream=False, options=dict(temperature=0, seed=0, num_predict=max_tokens, num_ctx=8192))).encode()
     req = urllib.request.Request('http://127.0.0.1:11434/api/generate', data=body, headers={'Content-Type': 'application/json'})
     return json.loads(urllib.request.urlopen(req, timeout=600).read())['response'].strip()
 

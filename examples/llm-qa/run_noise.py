@@ -11,12 +11,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--backend', default='ollama'); ap.add_argument('--model', required=True); ap.add_argument('--label', required=True)
     ap.add_argument('--conds', default='full,relations'); ap.add_argument('--seeds', default='0,1,2')
+    ap.add_argument('--settings', default='', help='설정 이름 정규식(예: ^none). 같은 설정을 반복 실행해 실행 간 변동을 잴 때 결과 이름을 바꿔 씀')
     a = ap.parse_args()
     N = json.load(open(os.path.join(HERE, 'noise', 'contexts.json'), encoding='utf-8'))
     Q = {q['id']: q for q in json.load(open(os.path.join(HERE, 'questions.json'), encoding='utf-8'))}
     qs = [Q[i] for i in N['questions']]
     seeds = {f"s{s}" for s in a.seeds.split(',')}
     keys = [k for k in N['contexts'] if k.split('-')[-1] in seeds or k.startswith('none')]
+    if a.settings:
+        keys = [k for k in keys if re.search(a.settings, k)]
     conds = a.conds.split(',')
     out = os.path.join(HERE, 'results', f'{a.label}.jsonl')
     done = {}
