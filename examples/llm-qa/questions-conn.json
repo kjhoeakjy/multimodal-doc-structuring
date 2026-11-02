@@ -9,7 +9,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c001",
@@ -21,7 +22,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c002",
@@ -33,7 +35,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c003",
@@ -45,7 +48,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c004",
@@ -57,7 +61,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c005",
@@ -69,7 +74,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c006",
@@ -81,7 +87,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c007",
@@ -93,7 +100,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c008",
@@ -105,7 +113,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c009",
@@ -117,7 +126,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "yesno"
+  "kind": "yesno",
+  "needs_relation": true
  },
  {
   "id": "c010",
@@ -129,7 +139,8 @@
   ],
   "focus": "47121",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c011",
@@ -142,7 +153,8 @@
   ],
   "focus": "47122",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c012",
@@ -155,7 +167,8 @@
   ],
   "focus": "47123",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c013",
@@ -168,7 +181,8 @@
   ],
   "focus": "47124",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c014",
@@ -182,7 +196,8 @@
   ],
   "focus": "47125",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c015",
@@ -196,7 +211,8 @@
   ],
   "focus": "47126",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c016",
@@ -209,7 +225,8 @@
   ],
   "focus": "47127",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c017",
@@ -221,7 +238,8 @@
   ],
   "focus": "47130",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c018",
@@ -233,7 +251,8 @@
   ],
   "focus": "47131",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c019",
@@ -245,7 +264,8 @@
   ],
   "focus": "47140",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c020",
@@ -257,7 +277,8 @@
   ],
   "focus": "47141",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "set"
+  "kind": "set",
+  "needs_relation": true
  },
  {
   "id": "c021",
@@ -269,7 +290,8 @@
   ],
   "focus": "H1007",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
  },
  {
   "id": "c022",
@@ -281,7 +303,8 @@
   ],
   "focus": "H1008",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
  },
  {
   "id": "c023",
@@ -293,7 +316,8 @@
   ],
   "focus": "P4711",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
  },
  {
   "id": "c024",
@@ -305,7 +329,8 @@
   ],
   "focus": "P4712",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
  },
  {
   "id": "c025",
@@ -317,7 +342,8 @@
   ],
   "focus": "T4750",
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
  },
  {
   "id": "c026",
@@ -329,7 +355,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
  },
  {
   "id": "c027",
@@ -341,7 +368,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
  },
  {
   "id": "c028",
@@ -353,7 +381,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
  },
  {
   "id": "c029",
@@ -365,7 +394,8 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
  },
  {
   "id": "c030",
@@ -377,6 +407,75 @@
   ],
   "focus": null,
   "source": "DEXPI C01 기준 그래프",
-  "kind": "single"
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c031",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "두 장비 H1007, P4711 사이를 (다른 장비를 거치지 않고) 잇는 배관에 붙은 라인 번호를 모두 나열하라. 번호만 쉼표로 나열하라.",
+  "answers": [
+   "47122"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "numset",
+  "needs_relation": true
+ },
+ {
+  "id": "c032",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "두 장비 H1007, T4750 사이를 (다른 장비를 거치지 않고) 잇는 배관에 붙은 라인 번호를 모두 나열하라. 번호만 쉼표로 나열하라.",
+  "answers": [
+   "47123"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "numset",
+  "needs_relation": true
+ },
+ {
+  "id": "c033",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "두 장비 H1008, P4712 사이를 (다른 장비를 거치지 않고) 잇는 배관에 붙은 라인 번호를 모두 나열하라. 번호만 쉼표로 나열하라.",
+  "answers": [
+   "47126"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "numset",
+  "needs_relation": true
+ },
+ {
+  "id": "c034",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "두 장비 H1008, T4750 사이를 (다른 장비를 거치지 않고) 잇는 배관에 붙은 라인 번호를 모두 나열하라. 번호만 쉼표로 나열하라.",
+  "answers": [
+   "47125",
+   "47126",
+   "47127"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "numset",
+  "needs_relation": true
+ },
+ {
+  "id": "c035",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "두 장비 P4712, T4750 사이를 (다른 장비를 거치지 않고) 잇는 배관에 붙은 라인 번호를 모두 나열하라. 번호만 쉼표로 나열하라.",
+  "answers": [
+   "47124",
+   "47125"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "numset",
+  "needs_relation": true
  }
 ]

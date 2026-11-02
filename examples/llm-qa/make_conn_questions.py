@@ -5,6 +5,8 @@
   라인도달  라인 번호가 붙은 선에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 집합
   연결수    장비에 직접 붙은 연결선 수
   경로      이어진 두 장비 사이 최단 경로에서 지나는 분기점·기호 수
+  라인경로  이어진 두 장비 사이의 경로(다른 장비를 지나지 않는 모든 단순 경로) 위 선에 붙은 라인 번호 집합. 라벨 오귀속에 반응
+모든 문항은 요소 속성 줄만으로는 답할 수 없고 연결을 따라가야 답이 나옴(needs_relation=True).
 도달 규칙은 직렬화의 '장비 간 배관 연결'과 같음(배관·신호 연결을 모두 따르고 분기점·밸브·기호·계기는 지나며 장비에서 멈춤).
 사용: python make_conn_questions.py
 결과: questions-conn.json, run_noise.py --qfile questions-conn.json 으로 실행"""
@@ -108,6 +110,34 @@ def main():
         if b in R[a]:
             k = shortest_inner(a, b, adj, equip)
             add('경로', f"장비 {tag[a]}에서 장비 {tag[b]}까지 가장 짧은 연결 경로에서 지나는 중간 요소(밸브·기호·분기점)는 몇 개인가? 숫자만 답하라.", [str(k)], 'single')
+    run_lines = collections.defaultdict(set)     # 요소 쌍 → 그 사이 선에 붙은 라인 번호
+    for r in g['runs']:
+        a_, b_ = lift(r['a']), lift(r['b'])
+        for t in r['texts']:
+            for tok in t.split():
+                if re.fullmatch(r'\d{5}', tok):
+                    run_lines[frozenset((a_, b_))].add(tok)
+    def path_lines(a, b):
+        out, stack = set(), [(a, [a])]
+        while stack:
+            v, path = stack.pop()
+            for w in adj[v]:
+                if w in path:
+                    continue
+                if w == b:
+                    p = path + [w]
+                    for x, y in zip(p, p[1:]):
+                        out |= run_lines.get(frozenset((x, y)), set())
+                elif w not in equip:
+                    stack.append((w, path + [w]))
+        return out
+    for a, b in itertools.combinations(names, 2):
+        if b in R[a]:
+            ls = path_lines(a, b)
+            if ls:
+                add('라인경로', f"두 장비 {tag[a]}, {tag[b]} 사이를 (다른 장비를 거치지 않고) 잇는 배관에 붙은 라인 번호를 모두 나열하라. 번호만 쉼표로 나열하라.", sorted(ls), 'numset')
+    for q in Q:
+        q['needs_relation'] = True
     json.dump(Q, open(os.path.join(HERE, 'questions-conn.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     c = collections.Counter(q['type'] for q in Q)
     print(len(Q), dict(c))
