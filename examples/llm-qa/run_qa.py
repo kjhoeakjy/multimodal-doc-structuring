@@ -9,14 +9,20 @@ SYSTEM = ("주어진 자료만 근거로 답한다. 답은 값·태그·짧은 �
           "자료에 근거가 없으면 '자료에 없음'이라고만 답한다. Answer using only the given material; output only the value, tag or short phrase.")
 
 def ask_api(model, system, user, max_tokens=120):
-    """OpenAI 호환 chat/completions 형식의 외부 API. 주소와 키는 환경 변수 LLM_API_BASE, LLM_API_KEY. 공급사 이름은 코드에 두지 않음."""
+    """OpenAI 호환 chat/completions 형식의 외부 API. 주소와 키는 환경 변수 LLM_API_BASE, LLM_API_KEY. 공급사 이름은 코드에 두지 않음.
+    LLM_API_EXTRA(JSON)는 요청 본문에 그대로 더함(예: 사고 모드를 끄는 공급사별 항목). 사고 모드가 켜진 모델은 짧은 max_tokens를 사고에 다 써서
+    본문이 비므로, 빈 응답은 오답으로 기록하지 않고 오류로 올려 다시 실행되게 함."""
     base = os.environ.get('LLM_API_BASE', '').rstrip('/'); key = os.environ.get('LLM_API_KEY', '')
     if not base or not key:
         raise RuntimeError('환경 변수 LLM_API_BASE, LLM_API_KEY 필요')
-    body = json.dumps(dict(model=model, max_tokens=max_tokens, messages=[{"role": "system", "content": system}, {"role": "user", "content": user}])).encode()
-    req = urllib.request.Request(base + '/chat/completions', data=body, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
+    body = dict(model=model, max_tokens=max_tokens, messages=[{"role": "system", "content": system}, {"role": "user", "content": user}])
+    body.update(json.loads(os.environ.get('LLM_API_EXTRA') or '{}'))
+    req = urllib.request.Request(base + '/chat/completions', data=json.dumps(body).encode(), headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
     r = json.loads(urllib.request.urlopen(req, timeout=120).read())
-    return (r['choices'][0]['message']['content'] or '').strip()
+    ch = r['choices'][0]; text = (ch['message'].get('content') or '').strip()
+    if not text:
+        raise RuntimeError(f"빈 응답(finish_reason={ch.get('finish_reason')}, usage={r.get('usage')})")
+    return text
 
 def ask_ollama(model, system, user, max_tokens=120):
     body = json.dumps(dict(model=model, system=system, prompt=user, stream=False, options=dict(temperature=0, seed=0, num_predict=max_tokens, num_ctx=8192))).encode()
@@ -92,14 +98,18 @@ def main():
     print(f'문항 {len(Q)} × 조건 {len(conds)} = {len(Q) * len(conds)}, 남은 호출 {len(todo)}')
     if a.dry:
         return
+    errors = 0
     with open(out_path, 'a', encoding='utf-8') as f:
         for i, (q, c) in enumerate(todo):
             user = f"[자료]\n{C[q['id']][c]}\n\n[질문]\n{q['question']}"
             t0 = time.time()
             try:
                 resp = ask(a.model, SYSTEM, user)
-            except Exception as e:
-                resp = None; print('오류', q['id'], c, str(e)[:120])
+            except Exception as e:     # 오류는 기록하지 않음(다시 실행하면 그 문항부터 다시 물음). 3회 넘으면 멈춤
+                errors += 1; print('오류', q['id'], c, str(e)[:200], flush=True)
+                if errors >= 3:
+                    sys.exit('오류 3회로 중단. 설정을 확인한 뒤 같은 명령으로 다시 실행')
+                continue
             r = dict(id=q['id'], doc=q['doc'], type=q['type'], cond=c, question=q['question'], answers=q['answers'], response=resp, correct=score(q, resp), secs=round(time.time() - t0, 1), chars=len(user))
             f.write(json.dumps(r, ensure_ascii=False) + '\n'); f.flush(); done[(q['id'], c)] = r
             if i % 20 == 0:
