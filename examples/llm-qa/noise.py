@@ -4,6 +4,8 @@
   drop   배관·신호 연결 간선을 비율 p만큼 지움(재현율 감소)
   add    가까운 요소 쌍 사이에 없는 연결을 기존 간선 수의 비율 p만큼 더함(정밀도 감소)
   label  선 라벨(라인 번호·유체·등급·DN)을 비율 p만큼 다른 선과 맞바꿈(라벨 오귀속)
+  split  배관 간선 비율 p의 중간에 연결 둘인 분기점을 넣어 두 간선으로 나눔(래스터에서 관찰한 꺾임 분할)
+  merge  가까운 기호(밸브 등) 쌍을 비율 p만큼 한 노드로 합침(요소 병합)
 각 그래프는 DEXPI XML 정답과 다시 대조해 실제 재현율·정밀도를 기록한다(public-documents/pid/evaluate.py).
 사용: python noise.py [--levels 0,0.1,0.2,0.3,0.5] [--seeds 0,1,2]
 결과: noise/contexts.json(문항 id·오류 종류·비율·씨앗별 relations, full 문맥), noise/graphs.md(실제 재현율·정밀도)
@@ -59,6 +61,30 @@ def perturb(g, kind, p, seed):
             texts = texts[1:] + texts[:1]
         for r, t in zip(pick, texts):
             r['texts'] = t
+    elif kind == 'split' and k:
+        for r in rnd.sample([r for r in runs if r['kind'] == 'pipe'], min(k, sum(r['kind'] == 'pipe' for r in runs))):
+            (x0, y0), (x1, y1) = r['coords'][0], r['coords'][-1]
+            mid = [(x0 + x1) / 2, (y0 + y1) / 2]; jid = f"j{len(g['junctions']) + 900}"
+            g['junctions'].append(dict(id=jid, pt=mid))
+            g['runs'].append(dict(r, id=f"r{len(g['runs']) + 900}", a=jid, coords=[mid, [x1, y1]], texts=[]))
+            r['b'] = jid; r['coords'] = [[x0, y0], mid]
+    elif kind == 'merge' and k:
+        syms = [n for n in g['nodes'] if n['role'] == 'symbol' and not n.get('attached_to')]
+        pairs = sorted(((math.dist(center(a), center(b)), a['id'], b['id']) for i, a in enumerate(syms) for b in syms[i + 1:]))
+        n_merge = max(1, int(round(p * len(syms) / 2))); gone = set(); done = 0
+        for _, a, b in pairs:
+            if done >= n_merge:
+                break
+            if a in gone or b in gone:
+                continue
+            gone |= {a, b}; done += 1
+            na = next(n for n in g['nodes'] if n['id'] == a); nb = next(n for n in g['nodes'] if n['id'] == b)
+            na['bbox'] = [min(na['bbox'][0], nb['bbox'][0]), min(na['bbox'][1], nb['bbox'][1]), max(na['bbox'][2], nb['bbox'][2]), max(na['bbox'][3], nb['bbox'][3])]
+            na['texts'] = na['texts'] + nb['texts']
+            for r in g['runs']:
+                r['a'] = a if r['a'] == b else r['a']; r['b'] = a if r['b'] == b else r['b']
+            g['runs'] = [r for r in g['runs'] if r['a'] != r['b']]
+            g['nodes'] = [n for n in g['nodes'] if n['id'] != b]
     return g
 
 def serial_of(g):
@@ -81,7 +107,7 @@ def main():
     Q = [q for q in json.load(open(os.path.join(HERE, 'questions.json'), encoding='utf-8')) if q['doc'] == DOC]
     os.makedirs(OUT, exist_ok=True)
     ctx, rows = {}, []
-    for kind in ('drop', 'add', 'label'):
+    for kind in ('drop', 'add', 'label', 'split', 'merge'):
         for p in levels:
             for s in (seeds if p > 0 else [0]):
                 if p == 0 and kind != 'drop':
