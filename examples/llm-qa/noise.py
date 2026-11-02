@@ -8,6 +8,7 @@
   merge  가까운 기호(밸브 등) 쌍을 비율 p만큼 한 노드로 합침(요소 병합)
 각 그래프는 DEXPI XML 정답과 다시 대조해 실제 재현율·정밀도를 기록한다(public-documents/pid/evaluate.py).
 사용: python noise.py [--levels 0,0.1,0.2,0.3,0.5] [--seeds 0,1,2]
+실제 추출 그래프(C01 200 dpi 래스터, 스캔)도 real-200dpi, real-scan 설정으로 넣어 통제 오류 곡선과 대조한다.
 결과: noise/contexts.json(문항 id·오류 종류·비율·씨앗별 relations, full 문맥), noise/graphs.md(실제 재현율·정밀도)
 실행: python run_noise.py --backend ollama --model <모델> --label <결과 이름>"""
 import os, sys, json, math, random, argparse, tempfile, re
@@ -23,6 +24,7 @@ DOC = 'pid-standard-vector'
 GRAPH = os.path.join(ROOT, 'examples', 'sample-inputs', 'output', DOC, 'graph.json')
 XML = os.path.join(ROOT, 'examples', 'public-documents', 'pid', 'input', 'C01V04-VER.EX01.xml')
 OUT = os.path.join(HERE, 'noise')
+REAL = ('pid-standard-200dpi', 'pid-standard-scan')     # 같은 도면의 실제 규칙 기반 추출 결과
 
 def center(n):
     b = n['bbox']; return ((b[0] + b[2]) / 2, (b[1] + b[3]) / 2)
@@ -116,6 +118,11 @@ def main():
                 lines, m = serial_of(perturb(g0, kind, p, s))
                 rows.append((key, m))
                 ctx[key] = {c: ablate(lines, c, True) for c in ('relations', 'full')}
+    for real in REAL:     # 실제 추출 그래프(래스터·스캔)도 같은 문항으로 묻기 위해 같은 형식으로 넣음
+        key = f"real-{real.split('-')[-1]}-s0"
+        lines, m = serial_of(json.load(open(os.path.join(ROOT, 'examples', 'sample-inputs', 'output', real, 'graph.json'), encoding='utf-8')))
+        rows.append((key, m))
+        ctx[key] = {c: ablate(lines, c, True) for c in ('relations', 'full')}
     json.dump(dict(doc=DOC, questions=[q['id'] for q in Q], contexts=ctx), open(os.path.join(OUT, 'contexts.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     L = ['# 오류를 넣은 C01 그래프의 실제 배관 연결 재현율·정밀도', '', f'문항 {len(Q)}(C01 벡터). 정답 대조는 DEXPI XML.', '', '| 조건 | 재현율 | 정밀도 |', '|---|---|---|']
     L += [f"| {k} | {m['recall']:.2f} | {m['precision']:.2f} |" for k, m in rows]

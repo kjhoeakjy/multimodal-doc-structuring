@@ -31,12 +31,15 @@ TAG = re.compile(r'\b[A-Z]{1,2}\s?\d{3,5}\b')
 NONE = re.compile(r'자료에\s*(근거가?\s*)?없|근거\s*(가\s*)?없|확인되지\s*않|알\s*수\s*없|not\s+(found|available|present|stated|specified|given)|no\s+(information|data|evidence)|cannot\s+(be\s+)?determine', re.I)
 NUM = re.compile(r'^[\d.]+$')
 def score(q, resp):
-    """채점. 근거 없음 취지의 응답은 오답. 숫자 답은 자릿수 경계가 맞는 숫자 토큰만 인정(80과 800 구분), 문자 답은 낱말 경계 안에서 포함 여부. 집합 답은 태그 집합 완전 일치."""
+    """채점. 근거 없음 취지의 응답은 오답. 숫자 답은 자릿수 경계가 맞는 숫자 토큰만 인정(80과 800 구분), 문자 답은 낱말 경계 안에서 포함 여부. 집합 답은 태그 집합 완전 일치. 예/아니오 답은 응답의 첫 판단어."""
     if resp is None:
         return 0
     r = norm(resp)
     if NONE.search(resp):
         return 0
+    if q['kind'] == 'yesno':     # 응답의 첫 판단어로 채점
+        m = re.search(r'아니|^\s*no\b|\bno\b|예|네|yes', r)
+        return int(bool(m) and (m.group(0) in ('아니', 'no')) == (q['answers'][0] == '아니오'))
     if q['kind'] == 'set':
         want = set(norm(a).replace(' ', '') for a in q['answers'])
         got = set(norm(t).replace(' ', '') for t in TAG.findall(resp)) - {norm(q.get('focus') or '').replace(' ', '')}   # 질문에 든 기준 태그는 답으로 세지 않음

@@ -1,0 +1,382 @@
+[
+ {
+  "id": "c000",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 H1007, H1008 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c001",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 H1007, P4711 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c002",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 H1007, P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c003",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 H1007, T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c004",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 H1008, P4711 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c005",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 H1008, P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c006",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 H1008, T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c007",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 P4711, P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c008",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 P4711, T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c009",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "두 장비 P4712, T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "yesno"
+ },
+ {
+  "id": "c010",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47121 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "P4711"
+  ],
+  "focus": "47121",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c011",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47122 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "H1007",
+   "P4711"
+  ],
+  "focus": "47122",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c012",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47123 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "H1007",
+   "T4750"
+  ],
+  "focus": "47123",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c013",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47124 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "P4712",
+   "T4750"
+  ],
+  "focus": "47124",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c014",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47125 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "H1008",
+   "P4712",
+   "T4750"
+  ],
+  "focus": "47125",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c015",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47126 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "H1008",
+   "P4712",
+   "T4750"
+  ],
+  "focus": "47126",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c016",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47127 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "H1008",
+   "T4750"
+  ],
+  "focus": "47127",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c017",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47130 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "H1007"
+  ],
+  "focus": "47130",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c018",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47131 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "H1007"
+  ],
+  "focus": "47131",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c019",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47140 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "H1008"
+  ],
+  "focus": "47140",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c020",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "라인 번호 47141 배관에서 연결을 따라가면 다른 장비를 거치지 않고 도달하는 장비 태그를 모두 나열하라. 태그만 쉼표로 나열하라.",
+  "answers": [
+   "H1008"
+  ],
+  "focus": "47141",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "set"
+ },
+ {
+  "id": "c021",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "장비 H1007에 직접 붙은 연결선(배관·신호선)은 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ },
+ {
+  "id": "c022",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "장비 H1008에 직접 붙은 연결선(배관·신호선)은 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ },
+ {
+  "id": "c023",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "장비 P4711에 직접 붙은 연결선(배관·신호선)은 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ },
+ {
+  "id": "c024",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "장비 P4712에 직접 붙은 연결선(배관·신호선)은 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ },
+ {
+  "id": "c025",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "장비 T4750에 직접 붙은 연결선(배관·신호선)은 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "7"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ },
+ {
+  "id": "c026",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "장비 H1007에서 장비 P4711까지 가장 짧은 연결 경로에서 지나는 중간 요소(밸브·기호·분기점)는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "0"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ },
+ {
+  "id": "c027",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "장비 H1007에서 장비 T4750까지 가장 짧은 연결 경로에서 지나는 중간 요소(밸브·기호·분기점)는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "1"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ },
+ {
+  "id": "c028",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "장비 H1008에서 장비 P4712까지 가장 짧은 연결 경로에서 지나는 중간 요소(밸브·기호·분기점)는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "5"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ },
+ {
+  "id": "c029",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "장비 H1008에서 장비 T4750까지 가장 짧은 연결 경로에서 지나는 중간 요소(밸브·기호·분기점)는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "1"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ },
+ {
+  "id": "c030",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "장비 P4712에서 장비 T4750까지 가장 짧은 연결 경로에서 지나는 중간 요소(밸브·기호·분기점)는 몇 개인가? 숫자만 답하라.",
+  "answers": [
+   "3"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프",
+  "kind": "single"
+ }
+]
