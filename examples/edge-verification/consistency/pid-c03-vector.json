@@ -1,0 +1,45 @@
+{
+ "drawing": "C03 벡터",
+ "n_variants": 6,
+ "base_pairs": 6,
+ "runs": [
+  {
+   "variant": "touch0.7",
+   "pairs": 4,
+   "kept": 2
+  },
+  {
+   "variant": "touch1.4",
+   "pairs": 6,
+   "kept": 6
+  },
+  {
+   "variant": "gap0.6",
+   "pairs": 6,
+   "kept": 6
+  },
+  {
+   "variant": "gap1.5",
+   "pairs": 6,
+   "kept": 6
+  },
+  {
+   "variant": "long0.7",
+   "pairs": 6,
+   "kept": 5
+  },
+  {
+   "variant": "long1.4",
+   "pairs": 6,
+   "kept": 5
+  }
+ ],
+ "agree": {
+  "j1|n19": 0.8333333333333334,
+  "j2|n14": 0.6666666666666666,
+  "n12|n20": 0.6666666666666666,
+  "n13|n2": 0.8333333333333334,
+  "n14|n3": 1.0,
+  "n17|n18": 1.0
+ }
+}

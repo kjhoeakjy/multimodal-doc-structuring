@@ -3,6 +3,8 @@
   random    무작위(씨앗 20회 평균)
   gap       끝점 간격(열린 끝을 이어 붙인 거리)이 큰 연결부터
   topo      위상·도메인 제약 위반 수(학습 없음) + 간격
+  agree     다중 추출 불일치(consistency.py: 입력 배율·선 굵기·허용치를 바꾼 변형 추출에서 다시 나오지 않는 비율)
+  combo     2 × agree + topo(학습 없음)
   lr        특징 전체의 로지스틱 회귀, 도면 단위 교차 검증(평가 도면은 학습에서 뺌)
 지표: 틀린 연결 검출 AUC, 검토 예산(전체 연결의 10·20·30%) 안에서 찾은 틀린 연결 비율(오류 재현율@k)
 사용: python feasibility.py  → result.md"""
@@ -26,7 +28,7 @@ DRAWINGS = [  # (이름, 그래프, 정답 XML, 도면 묶음: 같은 원본의 
     ('증류 실험실 벡터', f'{S}/pid-lab-vector/graph.json', f'{X}/distillation_laboratory.xml', 'DL'),
 ]
 
-def labelled_pairs(g, xml):
+def labelled_pairs(g, xml, contract=False, stats=None):
     """evaluate.main과 같은 대응 규칙으로 추출 인접 쌍마다 정답(1)·오류(0)·신호선(None)을 붙이고 쌍을 만든 구간 목록을 돌려줌."""
     comps, conns, _ = ev.load_gt(xml, g['page'][1])
     nodes = {n['id']: n for n in g['nodes']}
@@ -73,6 +75,21 @@ def labelled_pairs(g, xml):
         a, b = lift(a), lift(b)
         if a != b:
             pairs[tuple(sorted((a, b)))].append(r)
+    if contract:     # 연결이 둘인 분기점(꺾임·분할 지점)은 위상상 의미가 없으므로 양쪽 연결을 하나로 합침
+        juncs = {j['id'] for j in g['junctions']}
+        while True:
+            nb = collections.defaultdict(list)
+            for (a, b) in pairs:
+                nb[a].append(b); nb[b].append(a)
+            j2 = next((j for j in nb if j in juncs and len(nb[j]) == 2 and nb[j][0] != nb[j][1]), None)
+            if j2 is None:
+                break
+            u, v = nb[j2]
+            rs = pairs.pop(tuple(sorted((u, j2)))) + pairs.pop(tuple(sorted((j2, v))))
+            pairs[tuple(sorted((u, v)))] += rs
+    if stats is not None:
+        hit = sum(1 for a, b in gt_pairs if gt2ex.get(a) and gt2ex.get(b) and tuple(sorted((gt2ex[a], gt2ex[b]))) in pairs)
+        stats.update(gt=len(gt_pairs), hit=hit)
     out = {}
     for (a, b), rs in pairs.items():
         roles = {nodes[x]['role'] for x in (a, b) if x in nodes}
@@ -133,7 +150,7 @@ def features(g, pairs, nodes, lift):
         F.append(f); y.append(1 - lab); names.append((a, b))      # y=1이 틀린 연결
     return np.array(F, float), np.array(y, int), names
 
-FEAT = ['log 간격', '간격 있음', 'log 길이', '꺾임 수', '굵기 편차', '점선', '라벨 있음', '제약 위반 수', 'DN 모순', '같은 쌍 중복', '분기점 포함', '장비 포함']
+FEAT = ['log 간격', '간격 있음', 'log 길이', '꺾임 수', '굵기 편차', '점선', '라벨 있음', '제약 위반 수', 'DN 모순', '같은 쌍 중복', '분기점 포함', '장비 포함', '다중 추출 불일치']
 
 def auc(score, y):
     pos, neg = score[y == 1], score[y == 0]
@@ -163,6 +180,10 @@ def main():
         g = json.load(open(gp, encoding='utf-8'))
         pairs, nodes, lift = labelled_pairs(g, xml)
         Fx, y, nm = features(g, pairs, nodes, lift)
+        cp = os.path.join(HERE, 'consistency', os.path.basename(os.path.dirname(gp)) + '.json')
+        ag = json.load(open(cp, encoding='utf-8'))['agree'] if os.path.exists(cp) else {}
+        agree = np.array([ag.get(f'{a}|{b}', 1.0) for a, b in nm])       # 일치도 없는 도면은 1(정보 없음)
+        Fx = np.column_stack([Fx, 1 - agree])
         data.append((name, grp, Fx, y))
     groups = sorted({d[1] for d in data})
     rows = []; allsc = collections.defaultdict(list); ally = []
@@ -170,7 +191,8 @@ def main():
         train = [d for d in data if d[1] != grp]                     # 같은 원본 도면의 렌더링은 학습에서 모두 뺌
         Xt = np.vstack([d[2] for d in train]); yt = np.concatenate([d[3] for d in train])
         pred, _ = fit_lr(Xt, yt)
-        sc = dict(gap=Fx[:, 0], topo=Fx[:, 7] + Fx[:, 8] + 0.5 * Fx[:, 1] + 0.1 * Fx[:, 0], lr=pred(Fx))
+        topo = Fx[:, 7] + Fx[:, 8] + 0.5 * Fx[:, 1] + 0.1 * Fx[:, 0]
+        sc = dict(gap=Fx[:, 0], topo=topo, agree=Fx[:, 12], combo=2 * Fx[:, 12] + topo, lr=pred(Fx))
         rnd = np.random.default_rng(0)
         r = dict(name=name, n=len(y), err=int(y.sum()))
         r['random'] = {k: np.mean([recall_at(rnd.random(len(y)), y, k) for _ in range(20)]) for k in (0.1, 0.2, 0.3)}
@@ -181,11 +203,11 @@ def main():
         ally.append(y); rows.append(r)
     _, w = fit_lr(np.vstack([d[2] for d in data]), np.concatenate([d[3] for d in data]))
     L = ['# 추출 연결 검증 사전 판정', '', '틀린 연결 = 정답 대조에서 오류로 판정된 배관 인접 쌍(신호선 쌍 제외). 오류 재현율@20% = 연결 20%를 검토했을 때 찾은 틀린 연결의 비율.', '',
-         '| 도면 | 연결 | 틀린 연결 | AUC gap | AUC topo | AUC lr | @20% 무작위 | @20% gap | @20% topo | @20% lr |', '|---|---|---|---|---|---|---|---|---|---|']
+         '| 도면 | 연결 | 틀린 연결 | AUC gap | AUC topo | AUC agree | AUC combo | AUC lr | @20% 무작위 | @20% gap | @20% topo | @20% agree | @20% combo | @20% lr |', '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|']
     for r in rows:
-        L.append(f"| {r['name']} | {r['n']} | {r['err']} | {r['gap_auc']:.2f} | {r['topo_auc']:.2f} | {r['lr_auc']:.2f} | {r['random'][0.2]:.2f} | {r['gap'][0.2]:.2f} | {r['topo'][0.2]:.2f} | {r['lr'][0.2]:.2f} |")
+        L.append(f"| {r['name']} | {r['n']} | {r['err']} | " + ' | '.join(f"{r[k + '_auc']:.2f}" for k in ('gap', 'topo', 'agree', 'combo', 'lr')) + f" | {r['random'][0.2]:.2f} | " + ' | '.join(f"{r[k][0.2]:.2f}" for k in ('gap', 'topo', 'agree', 'combo', 'lr')) + ' |')
     valid = [r for r in rows if r['err'] and r['err'] < r['n']]
-    for k in ('gap', 'topo', 'lr'):
+    for k in ('gap', 'topo', 'agree', 'combo', 'lr'):
         L.append(f"\n{k}: 도면 평균 AUC {np.nanmean([r[k + '_auc'] for r in valid]):.3f}, 오류 재현율@10/20/30% " +
                  ' / '.join(f"{np.mean([r[k][f] for r in valid]):.2f}" for f in (0.1, 0.2, 0.3)))
     L.append(f"\nrandom: 오류 재현율@10/20/30% " + ' / '.join(f"{np.mean([r['random'][f] for r in valid]):.2f}" for f in (0.1, 0.2, 0.3)))
