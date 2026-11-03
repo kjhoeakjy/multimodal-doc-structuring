@@ -2621,3 +2621,89 @@
 {"id": "q120", "type": "계기", "setting": "merge-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 3.6, "chars": 7050}
 {"id": "q123", "type": "계기", "setting": "merge-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 3.8, "chars": 7050}
 {"id": "q126", "type": "계기", "setting": "merge-0.5-s2", "cond": "full", "response": "F.O.", "correct": 0, "secs": 3.4, "chars": 7050}
+{"id": "q000", "type": "연결", "setting": "real-200dpi-s0", "cond": "full", "response": "P4711, T4750", "correct": 1, "secs": 13.0, "chars": 11044}
+{"id": "q003", "type": "연결", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 10.3, "chars": 11044}
+{"id": "q006", "type": "연결", "setting": "real-200dpi-s0", "cond": "full", "response": "P4711, T4750", "correct": 0, "secs": 12.6, "chars": 11044}
+{"id": "q009", "type": "연결", "setting": "real-200dpi-s0", "cond": "full", "response": "S8, T4750", "correct": 0, "secs": 12.7, "chars": 11044}
+{"id": "q012", "type": "연결", "setting": "real-200dpi-s0", "cond": "full", "response": "H1007, P4712, S8", "correct": 0, "secs": 15.0, "chars": 11044}
+{"id": "q015", "type": "개수", "setting": "real-200dpi-s0", "cond": "full", "response": "4", "correct": 1, "secs": 8.4, "chars": 11011}
+{"id": "q018", "type": "개수", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 8.9, "chars": 11011}
+{"id": "q021", "type": "개수", "setting": "real-200dpi-s0", "cond": "full", "response": "2", "correct": 1, "secs": 8.7, "chars": 11011}
+{"id": "q024", "type": "개수", "setting": "real-200dpi-s0", "cond": "full", "response": "2", "correct": 1, "secs": 7.8, "chars": 11011}
+{"id": "q027", "type": "개수", "setting": "real-200dpi-s0", "cond": "full", "response": "8", "correct": 0, "secs": 7.6, "chars": 11011}
+{"id": "q030", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 0, "secs": 7.8, "chars": 11015}
+{"id": "q033", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 0, "secs": 5.6, "chars": 11015}
+{"id": "q036", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 1, "secs": 5.6, "chars": 11015}
+{"id": "q039", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 1, "secs": 5.5, "chars": 11015}
+{"id": "q042", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 6.8, "chars": 11015}
+{"id": "q045", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 1, "secs": 5.0, "chars": 11015}
+{"id": "q048", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 1, "secs": 5.1, "chars": 11015}
+{"id": "q051", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 5.6, "chars": 11015}
+{"id": "q054", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "80", "correct": 1, "secs": 6.2, "chars": 11015}
+{"id": "q057", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "80", "correct": 1, "secs": 5.0, "chars": 11015}
+{"id": "q060", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 1, "secs": 5.9, "chars": 11015}
+{"id": "q063", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 1, "secs": 4.9, "chars": 11015}
+{"id": "q066", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "80", "correct": 1, "secs": 6.5, "chars": 11015}
+{"id": "q069", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 0, "secs": 5.2, "chars": 11015}
+{"id": "q072", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 0, "secs": 5.1, "chars": 11015}
+{"id": "q075", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "800", "correct": 0, "secs": 5.3, "chars": 11015}
+{"id": "q078", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 1, "secs": 5.3, "chars": 11015}
+{"id": "q081", "type": "노즐", "setting": "real-200dpi-s0", "cond": "full", "response": "80", "correct": 0, "secs": 5.4, "chars": 11015}
+{"id": "q084", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "80", "correct": 1, "secs": 6.5, "chars": 11014}
+{"id": "q087", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "7SHE13", "correct": 0, "secs": 6.7, "chars": 11024}
+{"id": "q090", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "MNb", "correct": 1, "secs": 5.9, "chars": 11019}
+{"id": "q093", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 0, "secs": 6.1, "chars": 11014}
+{"id": "q096", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "7SHB13", "correct": 0, "secs": 6.9, "chars": 11024}
+{"id": "q099", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "MNc", "correct": 1, "secs": 5.8, "chars": 11019}
+{"id": "q102", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 1, "secs": 6.9, "chars": 11014}
+{"id": "q105", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "7SHB13", "correct": 0, "secs": 7.5, "chars": 11024}
+{"id": "q108", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "MNc", "correct": 0, "secs": 6.3, "chars": 11019}
+{"id": "q111", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "50", "correct": 1, "secs": 6.8, "chars": 11014}
+{"id": "q114", "type": "라인", "setting": "real-200dpi-s0", "cond": "full", "response": "7SHB13", "correct": 0, "secs": 8.6, "chars": 11024}
+{"id": "q117", "type": "계기", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 9.9, "chars": 11023}
+{"id": "q120", "type": "계기", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 8.4, "chars": 11023}
+{"id": "q123", "type": "계기", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 9.5, "chars": 11023}
+{"id": "q126", "type": "계기", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 8.1, "chars": 11023}
+{"id": "q000", "type": "연결", "setting": "real-scan-s0", "cond": "full", "response": "P47I, T4750", "correct": 0, "secs": 14.3, "chars": 11238}
+{"id": "q003", "type": "연결", "setting": "real-scan-s0", "cond": "full", "response": "P4712, T4750", "correct": 1, "secs": 12.1, "chars": 11238}
+{"id": "q006", "type": "연결", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 10.5, "chars": 11238}
+{"id": "q009", "type": "연결", "setting": "real-scan-s0", "cond": "full", "response": "H1008, T4750", "correct": 1, "secs": 10.9, "chars": 11238}
+{"id": "q012", "type": "연결", "setting": "real-scan-s0", "cond": "full", "response": "H1007, P4712", "correct": 0, "secs": 12.0, "chars": 11238}
+{"id": "q015", "type": "개수", "setting": "real-scan-s0", "cond": "full", "response": "2", "correct": 0, "secs": 6.6, "chars": 11205}
+{"id": "q018", "type": "개수", "setting": "real-scan-s0", "cond": "full", "response": "2", "correct": 0, "secs": 5.7, "chars": 11205}
+{"id": "q021", "type": "개수", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 7.0, "chars": 11205}
+{"id": "q024", "type": "개수", "setting": "real-scan-s0", "cond": "full", "response": "2", "correct": 1, "secs": 6.2, "chars": 11205}
+{"id": "q027", "type": "개수", "setting": "real-scan-s0", "cond": "full", "response": "4", "correct": 0, "secs": 6.6, "chars": 11205}
+{"id": "q030", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 0, "secs": 7.5, "chars": 11209}
+{"id": "q033", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 0, "secs": 6.3, "chars": 11209}
+{"id": "q036", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 1, "secs": 6.6, "chars": 11209}
+{"id": "q039", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 1, "secs": 6.8, "chars": 11209}
+{"id": "q042", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 1, "secs": 8.0, "chars": 11209}
+{"id": "q045", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 1, "secs": 6.2, "chars": 11209}
+{"id": "q048", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 1, "secs": 6.4, "chars": 11209}
+{"id": "q051", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 1, "secs": 7.0, "chars": 11209}
+{"id": "q054", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 9.7, "chars": 11209}
+{"id": "q057", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 7.8, "chars": 11209}
+{"id": "q060", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 1, "secs": 7.4, "chars": 11209}
+{"id": "q063", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 1, "secs": 6.0, "chars": 11209}
+{"id": "q066", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "80", "correct": 1, "secs": 7.1, "chars": 11209}
+{"id": "q069", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "80", "correct": 1, "secs": 5.4, "chars": 11209}
+{"id": "q072", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "50", "correct": 0, "secs": 5.7, "chars": 11209}
+{"id": "q075", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "80", "correct": 0, "secs": 5.6, "chars": 11209}
+{"id": "q078", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "80", "correct": 0, "secs": 5.3, "chars": 11209}
+{"id": "q081", "type": "노즐", "setting": "real-scan-s0", "cond": "full", "response": "80", "correct": 0, "secs": 5.5, "chars": 11209}
+{"id": "q084", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "80", "correct": 1, "secs": 6.5, "chars": 11208}
+{"id": "q087", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "7SHE13", "correct": 0, "secs": 6.8, "chars": 11218}
+{"id": "q090", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "MNb", "correct": 1, "secs": 5.6, "chars": 11213}
+{"id": "q093", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "80", "correct": 1, "secs": 5.9, "chars": 11208}
+{"id": "q096", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "7SHB13", "correct": 0, "secs": 7.2, "chars": 11218}
+{"id": "q099", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "MNc", "correct": 1, "secs": 5.4, "chars": 11213}
+{"id": "q102", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "80", "correct": 0, "secs": 6.6, "chars": 11208}
+{"id": "q105", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "7SHB13", "correct": 0, "secs": 8.1, "chars": 11218}
+{"id": "q108", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 6.6, "chars": 11213}
+{"id": "q111", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "80", "correct": 0, "secs": 7.0, "chars": 11208}
+{"id": "q114", "type": "라인", "setting": "real-scan-s0", "cond": "full", "response": "7SHB13", "correct": 0, "secs": 8.3, "chars": 11218}
+{"id": "q117", "type": "계기", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 10.1, "chars": 11217}
+{"id": "q120", "type": "계기", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 7.9, "chars": 11217}
+{"id": "q123", "type": "계기", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 8.2, "chars": 11217}
+{"id": "q126", "type": "계기", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 7.0, "chars": 11217}
