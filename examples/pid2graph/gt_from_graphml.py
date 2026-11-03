@@ -1,13 +1,15 @@
 """PID2Graph의 graphml 정답을 기호 간 인접 쌍으로 바꾼다.
 
-노드는 기호(7종)와 선의 교차·꺾임·경계 노드로 나뉜다. 기호가 아닌 노드는 통과시켜
-기호와 기호가 선으로 이어진 쌍을 만든다. 간선 종류가 모두 실선이면 배관, 하나라도
-점선이면 신호선으로 본다. 결과는 truth.json(기호 목록·인접 쌍, 픽셀 좌표).
+노드는 기호(valve, instrumentation, general, tank, pump, inlet/outlet)와 선의 교차·꺾임·경계·화살표 노드로 나뉜다.
+기호가 아닌 노드는 통과시켜 기호와 기호가 선으로 이어진 쌍을 만든다. background(테두리·범례 영역)는 뺀다.
+간선 종류가 모두 실선이면 배관, 하나라도 점선이면 신호선으로 본다(OPEN100 12장은 실선뿐이라 전체 연결 기준).
+결과는 truth.json(기호 목록·인접 쌍, 픽셀 좌표).
 """
 import sys, json, collections, xml.etree.ElementTree as ET
 
 NS = '{http://graphml.graphdrawing.org/xmlns}'
-PASS_WORDS = ('cross', 'ankle', 'border', 'junction', 'connector', 'corner', 'bend')
+PASS_WORDS = ('cross', 'ankle', 'border', 'junction', 'connector', 'corner', 'bend', 'arrow')     # 화살표는 추출 쪽(evaluate)과 같이 통과 처리
+SKIP_WORDS = ('background',)     # 도면 테두리·범례 영역 상자. 기호도 통과 노드도 아님
 
 def _num(v):
     try:
@@ -68,6 +70,8 @@ def convert(path, out_json):
     syms, passn = {}, set()
     for nid, d in nodes.items():
         bb, lab = bbox_of(d), label_of(d)
+        if any(w in lab.lower() for w in SKIP_WORDS):
+            continue
         if is_symbol(lab, bb):
             syms[nid] = dict(id=nid, cls=lab, bbox=bb)
         else:

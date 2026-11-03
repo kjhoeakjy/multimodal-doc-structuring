@@ -2,7 +2,9 @@
 
 공개 P&ID 정답 데이터 PID2Graph(독일 항공우주센터, CC BY-SA 4.0, https://zenodo.org/records/14803338)로
 래스터 도면 추출(`examples/public-documents/pid/raster_graph.py`)의 배관 연결 재현율을 잰다.
-정답은 도면마다 graphml로 제공되며 기호 노드(상자·분류 7종)와 선 간선(실선·점선), 선의 교차·꺾임 노드로 이루어진다.
+정답은 도면마다 graphml로 제공되며 기호 노드(상자·분류)와 선 간선, 선의 교차·꺾임 노드로 이루어진다.
+
+2026-11-03 확인(노트북 C:\data\PID2Graph, 13.45 GB): Complete 폴더에 Dataset PID 500장(png+graphml), PID2Graph Synthetic 250장, OPEN100 완전 도면 12장(1994×1330~3342×2222 px, 도면당 노드 181~675). 노드 속성은 label·xmin·ymin·xmax·ymax, 간선 속성은 edge_label(12장 모두 solid). 기호 종류는 connector·crossing·arrow·instrumentation·valve·general·inlet/outlet·background·tank·pump. 문자 속성은 없으나 영상의 태그 문자(장비·계기·밸브·노즐·라인 사양)는 선명해 반자동 주석(OCR 제안 + 사람 확인)으로 질의응답 정답을 만들 수 있음.
 
 ## 절차
 
