@@ -65,7 +65,7 @@ def report(label, done, conds, nq=None):
         by[(kind, p, c)].append((r['correct'], k))
     L = [f'# 추출 오류 통제 실험 · {label}', '', f'C01 벡터 {nq or ""}문항. 비율은 넣은 오류의 비율, 재현율·정밀도·문자 복원율은 DEXPI XML 대조 실측(씨앗 평균).', '',
          '| 오류 | 비율 | 재현율 | 정밀도 | 문자 | ' + ' | '.join(conds) + ' |', '|---|---|---|---|---|' + '---|' * len(conds)]
-    KINDS = ('none', 'drop', 'add', 'label', 'split', 'merge', 'ocr', 'node', 'real')
+    KINDS = ('none', 'drop', 'add', 'label', 'split', 'merge', 'ocr', 'node', 'mix', 'real')
     lv = lambda p: (0, float(p)) if re.match(r'^[\d.]+$', p) else (1, p)
     for kind in KINDS:
         for p in sorted({k[1] for k in by if k[0] == kind}, key=lv):

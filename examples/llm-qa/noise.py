@@ -7,6 +7,7 @@
   split  배관 간선 비율 p의 중간에 연결 둘인 분기점을 넣어 두 간선으로 나눔(래스터에서 관찰한 꺾임 분할)
   merge  가까운 기호(밸브 등) 쌍을 비율 p만큼 한 노드로 합침(요소 병합)
   node   기호·계기·노즐 노드를 비율 p만큼 지움(요소 누락. 붙은 선은 끊김. 실제 래스터에서 작은 기호를 못 찾는 오류를 본뜸)
+  mix    drop과 ocr을 같은 비율로 함께 넣음(두 오류의 효과가 독립적으로 곱해지는지 확인)
   ocr    요소·선에 붙은 문자 토큰을 비율 p만큼 문자 인식 오류처럼 바꿈(8→B, 5→S, 0→D, 1→l, 2→Z, 끝 글자 누락 등. 실제 래스터에서 H1008→S8 같은 오독을 본뜸)
 각 그래프는 DEXPI XML 정답과 다시 대조해 실제 재현율·정밀도를 기록한다(public-documents/pid/evaluate.py).
 사용: python noise.py [--levels 0,0.1,0.2,0.3,0.5] [--seeds 0,1,2]
@@ -45,6 +46,8 @@ def misread(tok, rnd):
 
 def perturb(g, kind, p, seed):
     g = json.loads(json.dumps(g)); rnd = random.Random(seed)
+    if kind == 'mix':
+        return perturb(perturb(g, 'drop', p, seed), 'ocr', p, seed + 100)
     if kind == 'node':
         cand = [n for n in g['nodes'] if n['role'] in ('symbol', 'instrument') or n.get('attached_to')]
         gone = {n['id'] for n in rnd.sample(cand, int(round(p * len(cand))))}
@@ -153,7 +156,7 @@ def main():
     Q = [q for q in json.load(open(os.path.join(HERE, 'questions.json'), encoding='utf-8')) if q['doc'] == DOC]
     os.makedirs(OUT, exist_ok=True)
     ctx, rows = {}, []
-    for kind in ('drop', 'add', 'label', 'split', 'merge', 'ocr', 'node'):
+    for kind in ('drop', 'add', 'label', 'split', 'merge', 'ocr', 'node', 'mix'):
         for p in levels:
             for s in (seeds if p > 0 else [0]):
                 if p == 0 and kind != 'drop':
