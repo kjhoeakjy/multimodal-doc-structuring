@@ -6,10 +6,11 @@
   label  선 라벨(라인 번호·유체·등급·DN)을 비율 p만큼 다른 선과 맞바꿈(라벨 오귀속)
   split  배관 간선 비율 p의 중간에 연결 둘인 분기점을 넣어 두 간선으로 나눔(래스터에서 관찰한 꺾임 분할)
   merge  가까운 기호(밸브 등) 쌍을 비율 p만큼 한 노드로 합침(요소 병합)
+  ocr    요소·선에 붙은 문자 토큰을 비율 p만큼 문자 인식 오류처럼 바꿈(8→B, 5→S, 0→D, 1→l, 2→Z, 끝 글자 누락 등. 실제 래스터에서 H1008→S8 같은 오독을 본뜸)
 각 그래프는 DEXPI XML 정답과 다시 대조해 실제 재현율·정밀도를 기록한다(public-documents/pid/evaluate.py).
 사용: python noise.py [--levels 0,0.1,0.2,0.3,0.5] [--seeds 0,1,2]
 실제 추출 그래프(C01 200 dpi 래스터, 스캔)도 real-200dpi, real-scan 설정으로 넣어 통제 오류 곡선과 대조한다.
-결과: noise/contexts.json(문항 id·오류 종류·비율·씨앗별 relations, full 문맥), noise/graphs.md(실제 재현율·정밀도)
+결과: noise/contexts.json(문항 id·오류 종류·비율·씨앗별 relations, full 문맥), noise/graphs.md(실제 재현율·정밀도·요소 문자 복원율)
 실행: python run_noise.py --backend ollama --model <모델> --label <결과 이름>"""
 import os, sys, json, math, random, argparse, tempfile, re
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
@@ -29,8 +30,25 @@ REAL = ('pid-standard-200dpi', 'pid-standard-scan')     # 같은 도면의 실�
 def center(n):
     b = n['bbox']; return ((b[0] + b[2]) / 2, (b[1] + b[3]) / 2)
 
+CONFUSE = {'0': 'D', '1': 'l', '2': 'Z', '4': 'A', '5': 'S', '6': 'G', '7': 'T', '8': 'B', '9': 'g', 'O': 'Q', 'I': 'l', 'B': '8', 'S': '5', 'H': 'N', 'K': 'X', 'P': 'F', 'T': 'I'}
+
+def misread(tok, rnd):
+    """문자 인식 오류 하나를 흉내 냄: 글자 하나 혼동(절반), 끝 글자 누락, 글자 하나 삽입"""
+    cand = [i for i, ch in enumerate(tok) if ch in CONFUSE]
+    r = rnd.random()
+    if cand and r < 0.6:
+        i = rnd.choice(cand); return tok[:i] + CONFUSE[tok[i]] + tok[i + 1:]
+    if len(tok) > 2 and r < 0.85:
+        return tok[:-1]
+    i = rnd.randrange(len(tok) + 1); return tok[:i] + rnd.choice('l1I|') + tok[i:]
+
 def perturb(g, kind, p, seed):
     g = json.loads(json.dumps(g)); rnd = random.Random(seed)
+    if kind == 'ocr':
+        slots = [(n['texts'], i) for n in g['nodes'] if n['role'] != 'note' for i in range(len(n['texts']))] + [(r['texts'], i) for r in g['runs'] for i in range(len(r['texts']))]
+        for texts, i in rnd.sample(slots, int(round(p * len(slots)))):
+            texts[i] = ' '.join(misread(t, rnd) if rnd.random() < 0.7 else t for t in texts[i].split()) if ' ' in texts[i] else misread(texts[i], rnd)
+        return g
     runs = [r for r in g['runs'] if r['kind'] in ('pipe', 'signal')]
     k = int(round(p * len(runs)))
     if kind == 'drop' and k:
@@ -99,7 +117,23 @@ def serial_of(g):
         s = open(mp, encoding='utf-8').read()
     m = re.search(r'정답 인접 쌍 (\d+)개 중 (\d+)개 복원.*?추출 인접 쌍 (\d+)개 중 정답에 없는 쌍 (\d+)개\. 이 중 (\d+)개는', s, re.S)
     gt, rec, ex, extra, sig = map(int, m.groups())
-    return lines, dict(recall=rec / gt, precision=(ex - extra) / max(1, ex - sig))
+    return lines, dict(recall=rec / gt, precision=(ex - extra) / max(1, ex - sig), label=text_recall(g))
+
+_GT_TEXTS = None
+def text_recall(g):
+    """정답 XML의 요소 문자(장비·부품·계기·노즐 소속 Text) 가운데 그래프의 문자 토큰에 그대로 있는 비율. 문자 오독 오류와 실제 추출의 문자 인식 손실을 같은 잣대로 잼"""
+    global _GT_TEXTS
+    if _GT_TEXTS is None:
+        comps, _, labels = ev.load_gt(XML, 297.053)
+        _GT_TEXTS = [l['text'] for l in labels if l['owner'] in comps and comps[l['owner']]['kind'] in ('Equipment', 'Nozzle', 'PipingComponent', 'ProcessInstrumentationFunction')
+                     and re.fullmatch(r'[A-Z0-9.\-]+', l['text'])]     # 식별자 형태(장비 태그, 노즐 번호, 호칭 지름, 밸브·계기 번호)만. 장비 데이터 표의 문구는 제외
+    toks = set()
+    for n in g['nodes']:
+        toks |= {t for x in n['texts'] for t in x.split()} | set(n['texts'])
+    for r in g['runs']:
+        toks |= {t for x in r['texts'] for t in x.split()} | set(r['texts'])
+    toks |= {t.replace('O', '0').replace('I', '1') for t in toks}
+    return sum(t in toks for t in _GT_TEXTS) / max(1, len(_GT_TEXTS))
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--levels', default='0,0.1,0.2,0.3,0.5'); ap.add_argument('--seeds', default='0,1,2')
@@ -109,7 +143,7 @@ def main():
     Q = [q for q in json.load(open(os.path.join(HERE, 'questions.json'), encoding='utf-8')) if q['doc'] == DOC]
     os.makedirs(OUT, exist_ok=True)
     ctx, rows = {}, []
-    for kind in ('drop', 'add', 'label', 'split', 'merge'):
+    for kind in ('drop', 'add', 'label', 'split', 'merge', 'ocr'):
         for p in levels:
             for s in (seeds if p > 0 else [0]):
                 if p == 0 and kind != 'drop':
@@ -124,8 +158,8 @@ def main():
         rows.append((key, m))
         ctx[key] = {c: ablate(lines, c, True) for c in ('relations', 'full')}
     json.dump(dict(doc=DOC, questions=[q['id'] for q in Q], contexts=ctx), open(os.path.join(OUT, 'contexts.json'), 'w', encoding='utf-8'), ensure_ascii=False)
-    L = ['# 오류를 넣은 C01 그래프의 실제 배관 연결 재현율·정밀도', '', f'문항 {len(Q)}(C01 벡터). 정답 대조는 DEXPI XML.', '', '| 조건 | 재현율 | 정밀도 |', '|---|---|---|']
-    L += [f"| {k} | {m['recall']:.2f} | {m['precision']:.2f} |" for k, m in rows]
+    L = ['# 오류를 넣은 C01 그래프의 실제 배관 연결 재현율·정밀도', '', f'문항 {len(Q)}(C01 벡터). 정답 대조는 DEXPI XML.', '', '| 조건 | 재현율 | 정밀도 | 문자 복원 |', '|---|---|---|---|']
+    L += [f"| {k} | {m['recall']:.2f} | {m['precision']:.2f} | {m['label']:.2f} |" for k, m in rows]
     open(os.path.join(OUT, 'graphs.md'), 'w', encoding='utf-8').write('\n'.join(L) + '\n'); print('\n'.join(L))
 
 if __name__ == '__main__':
