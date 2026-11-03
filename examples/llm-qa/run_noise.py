@@ -40,11 +40,12 @@ def main():
             t0 = time.time()
             try:
                 resp = ask(a.model, SYSTEM, user)
-            except Exception as e:     # 오류는 기록하지 않음(다시 실행하면 이어서 물음). 3회 넘으면 멈춤
-                errors += 1; print('오류', q['id'], k, c, str(e)[:200], flush=True)
+            except Exception as e:     # 오류는 기록하지 않음(다시 실행하면 이어서 물음). 연속 3회면 멈춤(통신 오류는 5·10·15초 쉬고 다시 시도)
+                errors += 1; time.sleep(5 * errors); print('오류', q['id'], k, c, str(e)[:200], flush=True)
                 if errors >= 3:
-                    sys.exit('오류 3회로 중단. 설정을 확인한 뒤 같은 명령으로 다시 실행')
+                    sys.exit('연속 오류 3회로 중단. 설정을 확인한 뒤 같은 명령으로 다시 실행')
                 continue
+            errors = 0
             r = dict(id=q['id'], type=q['type'], setting=k, cond=c, response=resp, correct=score(q, resp), secs=round(time.time() - t0, 1), chars=len(user))
             f.write(json.dumps(r, ensure_ascii=False) + '\n'); f.flush(); done[(q['id'], k, c)] = r
             if i % 20 == 0:
