@@ -1,7 +1,7 @@
 """오답 원인 분류. 오류 통제 실험 결과(results/<결과 이름>.jsonl)의 오답을 문맥과 대조해 원인을 나눈다.
   기준 문자 손실  질문의 기준 요소(장비 태그·라인 번호·계기 번호)가 문맥에 없음(문자 오독 또는 요소 누락)
   답 문자 손실    기준 요소는 있으나 정답 문자가 문맥 어디에도 없음
-  귀속 오류       정답 문자가 문맥에 있으나 기준 요소의 줄(또는 장비 간 연결 줄)에 없음(다른 요소에 붙음)
+  귀속 오류       정답 문자가 문맥에 있으나 기준 요소의 줄에 없음(다른 요소에 붙음). 노즐은 번호와 호칭 지름의 짝이 없는 경우, 개수는 접속구 수가 다른 경우
   연결 오류       연결 질문에서 기준 장비의 도달 집합이 정답과 다름
   모델 오류       근거가 문맥에 그대로 있는데 틀림
 사용: python diagnose_real.py <결과 이름> [--settings ^real] [--cond full]
@@ -44,6 +44,13 @@ def classify(q, ctx):
         m = [re.search(r'접속구=([^ ]+)', l) for l in fl]
         n = max((len(x.group(1).split(',')) for x in m if x), default=None)
         return '모델 오류' if n is not None and str(n) in q['answers'] else '귀속 오류'
+    if q['type'] == '노즐':     # 노즐 번호와 호칭 지름의 짝(N1:DN80)이 기준 장비 줄에 있어야 함
+        nn = re.search(r'노즐 (N\d+)', q['question']).group(1)
+        if not any(re.search(r'(?<![A-Z0-9])' + nn + r'(?![0-9])', l) for l in fl):
+            return '기준 문자 손실'
+        if any(f"{nn}:DN{a}" in l for l in fl for a in q['answers']):
+            return '모델 오류'
+        return '귀속 오류'
     anywhere = any(has(ctx, a) for a in q['answers'])
     on_focus = any(has(l, a) for l in fl for a in q['answers'])
     if on_focus:
