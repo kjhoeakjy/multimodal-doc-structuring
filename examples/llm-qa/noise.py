@@ -8,6 +8,7 @@
   merge  가까운 기호(밸브 등) 쌍을 비율 p만큼 한 노드로 합침(요소 병합)
   node   기호·계기·노즐 노드를 비율 p만큼 지움(요소 누락. 붙은 선은 끊김. 실제 래스터에서 작은 기호를 못 찾는 오류를 본뜸)
   mix    drop과 ocr을 같은 비율로 함께 넣음(두 오류의 효과가 독립적으로 곱해지는지 확인)
+  attr   요소에 붙은 문자 토큰(노즐 호칭 지름·계기 번호·밸브 번호)을 비율 p만큼 가장 가까운 같은 종류 요소로 옮김(문자 귀속 오류. 실제 래스터에서 가까운 문자가 이웃 요소에 붙는 오류를 본뜸. 문자 자체는 남아 문자 복원율은 변하지 않음)
   ocr    요소·선에 붙은 문자 토큰을 비율 p만큼 문자 인식 오류처럼 바꿈(8→B, 5→S, 0→D, 1→l, 2→Z, 끝 글자 누락 등. 실제 래스터에서 H1008→S8 같은 오독을 본뜸)
 각 그래프는 DEXPI XML 정답과 다시 대조해 실제 재현율·정밀도를 기록한다(public-documents/pid/evaluate.py).
 사용: python noise.py [--levels 0,0.1,0.2,0.3,0.5] [--seeds 0,1,2]
@@ -56,6 +57,17 @@ def perturb(g, kind, p, seed):
         for n in g['nodes']:
             if n.get('annotates') in gone:
                 n['annotates'] = None
+        return g
+    if kind == 'attr':
+        own = [n for n in g['nodes'] if n['role'] in ('equipment', 'instrument', 'symbol') and not n.get('attached_to') and n['texts']]
+        slots = [(n, i) for n in own for i, t in enumerate(n['texts']) if not (n['role'] == 'equipment' and i == 0) and not (n['role'] == 'instrument' and i == 0)]     # 이름 토큰(장비 태그·기능 문자)은 두고 번호·치수를 옮김
+        moves = []
+        for n, i in rnd.sample(slots, int(round(p * len(slots)))):
+            same = [m for m in own if m is not n and m['role'] == n['role']]
+            if same:
+                moves.append((n, n['texts'][i], min(same, key=lambda m: math.dist(center(n), center(m)))))
+        for n, t, m in moves:
+            n['texts'].remove(t); m['texts'].append(t)
         return g
     if kind == 'ocr':
         slots = [(n['texts'], i) for n in g['nodes'] if n['role'] != 'note' for i in range(len(n['texts']))] + [(r['texts'], i) for r in g['runs'] for i in range(len(r['texts']))]
@@ -156,7 +168,7 @@ def main():
     Q = [q for q in json.load(open(os.path.join(HERE, 'questions.json'), encoding='utf-8')) if q['doc'] == DOC]
     os.makedirs(OUT, exist_ok=True)
     ctx, rows = {}, []
-    for kind in ('drop', 'add', 'label', 'split', 'merge', 'ocr', 'node', 'mix'):
+    for kind in ('drop', 'add', 'label', 'split', 'merge', 'ocr', 'node', 'mix', 'attr'):
         for p in levels:
             for s in (seeds if p > 0 else [0]):
                 if p == 0 and kind != 'drop':
