@@ -16,7 +16,8 @@
 | train_lora.py | 8B LoRA SFT(assistant 부분에만 손실) | GPU |
 | eval_lora.py | run_noise.py와 같은 설정·문항·채점으로 결과 jsonl·md 생성 | GPU |
 | subsample.py | 큰 학습 자료에서 파일럿용 무작위 표본(기본 8,000개) | CPU |
-| run.sh | 학습 → 기본/LoRA × noise/conn 평가 4회 | GPU |
+| run.sh | 학습 → 기본/LoRA × noise/conn 평가 4회 | GPU(SSH 인스턴스) |
+| notebook.ipynb | run.sh와 같은 순서의 노트북(Colab·Kaggle). 결과를 Drive로 복사 | GPU(노트북) |
 
 순서
 ```
