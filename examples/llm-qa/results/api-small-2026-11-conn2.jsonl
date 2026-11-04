@@ -7126,3 +7126,867 @@
 {"id": "c033", "type": "라인경로", "setting": "mix-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.2, "chars": 5023}
 {"id": "c034", "type": "라인경로", "setting": "mix-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 5023}
 {"id": "c035", "type": "라인경로", "setting": "mix-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.6, "chars": 5023}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7515}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7515}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "아니오", "correct": 0, "secs": 0.7, "chars": 7515}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.2, "chars": 7515}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7516}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "P4711, H1007", "correct": 1, "secs": 0.8, "chars": 7516}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7516}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7516}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.7, "chars": 7516}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7516}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.2, "chars": 7516}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.6, "chars": 7516}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7516}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7516}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7516}
+{"id": "c021", "type": "연결수", "setting": "attr-0.1-s0", "cond": "full", "response": "4", "correct": 1, "secs": 0.8, "chars": 7486}
+{"id": "c022", "type": "연결수", "setting": "attr-0.1-s0", "cond": "full", "response": "4", "correct": 1, "secs": 0.9, "chars": 7486}
+{"id": "c023", "type": "연결수", "setting": "attr-0.1-s0", "cond": "full", "response": "2", "correct": 1, "secs": 0.9, "chars": 7486}
+{"id": "c024", "type": "연결수", "setting": "attr-0.1-s0", "cond": "full", "response": "2", "correct": 1, "secs": 0.7, "chars": 7486}
+{"id": "c025", "type": "연결수", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7486}
+{"id": "c026", "type": "경로", "setting": "attr-0.1-s0", "cond": "full", "response": "0", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c027", "type": "경로", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.7, "chars": 7515}
+{"id": "c028", "type": "경로", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7515}
+{"id": "c029", "type": "경로", "setting": "attr-0.1-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7515}
+{"id": "c030", "type": "경로", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 2.0, "chars": 7515}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "full", "response": "47121", "correct": 0, "secs": 0.7, "chars": 7519}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "full", "response": "47123", "correct": 1, "secs": 1.0, "chars": 7519}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7519}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7519}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.8, "chars": 7519}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7365}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 1.2, "chars": 7365}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7365}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 1.2, "chars": 7365}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7365}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 1.2, "chars": 7365}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 0.9, "chars": 7365}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "예", "correct": 0, "secs": 0.8, "chars": 7365}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7365}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.1-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7365}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 1.4, "chars": 7366}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "P4711, H1007", "correct": 1, "secs": 1.2, "chars": 7366}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "T4750", "correct": 0, "secs": 0.8, "chars": 7366}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7366}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7366}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7366}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7366}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7366}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "H1007", "correct": 1, "secs": 0.7, "chars": 7366}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7366}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7366}
+{"id": "c021", "type": "연결수", "setting": "attr-0.1-s0", "cond": "relations", "response": "4", "correct": 1, "secs": 0.7, "chars": 7336}
+{"id": "c022", "type": "연결수", "setting": "attr-0.1-s0", "cond": "relations", "response": "4", "correct": 1, "secs": 0.7, "chars": 7336}
+{"id": "c023", "type": "연결수", "setting": "attr-0.1-s0", "cond": "relations", "response": "2", "correct": 1, "secs": 1.4, "chars": 7336}
+{"id": "c024", "type": "연결수", "setting": "attr-0.1-s0", "cond": "relations", "response": "2", "correct": 1, "secs": 0.8, "chars": 7336}
+{"id": "c025", "type": "연결수", "setting": "attr-0.1-s0", "cond": "relations", "response": "8", "correct": 0, "secs": 1.1, "chars": 7336}
+{"id": "c026", "type": "경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7365}
+{"id": "c027", "type": "경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7365}
+{"id": "c028", "type": "경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7365}
+{"id": "c029", "type": "경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7365}
+{"id": "c030", "type": "경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7365}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "47121", "correct": 0, "secs": 1.3, "chars": 7369}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "47123", "correct": 1, "secs": 1.2, "chars": 7369}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7369}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "47125", "correct": 0, "secs": 0.7, "chars": 7369}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.1-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7369}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7500}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7500}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7500}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7500}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7500}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7500}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7500}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7500}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7500}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7500}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 0.9, "chars": 7501}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7501}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7501}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7501}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7501}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료 확인: 라인 47126 배관(r16)은 n9(73KH12-50) → j3 분기점. 분기점 j3에서 두 갈래: j4 방향(r17) 그리고 n19(H1008) 방향(r18).\n\n- j3 → n19 H1008: 장비 H1008 도달. \n- j3 → j4 → n10", "correct": 0, "secs": 1.2, "chars": 7501}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7501}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7501}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7501}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7501}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7501}
+{"id": "c021", "type": "연결수", "setting": "attr-0.1-s1", "cond": "full", "response": "4", "correct": 1, "secs": 0.8, "chars": 7471}
+{"id": "c022", "type": "연결수", "setting": "attr-0.1-s1", "cond": "full", "response": "4", "correct": 1, "secs": 1.1, "chars": 7471}
+{"id": "c023", "type": "연결수", "setting": "attr-0.1-s1", "cond": "full", "response": "1", "correct": 0, "secs": 0.8, "chars": 7471}
+{"id": "c024", "type": "연결수", "setting": "attr-0.1-s1", "cond": "full", "response": "2", "correct": 1, "secs": 0.8, "chars": 7471}
+{"id": "c025", "type": "연결수", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7471}
+{"id": "c026", "type": "경로", "setting": "attr-0.1-s1", "cond": "full", "response": "0", "correct": 1, "secs": 1.0, "chars": 7500}
+{"id": "c027", "type": "경로", "setting": "attr-0.1-s1", "cond": "full", "response": "0", "correct": 0, "secs": 0.8, "chars": 7500}
+{"id": "c028", "type": "경로", "setting": "attr-0.1-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 2.0, "chars": 7500}
+{"id": "c029", "type": "경로", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7500}
+{"id": "c030", "type": "경로", "setting": "attr-0.1-s1", "cond": "full", "response": "확인 필요", "correct": 0, "secs": 0.7, "chars": 7500}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "full", "response": "47121", "correct": 0, "secs": 0.8, "chars": 7504}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "full", "response": "47121, 47122, 47123, 47124, 47125, 47126, 47127, 47130, 47131", "correct": 0, "secs": 1.2, "chars": 7504}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7504}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.2, "chars": 7504}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7504}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.7, "chars": 7350}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 1.3, "chars": 7350}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "예", "correct": 0, "secs": 1.1, "chars": 7350}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7350}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7350}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7350}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "아니오", "correct": 0, "secs": 1.2, "chars": 7350}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "예", "correct": 0, "secs": 0.7, "chars": 7350}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7350}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.1-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7350}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 0.8, "chars": 7351}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "P4711, H1007", "correct": 1, "secs": 0.7, "chars": 7351}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7351}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7351}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7351}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.2, "chars": 7351}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7351}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "H1007", "correct": 1, "secs": 0.7, "chars": 7351}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7351}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7351}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7351}
+{"id": "c021", "type": "연결수", "setting": "attr-0.1-s1", "cond": "relations", "response": "5", "correct": 0, "secs": 0.9, "chars": 7321}
+{"id": "c022", "type": "연결수", "setting": "attr-0.1-s1", "cond": "relations", "response": "4", "correct": 1, "secs": 0.9, "chars": 7321}
+{"id": "c023", "type": "연결수", "setting": "attr-0.1-s1", "cond": "relations", "response": "2", "correct": 1, "secs": 0.9, "chars": 7321}
+{"id": "c024", "type": "연결수", "setting": "attr-0.1-s1", "cond": "relations", "response": "2", "correct": 1, "secs": 0.9, "chars": 7321}
+{"id": "c025", "type": "연결수", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7321}
+{"id": "c026", "type": "경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 근거하면 H1007(n18)과 P4711(n26)은 r1으로 직접 연결되어 있고, 경로상 중간 요소가 없다. 따라서 가장 짧은 연결 경로의 중간 요소 수는 0이다.\n\n0", "correct": 1, "secs": 1.1, "chars": 7350}
+{"id": "c027", "type": "경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7350}
+{"id": "c028", "type": "경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7350}
+{"id": "c029", "type": "경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료만으로 H1008→T4750 경로를 따져보면, H1008(n19)은 n12와 r30(경로 n19→n12) 및 r32, r18(분기점 j3)로 연결된다. n12는 r26으로 T4750(n21)과 직접 연결된다(r26: n21↔n12). 따라서 H1008 → n12", "correct": 0, "secs": 1.8, "chars": 7350}
+{"id": "c030", "type": "경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7350}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "47121", "correct": 0, "secs": 0.8, "chars": 7354}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "47121, 47123", "correct": 0, "secs": 0.8, "chars": 7354}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7354}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7354}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.1-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7354}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.6, "chars": 7485}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.4, "chars": 7485}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7485}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7485}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7485}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.1, "chars": 7485}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.2, "chars": 7485}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7485}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7485}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.1, "chars": 7485}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "H1007, P4711", "correct": 0, "secs": 1.4, "chars": 7486}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "P4711, H1007", "correct": 1, "secs": 0.7, "chars": 7486}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "T4750, H1007", "correct": 1, "secs": 0.8, "chars": 7486}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7486}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "T4750, SV 104.01", "correct": 0, "secs": 1.7, "chars": 7486}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7486}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.7, "chars": 7486}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "H1007", "correct": 1, "secs": 1.0, "chars": 7486}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7486}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7486}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7486}
+{"id": "c021", "type": "연결수", "setting": "attr-0.1-s2", "cond": "full", "response": "4", "correct": 1, "secs": 0.8, "chars": 7456}
+{"id": "c022", "type": "연결수", "setting": "attr-0.1-s2", "cond": "full", "response": "4", "correct": 1, "secs": 0.7, "chars": 7456}
+{"id": "c023", "type": "연결수", "setting": "attr-0.1-s2", "cond": "full", "response": "1", "correct": 0, "secs": 0.9, "chars": 7456}
+{"id": "c024", "type": "연결수", "setting": "attr-0.1-s2", "cond": "full", "response": "2", "correct": 1, "secs": 1.4, "chars": 7456}
+{"id": "c025", "type": "연결수", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7456}
+{"id": "c026", "type": "경로", "setting": "attr-0.1-s2", "cond": "full", "response": "0", "correct": 1, "secs": 1.0, "chars": 7485}
+{"id": "c027", "type": "경로", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7485}
+{"id": "c028", "type": "경로", "setting": "attr-0.1-s2", "cond": "full", "response": "1", "correct": 0, "secs": 1.8, "chars": 7485}
+{"id": "c029", "type": "경로", "setting": "attr-0.1-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.9, "chars": 7485}
+{"id": "c030", "type": "경로", "setting": "attr-0.1-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7485}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "full", "response": "47121", "correct": 0, "secs": 1.0, "chars": 7489}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "full", "response": "47121, 47123, 47124, 47130", "correct": 0, "secs": 1.0, "chars": 7489}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7489}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7489}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7489}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.3, "chars": 7335}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 0.7, "chars": 7335}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "예", "correct": 0, "secs": 0.9, "chars": 7335}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "아니오", "correct": 0, "secs": 1.1, "chars": 7335}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7335}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 1.2, "chars": 7335}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.8, "chars": 7335}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "예", "correct": 0, "secs": 0.8, "chars": 7335}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7335}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.1-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7335}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 1.4, "chars": 7336}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7336}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7336}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7336}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7336}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7336}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.4, "chars": 7336}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7336}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "H1007", "correct": 1, "secs": 0.9, "chars": 7336}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7336}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7336}
+{"id": "c021", "type": "연결수", "setting": "attr-0.1-s2", "cond": "relations", "response": "4", "correct": 1, "secs": 0.9, "chars": 7306}
+{"id": "c022", "type": "연결수", "setting": "attr-0.1-s2", "cond": "relations", "response": "4", "correct": 1, "secs": 0.7, "chars": 7306}
+{"id": "c023", "type": "연결수", "setting": "attr-0.1-s2", "cond": "relations", "response": "2", "correct": 1, "secs": 0.8, "chars": 7306}
+{"id": "c024", "type": "연결수", "setting": "attr-0.1-s2", "cond": "relations", "response": "2", "correct": 1, "secs": 0.8, "chars": 7306}
+{"id": "c025", "type": "연결수", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7306}
+{"id": "c026", "type": "경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "0", "correct": 1, "secs": 0.8, "chars": 7335}
+{"id": "c027", "type": "경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7335}
+{"id": "c028", "type": "경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7335}
+{"id": "c029", "type": "경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.5, "chars": 7335}
+{"id": "c030", "type": "경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7335}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "47121", "correct": 0, "secs": 0.8, "chars": 7339}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "47123", "correct": 1, "secs": 0.7, "chars": 7339}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7339}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7339}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.1-s2", "cond": "relations", "response": "47125, 47127", "correct": 0, "secs": 0.7, "chars": 7339}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7515}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7515}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7515}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7515}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7515}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 0.8, "chars": 7516}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7516}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7516}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7516}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7516}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7516}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7516}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "H1007", "correct": 1, "secs": 1.0, "chars": 7516}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7516}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7516}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7516}
+{"id": "c021", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "4", "correct": 1, "secs": 0.8, "chars": 7486}
+{"id": "c022", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "4", "correct": 1, "secs": 1.0, "chars": 7486}
+{"id": "c023", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "1", "correct": 0, "secs": 0.6, "chars": 7486}
+{"id": "c024", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "3", "correct": 0, "secs": 0.9, "chars": 7486}
+{"id": "c025", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7486}
+{"id": "c026", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 근거가 없음. \n\n(참고: H1007과 P4711은 r1 배관(47122)으로 직접 연결되어 있고, 두 장비 사이에 기호나 분기점이 없으므로 중간 요소는 0개로 볼 수 있으나, 질문은 숫자만 답하라고 하였으므로 답은 다음", "correct": 0, "secs": 1.5, "chars": 7515}
+{"id": "c027", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7515}
+{"id": "c028", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "자료만으로 판단하면, 장비 H1008에서 P4712까지의 직접 연결은 H1008 → T4750 → P4712 경로(T4750 경유)이고, 자료의 \"장비 간 배관 연결\" 표에는 H1008의 연결 대상으로 T4750과 P4712가 나와 있지 않으며 H1008", "correct": 0, "secs": 1.1, "chars": 7515}
+{"id": "c029", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7515}
+{"id": "c030", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.2, "chars": 7515}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "47121", "correct": 0, "secs": 0.9, "chars": 7519}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7519}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7519}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7519}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7519}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7365}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 1.0, "chars": 7365}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "예", "correct": 0, "secs": 0.7, "chars": 7365}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 1.3, "chars": 7365}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7365}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7365}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "아니오", "correct": 0, "secs": 1.0, "chars": 7365}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "예", "correct": 0, "secs": 0.8, "chars": 7365}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7365}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 1.0, "chars": 7365}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 0.8, "chars": 7366}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "P4711, H1007", "correct": 1, "secs": 1.6, "chars": 7366}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "T4750, F.C.", "correct": 0, "secs": 0.9, "chars": 7366}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7366}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "T4750, SV 104.01", "correct": 0, "secs": 0.7, "chars": 7366}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7366}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7366}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "H1007", "correct": 1, "secs": 1.0, "chars": 7366}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "H1007", "correct": 1, "secs": 0.7, "chars": 7366}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7366}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7366}
+{"id": "c021", "type": "연결수", "setting": "attr-0.2-s0", "cond": "relations", "response": "5", "correct": 0, "secs": 1.1, "chars": 7336}
+{"id": "c022", "type": "연결수", "setting": "attr-0.2-s0", "cond": "relations", "response": "4", "correct": 1, "secs": 0.9, "chars": 7336}
+{"id": "c023", "type": "연결수", "setting": "attr-0.2-s0", "cond": "relations", "response": "2", "correct": 1, "secs": 0.8, "chars": 7336}
+{"id": "c024", "type": "연결수", "setting": "attr-0.2-s0", "cond": "relations", "response": "2", "correct": 1, "secs": 1.2, "chars": 7336}
+{"id": "c025", "type": "연결수", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에서 T4750(n21)과 연결된 r 항목을 세면: r21, r23, r24, r25, r26, r28, r29, r40(open@ 끝점 아님, 양 끝 모두 open이므로 제외 대상 여부 확인 필요). r40은 A=open@(174.9,88.8), B=open@(174.9,99.2", "correct": 0, "secs": 1.3, "chars": 7336}
+{"id": "c026", "type": "경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.9, "chars": 7365}
+{"id": "c027", "type": "경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7365}
+{"id": "c028", "type": "경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7365}
+{"id": "c029", "type": "경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.8, "chars": 7365}
+{"id": "c030", "type": "경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7365}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "47121", "correct": 0, "secs": 0.7, "chars": 7369}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "47121, 47123", "correct": 0, "secs": 0.8, "chars": 7369}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7369}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "47125, 47127", "correct": 0, "secs": 1.0, "chars": 7369}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7369}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7483}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7483}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7483}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "예", "correct": 1, "secs": 1.4, "chars": 7483}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7483}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7483}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7483}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7483}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7483}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7483}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 0.9, "chars": 7484}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7484}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7484}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7484}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7484}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.4, "chars": 7484}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7484}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "H1007", "correct": 1, "secs": 0.9, "chars": 7484}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7484}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7484}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7484}
+{"id": "c021", "type": "연결수", "setting": "attr-0.2-s1", "cond": "full", "response": "4", "correct": 1, "secs": 1.1, "chars": 7454}
+{"id": "c022", "type": "연결수", "setting": "attr-0.2-s1", "cond": "full", "response": "4", "correct": 1, "secs": 0.8, "chars": 7454}
+{"id": "c023", "type": "연결수", "setting": "attr-0.2-s1", "cond": "full", "response": "2", "correct": 1, "secs": 0.8, "chars": 7454}
+{"id": "c024", "type": "연결수", "setting": "attr-0.2-s1", "cond": "full", "response": "2", "correct": 1, "secs": 0.7, "chars": 7454}
+{"id": "c025", "type": "연결수", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에서 T4750(n21)을 A 또는 B로 가지는 연결선을 세면 된다.\n\n- r21 (n0–n21)\n- r23 (n17–n21)\n- r24 (n21–n1)\n- r25 (n21–n4)\n- r26 (n21–n12)\n- r28 (n21–open)\n- r29 (n21–open)", "correct": 0, "secs": 1.1, "chars": 7454}
+{"id": "c026", "type": "경로", "setting": "attr-0.2-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.1, "chars": 7483}
+{"id": "c027", "type": "경로", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7483}
+{"id": "c028", "type": "경로", "setting": "attr-0.2-s1", "cond": "full", "response": "자료 기준 H1008 → P4712 직접 연결은 없고, 장비 간 연결에서 H1008 → T4750 → P4712 경로가 확인된다(H1008 → P4712 연결 목록에 있으나 배관 경로상 직접 선은 없음). \n\n이 경우 중간 장비는 T4750 하나이며, 그", "correct": 0, "secs": 1.2, "chars": 7483}
+{"id": "c029", "type": "경로", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.8, "chars": 7483}
+{"id": "c030", "type": "경로", "setting": "attr-0.2-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7483}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "full", "response": "47122", "correct": 1, "secs": 1.0, "chars": 7487}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "full", "response": "47121, 47122, 47123, 47127", "correct": 0, "secs": 0.9, "chars": 7487}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7487}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7487}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7487}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7333}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7333}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "예", "correct": 0, "secs": 1.0, "chars": 7333}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 1.2, "chars": 7333}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7333}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 1.0, "chars": 7333}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "아니오", "correct": 0, "secs": 1.1, "chars": 7333}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "예", "correct": 0, "secs": 1.0, "chars": 7333}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7333}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.2-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 0.7, "chars": 7333}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 1.1, "chars": 7334}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7334}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "T4750, F.C.", "correct": 0, "secs": 1.2, "chars": 7334}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7334}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "T4750, SV 104.01", "correct": 0, "secs": 0.9, "chars": 7334}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7334}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "T4750, H1008", "correct": 1, "secs": 0.9, "chars": 7334}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "H1007", "correct": 1, "secs": 0.8, "chars": 7334}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7334}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "H1008", "correct": 1, "secs": 1.1, "chars": 7334}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7334}
+{"id": "c021", "type": "연결수", "setting": "attr-0.2-s1", "cond": "relations", "response": "4", "correct": 1, "secs": 1.0, "chars": 7304}
+{"id": "c022", "type": "연결수", "setting": "attr-0.2-s1", "cond": "relations", "response": "4", "correct": 1, "secs": 0.9, "chars": 7304}
+{"id": "c023", "type": "연결수", "setting": "attr-0.2-s1", "cond": "relations", "response": "2", "correct": 1, "secs": 1.0, "chars": 7304}
+{"id": "c024", "type": "연결수", "setting": "attr-0.2-s1", "cond": "relations", "response": "2", "correct": 1, "secs": 0.9, "chars": 7304}
+{"id": "c025", "type": "연결수", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7304}
+{"id": "c026", "type": "경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.9, "chars": 7333}
+{"id": "c027", "type": "경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료없음", "correct": 0, "secs": 1.4, "chars": 7333}
+{"id": "c028", "type": "경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7333}
+{"id": "c029", "type": "경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7333}
+{"id": "c030", "type": "경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7333}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "47122", "correct": 1, "secs": 0.7, "chars": 7337}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "47121, 47123, 47124", "correct": 0, "secs": 1.4, "chars": 7337}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7337}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7337}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.2-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7337}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7451}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7451}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7451}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "예", "correct": 1, "secs": 0.9, "chars": 7451}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7451}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7451}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7451}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7451}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.4, "chars": 7451}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.8, "chars": 7451}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7452}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "P4711, H1007", "correct": 1, "secs": 1.1, "chars": 7452}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "T4750, F.C.", "correct": 0, "secs": 1.4, "chars": 7452}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7452}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "T4750, SV 104.01", "correct": 0, "secs": 0.8, "chars": 7452}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7452}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7452}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "H1007", "correct": 1, "secs": 0.9, "chars": 7452}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7452}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "H1008", "correct": 1, "secs": 0.8, "chars": 7452}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7452}
+{"id": "c021", "type": "연결수", "setting": "attr-0.2-s2", "cond": "full", "response": "4", "correct": 1, "secs": 0.8, "chars": 7422}
+{"id": "c022", "type": "연결수", "setting": "attr-0.2-s2", "cond": "full", "response": "4", "correct": 1, "secs": 1.0, "chars": 7422}
+{"id": "c023", "type": "연결수", "setting": "attr-0.2-s2", "cond": "full", "response": "2", "correct": 1, "secs": 1.1, "chars": 7422}
+{"id": "c024", "type": "연결수", "setting": "attr-0.2-s2", "cond": "full", "response": "2", "correct": 1, "secs": 0.7, "chars": 7422}
+{"id": "c025", "type": "연결수", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에서 T4750(n21)이 A 또는 B로 등장하는 연결을 세면 된다.\n\nr21(n0↔n21), r23(n17↔n21), r24(n21↔n1), r25(n21↔n4), r26(n21↔n12), r28(n21↔open), r29(n21↔open)\n\nr25는 간격 후보 표기이", "correct": 0, "secs": 1.3, "chars": 7422}
+{"id": "c026", "type": "경로", "setting": "attr-0.2-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7451}
+{"id": "c027", "type": "경로", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.9, "chars": 7451}
+{"id": "c028", "type": "경로", "setting": "attr-0.2-s2", "cond": "full", "response": "자료 기준으로 H1008 → P4712 직접 연결은 없고, 장비 간 연결표에서 H1008 → T4750 → P4712 경로가 2단계다. 이 경로에서 장비 간 배관 연결 표는 중간 요소를 명시하지 않으므로, 배관 경로 단위로 보면 H1008 →", "correct": 0, "secs": 1.3, "chars": 7451}
+{"id": "c029", "type": "경로", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.8, "chars": 7451}
+{"id": "c030", "type": "경로", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에 근거가 없음.", "correct": 0, "secs": 0.8, "chars": 7451}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "full", "response": "47122", "correct": 1, "secs": 0.9, "chars": 7455}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에서 H1007과 T4750을 잇는 직접 배관은 r4가 아니라 r21, r23, r24 등을 확인해야 하지만, 장비 간 연결 목록에 \"H1007 → T4750\"이 있고 그 배관은 r3·r2 등과 달리 T4750 쪽 라인이 명시된 것은", "correct": 0, "secs": 1.3, "chars": 7455}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7455}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7455}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7455}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7301}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 1.0, "chars": 7301}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "예", "correct": 0, "secs": 0.9, "chars": 7301}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.8, "chars": 7301}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7301}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 0.9, "chars": 7301}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.9, "chars": 7301}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "예", "correct": 0, "secs": 0.9, "chars": 7301}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7301}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.2-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7301}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 0.9, "chars": 7302}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "P4711, H1007", "correct": 1, "secs": 0.8, "chars": 7302}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "T4750, F.C.", "correct": 0, "secs": 0.9, "chars": 7302}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7302}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.2, "chars": 7302}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7302}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7302}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "H1007", "correct": 1, "secs": 0.8, "chars": 7302}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7302}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7302}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7302}
+{"id": "c021", "type": "연결수", "setting": "attr-0.2-s2", "cond": "relations", "response": "5", "correct": 0, "secs": 1.3, "chars": 7272}
+{"id": "c022", "type": "연결수", "setting": "attr-0.2-s2", "cond": "relations", "response": "4", "correct": 1, "secs": 1.4, "chars": 7272}
+{"id": "c023", "type": "연결수", "setting": "attr-0.2-s2", "cond": "relations", "response": "3", "correct": 0, "secs": 0.9, "chars": 7272}
+{"id": "c024", "type": "연결수", "setting": "attr-0.2-s2", "cond": "relations", "response": "2", "correct": 1, "secs": 0.8, "chars": 7272}
+{"id": "c025", "type": "연결수", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에서 T4750(n21)과 직접 연결된 r 항목을 세면: r21, r23, r24, r25, r26, r28, r29, r40(아님: r40은 open 점 사이), r22(아님: TICSA–n25) 등.\n\n정리하면 T4750을 A 또는 B로 가진 연결: r21, r23, r24, r", "correct": 0, "secs": 1.7, "chars": 7272}
+{"id": "c026", "type": "경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7301}
+{"id": "c027", "type": "경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.3, "chars": 7301}
+{"id": "c028", "type": "경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7301}
+{"id": "c029", "type": "경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7301}
+{"id": "c030", "type": "경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료만으로 경로를 따라가 보면, P4712(n27)는 r9로 j2에 연결되고, j2는 r10으로 j0, r12로 j1, r14로 n9(73KH12-50)에 이어지지만, T4750(n21)과 직접 연결된 경로는 T4750의 연결(r21, r23~r29)로 보", "correct": 0, "secs": 1.7, "chars": 7301}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "47122", "correct": 1, "secs": 1.1, "chars": 7305}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "47121, 47123", "correct": 0, "secs": 1.0, "chars": 7305}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 2.2, "chars": 7305}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7305}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.2-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7305}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7465}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "예", "correct": 1, "secs": 1.2, "chars": 7465}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7465}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7465}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7465}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7465}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7465}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7465}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7465}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7465}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7466}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "H1007, P4711", "correct": 1, "secs": 1.8, "chars": 7466}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "F.C.(n0)을 거쳐 T4750에 연결되는 47123 라인: 장비 태그 기준으로 시작점은 T4750이고, 47123 라인의 끝은 F.C.(계기/밸브)다. F.C.는 장비가 아니므로 장비 태그로 도달하는 것은 T4750 자체뿐이", "correct": 0, "secs": 1.3, "chars": 7466}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7466}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.7, "chars": 7466}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7466}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7466}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7466}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7466}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "자료 확인: 라인 47140은 r31에서 H1008(n19)과 open@(344.5, 202.0) 사이의 배관이다. 다른 장비를 거치지 않고 도달하는 장비는 H1008의 자기 연결이며, 이 배관의 반대편은 열린 끝이다. 자료에 있는 장비 간", "correct": 1, "secs": 1.3, "chars": 7466}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.6, "chars": 7466}
+{"id": "c021", "type": "연결수", "setting": "attr-0.3-s0", "cond": "full", "response": "4", "correct": 1, "secs": 0.9, "chars": 7436}
+{"id": "c022", "type": "연결수", "setting": "attr-0.3-s0", "cond": "full", "response": "4", "correct": 1, "secs": 0.8, "chars": 7436}
+{"id": "c023", "type": "연결수", "setting": "attr-0.3-s0", "cond": "full", "response": "2", "correct": 1, "secs": 0.7, "chars": 7436}
+{"id": "c024", "type": "연결수", "setting": "attr-0.3-s0", "cond": "full", "response": "3", "correct": 0, "secs": 1.0, "chars": 7436}
+{"id": "c025", "type": "연결수", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에서 T4750(n21)에 직접 연결된 선을 세면 다음과 같다. 배관 r21(F.C. n0), r23(TICSA n17 신호선 아님, 배관), r24(n1), r25(n4), r26(n12), r28(open 176,99.2), r29(open 176,88.8). 신호선으로는 r22가", "correct": 0, "secs": 2.0, "chars": 7436}
+{"id": "c026", "type": "경로", "setting": "attr-0.3-s0", "cond": "full", "response": "0", "correct": 1, "secs": 0.9, "chars": 7465}
+{"id": "c027", "type": "경로", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 근거가 없음.", "correct": 0, "secs": 1.2, "chars": 7465}
+{"id": "c028", "type": "경로", "setting": "attr-0.3-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7465}
+{"id": "c029", "type": "경로", "setting": "attr-0.3-s0", "cond": "full", "response": "자료만으로는 답할 수 없습니다. 장비 간 연결 요약에서 H1008은 T4750과 직접 연결된 것으로 나타나지 않고(H1008 → T4750 항목 없음, 'T4750 → H1008'만 있음), 그 사이 경로의 중간 요소를 확정할 수 있는 연결", "correct": 0, "secs": 1.4, "chars": 7465}
+{"id": "c030", "type": "경로", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.8, "chars": 7465}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "full", "response": "47121, 47122", "correct": 0, "secs": 0.7, "chars": 7469}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7469}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7469}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7469}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7469}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7315}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7315}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.2, "chars": 7315}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7315}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7315}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 1.3, "chars": 7315}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.9, "chars": 7315}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "예", "correct": 0, "secs": 1.7, "chars": 7315}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.3, "chars": 7315}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7315}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 0.7, "chars": 7316}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7316}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7316}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7316}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "T4750, SV 104.01", "correct": 0, "secs": 0.8, "chars": 7316}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "H1008", "correct": 0, "secs": 0.8, "chars": 7316}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "T4750, H1008", "correct": 1, "secs": 0.8, "chars": 7316}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "H1007", "correct": 1, "secs": 1.0, "chars": 7316}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "H1007", "correct": 1, "secs": 0.8, "chars": 7316}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "H1008", "correct": 1, "secs": 1.0, "chars": 7316}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7316}
+{"id": "c021", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "4", "correct": 1, "secs": 0.8, "chars": 7286}
+{"id": "c022", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "4", "correct": 1, "secs": 1.2, "chars": 7286}
+{"id": "c023", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "2", "correct": 1, "secs": 0.8, "chars": 7286}
+{"id": "c024", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "2", "correct": 1, "secs": 1.1, "chars": 7286}
+{"id": "c025", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에서 T4750(n21)에 연결된 선을 세면 된다.\n\nr21, r23, r24, r25, r26, r28, r29 → 7개 (r40은 open 끝점 사이 선이라 T4750과 무관)\n\n7", "correct": 1, "secs": 1.4, "chars": 7286}
+{"id": "c026", "type": "경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.9, "chars": 7315}
+{"id": "c027", "type": "경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료만으로 판단하면 H1007(n18)과 T4750(n21) 사이에 직접 연결된 pipe 관계가 없고, H1007의 연결은 F.C.(n0), 개방단(open)으로만 이어진다. n0(F.C.)는 r21으로 T4750(n21)과 연결된다. 따라서 H1007", "correct": 0, "secs": 1.2, "chars": 7315}
+{"id": "c028", "type": "경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7315}
+{"id": "c029", "type": "경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7315}
+{"id": "c030", "type": "경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.1, "chars": 7315}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "47121", "correct": 0, "secs": 1.1, "chars": 7319}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7319}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 2.3, "chars": 7319}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "47125, 47127", "correct": 0, "secs": 0.8, "chars": 7319}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7319}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7411}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7411}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7411}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7411}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7411}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7411}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7411}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7411}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7411}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.9, "chars": 7411}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "H1007, P4711", "correct": 0, "secs": 0.8, "chars": 7412}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7412}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7412}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7412}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7412}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7412}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7412}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "H1007", "correct": 1, "secs": 0.9, "chars": 7412}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7412}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7412}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.1, "chars": 7412}
+{"id": "c021", "type": "연결수", "setting": "attr-0.3-s1", "cond": "full", "response": "5", "correct": 0, "secs": 1.1, "chars": 7382}
+{"id": "c022", "type": "연결수", "setting": "attr-0.3-s1", "cond": "full", "response": "4", "correct": 1, "secs": 1.1, "chars": 7382}
+{"id": "c023", "type": "연결수", "setting": "attr-0.3-s1", "cond": "full", "response": "2", "correct": 1, "secs": 0.8, "chars": 7382}
+{"id": "c024", "type": "연결수", "setting": "attr-0.3-s1", "cond": "full", "response": "3", "correct": 0, "secs": 1.4, "chars": 7382}
+{"id": "c025", "type": "연결수", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에서 T4750에 직접 연결된 선을 세면 된다.\n\nr21 (n0-T4750), r23 (TICSA-T4750), r24 (T4750-n1), r25 (T4750-n4), r26 (T4750-F.C. n12), r28 (T4750-open), r29 (T4750-open). 신호선 r22는 TICS", "correct": 0, "secs": 1.6, "chars": 7382}
+{"id": "c026", "type": "경로", "setting": "attr-0.3-s1", "cond": "full", "response": "0", "correct": 1, "secs": 0.8, "chars": 7411}
+{"id": "c027", "type": "경로", "setting": "attr-0.3-s1", "cond": "full", "response": "자료만으로 보면, H1007과 T4750은 장비 간 배관 연결 목록에서 직접 연결되어 있다(\"H1007 → T4750, P4711\"). 가장 짧은 경로는 H1007과 T4750 사이에 다른 요소를 거치지 않는 경로이므로 중간 요소는 0개다.\n\n0", "correct": 0, "secs": 1.2, "chars": 7411}
+{"id": "c028", "type": "경로", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.8, "chars": 7411}
+{"id": "c029", "type": "경로", "setting": "attr-0.3-s1", "cond": "full", "response": "자료만 근거로 하면, 장비 H1008과 T4750의 직접 연결 관계가 \"장비 간 배관 연결\" 목록에 없습니다. H1008 → T4750 경로는 H1008 → P4712 → T4750 혹은 H1008 → T4750으로 표기되어 있지만, 자료의 연결 관계표에", "correct": 0, "secs": 1.5, "chars": 7411}
+{"id": "c030", "type": "경로", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.4, "chars": 7411}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "full", "response": "47121", "correct": 0, "secs": 0.8, "chars": 7415}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7415}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7415}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7415}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7415}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7261}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7261}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "예", "correct": 0, "secs": 0.7, "chars": 7261}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 1.3, "chars": 7261}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7261}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 1.3, "chars": 7261}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "아니오", "correct": 0, "secs": 1.1, "chars": 7261}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "예", "correct": 0, "secs": 0.9, "chars": 7261}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7261}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.3-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 0.9, "chars": 7261}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7262}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "P4711, H1007", "correct": 1, "secs": 0.9, "chars": 7262}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "T4750, F.C.", "correct": 0, "secs": 1.1, "chars": 7262}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7262}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "T4750, 자료에 없음", "correct": 0, "secs": 1.1, "chars": 7262}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 근거가 없음 — 라인 47126 배관(r16)은 n9에서 j3까지 이어지고, j3에서 j4로 계속되며 j3에서 H1008(n19)로 분기된다. 라인 47126 자체의 직접 연결 장비는 H1008뿐이지만, 질문은 \"다른 장비를 거", "correct": 0, "secs": 1.2, "chars": 7262}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "T4750, F.C.", "correct": 0, "secs": 0.8, "chars": 7262}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7262}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7262}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7262}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.3-s1", "cond": "relations", "response": "H1008", "correct": 1, "secs": 1.0, "chars": 7262}
+{"id": "c021", "type": "연결수", "setting": "attr-0.3-s1", "cond": "relations", "response": "4", "correct": 1, "secs": 1.4, "chars": 7232}
+{"id": "c022", "type": "연결수", "setting": "attr-0.3-s1", "cond": "relations", "response": "4", "correct": 1, "secs": 0.8, "chars": 7232}
+{"id": "c023", "type": "연결수", "setting": "attr-0.3-s1", "cond": "relations", "response": "2", "correct": 1, "secs": 0.9, "chars": 7232}
+{"id": "c024", "type": "연결수", "setting": "attr-0.3-s1", "cond": "relations", "response": "2", "correct": 1, "secs": 0.8, "chars": 7232}
+{"id": "c025", "type": "연결수", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7232}
+{"id": "c026", "type": "경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "0", "correct": 1, "secs": 0.7, "chars": 7261}
+{"id": "c027", "type": "경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.5, "chars": 7261}
+{"id": "c028", "type": "경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7261}
+{"id": "c029", "type": "경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7261}
+{"id": "c030", "type": "경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 근거가 없음", "correct": 0, "secs": 0.9, "chars": 7261}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "47121", "correct": 0, "secs": 0.7, "chars": 7265}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "47125, 47127", "correct": 0, "secs": 0.8, "chars": 7265}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7265}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7265}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.3-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7265}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7417}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7417}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7417}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7417}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7417}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7417}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7417}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7417}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7417}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7417}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 0.7, "chars": 7418}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7418}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "F.C. 기준이 아니라, 라인 47123 배관(r21)은 n0(F.C.)와 n21(T4750)을 잇는다. 연결 목록의 장비 간 배관 연결에서 T4750은 H1007, H1008, P4712와 연결된다. 라인 47123의 끝점은 n21(T4750)이므로,", "correct": 0, "secs": 2.3, "chars": 7418}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7418}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7418}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 3.0, "chars": 7418}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7418}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7418}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7418}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.5, "chars": 7418}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7418}
+{"id": "c021", "type": "연결수", "setting": "attr-0.3-s2", "cond": "full", "response": "4", "correct": 1, "secs": 1.3, "chars": 7388}
+{"id": "c022", "type": "연결수", "setting": "attr-0.3-s2", "cond": "full", "response": "4", "correct": 1, "secs": 4.1, "chars": 7388}
+{"id": "c023", "type": "연결수", "setting": "attr-0.3-s2", "cond": "full", "response": "1", "correct": 0, "secs": 1.1, "chars": 7388}
+{"id": "c024", "type": "연결수", "setting": "attr-0.3-s2", "cond": "full", "response": "2", "correct": 1, "secs": 1.5, "chars": 7388}
+{"id": "c025", "type": "연결수", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7388}
+{"id": "c026", "type": "경로", "setting": "attr-0.3-s2", "cond": "full", "response": "0", "correct": 1, "secs": 1.6, "chars": 7417}
+{"id": "c027", "type": "경로", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.2, "chars": 7417}
+{"id": "c028", "type": "경로", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.2, "chars": 7417}
+{"id": "c029", "type": "경로", "setting": "attr-0.3-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 4.2, "chars": 7417}
+{"id": "c030", "type": "경로", "setting": "attr-0.3-s2", "cond": "full", "response": "2", "correct": 0, "secs": 0.8, "chars": 7417}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "full", "response": "47121", "correct": 0, "secs": 0.8, "chars": 7421}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "full", "response": "47121, 47123", "correct": 0, "secs": 1.2, "chars": 7421}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7421}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7421}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7421}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 4.0, "chars": 7267}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 1.3, "chars": 7267}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "예", "correct": 0, "secs": 0.8, "chars": 7267}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "아니오", "correct": 0, "secs": 1.0, "chars": 7267}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.9, "chars": 7267}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 1.0, "chars": 7267}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.8, "chars": 7267}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "예", "correct": 0, "secs": 3.5, "chars": 7267}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 4.4, "chars": 7267}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.3-s2", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.8, "chars": 7267}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 1.1, "chars": 7268}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "H1007, P4711", "correct": 1, "secs": 1.1, "chars": 7268}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "T4750, F.C.", "correct": 0, "secs": 3.8, "chars": 7268}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7268}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7268}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료없음", "correct": 0, "secs": 0.9, "chars": 7268}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.5, "chars": 7268}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "H1007", "correct": 1, "secs": 3.9, "chars": 7268}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "H1007", "correct": 1, "secs": 1.1, "chars": 7268}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "H1008", "correct": 1, "secs": 3.8, "chars": 7268}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7268}
+{"id": "c021", "type": "연결수", "setting": "attr-0.3-s2", "cond": "relations", "response": "4", "correct": 1, "secs": 0.8, "chars": 7238}
+{"id": "c022", "type": "연결수", "setting": "attr-0.3-s2", "cond": "relations", "response": "4", "correct": 1, "secs": 0.9, "chars": 7238}
+{"id": "c023", "type": "연결수", "setting": "attr-0.3-s2", "cond": "relations", "response": "2", "correct": 1, "secs": 1.5, "chars": 7238}
+{"id": "c024", "type": "연결수", "setting": "attr-0.3-s2", "cond": "relations", "response": "2", "correct": 1, "secs": 0.9, "chars": 7238}
+{"id": "c025", "type": "연결수", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료 내 T4750 연결 관계를 확인하면, 장비 n21(T4750)과 직접 연결된 r 항목은 다음과 같다.\nr21(n0), r23(n17), r24(n1), r25(n4), r26(n12), r28(open), r29(open), r40 제외. r40은 open@ 두 점 사이 배관이므", "correct": 0, "secs": 4.1, "chars": 7238}
+{"id": "c026", "type": "경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 4.3, "chars": 7267}
+{"id": "c027", "type": "경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7267}
+{"id": "c028", "type": "경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7267}
+{"id": "c029", "type": "경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7267}
+{"id": "c030", "type": "경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료없음", "correct": 0, "secs": 1.1, "chars": 7267}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "47121", "correct": 0, "secs": 1.3, "chars": 7271}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "47130, 47123", "correct": 0, "secs": 0.9, "chars": 7271}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료없음", "correct": 0, "secs": 0.9, "chars": 7271}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료에 근거가 없음 — 단, 직접 연결 배관을 확인하면: H1008(n19)과 T4750(n21) 사이에 직접 잇는 pipe 관계는 없습니다. 따라서 해당 라인 번호는 자료에 없음.", "correct": 0, "secs": 1.3, "chars": 7271}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.3-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7271}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.5, "chars": 7411}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.9, "chars": 7411}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7411}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7411}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7411}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.8, "chars": 7411}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예", "correct": 1, "secs": 1.3, "chars": 7411}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7411}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7411}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7411}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 0.8, "chars": 7412}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7412}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7412}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7412}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7412}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7412}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 4.2, "chars": 7412}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7412}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7412}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7412}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7412}
+{"id": "c021", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "4", "correct": 1, "secs": 3.6, "chars": 7382}
+{"id": "c022", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "4", "correct": 1, "secs": 0.8, "chars": 7382}
+{"id": "c023", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "2", "correct": 1, "secs": 1.6, "chars": 7382}
+{"id": "c024", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "3", "correct": 0, "secs": 0.9, "chars": 7382}
+{"id": "c025", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에서 T4750(n21)에 직접 연결된 선을 세면 다음과 같다.\n- r21 (n0 F.C. ↔ T4750, 배관)\n- r23 (TICSA ↔ T4750, 배관)\n- r24 (T4750 ↔ n1, 배관)\n- r25 (T4750 ↔ n4,", "correct": 0, "secs": 4.2, "chars": 7382}
+{"id": "c026", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "0", "correct": 1, "secs": 0.8, "chars": 7411}
+{"id": "c027", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.7, "chars": 7411}
+{"id": "c028", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 근거가 없음 — 다만 추정하면: 장비 H1008은 T4750과 P4712 모두에 연결되며, H1008→T4750, T4750→P4712 경로를 따르면 중간 요소는 T4750 한 개뿐이다. 그러나 질문의 \"중간 요소(밸브·기호·분기점)\"", "correct": 0, "secs": 1.6, "chars": 7411}
+{"id": "c029", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 2.2, "chars": 7411}
+{"id": "c030", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "자료만으로 보면, P4712에서 T4750으로 가는 직접 배관 연결 관계가 있다: \"P4712 → H1008, T4750\" (장비 간 배관 연결 목록) 및 \"T4750 → ... P4712\". 이 연결은 장비 간 도달 목록에 \"밸브·분기점은 지나고 다른", "correct": 0, "secs": 1.2, "chars": 7411}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "47122", "correct": 1, "secs": 3.5, "chars": 7415}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7415}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "자료없음", "correct": 0, "secs": 0.8, "chars": 7415}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 3.7, "chars": 7415}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7415}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7261}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7261}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7261}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.9, "chars": 7261}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7261}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7261}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "아니오", "correct": 0, "secs": 1.0, "chars": 7261}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "예", "correct": 0, "secs": 0.8, "chars": 7261}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7261}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "relations", "response": "아니오", "correct": 0, "secs": 1.0, "chars": 7261}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 1.7, "chars": 7262}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "P4711, H1007", "correct": 1, "secs": 0.8, "chars": 7262}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "T4750, F.C.", "correct": 0, "secs": 1.8, "chars": 7262}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 3.4, "chars": 7262}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "T4750, SV 104.01", "correct": 0, "secs": 1.1, "chars": 7262}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "H1008", "correct": 0, "secs": 0.8, "chars": 7262}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에 근거가 없음. 47127 배관(r26)은 n21(T4750)에서 n12(symbol)로 연결되며, n12는 장비가 아니고 r30을 통해 n19(H1008)로 이어진다. 따라서 장비 태그로 직접 도달하는 장비는 자료상 H1008 하나만 확인되나", "correct": 0, "secs": 3.9, "chars": 7262}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "H1007", "correct": 1, "secs": 0.8, "chars": 7262}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7262}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7262}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7262}
+{"id": "c021", "type": "연결수", "setting": "attr-0.5-s0", "cond": "relations", "response": "4", "correct": 1, "secs": 1.2, "chars": 7232}
+{"id": "c022", "type": "연결수", "setting": "attr-0.5-s0", "cond": "relations", "response": "4", "correct": 1, "secs": 3.5, "chars": 7232}
+{"id": "c023", "type": "연결수", "setting": "attr-0.5-s0", "cond": "relations", "response": "2", "correct": 1, "secs": 0.8, "chars": 7232}
+{"id": "c024", "type": "연결수", "setting": "attr-0.5-s0", "cond": "relations", "response": "3", "correct": 0, "secs": 0.7, "chars": 7232}
+{"id": "c025", "type": "연결수", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에서 T4750(n21)을 A 또는 B로 가지는 연결을 세면 된다.\n\nr21, r23, r24, r25, r26, r28, r29, r40 중 T4750이 포함된 것: r21(n0↔n21), r23(n17↔n21), r24(n21↔n1), r25(n21↔n4), r26(n21", "correct": 0, "secs": 1.2, "chars": 7232}
+{"id": "c026", "type": "경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7261}
+{"id": "c027", "type": "경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 3.4, "chars": 7261}
+{"id": "c028", "type": "경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7261}
+{"id": "c029", "type": "경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7261}
+{"id": "c030", "type": "경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료만으로 보면 P4712(n27)에서 T4750(n21)까지 직접 연결된 경로를 따라가야 한다.\n\nP4712(n27)는 r9로 j2에 연결되고, j2는 r10으로 j0에 연결된다. j0에서는 r13을 통해 SV 104.01(n4)로 가고, n4는", "correct": 0, "secs": 1.1, "chars": 7261}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "47121", "correct": 0, "secs": 0.8, "chars": 7265}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "47123", "correct": 1, "secs": 0.8, "chars": 7265}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 3.4, "chars": 7265}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.0, "chars": 7265}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7265}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 3.0, "chars": 7394}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7394}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.2, "chars": 7394}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "예", "correct": 1, "secs": 0.7, "chars": 7394}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7394}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7394}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "예", "correct": 1, "secs": 1.9, "chars": 7394}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 2.1, "chars": 7394}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7394}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "full", "response": "예", "correct": 1, "secs": 2.0, "chars": 7394}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 0.7, "chars": 7395}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7395}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "T4750, H1007", "correct": 1, "secs": 2.5, "chars": 7395}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.9, "chars": 7395}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7395}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7395}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에서 라인 47127은 r26으로, A=n21[equipment T4750]와 B=n12[symbol F.C.]를 잇는다. 장비 간 배관 연결 목록에서 T4750은 H1007, H1008, P4712와 연결된다. 그러나 47127 배관 자체는 T4750과 F.C.(n12)", "correct": 0, "secs": 1.7, "chars": 7395}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.4, "chars": 7395}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7395}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 2.5, "chars": 7395}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7395}
+{"id": "c021", "type": "연결수", "setting": "attr-0.5-s1", "cond": "full", "response": "5", "correct": 0, "secs": 1.0, "chars": 7365}
+{"id": "c022", "type": "연결수", "setting": "attr-0.5-s1", "cond": "full", "response": "3", "correct": 0, "secs": 1.8, "chars": 7365}
+{"id": "c023", "type": "연결수", "setting": "attr-0.5-s1", "cond": "full", "response": "1", "correct": 0, "secs": 0.7, "chars": 7365}
+{"id": "c024", "type": "연결수", "setting": "attr-0.5-s1", "cond": "full", "response": "2", "correct": 1, "secs": 0.7, "chars": 7365}
+{"id": "c025", "type": "연결수", "setting": "attr-0.5-s1", "cond": "full", "response": "9", "correct": 0, "secs": 0.8, "chars": 7365}
+{"id": "c026", "type": "경로", "setting": "attr-0.5-s1", "cond": "full", "response": "0", "correct": 1, "secs": 0.9, "chars": 7394}
+{"id": "c027", "type": "경로", "setting": "attr-0.5-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7394}
+{"id": "c028", "type": "경로", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.1, "chars": 7394}
+{"id": "c029", "type": "경로", "setting": "attr-0.5-s1", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7394}
+{"id": "c030", "type": "경로", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.2, "chars": 7394}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "full", "response": "47121", "correct": 0, "secs": 0.8, "chars": 7398}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에서 H1007과 T4750 사이를 직접 잇는 배관을 찾아야 한다. 연결 목록에서 H1007(n18)과 T4750(n21)을 직접 잇는 항목은 없다. 장비 간 배관 연결 요약에는 \"H1007 → T4750, P4711\"로 되어 있으나, 이", "correct": 0, "secs": 1.6, "chars": 7398}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7398}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7398}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7398}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7244}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 1.0, "chars": 7244}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "예", "correct": 0, "secs": 1.0, "chars": 7244}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.9, "chars": 7244}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.1, "chars": 7244}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 0.7, "chars": 7244}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.7, "chars": 7244}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "예", "correct": 0, "secs": 0.8, "chars": 7244}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7244}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.5-s1", "cond": "relations", "response": "예", "correct": 1, "secs": 0.8, "chars": 7244}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "P4711, H1007", "correct": 0, "secs": 2.2, "chars": 7245}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "P4711, H1007", "correct": 1, "secs": 1.2, "chars": 7245}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "T4750, H1007", "correct": 1, "secs": 2.1, "chars": 7245}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7245}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7245}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7245}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "T4750", "correct": 0, "secs": 1.2, "chars": 7245}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7245}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7245}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7245}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7245}
+{"id": "c021", "type": "연결수", "setting": "attr-0.5-s1", "cond": "relations", "response": "4", "correct": 1, "secs": 0.8, "chars": 7215}
+{"id": "c022", "type": "연결수", "setting": "attr-0.5-s1", "cond": "relations", "response": "3", "correct": 0, "secs": 1.0, "chars": 7215}
+{"id": "c023", "type": "연결수", "setting": "attr-0.5-s1", "cond": "relations", "response": "2", "correct": 1, "secs": 0.8, "chars": 7215}
+{"id": "c024", "type": "연결수", "setting": "attr-0.5-s1", "cond": "relations", "response": "2", "correct": 1, "secs": 1.6, "chars": 7215}
+{"id": "c025", "type": "연결수", "setting": "attr-0.5-s1", "cond": "relations", "response": "7", "correct": 1, "secs": 0.7, "chars": 7215}
+{"id": "c026", "type": "경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "0", "correct": 1, "secs": 1.4, "chars": 7244}
+{"id": "c027", "type": "경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 근거가 없습니다.", "correct": 0, "secs": 0.9, "chars": 7244}
+{"id": "c028", "type": "경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 근거하면 H1008(n19)에서 P4712(n27)까지의 직접 연결을 따라가 보면:\n\nH1008(n19) → j3 (r18, 323.5,154 방향으로 연결) → n9 (r16, 중간 연결) → j1 (r14: n9 ↔ j1? 실제로는 r14가 j1", "correct": 0, "secs": 3.4, "chars": 7244}
+{"id": "c029", "type": "경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 0.7, "chars": 7244}
+{"id": "c030", "type": "경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.3, "chars": 7244}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "47122", "correct": 1, "secs": 1.2, "chars": 7248}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "47125", "correct": 0, "secs": 2.5, "chars": 7248}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7248}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.9, "chars": 7248}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.5-s1", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 2.5, "chars": 7248}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.7, "chars": 7438}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.1, "chars": 7438}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 0.8, "chars": 7438}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.3, "chars": 7438}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.7, "chars": 7438}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.0, "chars": 7438}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "예", "correct": 1, "secs": 0.9, "chars": 7438}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7438}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7438}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "full", "response": "예", "correct": 1, "secs": 1.2, "chars": 7438}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 1.2, "chars": 7439}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 0.8, "chars": 7439}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7439}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7439}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에서 라인 47125 관련 배관은 r13(j0→SV 104.01 n4), r25(T4750 n21 ↔ SV 104.01 n4)이다.\n\n- r13: j0 ↔ n4(SV 104.01). j0는 r9-r10 경로로 P4712(n27)에 연결되어 있다. 즉 P4", "correct": 0, "secs": 1.6, "chars": 7439}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7439}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.5, "chars": 7439}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "H1007", "correct": 1, "secs": 1.2, "chars": 7439}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7439}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.1, "chars": 7439}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 2.3, "chars": 7439}
+{"id": "c021", "type": "연결수", "setting": "attr-0.5-s2", "cond": "full", "response": "5", "correct": 0, "secs": 1.0, "chars": 7409}
+{"id": "c022", "type": "연결수", "setting": "attr-0.5-s2", "cond": "full", "response": "4", "correct": 1, "secs": 1.0, "chars": 7409}
+{"id": "c023", "type": "연결수", "setting": "attr-0.5-s2", "cond": "full", "response": "2", "correct": 1, "secs": 1.0, "chars": 7409}
+{"id": "c024", "type": "연결수", "setting": "attr-0.5-s2", "cond": "full", "response": "3", "correct": 0, "secs": 1.5, "chars": 7409}
+{"id": "c025", "type": "연결수", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에서 T4750(n21)을 A 또는 B로 가지는 연결을 세면 된다.\n\nr21, r23, r24, r25, r26, r28, r29 → 7개 (r22는 TICSA–n25 연결이라 제외)\n\n7", "correct": 1, "secs": 6.2, "chars": 7409}
+{"id": "c026", "type": "경로", "setting": "attr-0.5-s2", "cond": "full", "response": "0", "correct": 1, "secs": 0.7, "chars": 7438}
+{"id": "c027", "type": "경로", "setting": "attr-0.5-s2", "cond": "full", "response": "자료 없음", "correct": 0, "secs": 1.0, "chars": 7438}
+{"id": "c028", "type": "경로", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 근거가 없음 (장비 H1008에서 P4712까지의 최단 경로 중간 요소 수를 확정할 수 없다. 장비 간 연결은 H1008→T4750, P4712→T4750, P4712→H1008로만 기재되어 있고, 직접 연결 경로의 중간 요소 목록은 주어지", "correct": 0, "secs": 2.1, "chars": 7438}
+{"id": "c029", "type": "경로", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.0, "chars": 7438}
+{"id": "c030", "type": "경로", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 근거가 없음", "correct": 0, "secs": 1.1, "chars": 7438}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "full", "response": "47121, 47122", "correct": 0, "secs": 1.7, "chars": 7442}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "full", "response": "47121, 47124", "correct": 0, "secs": 2.1, "chars": 7442}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.7, "chars": 7442}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7442}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 2.3, "chars": 7442}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.7, "chars": 7288}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 4.2, "chars": 7288}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "예", "correct": 0, "secs": 0.8, "chars": 7288}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 1.1, "chars": 7288}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 1.0, "chars": 7288}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 1.0, "chars": 7288}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "아니오", "correct": 0, "secs": 0.9, "chars": 7288}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "예", "correct": 0, "secs": 2.9, "chars": 7288}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "아니오", "correct": 1, "secs": 2.8, "chars": 7288}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.5-s2", "cond": "relations", "response": "예", "correct": 1, "secs": 1.0, "chars": 7288}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.1, "chars": 7289}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "P4711, H1007", "correct": 1, "secs": 1.1, "chars": 7289}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "T4750", "correct": 0, "secs": 1.0, "chars": 7289}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.8, "chars": 7289}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7289}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.8, "chars": 7289}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7289}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "H1007", "correct": 1, "secs": 1.0, "chars": 7289}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.0, "chars": 7289}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.2, "chars": 7289}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.7, "chars": 7289}
+{"id": "c021", "type": "연결수", "setting": "attr-0.5-s2", "cond": "relations", "response": "4", "correct": 1, "secs": 1.1, "chars": 7259}
+{"id": "c022", "type": "연결수", "setting": "attr-0.5-s2", "cond": "relations", "response": "3", "correct": 0, "secs": 1.1, "chars": 7259}
+{"id": "c023", "type": "연결수", "setting": "attr-0.5-s2", "cond": "relations", "response": "2", "correct": 1, "secs": 1.8, "chars": 7259}
+{"id": "c024", "type": "연결수", "setting": "attr-0.5-s2", "cond": "relations", "response": "2", "correct": 1, "secs": 0.9, "chars": 7259}
+{"id": "c025", "type": "연결수", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에서 T4750(n21)에 직접 연결된 관계를 세면 다음과 같다.\n\n- r21: n0 ↔ n21 (배관)\n- r23: n17 ↔ n21 (배관)\n- r24: n21 ↔ n1 (배관)\n- r25: n21 ↔ n4 (배관)\n- r26: n21", "correct": 0, "secs": 1.2, "chars": 7259}
+{"id": "c026", "type": "경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "0", "correct": 1, "secs": 0.8, "chars": 7288}
+{"id": "c027", "type": "경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료만으로는 H1007에서 T4750까지 연결된 경로가 확인되지 않습니다.\n\n확인되는 연결을 보면 H1007(n18)은 r4를 통해 n0에 연결되고, n0은 r21을 통해 T4750(n21)에 연결됩니다. 따라서 H1007→n0→T4750 경로", "correct": 0, "secs": 1.8, "chars": 7288}
+{"id": "c028", "type": "경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료 없음", "correct": 0, "secs": 1.3, "chars": 7288}
+{"id": "c029", "type": "경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 근거가 없음.", "correct": 0, "secs": 1.1, "chars": 7288}
+{"id": "c030", "type": "경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 5.8, "chars": 7288}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "47121", "correct": 0, "secs": 1.5, "chars": 7292}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.9, "chars": 7292}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 7292}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.7, "chars": 7292}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.5-s2", "cond": "relations", "response": "자료에 없음", "correct": 0, "secs": 0.9, "chars": 7292}
