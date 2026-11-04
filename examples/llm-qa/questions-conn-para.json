@@ -1,0 +1,481 @@
+[
+ {
+  "id": "c000",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "H1007과 H1008은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c001",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "H1007과 P4711은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c002",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "H1007과 P4712은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c003",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "H1007과 T4750은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c004",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "H1008과 P4711은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c005",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "H1008과 P4712은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c006",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "H1008과 T4750은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c007",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "P4711과 P4712은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c008",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "P4711과 T4750은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "아니오"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c009",
+  "doc": "pid-standard-vector",
+  "type": "도달여부",
+  "question": "P4712과 T4750은 중간에 다른 장비 없이 배관이나 밸브, 분기점만 지나서 서로 이어져 있는가? 예/아니오 중 하나로만 답하라.",
+  "answers": [
+   "예"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "yesno",
+  "needs_relation": true
+ },
+ {
+  "id": "c010",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47121번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "P4711"
+  ],
+  "focus": "47121",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c011",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47122번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "H1007",
+   "P4711"
+  ],
+  "focus": "47122",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c012",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47123번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "H1007",
+   "T4750"
+  ],
+  "focus": "47123",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c013",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47124번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "P4712",
+   "T4750"
+  ],
+  "focus": "47124",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c014",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47125번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "H1008",
+   "P4712",
+   "T4750"
+  ],
+  "focus": "47125",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c015",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47126번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "H1008",
+   "P4712",
+   "T4750"
+  ],
+  "focus": "47126",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c016",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47127번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "H1008",
+   "T4750"
+  ],
+  "focus": "47127",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c017",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47130번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "H1007"
+  ],
+  "focus": "47130",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c018",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47131번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "H1007"
+  ],
+  "focus": "47131",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c019",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47140번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "H1008"
+  ],
+  "focus": "47140",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c020",
+  "doc": "pid-standard-vector",
+  "type": "라인도달",
+  "question": "47141번 라인의 배관을 끝까지 따라갔을 때, 다른 장비를 지나지 않고 닿게 되는 장비의 태그를 전부 써라. 쉼표로 구분한 태그만 답하라.",
+  "answers": [
+   "H1008"
+  ],
+  "focus": "47141",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "set",
+  "needs_relation": true
+ },
+ {
+  "id": "c021",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "H1007에 바로 이어진 선(배관과 신호선을 합쳐서)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c022",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "H1008에 바로 이어진 선(배관과 신호선을 합쳐서)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c023",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "P4711에 바로 이어진 선(배관과 신호선을 합쳐서)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c024",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "P4712에 바로 이어진 선(배관과 신호선을 합쳐서)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c025",
+  "doc": "pid-standard-vector",
+  "type": "연결수",
+  "question": "T4750에 바로 이어진 선(배관과 신호선을 합쳐서)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "7"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c026",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "H1007에서 출발해 P4711에 이르는 가장 짧은 연결에서, 두 장비 사이에 놓인 요소(밸브, 기호, 분기점)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "0"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c027",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "H1007에서 출발해 T4750에 이르는 가장 짧은 연결에서, 두 장비 사이에 놓인 요소(밸브, 기호, 분기점)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "1"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c028",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "H1008에서 출발해 P4712에 이르는 가장 짧은 연결에서, 두 장비 사이에 놓인 요소(밸브, 기호, 분기점)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "5"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c029",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "H1008에서 출발해 T4750에 이르는 가장 짧은 연결에서, 두 장비 사이에 놓인 요소(밸브, 기호, 분기점)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "1"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c030",
+  "doc": "pid-standard-vector",
+  "type": "경로",
+  "question": "P4712에서 출발해 T4750에 이르는 가장 짧은 연결에서, 두 장비 사이에 놓인 요소(밸브, 기호, 분기점)의 개수는? 숫자 하나로 답하라.",
+  "answers": [
+   "3"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "single",
+  "needs_relation": true
+ },
+ {
+  "id": "c031",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "H1007과 P4711을 다른 장비 없이 잇는 배관 구간에 적힌 라인 번호를 전부 써라. 쉼표로 구분한 번호만 답하라.",
+  "answers": [
+   "47122"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "numset",
+  "needs_relation": true
+ },
+ {
+  "id": "c032",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "H1007과 T4750을 다른 장비 없이 잇는 배관 구간에 적힌 라인 번호를 전부 써라. 쉼표로 구분한 번호만 답하라.",
+  "answers": [
+   "47123"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "numset",
+  "needs_relation": true
+ },
+ {
+  "id": "c033",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "H1008과 P4712을 다른 장비 없이 잇는 배관 구간에 적힌 라인 번호를 전부 써라. 쉼표로 구분한 번호만 답하라.",
+  "answers": [
+   "47126"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "numset",
+  "needs_relation": true
+ },
+ {
+  "id": "c034",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "H1008과 T4750을 다른 장비 없이 잇는 배관 구간에 적힌 라인 번호를 전부 써라. 쉼표로 구분한 번호만 답하라.",
+  "answers": [
+   "47125",
+   "47126",
+   "47127"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "numset",
+  "needs_relation": true
+ },
+ {
+  "id": "c035",
+  "doc": "pid-standard-vector",
+  "type": "라인경로",
+  "question": "P4712과 T4750을 다른 장비 없이 잇는 배관 구간에 적힌 라인 번호를 전부 써라. 쉼표로 구분한 번호만 답하라.",
+  "answers": [
+   "47124",
+   "47125"
+  ],
+  "focus": null,
+  "source": "DEXPI C01 기준 그래프 (바꿔 말한 문장)",
+  "kind": "numset",
+  "needs_relation": true
+ }
+]

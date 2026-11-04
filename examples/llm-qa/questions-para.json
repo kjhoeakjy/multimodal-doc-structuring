@@ -1,0 +1,527 @@
+[
+ {
+  "id": "q000",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "H1007의 배관을 따라갔을 때 다른 장비를 지나지 않고 처음 만나는 장비는 어떤 것들인가? 태그만 쉼표로 구분해 전부 답하라.",
+  "answers": [
+   "P4711",
+   "T4750"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "set"
+ },
+ {
+  "id": "q003",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "H1008의 배관을 따라갔을 때 다른 장비를 지나지 않고 처음 만나는 장비는 어떤 것들인가? 태그만 쉼표로 구분해 전부 답하라.",
+  "answers": [
+   "P4712",
+   "T4750"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "set"
+ },
+ {
+  "id": "q006",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "P4711의 배관을 따라갔을 때 다른 장비를 지나지 않고 처음 만나는 장비는 어떤 것들인가? 태그만 쉼표로 구분해 전부 답하라.",
+  "answers": [
+   "H1007"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "set"
+ },
+ {
+  "id": "q009",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "P4712의 배관을 따라갔을 때 다른 장비를 지나지 않고 처음 만나는 장비는 어떤 것들인가? 태그만 쉼표로 구분해 전부 답하라.",
+  "answers": [
+   "H1008",
+   "T4750"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "set"
+ },
+ {
+  "id": "q012",
+  "doc": "pid-standard-vector",
+  "type": "연결",
+  "question": "T4750의 배관을 따라갔을 때 다른 장비를 지나지 않고 처음 만나는 장비는 어떤 것들인가? 태그만 쉼표로 구분해 전부 답하라.",
+  "answers": [
+   "H1007",
+   "H1008",
+   "P4712"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "set"
+ },
+ {
+  "id": "q015",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "H1007에 달린 접속구(노즐)는 모두 몇 개인가? 숫자 하나로 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q018",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "H1008에 달린 접속구(노즐)는 모두 몇 개인가? 숫자 하나로 답하라.",
+  "answers": [
+   "4"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q021",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "P4711에 달린 접속구(노즐)는 모두 몇 개인가? 숫자 하나로 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q024",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "P4712에 달린 접속구(노즐)는 모두 몇 개인가? 숫자 하나로 답하라.",
+  "answers": [
+   "2"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q027",
+  "doc": "pid-standard-vector",
+  "type": "개수",
+  "question": "T4750에 달린 접속구(노즐)는 모두 몇 개인가? 숫자 하나로 답하라.",
+  "answers": [
+   "7"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q030",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "H1007의 접속구 N1에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q033",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "H1007의 접속구 N2에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q036",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "H1007의 접속구 N3에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q039",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "H1007의 접속구 N4에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1007",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q042",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "H1008의 접속구 N1에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q045",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "H1008의 접속구 N2에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q048",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "H1008의 접속구 N3에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q051",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "H1008의 접속구 N4에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "H1008",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q054",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "P4711의 접속구 N1에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q057",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "P4711의 접속구 N2에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "P4711",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q060",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "P4712의 접속구 N1에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q063",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "P4712의 접속구 N2에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "P4712",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q066",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "T4750의 접속구 N1에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q069",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "T4750의 접속구 N2에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q072",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "T4750의 접속구 N3에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "80"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q075",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "T4750의 접속구 N5에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q078",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "T4750의 접속구 N6에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "50"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q081",
+  "doc": "pid-standard-vector",
+  "type": "노즐",
+  "question": "T4750의 접속구 N7에 적힌 호칭 지름 값은 얼마인가? DN 뒤의 숫자만 답하라.",
+  "answers": [
+   "25"
+  ],
+  "focus": "T4750",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q084",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47121번 라인의 관 호칭 지름(DN) 값은? 숫자만 답하라.",
+  "answers": [
+   "80",
+   "80"
+  ],
+  "focus": "47121",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q087",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47122번 라인에 지정된 배관 등급 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47122",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q090",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47123번 라인에 흐르는 유체의 코드는? 코드만 답하라.",
+  "answers": [
+   "MNb"
+  ],
+  "focus": "47123",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q093",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47124번 라인의 관 호칭 지름(DN) 값은? 숫자만 답하라.",
+  "answers": [
+   "80",
+   "80"
+  ],
+  "focus": "47124",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q096",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47125번 라인에 지정된 배관 등급 코드는? 코드만 답하라.",
+  "answers": [
+   "73HG12"
+  ],
+  "focus": "47125",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q099",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47126번 라인에 흐르는 유체의 코드는? 코드만 답하라.",
+  "answers": [
+   "MNc"
+  ],
+  "focus": "47126",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q102",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47127번 라인의 관 호칭 지름(DN) 값은? 숫자만 답하라.",
+  "answers": [
+   "50",
+   "50"
+  ],
+  "focus": "47127",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q105",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47130번 라인에 지정된 배관 등급 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47130",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q108",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47131번 라인에 흐르는 유체의 코드는? 코드만 답하라.",
+  "answers": [
+   "WKb"
+  ],
+  "focus": "47131",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q111",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47140번 라인의 관 호칭 지름(DN) 값은? 숫자만 답하라.",
+  "answers": [
+   "50",
+   "50"
+  ],
+  "focus": "47140",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q114",
+  "doc": "pid-standard-vector",
+  "type": "라인",
+  "question": "47141번 라인에 지정된 배관 등급 코드는? 코드만 답하라.",
+  "answers": [
+   "75HB13"
+  ],
+  "focus": "47141",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q117",
+  "doc": "pid-standard-vector",
+  "type": "계기",
+  "question": "번호 4712.01이 붙은 계기의 기능 기호(측정·제어 종류를 나타내는 알파벳)는? 기호만 답하라.",
+  "answers": [
+   "PI"
+  ],
+  "focus": "PI",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q120",
+  "doc": "pid-standard-vector",
+  "type": "계기",
+  "question": "번호 4712.02이 붙은 계기의 기능 기호(측정·제어 종류를 나타내는 알파벳)는? 기호만 답하라.",
+  "answers": [
+   "PICSA"
+  ],
+  "focus": "PICSA",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q123",
+  "doc": "pid-standard-vector",
+  "type": "계기",
+  "question": "번호 4750.01이 붙은 계기의 기능 기호(측정·제어 종류를 나타내는 알파벳)는? 기호만 답하라.",
+  "answers": [
+   "HS"
+  ],
+  "focus": "HS",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ },
+ {
+  "id": "q126",
+  "doc": "pid-standard-vector",
+  "type": "계기",
+  "question": "번호 4750.03이 붙은 계기의 기능 기호(측정·제어 종류를 나타내는 알파벳)는? 기호만 답하라.",
+  "answers": [
+   "TICSA"
+  ],
+  "focus": "TICSA",
+  "source": "DEXPI C01 XML (바꿔 말한 문장)",
+  "kind": "single"
+ }
+]
