@@ -16,59 +16,7 @@ sys.path.insert(0, os.path.join(ROOT, 'examples', 'public-documents', 'pid'))
 import evaluate as ev
 import serialize as sz
 from noise import GRAPH, XML, DOC
-
-def build(g):
-    nodes = {n['id']: n for n in g['nodes']}
-    def lift(nid):
-        n = nodes.get(nid); return n['attached_to'] if n and n.get('attached_to') else nid
-    adj = collections.defaultdict(set); deg = collections.Counter()
-    for r in g['runs']:
-        a, b = lift(r['a']), lift(r['b'])
-        if a == b:
-            continue
-        adj[a].add(b); adj[b].add(a)
-        for v in (a, b):
-            if v in nodes and nodes[v]['role'] == 'equipment':
-                deg[v] += 1
-    equip = {n['id']: sz.name_of(n) for n in g['nodes'] if n['role'] == 'equipment' and not n.get('attached_to')}
-    return nodes, adj, deg, equip, lift
-
-def reach_from(starts, adj, equip):
-    """starts에서 출발해 장비에서 멈추는 도달. 출발점이 장비면 그 장비는 답에서 뺌."""
-    seen, frontier, out = set(starts), list(starts), set()
-    while frontier:
-        nxt = []
-        for v in frontier:
-            for w in adj[v]:
-                if w in seen:
-                    continue
-                seen.add(w)
-                if w in equip:
-                    out.add(w)
-                else:
-                    nxt.append(w)
-        frontier = nxt
-    return out
-
-def shortest_inner(a, b, adj, equip):
-    """장비 a에서 b까지 다른 장비를 지나지 않는 최단 경로의 중간 요소 수. 없으면 None."""
-    prev, frontier = {a: None}, [a]
-    while frontier:
-        nxt = []
-        for v in frontier:
-            for w in sorted(adj[v]):
-                if w in prev:
-                    continue
-                prev[w] = v
-                if w == b:
-                    path = [w]
-                    while prev[path[-1]] is not None:
-                        path.append(prev[path[-1]])
-                    return len(path) - 2
-                if w not in equip:
-                    nxt.append(w)
-        frontier = nxt
-    return None
+from precompute import build, reach_from, shortest_inner, line_numbers, path_lines as _path_lines
 
 def xml_reach():
     comps, conns, _ = ev.load_gt(XML, 297.053)
@@ -93,12 +41,7 @@ def main():
     for a, b in itertools.combinations(names, 2):
         yes = b in R[a]
         add('도달여부', f"두 장비 {tag[a]}, {tag[b]} 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 있는가? 예 또는 아니오로 답하라.", ['예' if yes else '아니오'], 'yesno')
-    by_line = collections.defaultdict(set)
-    for r in g['runs']:
-        for t in r['texts']:
-            for tok in t.split():
-                if re.fullmatch(r'\d{5}', tok):
-                    by_line[tok] |= {lift(r['a']), lift(r['b'])}
+    by_line, run_lines = line_numbers(g, lift)
     for ln in sorted(by_line):
         ends = by_line[ln]
         out = {x for x in ends if x in equip} | reach_from([x for x in ends if x not in equip], adj, equip)
@@ -110,27 +53,8 @@ def main():
         if b in R[a]:
             k = shortest_inner(a, b, adj, equip)
             add('경로', f"장비 {tag[a]}에서 장비 {tag[b]}까지 가장 짧은 연결 경로에서 지나는 중간 요소(밸브·기호·분기점)는 몇 개인가? 숫자만 답하라.", [str(k)], 'single')
-    run_lines = collections.defaultdict(set)     # 요소 쌍 → 그 사이 선에 붙은 라인 번호
-    for r in g['runs']:
-        a_, b_ = lift(r['a']), lift(r['b'])
-        for t in r['texts']:
-            for tok in t.split():
-                if re.fullmatch(r'\d{5}', tok):
-                    run_lines[frozenset((a_, b_))].add(tok)
     def path_lines(a, b):
-        out, stack = set(), [(a, [a])]
-        while stack:
-            v, path = stack.pop()
-            for w in adj[v]:
-                if w in path:
-                    continue
-                if w == b:
-                    p = path + [w]
-                    for x, y in zip(p, p[1:]):
-                        out |= run_lines.get(frozenset((x, y)), set())
-                elif w not in equip:
-                    stack.append((w, path + [w]))
-        return out
+        return _path_lines(a, b, adj, equip, run_lines)
     for a, b in itertools.combinations(names, 2):
         if b in R[a]:
             ls = path_lines(a, b)

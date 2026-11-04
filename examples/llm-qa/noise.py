@@ -13,7 +13,7 @@
 각 그래프는 DEXPI XML 정답과 다시 대조해 실제 재현율·정밀도를 기록한다(public-documents/pid/evaluate.py).
 사용: python noise.py [--levels 0,0.1,0.2,0.3,0.5] [--seeds 0,1,2]
 실제 추출 그래프(C01 200 dpi 래스터, 스캔)도 real-200dpi, real-scan 설정으로 넣어 통제 오류 곡선과 대조한다.
-결과: noise/contexts.json(문항 id·오류 종류·비율·씨앗별 relations, full 문맥), noise/graphs.md(실제 재현율·정밀도·요소 문자 복원율)
+결과: noise/contexts.json(문항 id·오류 종류·비율·씨앗별 relations, full, paths 문맥. paths는 full에 precompute.py가 미리 계산한 연결 정보 줄을 덧붙인 것), noise/graphs.md(실제 재현율·정밀도·요소 문자 복원율)
 실행: python run_noise.py --backend ollama --model <모델> --label <결과 이름>"""
 import os, sys, json, math, random, argparse, tempfile, re
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
@@ -23,6 +23,7 @@ import pipeline as pl          # noqa: F401  (경로 설정과 같은 serialize 
 import serialize as sz
 import evaluate as ev
 from contexts import ablate
+import precompute
 
 DOC = 'pid-standard-vector'
 GRAPH = os.path.join(ROOT, 'examples', 'sample-inputs', 'output', DOC, 'graph.json')
@@ -174,14 +175,16 @@ def main():
                 if p == 0 and kind != 'drop':
                     continue
                 key = f"{kind if p > 0 else 'none'}-{p:g}-s{s}"
-                lines, m = serial_of(perturb(g0, kind, p, s))
+                gp = perturb(g0, kind, p, s); lines, m = serial_of(gp)
                 rows.append((key, m))
                 ctx[key] = {c: ablate(lines, c, True) for c in ('relations', 'full')}
+                ctx[key]['paths'] = ctx[key]['full'] + '\n' + '\n'.join(precompute.section(gp))     # 절차 계층: 연결 정보를 코드로 미리 계산해 덧붙임
     for real in REAL:     # 실제 추출 그래프(래스터·스캔)도 같은 문항으로 묻기 위해 같은 형식으로 넣음
         key = f"real-{real.split('-')[-1]}-s0"
-        lines, m = serial_of(json.load(open(os.path.join(ROOT, 'examples', 'sample-inputs', 'output', real, 'graph.json'), encoding='utf-8')))
+        gr = json.load(open(os.path.join(ROOT, 'examples', 'sample-inputs', 'output', real, 'graph.json'), encoding='utf-8')); lines, m = serial_of(gr)
         rows.append((key, m))
         ctx[key] = {c: ablate(lines, c, True) for c in ('relations', 'full')}
+        ctx[key]['paths'] = ctx[key]['full'] + '\n' + '\n'.join(precompute.section(gr))
     json.dump(dict(doc=DOC, questions=[q['id'] for q in Q], contexts=ctx), open(os.path.join(OUT, 'contexts.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     L = ['# 오류를 넣은 C01 그래프의 실제 배관 연결 재현율·정밀도', '', f'문항 {len(Q)}(C01 벡터). 정답 대조는 DEXPI XML.', '', '| 조건 | 재현율 | 정밀도 | 문자 복원 |', '|---|---|---|---|']
     L += [f"| {k} | {m['recall']:.2f} | {m['precision']:.2f} | {m['label']:.2f} |" for k, m in rows]
