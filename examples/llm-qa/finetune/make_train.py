@@ -7,7 +7,7 @@
 문항과 답은 문맥을 만든 그 그래프(오류가 들어간 뒤)에서 qgen.py로 계산하므로 답은 항상 문맥에 충실하다. 그래프에 없는 태그를 묻는 문항의 답은 '자료에 없음'.
 프롬프트 형식은 run_noise.py와 같다([자료]\\n문맥\\n\\n[질문]\\n문항, system은 run_qa.SYSTEM).
 사용: python make_train.py --graphs <폴더 또는 graph.json ...> --out train.jsonl [--retag 2] [--noise mixed] [--conds full,paths] [--per-graph 24] [--max-chars 12000] [--seed 0]"""
-import os, sys, json, re, random, argparse, tempfile, collections
+import os, sys, json, re, random, argparse, tempfile, collections, time
 HERE = os.path.dirname(os.path.abspath(__file__)); QA = os.path.abspath(os.path.join(HERE, '..'))
 sys.path.insert(0, QA)
 import noise as nz
@@ -25,10 +25,14 @@ def serial_lines(g):
         json.dump(g, open(gp, 'w', encoding='utf-8'), ensure_ascii=False); sz.main(gp, tp)
         return open(tp, encoding='utf-8').read().rstrip('\n').split('\n')
 
-def contexts(g, conds):
-    lines = serial_lines(g); out = {}
+def contexts(g, conds, max_chars):
+    """full 문맥이 상한을 넘으면 None(큰 도면은 연결 정보 계산 전에 건너뜀)."""
+    lines = serial_lines(g); full = ablate(lines, 'full', True)
+    if len(full) > max_chars:
+        return None
+    out = {}
     for c in conds:
-        out[c] = ablate(lines, 'full', True)
+        out[c] = full
         if c == 'paths':
             out[c] += '\n' + '\n'.join(precompute.section(g))
     return out
@@ -81,10 +85,12 @@ def main():
     for p in a.graphs:
         files += sorted(os.path.join(d, f) for d, _, fs in os.walk(p) for f in fs if f == 'graph.json') if os.path.isdir(p) else [p]
     conds = a.conds.split(','); rnd = random.Random(a.seed)
-    n_ex, n_skip, types = 0, 0, collections.Counter()
+    n_ex, n_skip, types = 0, 0, collections.Counter(); t0 = time.time()
     with open(a.out, 'w', encoding='utf-8') as f:
         for fi, path in enumerate(files):
             g0 = json.load(open(path, encoding='utf-8')); doc = os.path.basename(os.path.dirname(os.path.abspath(path)))
+            if fi % 10 == 0:
+                print(f'{fi}/{len(files)} {doc} 예시 {n_ex} 건너뜀 {n_skip} {time.time() - t0:.0f}초', flush=True)
             variants = [(doc, g0)] + [(f"{doc}-rt{k}", retag(g0, a.seed * 1000 + fi * 10 + k)) for k in range(a.retag)]
             for vname, g in variants:
                 settings = [('none', 0.0)]
@@ -93,10 +99,10 @@ def main():
                 for si, (kind, p) in enumerate(settings):
                     gp = nz.perturb(g, kind, p, a.seed * 100 + si) if p > 0 else g
                     try:
-                        ctx = contexts(gp, conds)
+                        ctx = contexts(gp, conds, a.max_chars)
                     except Exception as e:
                         n_skip += 1; print('건너뜀', vname, kind, p, str(e)[:80]); continue
-                    if max(len(v) for v in ctx.values()) > a.max_chars:
+                    if ctx is None or max(len(v) for v in ctx.values()) > a.max_chars * 1.5:
                         n_skip += 1; continue
                     Q = qgen.questions(gp, vname, negatives=3, seed=a.seed + si)
                     by = collections.defaultdict(list)

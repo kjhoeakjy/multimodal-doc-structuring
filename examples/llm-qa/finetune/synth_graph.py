@@ -1,7 +1,8 @@
 """PID2Graph의 graphml(기호·선 교차·꺾임 노드와 간선)을 llm-qa 그래프 형식(graph.json)으로 바꾸고 합성 문자(장비 태그·접속구·계기 번호·라인 라벨)를 붙인다.
 PID2Graph에는 문자 속성이 없으므로 위상만 쓰고 문자는 DEXPI 예시 도면(C01)의 형식을 따라 만든다. 학습용 그래프를 만들기 위한 것이며 정답 대조에는 쓰지 않는다.
 노드 종류 대응: tank·pump·general → equipment, instrumentation → instrument, valve·inlet/outlet → symbol, crossing·connector·arrow·junction·bend·corner·ankle → 분기점, background → 제외.
-사용: python synth_graph.py <graphml 또는 폴더> <출력 폴더> [--seed 0] [--limit N]
+노드가 --max-nodes(기본 80, C01 규모)보다 많은 도면은 무작위 장비에서 연결을 따라 그 수까지만 잘라 부분 도면으로 만든다(8B 문맥 길이 한도와 연결 정보 계산 시간 때문).
+사용: python synth_graph.py <graphml 또는 폴더> <출력 폴더> [--seed 0] [--limit N] [--max-nodes 80]
 결과: <출력 폴더>/<이름>/graph.json (make_train.py 입력)"""
 import os, sys, json, random, argparse, collections, xml.etree.ElementTree as ET
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -26,8 +27,37 @@ def role_of(lab):
         return 'instrument'
     return 'symbol'     # valve, inlet/outlet 등
 
-def convert(path, rnd):
+def crop(nodes, edges, keep_ids, max_nodes, rnd):
+    """장비 하나에서 연결을 따라 max_nodes개까지의 노드만 남김"""
+    adj = collections.defaultdict(set)
+    for a, b, _ in edges:
+        if a in keep_ids and b in keep_ids:
+            adj[a].add(b); adj[b].add(a)
+    starts = [n for n in keep_ids if role_of(label_of(nodes[n])) == 'equipment'] or list(keep_ids)
+    seen, frontier = set(), [rnd.choice(starts)]
+    while frontier and len(seen) < max_nodes:
+        v = frontier.pop(0)
+        if v in seen:
+            continue
+        seen.add(v); frontier += sorted(adj[v] - seen)
+    if len(seen) < max_nodes:     # 이어지지 않은 부분은 다른 장비에서 이어서
+        for s0 in starts:
+            if len(seen) >= max_nodes:
+                break
+            frontier = [s0]
+            while frontier and len(seen) < max_nodes:
+                v = frontier.pop(0)
+                if v in seen:
+                    continue
+                seen.add(v); frontier += sorted(adj[v] - seen)
+    return seen
+
+def convert(path, rnd, max_nodes=80):
     nodes, edges = load(path)
+    keep = {nid for nid, d in nodes.items() if role_of(label_of(d)) is not None and bbox_of(d) is not None}
+    if len(keep) > max_nodes:
+        keep = crop(nodes, edges, keep, max_nodes, rnd)
+    nodes = {k: v for k, v in nodes.items() if k in keep}
     out, junctions, idmap = [], [], {}
     cls = {}
     for nid, d in nodes.items():
@@ -96,14 +126,14 @@ def convert(path, rnd):
                 counts=dict(primitives=0, texts=sum(len(n['texts']) for n in out), nodes=len(out), runs=len(runs), junctions=len(junctions), tables=0, dropped_fragments=0))
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument('src'); ap.add_argument('out'); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--limit', type=int, default=0)
+    ap = argparse.ArgumentParser(); ap.add_argument('src'); ap.add_argument('out'); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--limit', type=int, default=0); ap.add_argument('--max-nodes', type=int, default=80)
     a = ap.parse_args()
     files = [a.src] if os.path.isfile(a.src) else sorted(os.path.join(d, f) for d, _, fs in os.walk(a.src) for f in fs if f.lower().endswith('.graphml'))
     if a.limit:
         files = files[:a.limit]
     n_ok = 0
     for i, f in enumerate(files):
-        g = convert(f, random.Random(a.seed * 100003 + i))
+        g = convert(f, random.Random(a.seed * 100003 + i), a.max_nodes)
         if not g or not any(n['role'] == 'equipment' for n in g['nodes']):
             continue
         name = os.path.splitext(os.path.basename(f))[0]

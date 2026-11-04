@@ -68,11 +68,12 @@ def line_numbers(g, lift):
                     by_line[tok] |= {a_, b_}; run_lines[frozenset((a_, b_))].add(tok)
     return by_line, run_lines
 
-def path_lines(a, b, adj, equip, run_lines):
-    """a에서 b까지 다른 장비를 지나지 않는 모든 단순 경로 위 선의 라인 번호 집합"""
-    out, stack = set(), [(a, [a])]
-    while stack:
-        v, path = stack.pop()
+def path_lines(a, b, adj, equip, run_lines, limit=3000):
+    """a에서 b까지 다른 장비를 지나지 않는 모든 단순 경로 위 선의 라인 번호 집합.
+    limit은 탐색 횟수 상한(교차점이 많은 큰 그래프에서 단순 경로 수가 폭증하는 것을 막음. C01 규모에서는 닿지 않음)"""
+    out, stack, steps = set(), [(a, [a])], 0
+    while stack and steps < limit:
+        v, path = stack.pop(); steps += 1
         for w in adj[v]:
             if w in path:
                 continue
