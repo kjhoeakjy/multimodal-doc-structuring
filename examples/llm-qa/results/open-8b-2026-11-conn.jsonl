@@ -2672,3 +2672,23 @@
 {"id": "c007", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "예", "correct": 0, "secs": 9.1, "chars": 7315}
 {"id": "c008", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "예", "correct": 0, "secs": 9.0, "chars": 7315}
 {"id": "c009", "type": "도달여부", "setting": "attr-0.3-s0", "cond": "relations", "response": "예", "correct": 1, "secs": 9.2, "chars": 7315}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n28, n26, n18, n2, n1, n32, n3, n27, n21, n12, n19, n13", "correct": 0, "secs": 240.4, "chars": 7316}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n18,equipment H1007,n26,equipment P4711,n28,symbol n28,n26,equipment P4711,n18,equipment H1007,n26,equipment P4711,n28,symbol n28,n26,equipment P4711,n18,equipment H1007,n26,equipment P4711,n28,symbol n28,n26,equipment P4711,n18,equipment H1007,n26,equipment P4711,n28,symbol n28,n26,equipment P4711,n18,equipment H1007,n26,equipment P", "correct": 1, "secs": 27.4, "chars": 7316}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n21,equipment T4750,n1,symbol 66KL21-80,n4,symbol SV 104.01,n12,symbol n12", "correct": 0, "secs": 11.7, "chars": 7316}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n2, n32, n3, n21", "correct": 0, "secs": 7.5, "chars": 7316}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n21,equipment T4750,n4,symbol SV 104.01,n12,symbol n12", "correct": 0, "secs": 9.5, "chars": 7316}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n21,equipment T4750,n11,symbol n11,n10,symbol 73KH12-25,n19,equipment H1008,n13,symbol TV4750.03,n12,symbol n12,n20,symbol n20,n4,symbol SV 104.01,n1,symbol 66KL21-80,n0,symbol F.C.,n2,symbol n2,n3,symbol 73KH12-50,n7,symbol 73KH12-25,n8,symbol 73KH12-25,n9,symbol 73KH", "correct": 0, "secs": 34.9, "chars": 7316}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n21,equipment T4750,n12,symbol n12", "correct": 0, "secs": 9.3, "chars": 7316}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n17, n21, n13, n19", "correct": 0, "secs": 9.5, "chars": 7316}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n18,equipment H1007,n2,symbol n2,n1,symbol 66KL21-80,n32,symbol 75SA21-80,n3,symbol 73KH12-50,n27,equipment P4712,j2,j0,n4,symbol SV 104.01,j1,n9,symbol 73KH12-50,j3,j4,n11,symbol n11,n10,symbol 73KH12-25,n21,equipment T4750,n12,symbol n12,n19,equipment H1008,n13,symbol TV", "correct": 0, "secs": 44.8, "chars": 7316}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n19,equipment H1008,n13,symbol TV4750.03", "correct": 0, "secs": 14.8, "chars": 7316}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.3-s0", "cond": "relations", "response": "n13, open@353.0, 202.0", "correct": 0, "secs": 16.6, "chars": 7316}
+{"id": "c021", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "2", "correct": 0, "secs": 9.7, "chars": 7286}
+{"id": "c022", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "1", "correct": 0, "secs": 8.0, "chars": 7286}
+{"id": "c023", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "2", "correct": 1, "secs": 6.2, "chars": 7286}
+{"id": "c024", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "2", "correct": 1, "secs": 5.9, "chars": 7286}
+{"id": "c025", "type": "연결수", "setting": "attr-0.3-s0", "cond": "relations", "response": "4", "correct": 0, "secs": 5.7, "chars": 7286}
+{"id": "c026", "type": "경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "4", "correct": 0, "secs": 7.5, "chars": 7315}
+{"id": "c027", "type": "경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "4", "correct": 0, "secs": 6.4, "chars": 7315}
+{"id": "c028", "type": "경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "3", "correct": 0, "secs": 7.0, "chars": 7315}
+{"id": "c029", "type": "경로", "setting": "attr-0.3-s0", "cond": "relations", "response": "3", "correct": 0, "secs": 6.2, "chars": 7315}
