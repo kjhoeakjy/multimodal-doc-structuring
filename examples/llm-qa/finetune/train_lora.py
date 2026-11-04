@@ -35,7 +35,7 @@ def main():
     a = ap.parse_args()
     random.seed(a.seed); torch.manual_seed(a.seed)
     tok = AutoTokenizer.from_pretrained(a.model); tok.pad_token = tok.pad_token or tok.eos_token
-    kw = dict(torch_dtype=torch.bfloat16, device_map='auto')
+    kw = dict(dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32, device_map='auto')
     if a.q4:
         from transformers import BitsAndBytesConfig
         kw['quantization_config'] = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type='nf4', bnb_4bit_compute_dtype=torch.bfloat16, bnb_4bit_use_double_quant=True)
@@ -48,8 +48,7 @@ def main():
     model.print_trainable_parameters()
     ds = Chat(a.data, tok, a.max_len)
     args = TrainingArguments(output_dir=a.out, num_train_epochs=a.epochs, learning_rate=a.lr, per_device_train_batch_size=a.batch, gradient_accumulation_steps=a.accum,
-                             lr_scheduler_type='cosine', warmup_ratio=0.03, logging_steps=10, save_strategy='epoch', bf16=True, report_to=[], seed=a.seed,
-                             group_by_length=True, remove_unused_columns=False)
+                             lr_scheduler_type='cosine', warmup_steps=max(1, len(ds) // (a.batch * a.accum) // 30), logging_steps=10, save_strategy='epoch', bf16=torch.cuda.is_available(), report_to=[], seed=a.seed, remove_unused_columns=False)
     Trainer(model=model, args=args, train_dataset=ds, data_collator=DataCollatorForSeq2Seq(tok, padding=True, label_pad_token_id=-100)).train()
     model.save_pretrained(a.out); tok.save_pretrained(a.out)
     json.dump(vars(a), open(os.path.join(a.out, 'train_args.json'), 'w'), indent=1)

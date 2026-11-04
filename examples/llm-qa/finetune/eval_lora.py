@@ -38,7 +38,7 @@ def main():
     todo = [(q, k, c) for k in keys for c in conds for q in qs if (q['id'], k, c) not in done]
     print(f'설정 {len(keys)} × 조건 {len(conds)} × 문항 {len(qs)}, 남은 호출 {len(todo)}')
     tok = AutoTokenizer.from_pretrained(a.model); tok.pad_token = tok.pad_token or tok.eos_token; tok.padding_side = 'left'
-    kw = dict(torch_dtype=torch.bfloat16, device_map='auto')
+    kw = dict(dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32, device_map='auto')
     if a.q4:
         from transformers import BitsAndBytesConfig
         kw['quantization_config'] = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type='nf4', bnb_4bit_compute_dtype=torch.bfloat16)
