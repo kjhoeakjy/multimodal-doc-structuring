@@ -1,0 +1,432 @@
+{"id": "c000", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "아니오. H1007과 H1008 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007은 T4750와 P4711과 연결되어 있고, H1008은 T4750와 P4712와 연결되어 있습니다. H1007과 H1008은 T4750를 통해 간접적으로 연결되어 있지만, 직접적인 연결 경로는 없습니다.", "correct": 1, "secs": 2.1, "chars": 7531}
+{"id": "c001", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "예. \n\nH1007과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 r0과 r1로 구성되어 있습니다. \n\n- r0: n28[symbol n28]에서 n26[equipment P4711]로 연결되는 파이프입니다.\n- r1: n26[equipment P4711]에서 n18[equipment H1007]로 연결되는 파이프입니다.\n\n이 경로는 H", "correct": 1, "secs": 0.9, "chars": 7531}
+{"id": "c002", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007과 P4712 사이에는 T4750 장비를 거치는 경로만 존재합니다.", "correct": 1, "secs": 0.5, "chars": 7531}
+{"id": "c003", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "예. \n\nH1007과 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 다음과 같습니다:\n\n- r21: H1007 (n18)에서 T4750 (n21)로의 경로는 (160.0,117.0)→(160.0,61.0)→(181.0,61.0)→(181.0,76.6)입니다. 이 경로는 다른 장비를 거치지 않습니다.", "correct": 1, "secs": 0.9, "chars": 7531}
+{"id": "c004", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "아니오. H1008과 P4711 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007이 H1008과 P4711을 연결하는 중간 장비로 존재합니다.", "correct": 1, "secs": 0.5, "chars": 7531}
+{"id": "c005", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "예. \n\n연결 r30: n19[equipment H1008] B=n12[symbol PV4712.02] 경로=(323.5,126.5)→(323.5,96.0)  \n연결 r31: n12[symbol PV4712.02] B=n19[equipment H1008] 경로=(323.5,100.0)→(323.5,126.5)  \n\n이 경로는 H1008와 P4712 사이에 다른 장비를 거", "correct": 1, "secs": 0.9, "chars": 7531}
+{"id": "c006", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "예. \n\n연결 경로: r30 (n19[equipment H1008] B=n12[symbol PV4712.02]) 및 r26 (n12[symbol PV4712.02] B=n21[equipment T4750]). \n\n이 경로는 H1008에서 T4750로 직접 연결되며, 다른 장비를 거치지 않습니다.", "correct": 1, "secs": 0.7, "chars": 7531}
+{"id": "c007", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "아니오. \n\nP4711과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711과 P4712 사이에는 n26(equipment P4711)에서 n27(equipment P4712)로 직접 연결되는 파이프 r8이 있지만, 이는 n27(equipment P4712)에서 j2로 이어지고, j2에서 다시 n27(equipment P4712)로 돌아오", "correct": 1, "secs": 0.9, "chars": 7531}
+{"id": "c008", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "아니오. \n\nP4711와 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711는 H1007와 연결되고, T4750는 H1007와 연결되어 있습니다. 따라서 P4711와 T4750 사이에는 H1007를 거쳐야 합니다.", "correct": 1, "secs": 0.7, "chars": 7531}
+{"id": "c009", "type": "도달여부", "setting": "none-0-s0", "cond": "full", "response": "예. \n\n- r26: n21[equipment T4750] B=n12[symbol PV4712.02] 흐름=B→A 라벨=MNc 47127 75HB13 50 Q 80 경로=(209.0,83.0)→(323.5,83.0)→(323.5,96.0)\n- r30: n12[symbol PV4712.02] B=n19[equipment H1008] 경로=(323.5,100.0)→(", "correct": 1, "secs": 0.9, "chars": 7531}
+{"id": "c010", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 0.1, "chars": 7532}
+{"id": "c011", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "n18[equipment H1007]", "correct": 0, "secs": 0.1, "chars": 7532}
+{"id": "c012", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "n0, n21", "correct": 0, "secs": 0.1, "chars": 7532}
+{"id": "c013", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "n1[symbol 66KL21-80]", "correct": 0, "secs": 0.1, "chars": 7532}
+{"id": "c014", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "n4, n21", "correct": 0, "secs": 0.1, "chars": 7532}
+{"id": "c015", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "n19[equipment H1008]", "correct": 0, "secs": 0.1, "chars": 7532}
+{"id": "c016", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "T4750, H1008", "correct": 1, "secs": 0.1, "chars": 7532}
+{"id": "c017", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "n18[equipment H1007]", "correct": 1, "secs": 0.1, "chars": 7532}
+{"id": "c018", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "n18[equipment H1007]", "correct": 1, "secs": 0.1, "chars": 7532}
+{"id": "c019", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "H1008", "correct": 1, "secs": 0.1, "chars": 7532}
+{"id": "c020", "type": "라인도달", "setting": "none-0-s0", "cond": "full", "response": "TV4750.03, H1008, TV4750.03", "correct": 0, "secs": 0.1, "chars": 7532}
+{"id": "c021", "type": "연결수", "setting": "none-0-s0", "cond": "full", "response": "4\n\n(설명: 장비 H1007에 직접 붙은 연결선은 다음과 같습니다: r0, r1, r2, r3, r4. 이 중 r2와 r3은 흐름 방향이 다르지만, 직접 붙은 연결선으로 간주됩니다.)", "correct": 1, "secs": 0.7, "chars": 7502}
+{"id": "c022", "type": "연결수", "setting": "none-0-s0", "cond": "full", "response": "2\n\nr30 종류=pipe A=n12[symbol PV4712.02] B=n19[equipment H1008]  \nr31 종류=pipe A=n19[equipment H1008] B=open@(344.5, 202.0)  \nr32 종류=signal A=open@(344.5, 126.5) B=n13[symbol TV4750.03]  \nr33 종류=signal A=open@(307.6, 83.7) B=open@(316.0, 83.7)  \nr34", "correct": 0, "secs": 0.9, "chars": 7502}
+{"id": "c023", "type": "연결수", "setting": "none-0-s0", "cond": "full", "response": "2\n\n설명: 장비 P4711(n26)에 직접 붙은 연결선은 다음과 같습니다.\n- r0: n28[symbol n28]에서 n26[equipment P4711]로 연결된 pipe\n- r36: n14[instrument PI 4712.01]에서 n55[symbol n55]로 연결된 signal (n55는 n26에 연결되어 있음)\n\n따라서 총 2개의 연결선이 직", "correct": 1, "secs": 0.9, "chars": 7502}
+{"id": "c024", "type": "연결수", "setting": "none-0-s0", "cond": "full", "response": "3\n\nr15 종류=pipe A=j1 B=n8[symbol 73KH12-25]  \nr20 종류=pipe A=j4 B=n10[symbol 73KH12-25]  \nr41 종류=pipe A=n55[symbol n55] B=n8[symbol 73KH12-25]  \n\n장비 P4712에 직접 붙은 연결선은 3개입니다.", "correct": 0, "secs": 0.8, "chars": 7502}
+{"id": "c025", "type": "연결수", "setting": "none-0-s0", "cond": "full", "response": "7\n\nr23, r24, r25, r26, r28, r29, r32", "correct": 1, "secs": 0.2, "chars": 7502}
+{"id": "c026", "type": "경로", "setting": "none-0-s0", "cond": "full", "response": "2\n\nn28[symbol n28], n26[equipment P4711]", "correct": 0, "secs": 0.2, "chars": 7531}
+{"id": "c027", "type": "경로", "setting": "none-0-s0", "cond": "full", "response": "4\n\nn18[equipment H1007] → n0[symbol F.C.] → n21[equipment T4750] 경로에서 지나는 중간 요소는 n0[symbol F.C.] 하나입니다. 또한, n0[symbol F.C.]에서 n21[equipment T4750]로 가는 경로에서는 j0, n4[symbol SV 104.01], j1, n9[symbol 73KH12-50]이 지나게 됩니다. 총 4개의 중간", "correct": 1, "secs": 0.9, "chars": 7531}
+{"id": "c028", "type": "경로", "setting": "none-0-s0", "cond": "full", "response": "3\n\nn19[equipment H1008] → n30 → n20[symbol n20] → n27[equipment P4712]", "correct": 0, "secs": 0.2, "chars": 7531}
+{"id": "c029", "type": "경로", "setting": "none-0-s0", "cond": "full", "response": "3\n\nn19[equipment H1008] → n30[j4] → n11[symbol n11] → n21[equipment T4750]", "correct": 0, "secs": 0.3, "chars": 7531}
+{"id": "c030", "type": "경로", "setting": "none-0-s0", "cond": "full", "response": "3\n\nn27[equipment P4712], j2, n21[equipment T4750]", "correct": 1, "secs": 0.2, "chars": 7531}
+{"id": "c031", "type": "라인경로", "setting": "none-0-s0", "cond": "full", "response": "47121", "correct": 0, "secs": 0.1, "chars": 7535}
+{"id": "c032", "type": "라인경로", "setting": "none-0-s0", "cond": "full", "response": "47123", "correct": 1, "secs": 0.0, "chars": 7535}
+{"id": "c033", "type": "라인경로", "setting": "none-0-s0", "cond": "full", "response": "r30, r31, r32", "correct": 0, "secs": 0.1, "chars": 7535}
+{"id": "c034", "type": "라인경로", "setting": "none-0-s0", "cond": "full", "response": "47126, 47140, 47141", "correct": 0, "secs": 0.1, "chars": 7535}
+{"id": "c035", "type": "라인경로", "setting": "none-0-s0", "cond": "full", "response": "47125, 47127\n\n이 두 라인 번호는 P4712와 T4750 사이를 직접 잇는 배관에 붙어 있습니다.", "correct": 0, "secs": 0.4, "chars": 7535}
+{"id": "c000", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "아니오. H1007과 H1008 사이에 다른 장비를 거치지 않는 연결 경로는 없다. H1007은 T4750과 P4711과 연결되어 있고, H1008은 연결되어 있는 장비가 없다.", "correct": 1, "secs": 1.2, "chars": 6424}
+{"id": "c001", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "예, H1007과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 r0과 r1로 구성되어 있습니다. \n\n- r0: n28[symbol n28]에서 n26[equipment P4711]로 연결되는 파이프입니다.\n- r1: n26[equipment P4711]에서 n18[equipment H1007]로 연결되는 파이프입니다.\n\n이 경로는 n28", "correct": 1, "secs": 0.9, "chars": 6424}
+{"id": "c002", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결 경로가 없습니다. H1007과 P4712는 각각 다른 장비와 연결되어 있으며, 직접적인 경로가 없습니다.", "correct": 1, "secs": 0.6, "chars": 6424}
+{"id": "c003", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "예, H1007과 T4750 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 r21로, H1007의 F.C. (n0)에서 T4750 (n21)로 연결되어 있습니다.", "correct": 1, "secs": 0.5, "chars": 6424}
+{"id": "c004", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "아니오.", "correct": 1, "secs": 0.1, "chars": 6424}
+{"id": "c005", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "아니오.", "correct": 0, "secs": 0.1, "chars": 6424}
+{"id": "c006", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "아니오.", "correct": 0, "secs": 0.1, "chars": 6424}
+{"id": "c007", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "아니오. 자료에 따르면 P4711과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없다. P4711은 H1007로 연결되고, P4712는 별도의 경로로 연결되며, 두 장비 사이에 직접적인 연결은 없다.", "correct": 1, "secs": 0.7, "chars": 6424}
+{"id": "c008", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "아니오. \n\nP4711과 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711은 H1007로 연결되고, T4750은 H1007로 연결되므로, P4711과 T4750 사이에는 H1007를 거쳐야 합니다.", "correct": 1, "secs": 0.7, "chars": 6424}
+{"id": "c009", "type": "도달여부", "setting": "drop-0.2-s0", "cond": "full", "response": "아니오.", "correct": 0, "secs": 0.1, "chars": 6424}
+{"id": "c010", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "n26[equipment P4711], n18[equipment H1007]", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c011", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "n18, n26", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c012", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "n0, n21", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c013", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "n1, n0", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c014", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "n4[symbol SV 104.01]", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c015", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c016", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c017", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "n18[equipment H1007]", "correct": 1, "secs": 0.1, "chars": 6425}
+{"id": "c018", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c019", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c020", "type": "라인도달", "setting": "drop-0.2-s0", "cond": "full", "response": "TV4750.03", "correct": 0, "secs": 0.1, "chars": 6425}
+{"id": "c021", "type": "연결수", "setting": "drop-0.2-s0", "cond": "full", "response": "4\n\n(장비 H1007에 직접 붙은 연결선은 다음과 같습니다: r0, r1, r3, r4)", "correct": 1, "secs": 0.3, "chars": 6395}
+{"id": "c022", "type": "연결수", "setting": "drop-0.2-s0", "cond": "full", "response": "1", "correct": 0, "secs": 0.0, "chars": 6395}
+{"id": "c023", "type": "연결수", "setting": "drop-0.2-s0", "cond": "full", "response": "2\n\n(장비 P4711에 직접 붙은 연결선은 r0과 r36입니다.)", "correct": 1, "secs": 0.2, "chars": 6395}
+{"id": "c024", "type": "연결수", "setting": "drop-0.2-s0", "cond": "full", "response": "2\n\n(설명: 장비 P4712에 직접 붙은 연결선은 r8과 r9이며, 이는 두 개의 배관선입니다.)", "correct": 1, "secs": 0.4, "chars": 6395}
+{"id": "c025", "type": "연결수", "setting": "drop-0.2-s0", "cond": "full", "response": "4\n\nr21, r22, r23, r28, r29", "correct": 0, "secs": 0.1, "chars": 6395}
+{"id": "c026", "type": "경로", "setting": "drop-0.2-s0", "cond": "full", "response": "3", "correct": 0, "secs": 0.0, "chars": 6424}
+{"id": "c027", "type": "경로", "setting": "drop-0.2-s0", "cond": "full", "response": "4\n\n(장비 H1007에서 장비 T4750까지 가장 짧은 연결 경로는 다음과 같습니다: H1007 → F.C. → T4750. 이 경로에서 지나는 중간 요소는 F.C. 하나입니다. 그러나 경로를 따라가면서 지나는 요소들을 세면, F.C. (n0), 분기점 j0, SV 104.01 (n4)가 포함되어 총", "correct": 0, "secs": 0.9, "chars": 6424}
+{"id": "c028", "type": "경로", "setting": "drop-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6424}
+{"id": "c029", "type": "경로", "setting": "drop-0.2-s0", "cond": "full", "response": "0", "correct": 0, "secs": 0.0, "chars": 6424}
+{"id": "c030", "type": "경로", "setting": "drop-0.2-s0", "cond": "full", "response": "3\n\n(장비 P4712에서 장비 T4750까지 가장 짧은 연결 경로는 다음과 같습니다: P4712 → n7[symbol 73KH12-25] → j2 → j0 → n4[symbol SV 104.01] → j1 → n9[symbol 73KH12-50] → n21[equipment T4750]. 이 경로에서 지나는 중간 요소는 n7, j2, j0, n4, j1, n9", "correct": 1, "secs": 0.9, "chars": 6424}
+{"id": "c031", "type": "라인경로", "setting": "drop-0.2-s0", "cond": "full", "response": "47121, 47122", "correct": 0, "secs": 0.1, "chars": 6428}
+{"id": "c032", "type": "라인경로", "setting": "drop-0.2-s0", "cond": "full", "response": "47123", "correct": 1, "secs": 0.0, "chars": 6428}
+{"id": "c033", "type": "라인경로", "setting": "drop-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6428}
+{"id": "c034", "type": "라인경로", "setting": "drop-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6428}
+{"id": "c035", "type": "라인경로", "setting": "drop-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6428}
+{"id": "c000", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "아니오.", "correct": 1, "secs": 0.6, "chars": 5078}
+{"id": "c001", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "예\n\nr0 종류=pipe A=n28[symbol n28] B=n26[equipment P4711]  \nr1 종류=pipe A=n26[equipment P4711] B=n18[equipment H1007]  \n\nn28은 분기점 j2와 연결되어 있고, j2는 n26과 연결되어 있으며, n26은 n18과 연결되어 있습니다. 따라서 n28 → j2 → n26 → n18 경로가 있습니다.", "correct": 1, "secs": 0.9, "chars": 5078}
+{"id": "c002", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "아니오\n\n장비 H1007과 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. 장비 간 배관 연결에 따르면, H1007은 P4711로 연결되고, P4712는 연결되는 장비가 없습니다. 따라서 H1007과 P4712 사이에는 직접적인 연결", "correct": 1, "secs": 0.9, "chars": 5078}
+{"id": "c003", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "아니오. H1007과 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. H1007과 T4750 사이에는 장비 간 배관 연결이 없습니다.", "correct": 0, "secs": 0.6, "chars": 5078}
+{"id": "c004", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "아니오.", "correct": 1, "secs": 0.1, "chars": 5078}
+{"id": "c005", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "아니오.", "correct": 0, "secs": 0.1, "chars": 5078}
+{"id": "c006", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "아니오.", "correct": 0, "secs": 0.1, "chars": 5078}
+{"id": "c007", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "아니오. 자료에 따르면 P4711과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없다. P4711은 H1007로 연결되고, P4712는 연결되는 장비가 없다.", "correct": 1, "secs": 0.5, "chars": 5078}
+{"id": "c008", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "아니오. \n\nP4711와 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. \n\nP4711와 T4750 사이에는 다음과 같은 경로가 있습니다:\n- P4711 → H1007 → T4750\n\n따라서, P4711와 T4750 사이에는 H1007를 거치는 경로만 존재합니다.", "correct": 1, "secs": 0.9, "chars": 5078}
+{"id": "c009", "type": "도달여부", "setting": "drop-0.5-s0", "cond": "full", "response": "아니오.", "correct": 0, "secs": 0.1, "chars": 5078}
+{"id": "c010", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "P4711", "correct": 1, "secs": 0.0, "chars": 5079}
+{"id": "c011", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "n26, n18", "correct": 0, "secs": 0.1, "chars": 5079}
+{"id": "c012", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "n21", "correct": 0, "secs": 0.0, "chars": 5079}
+{"id": "c013", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "n1, n2", "correct": 0, "secs": 0.1, "chars": 5079}
+{"id": "c014", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5079}
+{"id": "c015", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5079}
+{"id": "c016", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5079}
+{"id": "c017", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5079}
+{"id": "c018", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5079}
+{"id": "c019", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5079}
+{"id": "c020", "type": "라인도달", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5079}
+{"id": "c021", "type": "연결수", "setting": "drop-0.5-s0", "cond": "full", "response": "2\n\n(장비 H1007에 직접 붙은 연결선은 r0과 r1이다.)", "correct": 0, "secs": 0.2, "chars": 5049}
+{"id": "c022", "type": "연결수", "setting": "drop-0.5-s0", "cond": "full", "response": "1\n\n장비 H1008에 직접 붙은 연결선은 r18 종류=pipe A=j3 B=n19[equipment H1008] 하나입니다.", "correct": 0, "secs": 0.3, "chars": 5049}
+{"id": "c023", "type": "연결수", "setting": "drop-0.5-s0", "cond": "full", "response": "2\n\nr0, r1", "correct": 1, "secs": 0.1, "chars": 5049}
+{"id": "c024", "type": "연결수", "setting": "drop-0.5-s0", "cond": "full", "response": "0\n\n장비 P4712에 직접 붙은 연결선(배관·신호선)은 없습니다. 장비 간 배관 연결에서 P4712는 \"없음\"으로 명시되어 있습니다.", "correct": 0, "secs": 0.5, "chars": 5049}
+{"id": "c025", "type": "연결수", "setting": "drop-0.5-s0", "cond": "full", "response": "2\n\nr21, r23, r28, r29", "correct": 0, "secs": 0.1, "chars": 5049}
+{"id": "c026", "type": "경로", "setting": "drop-0.5-s0", "cond": "full", "response": "0", "correct": 1, "secs": 0.0, "chars": 5078}
+{"id": "c027", "type": "경로", "setting": "drop-0.5-s0", "cond": "full", "response": "4\n\nn0 (symbol F.C.), n21 (equipment T4750), j0 (pt=(269.0,154.0)), n7 (symbol 73KH12-25), n9 (symbol 73KH12-50), j1 (pt=(281.0,154.0))", "correct": 1, "secs": 0.5, "chars": 5078}
+{"id": "c028", "type": "경로", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5078}
+{"id": "c029", "type": "경로", "setting": "drop-0.5-s0", "cond": "full", "response": "장비 H1008에서 장비 T4750까지 가장 짧은 연결 경로를 찾기 위해, 주어진 연결 정보를 분석해야 합니다.\n\n1. 장비 H1008은 n19에 해당합니다.\n2. 장비 T4750은 n21에 해당합니다.\n\n연결 정보를 살펴보면:\n- r18: j3 (323.5, 154.0)에서 n19 (H1008)로 연결됩니다", "correct": 0, "secs": 0.9, "chars": 5078}
+{"id": "c030", "type": "경로", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5078}
+{"id": "c031", "type": "라인경로", "setting": "drop-0.5-s0", "cond": "full", "response": "47121", "correct": 0, "secs": 0.0, "chars": 5082}
+{"id": "c032", "type": "라인경로", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5082}
+{"id": "c033", "type": "라인경로", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5082}
+{"id": "c034", "type": "라인경로", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5082}
+{"id": "c035", "type": "라인경로", "setting": "drop-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 5082}
+{"id": "c000", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "아니오. H1007과 H1008 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다.", "correct": 1, "secs": 0.9, "chars": 9826}
+{"id": "c001", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "예. \n\n- H1007 → P4711 경로: r0 (n28[symbol n28] → n26[equipment P4711]) 및 r1 (n26[equipment P4711] → n18[equipment H1007])를 통해 H1007에서 P4711로 직접 연결되어 있으며, 다른 장비를 거치지 않는다.", "correct": 1, "secs": 0.8, "chars": 9826}
+{"id": "c002", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다.", "correct": 1, "secs": 0.4, "chars": 9826}
+{"id": "c003", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "아니오. H1007과 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. \n\n- r21은 H1007에서 T4750로 직접 연결되어 있지만, 이는 장비를 지나지 않고 연결되는 것이 아니라 장비 간의 연결을 나타냅니다.\n- r23은 TICSA", "correct": 0, "secs": 1.0, "chars": 9826}
+{"id": "c004", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "아니오. H1008와 P4711 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다.", "correct": 1, "secs": 0.4, "chars": 9826}
+{"id": "c005", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "아니오. H1008와 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. \n\n- r30: n19[equipment H1008]에서 n12[symbol PV4712.02]로 연결되며, 이후 n12[symbol PV4712.02]에서 n19[equipment H1008]로 연결되는 경로가 있지만, 이는 H1008", "correct": 0, "secs": 0.9, "chars": 9826}
+{"id": "c006", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "아니오. H1008와 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. \n\n장비 간 배관 연결에 따르면, H1008와 T4750는 서로 연결되어 있지만, 이 연결은 다른 장비를 거치는 경로를 통해 이루어집니다. \n\n- r18: j3", "correct": 0, "secs": 0.9, "chars": 9826}
+{"id": "c007", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "아니오. P4711과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. \n\n- r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r28,", "correct": 1, "secs": 0.9, "chars": 9826}
+{"id": "c008", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "아니오. \n\nP4711와 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. \n\nP4711와 T4750 사이에는 다음과 같은 경로가 있습니다:\n- P4711 → H1007 → T4750\n- P4711 → T4750\n\n이 경로들은 모두 H1007이라는 장비를 거칩니다.", "correct": 1, "secs": 0.9, "chars": 9826}
+{"id": "c009", "type": "도달여부", "setting": "add-0.5-s0", "cond": "full", "response": "아니오. \n\nP4712와 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. \n\n- r23: n17[instrument TICSA 4750.03]에서 n21[equipment T4750]로 연결되어 있으나, n17은 장비가 아닙니다.\n- r25: n21[equipment T4750]에서 n4[symbol SV 104.", "correct": 0, "secs": 1.0, "chars": 9826}
+{"id": "c010", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "P4711", "correct": 1, "secs": 0.1, "chars": 9827}
+{"id": "c011", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "H1007", "correct": 0, "secs": 0.1, "chars": 9827}
+{"id": "c012", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "T4750, P4711, P4712", "correct": 0, "secs": 0.1, "chars": 9827}
+{"id": "c013", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "n1[symbol 66KL21-80], n2[symbol 75SA21-80]", "correct": 0, "secs": 0.2, "chars": 9827}
+{"id": "c014", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "n4[symbol SV 104.01], n21[equipment T4750]", "correct": 0, "secs": 0.2, "chars": 9827}
+{"id": "c015", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "H1008, P4712", "correct": 0, "secs": 0.1, "chars": 9827}
+{"id": "c016", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "T4750, H1008", "correct": 1, "secs": 0.1, "chars": 9827}
+{"id": "c017", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "H1007", "correct": 1, "secs": 0.1, "chars": 9827}
+{"id": "c018", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "H1007", "correct": 1, "secs": 0.1, "chars": 9827}
+{"id": "c019", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "H1008", "correct": 1, "secs": 0.1, "chars": 9827}
+{"id": "c020", "type": "라인도달", "setting": "add-0.5-s0", "cond": "full", "response": "TV4750.03, open@(353.0, 202.0)", "correct": 0, "secs": 0.2, "chars": 9827}
+{"id": "c021", "type": "연결수", "setting": "add-0.5-s0", "cond": "full", "response": "4\n\n(장비 H1007에 직접 붙은 연결선은 다음과 같습니다: r0, r1, r2, r3, r4)", "correct": 1, "secs": 0.4, "chars": 9797}
+{"id": "c022", "type": "연결수", "setting": "add-0.5-s0", "cond": "full", "response": "4\n\nr30 종류=pipe A=n12[symbol PV4712.02] B=n19[equipment H1008]  \nr31 종류=pipe A=n19[equipment H1008] B=open@(344.5, 202.0)  \nr32 종류=pipe A=n19[equipment H1008] B=n13[symbol TV4750.03]  \nr33 종류=signal A=open@(307.6, 83.7) B=open@(316.0, 83.7)  \nr34 종류=", "correct": 1, "secs": 0.9, "chars": 9797}
+{"id": "c023", "type": "연결수", "setting": "add-0.5-s0", "cond": "full", "response": "4\n\nr0, r1, r943, r945", "correct": 0, "secs": 0.1, "chars": 9797}
+{"id": "c024", "type": "연결수", "setting": "add-0.5-s0", "cond": "full", "response": "4\n\nr8, r9, r10, r11, r15, r20, r41, r42, r951, r952, r953, r955", "correct": 0, "secs": 0.3, "chars": 9797}
+{"id": "c025", "type": "연결수", "setting": "add-0.5-s0", "cond": "full", "response": "7\n\n(설명: 장비 T4750에 직접 붙은 연결선은 다음과 같습니다: r21, r23, r24, r25, r26, r28, r29)", "correct": 1, "secs": 0.5, "chars": 9797}
+{"id": "c026", "type": "경로", "setting": "add-0.5-s0", "cond": "full", "response": "2", "correct": 0, "secs": 0.0, "chars": 9826}
+{"id": "c027", "type": "경로", "setting": "add-0.5-s0", "cond": "full", "response": "4", "correct": 0, "secs": 0.0, "chars": 9826}
+{"id": "c028", "type": "경로", "setting": "add-0.5-s0", "cond": "full", "response": "3", "correct": 0, "secs": 0.0, "chars": 9826}
+{"id": "c029", "type": "경로", "setting": "add-0.5-s0", "cond": "full", "response": "3", "correct": 0, "secs": 0.0, "chars": 9826}
+{"id": "c030", "type": "경로", "setting": "add-0.5-s0", "cond": "full", "response": "4\n\nn27[equipment P4712] → n9[symbol 73KH12-50] → j3 → n19[equipment H1008] → n21[equipment T4750]", "correct": 1, "secs": 0.4, "chars": 9826}
+{"id": "c031", "type": "라인경로", "setting": "add-0.5-s0", "cond": "full", "response": "47121, 47122", "correct": 0, "secs": 0.1, "chars": 9830}
+{"id": "c032", "type": "라인경로", "setting": "add-0.5-s0", "cond": "full", "response": "47123, 47125, 47126, 47127", "correct": 0, "secs": 0.1, "chars": 9830}
+{"id": "c033", "type": "라인경로", "setting": "add-0.5-s0", "cond": "full", "response": "r30, r31, r32, r41, r42, r950, r951, r952, r953, r955, r956", "correct": 0, "secs": 0.3, "chars": 9830}
+{"id": "c034", "type": "라인경로", "setting": "add-0.5-s0", "cond": "full", "response": "47126, 47127, 47140, 47141", "correct": 0, "secs": 0.1, "chars": 9830}
+{"id": "c035", "type": "라인경로", "setting": "add-0.5-s0", "cond": "full", "response": "47125, 47126, 47127, 47140, 47141", "correct": 0, "secs": 0.2, "chars": 9830}
+{"id": "c000", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "아니오. 자료에 H1008 장비가 없으므로 H1007과 H1008 사이에 연결 경로를 확인할 수 없습니다.", "correct": 1, "secs": 1.3, "chars": 7375}
+{"id": "c001", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "예. \n\nH1007과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 r0과 r1로 구성되어 있습니다. \n\n- r0: n28[symbol n28]에서 n26[equipment P4711]로 이어지는 경로\n- r1: n26[equipment P4711]에서 n18[equipment H1007]로 이어지는 경로\n\n이 경로는 H1007과 P4711", "correct": 1, "secs": 0.9, "chars": 7375}
+{"id": "c002", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007과 P4712 사이에는 P4711이라는 장비가 위치하고 있어, H1007에서 P4711을 거쳐 P4712로 연결됩니다.", "correct": 1, "secs": 0.7, "chars": 7375}
+{"id": "c003", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "아니오. H1007과 T475D 사이에는 다른 장비를 거치지 않는 연결이 있지만, T475D와 T4750 사이에는 직접적인 연결이 없습니다. 따라서 H1007과 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다.", "correct": 0, "secs": 0.7, "chars": 7375}
+{"id": "c004", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "아니오. 자료에 H1008 장비가 없으므로 H1008과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 있는지 확인할 수 없다. 자료에 없음.", "correct": 0, "secs": 0.5, "chars": 7375}
+{"id": "c005", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "아니오. 자료에 H1008 장비가 없으므로 H1008과 P4712 사이에 연결 경로를 확인할 수 없습니다.", "correct": 0, "secs": 0.3, "chars": 7375}
+{"id": "c006", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "아니오. 자료에 H1008 장비가 포함되어 있지 않으며, H1008과 T4750 사이에 다른 장비를 거치지 않는 연결 경로가 없습니다.", "correct": 0, "secs": 0.4, "chars": 7375}
+{"id": "c007", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "아니오. \n\nP4711과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711과 P4712 사이에는 H1007 장비를 거치는 경로만 존재합니다.", "correct": 1, "secs": 0.5, "chars": 7375}
+{"id": "c008", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "아니오. 자료에 P4711와 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없다.", "correct": 1, "secs": 0.3, "chars": 7375}
+{"id": "c009", "type": "도달여부", "setting": "ocr-0.2-s0", "cond": "full", "response": "아니오. \n\nP4712와 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4712와 T4750 사이에는 T475D 장비가 위치하고 있어, P4712에서 T475D로, 그리고 T475D에서 T4750로 연결되어야 합니다. 따라서 P4712와 T4750 사이에는 T475D를 거치지 않고 연결할 수 없습니다.", "correct": 0, "secs": 0.9, "chars": 7375}
+{"id": "c010", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7376}
+{"id": "c011", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7376}
+{"id": "c012", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "T475D, P4711", "correct": 0, "secs": 0.1, "chars": 7376}
+{"id": "c013", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "n1[symbol 66KL21-80]", "correct": 0, "secs": 0.1, "chars": 7376}
+{"id": "c014", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "T475D, SV 104.01", "correct": 0, "secs": 0.1, "chars": 7376}
+{"id": "c015", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "H100, n11", "correct": 0, "secs": 0.1, "chars": 7376}
+{"id": "c016", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "n12[symbol PV4712.02]", "correct": 0, "secs": 0.1, "chars": 7376}
+{"id": "c017", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "n18[equipment H1007]", "correct": 1, "secs": 0.1, "chars": 7376}
+{"id": "c018", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "H1007", "correct": 1, "secs": 0.1, "chars": 7376}
+{"id": "c019", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "H100, TV4750.03", "correct": 0, "secs": 0.1, "chars": 7376}
+{"id": "c020", "type": "라인도달", "setting": "ocr-0.2-s0", "cond": "full", "response": "TV4750.03, T475D", "correct": 0, "secs": 0.1, "chars": 7376}
+{"id": "c021", "type": "연결수", "setting": "ocr-0.2-s0", "cond": "full", "response": "4\n\n(장비 H1007에 직접 붙은 연결선은 다음과 같습니다: r0, r1, r2, r3)", "correct": 1, "secs": 0.3, "chars": 7346}
+{"id": "c022", "type": "연결수", "setting": "ocr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7346}
+{"id": "c023", "type": "연결수", "setting": "ocr-0.2-s0", "cond": "full", "response": "2\n\nr0 종류=pipe A=n28[symbol n28] B=n26[equipment P4711]  \nr1 종류=pipe A=n26[equipment P4711] B=n18[equipment H1007]  \n\n장비 P4711에 직접 붙은 연결선은 두 개입니다.", "correct": 1, "secs": 0.6, "chars": 7346}
+{"id": "c024", "type": "연결수", "setting": "ocr-0.2-s0", "cond": "full", "response": "2\n\nr8 종류=pipe A=n3[symbol 73KH12-50] B=n27[equipment P4712] 경로=(233.0,154.0)→(245.8,154.0)\n\nr30 종류=pipe A=n12[symbol PV4712.02] B=n19[equipment H100] 경로=(323.5,100.0)→(323.5,126.5)\n\nr32 종류=signal A=open@(307.6, 82.3) B=open@(316.0", "correct": 1, "secs": 0.9, "chars": 7346}
+{"id": "c025", "type": "연결수", "setting": "ocr-0.2-s0", "cond": "full", "response": "2\n\n(장비 T4750에 직접 붙은 연결선은 TV4750.03(symbol)와 HS 4750.01(instrument)이다.)", "correct": 0, "secs": 0.3, "chars": 7346}
+{"id": "c026", "type": "경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "2\n\n(장비 H1007에서 장비 P4711까지 가장 짧은 연결 경로는 r0과 r1로 구성되어 있으며, 이 경로에서 지나는 중간 요소는 symbol n28과 equipment P4711입니다.)", "correct": 1, "secs": 0.5, "chars": 7375}
+{"id": "c027", "type": "경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "장비 H1007에서 장비 T4750까지 가장 짧은 연결 경로를 찾기 위해, 장비 간의 연결 관계를 분석합니다.\n\n1. H1007에서 T475D로 연결되어 있습니다 (r21).\n2. T475D에서 다음으로 연결되는 장비는 P4712 (r26)와 SV 104.01 (r25), 그리고 66KL21-80 (r24)입니다.\n3.", "correct": 0, "secs": 0.9, "chars": 7375}
+{"id": "c028", "type": "경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7375}
+{"id": "c029", "type": "경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7375}
+{"id": "c030", "type": "경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "4\n\nn27[equipment P4712] → j4 → n19[equipment H100] → n13[symbol TV4750.03] → open@(353.0, 202.0) \n\n장비 P4712에서 장비 T4750까지 가장 짧은 연결 경로에서 지나는 중간 요소는 4개입니다: j4, n19, n13, open@(353.0, 202.0).", "correct": 0, "secs": 0.8, "chars": 7375}
+{"id": "c031", "type": "라인경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "MN 4712 75HB13 80", "correct": 0, "secs": 0.1, "chars": 7379}
+{"id": "c032", "type": "라인경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7379}
+{"id": "c033", "type": "라인경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7379}
+{"id": "c034", "type": "라인경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7379}
+{"id": "c035", "type": "라인경로", "setting": "ocr-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7379}
+{"id": "c000", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "아니오. 자료에 H1008 장비가 없으므로 H1007과 H1008 사이에 다른 장비를 거치지 않는 연결 경로가 있는지 확인할 수 없다.", "correct": 1, "secs": 1.3, "chars": 7216}
+{"id": "c001", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "예. \n\n장비 H1007과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 r0과 r1로 구성되어 있습니다. \n\n- r0: n28[symbol n28]에서 n26[equipment P4711]로 이동합니다.\n- r1: n26[equipment P4711]에서 n18[equipment H1007]로 이동합니다.\n\n이 경로는 H1007과 P4711 사이에 다", "correct": 1, "secs": 0.9, "chars": 7216}
+{"id": "c002", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007과 P4712 사이에는 T475 장비가 위치하고 있어, H1007에서 P4712로 가는 경로는 T475를 거쳐야 합니다.", "correct": 1, "secs": 0.6, "chars": 7216}
+{"id": "c003", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "아니오. H1007과 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007과 T4750 사이에는 T475가 중간에 위치하고 있어, H1007에서 T475로, 그리고 T475에서 T4750로 연결되는 경로가 있습니다.", "correct": 0, "secs": 0.6, "chars": 7216}
+{"id": "c004", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "아니오\n\n자료에 H1008 장비에 대한 정보가 없습니다. 따라서 H1008과 P4711 사이에 다른 장비를 거치지 않는 연결 경로를 확인할 수 없습니다.", "correct": 1, "secs": 0.4, "chars": 7216}
+{"id": "c005", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "아니오. 자료에 H1008 장비가 없으므로 H1008과 P4712 사이에 다른 장비를 거치지 않는 연결 경로가 있는지 확인할 수 없습니다. 자료에 H1008 장비가 포함되어 있지 않습니다.", "correct": 0, "secs": 0.5, "chars": 7216}
+{"id": "c006", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7216}
+{"id": "c007", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "아니오. P4711과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없다. P4711은 H1007과 연결되고, P4712는 H100|8과 연결되며, T475와도 연결되어 있지만, P4711과 P4712 사이에는 직접적인 연결이 없다.", "correct": 1, "secs": 0.7, "chars": 7216}
+{"id": "c008", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "아니오. P4711과 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711은 H1007과 연결되고, T4750은 H1007과 P4712와 연결되어 있습니다. 따라서 P4711과 T4750 사이에는 H1007 또는 P4712를 거쳐야 합니다.", "correct": 1, "secs": 0.7, "chars": 7216}
+{"id": "c009", "type": "도달여부", "setting": "ocr-0.5-s0", "cond": "full", "response": "아니오. P4712와 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4712와 T4750 사이에는 P4712에서 T475로 연결되는 경로(r23)가 있지만, 이는 T475를 거치는 경로입니다. 따라서 P4712와 T4750 사이에는 다른 장비를 거치지 않는 직접적인 연결 경로가 없습니다.", "correct": 0, "secs": 0.9, "chars": 7216}
+{"id": "c010", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 0.1, "chars": 7217}
+{"id": "c011", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "H1007, P4711", "correct": 1, "secs": 0.1, "chars": 7217}
+{"id": "c012", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "n18[equipment H1007]", "correct": 0, "secs": 0.1, "chars": 7217}
+{"id": "c013", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "n1[symbol 66KL21-80]", "correct": 0, "secs": 0.1, "chars": 7217}
+{"id": "c014", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "SV 104.01", "correct": 0, "secs": 0.1, "chars": 7217}
+{"id": "c015", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7217}
+{"id": "c016", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7217}
+{"id": "c017", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "H1007", "correct": 1, "secs": 0.0, "chars": 7217}
+{"id": "c018", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7217}
+{"id": "c019", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "H100|8", "correct": 0, "secs": 0.1, "chars": 7217}
+{"id": "c020", "type": "라인도달", "setting": "ocr-0.5-s0", "cond": "full", "response": "TV4750.0, T475", "correct": 0, "secs": 0.1, "chars": 7217}
+{"id": "c021", "type": "연결수", "setting": "ocr-0.5-s0", "cond": "full", "response": "2\n\n(장비 H1007에 직접 붙은 연결선은 r0, r1, r2, r3, r4이며, r2와 r3은 신호선이므로, 배관선은 r0과 r1, 신호선은 r2와 r3이다.)", "correct": 1, "secs": 0.6, "chars": 7187}
+{"id": "c022", "type": "연결수", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7187}
+{"id": "c023", "type": "연결수", "setting": "ocr-0.5-s0", "cond": "full", "response": "2\n\n설명: 장비 P4711(n26)에 직접 붙은 연결선은 r0과 r1이다. r0은 P4711에서 H1007로, r1은 H1007에서 P4711로 연결된다.", "correct": 1, "secs": 0.5, "chars": 7187}
+{"id": "c024", "type": "연결수", "setting": "ocr-0.5-s0", "cond": "full", "response": "2\n\nr15 종류=pipe A=j1 B=n8[symbol 73KH12-2]  \nr41 종류=pipe A=n55[symbol n55] B=n8[symbol 73KH12-2]  \n\n장비 P4712에 직접 붙은 연결선은 두 개입니다.", "correct": 1, "secs": 0.5, "chars": 7187}
+{"id": "c025", "type": "연결수", "setting": "ocr-0.5-s0", "cond": "full", "response": "2\n\nr25, r26, r28, r29, r31, r32, r35", "correct": 0, "secs": 0.2, "chars": 7187}
+{"id": "c026", "type": "경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "2\n\n(장비 H1007에서 장비 P4711까지 가장 짧은 연결 경로는 r0과 r1을 따라가며, 중간에 지나는 요소는 n28[symbol n28]와 n26[equipment P4711]이다.)", "correct": 1, "secs": 0.5, "chars": 7216}
+{"id": "c027", "type": "경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "장비 H1007에서 장비 T4750까지 가장 짧은 연결 경로를 찾기 위해, 장비 간의 연결 관계를 분석합니다.\n\n1. **H1007에서 T475로의 경로:**\n   - H1007 → T475 (r21)\n\n2. **T475에서 T4750로의 경로:**\n   - T475 → n13[TV4750.0] (r32)\n   - n13[TV4750.0]", "correct": 0, "secs": 0.9, "chars": 7216}
+{"id": "c028", "type": "경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7216}
+{"id": "c029", "type": "경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7216}
+{"id": "c030", "type": "경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "4\n\nn27[equipment P4712] → j1 → n9[symbol |73KH12-50] → j3 → n19[equipment H100|8] → n13[symbol TV4750.0]\n\n- n27: P4712\n- j1: 분기점\n- n9: 기호\n- j3: 분기점\n- n19: H100|8\n- n13: TV4750.0\n\n총 4개의 중간 요소(밸브·", "correct": 1, "secs": 0.9, "chars": 7216}
+{"id": "c031", "type": "라인경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "47122", "correct": 1, "secs": 0.0, "chars": 7220}
+{"id": "c032", "type": "라인경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7220}
+{"id": "c033", "type": "라인경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7220}
+{"id": "c034", "type": "라인경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 7220}
+{"id": "c035", "type": "라인경로", "setting": "ocr-0.5-s0", "cond": "full", "response": "47122, 47130, 47131, 47123, 4712, 4712I7, 800, N8\n\n참고: 표에 나열된 장비 T4750은 실제로 T475로 표기되어 있으며, 이는 질문에서 언급된 T4750과 동일한 장비로 간주됩니다.", "correct": 0, "secs": 0.7, "chars": 7220}
+{"id": "c000", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "아니오. H1007 장비는 자료에 없으므로 H1007과 H1008 사이에 연결 경로를 확인할 수 없습니다. 자료에는 H100과 H1008만 언급되어 있습니다.", "correct": 0, "secs": 1.3, "chars": 6384}
+{"id": "c001", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6384}
+{"id": "c002", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "아니오. 자료에 H1007 장비가 없으며, H100과 P4712 사이에 다른 장비를 거치지 않는 연결 경로가 없습니다.", "correct": 1, "secs": 0.4, "chars": 6384}
+{"id": "c003", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "아니오. H1007 장비는 자료에 없으므로 H1007과 T4750 사이에 연결 경로를 확인할 수 없습니다. 자료에는 H100과 T4750 사이의 연결만 기재되어 있습니다.", "correct": 0, "secs": 0.5, "chars": 6384}
+{"id": "c004", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "아니오.", "correct": 1, "secs": 0.1, "chars": 6384}
+{"id": "c005", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "아니오.", "correct": 0, "secs": 0.1, "chars": 6384}
+{"id": "c006", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "아니오. H1008과 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없다.", "correct": 0, "secs": 0.4, "chars": 6384}
+{"id": "c007", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "아니오. 자료에 P4711과 P4712 사이에 다른 장비를 거치지 않는 연결 경로가 없음.", "correct": 1, "secs": 0.3, "chars": 6384}
+{"id": "c008", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "아니오.", "correct": 1, "secs": 0.1, "chars": 6384}
+{"id": "c009", "type": "도달여부", "setting": "mix-0.2-s0", "cond": "full", "response": "아니오. P4712와 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없다. P4712와 T4750 사이에는 P471I2 장비가 위치하고 있어, P4712와 T4750 사이에는 P471I2를 거쳐야 한다.", "correct": 0, "secs": 0.6, "chars": 6384}
+{"id": "c010", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "P4|711, H100", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c011", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "H100, F.C.", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c012", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "n0, n21", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c013", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "n1[symbol 66KL21-80], n0[symbol F.C.]", "correct": 0, "secs": 0.2, "chars": 6385}
+{"id": "c014", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "n4[symbol SV 104.01]", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c015", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c016", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c017", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "n18[equipment H100]", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c018", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c019", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c020", "type": "라인도달", "setting": "mix-0.2-s0", "cond": "full", "response": "TV4750.03", "correct": 0, "secs": 0.1, "chars": 6385}
+{"id": "c021", "type": "연결수", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6355}
+{"id": "c022", "type": "연결수", "setting": "mix-0.2-s0", "cond": "full", "response": "1\n\n(장비 H1008에 직접 붙은 연결선은 r18 하나입니다.)", "correct": 0, "secs": 0.3, "chars": 6355}
+{"id": "c023", "type": "연결수", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6355}
+{"id": "c024", "type": "연결수", "setting": "mix-0.2-s0", "cond": "full", "response": "2", "correct": 1, "secs": 0.0, "chars": 6355}
+{"id": "c025", "type": "연결수", "setting": "mix-0.2-s0", "cond": "full", "response": "4\n\nr21, r22, r23, r28, r29", "correct": 0, "secs": 0.1, "chars": 6355}
+{"id": "c026", "type": "경로", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6384}
+{"id": "c027", "type": "경로", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6384}
+{"id": "c028", "type": "경로", "setting": "mix-0.2-s0", "cond": "full", "response": "3", "correct": 0, "secs": 0.0, "chars": 6384}
+{"id": "c029", "type": "경로", "setting": "mix-0.2-s0", "cond": "full", "response": "2", "correct": 0, "secs": 0.0, "chars": 6384}
+{"id": "c030", "type": "경로", "setting": "mix-0.2-s0", "cond": "full", "response": "3", "correct": 1, "secs": 0.0, "chars": 6384}
+{"id": "c031", "type": "라인경로", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6388}
+{"id": "c032", "type": "라인경로", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6388}
+{"id": "c033", "type": "라인경로", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6388}
+{"id": "c034", "type": "라인경로", "setting": "mix-0.2-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 6388}
+{"id": "c035", "type": "라인경로", "setting": "mix-0.2-s0", "cond": "full", "response": "47123", "correct": 0, "secs": 0.0, "chars": 6388}
+{"id": "c000", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오\n\n장비 H1007에 대한 정보가 자료에 없습니다. 자료에는 H1008만 언급되어 있으며, H1008와 다른 장비를 거치지 않는 연결 경로가 없다고 명시되어 있습니다. 따라서 H1007과 H1008 사이에 다른 장비를 거치지 않는 연결 경로가 있는지 확인할 수 없습니다.", "correct": 0, "secs": 1.5, "chars": 4931}
+{"id": "c001", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오\n\n장비 H1007과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 없습니다. 자료에는 H1007에 대한 정보가 없으며, P4711과의 직접적인 연결도 기재되어 있지 않습니다.", "correct": 0, "secs": 0.6, "chars": 4931}
+{"id": "c002", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오\n\n장비 H1007과 P4712 사이에 다른 장비를 거치지 않는 연결 경로가 없습니다. 자료에는 H1007에 대한 정보가 없으며, P4712와 연결된 경로도 명시되어 있지 않습니다.", "correct": 1, "secs": 0.6, "chars": 4931}
+{"id": "c003", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오\n\n장비 H1007은 표에 나와 있지만, 자료에는 H1007에 대한 정보가 없습니다. 따라서 H1007과 T4750 사이의 연결 경로를 확인할 수 없습니다. 자료에는 H1007과 T4750 사이에 다른 장비를 거치지 않는 연결 경로가 없습니다.", "correct": 0, "secs": 0.7, "chars": 4931}
+{"id": "c004", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오\n\n장비 H1008과 P4711 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 없습니다. 장비 간 배관 연결에 따르면 H1008과 P4711은 연결되어 있지 않습니다.", "correct": 1, "secs": 0.6, "chars": 4931}
+{"id": "c005", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오. \n\nH1008과 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. \n\nH1008은 장비 H1008에 연결되어 있고, P4712는 장비 P4712에 연결되어 있지만, 두 장비 사이에 직접적인 연결 경로는 자료에 없습니다.", "correct": 0, "secs": 0.9, "chars": 4931}
+{"id": "c006", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오\n\n장비 H1008과 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. H1008과 T4750 사이에는 장비 간 배관 연결이 없으며, 직접적인 경로도 제공되지 않습니다.", "correct": 0, "secs": 0.7, "chars": 4931}
+{"id": "c007", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오. 자료에 P4711과 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 없음.", "correct": 1, "secs": 0.4, "chars": 4931}
+{"id": "c008", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오. 자료에 따르면 P4711과 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711은 장비 목록에 포함되어 있지만, 장비 간 배관 연결에서 P4711과 다른 장비를 연결하는 경로는 명시되어 있지 않습니다. T4750은 장비 간 배관 연결에서 다른 장비를 연", "correct": 1, "secs": 0.9, "chars": 4931}
+{"id": "c009", "type": "도달여부", "setting": "mix-0.5-s0", "cond": "full", "response": "아니오. 자료에 따르면 P4712와 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4712와 T4750 사이에는 직접적인 연결이 없으며, 장비 간 배관 연결에서도 P4712와 T4750 사이에 연결이 없습니다.", "correct": 0, "secs": 0.7, "chars": 4931}
+{"id": "c010", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "F4711, H10D7", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c011", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "F4711, H10D7", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c012", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "n21[equipment T4750]", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c013", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c014", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c015", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c016", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c017", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c018", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c019", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c020", "type": "라인도달", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4932}
+{"id": "c021", "type": "연결수", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4902}
+{"id": "c022", "type": "연결수", "setting": "mix-0.5-s0", "cond": "full", "response": "1\n\n(장비 H1008에 직접 붙은 연결선은 r18 하나입니다.)", "correct": 0, "secs": 0.2, "chars": 4902}
+{"id": "c023", "type": "연결수", "setting": "mix-0.5-s0", "cond": "full", "response": "0\n\n장비 P4711에 대한 직접적인 연결선(배관·신호선)은 자료에 없음.", "correct": 0, "secs": 0.3, "chars": 4902}
+{"id": "c024", "type": "연결수", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4902}
+{"id": "c025", "type": "연결수", "setting": "mix-0.5-s0", "cond": "full", "response": "3\n\nr21, r23, r28, r29", "correct": 0, "secs": 0.1, "chars": 4902}
+{"id": "c026", "type": "경로", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4931}
+{"id": "c027", "type": "경로", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4931}
+{"id": "c028", "type": "경로", "setting": "mix-0.5-s0", "cond": "full", "response": "장비 H1008에서 장비 P4712까지 가장 짧은 연결 경로를 찾기 위해, 주어진 자료에서 관련된 연결을 분석해야 합니다.\n\n1. 장비 H1008은 n19에 해당합니다.\n2. 장비 P4712는 n1에 해당합니다.\n\n주어진 연결 정보를 통해 경로를 찾아봅시다:\n\n- n19 (H1008)는 r18에서 j3로", "correct": 0, "secs": 0.9, "chars": 4931}
+{"id": "c029", "type": "경로", "setting": "mix-0.5-s0", "cond": "full", "response": "3\n\nn19 (장비 H1008), j3 (분기점), n21 (장비 T4750)", "correct": 0, "secs": 0.2, "chars": 4931}
+{"id": "c030", "type": "경로", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4931}
+{"id": "c031", "type": "라인경로", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4935}
+{"id": "c032", "type": "라인경로", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4935}
+{"id": "c033", "type": "라인경로", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4935}
+{"id": "c034", "type": "라인경로", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4935}
+{"id": "c035", "type": "라인경로", "setting": "mix-0.5-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 4935}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오. H1007과 H1008 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007은 T4750와 P4711과 연결되어 있고, H1008은 T4750와 P4712와 연결되어 있습니다. H1007과 H1008은 T4750를 통해 간접적으로 연결되어 있지만, 직접적인 연결 경로는 없습니다.", "correct": 1, "secs": 1.8, "chars": 7515}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "예. \n\nH1007과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 r0과 r1로 구성되어 있습니다. \n\n- r0: n28[symbol n28]에서 n26[equipment P4711]로 연결됩니다.\n- r1: n26[equipment P4711]에서 n18[equipment H1007]로 연결됩니다.\n\n이 경로는 H1007과 P4711 사이에 다", "correct": 1, "secs": 0.9, "chars": 7515}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007과 P4712 사이에는 T4750 장비를 거치는 경로만 존재합니다.", "correct": 1, "secs": 0.5, "chars": 7515}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "예. \n\nH1007과 T4750 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 r21로, H1007에서 T4750로 직접 연결되어 있습니다. 경로는 (160.0,117.0)→(160.0,61.0)→(181.0,61.0)→(181.0,76.6)로 표시됩니다.", "correct": 1, "secs": 0.9, "chars": 7515}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오.", "correct": 1, "secs": 0.1, "chars": 7515}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "예. \n\n연결 경로: r30 (n19[equipment H1008] B=n12[symbol PV4712.02]) 및 r26 (n12[symbol PV4712.02] B=n27[equipment P4712])를 통해 H1008과 P4712 사이에 다른 장비를 거치지 않는 경로가 존재합니다.", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "예. \n\n연결 경로: r30 (n19[equipment H1008] B=open@(344.5, 202.0) 흐름=B→A 라벨=QSa 47140 75HB13 50 Q 80 경로=(344.5,133.5)→(344.5,202.0))", "correct": 1, "secs": 0.6, "chars": 7515}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오. P4711과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711과 P4712 사이에는 H1007 장비를 거치는 경로만 존재합니다.", "correct": 1, "secs": 0.5, "chars": 7515}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오. \n\nP4711와 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711는 H1007와 연결되고, T4750는 H1007와 연결되어 있습니다. 따라서 P4711와 T4750 사이에는 H1007를 거쳐야 합니다.", "correct": 1, "secs": 0.7, "chars": 7515}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.2-s0", "cond": "full", "response": "아니오. \n\nP4712와 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. r23은 P4712와 T4750 사이의 직접적인 연결이지만, 이는 장비 간의 연결이 아닌 배관 연결입니다. 장비 간의 연결은 r26과 r30으로, 각각 다른 장비를 거칩니다.", "correct": 0, "secs": 0.9, "chars": 7515}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "H1007, P4711", "correct": 0, "secs": 0.1, "chars": 7516}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "n18[equipment H1007], n26[equipment P4711]", "correct": 1, "secs": 0.2, "chars": 7516}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "T4750, P4711", "correct": 0, "secs": 0.1, "chars": 7516}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "n1[symbol 66KL21-80]", "correct": 0, "secs": 0.1, "chars": 7516}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "T4750, H1008", "correct": 0, "secs": 0.1, "chars": 7516}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "T4750, H1008", "correct": 0, "secs": 0.1, "chars": 7516}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "T4750, H1008", "correct": 1, "secs": 0.1, "chars": 7516}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "n18[equipment H1007]", "correct": 1, "secs": 0.1, "chars": 7516}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "n18[equipment H1007]", "correct": 1, "secs": 0.1, "chars": 7516}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "H1008", "correct": 1, "secs": 0.1, "chars": 7516}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.2-s0", "cond": "full", "response": "TV4750.03, H1008, TV4750.03", "correct": 0, "secs": 0.1, "chars": 7516}
+{"id": "c021", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "4\n\n(설명: 장비 H1007에 직접 붙은 연결선은 다음과 같습니다: r0, r1, r2, r3, r4. 이 중 r2와 r3은 신호선이므로, 배관선은 r0과 r1, 신호선은 r2와 r3이므로 총 4개입니다.)", "correct": 1, "secs": 0.8, "chars": 7486}
+{"id": "c022", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "2\n\nr30 종류=pipe A=n19[equipment H1008] B=open@(344.5, 202.0) 흐름=B→A 라벨=QSa 47140 75HB13 50 Q 80 경로=(344.5,133.5)→(344.5,202.0)\n\nr31 종류=pipe A=n19[equipment H1008] B=n13[symbol TV4750.03] 경로=(328.0,126.5)→(328.0,113", "correct": 0, "secs": 0.9, "chars": 7486}
+{"id": "c023", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "2\n\n설명: 장비 P4711(n26)에 직접 붙은 연결선은 다음과 같습니다.\n- r0: P4711(n26)에서 H1007(n18)로 연결된 배관선\n- r36: P4712.01(n14)에서 n55로 연결된 신호선 (P4711(n26)과 연결되어 있음)\n\n따라서 총 2개의 연결선이 직접", "correct": 1, "secs": 0.9, "chars": 7486}
+{"id": "c024", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "3\n\nr8 종류=pipe A=n3[symbol 73KH12-50] B=n27[equipment P4712] 경로=(233.0,154.0)→(245.8,154.0)\n\nr9 종류=pipe A=n27[equipment P4712] B=j2 경로=(256.2,154.0)→(265.0,154.0)\n\nr36 종류=signal A=n14[instrument PI 4712.01] B=n55[symbol n55] 경로=(281.", "correct": 1, "secs": 0.9, "chars": 7486}
+{"id": "c025", "type": "연결수", "setting": "attr-0.2-s0", "cond": "full", "response": "7\n\nr23, r24, r25, r26, r28, r29, r32, r35 (배관선 6개, 신호선 2개 중 T4750에 직접 붙은 것은 7개)", "correct": 1, "secs": 0.5, "chars": 7486}
+{"id": "c026", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "2\n\n(장비 H1007에서 장비 P4711까지 가장 짧은 연결 경로는 r1로, 지나는 중간 요소는 n18[equipment H1007]와 n26[equipment P4711]이다. 따라서 지나는 중간 요소는 2개이다.)", "correct": 0, "secs": 0.6, "chars": 7515}
+{"id": "c027", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "4\n\nn18[equipment H1007], n0[symbol F.C.], n21[equipment T4750], j0[분기점]", "correct": 0, "secs": 0.3, "chars": 7515}
+{"id": "c028", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "3\n\nn19[equipment H1008] → n30 → n12[symbol PV4712.02] → n27[equipment P4712]\n\n- n19 (H1008)\n- n30 (분기점 j4)\n- n12 (PV4712.02)\n- n27 (P4712)\n\n중간 요소: n30, n12 (2개)", "correct": 0, "secs": 0.7, "chars": 7515}
+{"id": "c029", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "3\n\nn19[equipment H1008] → n30[j4] → n11[symbol n11] → n21[equipment T4750]", "correct": 0, "secs": 0.3, "chars": 7515}
+{"id": "c030", "type": "경로", "setting": "attr-0.2-s0", "cond": "full", "response": "3\n\nn27[equipment P4712], j2, j3", "correct": 1, "secs": 0.1, "chars": 7515}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "47121", "correct": 0, "secs": 0.0, "chars": 7519}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "47123", "correct": 1, "secs": 0.0, "chars": 7519}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "r30, r31, r32", "correct": 0, "secs": 0.1, "chars": 7519}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "47126, 47140, 47141, 47130, 47131, 47140, 47141", "correct": 0, "secs": 0.2, "chars": 7519}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.2-s0", "cond": "full", "response": "47126, 47127, 47140, 47141", "correct": 0, "secs": 0.1, "chars": 7519}
+{"id": "c000", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오. \n\nH1007과 H1008 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007과 H1008 사이의 경로는 다음과 같습니다:\n\n- H1007 → T4750 → H1008\n\n이 경로는 T4750 장비를 거칩니다. 따라서 H1007과 H1008 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다.", "correct": 1, "secs": 1.8, "chars": 7411}
+{"id": "c001", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예. \n\nH1007과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 r0과 r1로 구성되어 있습니다. \n\n- r0: n28[symbol n28]에서 n26[equipment P4711]로 연결됩니다.\n- r1: n26[equipment P4711]에서 n18[equipment H1007]로 연결됩니다.\n\n이 경로는 H1007과 P4711 사이에 다", "correct": 1, "secs": 0.9, "chars": 7411}
+{"id": "c002", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007과 P4712 사이에는 T4750 장비를 거치는 경로만 존재합니다.", "correct": 1, "secs": 0.5, "chars": 7411}
+{"id": "c003", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예. \n\nH1007과 T4750 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 r21에 기술되어 있으며, H1007에서 T4750로 직접 연결되는 파이프라인입니다. 경로는 다음과 같습니다: \n\n- r21: H1007 (n18) → T4750 (n21) 경로는 (160.0,117.0)→(160", "correct": 1, "secs": 0.9, "chars": 7411}
+{"id": "c004", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오. \n\n자료에 따르면, H1008과 P4711 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. H1007은 H1008과 P4711을 연결하는 유일한 장비로, H1008과 P4711 사이에 직접적인 연결이 없습니다.", "correct": 1, "secs": 0.7, "chars": 7411}
+{"id": "c005", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예. \n\n연결 r20: A=n20[symbol n20] B=n10[symbol 73KH12-25] 경로=(341.0,127.4)→(365.0,150.0)은 H1008과 P4712 사이에 다른 장비를 거치지 않는 경로를 제공합니다. \n\n연결 r20은 H1008(equipment n19)에서 시작하여 n10(symbol 73KH12-25)로 이어지며, 이는 P", "correct": 1, "secs": 0.9, "chars": 7411}
+{"id": "c006", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예. \n\n연결 r30: n19[equipment H1008] B=open@(344.5, 202.0) 흐름=B→A 라벨=QSa 47140 75HB13 50 Q 80 경로=(344.5,133.5)→(344.5,202.0)는 H1008과 T4750 사이에 다른 장비를 거치지 않는 경로를 제공합니다. \n\n연결 r31: n19[equipment H100", "correct": 1, "secs": 0.9, "chars": 7411}
+{"id": "c007", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오. \n\nP4711과 P4712 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711과 P4712 사이에는 H1007과 H1008 장비가 위치하고 있어, 이들을 거치지 않고 직접 연결되는 경로는 없습니다.", "correct": 1, "secs": 0.6, "chars": 7411}
+{"id": "c008", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "아니오. \n\nP4711과 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다. P4711은 H1007을 거쳐 T4750에 연결되며, 직접적인 경로는 없습니다.", "correct": 1, "secs": 0.5, "chars": 7411}
+{"id": "c009", "type": "도달여부", "setting": "attr-0.5-s0", "cond": "full", "response": "예. \n\n연결 r19는 장비 P4712 (n10[symbol 73KH12-25])에서 장비 T4750 (n11[symbol n11])로 직접 연결되는 경로를 제공합니다. 이 경로는 다른 장비를 거치지 않습니다.", "correct": 1, "secs": 0.6, "chars": 7411}
+{"id": "c010", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "P4711, H1007", "correct": 0, "secs": 0.1, "chars": 7412}
+{"id": "c011", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "H1007, P4711", "correct": 1, "secs": 0.1, "chars": 7412}
+{"id": "c012", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "T4750, F.C.", "correct": 0, "secs": 0.1, "chars": 7412}
+{"id": "c013", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "n1[symbol 66KL21-80], n32[symbol 75SA21-80], n3[symbol n3], n27[equipment P4712]", "correct": 0, "secs": 0.3, "chars": 7412}
+{"id": "c014", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "T4750, H1008", "correct": 0, "secs": 0.1, "chars": 7412}
+{"id": "c015", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "n27[equipment P4712], n19[equipment H1008]", "correct": 0, "secs": 0.1, "chars": 7412}
+{"id": "c016", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "n12[symbol n12], n19[equipment H1008]", "correct": 0, "secs": 0.1, "chars": 7412}
+{"id": "c017", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "n18[equipment H1007]", "correct": 1, "secs": 0.1, "chars": 7412}
+{"id": "c018", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "H1007", "correct": 1, "secs": 0.0, "chars": 7412}
+{"id": "c019", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "H1008", "correct": 1, "secs": 0.0, "chars": 7412}
+{"id": "c020", "type": "라인도달", "setting": "attr-0.5-s0", "cond": "full", "response": "T4750, H1008", "correct": 0, "secs": 0.1, "chars": 7412}
+{"id": "c021", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "4\n\n(설명: 장비 H1007에 직접 붙은 연결선은 다음과 같습니다: r0, r1, r2, r3, r4. 이 중 r0, r1, r2, r3은 배관선이고, r4는 신호선입니다.)", "correct": 1, "secs": 0.6, "chars": 7382}
+{"id": "c022", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "4\n\nr18 종류=pipe A=j3 B=n19[equipment H1008]  \nr30 종류=pipe A=n12[symbol n12] B=n19[equipment H1008]  \nr31 종류=pipe A=n19[equipment H1008] B=open@(344.5, 202.0)  \nr32 종류=pipe A=n19[equipment H1008] B=n13[symbol n13]  \nr36 종류=signal A=open@(307.6, 83.7) B=open@(316.", "correct": 1, "secs": 0.9, "chars": 7382}
+{"id": "c023", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "2\n\n설명: 장비 P4711에 직접 붙은 연결선은 다음과 같습니다.\n- r0: P4711에서 n28(symbol n28)로 연결된 pipe\n- r1: P4711에서 H1007(equipment H1007)로 연결된 pipe\n\n따라서 총 2개의 연결선이 직접 붙어 있습니다.", "correct": 1, "secs": 0.7, "chars": 7382}
+{"id": "c024", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "3\n\nr8 종류=pipe A=n3[symbol n3] B=n27[equipment P4712] 경로=(233.0,154.0)→(245.8,154.0)\n\nr19 종류=pipe A=j4 B=n11[symbol n11] 흐름=A→B 경로=(365.0,154.0)→(378.0,154.0)\n\nr20 종류=pipe A=j4 B=n10[symbol 73KH12-25] 경로=(365.0,154", "correct": 0, "secs": 0.9, "chars": 7382}
+{"id": "c025", "type": "연결수", "setting": "attr-0.5-s0", "cond": "full", "response": "7\n\nr23, r24, r25, r26, r28, r29, r31, r35", "correct": 1, "secs": 0.2, "chars": 7382}
+{"id": "c026", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "2\n\n(장비 H1007에서 장비 P4711까지 가장 짧은 연결 경로는 r1로, 지나는 중간 요소는 n18[equipment H1007]와 n26[equipment P4711]이다. 따라서 지나는 중간 요소는 2개이다.)", "correct": 0, "secs": 0.6, "chars": 7411}
+{"id": "c027", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "3\n\n(장비 H1007에서 장비 T4750까지 가장 짧은 연결 경로는 다음과 같습니다: H1007 → n0[symbol F.C.] → n21[equipment T4750]. 이 경로에서 지나는 중간 요소는 n0[symbol F.C.] 하나입니다. 따라서, 지나는 중간 요소의 개수는 1개입니다. 그러나, 질문은 \"지나는 중간 요소\"를 묻고", "correct": 1, "secs": 0.9, "chars": 7411}
+{"id": "c028", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "3\n\n(장비 H1008에서 장비 P4712까지 가장 짧은 연결 경로는 다음과 같습니다: H1008 → j3 → j4 → n10 → n20 → n27 → P4712. 이 경로에서 지나는 중간 요소는 j3, j4, n10, n20, n27 총 5개입니다. 그러나 질문은 장비 간의 연결 경로에서 지나는 중간 요소를 묻", "correct": 1, "secs": 0.9, "chars": 7411}
+{"id": "c029", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "3\n\n(장비 H1008에서 장비 T4750까지 가장 짧은 연결 경로는 다음과 같습니다: H1008 → n19 → n12 → n21. 여기서 n19, n12, n21은 각각 중간 요소입니다.)", "correct": 0, "secs": 0.5, "chars": 7411}
+{"id": "c030", "type": "경로", "setting": "attr-0.5-s0", "cond": "full", "response": "3\n\n(장비 P4712에서 장비 T4750까지 가장 짧은 연결 경로는 다음과 같습니다: P4712 → j4 → j3 → n21[T4750]. 이 경로에서 지나는 중간 요소는 j4, j3, n21입니다.)", "correct": 1, "secs": 0.5, "chars": 7411}
+{"id": "c031", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "47121", "correct": 0, "secs": 0.0, "chars": 7415}
+{"id": "c032", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "47123", "correct": 1, "secs": 0.0, "chars": 7415}
+{"id": "c033", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "r20, r19, r18, r30, r31, r32", "correct": 0, "secs": 0.1, "chars": 7415}
+{"id": "c034", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "47140, 47141", "correct": 0, "secs": 0.1, "chars": 7415}
+{"id": "c035", "type": "라인경로", "setting": "attr-0.5-s0", "cond": "full", "response": "47126, 47127, 47140, 47141", "correct": 0, "secs": 0.1, "chars": 7415}
+{"id": "c000", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 1.3, "chars": 11048}
+{"id": "c001", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "예. 장비 H1007과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 있습니다. 이 경로는 다음과 같습니다:\n\n- r50: n2[equipment H1007]에서 n1[equipment P4711]로의 경로는 (136.3,154.1)→(84.9,154.1)입니다.\n- r70: n45[symbol n45]에서 n1[equipment P4711]로의 경로는 (37", "correct": 1, "secs": 1.0, "chars": 11048}
+{"id": "c002", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. H1007과 P4712 사이의 연결은 다른 장비를 거칩니다.", "correct": 1, "secs": 0.6, "chars": 11048}
+{"id": "c003", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "아니오. H1007과 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. H1007과 T4750 사이의 연결은 P4711을 거칩니다.", "correct": 0, "secs": 0.6, "chars": 11048}
+{"id": "c004", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "아니오. 자료에 H1008 장비는 없으며, H1007과 P4711 사이에 다른 장비를 거치지 않는 연결 경로가 없습니다.", "correct": 1, "secs": 0.4, "chars": 11048}
+{"id": "c005", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "아니오. 자료에 H1008 장비는 없으며, H1007과 P4712 사이에 다른 장비를 거치지 않는 연결 경로가 없습니다.", "correct": 0, "secs": 0.4, "chars": 11048}
+{"id": "c006", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "아니오. 자료에 H1008 장비는 없으며, H1007과 T4750 사이에 다른 장비를 거치지 않는 연결 경로는 없습니다.", "correct": 0, "secs": 0.4, "chars": 11048}
+{"id": "c007", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "아니오. P4711과 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. P4711과 P4712 사이에는 H1007 장비를 거치는 경로만 있습니다.", "correct": 1, "secs": 0.7, "chars": 11048}
+{"id": "c008", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "아니오. P4711과 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. P4711과 T4757 사이에는 H1007 장비를 거치는 경로만 있습니다.", "correct": 1, "secs": 0.7, "chars": 11048}
+{"id": "c009", "type": "도달여부", "setting": "real-200dpi-s0", "cond": "full", "response": "아니오. P4712와 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. P4712와 T4750 사이에는 S8 장비가 연결되어 있습니다.", "correct": 0, "secs": 0.6, "chars": 11048}
+{"id": "c010", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "P4711", "correct": 1, "secs": 0.1, "chars": 11049}
+{"id": "c011", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "n1, n2", "correct": 0, "secs": 0.1, "chars": 11049}
+{"id": "c012", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11049}
+{"id": "c013", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11049}
+{"id": "c014", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "n13, n4, n36, n37, n46, n3, n46, n36, n4, n13", "correct": 0, "secs": 0.3, "chars": 11049}
+{"id": "c015", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "S8, 73KHI2-50", "correct": 0, "secs": 0.1, "chars": 11049}
+{"id": "c016", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "n15, n13", "correct": 0, "secs": 0.1, "chars": 11049}
+{"id": "c017", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11049}
+{"id": "c018", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11049}
+{"id": "c019", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11049}
+{"id": "c020", "type": "라인도달", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11049}
+{"id": "c021", "type": "연결수", "setting": "real-200dpi-s0", "cond": "full", "response": "4\n\n(설명: 장비 H1007에 직접 붙은 연결선은 r50, r43, r51, r52, r53, r54, r55, r56, r57, r58, r59, r64, r65, r66, r67, r68, r69입니다. 이 중 장비 간 배관 연결에서 H1007에 직접 연결된 것은 P4711과 T4750입니다. 이를 기반으로 r", "correct": 1, "secs": 1.0, "chars": 11019}
+{"id": "c022", "type": "연결수", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11019}
+{"id": "c023", "type": "연결수", "setting": "real-200dpi-s0", "cond": "full", "response": "2\n\n(장비 P4711에 직접 붙은 연결선은 r23과 r70입니다.)", "correct": 1, "secs": 0.2, "chars": 11019}
+{"id": "c024", "type": "연결수", "setting": "real-200dpi-s0", "cond": "full", "response": "2\n\n(장비 P4712에 직접 붙은 연결선은 r74와 r75입니다.)", "correct": 1, "secs": 0.2, "chars": 11019}
+{"id": "c025", "type": "연결수", "setting": "real-200dpi-s0", "cond": "full", "response": "5\n\n(장비 T4750에 직접 붙은 연결선은 r7, r16, r17, r18, r40이다.)", "correct": 1, "secs": 0.3, "chars": 11019}
+{"id": "c026", "type": "경로", "setting": "real-200dpi-s0", "cond": "full", "response": "3", "correct": 0, "secs": 0.0, "chars": 11048}
+{"id": "c027", "type": "경로", "setting": "real-200dpi-s0", "cond": "full", "response": "3\n\n(중간 요소: n5[equipment T4750], j0, j4)", "correct": 0, "secs": 0.2, "chars": 11048}
+{"id": "c028", "type": "경로", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11048}
+{"id": "c029", "type": "경로", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11048}
+{"id": "c030", "type": "경로", "setting": "real-200dpi-s0", "cond": "full", "response": "3\n\n(중간 요소: n32[symbol n32], j1, n37[symbol n37])", "correct": 1, "secs": 0.2, "chars": 11048}
+{"id": "c031", "type": "라인경로", "setting": "real-200dpi-s0", "cond": "full", "response": "47122", "correct": 1, "secs": 0.0, "chars": 11052}
+{"id": "c032", "type": "라인경로", "setting": "real-200dpi-s0", "cond": "full", "response": "47122, 47125", "correct": 0, "secs": 0.1, "chars": 11052}
+{"id": "c033", "type": "라인경로", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11052}
+{"id": "c034", "type": "라인경로", "setting": "real-200dpi-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11052}
+{"id": "c035", "type": "라인경로", "setting": "real-200dpi-s0", "cond": "full", "response": "47125, 47126, 47127, 47122, 47121", "correct": 0, "secs": 0.2, "chars": 11052}
+{"id": "c000", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. H1007과 H1008 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. H1007과 H1008 사이의 연결은 다음과 같습니다:\n\n- H1007에서 j2로 이동한 후, j3, j4를 거쳐 H1008에 도달합니다.\n- H1008에서 j7로 이동한 후, j2를", "correct": 1, "secs": 2.4, "chars": 11242}
+{"id": "c001", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 없습니다. H1007과 P4712 사이에는 간접적인 연결만 존재합니다.", "correct": 0, "secs": 0.6, "chars": 11242}
+{"id": "c002", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. H1007과 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. H1007과 P4712 사이의 연결은 T4750를 거칩니다.", "correct": 1, "secs": 0.6, "chars": 11242}
+{"id": "c003", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. H1007과 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. H1007과 T4750 사이의 연결은 다른 장비를 거칩니다.", "correct": 0, "secs": 0.6, "chars": 11242}
+{"id": "c004", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. H1008와 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로가 없습니다. H1008와 P4712 사이의 연결은 다른 장비인 n28(symbol 7T1202)를 거칩니다.", "correct": 1, "secs": 0.7, "chars": 11242}
+{"id": "c005", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. H1008와 P4712 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. H1008와 P4712 사이의 연결은 T4750를 거칩니다.", "correct": 0, "secs": 0.6, "chars": 11242}
+{"id": "c006", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. H1008과 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. H1008과 T4750 사이의 연결은 다른 장비(P4712)를 거칩니다.", "correct": 0, "secs": 0.6, "chars": 11242}
+{"id": "c007", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. 자료에는 장비 P4711에 대한 언급이 없으며, P4712와 다른 장비를 거치지 않는 연결 경로에 대한 정보도 없습니다.", "correct": 1, "secs": 0.4, "chars": 11242}
+{"id": "c008", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. 자료에 P4711 장비는 없으며, P4712와 T4750 사이에 다른 장비를 거치지 않는 연결 경로가 없습니다.", "correct": 1, "secs": 0.4, "chars": 11242}
+{"id": "c009", "type": "도달여부", "setting": "real-scan-s0", "cond": "full", "response": "아니오. P4712와 T4750 사이에 다른 장비를 거치지 않는 연결(배관·밸브·분기점) 경로는 없습니다. P4712와 T4750 사이에는 H1008 장비를 거치는 경로만 있습니다.", "correct": 0, "secs": 0.6, "chars": 11242}
+{"id": "c010", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "P47I", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c011", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "n1, n2", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c012", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c013", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c014", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "n17, n4", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c015", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "n4, n73, n86", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c016", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "n19, n17", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c017", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c018", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c019", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c020", "type": "라인도달", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11243}
+{"id": "c021", "type": "연결수", "setting": "real-scan-s0", "cond": "full", "response": "8\n\n(설명: 장비 H1007에 직접 붙은 연결선은 다음과 같습니다: r30, r31, r32, r33, r34, r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r", "correct": 0, "secs": 0.9, "chars": 11213}
+{"id": "c022", "type": "연결수", "setting": "real-scan-s0", "cond": "full", "response": "5\n\n(설명: 장비 H1008에 직접 붙은 연결선은 r24, r25, r37, r38, r41이다.)", "correct": 0, "secs": 0.3, "chars": 11213}
+{"id": "c023", "type": "연결수", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11213}
+{"id": "c024", "type": "연결수", "setting": "real-scan-s0", "cond": "full", "response": "2\n\n(설명: 장비 P4712에 직접 붙은 연결선은 r68과 r69입니다.)", "correct": 1, "secs": 0.3, "chars": 11213}
+{"id": "c025", "type": "연결수", "setting": "real-scan-s0", "cond": "full", "response": "7\n\n(설명: 장비 T4750에 직접 붙은 연결선은 r5, r7, r8, r9, r10, r11, r12, r13, r16, r17이며, 이 중 직접 붙은 것은 r5, r7, r8, r9, r10, r11, r12, r13, r16, r17이다. 이 중 중복되지 않은 것은 r5, r7, r8", "correct": 1, "secs": 0.9, "chars": 11213}
+{"id": "c026", "type": "경로", "setting": "real-scan-s0", "cond": "full", "response": "장비 H1007에서 장비 P4712까지 가장 짧은 연결 경로를 찾기 위해, 주어진 연결 정보를 기반으로 경로를 분석합니다.\n\n1. **H1007에서 시작**: \n   - H1007은 n2에 해당합니다.\n\n2. **P4712로 이동**: \n   - P4712는 n3에 해당합니다.\n\n3. **연결 경로 분석**:\n   - n2 (H1007)에서", "correct": 0, "secs": 0.9, "chars": 11242}
+{"id": "c027", "type": "경로", "setting": "real-scan-s0", "cond": "full", "response": "4\n\n(장비 H1007에서 장비 T4750까지 가장 짧은 연결 경로는 다음과 같습니다: H1007 → n24[symbol n24] → n5[instrument HS 7750.01] → n6[equipment T4750]. 이 경로에서 지나는 중간 요소는 n24, n5, n6입니다. 총 3개의 중간 요소가 있습니다.)", "correct": 0, "secs": 0.8, "chars": 11242}
+{"id": "c028", "type": "경로", "setting": "real-scan-s0", "cond": "full", "response": "3\n\n(장비 H1008에서 장비 P4712까지 가장 짧은 연결 경로는 다음과 같습니다: H1008 → n73[symbol n73] → n86[symbol n86] → n36[symbol 73KHI2-50] → P4712. 이 경로에서 지나는 중간 요소는 n73, n86, n36 총 3개입니다.)", "correct": 0, "secs": 0.8, "chars": 11242}
+{"id": "c029", "type": "경로", "setting": "real-scan-s0", "cond": "full", "response": "4\n\n(장비 H1008에서 장비 T4750까지 가장 짧은 연결 경로는 다음과 같습니다: H1008 → n73[symbol n73] → n86[symbol n86] → j7 → T4750. 이 경로에서 지나는 중간 요소는 n73, n86, j7 총 3개의 기호와 분기점입니다.)", "correct": 0, "secs": 0.8, "chars": 11242}
+{"id": "c030", "type": "경로", "setting": "real-scan-s0", "cond": "full", "response": "3\n\n(장비 P4712에서 장비 T4750까지 가장 짧은 연결 경로는 다음과 같습니다: P4712 → n39[symbol 73KHI2-25] → j6 → n72[symbol n72] → n36[symbol 73KHI2-50] → j7 → T4750. 이 경로에서 지나는 중간 요소는 n39, j6, n72, n36, j7 총 5개입니다. 그러나", "correct": 1, "secs": 0.9, "chars": 11242}
+{"id": "c031", "type": "라인경로", "setting": "real-scan-s0", "cond": "full", "response": "자료에 없음", "correct": 0, "secs": 0.1, "chars": 11246}
+{"id": "c032", "type": "라인경로", "setting": "real-scan-s0", "cond": "full", "response": "47122, 47126", "correct": 0, "secs": 0.1, "chars": 11246}
+{"id": "c033", "type": "라인경로", "setting": "real-scan-s0", "cond": "full", "response": "47122, 47125, 47126", "correct": 0, "secs": 0.1, "chars": 11246}
+{"id": "c034", "type": "라인경로", "setting": "real-scan-s0", "cond": "full", "response": "47125, 47126", "correct": 0, "secs": 0.1, "chars": 11246}
+{"id": "c035", "type": "라인경로", "setting": "real-scan-s0", "cond": "full", "response": "47122, 47126", "correct": 0, "secs": 0.1, "chars": 11246}
