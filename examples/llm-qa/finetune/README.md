@@ -18,6 +18,9 @@
 | subsample.py | 큰 학습 자료에서 파일럿용 무작위 표본(기본 8,000개) | CPU |
 | run.sh | 학습 → 기본/LoRA × noise/conn 평가 4회 | GPU(SSH 인스턴스) |
 | notebook.ipynb | run.sh와 같은 순서의 노트북(Colab·Kaggle). 결과를 Drive로 복사 | GPU(노트북) |
+| make_holdout.py | 학습에 없던 PID2Graph OPEN100 12개 도면(위상 실제, 문자 합성)으로 평가 묶음 holdout.json 생성. 답은 오류를 넣기 전 그래프 기준 | CPU |
+| eval_holdout.py | holdout.json 평가(hf 또는 ollama) | GPU |
+| run_more.sh | 재학습 없이 씨앗 1·2 추가(기본·LoRA·14B)와 미학습 도면 평가를 한 번에 실행 | GPU(SSH 인스턴스) |
 
 순서
 ```
