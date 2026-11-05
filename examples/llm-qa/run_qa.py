@@ -18,7 +18,10 @@ def ask_api(model, system, user, max_tokens=120):
     body = dict(model=model, max_tokens=max_tokens, messages=[{"role": "system", "content": system}, {"role": "user", "content": user}])
     body.update(json.loads(os.environ.get('LLM_API_EXTRA') or '{}'))
     req = urllib.request.Request(base + '/chat/completions', data=json.dumps(body).encode(), headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key})
-    r = json.loads(urllib.request.urlopen(req, timeout=120).read())
+    try:
+        r = json.loads(urllib.request.urlopen(req, timeout=120).read())
+    except urllib.error.HTTPError as e:     # 400 등은 본문에 이유가 있음(재시도해도 같으므로 그대로 보여 줌)
+        raise RuntimeError(f"HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:300]}") from None
     ch = r['choices'][0]; text = (ch['message'].get('content') or '').strip()
     if not text:
         raise RuntimeError(f"빈 응답(finish_reason={ch.get('finish_reason')}, usage={r.get('usage')})")
