@@ -28,9 +28,17 @@ def ask_api(model, system, user, max_tokens=120):
     return text
 
 def ask_ollama(model, system, user, max_tokens=120):
-    body = json.dumps(dict(model=model, system=system, prompt=user, stream=False, options=dict(temperature=0, seed=0, num_predict=max_tokens, num_ctx=8192))).encode()
-    req = urllib.request.Request('http://127.0.0.1:11434/api/generate', data=body, headers={'Content-Type': 'application/json'})
-    return json.loads(urllib.request.urlopen(req, timeout=600).read())['response'].strip()
+    """로컬 Ollama. OLLAMA_EXTRA(JSON)는 요청 본문에 더함(options는 항목 단위로 합침). 사고 기능이 있는 공개 가중치 모델은
+    {"think": true, "options": {"num_predict": 4000}}처럼 사고를 켜고 출력 한도를 늘려 실행하며, 사고 부분(thinking)은 답에서 분리되어 채점에 들어가지 않음.
+    사고가 한도를 다 써서 본문이 비면 오답으로 기록하지 않고 오류로 올려 다시 실행되게 함."""
+    body = dict(model=model, system=system, prompt=user, stream=False, options=dict(temperature=0, seed=0, num_predict=max_tokens, num_ctx=8192))
+    extra = json.loads(os.environ.get('OLLAMA_EXTRA') or '{}')
+    body['options'].update(extra.pop('options', {})); body.update(extra)
+    req = urllib.request.Request('http://127.0.0.1:11434/api/generate', data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'})
+    r = json.loads(urllib.request.urlopen(req, timeout=600).read()); text = (r.get('response') or '').strip()
+    if not text:
+        raise RuntimeError(f"빈 응답(done_reason={r.get('done_reason')}, eval_count={r.get('eval_count')})")
+    return text
 
 def norm(s):
     s = s.lower().replace('ø', '').replace('⌀', '').replace('–', '-').replace('~', '-').replace(',', '').replace('·', ' ')
